@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population Share by Distance to Road - Stacked Bar Chart</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        
+        .chart-container {
+            margin-top: 20px;
+        }
+        
+        .legend {
+            position: absolute;
+            top: 50px;
+            right: 50px;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            padding: 15px;
+            font-size: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 3px 0;
+            white-space: nowrap;
+        }
+        
+        .legend-color {
+            width: 12px;
+            height: 12px;
+            margin-right: 6px;
+            border-radius: 2px;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+        }
+        
+        .axis-label {
+            font-size: 14px;
+            font-weight: 500;
+        }
+        
+        .tick text {
+            font-size: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Population Share by Distance to Road</h1>
+        <div class="chart-container" id="chart" style="position: relative;">
+            <div class="legend" id="legend"></div>
+        </div>
+    </div>
+
+    <script>
+        // Load the data
+        d3.json('bar_chart_data.json').then(function(data) {
+            const margin = {top: 40, right: 100, bottom: 80, left: 80};
+            const width = 1000 - margin.left - margin.right;
+            const height = 500 - margin.top - margin.bottom;
+
+            // Create SVG
+            const svg = d3.select('#chart')
+                .append('svg')
+                .attr('width', width + margin.left + margin.right)
+                .attr('height', height + margin.top + margin.bottom)
+                .append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            // Define distance ranges
+            const distanceRanges = ['0-10km', '10-20km', '20-30km', '30-40km', '40-50km', 
+                                   '50-60km', '60-70km', '70-80km', '80-90km', '90-100km'];
+            
+            const regions = ['Africa', 'South Asia', 'Latin America'];
+            
+            // Color scales for each region and population type
+            const regionPopulationColors = {
+                'Africa': {
+                    'rural': '#CAB899',
+                    'urban': '#EFD9AD'
+                },
+                'South Asia': {
+                    'rural': '#3498DC',
+                    'urban': '#92D0F9'
+                },
+                'Latin America': {
+                    'rural': '#E16D65',
+                    'urban': '#F0DDDC'
+                }
+            };
+
+            // Prepare data for stacked bars
+            const chartData = distanceRanges.map(range => {
+                const rangeData = {
+                    range: range,
+                    regions: {}
+                };
+                
+                regions.forEach(region => {
+                    if (data[region] && data[region].share && data[region].share[range]) {
+                        rangeData.regions[region] = {
+                            rural: data[region].share[range].rural,
+                            urban: data[region].share[range].urban,
+                            total: data[region].share[range].total
+                        };
+                    }
+                });
+                
+                return rangeData;
+            });
+
+            // Scales
+            const x0 = d3.scaleBand()
+                .domain(distanceRanges)
+                .range([0, width])
+                .padding(0.1);
+
+            const x1 = d3.scaleBand()
+                .domain(regions)
+                .range([0, x0.bandwidth()])
+                .padding(0.05);
+
+            const y = d3.scaleLinear()
+                .domain([0, d3.max(chartData, d => 
+                    d3.max(regions, region => 
+                        d.regions[region] ? d.regions[region].total : 0
+                    )
+                )])
+                .range([height, 0]);
+
+            // Add axes
+            const xAxis = d3.axisBottom(x0);
+            const yAxis = d3.axisLeft(y).tickFormat(d3.format('.1%'));
+
+            svg.append('g')
+                .attr('class', 'x-axis')
+                .attr('transform', `translate(0,${height})`)
+                .call(xAxis);
+
+            svg.append('g')
+                .attr('class', 'y-axis')
+                .call(yAxis);
+
+            // Add axis labels
+            svg.append('text')
+                .attr('class', 'axis-label')
+                .attr('text-anchor', 'middle')
+                .attr('x', width / 2)
+                .attr('y', height + 50)
+                .text('Distance to Road');
+
+            svg.append('text')
+                .attr('class', 'axis-label')
+                .attr('text-anchor', 'middle')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -height / 2)
+                .attr('y', -50)
+                .text('Share of Population');
+
+            // Create tooltip
+            const tooltip = d3.select('body')
+                .append('div')
+                .attr('class', 'tooltip');
+
+            // Draw bars
+            chartData.forEach((d, i) => {
+                const rangeGroup = svg.append('g')
+                    .attr('transform', `translate(${x0(d.range)},0)`);
+
+                regions.forEach((region, j) => {
+                    if (d.regions[region]) {
+                        const regionData = d.regions[region];
+                        
+                        // Rural bar (bottom) - positioned at the bottom
+                        rangeGroup.append('rect')
+                            .attr('x', x1(region))
+                            .attr('y', y(regionData.rural)) // Start from rural height (bottom)
+                            .attr('width', x1.bandwidth())
+                            .attr('height', y(0) - y(regionData.rural)) // Height is rural portion
+                            .attr('fill', regionPopulationColors[region].rural)
+                            .on('mouseover', function(event) {
+                                tooltip.transition()
+                                    .duration(200)
+                                    .style('opacity', .9);
+                                tooltip.html(`
+                                    <strong>${region}</strong><br/>
+                                    Distance: ${d.range}<br/>
+                                    Rural: ${(regionData.rural * 100).toFixed(1)}%<br/>
+                                    Urban: ${(regionData.urban * 100).toFixed(1)}%<br/>
+                                    Total: ${(regionData.total * 100).toFixed(1)}%
+                                `)
+                                    .style('left', (event.pageX + 10) + 'px')
+                                    .style('top', (event.pageY - 28) + 'px');
+                            })
+                            .on('mouseout', function() {
+                                tooltip.transition()
+                                    .duration(500)
+                                    .style('opacity', 0);
+                            });
+
+                        // Urban bar (top) - positioned directly above rural
+                        rangeGroup.append('rect')
+                            .attr('x', x1(region))
+                            .attr('y', y(regionData.total)) // Start from total height (top of rural)
+                            .attr('width', x1.bandwidth())
+                            .attr('height', y(regionData.rural) - y(regionData.total)) // Height from rural to total
+                            .attr('fill', regionPopulationColors[region].urban)
+                            .on('mouseover', function(event) {
+                                tooltip.transition()
+                                    .duration(200)
+                                    .style('opacity', .9);
+                                tooltip.html(`
+                                    <strong>${region}</strong><br/>
+                                    Distance: ${d.range}<br/>
+                                    Rural: ${(regionData.rural * 100).toFixed(1)}%<br/>
+                                    Urban: ${(regionData.urban * 100).toFixed(1)}%<br/>
+                                    Total: ${(regionData.total * 100).toFixed(1)}%
+                                `)
+                                    .style('left', (event.pageX + 10) + 'px')
+                                    .style('top', (event.pageY - 28) + 'px');
+                            })
+                            .on('mouseout', function() {
+                                tooltip.transition()
+                                    .duration(500)
+                                    .style('opacity', 0);
+                            });
+                    }
+                });
+            });
+
+            // Create legend
+            const legend = d3.select('#legend');
+            
+            // Combined legend showing all region-population combinations
+            legend.append('h4').text('Legend').style('margin', '0 0 8px 0', 'font-size', '14px');
+            
+            regions.forEach(region => {
+                // Rural legend item
+                const ruralItem = legend.append('div').attr('class', 'legend-item');
+                ruralItem.append('div')
+                    .attr('class', 'legend-color')
+                    .style('background-color', regionPopulationColors[region].rural);
+                ruralItem.append('span').text(`${region} Rural`);
+                
+                // Urban legend item
+                const urbanItem = legend.append('div').attr('class', 'legend-item');
+                urbanItem.append('div')
+                    .attr('class', 'legend-color')
+                    .style('background-color', regionPopulationColors[region].urban);
+                urbanItem.append('span').text(`${region} Urban`);
+            });
+        });
+    </script>
+</body>
+</html> 

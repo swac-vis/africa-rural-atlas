@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Regional Population Distribution by Distance to Roads</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .controls label {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .controls input[type="range"] {
+            width: 200px;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .controls input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #2E86AB;
+            cursor: pointer;
+        }
+        
+        .controls input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #2E86AB;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+        
+        .region-label {
+            font-size: 14px;
+            font-weight: 500;
+            fill: #333;
+        }
+        
+        .distance-label {
+            font-size: 12px;
+            fill: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Africa Regional Population Distribution</h1>
+        <div class="subtitle">Population shares by distance to nearest road (km)</div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #2E86AB;"></div>
+                <span>Urban Population</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #A23B72;"></div>
+                <span>Rural Population</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #ffffff;"></div>
+                <span>No Road Access</span>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="distanceSlider">Maximum Distance: <span id="distanceValue">10</span>km</label>
+                <input type="range" id="distanceSlider" min="1" max="20" value="10" step="1">
+            </div>
+            <div class="control-group">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect">
+                    <option value="population">Total Population</option>
+                    <option value="urban">Urban Population</option>
+                    <option value="rural">Rural Population</option>
+                    <option value="name">Region Name</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="chart"></div>
+    </div>
+
+    <script>
+        // Global variables
+        let data;
+        let svg;
+        let xScale;
+        let yScale;
+        let colorScale;
+        let maxDistance = 10;
+        
+        // Set up dimensions
+        const margin = {top: 40, right: 30, bottom: 60, left: 120};
+        const width = 1400 - margin.left - margin.right;
+        const height = 600 - margin.top - margin.bottom;
+        const pieRadius = 30;
+        
+        // Create SVG
+        svg = d3.select("#chart")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+        
+        // Create tooltip
+        const tooltip = d3.select("body")
+            .append("div")
+            .attr("class", "tooltip");
+        
+        // Load data
+        d3.json("region_population_analysis.json").then(function(loadedData) {
+            data = loadedData;
+            initializeChart();
+            setupSlider();
+        });
+        
+        function initializeChart() {
+            // Get regions and sort them
+            let regions = Object.keys(data);
+            
+            // Sort regions based on selected option
+            const sortBy = document.getElementById('sortSelect').value;
+            switch(sortBy) {
+                case 'population':
+                    regions.sort((a, b) => data[b].total_population - data[a].total_population);
+                    break;
+                case 'urban':
+                    regions.sort((a, b) => {
+                        const aUrban = data[a]['<=1km population'] ? data[a]['<=1km population'].share_urban : 0;
+                        const bUrban = data[b]['<=1km population'] ? data[b]['<=1km population'].share_urban : 0;
+                        return bUrban - aUrban;
+                    });
+                    break;
+                case 'rural':
+                    regions.sort((a, b) => {
+                        const aRural = data[a]['<=1km population'] ? data[a]['<=1km population'].share_rural : 0;
+                        const bRural = data[b]['<=1km population'] ? data[b]['<=1km population'].share_rural : 0;
+                        return bRural - aRural;
+                    });
+                    break;
+                case 'name':
+                    regions.sort((a, b) => a.localeCompare(b));
+                    break;
+                default:
+                    regions.sort((a, b) => data[b].total_population - data[a].total_population);
+            }
+            
+            // Create distance intervals
+            const distances = [];
+            for (let i = 1; i <= maxDistance; i++) {
+                distances.push(i);
+            }
+            
+            // Set up scales
+            xScale = d3.scaleBand()
+                .domain(distances)
+                .range([0, width])
+                .padding(0.1);
+            
+            yScale = d3.scaleBand()
+                .domain(regions)
+                .range([0, height])
+                .padding(0.2);
+            
+            // Color scale for pie chart segments
+            colorScale = d3.scaleOrdinal()
+                .domain(['urban', 'rural', 'no_access'])
+                .range(['#2E86AB', '#A23B72', '#ffffff']);
+            
+            // Clear previous chart
+            svg.selectAll("*").remove();
+            
+            // Create axes
+            const xAxis = d3.axisBottom(xScale)
+                .tickFormat(d => '≤' + d + 'km');
+            
+            const yAxis = d3.axisLeft(yScale);
+            
+            svg.append("g")
+                .attr("class", "x-axis")
+                .attr("transform", `translate(0,${height})`)
+                .call(xAxis);
+            
+            svg.append("g")
+                .attr("class", "y-axis")
+                .call(yAxis)
+                .selectAll("text")
+                .style("font-size", "12px")
+                .style("font-weight", "500");
+            
+            // Add axis labels
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("x", width / 2)
+                .attr("y", height + 35)
+                .attr("text-anchor", "middle")
+                .text("Distance to Nearest Road (km)");
+            
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -height / 2)
+                .attr("y", -100)
+                .attr("text-anchor", "middle")
+                .text("Regions");
+            
+            // Create pie charts for each region and distance
+            regions.forEach(region => {
+                const regionData = data[region];
+                const totalPopulation = regionData.total_population;
+                
+                // Add region label
+                // svg.append("text")
+                //     .attr("class", "region-label")
+                //     .attr("x", -10)
+                //     .attr("y", yScale(region) + yScale.bandwidth() / 2)
+                //     .attr("dy", "0.35em")
+                //     .attr("text-anchor", "end")
+                //     .text(region);
+                
+                distances.forEach(distance => {
+                    const distanceKey = `<=${distance}km population`;
+                    const distanceData = regionData[distanceKey];
+                    
+                    if (distanceData) {
+                        // Create pie chart data
+                        const pieData = [
+                            {key: 'urban', value: distanceData.share_urban},
+                            {key: 'rural', value: distanceData.share_rural},
+                            {key: 'no_access', value: distanceData.share_total_no_access}
+                        ].filter(d => d.value > 0);
+                        
+                        // Calculate pie chart size based on total population
+                        const sizeScale = d3.scaleSqrt()
+                            .domain([0, d3.max(regions, r => data[r].total_population)])
+                            .range([10, 50]);
+                        
+                        const pieRadius = sizeScale(totalPopulation);
+                        
+                        // Create pie chart
+                        const pie = d3.pie()
+                            .value(d => d.value)
+                            .sort(null);
+                        
+                        const arc = d3.arc()
+                            .innerRadius(0)
+                            .outerRadius(pieRadius);
+                        
+                        // Position for this region and distance
+                        const x = xScale(distance) + xScale.bandwidth() / 2;
+                        const y = yScale(region) + yScale.bandwidth() / 2;
+                        
+                        // Create pie chart group
+                        const pieGroup = svg.append("g")
+                            .attr("transform", `translate(${x},${y})`);
+                        
+                        // Add pie chart segments
+                        pieGroup.selectAll("path")
+                            .data(pie(pieData))
+                            .enter()
+                            .append("path")
+                            .attr("d", arc)
+                            .attr("fill", d => colorScale(d.data.key))
+                            .on("mouseover", function(event, d) {
+                                tooltip.style("opacity", 1);
+                            })
+                            .on("mousemove", function(event, d) {
+                                const percentage = (d.data.value * 100).toFixed(1);
+                                tooltip.html(`
+                                    <strong>${region}</strong><br/>
+                                    Distance: ${distance}km<br/>
+                                    ${d.data.key.replace('_', ' ').toUpperCase()}: ${percentage}%
+                                `)
+                                .style("left", (event.pageX + 10) + "px")
+                                .style("top", (event.pageY - 10) + "px");
+                            })
+                            .on("mouseout", function() {
+                                tooltip.style("opacity", 0);
+                            });
+                    }
+                });
+            });
+        }
+        
+        function setupSlider() {
+            const slider = document.getElementById('distanceSlider');
+            const valueDisplay = document.getElementById('distanceValue');
+            const sortSelect = document.getElementById('sortSelect');
+            
+            slider.addEventListener('input', function() {
+                maxDistance = parseInt(this.value);
+                valueDisplay.textContent = maxDistance;
+                initializeChart();
+            });
+            
+            sortSelect.addEventListener('change', function() {
+                initializeChart();
+            });
+        }
+    </script>
+</body>
+</html> 

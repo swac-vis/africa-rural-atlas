@@ -1,0 +1,421 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Rural-Urban Population Distribution by Distance to Roads</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 30px;
+            font-size: 14px;
+        }
+        
+        .legend {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            border-radius: 3px;
+        }
+        
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 30px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .controls label {
+            font-weight: 500;
+            color: #333;
+        }
+        
+        .controls input[type="range"] {
+            width: 200px;
+            height: 6px;
+            border-radius: 3px;
+            background: #ddd;
+            outline: none;
+            -webkit-appearance: none;
+        }
+        
+        .controls input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #2E86AB;
+            cursor: pointer;
+        }
+        
+        .controls input[type="range"]::-moz-range-thumb {
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: #2E86AB;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .country-row {
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        
+        .country-row:hover {
+            opacity: 0.8;
+        }
+        
+        .country-label {
+            font-size: 12px;
+            fill: #333;
+        }
+        
+        .axis-label {
+            font-size: 12px;
+            fill: #666;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.2s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Africa Rural-Urban Population Distribution</h1>
+        <div class="subtitle">Population share by distance to nearest road (km)</div>
+        
+        <div class="legend">
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #2E86AB;"></div>
+                <span>Urban Population</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: #A23B72;"></div>
+                <span>Rural Population</span>
+            </div>
+        </div>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label for="distanceSlider">Maximum Distance: <span id="distanceValue">50</span>km</label>
+                <input type="range" id="distanceSlider" min="1" max="100" value="50" step="1">
+            </div>
+            <div class="control-group">
+                <label for="sortSelect">Sort by:</label>
+                <select id="sortSelect">
+                    <option value="population">Total Population</option>
+                    <option value="urban">Urban Population</option>
+                    <option value="rural">Rural Population</option>
+                    <option value="name">Country Name</option>
+                </select>
+            </div>
+        </div>
+        
+        <div id="chart"></div>
+    </div>
+
+    <script>
+        // Global variables
+        let data;
+        let processedData;
+        let svg;
+        let xScale;
+        let yScale;
+        let colorScale;
+        let maxDistance = 50;
+        
+        // Set up dimensions
+        const margin = {top: 20, right: 30, bottom: 40, left: 200};
+        const width = 1200 - margin.left - margin.right;
+        const height = 1200 - margin.top - margin.bottom; // Increased height
+        
+        // Create SVG
+        svg = d3.select("#chart")
+            .append("svg")
+            .attr("width", width + margin.left + margin.right)
+            .attr("height", height + margin.top + margin.bottom)
+            .append("g")
+            .attr("transform", `translate(${margin.left},${margin.top})`);
+        
+        // Create tooltip
+        const tooltip = d3.select("body")
+            .append("div")
+            .attr("class", "tooltip");
+        
+        // Load data
+        d3.json("population_distance_analysis_fixed.json").then(function(loadedData) {
+            data = loadedData;
+            initializeChart();
+            setupSlider();
+        });
+        
+        function initializeChart() {
+            // Process data for horizon chart
+            const countries = Object.keys(data).filter(d => d !== "all_countries");
+            
+            // Create processed data
+            processedData = countries.map(country => {
+                const countryData = data[country];
+                const intervals = countryData.distance_intervals;
+                
+                // Create array of distance intervals up to maxDistance
+                const distanceData = [];
+                for (let i = 1; i <= maxDistance; i++) {
+                    const intervalKey = i.toString();
+                    const interval = intervals[intervalKey];
+                    
+                    if (interval) {
+                        distanceData.push({
+                            distance: i,
+                            urban: interval.urban_share_of_total_population,
+                            rural: interval.rural_share_of_total_population,
+                            total: interval.urban_share_of_total_population + interval.rural_share_of_total_population
+                        });
+                    } else {
+                        distanceData.push({
+                            distance: i,
+                            urban: 0,
+                            rural: 0,
+                            total: 0
+                        });
+                    }
+                }
+                
+                return {
+                    country: country,
+                    data: distanceData,
+                    totalPopulation: countryData.population
+                };
+            });
+            
+            // Sort countries based on selected option
+            const sortBy = document.getElementById('sortSelect').value;
+            switch(sortBy) {
+                case 'population':
+                    processedData.sort((a, b) => b.totalPopulation - a.totalPopulation);
+                    break;
+                case 'urban':
+                    processedData.sort((a, b) => {
+                        const aUrban = a.data.reduce((sum, d) => sum + d.urban, 0);
+                        const bUrban = b.data.reduce((sum, d) => sum + d.urban, 0);
+                        return bUrban - aUrban;
+                    });
+                    break;
+                case 'rural':
+                    processedData.sort((a, b) => {
+                        const aRural = a.data.reduce((sum, d) => sum + d.rural, 0);
+                        const bRural = b.data.reduce((sum, d) => sum + d.rural, 0);
+                        return bRural - aRural;
+                    });
+                    break;
+                case 'name':
+                    processedData.sort((a, b) => a.country.localeCompare(b.country));
+                    break;
+                default:
+                    processedData.sort((a, b) => b.totalPopulation - a.totalPopulation);
+            }
+            
+            // Set up scales
+            xScale = d3.scaleLinear()
+                .domain([0, maxDistance])
+                .range([0, width]);
+            
+            yScale = d3.scaleBand()
+                .domain(processedData.map(d => d.country))
+                .range([0, height])
+                .padding(0.1);
+            
+            colorScale = d3.scaleOrdinal()
+                .domain(['urban', 'rural'])
+                .range(['#2E86AB', '#A23B72']);
+            
+            // Clear previous chart
+            svg.selectAll("*").remove();
+            
+            // Create axes
+            const xAxis = d3.axisBottom(xScale)
+                .tickFormat(d => d)
+                .ticks(Math.min(maxDistance, 20)); // Limit ticks to prevent overlap
+            
+            const yAxis = d3.axisLeft(yScale);
+            
+            svg.append("g")
+                .attr("class", "x-axis")
+                .attr("transform", `translate(0,${height})`)
+                .call(xAxis)
+                .selectAll("text")
+                .style("font-size", "10px")
+                .style("text-anchor", "middle");
+            
+            svg.append("g")
+                .attr("class", "y-axis")
+                .call(yAxis)
+                .selectAll("text")
+                .style("font-size", "11px")
+                .style("font-weight", "500")
+                .selectAll("line")
+                .remove();
+            
+            // Add axis labels
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("x", width / 2)
+                .attr("y", height + 35)
+                .attr("text-anchor", "middle")
+                .text("Distance to Nearest Road (km)");
+            
+            svg.append("text")
+                .attr("class", "axis-label")
+                .attr("transform", "rotate(-90)")
+                .attr("x", -height / 2)
+                .attr("y", -100)
+                .attr("text-anchor", "middle")
+                .text("Countries");
+            
+            // Create horizon chart
+            processedData.forEach((countryData, countryIndex) => {
+                const countryGroup = svg.append("g")
+                    .attr("class", "country-row")
+                    .attr("transform", `translate(0,${yScale(countryData.country)})`);
+                
+
+                
+                // Create rectangles for urban population (positive)
+                countryGroup.selectAll("rect.urban")
+                    .data(countryData.data)
+                    .enter()
+                    .append("rect")
+                    .attr("class", "urban")
+                    .attr("x", d => xScale(d.distance - 1))
+                    .attr("width", d => xScale(d.distance) - xScale(d.distance - 1))
+                    .attr("y", d => yScale.bandwidth() / 2 - d.urban * yScale.bandwidth() * 0.8)
+                    .attr("height", d => d.urban * yScale.bandwidth() * 0.8)
+                    .attr("fill", colorScale('urban'))
+                    .on("mouseover", function(event, d) {
+                        tooltip.style("opacity", 1);
+                    })
+                    .on("mousemove", function(event, d) {
+                        tooltip.html(`
+                            <strong>${countryData.country}</strong><br/>
+                            Distance: ${d.distance-1}-${d.distance}km<br/>
+                            Urban: ${(d.urban * 100).toFixed(1)}%<br/>
+                            Rural: ${(d.rural * 100).toFixed(1)}%<br/>
+                            Total: ${(d.total * 100).toFixed(1)}%
+                        `)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 10) + "px");
+                    })
+                    .on("mouseout", function() {
+                        tooltip.style("opacity", 0);
+                    });
+                
+
+                
+                // Create rectangles for rural population (negative)
+                countryGroup.selectAll("rect.rural")
+                    .data(countryData.data)
+                    .enter()
+                    .append("rect")
+                    .attr("class", "rural")
+                    .attr("x", d => xScale(d.distance - 1))
+                    .attr("width", d => xScale(d.distance) - xScale(d.distance - 1))
+                    .attr("y", d => yScale.bandwidth() / 2)
+                    .attr("height", d => d.rural * yScale.bandwidth() * 0.8)
+                    .attr("fill", colorScale('rural'))
+                    .on("mouseover", function(event, d) {
+                        tooltip.style("opacity", 1);
+                    })
+                    .on("mousemove", function(event, d) {
+                        tooltip.html(`
+                            <strong>${countryData.country}</strong><br/>
+                            Distance: ${d.distance-1}-${d.distance}km<br/>
+                            Urban: ${(d.urban * 100).toFixed(1)}%<br/>
+                            Rural: ${(d.rural * 100).toFixed(1)}%<br/>
+                            Total: ${(d.total * 100).toFixed(1)}%
+                        `)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 10) + "px");
+                    })
+                    .on("mouseout", function() {
+                        tooltip.style("opacity", 0);
+                    });
+                
+
+            });
+        }
+        
+        function setupSlider() {
+            const slider = document.getElementById('distanceSlider');
+            const valueDisplay = document.getElementById('distanceValue');
+            const sortSelect = document.getElementById('sortSelect');
+            
+            slider.addEventListener('input', function() {
+                maxDistance = parseInt(this.value);
+                valueDisplay.textContent = maxDistance;
+                initializeChart();
+            });
+            
+            sortSelect.addEventListener('change', function() {
+                initializeChart();
+            });
+        }
+    </script>
+</body>
+</html> 
