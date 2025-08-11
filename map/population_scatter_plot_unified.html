@@ -1,0 +1,3019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Population Distribution</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            overflow: hidden;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 10px 0;
+            font-size: clamp(16px, 3vw, 24px);
+            padding: 0 10px;
+        }
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 24px;
+            margin-bottom: 15px;
+            padding: 20px 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+            border-radius: 12px;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            flex-wrap: wrap;
+            backdrop-filter: blur(10px);
+            position: relative;
+            z-index: 9998;
+        }
+        
+        /* 缩放控制样式 */
+        .zoom-controls {
+            position: absolute;
+            top: 80px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            z-index: 9997;
+        }
+        
+        .zoom-btn {
+            width: 40px;
+            height: 40px;
+            background: white;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
+            transition: all 0.2s;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .zoom-btn:hover {
+            background: #f0f0f0;
+            border-color: #999;
+        }
+        
+        .zoom-btn:active {
+            transform: scale(0.95);
+        }
+        
+        .zoom-btn.disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .zoom-info {
+            position: absolute;
+            bottom: 20px;
+            left: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            padding: 8px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #333;
+            border: 1px solid #ccc;
+            z-index: 1000;
+        }
+        
+        /* 图例中的SVG图例样式 */
+        .figure-container {
+            
+        }
+        
+        .figure-container foreignObject {
+            overflow: visible;
+        }
+        
+        .figure-container svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+        }
+        .controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 15px;
+            padding: 10px 18px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+            border-radius: 8px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .control-group label {
+            font-weight: 500;
+            font-size: 12px;
+            color: #495057;
+            white-space: nowrap;
+            letter-spacing: 0.3px;
+        }
+        
+        /* 基础样式 */
+        .control-group input {
+            padding: 4px 8px;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            font-size: 12px;
+            background-color: white;
+            transition: all 0.2s ease;
+            min-width: 80px;
+            position: relative;
+        }
+        
+        .control-group input:hover {
+            border-color: #adb5bd;
+        }
+        
+        .control-group input:focus {
+            outline: none;
+            border-color: #2E86AB;
+            box-shadow: 0 0 0 2px rgba(46, 134, 171, 0.1);
+        }
+        
+        /* Select 专用样式 - 使用更高优先级 */
+        .control-group select {
+            padding: 6px 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 4px;
+            font-size: 13px;
+            background-color: white;
+            transition: all 0.3s ease;
+            min-width: 80px;
+            position: relative;
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 8px center;
+            background-size: 16px;
+            padding-right: 28px;
+            appearance: none;
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            cursor: pointer;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            text-indent: 2px;
+            font-weight: 500;
+            color: #374151;
+            letter-spacing: 0.025em;
+        }
+        
+        .control-group select:hover {
+            border-color: #d1d5db;
+            background-color: #fafbfc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .control-group select:active {
+            background-color: #f8f9fa;
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .control-group select:focus {
+            outline: none;
+            border-color: #2E86AB;
+            box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+        }
+        
+        /* 尝试自定义下拉选项样式（部分浏览器支持） */
+        .control-group select option {
+            background-color: white !important;
+            color: #374151 !important;
+            font-size: 13px !important;
+            padding: 12px 16px !important;
+            border: none !important;
+            font-weight: 400 !important;
+            transition: all 0.2s ease !important;
+        }
+        
+        .control-group select option:hover {
+            background-color: #f3f4f6 !important;
+            color: #1f2937 !important;
+        }
+        
+        .control-group select option:checked {
+            background: linear-gradient(135deg, #2E86AB 0%, #1e5a7a 100%) !important;
+            color: white !important;
+            font-weight: 600 !important;
+        }
+        
+        .control-group select option:selected {
+            background: linear-gradient(135deg, #2E86AB 0%, #1e5a7a 100%) !important;
+            color: white !important;
+            font-weight: 600 !important;
+        }
+        
+        /* 为不同浏览器添加特定样式 */
+        .control-group select::-ms-expand {
+            display: none;
+        }
+        
+        /* Firefox 特定样式 */
+        .control-group select:-moz-focusring {
+            color: transparent;
+            text-shadow: 0 0 0 #374151;
+        }
+        
+        /* 添加下拉框的焦点指示器 */
+        .control-group select:focus-visible {
+            outline: 2px solid #2E86AB;
+            outline-offset: 2px;
+        }
+        
+        /* 为下拉框添加标签样式 */
+        .control-group label {
+            font-weight: 600;
+            font-size: 13px;
+            color: #374151;
+            white-space: nowrap;
+            letter-spacing: 0.025em;
+            margin-bottom: 4px;
+            display: block;
+        }
+        
+        /* 控制组容器样式优化 */
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 6px;
+            min-width: 100px;
+            position: relative;
+            z-index: 9999;
+        }
+        
+        /* 下拉框增强样式 */
+        .control-group select {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        /* 添加下拉框的渐变边框效果 */
+        .control-group select::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border-radius: 6px;
+            padding: 2px;
+            background: linear-gradient(135deg, #2E86AB, #1e5a7a);
+            -webkit-mask: 
+                linear-gradient(#fff 0 0) content-box, 
+                linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .control-group select:focus::before {
+            opacity: 1;
+        }
+        
+        /* 为下拉框添加内部阴影效果 */
+        .control-group select {
+            box-shadow: 
+                inset 0 1px 2px rgba(255, 255, 255, 0.8),
+                0 2px 4px rgba(0, 0, 0, 0.05);
+        }
+        
+        /* 下拉框悬停时的微妙动画 */
+        .control-group select:hover {
+            animation: selectHover 0.3s ease forwards;
+        }
+        
+        @keyframes selectHover {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-2px); }
+            100% { transform: translateY(-1px); }
+        }
+        
+        /* 为不同状态的下拉框添加不同的边框颜色 */
+        .control-group select:invalid {
+            border-color: #ef4444;
+        }
+        
+        .control-group select:valid {
+            border-color: #10b981;
+        }
+        
+        /* 响应式设计优化 */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                gap: 16px;
+                padding: 16px 20px;
+            }
+            
+            .control-group {
+                min-width: 100%;
+                align-items: center;
+            }
+            
+            .control-group select {
+                min-width: 200px;
+                text-align: center;
+            }
+        }
+        
+        /* Range input 样式 */
+        .control-group input[type="range"] {
+            width: 70px;
+            height: 4px;
+            border-radius: 2px;
+            background: linear-gradient(to right, #dee2e6 0%, #dee2e6 100%);
+            outline: none;
+            -webkit-appearance: none;
+            cursor: pointer;
+        }
+        
+        .control-group input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2E86AB 0%, #1e5a7a 100%);
+            cursor: pointer;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .control-group input[type="range"]::-webkit-slider-thumb:hover {
+            background: linear-gradient(135deg, #1e5a7a 0%, #0d3d5a 100%);
+            transform: scale(1.1);
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+        }
+        
+        .control-group input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #2E86AB 0%, #1e5a7a 100%);
+            cursor: pointer;
+            border: none;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .control-group span {
+            font-size: 11px;
+            color: #6c757d;
+            min-width: 35px;
+            text-align: center;
+        }
+        
+        .chart-container {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            min-height: 300px;
+        }
+        
+        .legend {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            width: 80px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            padding: 10px;
+            z-index: 1000;
+        }
+        
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: clamp(10px, 2vw, 12px);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            max-width: 200px;
+            z-index: 1000;
+        }
+        
+        /* 详细信息面板样式 */
+        .detail-panel {
+            position: fixed;
+            right: 0;
+            width: 400px;
+            background: white;
+            border-left: 0.5px solid #ddd;
+            z-index: 9996;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .detail-panel.show {
+            transform: translateX(0);
+        }
+        
+        .detail-panel-header {
+            padding: 15px 20px;
+            border-bottom: 2px solid #f0f0f0;
+            background: #f8f9fa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        
+        .detail-panel-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #333;
+            margin: 0;
+        }
+        
+        .detail-panel-close {
+            position: absolute;
+            top: 50%;
+            right: 15px;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #666;
+            padding: 5px;
+            border-radius: 50%;
+            width: 35px;
+            height: 35px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.2s;
+        }
+        
+        .detail-panel-close:hover {
+            background: #f0f0f0;
+            color: #333;
+        }
+        
+        .detail-panel-content {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        
+        .detail-panel-section {
+            margin-bottom: 25px;
+        }
+        
+        .detail-panel-section h3 {
+            margin: 0 0 15px 0;
+            color: #333;
+            font-size: 16px;
+            border-bottom: 1px solid #e9ecef;
+            padding-bottom: 8px;
+        }
+        
+        .detail-panel-item {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 8px;
+            padding: 5px 0;
+        }
+        
+        .detail-panel-label {
+            font-weight: 600;
+            color: #555;
+            font-size: 14px;
+        }
+        
+        .detail-panel-value {
+            color: #333;
+            text-align: right;
+            font-size: 14px;
+        }
+        
+        .detail-panel-chart {
+            margin-top: 20px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+        }
+        
+        .detail-panel-chart h3 {
+            margin: 0 0 15px 0;
+            color: #333;
+            font-size: 16px;
+        }
+        
+        /* 放大视图容器 */
+        .zoom-view {
+            width: 100%;
+            height: 200px;
+            background: #fff;
+            border-radius: 8px;
+            border: 0.5px solid #ddd;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .zoom-view svg {
+            max-width: 100%;
+            max-height: 100%;
+        }
+        
+        /* 点击效果 */
+        .cell-clickable {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .cell-clickable:hover {
+            filter: brightness(1.2) drop-shadow(0 0 8px rgba(0, 0, 0, 0.3));
+        }
+        
+        .cell-clickable:hover circle {
+            stroke: #0b4eca;
+            stroke-width: 1;
+        }
+        
+        .cell-clickable.selected {
+            filter: brightness(1.1) drop-shadow(0 0 6px rgba(11, 78, 202, 0.3));
+        }
+        
+        .cell-clickable.selected circle {
+            stroke: #0b4eca;
+            stroke-width: 1;
+        }
+        
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            .controls {
+                flex-direction: column;
+                gap: 10px;
+            }
+            .control-group {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            h1 {
+                font-size: 18px;
+                margin: 5px 0;
+            }
+            .detail-panel {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 16px;
+                margin: 3px 0;
+            }
+            .detail-panel {
+                width: 100%;
+            }
+        }
+        
+        /* 自定义下拉框样式 */
+        .custom-select {
+            position: relative;
+            display: inline-block;
+            font-family: inherit;
+            z-index: 9999;
+            min-width: 80px;
+        }
+        
+        .select-display {
+            padding: 6px 10px;
+            border: 2px solid #e9ecef;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            user-select: none;
+            position: relative;
+            font-size: 13px;
+            font-weight: 500;
+            color: #374151;
+            letter-spacing: 0.025em;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            min-width: 80px;
+            max-width: 120px;
+        }
+        
+        .select-display:hover {
+            border-color: #d1d5db;
+            background-color: #fafbfc;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transform: translateY(-1px);
+        }
+        
+        .select-display:active {
+            transform: translateY(0);
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        
+        .select-options {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: white;
+            border: 2px solid #e9ecef;
+            border-top: none;
+            border-radius: 0 0 4px 4px;
+            max-height: 200px;
+            overflow-y: auto;
+            z-index: 9999;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .select-option {
+            padding: 10px 12px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            border-bottom: 1px solid #f3f4f6;
+            font-size: 13px;
+            color: #374151;
+        }
+        
+        .select-option:hover {
+            background-color: #f3f4f6;
+            color: #1f2937;
+        }
+        
+        .select-option:last-child {
+            border-bottom: none;
+        }
+        
+        /* 滚动条样式 */
+        .select-options::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .select-options::-webkit-scrollbar-track {
+            background: #f1f1f1;
+            border-radius: 3px;
+        }
+        
+        .select-options::-webkit-scrollbar-thumb {
+            background: #c1c1c1;
+            border-radius: 3px;
+        }
+        
+        .select-options::-webkit-scrollbar-thumb:hover {
+            background: #a8a8a8;
+        }
+        
+        /* Z-Index 层级系统
+         * 9999: 自定义下拉框选项列表 (最高优先级)
+         * 9998: 控制组容器
+         * 9997: 控制面板 (.controls)
+         * 9996: 缩放控制按钮 (.zoom-controls)
+         * 9995: 详细信息面板 (.detail-panel)
+         * 1000: 图例 (.legend) 和工具提示 (.tooltip)
+         * 100: 地图元素和其他基础组件
+         */
+        
+        /* 确保下拉框在所有元素之上 */
+        .custom-select,
+        .select-display,
+        .select-options,
+        .select-option {
+            position: relative;
+            z-index: 9999 !important;
+        }
+        
+        /* 确保控制面板在正确层级 */
+        .controls {
+            z-index: 9997 !important;
+        }
+        
+        .control-group {
+            z-index: 9998 !important;
+        }
+        
+        /* 确保缩放控制不会遮挡下拉框 */
+        .zoom-controls {
+            z-index: 9996 !important;
+        }
+        
+        /* 确保详细信息面板不会遮挡下拉框 */
+        .detail-panel {
+            z-index: 9995 !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Africa Population Distribution</h1>
+        <div class="controls">
+            <div class="control-group">
+                <label>Grid Size:</label>
+                <select id="gridSize">
+                    <option value="100">100km</option>
+                    <option value="1000">1000km</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Color Mapping:</label>
+                <select id="colorMapping">
+                    <option value="density">Density</option>
+                    <option value="population">Population</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Visualization Mode:</label>
+                <select id="visualizationMode">
+                    <option value="scatter">Scatter Plot</option>
+                    <option value="concentric">Concentric Circles</option>
+                    <option value="rect">Rectangle</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Area Data:</label>
+                <select id="areaData">
+                    <option value="true">Use Real Area</option>
+                    <option value="false">Use Fixed Area</option>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Circle Size:</label>
+                <input type="range" id="circleSize" min="0.1" max="0.6" step="0.1" value="0.2">
+                <span id="circleSizeValue">0.2</span>
+            </div>
+            <div class="control-group">
+                <label>Circle Spacing:</label>
+                <input type="range" id="circleSpacing" min="0.3" max="1.2" step="0.1" value="0.4">
+                <span id="circleSpacingValue">0.4</span>
+            </div>
+            <div class="control-group">
+                <label>Max Circles per Cell:</label>
+                <input type="range" id="maxCircles" min="1" max="256" step="1" value="16">
+                <span id="maxCirclesValue">16</span>
+            </div>
+        </div>
+        <div class="chart-container" id="chart">
+            <!-- 缩放控制按钮 -->
+            <div class="zoom-controls">
+                <button class="zoom-btn" id="zoomInBtn" title="放大">+</button>
+                <button class="zoom-btn" id="zoomOutBtn" title="缩小">−</button>
+                <button class="zoom-btn" id="resetZoomBtn" title="重置缩放">⌂</button>
+            </div>
+            
+            <!-- 缩放信息显示 -->
+            <div class="zoom-info" id="zoomInfo">
+                缩放: 100%
+            </div>
+        </div>
+    </div>
+
+    <!-- 详细信息右侧面板 -->
+    <div class="detail-panel" id="detailPanel">
+        <div class="detail-panel-header">
+            <h2 class="detail-panel-title" id="detailPanelTitle">Cell Details</h2>
+            <button class="detail-panel-close" id="closeDetailPanelBtn">&times;</button>
+        </div>
+        <div class="detail-panel-content">
+            <div class="zoom-view" id="zoomView">
+                <!-- 放大的网格单元将在这里显示 -->
+            </div>
+            <div class="detail-panel-section" id="detailPanelGrid">
+                <!-- 详细信息将通过JavaScript动态填充 -->
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // 动态设置detail panel位置
+        function updateDetailPanelPosition() {
+            const detailPanel = document.getElementById('detailPanel');
+            const header = document.querySelector('h1');
+            const controls = document.querySelector('.controls');
+            
+            if (detailPanel && header && controls) {
+                // 获取header的实际高度（包括margin）
+                const headerRect = header.getBoundingClientRect();
+                const headerBottom = headerRect.bottom;
+                
+                // 获取controls的实际高度（包括border）
+                const controlsRect = controls.getBoundingClientRect();
+                const controlsBottom = controlsRect.bottom;
+                
+                // 使用controls的底部位置作为detail panel的顶部位置
+                detailPanel.style.top = controlsBottom + 'px';
+                detailPanel.style.height = `calc(100vh - ${controlsBottom}px)`;
+            }
+        }
+
+        // 配置参数
+        let currentConfig = {
+            gridSize: '100',
+            useRealArea: true,
+            colorMapping: 'density',
+            circleSize: 0.2,  // 100km默认值
+            circleSpacing: 0.4,  // 100km默认值
+            maxCircles: 16,  // 默认值
+            visualizationMode: 'scatter'  // 新增：可视化模式
+        };
+
+        // 缩放相关变量
+        let currentZoom = d3.zoomIdentity;
+        let zoomLevel = 1;
+        const MIN_ZOOM = 0.5;
+        const MAX_ZOOM = 10;
+
+        // 用户自定义颜色设置
+        let customColorSettings = {
+            population: {
+                thresholds: currentConfig.gridSize === '1000' ? 
+                    [100000, 500000, 1500000, 5000000, 10000000, 30000000] :
+                    [1000, 5000, 15000, 50000, 100000, 300000],
+                colors: ["#F7F7F7", "#E4E2BD", "#D7D394", "#BC8D42", "#A5682F", "#823624", "#501E1D"]
+            },
+            density: {
+                thresholds: [1, 5, 15, 50, 100, 300],
+                colors: ["#F7F7F7", "#E4E2BD", "#D7D394", "#BC8D42", "#A5682F", "#823624", "#501E1D"]
+            }
+        };
+
+        // 动态设置端点值函数
+        function getDynamicEndpoint(gridData, colorMapping) {
+            if (!gridData || gridData.length === 0) return 1000;
+            
+            let maxValue = 0;
+            if (colorMapping === 'population') {
+                maxValue = Math.max(...gridData.map(cell => 
+                    Math.max(cell.urban_population || 0, cell.rural_population || 0)
+                ));
+            } else {
+                // density mapping
+                maxValue = Math.max(...gridData.map(cell => {
+                    const urbanDensity = cell.urban_population && cell.urban_area ? 
+                        cell.urban_population / cell.urban_area : 0;
+                    const ruralDensity = cell.rural_population && cell.rural_area ? 
+                        cell.rural_population / cell.rural_area : 0;
+                    return Math.max(urbanDensity, ruralDensity);
+                }));
+            }
+            
+            // 如果最大值小于等于300，设置一个合理的默认值
+            if (maxValue <= 300) {
+                return colorMapping === 'population' ? 1000000 : 1000;
+            }
+            
+            // 返回一个比最大值稍大的值，确保>300的区间能够显示
+            return Math.ceil(maxValue * 1.2);
+        }
+
+        // 抽象映射策略参数
+        const MAPPING_CONFIG = {
+            maxCircles: 16,  // 默认值，会从currentConfig获取
+            urbanAreaShare: 0.2,
+            ruralAreaShare: 0.8
+        };
+
+        // 响应式函数
+        function getResponsiveDimensions() {
+            const container = document.querySelector('.chart-container');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            
+            // 根据gridSize调整区域大小
+            const sizeMultiplier = currentConfig.gridSize === '100' ? 0.15 : 1;
+            const baseAreaSize = Math.min(width, height) * sizeMultiplier;
+            const areaSize = currentConfig.gridSize === '100' 
+                ? Math.max(4, Math.min(15, baseAreaSize))
+                : Math.max(20, Math.min(65, baseAreaSize));
+            
+            return { width, height, areaSize };
+        }
+
+        // 计算每个网格的圆形数量
+        function calculateCircleCount(population, minPop, maxPop) {
+            if (maxPop === minPop) return 1;
+            
+            const normalizedPop = (population - minPop) / (maxPop - minPop);
+            const rawCount = normalizedPop * MAPPING_CONFIG.maxCircles;
+            const sqrtCount = Math.sqrt(rawCount);
+            const roundedSqrt = Math.floor(sqrtCount);
+            const circleCount = Math.max(1, roundedSqrt * roundedSqrt);
+            
+            return circleCount;
+        }
+
+        // 在固定区域内生成圆形位置
+        function generateCirclePositionsInFixedArea(circleCount, centerX, centerY, areaSize) {
+            const positions = [];
+            const gridSize = Math.ceil(Math.sqrt(circleCount));
+            
+            const circleRadius = (areaSize / gridSize) * currentConfig.circleSize;
+            const spacing = (areaSize / gridSize) * currentConfig.circleSpacing;
+            
+            const allPositions = [];
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    const x = centerX - areaSize/2 + (j + 0.5) * spacing;
+                    const y = centerY - areaSize/2 + (i + 0.5) * spacing;
+                    allPositions.push({ x, y, i, j });
+                }
+            }
+            
+            const centerI = Math.floor(gridSize / 2);
+            const centerJ = Math.floor(gridSize / 2);
+            allPositions.sort((a, b) => {
+                const distA = Math.sqrt((a.i - centerI) ** 2 + (a.j - centerJ) ** 2);
+                const distB = Math.sqrt((b.i - centerI) ** 2 + (b.j - centerJ) ** 2);
+                return distA - distB;
+            });
+            
+            for (let idx = 0; idx < circleCount; idx++) {
+                const pos = allPositions[idx];
+                positions.push({ 
+                    x: pos.x, 
+                    y: pos.y, 
+                    radius: circleRadius, 
+                    spiralIndex: idx 
+                });
+            }
+            
+            return positions;
+        }
+
+        // 计算密度或人口值
+        function calculateValue(cell, isUrban) {
+            if (currentConfig.colorMapping === 'population') {
+                return isUrban ? cell.urban_population : cell.rural_population;
+            } else {
+                // density mapping
+                if (currentConfig.useRealArea) {
+                    const area = isUrban ? cell.urban_area : cell.rural_area;
+                    const population = isUrban ? cell.urban_population : cell.rural_population;
+                    return area > 0 ? population / area : 0;
+                } else {
+                    // 使用固定面积
+                    const totalArea = currentConfig.gridSize === '100' ? 10000 : 1000000;
+                    const population = isUrban ? cell.urban_population : cell.rural_population;
+                    return population / totalArea;
+                }
+            }
+        }
+
+        // 创建颜色比例尺
+        function createColorScale(gridData) {
+            // 使用用户自定义的颜色设置
+            const settings = customColorSettings[currentConfig.colorMapping];
+            
+            // 获取动态端点值
+            const dynamicEndpoint = getDynamicEndpoint(gridData, currentConfig.colorMapping);
+            
+            // 创建扩展的阈值数组，包含动态端点
+            const extendedThresholds = [...settings.thresholds, dynamicEndpoint];
+            
+            // 创建自定义的颜色比例尺，支持区间内部的线性插值
+            const colorScale = function(value) {
+                if (value <= 0) return settings.colors[0];
+                
+                // 找到值所在的区间
+                for (let i = 0; i < extendedThresholds.length; i++) {
+                    if (value <= extendedThresholds[i]) {
+                        if (i === 0) {
+                            // 第一个区间：0 到第一个阈值
+                            const ratio = value / extendedThresholds[i];
+                            return d3.interpolateRgb(settings.colors[0], settings.colors[1])(ratio);
+                        } else {
+                            // 其他区间：在两个阈值之间
+                            const prevThreshold = extendedThresholds[i - 1];
+                            const currThreshold = extendedThresholds[i];
+                            const ratio = (value - prevThreshold) / (currThreshold - prevThreshold);
+                            return d3.interpolateRgb(settings.colors[i], settings.colors[i + 1])(ratio);
+                        }
+                    }
+                }
+                
+                // 超出最大阈值的值
+                return settings.colors[settings.colors.length - 1];
+            };
+            
+            return colorScale;
+        }
+
+        // 创建图例
+        function createLegend(svg, colorScale, maxValue) {
+            const legendWidth = 160; // 减少宽度，保持极简
+            const legendHeight = 280;
+
+            // 移除旧图例
+            svg.selectAll(".legend").remove();
+
+            const legend = svg.append("g")
+                .attr("class", "legend")
+                .attr("transform", `translate(20, 20)`);
+
+            // 添加编码规则说明
+            legend.append("text")
+                .attr("x", 0)
+                .attr("y", 15)
+                .attr("font-size", "10px")
+                .attr("font-weight", "500")
+                .attr("fill", "#495057")
+                .text("Visualization Rules:");
+
+            // 加载并显示可视化模式图例
+            const figureContainer = legend.append("g")
+                .attr("class", "figure-container")
+                .attr("transform", "translate(0, 25)");
+
+            // 根据当前配置选择对应的图例
+            const getFigurePath = () => {
+                const mode = currentConfig.visualizationMode;
+                const size = currentConfig.gridSize;
+                
+                if (mode === 'scatter') {
+                    return size === '100' ? 'figures/scatter_100.svg' : 'figures/scatter_1000.svg';
+                } else if (mode === 'concentric') {
+                    return size === '100' ? 'figures/concentric_100.svg' : 'figures/concentric_1000.svg';
+                } else if (mode === 'rect') {
+                    return size === '100' ? 'figures/rect_100.svg' : 'figures/rect_1000.svg';
+                }
+                return 'figures/scatter_100.svg'; // 默认
+            };
+
+            // 创建图例容器
+            const legendFigure = figureContainer.append("foreignObject")
+                .attr("x", -20)
+                .attr("y", 0)
+                .attr("width", 400)
+                .attr("height", 150);
+
+            // 加载SVG图例
+            const figurePath = getFigurePath();
+            fetch(figurePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(svgContent => {
+                    // 创建临时div来解析SVG
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = svgContent;
+                    const svgElement = tempDiv.querySelector('svg');
+                    
+                    if (svgElement) {
+                        // 调整SVG大小和样式
+                        svgElement.style.width = '100%';
+                        svgElement.style.height = 'auto';
+                        svgElement.style.maxHeight = '120px';
+                        
+                        // 将SVG内容插入到foreignObject中
+                        legendFigure.node().appendChild(svgElement);
+                    } else {
+                        throw new Error('SVG element not found in response');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading figure:', error);
+                    // 如果加载失败，显示备用文本
+                    figureContainer.append("text")
+                        .attr("x", 0)
+                        .attr("y", 35)
+                        .attr("font-size", "9px")
+                        .attr("fill", "#666")
+                        .text("• Visualization mode: " + currentConfig.visualizationMode);
+                });
+
+            // 使用自定义颜色设置生成segments
+            const settings = customColorSettings[currentConfig.colorMapping];
+            const thresholds = settings.thresholds;
+            const colors = settings.colors;
+            
+            // 获取动态端点值
+            const dynamicEndpoint = getDynamicEndpoint(window.gridData || [], currentConfig.colorMapping);
+            
+            // 重新设计：把0当作第一个阈值，作为第一个区间的端点，并添加动态端点
+            const allThresholds = [0, ...thresholds, dynamicEndpoint]; // 0 + 原有阈值 + 动态端点
+            const allColors = [...colors]; // 保持原有颜色数组
+            
+            // 使用全局变量存储segments
+            window.currentSegments = [];
+            let title = currentConfig.colorMapping === 'population' ? 'Population' : 'Population/km²';
+            
+            // 生成segments - 现在0是第一个区间的端点
+            for (let i = 0; i < allThresholds.length - 1; i++) {
+                if (i === allThresholds.length - 2) {
+                    // 最后一个区间：大于最后一个阈值（保留>300的区间）
+                    const lastThreshold = allThresholds[allThresholds.length - 1];
+                    if (lastThreshold === 300) {
+                    window.currentSegments.push({ 
+                            label: `>300`, 
+                        color: allColors[i + 1] 
+                    });
+                    } else {
+                        window.currentSegments.push({ 
+                            label: `>${lastThreshold}`, 
+                            color: allColors[i + 1] 
+                        });
+                    }
+                } else {
+                    // 其他区间：在两个阈值之间
+                    window.currentSegments.push({ 
+                        label: `${allThresholds[i]}-${allThresholds[i + 1]}`, 
+                        color: allColors[i + 1] 
+                    });
+                }
+            }
+
+            legend.append("text")
+                .attr("x", 0)
+                .attr("y", 200)
+                .attr("font-size", "9px")
+                .attr("font-weight", "500")
+                .attr("fill", "#495057")
+                .text(title + " Scale:");
+
+            // 创建连续颜色滑动条编辑器
+            const colorEditor = legend.append("g")
+                .attr("class", "color-editor");
+            
+            // 滑动条的基本设置（竖着的）
+            const sliderWidth = 16;
+            const sliderHeight = 400;
+            const sliderY = 220;
+            const sliderX = 0;
+            
+            // 创建滑动条背景
+            const sliderBackground = colorEditor.append("rect")
+                .attr("x", sliderX)
+                .attr("y", sliderY)
+                .attr("width", sliderWidth)
+                .attr("height", sliderHeight)
+                .attr("fill", "#f8f9fa")
+                .attr("stroke", "#e9ecef")
+                .attr("stroke-width", 1)
+                .attr("rx", 2);
+            
+            // 创建渐变背景（竖着的）
+            const gradient = colorEditor.append("defs")
+                .append("linearGradient")
+                .attr("id", "colorGradient")
+                .attr("x1", "0%")
+                .attr("y1", "100%")
+                .attr("x2", "0%")
+                .attr("y2", "0%");
+            
+            // 添加渐变停止点
+            colors.forEach((color, i) => {
+                const offset = (i / (colors.length - 1)) * 100;
+                gradient.append("stop")
+                    .attr("offset", offset + "%")
+                    .attr("stop-color", color);
+            });
+            
+            // 创建渐变滑动条
+            const gradientSlider = colorEditor.append("rect")
+                .attr("x", sliderX + 1)
+                .attr("y", sliderY + 1)
+                .attr("width", sliderWidth - 2)
+                .attr("height", sliderHeight - 2)
+                .attr("fill", "url(#colorGradient)")
+                .attr("rx", 1);
+            
+            // 移除额外的端点修改颜色按钮，只保留滑动条和阈值标记点
+            
+            // 创建阈值标记点
+            const thresholdMarkers = colorEditor.append("g")
+                .attr("class", "threshold-markers");
+            
+            // 删除原来的起始点标记，因为0现在是一个真正的阈值了
+            
+            // 为每个阈值创建标记点（包括0）
+            allThresholds.forEach((threshold, i) => {
+                // 根据颜色在滑动条上的位置来定位标记点
+                // 现在0是第一个阈值，位置在底部
+                const colorPosition = i / (allThresholds.length - 1); // 0到1之间的位置
+                const y = sliderY + sliderHeight - colorPosition * sliderHeight;
+                
+                // 创建标记点
+                const marker = thresholdMarkers.append("circle")
+                    .attr("cx", sliderX + sliderWidth / 2)
+                    .attr("cy", y)
+                    .attr("r", 4)
+                    .attr("fill", allColors[i]) // 使用对应的颜色填充标记点
+                    .attr("stroke", "#6c757d")
+                    .attr("stroke-width", 1)
+                    .style("cursor", "pointer")
+                    .attr("data-threshold-index", i);
+                
+                // 添加删除按钮（除了第一个、最后一个和动态端点）
+                if (i > 0 && i < allThresholds.length - 2) {
+                    const deleteBtn = thresholdMarkers.append("text")
+                        .attr("x", sliderX + sliderWidth / 2 + 8)
+                        .attr("y", y - 8)
+                        .attr("font-size", "10px")
+                        .attr("fill", "#adb5bd")
+                        .style("cursor", "pointer")
+                        .text("×")
+                        .on("click", function() {
+                            // 删除阈值（需要调整索引，因为allThresholds包含了0和动态端点）
+                            const thresholdIndex = i - 1; // 减去0的索引
+                            if (thresholdIndex >= 0 && thresholdIndex < thresholds.length) {
+                                // 保存0的颜色，确保它不会被删除
+                                const zeroColor = colors[0];
+                                
+                                thresholds.splice(thresholdIndex, 1);
+                                colors.splice(thresholdIndex, 1);
+                                
+                                // 确保0的颜色保持不变
+                                if (colors[0] !== zeroColor) {
+                                    colors[0] = zeroColor;
+                                }
+                                
+                            updateLegendFigure();
+                            updateColorScale();
+                            }
+                        });
+                }
+                
+                // 添加阈值标签
+                const label = thresholdMarkers.append("text")
+                    .attr("x", sliderX + sliderWidth + 15)
+                    .attr("y", y)
+                    .attr("text-anchor", "start")
+                    .attr("font-size", "9px")
+                    .attr("fill", "#495057")
+                    .style("cursor", i === allThresholds.length - 1 ? "default" : "pointer")
+                    .text(threshold)
+                    .on("click", function() {
+                        // 动态端点不能被编辑数值，但可以编辑颜色
+                        if (i === allThresholds.length - 1) return;
+                        
+                        // 编辑阈值
+                        const input = document.createElement("input");
+                        input.type = "number";
+                        input.value = threshold;
+                        input.style.position = "absolute";
+                        input.style.left = (event.pageX - 10) + "px";
+                        input.style.top = (event.pageY - 10) + "px";
+                        input.style.width = "60px";
+                        input.style.fontSize = "10px";
+                        input.style.zIndex = "10000";
+                        
+                        input.addEventListener("change", function() {
+                            const newValue = parseInt(this.value);
+                            if (newValue > 0) {
+                                // 需要调整索引，因为allThresholds包含了0和动态端点
+                                const thresholdIndex = i - 1; // 减去0的索引
+                                if (thresholdIndex >= 0 && thresholdIndex < thresholds.length) {
+                                    // 保存0的颜色，确保它不会被改变
+                                    const zeroColor = colors[0];
+                                    
+                                    thresholds[thresholdIndex] = newValue;
+                                // 重新排序阈值
+                                thresholds.sort((a, b) => a - b);
+                                    
+                                    // 确保0的颜色保持不变
+                                    if (colors[0] !== zeroColor) {
+                                        colors[0] = zeroColor;
+                                    }
+                                    
+                                updateLegendFigure();
+                                updateColorScale();
+                                }
+                            }
+                            // 安全地移除输入框
+                            if (document.body.contains(this)) {
+                                document.body.removeChild(this);
+                            }
+                        });
+                        
+                        input.addEventListener("blur", function() {
+                            // 延迟移除，避免与change事件冲突
+                            setTimeout(() => {
+                                if (document.body.contains(this)) {
+                                    document.body.removeChild(this);
+                                }
+                            }, 100);
+                        });
+                        
+                        document.body.appendChild(input);
+                        input.focus();
+                        input.select();
+                    });
+                
+                // 添加颜色选择按钮（每个标记点都可以手动选择颜色，包括动态端点）
+                const colorBtn = thresholdMarkers.append("text")
+                    .attr("x", sliderX + sliderWidth / 2 + 8)
+                    .attr("y", y + 8)
+                    .attr("font-size", "10px")
+                    .attr("fill", "#6f42c1")
+                    .style("cursor", "pointer")
+                    .text("🎨")
+                    .on("click", function(event) {
+                        // 创建颜色选择器
+                        const colorInput = document.createElement("input");
+                        colorInput.type = "color";
+                        colorInput.value = colors[i];
+                        colorInput.style.position = "absolute";
+                        colorInput.style.left = (event.pageX - 10) + "px";
+                        colorInput.style.top = (event.pageY - 10) + "px";
+                        colorInput.style.zIndex = "10000";
+                        
+                        colorInput.addEventListener("change", function() {
+                            // 更新颜色
+                            colors[i] = this.value;
+                            
+                            // 更新标记点颜色
+                            marker.attr("fill", colors[i]);
+                            
+                            // 更新渐变背景
+                            updateGradientBackground();
+                            
+                            // 更新颜色比例尺和地图
+                            updateColorScale();
+                            
+                            // 安全地移除输入框
+                            if (document.body.contains(this)) {
+                                document.body.removeChild(this);
+                            }
+                        });
+                        
+                        colorInput.addEventListener("blur", function() {
+                            // 延迟移除，避免与change事件冲突
+                            setTimeout(() => {
+                                if (document.body.contains(this)) {
+                                    document.body.removeChild(this);
+                                }
+                            }, 100);
+                        });
+                        
+                        document.body.appendChild(colorInput);
+                        colorInput.focus();
+                        colorInput.click();
+                    });
+                
+                // 添加拖拽功能 - 修改为调整颜色而不是位置（动态端点不能被拖拽）
+                if (i < allThresholds.length - 1) { // 动态端点不能拖拽
+                marker.call(d3.drag()
+                    .on("drag", function(event) {
+                        // 计算拖拽位置对应的颜色
+                        const dragY = Math.max(sliderY, Math.min(sliderY + sliderHeight, event.y));
+                        const colorIndex = (sliderY + sliderHeight - dragY) / sliderHeight;
+                        
+                        // 根据拖拽位置在滑动条上的颜色位置来生成新颜色
+                        // 这里我们根据滑动条上的实际颜色分布来插值
+                        if (i === 0) {
+                            // 第一个颜色：从滑动条底部到第一个阈值位置的颜色插值
+                            const newColor = d3.interpolateRgb(colors[0], colors[1])(colorIndex);
+                            colors[i] = newColor;
+                        } else if (i === colors.length - 1) {
+                            // 最后一个颜色：从倒数第二个颜色到滑动条顶部的颜色插值
+                            const newColor = d3.interpolateRgb(colors[colors.length - 2], colors[colors.length - 1])(colorIndex);
+                            colors[i] = newColor;
+                        } else {
+                            // 中间颜色：根据在滑动条上的位置，在相邻两个颜色之间插值
+                            const prevColor = colors[i - 1];
+                            const nextColor = colors[i + 1];
+                            const newColor = d3.interpolateRgb(prevColor, nextColor)(colorIndex);
+                            colors[i] = newColor;
+                        }
+                        
+                        // 更新标记点颜色
+                        marker.attr("fill", colors[i]);
+                        
+                        // 更新渐变背景
+                        updateGradientBackground();
+                        
+                        // 更新颜色比例尺和地图
+                        updateColorScale();
+                    }));
+                }
+            });
+            
+            // 添加"添加阈值"按钮
+            const addButton = colorEditor.append("g")
+                .style("cursor", "pointer")
+                .on("click", function() {
+                    // 获取动态端点值
+                    const dynamicEndpoint = getDynamicEndpoint(window.gridData || [], currentConfig.colorMapping);
+                    
+                    // 计算新阈值位置（在中间位置，但不能超过动态端点）
+                    const maxThreshold = Math.max(...thresholds);
+                    const midPoint = Math.round(maxThreshold / 2);
+                    let newThreshold = midPoint;
+                    
+                    // 确保新阈值不超过动态端点
+                    if (newThreshold >= dynamicEndpoint) {
+                        newThreshold = Math.round(dynamicEndpoint * 0.8);
+                    }
+                    
+                    // 先排序阈值，找到正确的插入位置
+                    const sortedThresholds = [...thresholds, newThreshold].sort((a, b) => a - b);
+                    const insertIndex = sortedThresholds.indexOf(newThreshold);
+                    
+                    // 为新阈值生成颜色：在两个相邻颜色之间插值
+                    let newColor;
+                    if (insertIndex === 0) {
+                        // 如果是最小的阈值，使用第一个颜色
+                        newColor = colors[0];
+                    } else if (insertIndex === sortedThresholds.length - 1) {
+                        // 如果是最大的阈值，使用最后一个颜色
+                        newColor = colors[colors.length - 1];
+                    } else {
+                        // 在中间位置，在两个相邻颜色之间插值
+                        const prevThreshold = sortedThresholds[insertIndex - 1];
+                        const nextThreshold = sortedThresholds[insertIndex + 1];
+                        const prevThresholdIndex = thresholds.indexOf(prevThreshold);
+                        const nextThresholdIndex = thresholds.indexOf(nextThreshold);
+                        
+                        if (prevThresholdIndex >= 0 && nextThresholdIndex >= 0) {
+                            const prevColor = colors[prevThresholdIndex];
+                            const nextColor = colors[nextThresholdIndex];
+                            newColor = d3.interpolateRgb(prevColor, nextColor)(0.5);
+                        } else {
+                            // 如果找不到对应的颜色，使用默认颜色
+                            newColor = colors[Math.floor(colors.length / 2)];
+                        }
+                    }
+                    
+                    // 保存0的颜色，确保它不会被改变
+                    const zeroColor = colors[0];
+                    
+                    // 在正确的位置插入新阈值和颜色
+                    thresholds.splice(insertIndex, 0, newThreshold);
+                    colors.splice(insertIndex, 0, newColor);
+                    
+                    // 确保0的颜色保持不变
+                    if (colors[0] !== zeroColor) {
+                        colors[0] = zeroColor;
+                    }
+                    
+                    // 重新创建图例和更新颜色比例尺
+                    updateLegendFigure();
+                    updateColorScale();
+                });
+            
+            addButton.append("circle")
+                .attr("cx", sliderX + sliderWidth / 2)
+                .attr("cy", sliderY + sliderHeight + 25)
+                .attr("r", 6)
+                .attr("fill", "#222")
+                .attr("stroke", "#495057")
+                .attr("stroke-width", 1);
+            
+            addButton.append("text")
+                .attr("x", sliderX + sliderWidth / 2)
+                .attr("y", sliderY + sliderHeight + 28)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "10px")
+                .attr("fill", "white")
+                .text("+");
+            
+            // addButton.append("text")
+            //     .attr("x", sliderX + sliderWidth / 2)
+            //     .attr("y", sliderY + sliderHeight + 38)
+            //     .attr("text-anchor", "middle")
+            //     .attr("font-size", "8px")
+            //     .attr("fill", "#6c757d")
+            //     .text("Add");
+            
+            // 删除额外的颜色编辑按钮，只在滑动条两端添加颜色选择器
+            
+            // 添加更新渐变背景的函数
+            function updateGradientBackground() {
+                // 清除旧的渐变定义
+                d3.select("#colorGradient").remove();
+                
+                // 创建新的渐变定义
+                const newGradient = colorEditor.append("defs")
+                    .append("linearGradient")
+                    .attr("id", "colorGradient")
+                    .attr("x1", "0%")
+                    .attr("y1", "100%")
+                    .attr("x2", "0%")
+                    .attr("y2", "0%");
+                
+                // 添加渐变停止点
+                colors.forEach((color, i) => {
+                    const offset = (i / (colors.length - 1)) * 100;
+                    newGradient.append("stop")
+                        .attr("offset", offset + "%")
+                        .attr("stop-color", color);
+                });
+                
+                // 更新渐变滑动条
+                gradientSlider.attr("fill", "url(#colorGradient)");
+            }
+                }
+        
+        // 更新颜色比例尺并重新渲染地图
+        function updateColorScale() {
+            // 重新生成颜色比例尺
+            const colorScale = createColorScale(window.gridData || []);
+            
+            // 更新所有圆形的颜色
+            d3.selectAll(".cell-clickable circle").each(function() {
+                const circle = d3.select(this);
+                const cellGroup = d3.select(this.parentNode);
+                const cellId = cellGroup.attr("data-cell-id");
+                
+                // 找到对应的cell数据
+                const cell = (window.gridData || []).find(d => `${d.longitude}-${d.latitude}` === cellId);
+                if (cell) {
+                    // 从cellGroup中获取urbanCircles信息
+                    const cellData = cellGroup.datum();
+                    const urbanCircles = cellData ? cellData.urbanCircles : 0;
+                    const isUrban = circle.datum() ? circle.datum().spiralIndex < urbanCircles : false;
+                    const value = calculateValue(cell, isUrban);
+                    const safeValue = isFinite(value) && value >= 0 ? value : 0;
+                    circle.attr("fill", colorScale(safeValue));
+                }
+            });
+            
+            // 重新创建图例
+            const svg = d3.select("#chart svg");
+            const maxValue = Math.max(...(window.gridData || []).map(d => Math.max(calculateValue(d, true), calculateValue(d, false))));
+            createLegend(svg, colorScale, maxValue);
+            
+            // 强制重新渲染
+            console.log("Color scale updated:", customColorSettings[currentConfig.colorMapping]);
+        }
+        
+        // 创建同心圆放大视图
+        function createConcentricZoomView(svg, cell, colorScale, width, height) {
+            const centerX = width / 2;
+            const centerY = height / 2;
+            
+            // 计算同心圆的大小
+            const areaSize = Math.min(width, height) * 0.6;
+            const radius = currentConfig.gridSize === '100' ? areaSize * 0.5 : areaSize * 0.5;
+            
+            // 计算urban area占比（用于内圆大小）
+            const totalArea = cell.urban_area + cell.rural_area;
+            const urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+            const innerRadius = radius * Math.sqrt(urbanAreaRatio); // 内圆半径
+            
+            // 绘制外圆（代表rural人口）
+            const ruralValue = calculateValue(cell, false);
+            const safeRuralValue = isFinite(ruralValue) && ruralValue >= 0 ? ruralValue : 0;
+            
+            svg.append("circle")
+                .attr("cx", centerX)
+                .attr("cy", centerY)
+                .attr("r", radius)
+                .attr("fill", colorScale(safeRuralValue))
+                .attr("opacity", 0.8);
+            
+            // 绘制内圆（代表urban人口）
+            if (urbanAreaRatio > 0) {
+                const urbanValue = calculateValue(cell, true);
+                const safeUrbanValue = isFinite(urbanValue) && urbanValue >= 0 ? urbanValue : 0;
+                
+                svg.append("circle")
+                    .attr("cx", centerX)
+                    .attr("cy", centerY)
+                    .attr("r", innerRadius)
+                    .attr("fill", colorScale(safeUrbanValue))
+                    .attr("opacity", 0.9);
+            }
+            
+            // 添加标题
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", 20)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "14px")
+                .attr("font-weight", "bold")
+                .attr("fill", "#333")
+                .text("Zoomed Cell View");
+        }
+
+        // 创建矩形放大视图
+        function createRectZoomView(svg, cell, colorScale, width, height) {
+            const centerX = width / 2;
+            const centerY = height / 2;
+            
+            // 计算矩形的大小
+            const areaSize = Math.min(width, height) * 0.6;
+            const rectSize = currentConfig.gridSize === '100' ? 
+                areaSize * 1 : areaSize * 1;
+            
+            // 计算urban area占比（用于内矩形大小）
+            const totalArea = cell.urban_area + cell.rural_area;
+            const urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+            const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // 内矩形大小
+            
+            // 绘制外矩形（代表rural人口）
+            const ruralValue = calculateValue(cell, false);
+            const safeRuralValue = isFinite(ruralValue) && ruralValue >= 0 ? ruralValue : 0;
+            
+            svg.append("rect")
+                .attr("x", centerX - rectSize/2)
+                .attr("y", centerY - rectSize/2)
+                .attr("width", rectSize)
+                .attr("height", rectSize)
+                .attr("fill", colorScale(safeRuralValue))
+                .attr("opacity", 0.8);
+            
+            // 绘制内矩形（代表urban人口）
+            if (urbanAreaRatio > 0) {
+                const urbanValue = calculateValue(cell, true);
+                const safeUrbanValue = isFinite(urbanValue) && urbanValue >= 0 ? urbanValue : 0;
+                
+                svg.append("rect")
+                    .attr("x", centerX - innerRectSize/2)
+                    .attr("y", centerY - innerRectSize/2)
+                    .attr("width", innerRectSize)
+                    .attr("height", innerRectSize)
+                    .attr("fill", colorScale(safeUrbanValue))
+                    .attr("opacity", 0.9);
+            }
+            
+            // 添加标题
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", 20)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "14px")
+                .attr("font-weight", "bold")
+                .attr("fill", "#333")
+                .text("Zoomed Cell View");
+        }
+        
+        // 创建放大视图
+        function createZoomView(container, cell, circleCount, urbanCircles, ruralCircles) {
+            // 清除现有内容
+            container.innerHTML = '';
+            
+            const width = container.clientWidth || 350;
+            const height = 180;
+            
+            const svg = d3.select(container)
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+            
+            // 创建颜色比例尺
+            const colorScale = createColorScale([cell]);
+            
+            // 根据可视化模式选择绘制方法
+            if (currentConfig.visualizationMode === 'concentric') {
+                // 同心圆模式
+                createConcentricZoomView(svg, cell, colorScale, width, height);
+            } else if (currentConfig.visualizationMode === 'rect') {
+                // 矩形模式
+                createRectZoomView(svg, cell, colorScale, width, height);
+            } else {
+                // 散点图模式（原有逻辑）
+            
+            // 计算圆形位置 - 使用与主视图相同的参数但等比例放大
+            const centerX = width / 2;
+            const centerY = height / 2;
+            // 根据网格大小调整放大倍数
+            const zoomFactor = currentConfig.gridSize === '1000' ? 1 : 2.5;
+            const areaSize = Math.min(width, height) * 0.6;
+            
+            // 使用与主视图相同的生成函数，但调整参数
+            const gridSize = Math.ceil(Math.sqrt(circleCount));
+            const circleRadius = (areaSize / gridSize) * currentConfig.circleSize * zoomFactor;
+            const spacing = (areaSize / gridSize) * currentConfig.circleSpacing * zoomFactor;
+            
+            const allPositions = [];
+            for (let i = 0; i < gridSize; i++) {
+                for (let j = 0; j < gridSize; j++) {
+                    const x = centerX - areaSize/2 + (j + 0.5) * spacing;
+                    const y = centerY - areaSize/2 + (i + 0.5) * spacing;
+                    allPositions.push({ x, y, i, j });
+                }
+            }
+            
+            const centerI = Math.floor(gridSize / 2);
+            const centerJ = Math.floor(gridSize / 2);
+            allPositions.sort((a, b) => {
+                const distA = Math.sqrt((a.i - centerI) ** 2 + (a.j - centerJ) ** 2);
+                const distB = Math.sqrt((b.i - centerI) ** 2 + (b.j - centerJ) ** 2);
+                return distA - distB;
+            });
+            
+            // 绘制圆形
+            for (let idx = 0; idx < circleCount; idx++) {
+                const pos = allPositions[idx];
+                const isUrban = idx < urbanCircles;
+                const value = calculateValue(cell, isUrban);
+                const safeValue = isFinite(value) && value >= 0 ? value : 0;
+                
+                svg.append("circle")
+                    .attr("cx", pos.x)
+                    .attr("cy", pos.y)
+                    .attr("r", circleRadius)
+                    .attr("fill", colorScale(safeValue))
+                    .attr("opacity", 0.9);
+            }
+            
+            // 添加标题
+            svg.append("text")
+                .attr("x", width / 2)
+                .attr("y", 20)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "14px")
+                .attr("font-weight", "bold")
+                .attr("fill", "#333")
+                .text("Zoomed Cell View");
+            }
+        }
+        
+        // 显示详细信息面板
+        function showDetailPanel(cell, circleCount, urbanCircles, ruralCircles) {
+            const panel = document.getElementById('detailPanel');
+            const title = document.getElementById('detailPanelTitle');
+            const grid = document.getElementById('detailPanelGrid');
+            const chartContainer = document.getElementById('detailPanelChartContainer');
+            const zoomView = document.getElementById('zoomView');
+            
+            // 设置标题
+            title.textContent = `Cell Details`;
+            
+            // 计算值
+            const urbanValue = calculateValue(cell, true);
+            const ruralValue = calculateValue(cell, false);
+            const valueUnit = currentConfig.colorMapping === 'population' ? '' : '/km²';
+            
+            // 创建放大视图
+            createZoomView(zoomView, cell, circleCount, urbanCircles, ruralCircles);
+            
+            // 填充详细信息
+            grid.innerHTML = `
+                <div class="detail-panel-section">
+                    <h3>Geographic Information</h3>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Longitude:</span>
+                        <span class="detail-panel-value">${cell.longitude.toFixed(4)}°</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Latitude:</span>
+                        <span class="detail-panel-value">${cell.latitude.toFixed(4)}°</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Grid Size:</span>
+                        <span class="detail-panel-value">${currentConfig.gridSize}km</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Total Circles:</span>
+                        <span class="detail-panel-value">${circleCount}</span>
+                    </div>
+                </div>
+                
+                <div class="detail-panel-section">
+                    <h3>Population Data</h3>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Total Population:</span>
+                        <span class="detail-panel-value">${Math.round(cell.total_population).toLocaleString()}</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Urban Population:</span>
+                        <span class="detail-panel-value">${Math.round(cell.urban_population).toLocaleString()}</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Rural Population:</span>
+                        <span class="detail-panel-value">${Math.round(cell.rural_population).toLocaleString()}</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Urban Share:</span>
+                        <span class="detail-panel-value">${((cell.urban_population / cell.total_population) * 100).toFixed(1)}%</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Urban Density:</span>
+                        <span class="detail-panel-value">${cell.urban_area > 0 ? (cell.urban_population / cell.urban_area).toFixed(0) : '0'} /km²</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Rural Density:</span>
+                        <span class="detail-panel-value">${cell.rural_area > 0 ? (cell.rural_population / cell.rural_area).toFixed(0) : '0'} /km²</span>
+                    </div>
+                    
+                    <div class="detail-panel-chart">
+                        <h4>Population Distribution</h4>
+                        <div id="detailPanelChartContainer"></div>
+                    </div>
+                </div>
+                
+                <div class="detail-panel-section">
+                    <h3>Area Information</h3>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Urban Area:</span>
+                        <span class="detail-panel-value">${cell.urban_area.toFixed(1)} km²</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Rural Area:</span>
+                        <span class="detail-panel-value">${cell.rural_area.toFixed(1)} km²</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Total Area:</span>
+                        <span class="detail-panel-value">${(cell.urban_area + cell.rural_area).toFixed(1)} km²</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Urban Area Share:</span>
+                        <span class="detail-panel-value">${((cell.urban_area / (cell.urban_area + cell.rural_area)) * 100).toFixed(1)}%</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Urban Circles:</span>
+                        <span class="detail-panel-value">${urbanCircles}</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Rural Circles:</span>
+                        <span class="detail-panel-value">${ruralCircles}</span>
+                    </div>
+                    
+                    <div class="detail-panel-chart">
+                        <h4>Area Distribution</h4>
+                        <div id="detailPanelAreaChartContainer"></div>
+                    </div>
+                </div>
+                
+                <div class="detail-panel-section">
+                    <h3>Visualization Settings</h3>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Circle Size:</span>
+                        <span class="detail-panel-value">${currentConfig.circleSize}</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Circle Spacing:</span>
+                        <span class="detail-panel-value">${currentConfig.circleSpacing}</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Max Circles:</span>
+                        <span class="detail-panel-value">${currentConfig.maxCircles}</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Area Data:</span>
+                        <span class="detail-panel-value">${currentConfig.useRealArea ? 'Real Area' : 'Fixed Area'}</span>
+                    </div>
+                </div>
+            `;
+            
+            // 创建人口分布图表
+            const colorScale = createColorScale([cell]);
+            createDetailChart(document.getElementById('detailPanelChartContainer'), cell, urbanCircles, ruralCircles, colorScale);
+            
+            // 创建面积分布图表
+            createAreaChart(document.getElementById('detailPanelAreaChartContainer'), cell, colorScale);
+            
+            // 显示面板
+            panel.style.display = 'flex';
+            setTimeout(() => {
+                panel.classList.add('show');
+            }, 10);
+        }
+        
+        // 创建详细信息图表
+        function createDetailChart(container, cell, urbanCircles, ruralCircles, colorScale) {
+            // 清除现有内容
+            container.innerHTML = '';
+            
+            const width = container.clientWidth || 400;
+            const height = 200;
+            
+            const svg = d3.select(container)
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+            
+            // 数据 - 使用实际人口数据，不受圆形设置影响，并四舍五入为整数，使用当前Cell的颜色分配
+            const data = [
+                { name: 'Urban', value: Math.round(cell.urban_population), color: colorScale(calculateValue(cell, true)) },
+                { name: 'Rural', value: Math.round(cell.rural_population), color: colorScale(calculateValue(cell, false)) }
+            ];
+            
+            // 比例尺
+            const x = d3.scaleBand()
+                .domain(data.map(d => d.name))
+                .range([0, width])
+                .padding(0.1);
+            
+            const y = d3.scaleLinear()
+                .domain([0, Math.max(data[0].value, data[1].value)])
+                .range([height - 40, 40]);
+            
+            // 绘制柱状图
+            svg.selectAll("rect")
+                .data(data)
+                .enter()
+                .append("rect")
+                .attr("x", d => x(d.name))
+                .attr("y", d => y(d.value))
+                .attr("width", x.bandwidth())
+                .attr("height", d => height - 40 - y(d.value))
+                .attr("fill", d => d.color)
+                .attr("opacity", 0.8);
+            
+            // 添加数值标签
+            svg.selectAll("text")
+                .data(data)
+                .enter()
+                .append("text")
+                .attr("x", d => x(d.name) + x.bandwidth() / 2)
+                .attr("y", d => y(d.value) - 5)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "12px")
+                .attr("fill", "#333")
+                .text(d => `${d.value.toLocaleString()}`);
+            
+            // 添加x轴标签
+            svg.selectAll(".x-label")
+                .data(data)
+                .enter()
+                .append("text")
+                .attr("class", "x-label")
+                .attr("x", d => x(d.name) + x.bandwidth() / 2)
+                .attr("y", height - 5)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "12px")
+                .attr("fill", "#333")
+                .text(d => d.name);
+            
+            // // 添加标题
+            // svg.append("text")
+            //     .attr("x", width / 2)
+            //     .attr("y", 20)
+            //     .attr("text-anchor", "middle")
+            //     .attr("font-size", "14px")
+            //     .attr("font-weight", "bold")
+            //     .text("Population Distribution");
+        }
+        
+        // 创建面积分布pie chart
+        function createAreaChart(container, cell, colorScale) {
+            // 清除现有内容
+            container.innerHTML = '';
+            
+            const width = container.clientWidth || 400;
+            const height = 200;
+            
+            const svg = d3.select(container)
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height);
+            
+            // 数据 - 面积数据四舍五入为整数，使用当前Cell的颜色分配
+            const data = [
+                { name: 'Urban Area', value: Math.round(cell.urban_area), color: colorScale(calculateValue(cell, true)) },
+                { name: 'Rural Area', value: Math.round(cell.rural_area), color: colorScale(calculateValue(cell, false)) }
+            ].filter(d => d.value > 0); // 只显示有面积的区域
+            
+            if (data.length === 0) {
+                svg.append("text")
+                    .attr("x", width / 2)
+                    .attr("y", height / 2)
+                    .attr("text-anchor", "middle")
+                    .attr("font-size", "14px")
+                    .attr("fill", "#666")
+                    .text("No area data available");
+                return;
+            }
+            
+            // 创建pie chart
+            const radius = Math.min(width, height) / 3;
+            const centerX = width / 2;
+            const centerY = height / 2;
+            
+            const pie = d3.pie()
+                .value(d => d.value)
+                .sort(null);
+            
+            const arc = d3.arc()
+                .innerRadius(0)
+                .outerRadius(radius);
+            
+            // 绘制pie slices
+            const pieGroup = svg.append("g")
+                .attr("transform", `translate(${centerX}, ${centerY})`);
+            
+            pieGroup.selectAll("path")
+                .data(pie(data))
+                .enter()
+                .append("path")
+                .attr("d", arc)
+                .attr("fill", d => d.data.color)
+                .attr("opacity", 0.8)
+                .attr("stroke", "#fff")
+                .attr("stroke-width", 2);
+            
+            // 添加标签
+            pieGroup.selectAll("text")
+                .data(pie(data))
+                .enter()
+                .append("text")
+                .attr("transform", d => `translate(${arc.centroid(d)})`)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "12px")
+                .attr("fill", "#fff")
+                .attr("font-weight", "bold")
+                .text(d => `${((d.data.value / (Math.round(cell.urban_area) + Math.round(cell.rural_area))) * 100).toFixed(1)}%`);
+            
+            // 添加图例
+            const legend = svg.append("g")
+                .attr("transform", `translate(${width - 100}, 20)`);
+            
+            data.forEach((d, i) => {
+                const legendItem = legend.append("g")
+                    .attr("transform", `translate(0, ${i * 20})`);
+                
+                legendItem.append("rect")
+                    .attr("width", 12)
+                    .attr("height", 12)
+                    .attr("fill", d.color);
+                
+                legendItem.append("text")
+                    .attr("x", 18)
+                    .attr("y", 9)
+                    .attr("font-size", "11px")
+                    .text(d.name);
+            });
+        }
+        
+        // 关闭详细信息面板
+        function closeDetailPanel() {
+            const panel = document.getElementById('detailPanel');
+            
+            // 清除选中状态
+            d3.selectAll(".cell-clickable").classed("selected", false);
+            
+            panel.classList.remove('show');
+            setTimeout(() => {
+                panel.style.display = 'none';
+            }, 300);
+        }
+        
+        // 初始化图表
+        function initChart() {
+            const { width, height, areaSize } = getResponsiveDimensions();
+            
+            // 使用currentConfig中的maxCircles
+            MAPPING_CONFIG.maxCircles = currentConfig.maxCircles;
+            
+            // 清除现有内容
+            d3.select("#chart").selectAll("*").remove();
+
+            const svg = d3.select("#chart")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .attr("viewBox", `0 0 ${width} ${height}`)
+                .attr("preserveAspectRatio", "xMidYMid meet");
+
+            // 创建缩放行为
+            const zoom = d3.zoom()
+                .scaleExtent([MIN_ZOOM, MAX_ZOOM])
+                .on("zoom", function(event) {
+                    currentZoom = event.transform;
+                    zoomLevel = event.transform.k;
+                    
+                    // 应用缩放变换到地图组
+                    svg.select(".map-group").attr("transform", event.transform);
+                    
+                    // 延迟更新缩放信息，避免在初始化时出错
+                    setTimeout(() => {
+                        updateZoomInfo();
+                    }, 0);
+                })
+                .on("end", function(event) {
+                    // 双击重置缩放
+                    if (event.sourceEvent && event.sourceEvent.type === "dblclick") {
+                        resetZoom();
+                    }
+                });
+
+            // 应用缩放行为到SVG
+            svg.call(zoom);
+
+            const tooltip = d3.select(".chart-container")
+                .append("div")
+                .attr("class", "tooltip");
+
+            // 响应式投影
+            const projection = d3.geoMercator()
+                .center([10, -15])
+                .scale(Math.min(width, height) / 1.5)
+                .translate([width / 2, height / 2]);
+
+            const path = d3.geoPath().projection(projection);
+
+            // 创建地图组
+            const mapGroup = svg.append("g")
+                .attr("class", "map-group");
+
+            // 加载数据
+            const dataFile = currentConfig.gridSize === '100' 
+                ? "aggregated_100km_africa.json" 
+                : "aggregated_1000km_africa.json";
+
+            Promise.all([
+                d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
+                d3.json(dataFile)
+            ]).then(([geojson, data]) => {
+                const gridData = Object.values(data.grid_data)
+                    .map(d => {
+                        const rawLon = d.geographic_location.longitude;
+                        const rawLat = d.geographic_location.latitude;
+                        const correctedLon = -rawLat;
+                        const correctedLat = -rawLon;
+
+                        return {
+                            ...d,
+                            total_population: d.rural_population + d.urban_population,
+                            longitude: correctedLon,
+                            latitude: correctedLat
+                        };
+                    })
+                    .filter(d => d.total_population > 0);
+
+                // 保存到全局变量
+                window.gridData = gridData;
+
+                // 计算统计信息
+                const populations = gridData.map(d => d.total_population);
+                const minPop = Math.min(...populations);
+                const maxPop = Math.max(...populations);
+
+                // 背景地图
+                mapGroup.append("g")
+                    .selectAll("path")
+                    .data(geojson.features.filter(d => d.properties.continent === "Africa"))
+                    .enter()
+                    .append("path")
+                    .attr("d", path)
+                    .attr("fill", "#f0f0f0")
+                    .attr("stroke", "#999")
+                    .attr("stroke-width", Math.max(0.3, width / 1000));
+
+                // 创建颜色比例尺
+                const colorScale = createColorScale(gridData);
+                
+                // 根据可视化模式选择绘制方法
+                if (currentConfig.visualizationMode === 'concentric') {
+                    // 使用同心圆模式
+                    createConcentricCircles(svg, gridData, colorScale, areaSize);
+                    
+                    // 创建图例
+                    const maxValue = Math.max(...gridData.map(d => Math.max(calculateValue(d, true), calculateValue(d, false))));
+                    createLegend(svg, colorScale, maxValue);
+                } else if (currentConfig.visualizationMode === 'rect') {
+                    // 使用矩形模式
+                    createRectangles(svg, gridData, colorScale, areaSize);
+                    
+                    // 创建图例
+                    const maxValue = Math.max(...gridData.map(d => Math.max(calculateValue(d, true), calculateValue(d, false))));
+                    createLegend(svg, colorScale, maxValue);
+                } else {
+                    // 使用散点图模式（原有逻辑）
+                    gridData.forEach(cell => {
+                    const projectedPos = projection([cell.longitude, cell.latitude]);
+                    if (!projectedPos) return;
+
+                    const circleCount = calculateCircleCount(cell.total_population, minPop, maxPop);
+                    const positions = generateCirclePositionsInFixedArea(circleCount, projectedPos[0], projectedPos[1], areaSize);
+
+                    // 计算城乡圆形数量
+                    let urbanCircles, ruralCircles;
+                    
+                    if (currentConfig.useRealArea) {
+                        const cellTotalArea = cell.rural_area + cell.urban_area;
+                        if (cellTotalArea > 0) {
+                            const urbanRatio = cell.urban_area / cellTotalArea;
+                            const ruralRatio = cell.rural_area / cellTotalArea;
+                            urbanCircles = Math.round(circleCount * urbanRatio);
+                            ruralCircles = circleCount - urbanCircles;
+                        } else {
+                            urbanCircles = Math.round(circleCount * MAPPING_CONFIG.urbanAreaShare);
+                            ruralCircles = circleCount - urbanCircles;
+                        }
+                    } else {
+                        urbanCircles = Math.round(circleCount * MAPPING_CONFIG.urbanAreaShare);
+                        ruralCircles = circleCount - urbanCircles;
+                    }
+
+                    // 创建网格单元组
+                    const cellGroup = svg.select(".map-group").append("g")
+                        .attr("class", "cell-clickable")
+                        .attr("data-cell-id", `${cell.longitude}-${cell.latitude}`)
+                        .datum({ urbanCircles: urbanCircles, ruralCircles: ruralCircles })
+                        .on("click", function(event) {
+                            // 移除之前选中的cell的高亮
+                            d3.selectAll(".cell-clickable").classed("selected", false);
+                            
+                            // 为当前cell添加选中状态
+                            d3.select(this).classed("selected", true);
+                            
+                            // 显示详细信息
+                            showDetailPanel(cell, circleCount, urbanCircles, ruralCircles);
+                        });
+
+                    // 添加透明点击区域
+                    const clickSize = areaSize * 1.5; // 更大的点击区域
+                    cellGroup.append("rect")
+                        .attr("x", projectedPos[0] - clickSize/2)
+                        .attr("y", projectedPos[1] - clickSize/2)
+                        .attr("width", clickSize)
+                        .attr("height", clickSize)
+                        .attr("fill", "transparent")
+                        .style("pointer-events", "all");
+
+                    // 绘制圆形
+                    positions.forEach((pos, index) => {
+                        const isUrban = pos.spiralIndex < urbanCircles;
+                        const value = calculateValue(cell, isUrban);
+                        const safeValue = isFinite(value) && value >= 0 ? value : 0;
+                        
+                        cellGroup.append("circle")
+                            .attr("cx", pos.x)
+                            .attr("cy", pos.y)
+                            .attr("r", pos.radius)
+                            .attr("fill", colorScale(safeValue))
+                            .attr("opacity", 0.8)
+                            .on("mouseover", function(event) {
+                                const urbanValue = calculateValue(cell, true);
+                                const ruralValue = calculateValue(cell, false);
+                                const valueUnit = currentConfig.colorMapping === 'population' ? '' : '/km²';
+                                
+                                tooltip.transition()
+                                    .duration(200)
+                                    .style("opacity", .9);
+                                tooltip.html(`
+                                    <strong>Cell Info:</strong><br>
+                                    <strong>Lon:</strong> ${cell.longitude.toFixed(2)}°, 
+                                    <strong>Lat:</strong> ${cell.latitude.toFixed(2)}°<br>
+                                    <strong>Total Population:</strong> ${Math.round(cell.total_population).toLocaleString()}<br>
+                                    <strong>Circles:</strong> ${circleCount} (${urbanCircles} urban, ${ruralCircles} rural)<br>
+                                    <strong>Urban:</strong> ${Math.round(cell.urban_population).toLocaleString()} (${urbanValue.toFixed(1)}${valueUnit})<br>
+                                    <strong>Rural:</strong> ${Math.round(cell.rural_population).toLocaleString()} (${ruralValue.toFixed(1)}${valueUnit})<br>
+                                    <strong>Urban Area:</strong> ${cell.urban_area.toFixed(1)} km²<br>
+                                    <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²
+                                `)
+                                .style("left", (event.pageX + 10) + "px")
+                                .style("top", (event.pageY - 28) + "px");
+                            })
+                            .on("mouseout", () => {
+                                tooltip.transition()
+                                    .duration(500)
+                                    .style("opacity", 0);
+                            });
+                    });
+                });
+                }
+
+                // 创建图例
+                const maxValue = Math.max(...gridData.map(d => Math.max(calculateValue(d, true), calculateValue(d, false))));
+                
+                createLegend(svg, colorScale, maxValue);
+                
+                // 更新图例中的连续颜色滑动条
+                updateLegendFigure();
+            });
+        }
+        
+        // 创建同心圆可视化
+        function createConcentricCircles(svg, gridData, colorScale, areaSize) {
+            // 清除现有内容
+            svg.select(".map-group").selectAll(".cell-clickable").remove();
+            
+            const tooltip = d3.select(".chart-container .tooltip");
+            
+            // 响应式投影
+            const width = svg.attr("width");
+            const height = svg.attr("height");
+            const projection = d3.geoMercator()
+                .center([10, -15])
+                .scale(Math.min(width, height) / 1.5)
+                .translate([width / 2, height / 2]);
+
+            // 为每个网格创建同心圆
+            gridData.forEach(cell => {
+                const projectedPos = projection([cell.longitude, cell.latitude]);
+                if (!projectedPos) return;
+
+                // 计算圆形大小（基于总人口）
+                const populations = gridData.map(d => d.total_population);
+                const minPop = Math.min(...populations);
+                const maxPop = Math.max(...populations);
+                const circleCount = calculateCircleCount(cell.total_population, minPop, maxPop);
+                
+                // 计算同心圆的大小
+                // const radius = currentConfig.gridSize === '100' ? areaSize * 0.2 : areaSize * 0.5;
+                const radius = currentConfig.gridSize === '100' ? (areaSize / currentConfig.gridSize) * currentConfig.circleSize * 100 : (areaSize / currentConfig.gridSize) * currentConfig.circleSize * 1000;
+                
+                // 计算urban area占比（用于内圆大小）
+                const totalArea = cell.urban_area + cell.rural_area;
+                const urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+                const innerRadius = radius * Math.sqrt(urbanAreaRatio); // 内圆半径
+                
+                // 创建网格单元组
+                const cellGroup = svg.select(".map-group").append("g")
+                    .attr("class", "cell-clickable")
+                    .attr("data-cell-id", `${cell.longitude}-${cell.latitude}`)
+                    .datum({ urbanAreaRatio: urbanAreaRatio, totalPopulation: cell.total_population })
+                    .on("click", function(event) {
+                        // 移除之前选中的cell的高亮
+                        d3.selectAll(".cell-clickable").classed("selected", false);
+                        
+                        // 为当前cell添加选中状态
+                        d3.select(this).classed("selected", true);
+                        
+                        // 显示详细信息
+                        showDetailPanel(cell, 1, 1, 0); // 简化参数
+                    });
+
+                // 添加透明点击区域
+                const clickSize = radius * 2;
+                cellGroup.append("rect")
+                    .attr("x", projectedPos[0] - clickSize/2)
+                    .attr("y", projectedPos[1] - clickSize/2)
+                    .attr("width", clickSize)
+                    .attr("height", clickSize)
+                    .attr("fill", "transparent")
+                    .style("pointer-events", "all");
+
+                // 绘制外圆（代表rural人口）
+                const ruralValue = calculateValue(cell, false); // 使用rural值作为外圆颜色
+                const safeRuralValue = isFinite(ruralValue) && ruralValue >= 0 ? ruralValue : 0;
+                
+                cellGroup.append("circle")
+                    .attr("cx", projectedPos[0])
+                    .attr("cy", projectedPos[1])
+                    .attr("r", radius)
+                    .attr("fill", colorScale(safeRuralValue))
+                    .attr("opacity", 0.8)
+                    .on("mouseover", function(event) {
+                        const urbanValue = calculateValue(cell, true);
+                        const ruralValue = calculateValue(cell, false);
+                        const valueUnit = currentConfig.colorMapping === 'population' ? '' : '/km²';
+                        
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        tooltip.html(`
+                            <strong>Cell Info:</strong><br>
+                            <strong>Lon:</strong> ${cell.longitude.toFixed(2)}°, 
+                            <strong>Lat:</strong> ${cell.latitude.toFixed(2)}°<br>
+                            <strong>Total Population:</strong> ${Math.round(cell.total_population).toLocaleString()}<br>
+                            <strong>Rural Population:</strong> ${Math.round(cell.rural_population).toLocaleString()} (外圆)<br>
+                            <strong>Urban Population:</strong> ${Math.round(cell.urban_population).toLocaleString()} (内圆, ${urbanAreaRatio.toFixed(1)}% area)<br>
+                            <strong>Rural Value:</strong> ${ruralValue.toFixed(1)}${valueUnit}<br>
+                            <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
+                            <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
+                            <strong>Urban Area:</strong> ${cell.urban_area.toFixed(1)} km²
+                        `)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", () => {
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // 绘制内圆（代表urban人口）
+                if (urbanAreaRatio > 0) {
+                    const urbanValue = calculateValue(cell, true); // 使用urban值作为内圆颜色
+                    const safeUrbanValue = isFinite(urbanValue) && urbanValue >= 0 ? urbanValue : 0;
+                    
+                    cellGroup.append("circle")
+                        .attr("cx", projectedPos[0])
+                        .attr("cy", projectedPos[1])
+                        .attr("r", innerRadius)
+                        .attr("fill", colorScale(safeUrbanValue))
+                        .attr("opacity", 0.9)
+                        .on("mouseover", function(event) {
+                            const urbanValue = calculateValue(cell, true);
+                            const ruralValue = calculateValue(cell, false);
+                            const valueUnit = currentConfig.colorMapping === 'population' ? '' : '/km²';
+                            
+                            tooltip.transition()
+                                .duration(200)
+                                .style("opacity", .9);
+                            tooltip.html(`
+                                <strong>Cell Info:</strong><br>
+                                <strong>Lon:</strong> ${cell.longitude.toFixed(2)}°, 
+                                <strong>Lat:</strong> ${cell.latitude.toFixed(2)}°<br>
+                                <strong>Total Population:</strong> ${cell.total_population.toLocaleString()}<br>
+                                <strong>Rural Population:</strong> ${cell.rural_population.toLocaleString()} (外圆)<br>
+                                <strong>Urban Population:</strong> ${cell.urban_population.toLocaleString()} (内圆, ${urbanAreaRatio.toFixed(1)}% area)<br>
+                                <strong>Rural Value:</strong> ${ruralValue.toFixed(1)}${valueUnit}<br>
+                                <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
+                                <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
+                                <strong>Urban Area:</strong> ${cell.urban_area.toFixed(1)} km²
+                            `)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                        })
+                        .on("mouseout", () => {
+                            tooltip.transition()
+                                .duration(500)
+                                .style("opacity", 0);
+                        });
+                }
+            });
+        }
+
+        // 事件监听器
+        document.getElementById('gridSize').addEventListener('change', function() {
+            currentConfig.gridSize = this.value;
+            
+            // 更新自定义颜色设置的阈值
+            if (this.value === '100') {
+                customColorSettings.population.thresholds = [1000, 5000, 15000, 50000, 100000, 300000];
+            } else {
+                customColorSettings.population.thresholds = [100000, 500000, 1500000, 5000000, 10000000, 30000000];
+            }
+            
+            // 根据网格大小自动调整圆形参数
+            if (this.value === '100') {
+                // 100km参数
+                currentConfig.circleSize = 0.2;
+                currentConfig.circleSpacing = 0.4;
+                currentConfig.maxCircles = 16;
+                document.getElementById('circleSize').value = 0.2;
+                document.getElementById('circleSpacing').value = 0.4;
+                document.getElementById('maxCircles').value = 16;
+                document.getElementById('circleSizeValue').textContent = '0.2';
+                document.getElementById('circleSpacingValue').textContent = '0.4';
+                document.getElementById('maxCirclesValue').textContent = '16';
+            } else {
+                // 1000km参数
+                currentConfig.circleSize = 0.5;
+                currentConfig.circleSpacing = 1.0;
+                currentConfig.maxCircles = 100;
+                document.getElementById('circleSize').value = 0.5;
+                document.getElementById('circleSpacing').value = 1.0;
+                document.getElementById('maxCircles').value = 100;
+                document.getElementById('circleSizeValue').textContent = '0.5';
+                document.getElementById('circleSpacingValue').textContent = '1.0';
+                document.getElementById('maxCirclesValue').textContent = '100';
+            }
+            
+            updateLegendFigure();
+            initChart();
+        });
+
+        document.getElementById('areaData').addEventListener('change', function() {
+            currentConfig.useRealArea = this.value === 'true';
+            initChart();
+        });
+
+        document.getElementById('colorMapping').addEventListener('change', function() {
+            currentConfig.colorMapping = this.value;
+            initChart();
+        });
+
+        document.getElementById('circleSize').addEventListener('input', function() {
+            currentConfig.circleSize = parseFloat(this.value);
+            document.getElementById('circleSizeValue').textContent = this.value;
+            initChart();
+        });
+
+        document.getElementById('circleSpacing').addEventListener('input', function() {
+            currentConfig.circleSpacing = parseFloat(this.value);
+            document.getElementById('circleSpacingValue').textContent = this.value;
+            initChart();
+        });
+
+        document.getElementById('maxCircles').addEventListener('input', function() {
+            currentConfig.maxCircles = parseInt(this.value);
+            document.getElementById('maxCirclesValue').textContent = this.value;
+            initChart();
+        });
+
+        document.getElementById('visualizationMode').addEventListener('change', function() {
+            currentConfig.visualizationMode = this.value;
+            updateLegendFigure();
+            initChart();
+        });
+
+        // 关闭按钮事件监听器
+        document.getElementById('closeDetailPanelBtn').addEventListener('click', closeDetailPanel);
+        
+        // ESC键关闭面板
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeDetailPanel();
+            }
+        });
+
+        // 更新图例中的可视化模式图例
+        function updateLegendFigure() {
+            const figureContainer = d3.select('.figure-container');
+            if (figureContainer.empty()) return;
+            
+            // 清除现有内容
+            figureContainer.selectAll('*').remove();
+            
+            // 根据当前配置选择对应的图例
+            const getFigurePath = () => {
+                const mode = currentConfig.visualizationMode;
+                const size = currentConfig.gridSize;
+                
+                if (mode === 'scatter') {
+                    return size === '100' ? 'figures/scatter_100.svg' : 'figures/scatter_1000.svg';
+                } else if (mode === 'concentric') {
+                    return size === '100' ? 'figures/concentric_100.svg' : 'figures/concentric_1000.svg';
+                } else if (mode === 'rect') {
+                    return size === '100' ? 'figures/rect_100.svg' : 'figures/rect_1000.svg';
+                }
+                return 'figures/scatter_100.svg'; // 默认
+            };
+
+            // 创建图例容器
+            const legendFigure = figureContainer.append("foreignObject")
+                .attr("x", -20)
+                .attr("y", 0)
+                .attr("width", 400)
+                .attr("height", 150);
+
+            // 加载SVG图例
+            const figurePath = getFigurePath();
+            fetch(figurePath)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error(`HTTP error! status: ${response.status}`);
+                    }
+                    return response.text();
+                })
+                .then(svgContent => {
+                    // 创建临时div来解析SVG
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = svgContent;
+                    const svgElement = tempDiv.querySelector('svg');
+                    
+                    if (svgElement) {
+                        // 调整SVG大小和样式
+                        svgElement.style.width = '100%';
+                        svgElement.style.height = 'auto';
+                        svgElement.style.maxHeight = '120px';
+                        
+                        // 将SVG内容插入到foreignObject中
+                        legendFigure.node().appendChild(svgElement);
+                    } else {
+                        throw new Error('SVG element not found in response');
+                    }
+                })
+                .catch(error => {
+                    console.error('Error loading figure:', error);
+                    // 如果加载失败，显示备用文本
+                    figureContainer.append("text")
+                        .attr("x", 0)
+                        .attr("y", 35)
+                        .attr("font-size", "9px")
+                        .attr("fill", "#666")
+                        .text("• Visualization mode: " + currentConfig.visualizationMode);
+                });
+            
+            // 只保留竖着的滑动条，删除横着的滑动条
+        }
+
+        // 创建矩形可视化
+        function createRectangles(svg, gridData, colorScale, areaSize) {
+            // 清除现有内容
+            svg.select(".map-group").selectAll(".cell-clickable").remove();
+            
+            const tooltip = d3.select(".chart-container .tooltip");
+            
+            // 响应式投影
+            const width = svg.attr("width");
+            const height = svg.attr("height");
+            const projection = d3.geoMercator()
+                .center([10, -15])
+                .scale(Math.min(width, height) / 1.5)
+                .translate([width / 2, height / 2]);
+
+            // 为每个网格创建矩形
+            gridData.forEach(cell => {
+                const projectedPos = projection([cell.longitude, cell.latitude]);
+                if (!projectedPos) return;
+
+                // 计算矩形大小（基于总人口）
+                const populations = gridData.map(d => d.total_population);
+                const minPop = Math.min(...populations);
+                const maxPop = Math.max(...populations);
+                const circleCount = calculateCircleCount(cell.total_population, minPop, maxPop);
+                
+                // 计算矩形的大小
+                const rectSize = currentConfig.gridSize === '100' ? 
+                    (areaSize / currentConfig.gridSize) * currentConfig.circleSize * 100 * 2 : 
+                    (areaSize / currentConfig.gridSize) * currentConfig.circleSize * 1000 * 2;
+                
+                // 计算urban area占比（用于内矩形大小）
+                const totalArea = cell.urban_area + cell.rural_area;
+                const urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+                const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // 内矩形大小
+                
+                // 创建网格单元组
+                const cellGroup = svg.select(".map-group").append("g")
+                    .attr("class", "cell-clickable")
+                    .attr("data-cell-id", `${cell.longitude}-${cell.latitude}`)
+                    .datum({ urbanAreaRatio: urbanAreaRatio, totalPopulation: cell.total_population })
+                    .on("click", function(event) {
+                        // 移除之前选中的cell的高亮
+                        d3.selectAll(".cell-clickable").classed("selected", false);
+                        
+                        // 为当前cell添加选中状态
+                        d3.select(this).classed("selected", true);
+                        
+                        // 显示详细信息
+                        showDetailPanel(cell, 1, 1, 0); // 简化参数
+                    });
+
+                // 添加透明点击区域
+                const clickSize = rectSize * 2;
+                cellGroup.append("rect")
+                    .attr("x", projectedPos[0] - clickSize/2)
+                    .attr("y", projectedPos[1] - clickSize/2)
+                    .attr("width", clickSize)
+                    .attr("height", clickSize)
+                    .attr("fill", "transparent")
+                    .style("pointer-events", "all");
+
+                // 绘制外矩形（代表rural人口）
+                const ruralValue = calculateValue(cell, false); // 使用rural值作为外矩形颜色
+                const safeRuralValue = isFinite(ruralValue) && ruralValue >= 0 ? ruralValue : 0;
+                
+                cellGroup.append("rect")
+                    .attr("x", projectedPos[0] - rectSize/2)
+                    .attr("y", projectedPos[1] - rectSize/2)
+                    .attr("width", rectSize)
+                    .attr("height", rectSize)
+                    .attr("fill", colorScale(safeRuralValue))
+                    .attr("opacity", 0.8)
+                    .on("mouseover", function(event) {
+                        const urbanValue = calculateValue(cell, true);
+                        const ruralValue = calculateValue(cell, false);
+                        const valueUnit = currentConfig.colorMapping === 'population' ? '' : '/km²';
+                        
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        tooltip.html(`                            <strong>Cell Info:</strong><br>
+                            <strong>Lon:</strong> ${cell.longitude.toFixed(2)}°, 
+                            <strong>Lat:</strong> ${cell.latitude.toFixed(2)}°<br>
+                            <strong>Total Population:</strong> ${Math.round(cell.total_population).toLocaleString()}<br>
+                            <strong>Rural Population:</strong> ${Math.round(cell.rural_population).toLocaleString()} (外矩形)<br>
+                            <strong>Urban Population:</strong> ${Math.round(cell.urban_population).toLocaleString()} (内矩形, ${urbanAreaRatio.toFixed(1)}% area)<br>
+                            <strong>Rural Value:</strong> ${ruralValue.toFixed(1)}${valueUnit}<br>
+                            <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
+                            <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
+                            <strong>Urban Area:</strong> ${cell.urban_area.toFixed(1)} km²
+                        `)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", () => {
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // 绘制内矩形（代表urban人口）
+                if (urbanAreaRatio > 0) {
+                    const urbanValue = calculateValue(cell, true); // 使用urban值作为内矩形颜色
+                    const safeUrbanValue = isFinite(urbanValue) && urbanValue >= 0 ? urbanValue : 0;
+                    
+                    cellGroup.append("rect")
+                        .attr("x", projectedPos[0] - innerRectSize/2)
+                        .attr("y", projectedPos[1] - innerRectSize/2)
+                        .attr("width", innerRectSize)
+                        .attr("height", innerRectSize)
+                        .attr("fill", colorScale(safeUrbanValue))
+                        .attr("opacity", 0.9)
+                        .on("mouseover", function(event) {
+                            const urbanValue = calculateValue(cell, true);
+                            const ruralValue = calculateValue(cell, false);
+                            const valueUnit = currentConfig.colorMapping === 'population' ? '' : '/km²';
+                            
+                            tooltip.transition()
+                                .duration(200)
+                                .style("opacity", .9);
+                            tooltip.html(`
+                                <strong>Cell Info:</strong><br>
+                                <strong>Lon:</strong> ${cell.longitude.toFixed(2)}°, 
+                                <strong>Lat:</strong> ${cell.latitude.toFixed(2)}°<br>
+                                <strong>Total Population:</strong> ${Math.round(cell.total_population).toLocaleString()}<br>
+                                <strong>Rural Population:</strong> ${Math.round(cell.rural_population).toLocaleString()} (外矩形)<br>
+                                <strong>Urban Population:</strong> ${Math.round(cell.urban_population).toLocaleString()} (内矩形, ${urbanAreaRatio.toFixed(1)}% area)<br>
+                                <strong>Rural Value:</strong> ${ruralValue.toFixed(1)}${valueUnit}<br>
+                                <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
+                                <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
+                                <strong>Urban Area:</strong> ${cell.urban_area.toFixed(1)} km²
+                            `)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 28) + "px");
+                        })
+                        .on("mouseout", () => {
+                            tooltip.transition()
+                                .duration(500)
+                                .style("opacity", 0);
+                        });
+                }
+            });
+        }
+
+        // 缩放控制函数
+        function updateZoomInfo() {
+            const zoomInfo = document.getElementById('zoomInfo');
+            const zoomInBtn = document.getElementById('zoomInBtn');
+            const zoomOutBtn = document.getElementById('zoomOutBtn');
+            
+            // 检查元素是否存在
+            if (zoomInfo) {
+                const percentage = Math.round(zoomLevel * 100);
+                zoomInfo.textContent = `缩放: ${percentage}%`;
+            }
+            
+            // 更新按钮状态
+            if (zoomInBtn) {
+                zoomInBtn.classList.toggle('disabled', zoomLevel >= MAX_ZOOM);
+            }
+            if (zoomOutBtn) {
+                zoomOutBtn.classList.toggle('disabled', zoomLevel <= MIN_ZOOM);
+            }
+        }
+        
+        function zoomIn() {
+            if (zoomLevel < MAX_ZOOM) {
+                const svg = d3.select("#chart svg");
+                if (!svg.empty()) {
+                    const zoom = d3.zoom().scaleExtent([MIN_ZOOM, MAX_ZOOM]);
+                    svg.call(zoom.scaleBy, 1.5);
+                }
+            }
+        }
+        
+        function zoomOut() {
+            if (zoomLevel > MIN_ZOOM) {
+                const svg = d3.select("#chart svg");
+                if (!svg.empty()) {
+                    const zoom = d3.zoom().scaleExtent([MIN_ZOOM, MAX_ZOOM]);
+                    svg.call(zoom.scaleBy, 0.75);
+                }
+            }
+        }
+        
+        function resetZoom() {
+            const svg = d3.select("#chart svg");
+            if (!svg.empty()) {
+                const zoom = d3.zoom().scaleExtent([MIN_ZOOM, MAX_ZOOM]);
+                svg.call(zoom.transform, d3.zoomIdentity);
+            }
+        }
+        
+        // 缩放按钮事件监听器
+        const zoomInBtn = document.getElementById('zoomInBtn');
+        const zoomOutBtn = document.getElementById('zoomOutBtn');
+        const resetZoomBtn = document.getElementById('resetZoomBtn');
+        
+        if (zoomInBtn) zoomInBtn.addEventListener('click', zoomIn);
+        if (zoomOutBtn) zoomOutBtn.addEventListener('click', zoomOut);
+        if (resetZoomBtn) resetZoomBtn.addEventListener('click', resetZoom);
+
+        // 初始化
+        initChart();
+        updateDetailPanelPosition(); // 初始化时设置detail panel位置
+        updateZoomInfo(); // 初始化缩放信息
+
+        // 创建自定义下拉框
+        function createCustomSelects() {
+            const selects = document.querySelectorAll('.control-group select');
+            
+            selects.forEach(select => {
+                // 创建自定义下拉框容器
+                const customSelect = document.createElement('div');
+                customSelect.className = 'custom-select';
+                customSelect.style.cssText = `
+                    position: relative;
+                    display: inline-block;
+                    min-width: ${Math.max(select.offsetWidth, 80)}px;
+                    font-family: inherit;
+                `;
+                
+                // 创建显示区域
+                const selectDisplay = document.createElement('div');
+                selectDisplay.className = 'select-display';
+                selectDisplay.style.cssText = `
+                    padding: 6px 10px;
+                    border: 2px solid #e9ecef;
+                    border-radius: 4px;
+                    background: white;
+                    cursor: pointer;
+                    user-select: none;
+                    position: relative;
+                    font-size: 13px;
+                    font-weight: 500;
+                    color: #374151;
+                    letter-spacing: 0.025em;
+                    transition: all 0.3s ease;
+                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+                    min-width: 80px;
+                    max-width: 120px;
+                `;
+                
+                // 添加下拉箭头
+                const arrow = document.createElement('span');
+                arrow.innerHTML = '▼';
+                arrow.style.cssText = `
+                    position: absolute;
+                    right: 8px;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    font-size: 10px;
+                    color: #6b7280;
+                    transition: transform 0.3s ease;
+                `;
+                
+                selectDisplay.appendChild(arrow);
+                selectDisplay.appendChild(document.createTextNode(select.options[select.selectedIndex].text));
+                
+                // 创建下拉选项列表
+                const optionsList = document.createElement('div');
+                optionsList.className = 'select-options';
+                optionsList.style.cssText = `
+                    position: absolute;
+                    top: 100%;
+                    left: 0;
+                    right: 0;
+                    background: white;
+                    border: 2px solid #e9ecef;
+                    border-top: none;
+                    border-radius: 0 0 4px 4px;
+                    max-height: 200px;
+                    overflow-y: auto;
+                    z-index: 9999;
+                    opacity: 0;
+                    visibility: hidden;
+                    transform: translateY(-10px);
+                    transition: all 0.3s ease;
+                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+                `;
+                
+                // 添加选项
+                Array.from(select.options).forEach((option, index) => {
+                    const optionDiv = document.createElement('div');
+                    optionDiv.className = 'select-option';
+                    optionDiv.textContent = option.text;
+                    optionDiv.style.cssText = `
+                        padding: 10px 12px;
+                        cursor: pointer;
+                        transition: all 0.2s ease;
+                        border-bottom: 1px solid #f3f4f6;
+                        font-size: 13px;
+                        color: #374151;
+                    `;
+                    
+                    // 悬停效果
+                    optionDiv.addEventListener('mouseenter', function() {
+                        this.style.backgroundColor = '#f3f4f6';
+                        this.style.color = '#1f2937';
+                    });
+                    
+                    optionDiv.addEventListener('mouseleave', function() {
+                        this.style.backgroundColor = 'white';
+                        this.style.color = '#374151';
+                    });
+                    
+                    // 点击选择
+                    optionDiv.addEventListener('click', function() {
+                        select.value = option.value;
+                        selectDisplay.textContent = option.text;
+                        selectDisplay.appendChild(arrow);
+                        
+                        // 触发change事件
+                        const event = new Event('change', { bubbles: true });
+                        select.dispatchEvent(event);
+                        
+                        // 隐藏选项列表
+                        toggleOptions();
+                    });
+                    
+                    optionsList.appendChild(optionDiv);
+                });
+                
+                // 切换选项列表显示/隐藏
+                let isOpen = false;
+                function toggleOptions() {
+                    isOpen = !isOpen;
+                    if (isOpen) {
+                        optionsList.style.opacity = '1';
+                        optionsList.style.visibility = 'visible';
+                        optionsList.style.transform = 'translateY(0)';
+                        arrow.style.transform = 'translateY(-50%) rotate(180deg)';
+                        selectDisplay.style.borderColor = '#2E86AB';
+                        selectDisplay.style.boxShadow = '0 0 0 3px rgba(46, 134, 171, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1)';
+                    } else {
+                        optionsList.style.opacity = '0';
+                        optionsList.style.visibility = 'hidden';
+                        optionsList.style.transform = 'translateY(-10px)';
+                        arrow.style.transform = 'translateY(-50%) rotate(0deg)';
+                        selectDisplay.style.borderColor = '#e9ecef';
+                        selectDisplay.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+                    }
+                }
+                
+                // 点击显示区域切换选项
+                selectDisplay.addEventListener('click', toggleOptions);
+                
+                // 悬停效果
+                selectDisplay.addEventListener('mouseenter', function() {
+                    if (!isOpen) {
+                        this.style.borderColor = '#d1d5db';
+                        this.style.backgroundColor = '#fafbfc';
+                        this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                        this.style.transform = 'translateY(-1px)';
+                    }
+                });
+                
+                selectDisplay.addEventListener('mouseleave', function() {
+                    if (!isOpen) {
+                        this.style.borderColor = '#e9ecef';
+                        this.style.backgroundColor = 'white';
+                        this.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+                
+                // 组装自定义下拉框
+                customSelect.appendChild(selectDisplay);
+                customSelect.appendChild(optionsList);
+                
+                // 替换原始select
+                select.style.display = 'none';
+                select.parentNode.insertBefore(customSelect, select);
+                
+                // 点击外部关闭下拉框
+                document.addEventListener('click', function(e) {
+                    if (!customSelect.contains(e.target)) {
+                        if (isOpen) {
+                            toggleOptions();
+                        }
+                    }
+                });
+            });
+        }
+
+        // 监听窗口大小变化
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(() => {
+                initChart();
+                updateDetailPanelPosition(); // 窗口大小改变时更新detail panel位置
+                updateZoomInfo(); // 更新缩放信息
+            }, 250);
+        });
+        
+        // 页面加载完成后创建自定义下拉框
+        window.addEventListener('load', function() {
+            setTimeout(createCustomSelects, 100);
+        });
+    </script>
+</body>
+</html> 

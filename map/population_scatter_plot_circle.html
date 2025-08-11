@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Population Scatter Plot</title>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f5f5f5;
+            overflow: hidden;
+        }
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin: 10px 0;
+            font-size: clamp(16px, 3vw, 24px);
+            padding: 0 10px;
+        }
+        .chart-container {
+            flex: 1;
+            width: 100%;
+            position: relative;
+            min-height: 300px;
+        }
+        .tooltip {
+            position: absolute;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 8px;
+            border-radius: 4px;
+            font-size: clamp(10px, 2vw, 12px);
+            pointer-events: none;
+            opacity: 0;
+            transition: opacity 0.3s;
+            max-width: 200px;
+            z-index: 1000;
+        }
+        .legend {
+            padding: 10px;
+            text-align: center;
+            min-height: 60px;
+        }
+        .legend svg {
+            max-width: 100%;
+            height: auto;
+        }
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 18px;
+                margin: 5px 0;
+            }
+            .legend {
+                padding: 5px;
+            }
+        }
+        @media (max-width: 480px) {
+            h1 {
+                font-size: 16px;
+                margin: 3px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Africa Population Distribution (100km Grid)</h1>
+        <div class="chart-container" id="chart"></div>
+        <div class="legend" id="legend"></div>
+    </div>
+
+    <script>
+        // 响应式函数
+        function getResponsiveDimensions() {
+            const container = document.querySelector('.chart-container');
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            
+            // 根据屏幕大小调整圆形大小
+            const baseCircleSize = Math.min(width, height) * 0.01; // 基于容器大小的1%
+            const circleSize = Math.max(7, Math.min(20, baseCircleSize)); // 限制在8-20px之间
+            
+            return { width, height, rectSize: circleSize };
+        }
+
+        // 初始化图表
+        function initChart() {
+            const { width, height, rectSize } = getResponsiveDimensions();
+            
+            // 清除现有内容
+            d3.select("#chart").selectAll("*").remove();
+            d3.select("#legend").selectAll("*").remove();
+
+            const svg = d3.select("#chart")
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .attr("viewBox", `0 0 ${width} ${height}`)
+                .attr("preserveAspectRatio", "xMidYMid meet");
+
+            const tooltip = d3.select(".chart-container")
+                .append("div")
+                .attr("class", "tooltip");
+
+            // 响应式投影 - 调整中心点和缩放以更好地居中非洲
+            const projection = d3.geoMercator()
+                .center([10, -15])  // 调整中心点，稍微向右和向上
+                .scale(Math.min(width, height) / 1.5)  // 稍微缩小以留出更多边距
+                .translate([width / 2, height / 2]);
+
+            const path = d3.geoPath().projection(projection);
+
+            // 加载数据
+            Promise.all([
+                d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
+                d3.json("aggregated_100km_africa.json")
+            ]).then(([geojson, data]) => {
+                const gridData = Object.values(data.grid_data)
+                    .map(d => {
+                        const rawLon = d.geographic_location.longitude;
+                        const rawLat = d.geographic_location.latitude;
+                        const correctedLon = -rawLat;
+                        const correctedLat = -rawLon;
+
+                        return {
+                            ...d,
+                            total_population: d.rural_population + d.urban_population,
+                            longitude: correctedLon,
+                            latitude: correctedLat
+                        };
+                    })
+                    .filter(d => d.total_population > 0);
+
+                // 背景地图
+                svg.append("g")
+                    .selectAll("path")
+                    .data(geojson.features.filter(d => d.properties.continent === "Africa"))
+                    .enter()
+                    .append("path")
+                    .attr("d", path)
+                    .attr("fill", "#f0f0f0")
+                    .attr("stroke", "#999")
+                    .attr("stroke-width", Math.max(0.3, width / 1000));
+
+                // 颜色比例尺
+                const colorScale = d3.scaleSequential()
+                    .domain([0, d3.max(gridData, d => d.total_population)])
+                    .interpolator(d3.interpolateReds);
+
+                // 绘制数据点
+                svg.append("g")
+                    .selectAll("circle")
+                    .data(gridData)
+                    .enter()
+                    .append("circle")
+                    .attr("cx", d => projection([d.longitude, d.latitude])[0])
+                    .attr("cy", d => projection([d.longitude, d.latitude])[1])
+                    .attr("r", rectSize / 2)
+                    .attr("fill", d => colorScale(d.total_population))
+                    .attr("stroke", "#fff")
+                    .attr("stroke-width", Math.max(0.2, rectSize / 50))
+                    .on("mouseover", function(event, d) {
+                        tooltip.transition()
+                            .duration(200)
+                            .style("opacity", .9);
+                        tooltip.html(`
+                            <strong>Lon:</strong> ${d.longitude.toFixed(2)}°, 
+                            <strong>Lat:</strong> ${d.latitude.toFixed(2)}°<br>
+                            <strong>Total:</strong> ${d.total_population.toLocaleString()}<br>
+                            <strong>Urban:</strong> ${d.urban_population.toLocaleString()}<br>
+                            <strong>Rural:</strong> ${d.rural_population.toLocaleString()}<br>
+                            <strong>Urban Area:</strong> ${d.urban_area} km²<br>
+                            <strong>Rural Area:</strong> ${d.rural_area} km²
+                        `)
+                        .style("left", (event.pageX + 10) + "px")
+                        .style("top", (event.pageY - 28) + "px");
+                    })
+                    .on("mouseout", () => {
+                        tooltip.transition()
+                            .duration(500)
+                            .style("opacity", 0);
+                    });
+
+                // 响应式图例
+                createLegend(gridData, colorScale);
+            });
+        }
+
+        // 创建响应式图例
+        function createLegend(gridData, colorScale) {
+            const legendContainer = d3.select("#legend");
+            const containerWidth = legendContainer.node().clientWidth;
+            const legendWidth = Math.min(300, containerWidth - 20);
+            const legendHeight = 10;
+
+            const legendSvg = legendContainer
+                .append("svg")
+                .attr("width", legendWidth)
+                .attr("height", 50)
+                .style("max-width", "100%");
+
+            const defs = legendSvg.append("defs");
+
+            const linearGradient = defs.append("linearGradient")
+                .attr("id", "legend-gradient");
+
+            linearGradient.selectAll("stop")
+                .data(d3.range(0, 1.01, 0.01))
+                .enter()
+                .append("stop")
+                .attr("offset", d => `${d * 100}%`)
+                .attr("stop-color", d => colorScale(d * d3.max(gridData, d => d.total_population)));
+
+            legendSvg.append("rect")
+                .attr("x", 10)
+                .attr("y", 10)
+                .attr("width", legendWidth - 20)
+                .attr("height", legendHeight)
+                .style("fill", "url(#legend-gradient)")
+                .style("stroke", "#ccc");
+
+            const legendScale = d3.scaleLinear()
+                .domain([0, d3.max(gridData, d => d.total_population)])
+                .range([10, legendWidth - 10]);
+
+            const legendAxis = d3.axisBottom(legendScale)
+                .ticks(5)
+                .tickFormat(d => (d / 1e6).toFixed(1) + "M");
+
+            legendSvg.append("g")
+                .attr("transform", `translate(0, ${10 + legendHeight})`)
+                .call(legendAxis);
+
+            legendSvg.append("text")
+                .attr("x", legendWidth / 2)
+                .attr("y", 45)
+                .style("text-anchor", "middle")
+                .style("font-size", "12px")
+                .text("Total Population");
+        }
+
+        // 初始化
+        initChart();
+
+        // 监听窗口大小变化
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(initChart, 250);
+        });
+    </script>
+</body>
+</html>

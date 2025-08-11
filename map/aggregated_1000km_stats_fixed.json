@@ -1,0 +1,2416 @@
+{
+  "metadata": {
+    "source_file": "map/aggregated_1000km_stats.tif",
+    "grid_size": "18x43",
+    "coordinate_system": "EPSG:4326",
+    "transform": "| 8.33, 0.00,-180.00|\n| 0.00,-8.33, 84.00|\n| 0.00, 0.00, 1.00|",
+    "description": {
+      "band_1": "rural_population (population < 300)",
+      "band_2": "rural_area (area < 300)",
+      "band_3": "urban_population (population >= 300)",
+      "band_4": "urban_area (area >= 300)"
+    }
+  },
+  "grid_data": {
+    "grid_0_6": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": 29.832916748710005,
+        "row": 0,
+        "col": 6
+      },
+      "rural_population": 0.0,
+      "rural_area": 7305.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_7": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": 21.499583448710005,
+        "row": 0,
+        "col": 7
+      },
+      "rural_population": 0.0,
+      "rural_area": 123142.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_8": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": 13.166250148710006,
+        "row": 0,
+        "col": 8
+      },
+      "rural_population": 0.34062159061431885,
+      "rural_area": 100930.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_9": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": 4.832916848709999,
+        "row": 0,
+        "col": 9
+      },
+      "rural_population": 1.0958161354064941,
+      "rural_area": 170166.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_10": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -3.5004164512900076,
+        "row": 0,
+        "col": 10
+      },
+      "rural_population": 1.3185560703277588,
+      "rural_area": 390454.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_11": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -11.83374975129,
+        "row": 0,
+        "col": 11
+      },
+      "rural_population": 149.2500762939453,
+      "rural_area": 610863.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_12": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -20.167083051290007,
+        "row": 0,
+        "col": 12
+      },
+      "rural_population": 0.6808159351348877,
+      "rural_area": 552420.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_13": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -28.50041635129,
+        "row": 0,
+        "col": 13
+      },
+      "rural_population": 831.240234375,
+      "rural_area": 589959.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_14": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -36.833749651290006,
+        "row": 0,
+        "col": 14
+      },
+      "rural_population": 0.028973093256354332,
+      "rural_area": 727465.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_15": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -45.16708295129001,
+        "row": 0,
+        "col": 15
+      },
+      "rural_population": 0.0,
+      "rural_area": 789230.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_16": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -53.500416251290005,
+        "row": 0,
+        "col": 16
+      },
+      "rural_population": 0.0,
+      "rural_area": 878003.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_17": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -61.83374955129,
+        "row": 0,
+        "col": 17
+      },
+      "rural_population": 0.0,
+      "rural_area": 936338.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_18": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -70.16708285129002,
+        "row": 0,
+        "col": 18
+      },
+      "rural_population": 0.0,
+      "rural_area": 853935.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_19": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -78.50041615129001,
+        "row": 0,
+        "col": 19
+      },
+      "rural_population": 0.0,
+      "rural_area": 273797.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_0_20": {
+      "geographic_location": {
+        "longitude": -175.83458261500002,
+        "latitude": -86.83374945129,
+        "row": 0,
+        "col": 20
+      },
+      "rural_population": 0.0,
+      "rural_area": 11326.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_0": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": 79.83291654871002,
+        "row": 1,
+        "col": 0
+      },
+      "rural_population": 2030.8427734375,
+      "rural_area": 86272.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_1": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": 71.49958324871001,
+        "row": 1,
+        "col": 1
+      },
+      "rural_population": 909.689208984375,
+      "rural_area": 48981.0,
+      "urban_population": 373.53826904296875,
+      "urban_area": 1.0
+    },
+    "grid_1_2": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": 63.16624994871001,
+        "row": 1,
+        "col": 2
+      },
+      "rural_population": 4262.36572265625,
+      "rural_area": 394654.0,
+      "urban_population": 3230.57080078125,
+      "urban_area": 7.0
+    },
+    "grid_1_3": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": 54.83291664871001,
+        "row": 1,
+        "col": 3
+      },
+      "rural_population": 3917.38427734375,
+      "rural_area": 381815.0,
+      "urban_population": 318.5692443847656,
+      "urban_area": 1.0
+    },
+    "grid_1_4": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": 46.499583348710004,
+        "row": 1,
+        "col": 4
+      },
+      "rural_population": 758.2275390625,
+      "rural_area": 301417.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_5": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": 38.166250048710005,
+        "row": 1,
+        "col": 5
+      },
+      "rural_population": 3273.18896484375,
+      "rural_area": 246420.0,
+      "urban_population": 2602.353515625,
+      "urban_area": 6.0
+    },
+    "grid_1_6": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": 29.832916748710005,
+        "row": 1,
+        "col": 6
+      },
+      "rural_population": 424.3169860839844,
+      "rural_area": 431834.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_7": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": 21.499583448710005,
+        "row": 1,
+        "col": 7
+      },
+      "rural_population": 1766.9071044921875,
+      "rural_area": 597647.0,
+      "urban_population": 416.66021728515625,
+      "urban_area": 1.0
+    },
+    "grid_1_8": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": 13.166250148710006,
+        "row": 1,
+        "col": 8
+      },
+      "rural_population": 1099.24072265625,
+      "rural_area": 662229.0,
+      "urban_population": 839.7725830078125,
+      "urban_area": 2.0
+    },
+    "grid_1_9": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": 4.832916848709999,
+        "row": 1,
+        "col": 9
+      },
+      "rural_population": 44.05072021484375,
+      "rural_area": 391740.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_10": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -3.5004164512900076,
+        "row": 1,
+        "col": 10
+      },
+      "rural_population": 3053.163330078125,
+      "rural_area": 561354.0,
+      "urban_population": 815.02587890625,
+      "urban_area": 2.0
+    },
+    "grid_1_11": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -11.83374975129,
+        "row": 1,
+        "col": 11
+      },
+      "rural_population": 2899.67822265625,
+      "rural_area": 674276.0,
+      "urban_population": 324.3244934082031,
+      "urban_area": 1.0
+    },
+    "grid_1_12": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -20.167083051290007,
+        "row": 1,
+        "col": 12
+      },
+      "rural_population": 619.0813598632812,
+      "rural_area": 462994.0,
+      "urban_population": 1143.707275390625,
+      "urban_area": 1.0
+    },
+    "grid_1_13": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -28.50041635129,
+        "row": 1,
+        "col": 13
+      },
+      "rural_population": 1212.3453369140625,
+      "rural_area": 231230.0,
+      "urban_population": 442.33172607421875,
+      "urban_area": 1.0
+    },
+    "grid_1_14": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -36.833749651290006,
+        "row": 1,
+        "col": 14
+      },
+      "rural_population": 2830.22900390625,
+      "rural_area": 85416.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_15": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -45.16708295129001,
+        "row": 1,
+        "col": 15
+      },
+      "rural_population": 13499.2060546875,
+      "rural_area": 861927.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_16": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -53.500416251290005,
+        "row": 1,
+        "col": 16
+      },
+      "rural_population": 0.0,
+      "rural_area": 1000000.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_17": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -61.83374955129,
+        "row": 1,
+        "col": 17
+      },
+      "rural_population": 0.0,
+      "rural_area": 967618.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_18": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -70.16708285129002,
+        "row": 1,
+        "col": 18
+      },
+      "rural_population": 422.19000244140625,
+      "rural_area": 696920.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_19": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -78.50041615129001,
+        "row": 1,
+        "col": 19
+      },
+      "rural_population": 0.0,
+      "rural_area": 56905.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_1_20": {
+      "geographic_location": {
+        "longitude": -167.501249315,
+        "latitude": -86.83374945129,
+        "row": 1,
+        "col": 20
+      },
+      "rural_population": 15.195698738098145,
+      "rural_area": 1534.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_2_0": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": 79.83291654871002,
+        "row": 2,
+        "col": 0
+      },
+      "rural_population": 8452.6279296875,
+      "rural_area": 239891.0,
+      "urban_population": 383.322021484375,
+      "urban_area": 1.0
+    },
+    "grid_2_1": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": 71.49958324871001,
+        "row": 2,
+        "col": 1
+      },
+      "rural_population": 13957.841796875,
+      "rural_area": 221529.0,
+      "urban_population": 3165.977783203125,
+      "urban_area": 7.0
+    },
+    "grid_2_2": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": 63.16624994871001,
+        "row": 2,
+        "col": 2
+      },
+      "rural_population": 26094.177734375,
+      "rural_area": 902022.0,
+      "urban_population": 6813.1337890625,
+      "urban_area": 16.0
+    },
+    "grid_2_3": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": 54.83291664871001,
+        "row": 2,
+        "col": 3
+      },
+      "rural_population": 303326.75,
+      "rural_area": 881409.0,
+      "urban_population": 338531.6875,
+      "urban_area": 443.0
+    },
+    "grid_2_4": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": 46.499583348710004,
+        "row": 2,
+        "col": 4
+      },
+      "rural_population": 18661.853515625,
+      "rural_area": 881773.0,
+      "urban_population": 2067.469970703125,
+      "urban_area": 5.0
+    },
+    "grid_2_5": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": 38.166250048710005,
+        "row": 2,
+        "col": 5
+      },
+      "rural_population": 21954.6015625,
+      "rural_area": 994108.0,
+      "urban_population": 19461.416015625,
+      "urban_area": 31.0
+    },
+    "grid_2_6": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": 29.832916748710005,
+        "row": 2,
+        "col": 6
+      },
+      "rural_population": 4466.96826171875,
+      "rural_area": 962721.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_2_7": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": 21.499583448710005,
+        "row": 2,
+        "col": 7
+      },
+      "rural_population": 10489.802734375,
+      "rural_area": 877917.0,
+      "urban_population": 19199.375,
+      "urban_area": 27.0
+    },
+    "grid_2_8": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": 13.166250148710006,
+        "row": 2,
+        "col": 8
+      },
+      "rural_population": 4975.40185546875,
+      "rural_area": 940032.0,
+      "urban_population": 324.4822082519531,
+      "urban_area": 1.0
+    },
+    "grid_2_9": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": 4.832916848709999,
+        "row": 2,
+        "col": 9
+      },
+      "rural_population": 5.163578987121582,
+      "rural_area": 950025.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_2_10": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -3.5004164512900076,
+        "row": 2,
+        "col": 10
+      },
+      "rural_population": 3245.7041015625,
+      "rural_area": 632794.0,
+      "urban_population": 4896.68994140625,
+      "urban_area": 10.0
+    },
+    "grid_2_11": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -11.83374975129,
+        "row": 2,
+        "col": 11
+      },
+      "rural_population": 1642.3138427734375,
+      "rural_area": 269675.0,
+      "urban_population": 376.26458740234375,
+      "urban_area": 1.0
+    },
+    "grid_2_12": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -20.167083051290007,
+        "row": 2,
+        "col": 12
+      },
+      "rural_population": 6191.19873046875,
+      "rural_area": 465631.0,
+      "urban_population": 685.5419921875,
+      "urban_area": 2.0
+    },
+    "grid_2_13": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -28.50041635129,
+        "row": 2,
+        "col": 13
+      },
+      "rural_population": 4785.32275390625,
+      "rural_area": 570033.0,
+      "urban_population": 6241.43408203125,
+      "urban_area": 10.0
+    },
+    "grid_2_14": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -36.833749651290006,
+        "row": 2,
+        "col": 14
+      },
+      "rural_population": 0.0,
+      "rural_area": 30477.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_2_15": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -45.16708295129001,
+        "row": 2,
+        "col": 15
+      },
+      "rural_population": 21687.685546875,
+      "rural_area": 442579.0,
+      "urban_population": 8008.26611328125,
+      "urban_area": 23.0
+    },
+    "grid_2_16": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -53.500416251290005,
+        "row": 2,
+        "col": 16
+      },
+      "rural_population": 5906.29541015625,
+      "rural_area": 599491.0,
+      "urban_population": 1427.0447998046875,
+      "urban_area": 4.0
+    },
+    "grid_2_17": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -61.83374955129,
+        "row": 2,
+        "col": 17
+      },
+      "rural_population": 3129.72021484375,
+      "rural_area": 82780.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_2_18": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -70.16708285129002,
+        "row": 2,
+        "col": 18
+      },
+      "rural_population": 94513.765625,
+      "rural_area": 42549.0,
+      "urban_population": 181750.21875,
+      "urban_area": 307.0
+    },
+    "grid_2_19": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -78.50041615129001,
+        "row": 2,
+        "col": 19
+      },
+      "rural_population": 89671.7734375,
+      "rural_area": 243560.0,
+      "urban_population": 749.93408203125,
+      "urban_area": 2.0
+    },
+    "grid_2_20": {
+      "geographic_location": {
+        "longitude": -159.167916015,
+        "latitude": -86.83374945129,
+        "row": 2,
+        "col": 20
+      },
+      "rural_population": 39795.2734375,
+      "rural_area": 4396.0,
+      "urban_population": 13779.4990234375,
+      "urban_area": 28.0
+    },
+    "grid_3_0": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": 79.83291654871002,
+        "row": 3,
+        "col": 0
+      },
+      "rural_population": 393.8702392578125,
+      "rural_area": 9284.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_3_1": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": 71.49958324871001,
+        "row": 3,
+        "col": 1
+      },
+      "rural_population": 5316.56396484375,
+      "rural_area": 22325.0,
+      "urban_population": 983.557373046875,
+      "urban_area": 2.0
+    },
+    "grid_3_2": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": 63.16624994871001,
+        "row": 3,
+        "col": 2
+      },
+      "rural_population": 4333.05712890625,
+      "rural_area": 132865.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_3_3": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": 54.83291664871001,
+        "row": 3,
+        "col": 3
+      },
+      "rural_population": 5528.56298828125,
+      "rural_area": 47094.0,
+      "urban_population": 7747.4248046875,
+      "urban_area": 14.0
+    },
+    "grid_3_5": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": 38.166250048710005,
+        "row": 3,
+        "col": 5
+      },
+      "rural_population": 41378.8515625,
+      "rural_area": 311501.0,
+      "urban_population": 42458.2890625,
+      "urban_area": 68.0
+    },
+    "grid_3_6": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": 29.832916748710005,
+        "row": 3,
+        "col": 6
+      },
+      "rural_population": 133896.359375,
+      "rural_area": 928372.0,
+      "urban_population": 99575.765625,
+      "urban_area": 162.0
+    },
+    "grid_3_7": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": 21.499583448710005,
+        "row": 3,
+        "col": 7
+      },
+      "rural_population": 607382.6875,
+      "rural_area": 991058.0,
+      "urban_population": 3122460.5,
+      "urban_area": 2373.0
+    },
+    "grid_3_8": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": 13.166250148710006,
+        "row": 3,
+        "col": 8
+      },
+      "rural_population": 427624.375,
+      "rural_area": 974155.0,
+      "urban_population": 702187.375,
+      "urban_area": 728.0
+    },
+    "grid_3_9": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": 4.832916848709999,
+        "row": 3,
+        "col": 9
+      },
+      "rural_population": 182558.078125,
+      "rural_area": 908977.0,
+      "urban_population": 88512.984375,
+      "urban_area": 152.0
+    },
+    "grid_3_10": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": -3.5004164512900076,
+        "row": 3,
+        "col": 10
+      },
+      "rural_population": 27667.783203125,
+      "rural_area": 852683.0,
+      "urban_population": 5411.734375,
+      "urban_area": 12.0
+    },
+    "grid_3_11": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": -11.83374975129,
+        "row": 3,
+        "col": 11
+      },
+      "rural_population": 3340.03466796875,
+      "rural_area": 479933.0,
+      "urban_population": 2827.62255859375,
+      "urban_area": 5.0
+    },
+    "grid_3_12": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": -20.167083051290007,
+        "row": 3,
+        "col": 12
+      },
+      "rural_population": 12806.84765625,
+      "rural_area": 785661.0,
+      "urban_population": 3326.421630859375,
+      "urban_area": 7.0
+    },
+    "grid_3_13": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": -28.50041635129,
+        "row": 3,
+        "col": 13
+      },
+      "rural_population": 6778.12353515625,
+      "rural_area": 958975.0,
+      "urban_population": 11716.5751953125,
+      "urban_area": 20.0
+    },
+    "grid_3_14": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": -36.833749651290006,
+        "row": 3,
+        "col": 14
+      },
+      "rural_population": 23811.642578125,
+      "rural_area": 511366.0,
+      "urban_population": 6475.38916015625,
+      "urban_area": 17.0
+    },
+    "grid_3_20": {
+      "geographic_location": {
+        "longitude": -150.834582715,
+        "latitude": -86.83374945129,
+        "row": 3,
+        "col": 20
+      },
+      "rural_population": 2938287.5,
+      "rural_area": 211725.0,
+      "urban_population": 4699070.0,
+      "urban_area": 4227.0
+    },
+    "grid_4_6": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": 29.832916748710005,
+        "row": 4,
+        "col": 6
+      },
+      "rural_population": 2462193.75,
+      "rural_area": 343475.0,
+      "urban_population": 10998579.0,
+      "urban_area": 9733.0
+    },
+    "grid_4_7": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": 21.499583448710005,
+        "row": 4,
+        "col": 7
+      },
+      "rural_population": 1704035.625,
+      "rural_area": 991939.0,
+      "urban_population": 3043649.5,
+      "urban_area": 3720.0
+    },
+    "grid_4_8": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": 13.166250148710006,
+        "row": 4,
+        "col": 8
+      },
+      "rural_population": 744003.625,
+      "rural_area": 995664.0,
+      "urban_population": 1128196.625,
+      "urban_area": 1465.0
+    },
+    "grid_4_9": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": 4.832916848709999,
+        "row": 4,
+        "col": 9
+      },
+      "rural_population": 1028164.875,
+      "rural_area": 989460.0,
+      "urban_population": 2151985.5,
+      "urban_area": 2273.0
+    },
+    "grid_4_10": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": -3.5004164512900076,
+        "row": 4,
+        "col": 10
+      },
+      "rural_population": 4206704.5,
+      "rural_area": 931145.0,
+      "urban_population": 6420310.0,
+      "urban_area": 8537.0
+    },
+    "grid_4_11": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": -11.83374975129,
+        "row": 4,
+        "col": 11
+      },
+      "rural_population": 4179388.0,
+      "rural_area": 820164.0,
+      "urban_population": 9306778.0,
+      "urban_area": 10890.0
+    },
+    "grid_4_12": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": -20.167083051290007,
+        "row": 4,
+        "col": 12
+      },
+      "rural_population": 5646320.0,
+      "rural_area": 956014.0,
+      "urban_population": 18931548.0,
+      "urban_area": 13905.0
+    },
+    "grid_4_13": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": -28.50041635129,
+        "row": 4,
+        "col": 13
+      },
+      "rural_population": 3348734.75,
+      "rural_area": 647520.0,
+      "urban_population": 5019880.0,
+      "urban_area": 5174.0
+    },
+    "grid_4_14": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": -36.833749651290006,
+        "row": 4,
+        "col": 14
+      },
+      "rural_population": 322758.4375,
+      "rural_area": 217011.0,
+      "urban_population": 197421.625,
+      "urban_area": 321.0
+    },
+    "grid_4_15": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": -45.16708295129001,
+        "row": 4,
+        "col": 15
+      },
+      "rural_population": 160452.109375,
+      "rural_area": 57785.0,
+      "urban_population": 194286.234375,
+      "urban_area": 224.0
+    },
+    "grid_4_20": {
+      "geographic_location": {
+        "longitude": -142.50124941500002,
+        "latitude": -86.83374945129,
+        "row": 4,
+        "col": 20
+      },
+      "rural_population": 1315797.875,
+      "rural_area": 71871.0,
+      "urban_population": 2563897.0,
+      "urban_area": 2148.0
+    },
+    "grid_5_6": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": 29.832916748710005,
+        "row": 5,
+        "col": 6
+      },
+      "rural_population": 842094.5,
+      "rural_area": 147432.0,
+      "urban_population": 8243149.5,
+      "urban_area": 5401.0
+    },
+    "grid_5_7": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": 21.499583448710005,
+        "row": 5,
+        "col": 7
+      },
+      "rural_population": 2219021.5,
+      "rural_area": 950024.0,
+      "urban_population": 20729946.0,
+      "urban_area": 13628.0
+    },
+    "grid_5_8": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": 13.166250148710006,
+        "row": 5,
+        "col": 8
+      },
+      "rural_population": 1799284.25,
+      "rural_area": 986255.0,
+      "urban_population": 6528581.5,
+      "urban_area": 6515.0
+    },
+    "grid_5_9": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": 4.832916848709999,
+        "row": 5,
+        "col": 9
+      },
+      "rural_population": 2119560.5,
+      "rural_area": 992565.0,
+      "urban_population": 6457462.0,
+      "urban_area": 6808.0
+    },
+    "grid_5_10": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": -3.5004164512900076,
+        "row": 5,
+        "col": 10
+      },
+      "rural_population": 8408138.0,
+      "rural_area": 979726.0,
+      "urban_population": 14552094.0,
+      "urban_area": 18874.0
+    },
+    "grid_5_11": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": -11.83374975129,
+        "row": 5,
+        "col": 11
+      },
+      "rural_population": 19912922.0,
+      "rural_area": 928620.0,
+      "urban_population": 35659196.0,
+      "urban_area": 43921.0
+    },
+    "grid_5_12": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": -20.167083051290007,
+        "row": 5,
+        "col": 12
+      },
+      "rural_population": 14935081.0,
+      "rural_area": 556058.0,
+      "urban_population": 49006224.0,
+      "urban_area": 43132.0
+    },
+    "grid_5_13": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": -28.50041635129,
+        "row": 5,
+        "col": 13
+      },
+      "rural_population": 937574.0,
+      "rural_area": 11760.0,
+      "urban_population": 2687889.5,
+      "urban_area": 3076.0
+    },
+    "grid_5_17": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": -61.83374955129,
+        "row": 5,
+        "col": 17
+      },
+      "rural_population": 3029.94580078125,
+      "rural_area": 293.0,
+      "urban_population": 2102.3544921875,
+      "urban_area": 5.0
+    },
+    "grid_5_18": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": -70.16708285129002,
+        "row": 5,
+        "col": 18
+      },
+      "rural_population": 89982.53125,
+      "rural_area": 3540.0,
+      "urban_population": 156038.9375,
+      "urban_area": 203.0
+    },
+    "grid_5_20": {
+      "geographic_location": {
+        "longitude": -134.167916115,
+        "latitude": -86.83374945129,
+        "row": 5,
+        "col": 20
+      },
+      "rural_population": 6359620.0,
+      "rural_area": 335299.0,
+      "urban_population": 17976048.0,
+      "urban_area": 12345.0
+    },
+    "grid_6_0": {
+      "geographic_location": {
+        "longitude": -125.834582815,
+        "latitude": 79.83291654871002,
+        "row": 6,
+        "col": 0
+      },
+      "rural_population": 0.0,
+      "rural_area": 29.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_6_7": {
+      "geographic_location": {
+        "longitude": -125.834582815,
+        "latitude": 21.499583448710005,
+        "row": 6,
+        "col": 7
+      },
+      "rural_population": 798541.375,
+      "rural_area": 214143.0,
+      "urban_population": 17289670.0,
+      "urban_area": 8929.0
+    },
+    "grid_6_8": {
+      "geographic_location": {
+        "longitude": -125.834582815,
+        "latitude": 13.166250148710006,
+        "row": 6,
+        "col": 8
+      },
+      "rural_population": 1929585.125,
+      "rural_area": 875697.0,
+      "urban_population": 13999416.0,
+      "urban_area": 8979.0
+    },
+    "grid_6_9": {
+      "geographic_location": {
+        "longitude": -125.834582815,
+        "latitude": 4.832916848709999,
+        "row": 6,
+        "col": 9
+      },
+      "rural_population": 3452880.0,
+      "rural_area": 961767.0,
+      "urban_population": 26225572.0,
+      "urban_area": 15491.0
+    },
+    "grid_6_10": {
+      "geographic_location": {
+        "longitude": -125.834582815,
+        "latitude": -3.5004164512900076,
+        "row": 6,
+        "col": 10
+      },
+      "rural_population": 5980604.5,
+      "rural_area": 527498.0,
+      "urban_population": 13277461.0,
+      "urban_area": 13916.0
+    },
+    "grid_6_11": {
+      "geographic_location": {
+        "longitude": -125.834582815,
+        "latitude": -11.83374975129,
+        "row": 6,
+        "col": 11
+      },
+      "rural_population": 8772492.0,
+      "rural_area": 521564.0,
+      "urban_population": 27286004.0,
+      "urban_area": 31516.0
+    },
+    "grid_6_12": {
+      "geographic_location": {
+        "longitude": -125.834582815,
+        "latitude": -20.167083051290007,
+        "row": 6,
+        "col": 12
+      },
+      "rural_population": 415379.125,
+      "rural_area": 21449.0,
+      "urban_population": 506460.53125,
+      "urban_area": 791.0
+    },
+    "grid_6_13": {
+      "geographic_location": {
+        "longitude": -125.834582815,
+        "latitude": -28.50041635129,
+        "row": 6,
+        "col": 13
+      },
+      "rural_population": 10872.134765625,
+      "rural_area": 114.0,
+      "urban_population": 55974.046875,
+      "urban_area": 82.0
+    },
+    "grid_6_19": {
+      "geographic_location": {
+        "longitude": -125.834582815,
+        "latitude": -78.50041615129001,
+        "row": 6,
+        "col": 19
+      },
+      "rural_population": 418082.5625,
+      "rural_area": 26029.0,
+      "urban_population": 2420868.0,
+      "urban_area": 1857.0
+    },
+    "grid_6_20": {
+      "geographic_location": {
+        "longitude": -125.834582815,
+        "latitude": -86.83374945129,
+        "row": 6,
+        "col": 20
+      },
+      "rural_population": 7707719.0,
+      "rural_area": 673160.0,
+      "urban_population": 15455368.0,
+      "urban_area": 7680.0
+    },
+    "grid_7_2": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": 63.16624994871001,
+        "row": 7,
+        "col": 2
+      },
+      "rural_population": 177297.96875,
+      "rural_area": 19241.0,
+      "urban_population": 1322476.0,
+      "urban_area": 888.0
+    },
+    "grid_7_3": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": 54.83291664871001,
+        "row": 7,
+        "col": 3
+      },
+      "rural_population": 17527.0234375,
+      "rural_area": 369.0,
+      "urban_population": 14392.333984375,
+      "urban_area": 32.0
+    },
+    "grid_7_7": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": 21.499583448710005,
+        "row": 7,
+        "col": 7
+      },
+      "rural_population": 0.0,
+      "rural_area": 37.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_7_8": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": 13.166250148710006,
+        "row": 7,
+        "col": 8
+      },
+      "rural_population": 787183.875,
+      "rural_area": 162634.0,
+      "urban_population": 3782563.75,
+      "urban_area": 1699.0
+    },
+    "grid_7_9": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": 4.832916848709999,
+        "row": 7,
+        "col": 9
+      },
+      "rural_population": 12469926.0,
+      "rural_area": 838314.0,
+      "urban_population": 76074616.0,
+      "urban_area": 32169.0
+    },
+    "grid_7_10": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": -3.5004164512900076,
+        "row": 7,
+        "col": 10
+      },
+      "rural_population": 2744249.5,
+      "rural_area": 241761.0,
+      "urban_population": 8162925.0,
+      "urban_area": 5155.0
+    },
+    "grid_7_11": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": -11.83374975129,
+        "row": 7,
+        "col": 11
+      },
+      "rural_population": 1957453.125,
+      "rural_area": 106764.0,
+      "urban_population": 5704705.0,
+      "urban_area": 3811.0
+    },
+    "grid_7_12": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": -20.167083051290007,
+        "row": 7,
+        "col": 12
+      },
+      "rural_population": 7817445.0,
+      "rural_area": 148569.0,
+      "urban_population": 16476659.0,
+      "urban_area": 14524.0
+    },
+    "grid_7_13": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": -28.50041635129,
+        "row": 7,
+        "col": 13
+      },
+      "rural_population": 3054796.5,
+      "rural_area": 62965.0,
+      "urban_population": 12735841.0,
+      "urban_area": 8467.0
+    },
+    "grid_7_14": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": -36.833749651290006,
+        "row": 7,
+        "col": 14
+      },
+      "rural_population": 42887.4140625,
+      "rural_area": 765.0,
+      "urban_population": 90771.65625,
+      "urban_area": 135.0
+    },
+    "grid_7_19": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": -78.50041615129001,
+        "row": 7,
+        "col": 19
+      },
+      "rural_population": 150062.75,
+      "rural_area": 331220.0,
+      "urban_population": 1606453.5,
+      "urban_area": 482.0
+    },
+    "grid_7_20": {
+      "geographic_location": {
+        "longitude": -117.50124951500001,
+        "latitude": -86.83374945129,
+        "row": 7,
+        "col": 20
+      },
+      "rural_population": 226399.84375,
+      "rural_area": 999924.0,
+      "urban_population": 38562.046875,
+      "urban_area": 66.0
+    },
+    "grid_8_1": {
+      "geographic_location": {
+        "longitude": -109.167916215,
+        "latitude": 71.49958324871001,
+        "row": 8,
+        "col": 1
+      },
+      "rural_population": 0.0,
+      "rural_area": 34.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_8_9": {
+      "geographic_location": {
+        "longitude": -109.167916215,
+        "latitude": 4.832916848709999,
+        "row": 8,
+        "col": 9
+      },
+      "rural_population": 966135.0625,
+      "rural_area": 52540.0,
+      "urban_population": 2947133.5,
+      "urban_area": 1981.0
+    },
+    "grid_8_10": {
+      "geographic_location": {
+        "longitude": -109.167916215,
+        "latitude": -3.5004164512900076,
+        "row": 8,
+        "col": 10
+      },
+      "rural_population": 13022708.0,
+      "rural_area": 279640.0,
+      "urban_population": 19648326.0,
+      "urban_area": 18884.0
+    },
+    "grid_8_11": {
+      "geographic_location": {
+        "longitude": -109.167916215,
+        "latitude": -11.83374975129,
+        "row": 8,
+        "col": 11
+      },
+      "rural_population": 9789769.0,
+      "rural_area": 326573.0,
+      "urban_population": 11234520.0,
+      "urban_area": 9187.0
+    },
+    "grid_8_12": {
+      "geographic_location": {
+        "longitude": -109.167916215,
+        "latitude": -20.167083051290007,
+        "row": 8,
+        "col": 12
+      },
+      "rural_population": 4321184.5,
+      "rural_area": 139371.0,
+      "urban_population": 10086306.0,
+      "urban_area": 5085.0
+    },
+    "grid_8_13": {
+      "geographic_location": {
+        "longitude": -109.167916215,
+        "latitude": -28.50041635129,
+        "row": 8,
+        "col": 13
+      },
+      "rural_population": 5861374.0,
+      "rural_area": 203943.0,
+      "urban_population": 16303917.0,
+      "urban_area": 11667.0
+    },
+    "grid_8_14": {
+      "geographic_location": {
+        "longitude": -109.167916215,
+        "latitude": -36.833749651290006,
+        "row": 8,
+        "col": 14
+      },
+      "rural_population": 1537280.625,
+      "rural_area": 51885.0,
+      "urban_population": 2734090.0,
+      "urban_area": 3770.0
+    },
+    "grid_8_18": {
+      "geographic_location": {
+        "longitude": -109.167916215,
+        "latitude": -70.16708285129002,
+        "row": 8,
+        "col": 18
+      },
+      "rural_population": 262220.09375,
+      "rural_area": 5356.0,
+      "urban_population": 284169.8125,
+      "urban_area": 317.0
+    },
+    "grid_8_19": {
+      "geographic_location": {
+        "longitude": -109.167916215,
+        "latitude": -78.50041615129001,
+        "row": 8,
+        "col": 19
+      },
+      "rural_population": 11991850.0,
+      "rural_area": 303759.0,
+      "urban_population": 12519535.0,
+      "urban_area": 8852.0
+    },
+    "grid_8_20": {
+      "geographic_location": {
+        "longitude": -109.167916215,
+        "latitude": -86.83374945129,
+        "row": 8,
+        "col": 20
+      },
+      "rural_population": 21044824.0,
+      "rural_area": 993378.0,
+      "urban_population": 9515628.0,
+      "urban_area": 5794.0
+    },
+    "grid_9_0": {
+      "geographic_location": {
+        "longitude": -100.834582915,
+        "latitude": 79.83291654871002,
+        "row": 9,
+        "col": 0
+      },
+      "rural_population": 0.0,
+      "rural_area": 8.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_9_2": {
+      "geographic_location": {
+        "longitude": -100.834582915,
+        "latitude": 63.16624994871001,
+        "row": 9,
+        "col": 2
+      },
+      "rural_population": 3317.623779296875,
+      "rural_area": 762.0,
+      "urban_population": 8989.9794921875,
+      "urban_area": 13.0
+    },
+    "grid_9_10": {
+      "geographic_location": {
+        "longitude": -100.834582915,
+        "latitude": -3.5004164512900076,
+        "row": 9,
+        "col": 10
+      },
+      "rural_population": 0.03542622551321983,
+      "rural_area": 12.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_9_11": {
+      "geographic_location": {
+        "longitude": -100.834582915,
+        "latitude": -11.83374975129,
+        "row": 9,
+        "col": 11
+      },
+      "rural_population": 1102649.75,
+      "rural_area": 51869.0,
+      "urban_population": 524217.21875,
+      "urban_area": 563.0
+    },
+    "grid_9_12": {
+      "geographic_location": {
+        "longitude": -100.834582915,
+        "latitude": -20.167083051290007,
+        "row": 9,
+        "col": 12
+      },
+      "rural_population": 16619260.0,
+      "rural_area": 737775.0,
+      "urban_population": 37583524.0,
+      "urban_area": 18528.0
+    },
+    "grid_9_13": {
+      "geographic_location": {
+        "longitude": -100.834582915,
+        "latitude": -28.50041635129,
+        "row": 9,
+        "col": 13
+      },
+      "rural_population": 3051540.75,
+      "rural_area": 997291.0,
+      "urban_population": 1589677.75,
+      "urban_area": 1789.0
+    },
+    "grid_9_14": {
+      "geographic_location": {
+        "longitude": -100.834582915,
+        "latitude": -36.833749651290006,
+        "row": 9,
+        "col": 14
+      },
+      "rural_population": 1550646.875,
+      "rural_area": 828792.0,
+      "urban_population": 1972845.625,
+      "urban_area": 1696.0
+    },
+    "grid_9_15": {
+      "geographic_location": {
+        "longitude": -100.834582915,
+        "latitude": -45.16708295129001,
+        "row": 9,
+        "col": 15
+      },
+      "rural_population": 314191.03125,
+      "rural_area": 283850.0,
+      "urban_population": 259773.140625,
+      "urban_area": 293.0
+    },
+    "grid_9_20": {
+      "geographic_location": {
+        "longitude": -100.834582915,
+        "latitude": -86.83374945129,
+        "row": 9,
+        "col": 20
+      },
+      "rural_population": 16116923.0,
+      "rural_area": 384279.0,
+      "urban_population": 9137220.0,
+      "urban_area": 7718.0
+    },
+    "grid_10_0": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": 79.83291654871002,
+        "row": 10,
+        "col": 0
+      },
+      "rural_population": 30.586881637573242,
+      "rural_area": 114.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_10_1": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": 71.49958324871001,
+        "row": 10,
+        "col": 1
+      },
+      "rural_population": 10.47989273071289,
+      "rural_area": 77.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_10_2": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": 63.16624994871001,
+        "row": 10,
+        "col": 2
+      },
+      "rural_population": 7.246170997619629,
+      "rural_area": 63.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_10_3": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": 54.83291664871001,
+        "row": 10,
+        "col": 3
+      },
+      "rural_population": 6.663107395172119,
+      "rural_area": 60.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_10_10": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": -3.5004164512900076,
+        "row": 10,
+        "col": 10
+      },
+      "rural_population": 7276.033203125,
+      "rural_area": 10349.0,
+      "urban_population": 27729.4453125,
+      "urban_area": 17.0
+    },
+    "grid_10_11": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": -11.83374975129,
+        "row": 10,
+        "col": 11
+      },
+      "rural_population": 1840502.375,
+      "rural_area": 69218.0,
+      "urban_population": 2790800.0,
+      "urban_area": 2144.0
+    },
+    "grid_10_12": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": -20.167083051290007,
+        "row": 10,
+        "col": 12
+      },
+      "rural_population": 8623836.0,
+      "rural_area": 986665.0,
+      "urban_population": 12393702.0,
+      "urban_area": 7894.0
+    },
+    "grid_10_13": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": -28.50041635129,
+        "row": 10,
+        "col": 13
+      },
+      "rural_population": 428929.03125,
+      "rural_area": 996908.0,
+      "urban_population": 428358.53125,
+      "urban_area": 272.0
+    },
+    "grid_10_14": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": -36.833749651290006,
+        "row": 10,
+        "col": 14
+      },
+      "rural_population": 769636.5,
+      "rural_area": 986944.0,
+      "urban_population": 3336886.0,
+      "urban_area": 901.0
+    },
+    "grid_10_15": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": -45.16708295129001,
+        "row": 10,
+        "col": 15
+      },
+      "rural_population": 2433684.25,
+      "rural_area": 926895.0,
+      "urban_population": 8403485.0,
+      "urban_area": 3479.0
+    },
+    "grid_10_16": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": -53.500416251290005,
+        "row": 10,
+        "col": 16
+      },
+      "rural_population": 5095038.0,
+      "rural_area": 619575.0,
+      "urban_population": 14337910.0,
+      "urban_area": 7793.0
+    },
+    "grid_10_17": {
+      "geographic_location": {
+        "longitude": -92.50124961499999,
+        "latitude": -61.83374955129,
+        "row": 10,
+        "col": 17
+      },
+      "rural_population": 1594665.5,
+      "rural_area": 130855.0,
+      "urban_population": 6828690.0,
+      "urban_area": 3555.0
+    },
+    "grid_11_0": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": 79.83291654871002,
+        "row": 11,
+        "col": 0
+      },
+      "rural_population": 120721.7578125,
+      "rural_area": 3624.0,
+      "urban_population": 72242.140625,
+      "urban_area": 147.0
+    },
+    "grid_11_1": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": 71.49958324871001,
+        "row": 11,
+        "col": 1
+      },
+      "rural_population": 39231.9765625,
+      "rural_area": 919.0,
+      "urban_population": 38362.01171875,
+      "urban_area": 59.0
+    },
+    "grid_11_2": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": 63.16624994871001,
+        "row": 11,
+        "col": 2
+      },
+      "rural_population": 291.5364990234375,
+      "rural_area": 194.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_11_3": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": 54.83291664871001,
+        "row": 11,
+        "col": 3
+      },
+      "rural_population": 5728.3173828125,
+      "rural_area": 897.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_11_4": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": 46.499583348710004,
+        "row": 11,
+        "col": 4
+      },
+      "rural_population": 15556.9736328125,
+      "rural_area": 2992.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_11_12": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": -20.167083051290007,
+        "row": 11,
+        "col": 12
+      },
+      "rural_population": 5902109.0,
+      "rural_area": 653408.0,
+      "urban_population": 17823200.0,
+      "urban_area": 5418.0
+    },
+    "grid_11_13": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": -28.50041635129,
+        "row": 11,
+        "col": 13
+      },
+      "rural_population": 2388742.5,
+      "rural_area": 990922.0,
+      "urban_population": 2114707.25,
+      "urban_area": 1203.0
+    },
+    "grid_11_14": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": -36.833749651290006,
+        "row": 11,
+        "col": 14
+      },
+      "rural_population": 929816.6875,
+      "rural_area": 997980.0,
+      "urban_population": 2896206.5,
+      "urban_area": 1654.0
+    },
+    "grid_11_15": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": -45.16708295129001,
+        "row": 11,
+        "col": 15
+      },
+      "rural_population": 1011944.8125,
+      "rural_area": 997071.0,
+      "urban_population": 5532698.5,
+      "urban_area": 2550.0
+    },
+    "grid_11_16": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": -53.500416251290005,
+        "row": 11,
+        "col": 16
+      },
+      "rural_population": 4223685.0,
+      "rural_area": 963748.0,
+      "urban_population": 11608404.0,
+      "urban_area": 6307.0
+    },
+    "grid_11_17": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": -61.83374955129,
+        "row": 11,
+        "col": 17
+      },
+      "rural_population": 2480320.75,
+      "rural_area": 144352.0,
+      "urban_population": 13020939.0,
+      "urban_area": 5553.0
+    },
+    "grid_11_19": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": -78.50041615129001,
+        "row": 11,
+        "col": 19
+      },
+      "rural_population": 707.607421875,
+      "rural_area": 147.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_11_20": {
+      "geographic_location": {
+        "longitude": -84.167916315,
+        "latitude": -86.83374945129,
+        "row": 11,
+        "col": 20
+      },
+      "rural_population": 174.2505340576172,
+      "rural_area": 14.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_12_0": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": 79.83291654871002,
+        "row": 12,
+        "col": 0
+      },
+      "rural_population": 72303.625,
+      "rural_area": 3086.0,
+      "urban_population": 55267.71875,
+      "urban_area": 112.0
+    },
+    "grid_12_1": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": 71.49958324871001,
+        "row": 12,
+        "col": 1
+      },
+      "rural_population": 1390.2652587890625,
+      "rural_area": 381.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_12_2": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": 63.16624994871001,
+        "row": 12,
+        "col": 2
+      },
+      "rural_population": 12723.10546875,
+      "rural_area": 433.0,
+      "urban_population": 4642.33740234375,
+      "urban_area": 12.0
+    },
+    "grid_12_3": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": 54.83291664871001,
+        "row": 12,
+        "col": 3
+      },
+      "rural_population": 149956.0625,
+      "rural_area": 2628.0,
+      "urban_population": 130459.578125,
+      "urban_area": 218.0
+    },
+    "grid_12_4": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": 46.499583348710004,
+        "row": 12,
+        "col": 4
+      },
+      "rural_population": 6516.72412109375,
+      "rural_area": 2985.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_12_5": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": 38.166250048710005,
+        "row": 12,
+        "col": 5
+      },
+      "rural_population": 2868.994140625,
+      "rural_area": 642.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_12_6": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": 29.832916748710005,
+        "row": 12,
+        "col": 6
+      },
+      "rural_population": 0.44696053862571716,
+      "rural_area": 2.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_12_12": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": -20.167083051290007,
+        "row": 12,
+        "col": 12
+      },
+      "rural_population": 193355.03125,
+      "rural_area": 20307.0,
+      "urban_population": 188263.5625,
+      "urban_area": 205.0
+    },
+    "grid_12_13": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": -28.50041635129,
+        "row": 12,
+        "col": 13
+      },
+      "rural_population": 5141188.0,
+      "rural_area": 861047.0,
+      "urban_population": 7046715.5,
+      "urban_area": 4761.0
+    },
+    "grid_12_14": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": -36.833749651290006,
+        "row": 12,
+        "col": 14
+      },
+      "rural_population": 1785277.125,
+      "rural_area": 997148.0,
+      "urban_population": 2797772.25,
+      "urban_area": 1999.0
+    },
+    "grid_12_15": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": -45.16708295129001,
+        "row": 12,
+        "col": 15
+      },
+      "rural_population": 3541790.0,
+      "rural_area": 978384.0,
+      "urban_population": 39439888.0,
+      "urban_area": 16365.0
+    },
+    "grid_12_16": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": -53.500416251290005,
+        "row": 12,
+        "col": 16
+      },
+      "rural_population": 5122139.0,
+      "rural_area": 662636.0,
+      "urban_population": 54279864.0,
+      "urban_area": 18218.0
+    },
+    "grid_12_18": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": -70.16708285129002,
+        "row": 12,
+        "col": 18
+      },
+      "rural_population": 0.0,
+      "rural_area": 35.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_12_20": {
+      "geographic_location": {
+        "longitude": -75.83458301499999,
+        "latitude": -86.83374945129,
+        "row": 12,
+        "col": 20
+      },
+      "rural_population": 2875.4013671875,
+      "rural_area": 27.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_13_4": {
+      "geographic_location": {
+        "longitude": -67.501249715,
+        "latitude": 46.499583348710004,
+        "row": 13,
+        "col": 4
+      },
+      "rural_population": 438.24853515625,
+      "rural_area": 105.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_13_5": {
+      "geographic_location": {
+        "longitude": -67.501249715,
+        "latitude": 38.166250048710005,
+        "row": 13,
+        "col": 5
+      },
+      "rural_population": 9.001740455627441,
+      "rural_area": 14.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_13_6": {
+      "geographic_location": {
+        "longitude": -67.501249715,
+        "latitude": 29.832916748710005,
+        "row": 13,
+        "col": 6
+      },
+      "rural_population": 72.81732177734375,
+      "rural_area": 88.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_13_8": {
+      "geographic_location": {
+        "longitude": -67.501249715,
+        "latitude": 13.166250148710006,
+        "row": 13,
+        "col": 8
+      },
+      "rural_population": 5202.4814453125,
+      "rural_area": 272.0,
+      "urban_population": 1513.39892578125,
+      "urban_area": 4.0
+    },
+    "grid_13_11": {
+      "geographic_location": {
+        "longitude": -67.501249715,
+        "latitude": -11.83374975129,
+        "row": 13,
+        "col": 11
+      },
+      "rural_population": 6.099016189575195,
+      "rural_area": 12.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_13_12": {
+      "geographic_location": {
+        "longitude": -67.501249715,
+        "latitude": -20.167083051290007,
+        "row": 13,
+        "col": 12
+      },
+      "rural_population": 1135.64599609375,
+      "rural_area": 319.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_13_13": {
+      "geographic_location": {
+        "longitude": -67.501249715,
+        "latitude": -28.50041635129,
+        "row": 13,
+        "col": 13
+      },
+      "rural_population": 2733165.75,
+      "rural_area": 930803.0,
+      "urban_population": 6423501.0,
+      "urban_area": 5109.0
+    },
+    "grid_13_14": {
+      "geographic_location": {
+        "longitude": -67.501249715,
+        "latitude": -36.833749651290006,
+        "row": 13,
+        "col": 14
+      },
+      "rural_population": 4689880.0,
+      "rural_area": 981837.0,
+      "urban_population": 8829446.0,
+      "urban_area": 7235.0
+    },
+    "grid_13_15": {
+      "geographic_location": {
+        "longitude": -67.501249715,
+        "latitude": -45.16708295129001,
+        "row": 13,
+        "col": 15
+      },
+      "rural_population": 5305929.0,
+      "rural_area": 636169.0,
+      "urban_population": 22029740.0,
+      "urban_area": 13145.0
+    },
+    "grid_14_11": {
+      "geographic_location": {
+        "longitude": -59.16791641499999,
+        "latitude": -11.83374975129,
+        "row": 14,
+        "col": 11
+      },
+      "rural_population": 146.28318786621094,
+      "rural_area": 105.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_14_12": {
+      "geographic_location": {
+        "longitude": -59.16791641499999,
+        "latitude": -20.167083051290007,
+        "row": 14,
+        "col": 12
+      },
+      "rural_population": 1652340.0,
+      "rural_area": 140337.0,
+      "urban_population": 2865493.0,
+      "urban_area": 2465.0
+    },
+    "grid_14_13": {
+      "geographic_location": {
+        "longitude": -59.16791641499999,
+        "latitude": -28.50041635129,
+        "row": 14,
+        "col": 13
+      },
+      "rural_population": 2943162.0,
+      "rural_area": 985928.0,
+      "urban_population": 13797950.0,
+      "urban_area": 7628.0
+    },
+    "grid_14_14": {
+      "geographic_location": {
+        "longitude": -59.16791641499999,
+        "latitude": -36.833749651290006,
+        "row": 14,
+        "col": 14
+      },
+      "rural_population": 2708054.25,
+      "rural_area": 618387.0,
+      "urban_population": 23267674.0,
+      "urban_area": 11060.0
+    },
+    "grid_14_15": {
+      "geographic_location": {
+        "longitude": -59.16791641499999,
+        "latitude": -45.16708295129001,
+        "row": 14,
+        "col": 15
+      },
+      "rural_population": 50782.203125,
+      "rural_area": 50172.0,
+      "urban_population": 279019.125,
+      "urban_area": 194.0
+    },
+    "grid_14_20": {
+      "geographic_location": {
+        "longitude": -59.16791641499999,
+        "latitude": -86.83374945129,
+        "row": 14,
+        "col": 20
+      },
+      "rural_population": 260.0596923828125,
+      "rural_area": 381.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_15_0": {
+      "geographic_location": {
+        "longitude": -50.83458311499999,
+        "latitude": 79.83291654871002,
+        "row": 15,
+        "col": 0
+      },
+      "rural_population": 591.1329956054688,
+      "rural_area": 1639.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_15_12": {
+      "geographic_location": {
+        "longitude": -50.83458311499999,
+        "latitude": -20.167083051290007,
+        "row": 15,
+        "col": 12
+      },
+      "rural_population": 436367.15625,
+      "rural_area": 307072.0,
+      "urban_population": 495493.6875,
+      "urban_area": 511.0
+    },
+    "grid_15_13": {
+      "geographic_location": {
+        "longitude": -50.83458311499999,
+        "latitude": -28.50041635129,
+        "row": 15,
+        "col": 13
+      },
+      "rural_population": 352255.03125,
+      "rural_area": 687173.0,
+      "urban_population": 689092.75,
+      "urban_area": 733.0
+    },
+    "grid_15_14": {
+      "geographic_location": {
+        "longitude": -50.83458311499999,
+        "latitude": -36.833749651290006,
+        "row": 15,
+        "col": 14
+      },
+      "rural_population": 2043.5347900390625,
+      "rural_area": 1041.0,
+      "urban_population": 1833.0277099609375,
+      "urban_area": 4.0
+    },
+    "grid_16_12": {
+      "geographic_location": {
+        "longitude": -42.501249814999994,
+        "latitude": -20.167083051290007,
+        "row": 16,
+        "col": 12
+      },
+      "rural_population": 62776.7109375,
+      "rural_area": 187673.0,
+      "urban_population": 20673.578125,
+      "urban_area": 37.0
+    },
+    "grid_16_13": {
+      "geographic_location": {
+        "longitude": -42.501249814999994,
+        "latitude": -28.50041635129,
+        "row": 16,
+        "col": 13
+      },
+      "rural_population": 149407.875,
+      "rural_area": 283717.0,
+      "urban_population": 299495.9375,
+      "urban_area": 317.0
+    },
+    "grid_16_14": {
+      "geographic_location": {
+        "longitude": -42.501249814999994,
+        "latitude": -36.833749651290006,
+        "row": 16,
+        "col": 14
+      },
+      "rural_population": 2680.458251953125,
+      "rural_area": 27932.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_16_16": {
+      "geographic_location": {
+        "longitude": -42.501249814999994,
+        "latitude": -53.500416251290005,
+        "row": 16,
+        "col": 16
+      },
+      "rural_population": 0.0,
+      "rural_area": 6.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_16_17": {
+      "geographic_location": {
+        "longitude": -42.501249814999994,
+        "latitude": -61.83374955129,
+        "row": 16,
+        "col": 17
+      },
+      "rural_population": 0.0,
+      "rural_area": 8580.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_16_18": {
+      "geographic_location": {
+        "longitude": -42.501249814999994,
+        "latitude": -70.16708285129002,
+        "row": 16,
+        "col": 18
+      },
+      "rural_population": 0.0,
+      "rural_area": 195.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    },
+    "grid_17_18": {
+      "geographic_location": {
+        "longitude": -34.167916515,
+        "latitude": -70.16708285129002,
+        "row": 17,
+        "col": 18
+      },
+      "rural_population": 0.0,
+      "rural_area": 666.0,
+      "urban_population": 0.0,
+      "urban_area": 0.0
+    }
+  }
+}

@@ -9,7 +9,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
             min-height: 100vh;
         }
         
@@ -21,21 +21,23 @@
         
         .header {
             text-align: center;
-            color: white;
+            color: #333;
             margin-bottom: 50px;
         }
         
         .header h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            font-weight: 300;
+            color: #2c3e50;
         }
         
         .header p {
-            font-size: 1.2rem;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            color: #7f8c8d;
             max-width: 600px;
             margin: 0 auto;
+            line-height: 1.6;
         }
         
         .visualizations {
@@ -47,64 +49,71 @@
         
         .viz-card {
             background: white;
-            border-radius: 15px;
-            padding: 30px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.2s ease;
             text-decoration: none;
             color: inherit;
+            border: 1px solid #f1f3f4;
         }
         
         .viz-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+            border-color: #e8eaed;
         }
         
         .viz-card h3 {
-            color: #333;
-            margin-bottom: 15px;
-            font-size: 1.5rem;
+            color: #2c3e50;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            font-weight: 500;
         }
         
         .viz-card p {
-            color: #666;
-            line-height: 1.6;
-            margin-bottom: 20px;
+            color: #5a6c7d;
+            line-height: 1.5;
+            margin-bottom: 16px;
+            font-size: 0.95rem;
         }
         
         .viz-type {
             display: inline-block;
-            background: #667eea;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            background: #f8f9fa;
+            color: #6c757d;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-size: 0.75rem;
             font-weight: 500;
-            margin-bottom: 15px;
+            margin-bottom: 12px;
+            border: 1px solid #e9ecef;
         }
         
         .preview {
             width: 100%;
-            height: 200px;
-            background: #f5f5f5;
-            border-radius: 10px;
+            height: 160px;
+            background: #f8f9fa;
+            border-radius: 6px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 20px;
-            font-size: 3rem;
-            color: #999;
+            margin-bottom: 16px;
+            font-size: 2.5rem;
+            color: #adb5bd;
+            border: 1px solid #e9ecef;
         }
         
-        .bar-preview { background: linear-gradient(45deg, #CAB899, #EFD9AD, #3498DC, #92D0F9, #E16D65, #F0DDDC); }
-        .pie-preview { background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1); }
-        .horizon-preview { background: linear-gradient(45deg, #667eea, #764ba2, #f093fb); }
+        .bar-preview { background: linear-gradient(45deg, #e3f2fd, #bbdefb, #90caf9); }
+        .pie-preview { background: linear-gradient(45deg, #fce4ec, #f8bbd9, #f48fb1); }
+        .horizon-preview { background: linear-gradient(45deg, #e8f5e8, #c8e6c9, #a5d6a7); }
+        .map-preview { background: linear-gradient(45deg, #fff3e0, #ffe0b2, #ffcc80); }
         
         .footer {
             text-align: center;
-            margin-top: 60px;
-            color: white;
-            opacity: 0.8;
+            margin-top: 50px;
+            color: #6c757d;
+            font-size: 0.9rem;
         }
         
         @media (max-width: 768px) {
@@ -114,6 +123,11 @@
             
             .visualizations {
                 grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 30px 15px;
             }
         }
     </style>
@@ -126,6 +140,12 @@
         </div>
         
         <div class="visualizations">
+            <a href="map/population_scatter_plot_unified.html" class="viz-card">
+                <div class="preview map-preview">🗺️</div>
+                <div class="viz-type">Scatter Plot Map</div>
+                <h3>Africa Population Distribution</h3>
+                <p>Interactive scatter plot visualization of population distribution across Africa. Explore population density patterns with zoom controls and detailed cell information.</p>
+            </a>
             <a href="bar/stacked_bar_chart.html" class="viz-card">
                 <div class="preview bar-preview">📊</div>
                 <div class="viz-type">Stacked Bar Chart</div>
@@ -149,7 +169,7 @@
         </div>
         
         <div class="footer">
-            <p>© 2024 Rural Atlas Project | Data-driven insights for rural development</p>
+            <p></p>
         </div>
     </div>
 </body>
