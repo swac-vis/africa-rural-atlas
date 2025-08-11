@@ -1556,7 +1556,7 @@
             // 重新生成颜色比例尺
             const colorScale = createColorScale(window.gridData || []);
             
-            // 更新所有圆形的颜色
+            // 更新所有圆形的颜色（scatter模式）
             d3.selectAll(".cell-clickable circle").each(function() {
                 const circle = d3.select(this);
                 const cellGroup = d3.select(this.parentNode);
@@ -1569,6 +1569,66 @@
                     const cellData = cellGroup.datum();
                     const urbanCircles = cellData ? cellData.urbanCircles : 0;
                     const isUrban = circle.datum() ? circle.datum().spiralIndex < urbanCircles : false;
+                    const value = calculateValue(cell, isUrban);
+                    const safeValue = isFinite(value) && value >= 0 ? value : 0;
+                    circle.attr("fill", colorScale(safeValue));
+                }
+            });
+            
+            // 更新所有矩形的颜色（rect模式）
+            d3.selectAll(".cell-clickable rect[width]").each(function() {
+                const rect = d3.select(this);
+                const cellGroup = d3.select(this.parentNode);
+                const cellId = cellGroup.attr("data-cell-id");
+                
+                // 找到对应的cell数据
+                const cell = (window.gridData || []).find(d => `${d.longitude}-${d.latitude}` === cellId);
+                if (cell) {
+                    // 从cellGroup中获取urbanAreaRatio信息
+                    const cellData = cellGroup.datum();
+                    const urbanAreaRatio = cellData ? cellData.urbanAreaRatio : 0;
+                    
+                    // 判断是外矩形还是内矩形
+                    // 我们通过检查矩形是否是透明点击区域来判断
+                    const isClickArea = rect.attr("fill") === "transparent";
+                    if (isClickArea) return; // 跳过透明点击区域
+                    
+                    // 根据矩形在cellGroup中的顺序来判断
+                    // 第一个矩形是外矩形（rural），第二个是内矩形（urban）
+                    const rects = cellGroup.selectAll("rect[width]").nodes();
+                    const rectIndex = rects.indexOf(rect);
+                    const isUrban = rectIndex === 1; // 第二个矩形是内矩形
+                    
+                    const value = calculateValue(cell, isUrban);
+                    const safeValue = isFinite(value) && value >= 0 ? value : 0;
+                    rect.attr("fill", colorScale(safeValue));
+                }
+            });
+            
+            // 更新所有同心圆的颜色（concentric模式）
+            d3.selectAll(".cell-clickable circle[fill]").each(function() {
+                const circle = d3.select(this);
+                const cellGroup = d3.select(this.parentNode);
+                const cellId = cellGroup.attr("data-cell-id");
+                
+                // 找到对应的cell数据
+                const cell = (window.gridData || []).find(d => `${d.longitude}-${d.latitude}` === cellId);
+                if (cell) {
+                    // 从cellGroup中获取urbanAreaRatio信息
+                    const cellData = cellGroup.datum();
+                    const urbanAreaRatio = cellData ? cellData.urbanAreaRatio : 0;
+                    
+                    // 判断是外圆还是内圆
+                    // 我们通过检查圆是否是透明点击区域来判断
+                    const isClickArea = circle.attr("fill") === "transparent";
+                    if (isClickArea) return; // 跳过透明点击区域
+                    
+                    // 根据圆在cellGroup中的顺序来判断
+                    // 第一个圆是外圆（rural），第二个是内圆（urban）
+                    const circles = cellGroup.selectAll("circle[fill]").nodes();
+                    const circleIndex = circles.indexOf(circle);
+                    const isUrban = circleIndex === 1; // 第二个圆是内圆
+                    
                     const value = calculateValue(cell, isUrban);
                     const safeValue = isFinite(value) && value >= 0 ? value : 0;
                     circle.attr("fill", colorScale(safeValue));
@@ -1595,7 +1655,14 @@
             
             // 计算urban area占比（用于内圆大小）
             const totalArea = cell.urban_area + cell.rural_area;
-            const urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+            let urbanAreaRatio;
+            if (currentConfig.useRealArea) {
+                // 使用真实面积比例
+                urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+            } else {
+                // 使用固定面积模式：内圆占据20%的面积
+                urbanAreaRatio = 0.2;
+            }
             const innerRadius = radius * Math.sqrt(urbanAreaRatio); // 内圆半径
             
             // 绘制外圆（代表rural人口）
@@ -1643,10 +1710,17 @@
             const rectSize = currentConfig.gridSize === '100' ? 
                 areaSize * 1 : areaSize * 1;
             
-            // 计算urban area占比（用于内矩形大小）
-            const totalArea = cell.urban_area + cell.rural_area;
-            const urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
-            const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // 内矩形大小
+                            // 计算urban area占比（用于内矩形大小）
+                const totalArea = cell.urban_area + cell.rural_area;
+                let urbanAreaRatio;
+                if (currentConfig.useRealArea) {
+                    // 使用真实面积比例
+                    urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+                } else {
+                    // 使用固定面积模式：内矩形占据20%的面积
+                    urbanAreaRatio = 0.2;
+                }
+                const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // 内矩形大小
             
             // 绘制外矩形（代表rural人口）
             const ruralValue = calculateValue(cell, false);
@@ -2228,6 +2302,7 @@
                             urbanCircles = Math.round(circleCount * urbanRatio);
                             ruralCircles = circleCount - urbanCircles;
                         } else {
+                            // 使用固定面积模式：内圆占据20%的数量
                             urbanCircles = Math.round(circleCount * MAPPING_CONFIG.urbanAreaShare);
                             ruralCircles = circleCount - urbanCircles;
                         }
@@ -2347,7 +2422,14 @@
                 
                 // 计算urban area占比（用于内圆大小）
                 const totalArea = cell.urban_area + cell.rural_area;
-                const urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+                let urbanAreaRatio;
+                if (currentConfig.useRealArea) {
+                    // 使用真实面积比例
+                    urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+                } else {
+                    // 使用固定面积模式：内圆占据20%的面积
+                    urbanAreaRatio = 0.2;
+                }
                 const innerRadius = radius * Math.sqrt(urbanAreaRatio); // 内圆半径
                 
                 // 创建网格单元组
@@ -2646,7 +2728,14 @@
                 
                 // 计算urban area占比（用于内矩形大小）
                 const totalArea = cell.urban_area + cell.rural_area;
-                const urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+                let urbanAreaRatio;
+                if (currentConfig.useRealArea) {
+                    // 使用真实面积比例
+                    urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+                } else {
+                    // 使用固定面积模式：内矩形占据20%的面积
+                    urbanAreaRatio = 0.2;
+                }
                 const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // 内矩形大小
                 
                 // 创建网格单元组
