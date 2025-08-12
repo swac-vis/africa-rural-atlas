@@ -47,10 +47,10 @@
         /* 缩放控制样式 */
         .zoom-controls {
             position: absolute;
-            top: 80px;
-            right: 20px;
+            bottom: 20px;
+            left: 20px;
             display: flex;
-            flex-direction: column;
+            flex-direction: row;
             gap: 5px;
             z-index: 9997;
         }
@@ -84,19 +84,6 @@
         .zoom-btn.disabled {
             opacity: 0.5;
             cursor: not-allowed;
-        }
-        
-        .zoom-info {
-            position: absolute;
-            bottom: 20px;
-            left: 20px;
-            background: rgba(255, 255, 255, 0.9);
-            padding: 8px 12px;
-            border-radius: 4px;
-            font-size: 12px;
-            color: #333;
-            border: 1px solid #ccc;
-            z-index: 1000;
         }
         
         /* 图例中的SVG图例样式 */
@@ -800,14 +787,7 @@
         <div class="chart-container" id="chart">
             <!-- 缩放控制按钮 -->
             <div class="zoom-controls">
-                <button class="zoom-btn" id="zoomInBtn" title="放大">+</button>
-                <button class="zoom-btn" id="zoomOutBtn" title="缩小">−</button>
                 <button class="zoom-btn" id="resetZoomBtn" title="重置缩放">⌂</button>
-            </div>
-            
-            <!-- 缩放信息显示 -->
-            <div class="zoom-info" id="zoomInfo">
-                缩放: 100%
             </div>
         </div>
     </div>
@@ -989,17 +969,10 @@
             if (currentConfig.colorMapping === 'population') {
                 return isUrban ? cell.urban_population : cell.rural_population;
             } else {
-                // density mapping
-                if (currentConfig.useRealArea) {
-                    const area = isUrban ? cell.urban_area : cell.rural_area;
-                    const population = isUrban ? cell.urban_population : cell.rural_population;
-                    return area > 0 ? population / area : 0;
-                } else {
-                    // 使用固定面积
-                    const totalArea = currentConfig.gridSize === '100' ? 10000 : 1000000;
-                    const population = isUrban ? cell.urban_population : cell.rural_population;
-                    return population / totalArea;
-                }
+                // density mapping - 无论是否使用真实面积，都应该用真实的密度值
+                const area = isUrban ? cell.urban_area : cell.rural_area;
+                const population = isUrban ? cell.urban_population : cell.rural_population;
+                return area > 0 ? population / area : 0;
             }
         }
 
@@ -2169,8 +2142,21 @@
             // 使用currentConfig中的maxCircles
             MAPPING_CONFIG.maxCircles = currentConfig.maxCircles;
             
-            // 清除现有内容
+            // 清除现有内容，但保留缩放控制按钮
+            const zoomControls = document.querySelector('.zoom-controls');
+            
+            // 保存缩放按钮的HTML内容
+            const zoomControlsHTML = zoomControls ? zoomControls.innerHTML : '';
+            
             d3.select("#chart").selectAll("*").remove();
+            
+            // 重新创建缩放控制按钮
+            if (zoomControlsHTML) {
+                const newZoomControls = document.createElement('div');
+                newZoomControls.className = 'zoom-controls';
+                newZoomControls.innerHTML = zoomControlsHTML;
+                document.getElementById('chart').appendChild(newZoomControls);
+            }
 
             const svg = d3.select("#chart")
                 .append("svg")
@@ -2195,9 +2181,27 @@
                     }, 0);
                 })
                 .on("end", function(event) {
-                    // 双击重置缩放
+                    // 双击放大功能保留，但不重置到初始位置
                     if (event.sourceEvent && event.sourceEvent.type === "dblclick") {
-                        resetZoom();
+                        // 双击时放大，而不是重置
+                        const currentTransform = d3.zoomTransform(svg.node());
+                        const newScale = Math.min(MAX_ZOOM, currentTransform.k * 1.5);
+                        
+                        if (newScale > currentTransform.k) {
+                            // 获取双击位置相对于SVG的坐标
+                            const rect = svg.node().getBoundingClientRect();
+                            const x = event.sourceEvent.clientX - rect.left;
+                            const y = event.sourceEvent.clientY - rect.top;
+                            
+                            // 使用D3.js的zoom.scaleTo方法，以双击位置为中心进行平滑放大
+                            const point = [x, y];
+                            svg.call(zoom.scaleTo, newScale, point);
+                            
+                            // 更新全局zoom状态
+                            currentZoom = d3.zoomTransform(svg.node());
+                            zoomLevel = newScale;
+                            updateZoomInfo();
+                        }
                     }
                 });
 
@@ -2243,7 +2247,8 @@
                             latitude: correctedLat
                         };
                     })
-                    .filter(d => d.total_population > 0);
+                    // 移除过滤条件，显示所有网格（包括人口为0的网格）
+                    // .filter(d => d.total_population > 0);
 
                 // 保存到全局变量
                 window.gridData = gridData;
@@ -2387,6 +2392,18 @@
                 
                 // 更新图例中的连续颜色滑动条
                 updateLegendFigure();
+                
+                // 重新绑定zoom按钮事件监听器
+                const resetZoomBtn = document.getElementById('resetZoomBtn');
+                
+                // 先移除旧的事件监听器，避免重复绑定
+                if (resetZoomBtn) {
+                    resetZoomBtn.removeEventListener('click', resetZoom);
+                    resetZoomBtn.addEventListener('click', resetZoom);
+                }
+                
+                // 更新缩放信息
+                updateZoomInfo();
             });
         }
         
@@ -2538,6 +2555,18 @@
                         });
                 }
             });
+            
+            // 重新绑定zoom按钮事件监听器
+            const resetZoomBtn = document.getElementById('resetZoomBtn');
+            
+            // 先移除旧的事件监听器，避免重复绑定
+            if (resetZoomBtn) {
+                resetZoomBtn.removeEventListener('click', resetZoom);
+                resetZoomBtn.addEventListener('click', resetZoom);
+            }
+            
+            // 更新缩放信息
+            updateZoomInfo();
         }
 
         // 事件监听器
@@ -2845,35 +2874,58 @@
                         });
                 }
             });
+            
+            // 重新绑定zoom按钮事件监听器
+            const resetZoomBtn = document.getElementById('resetZoomBtn');
+            
+            // 先移除旧的事件监听器，避免重复绑定
+            if (resetZoomBtn) {
+                resetZoomBtn.removeEventListener('click', resetZoom);
+                resetZoomBtn.addEventListener('click', resetZoom);
+            }
+            
+            // 更新缩放信息
+            updateZoomInfo();
         }
 
         // 缩放控制函数
         function updateZoomInfo() {
-            const zoomInfo = document.getElementById('zoomInfo');
-            const zoomInBtn = document.getElementById('zoomInBtn');
-            const zoomOutBtn = document.getElementById('zoomOutBtn');
-            
-            // 检查元素是否存在
-            if (zoomInfo) {
-                const percentage = Math.round(zoomLevel * 100);
-                zoomInfo.textContent = `缩放: ${percentage}%`;
-            }
-            
-            // 更新按钮状态
-            if (zoomInBtn) {
-                zoomInBtn.classList.toggle('disabled', zoomLevel >= MAX_ZOOM);
-            }
-            if (zoomOutBtn) {
-                zoomOutBtn.classList.toggle('disabled', zoomLevel <= MIN_ZOOM);
-            }
+            // 由于删除了zoom-info和zoom按钮，这个函数现在主要用于更新全局状态
+            // 可以保留用于将来的扩展
         }
         
         function zoomIn() {
             if (zoomLevel < MAX_ZOOM) {
                 const svg = d3.select("#chart svg");
                 if (!svg.empty()) {
-                    const zoom = d3.zoom().scaleExtent([MIN_ZOOM, MAX_ZOOM]);
-                    svg.call(zoom.scaleBy, 1.5);
+                    // 获取SVG的尺寸和当前zoom状态
+                    const width = parseInt(svg.attr("width"));
+                    const height = parseInt(svg.attr("height"));
+                    const currentTransform = d3.zoomTransform(svg.node());
+                    
+                    // 计算新的缩放比例
+                    const newScale = Math.min(MAX_ZOOM, currentTransform.k * 1.5);
+                    
+                    // 以地图中心为缩放中心
+                    const centerX = width / 2;
+                    const centerY = height / 2;
+                    
+                    // 创建新的变换，保持中心点不变
+                    const newTransform = d3.zoomIdentity
+                        .translate(centerX, centerY)
+                        .scale(newScale)
+                        .translate(-centerX, -centerY);
+                    
+                    // 应用变换
+                    svg.call(d3.zoom().transform, newTransform);
+                    
+                    // 立即应用缩放变换到地图组
+                    svg.select(".map-group").attr("transform", newTransform);
+                    
+                    // 更新全局zoom状态
+                    currentZoom = newTransform;
+                    zoomLevel = newScale;
+                    updateZoomInfo();
                 }
             }
         }
@@ -2882,8 +2934,34 @@
             if (zoomLevel > MIN_ZOOM) {
                 const svg = d3.select("#chart svg");
                 if (!svg.empty()) {
-                    const zoom = d3.zoom().scaleExtent([MIN_ZOOM, MAX_ZOOM]);
-                    svg.call(zoom.scaleBy, 0.75);
+                    // 获取SVG的尺寸和当前zoom状态
+                    const width = parseInt(svg.attr("width"));
+                    const height = parseInt(svg.attr("height"));
+                    const currentTransform = d3.zoomTransform(svg.node());
+                    
+                    // 计算新的缩放比例
+                    const newScale = Math.max(MIN_ZOOM, currentTransform.k * 0.75);
+                    
+                    // 以地图中心为缩放中心
+                    const centerX = width / 2;
+                    const centerY = height / 2;
+                    
+                    // 创建新的变换，保持中心点不变
+                    const newTransform = d3.zoomIdentity
+                        .translate(centerX, centerY)
+                        .scale(newScale)
+                        .translate(-centerX, -centerY);
+                    
+                    // 应用变换
+                    svg.call(d3.zoom().transform, newTransform);
+                    
+                    // 立即应用缩放变换到地图组
+                    svg.select(".map-group").attr("transform", newTransform);
+                    
+                    // 更新全局zoom状态
+                    currentZoom = newScale;
+                    zoomLevel = newScale;
+                    updateZoomInfo();
                 }
             }
         }
@@ -2891,18 +2969,22 @@
         function resetZoom() {
             const svg = d3.select("#chart svg");
             if (!svg.empty()) {
-                const zoom = d3.zoom().scaleExtent([MIN_ZOOM, MAX_ZOOM]);
-                svg.call(zoom.transform, d3.zoomIdentity);
+                // 使用现有的zoom行为重置
+                svg.call(d3.zoom().transform, d3.zoomIdentity);
+                
+                // 立即应用缩放变换到地图组
+                svg.select(".map-group").attr("transform", d3.zoomIdentity);
+                
+                // 更新全局zoom状态
+                currentZoom = d3.zoomIdentity;
+                zoomLevel = 1;
+                updateZoomInfo();
             }
         }
         
         // 缩放按钮事件监听器
-        const zoomInBtn = document.getElementById('zoomInBtn');
-        const zoomOutBtn = document.getElementById('zoomOutBtn');
         const resetZoomBtn = document.getElementById('resetZoomBtn');
         
-        if (zoomInBtn) zoomInBtn.addEventListener('click', zoomIn);
-        if (zoomOutBtn) zoomOutBtn.addEventListener('click', zoomOut);
         if (resetZoomBtn) resetZoomBtn.addEventListener('click', resetZoom);
 
         // 初始化
