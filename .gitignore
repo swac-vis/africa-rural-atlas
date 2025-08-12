@@ -21,4 +21,4 @@ tmp/
 temp/
 
 # Data files (exclude large data files)
-data/
+data_original/
