@@ -422,6 +422,7 @@
             position: fixed;
             right: 0;
             width: 400px;
+            min-width: 400px;
             background: white;
             border-left: 0.5px solid #ddd;
             z-index: 9996;
@@ -520,6 +521,27 @@
             padding: 15px;
             background: #f8f9fa;
             border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .detail-panel-chart > div {
+            width: 100%;
+            overflow: hidden;
+        }
+        
+        #detailPanelChartContainer,
+        #detailPanelDensityChartContainer,
+        #detailPanelAreaChartContainer {
+            width: 100%;
+            max-width: 100%;
+            overflow: hidden;
+        }
+        
+        #detailPanelChartContainer svg,
+        #detailPanelDensityChartContainer svg,
+        #detailPanelAreaChartContainer svg {
+            max-width: 100%;
+            height: auto;
         }
         
         .detail-panel-chart h3 {
@@ -846,6 +868,16 @@
         let zoomLevel = 1;
         const MIN_ZOOM = 0.5;
         const MAX_ZOOM = 10;
+        
+        // 当前显示的详细信息面板数据
+        let currentDetailCell = null;
+        
+        // 添加窗口大小改变监听器
+        window.addEventListener('resize', () => {
+            if (currentDetailCell) {
+                setTimeout(resizeDetailCharts, 100); // 延迟执行，确保DOM更新完成
+            }
+        });
 
         // 用户自定义颜色设置
         let customColorSettings = {
@@ -1822,6 +1854,9 @@
             const chartContainer = document.getElementById('detailPanelChartContainer');
             const zoomView = document.getElementById('zoomView');
             
+            // 保存当前显示的cell数据
+            currentDetailCell = cell;
+            
             // 设置标题
             title.textContent = `Cell Details`;
             
@@ -1874,6 +1909,10 @@
                         <span class="detail-panel-value">${((cell.urban_population / cell.total_population) * 100).toFixed(1)}%</span>
                     </div>
                     <div class="detail-panel-item">
+                        <span class="detail-panel-label">Rural Share:</span>
+                        <span class="detail-panel-value">${((cell.rural_population / cell.total_population) * 100).toFixed(1)}%</span>
+                    </div>
+                    <div class="detail-panel-item">
                         <span class="detail-panel-label">Urban Density:</span>
                         <span class="detail-panel-value">${cell.urban_area > 0 ? (cell.urban_population / cell.urban_area).toFixed(0) : '0'} /km²</span>
                     </div>
@@ -1885,6 +1924,11 @@
                     <div class="detail-panel-chart">
                         <h4>Population Distribution</h4>
                         <div id="detailPanelChartContainer"></div>
+                    </div>
+                    
+                    <div class="detail-panel-chart">
+                        <h4>Density Distribution</h4>
+                        <div id="detailPanelDensityChartContainer"></div>
                     </div>
                 </div>
                 
@@ -1905,6 +1949,10 @@
                     <div class="detail-panel-item">
                         <span class="detail-panel-label">Urban Area Share:</span>
                         <span class="detail-panel-value">${((cell.urban_area / (cell.urban_area + cell.rural_area)) * 100).toFixed(1)}%</span>
+                    </div>
+                    <div class="detail-panel-item">
+                        <span class="detail-panel-label">Rural Area Share:</span>
+                        <span class="detail-panel-value">${((cell.rural_area / (cell.urban_area + cell.rural_area)) * 100).toFixed(1)}%</span>
                     </div>
                     <div class="detail-panel-item">
                         <span class="detail-panel-label">Urban Circles:</span>
@@ -1946,6 +1994,9 @@
             const colorScale = createColorScale([cell]);
             createDetailChart(document.getElementById('detailPanelChartContainer'), cell, urbanCircles, ruralCircles, colorScale);
             
+            // 创建人口密度图表
+            createDensityChart(document.getElementById('detailPanelDensityChartContainer'), cell, colorScale);
+            
             // 创建面积分布图表
             createAreaChart(document.getElementById('detailPanelAreaChartContainer'), cell, colorScale);
             
@@ -1961,13 +2012,17 @@
             // 清除现有内容
             container.innerHTML = '';
             
-            const width = container.clientWidth || 400;
+            // 获取容器的实际可用宽度，减去padding
+            const containerRect = container.getBoundingClientRect();
+            const width = Math.max(containerRect.width - 30, 300); // 减去padding，最小300px
             const height = 200;
             
             const svg = d3.select(container)
                 .append("svg")
                 .attr("width", width)
-                .attr("height", height);
+                .attr("height", height)
+                .style("max-width", "100%")
+                .style("overflow", "visible");
             
             // 数据 - 使用实际人口数据，不受圆形设置影响，并四舍五入为整数，使用当前Cell的颜色分配
             const data = [
@@ -2037,13 +2092,17 @@
             // 清除现有内容
             container.innerHTML = '';
             
-            const width = container.clientWidth || 400;
+            // 获取容器的实际可用宽度，减去padding
+            const containerRect = container.getBoundingClientRect();
+            const width = Math.max(containerRect.width - 30, 300); // 减去padding，最小300px
             const height = 200;
             
             const svg = d3.select(container)
                 .append("svg")
                 .attr("width", width)
-                .attr("height", height);
+                .attr("height", height)
+                .style("max-width", "100%")
+                .style("overflow", "visible");
             
             // 数据 - 面积数据四舍五入为整数，使用当前Cell的颜色分配
             const data = [
@@ -2122,6 +2181,91 @@
             });
         }
         
+        // 创建人口密度图表
+        function createDensityChart(container, cell, colorScale) {
+            // 清除现有内容
+            container.innerHTML = '';
+            
+            // 获取容器的实际可用宽度，减去padding
+            const containerRect = container.getBoundingClientRect();
+            const width = Math.max(containerRect.width - 30, 300); // 减去padding，最小300px
+            const height = 200;
+            
+            const svg = d3.select(container)
+                .append("svg")
+                .attr("width", width)
+                .attr("height", height)
+                .style("max-width", "100%")
+                .style("overflow", "visible");
+            
+            // 计算密度数据
+            const urbanDensity = cell.urban_area > 0 ? cell.urban_population / cell.urban_area : 0;
+            const ruralDensity = cell.rural_area > 0 ? cell.rural_population / cell.rural_area : 0;
+            
+            const data = [
+                { name: 'Urban', value: Math.round(urbanDensity), color: colorScale(calculateValue(cell, true)) },
+                { name: 'Rural', value: Math.round(ruralDensity), color: colorScale(calculateValue(cell, false)) }
+            ].filter(d => d.value > 0); // 只显示有密度的区域
+            
+            if (data.length === 0) {
+                svg.append("text")
+                    .attr("x", width / 2)
+                    .attr("y", height / 2)
+                    .attr("text-anchor", "middle")
+                    .attr("font-size", "14px")
+                    .attr("fill", "#666")
+                    .text("No density data available");
+                return;
+            }
+            
+            // 比例尺
+            const x = d3.scaleBand()
+                .domain(data.map(d => d.name))
+                .range([0, width])
+                .padding(0.1);
+            
+            const y = d3.scaleLinear()
+                .domain([0, Math.max(...data.map(d => d.value))])
+                .range([height - 40, 40]);
+            
+            // 绘制柱状图
+            svg.selectAll("rect")
+                .data(data)
+                .enter()
+                .append("rect")
+                .attr("x", d => x(d.name))
+                .attr("y", d => y(d.value))
+                .attr("width", x.bandwidth())
+                .attr("height", d => height - 40 - y(d.value))
+                .attr("fill", d => d.color)
+                .attr("opacity", 0.8);
+            
+            // 添加数值标签
+            svg.selectAll("text")
+                .data(data)
+                .enter()
+                .append("text")
+                .attr("x", d => x(d.name) + x.bandwidth() / 2)
+                .attr("y", d => y(d.value) - 5)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "12px")
+                .attr("fill", "#333")
+                .text(d => `${d.value.toLocaleString()} /km²`);
+            
+            // 添加x轴标签
+            svg.selectAll(".x-label")
+                .data(data)
+                .enter()
+                .append("text")
+                .attr("class", "x-label")
+                .attr("x", d => x(d.name) + x.bandwidth() / 2)
+                .attr("y", height - 5)
+                .attr("text-anchor", "middle")
+                .attr("font-size", "12px")
+                .attr("fill", "#333")
+                .text(d => d.name);
+        }
+        
         // 关闭详细信息面板
         function closeDetailPanel() {
             const panel = document.getElementById('detailPanel');
@@ -2129,10 +2273,35 @@
             // 清除选中状态
             d3.selectAll(".cell-clickable").classed("selected", false);
             
+            // 清除当前显示的cell数据
+            currentDetailCell = null;
+            
             panel.classList.remove('show');
             setTimeout(() => {
                 panel.style.display = 'none';
             }, 300);
+        }
+        
+        // 重新调整图表大小
+        function resizeDetailCharts() {
+            const chartContainer = document.getElementById('detailPanelChartContainer');
+            const densityChartContainer = document.getElementById('detailPanelDensityChartContainer');
+            const areaChartContainer = document.getElementById('detailPanelAreaChartContainer');
+            
+            if (chartContainer && chartContainer.innerHTML && currentDetailCell) {
+                // 重新创建图表以调整大小
+                const urbanCircles = Math.round(currentDetailCell.urban_area / (currentConfig.circleSize * currentConfig.circleSize));
+                const ruralCircles = Math.round(currentDetailCell.rural_area / (currentConfig.circleSize * currentConfig.circleSize));
+                createDetailChart(chartContainer, currentDetailCell, urbanCircles, ruralCircles, colorScale);
+            }
+            
+            if (densityChartContainer && densityChartContainer.innerHTML && currentDetailCell) {
+                createDensityChart(densityChartContainer, currentDetailCell, colorScale);
+            }
+            
+            if (areaChartContainer && areaChartContainer.innerHTML && currentDetailCell) {
+                createAreaChart(areaChartContainer, currentDetailCell, colorScale);
+            }
         }
         
         // 初始化图表
