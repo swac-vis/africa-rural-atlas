@@ -44,15 +44,20 @@
             z-index: 9998;
         }
         
-        /* 缩放控制样式 */
+        /* Zoom control styles */
         .zoom-controls {
             position: absolute;
             bottom: 20px;
-            left: 20px;
+            right: 20px;
             display: flex;
             flex-direction: row;
             gap: 5px;
             z-index: 9997;
+            transition: all 0.3s ease;
+        }
+        
+        .zoom-controls.with-details {
+            right: calc(400px + 20px); /* 400px is the width of detail panel + 20px margin */
         }
         
         .zoom-btn {
@@ -86,7 +91,7 @@
             cursor: not-allowed;
         }
         
-        /* 图例中的SVG图例样式 */
+        /* SVG legend styles in legend */
         .figure-container {
             
         }
@@ -99,6 +104,40 @@
             display: block;
             max-width: 100%;
             height: auto;
+        }
+        
+        /* Data Source Footer Styles */
+        .data-source-footer {
+            background: #f8fafc;
+            border-top: 1px solid #e2e8f0;
+            padding: 5px 10px;
+            font-size: 8px;
+            color: #64748b;
+            margin-top: auto;
+        }
+        
+        .data-source a {
+            color: #2E86AB;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .data-source a:hover {
+            color: #1e5a7a;
+            text-decoration: underline;
+        }
+        
+        .data-note {
+            font-style: italic;
+            color: #94a3b8;
+            margin-top: 3px;
+        }
+        
+        @media (max-width: 768px) {
+            .data-source-footer {
+                padding: 12px 15px;
+            }
         }
         .controls {
             display: flex;
@@ -127,7 +166,7 @@
             letter-spacing: 0.3px;
         }
         
-        /* 基础样式 */
+        /* Base styles */
         .control-group input {
             padding: 4px 8px;
             border: 1px solid #dee2e6;
@@ -149,7 +188,7 @@
             box-shadow: 0 0 0 2px rgba(46, 134, 171, 0.1);
         }
         
-        /* Select 专用样式 - 使用更高优先级 */
+        /* Select-specific styles - using higher priority */
         .control-group select {
             padding: 6px 10px;
             border: 2px solid #e9ecef;
@@ -195,7 +234,7 @@
             background-color: white;
         }
         
-        /* 尝试自定义下拉选项样式（部分浏览器支持） */
+        /* Try to customize dropdown option styles (partially supported by browsers) */
         .control-group select option {
             background-color: white !important;
             color: #374151 !important;
@@ -223,24 +262,24 @@
             font-weight: 600 !important;
         }
         
-        /* 为不同浏览器添加特定样式 */
+        /* Add specific styles for different browsers */
         .control-group select::-ms-expand {
             display: none;
         }
         
-        /* Firefox 特定样式 */
+        /* Firefox-specific styles */
         .control-group select:-moz-focusring {
             color: transparent;
             text-shadow: 0 0 0 #374151;
         }
         
-        /* 添加下拉框的焦点指示器 */
+        /* Add focus indicator for dropdown */
         .control-group select:focus-visible {
             outline: 2px solid #2E86AB;
             outline-offset: 2px;
         }
         
-        /* 为下拉框添加标签样式 */
+        /* Add label styles for dropdown */
         .control-group label {
             font-weight: 600;
             font-size: 13px;
@@ -251,7 +290,7 @@
             display: block;
         }
         
-        /* 控制组容器样式优化 */
+        /* Control group container style optimization */
         .control-group {
             display: flex;
             flex-direction: column;
@@ -262,13 +301,13 @@
             z-index: 9999;
         }
         
-        /* 下拉框增强样式 */
+        /* Enhanced dropdown styles */
         .control-group select {
             position: relative;
             overflow: hidden;
         }
         
-        /* 添加下拉框的渐变边框效果 */
+        /* Add gradient border effect for dropdown */
         .control-group select::before {
             content: '';
             position: absolute;
@@ -292,14 +331,14 @@
             opacity: 1;
         }
         
-        /* 为下拉框添加内部阴影效果 */
+        /* Add inner shadow effect for dropdown */
         .control-group select {
             box-shadow: 
                 inset 0 1px 2px rgba(255, 255, 255, 0.8),
                 0 2px 4px rgba(0, 0, 0, 0.05);
         }
         
-        /* 下拉框悬停时的微妙动画 */
+        /* Subtle animation when dropdown is hovered */
         .control-group select:hover {
             animation: selectHover 0.3s ease forwards;
         }
@@ -310,7 +349,7 @@
             100% { transform: translateY(-1px); }
         }
         
-        /* 为不同状态的下拉框添加不同的边框颜色 */
+        /* Add different border colors for different dropdown states */
         .control-group select:invalid {
             border-color: #ef4444;
         }
@@ -319,7 +358,7 @@
             border-color: #10b981;
         }
         
-        /* 响应式设计优化 */
+        /* Responsive design optimization */
         @media (max-width: 768px) {
             .controls {
                 flex-direction: column;
@@ -338,7 +377,7 @@
             }
         }
         
-        /* Range input 样式 */
+        /* Range input styles */
         .control-group input[type="range"] {
             width: 70px;
             height: 4px;
@@ -417,7 +456,7 @@
             z-index: 1000;
         }
         
-        /* 详细信息面板样式 */
+        /* Detail panel styles */
         .detail-panel {
             position: fixed;
             right: 0;
@@ -550,7 +589,7 @@
             font-size: 16px;
         }
         
-        /* 放大视图容器 */
+        /* Zoom view container */
         .zoom-view {
             width: 100%;
             height: 200px;
@@ -570,7 +609,7 @@
             max-height: 100%;
         }
         
-        /* 点击效果 */
+        /* Click effects */
         .cell-clickable {
             cursor: pointer;
             transition: all 0.3s ease;
@@ -594,7 +633,7 @@
             stroke-width: 1;
         }
         
-        /* 响应式设计 */
+        /* Responsive design */
         @media (max-width: 768px) {
             .controls {
                 flex-direction: column;
@@ -623,7 +662,7 @@
             }
         }
         
-        /* 自定义下拉框样式 */
+        /* Custom dropdown styles */
         .custom-select {
             position: relative;
             display: inline-block;
@@ -699,7 +738,7 @@
             border-bottom: none;
         }
         
-        /* 滚动条样式 */
+        /* Scrollbar styles */
         .select-options::-webkit-scrollbar {
             width: 6px;
         }
@@ -718,17 +757,17 @@
             background: #a8a8a8;
         }
         
-        /* Z-Index 层级系统
-         * 9999: 自定义下拉框选项列表 (最高优先级)
-         * 9998: 控制组容器
-         * 9997: 控制面板 (.controls)
-         * 9996: 缩放控制按钮 (.zoom-controls)
-         * 9995: 详细信息面板 (.detail-panel)
-         * 1000: 图例 (.legend) 和工具提示 (.tooltip)
-         * 100: 地图元素和其他基础组件
+        /* Z-Index layering system
+         * 9999: Custom dropdown option list (highest priority)
+         * 9998: Control group container
+         * 9997: Control panel (.controls)
+         * 9996: Zoom control buttons (.zoom-controls)
+         * 9995: Detail information panel (.detail-panel)
+         * 1000: Legend (.legend) and tooltip (.tooltip)
+         * 100: Map elements and other basic components
          */
         
-        /* 确保下拉框在所有元素之上 */
+        /* Ensure dropdown is above all elements */
         .custom-select,
         .select-display,
         .select-options,
@@ -737,7 +776,7 @@
             z-index: 9999 !important;
         }
         
-        /* 确保控制面板在正确层级 */
+        /* Ensure control panel is at correct layer */
         .controls {
             z-index: 9997 !important;
         }
@@ -746,12 +785,12 @@
             z-index: 9998 !important;
         }
         
-        /* 确保缩放控制不会遮挡下拉框 */
+        /* Ensure zoom controls don't block dropdown */
         .zoom-controls {
             z-index: 9996 !important;
         }
         
-        /* 确保详细信息面板不会遮挡下拉框 */
+        /* Ensure detail panel doesn't block dropdown */
         .detail-panel {
             z-index: 9995 !important;
         }
@@ -807,14 +846,26 @@
             </div>
         </div>
         <div class="chart-container" id="chart">
-            <!-- 缩放控制按钮 -->
+            <!-- Zoom Control Buttons -->
             <div class="zoom-controls">
-                <button class="zoom-btn" id="resetZoomBtn" title="重置缩放">⌂</button>
+                <button class="zoom-btn" id="resetZoomBtn" title="Reset Zoom">⌂</button>
+            </div>
+        </div>
+        
+        <!-- Data Source and Notes -->
+        <div class="data-source-footer">
+            <div class="data-source">
+                <a href="https://hub.worldpop.org/doi/10.5258/SOTON/WP00004" target="_blank" rel="noopener noreferrer">
+                    Data from WorldPop | Africa Continental Population Dataset, 2020
+                </a>
+            </div>
+            <div class="data-note">
+                Note: Urban population refers to areas with a population density of at least 300 inhabitants per square kilometer. Rural population refers to all other areas.
             </div>
         </div>
     </div>
 
-    <!-- 详细信息右侧面板 -->
+            <!-- Detail Information Right Panel -->
     <div class="detail-panel" id="detailPanel">
         <div class="detail-panel-header">
             <h2 class="detail-panel-title" id="detailPanelTitle">Cell Details</h2>
@@ -822,64 +873,64 @@
         </div>
         <div class="detail-panel-content">
             <div class="zoom-view" id="zoomView">
-                <!-- 放大的网格单元将在这里显示 -->
+                <!-- Enlarged grid cells will be displayed here -->
             </div>
             <div class="detail-panel-section" id="detailPanelGrid">
-                <!-- 详细信息将通过JavaScript动态填充 -->
+                <!-- Detail information will be dynamically filled by JavaScript -->
             </div>
         </div>
     </div>
 
     <script>
-        // 动态设置detail panel位置
+        // Dynamically set detail panel position
         function updateDetailPanelPosition() {
             const detailPanel = document.getElementById('detailPanel');
             const header = document.querySelector('h1');
             const controls = document.querySelector('.controls');
             
             if (detailPanel && header && controls) {
-                // 获取header的实际高度（包括margin）
+                // Get actual height of header (including margin)
                 const headerRect = header.getBoundingClientRect();
                 const headerBottom = headerRect.bottom;
                 
-                // 获取controls的实际高度（包括border）
+                // Get actual height of controls (including border)
                 const controlsRect = controls.getBoundingClientRect();
                 const controlsBottom = controlsRect.bottom;
                 
-                // 使用controls的底部位置作为detail panel的顶部位置
+                // Use controls bottom position as detail panel top position
                 detailPanel.style.top = controlsBottom + 'px';
                 detailPanel.style.height = `calc(100vh - ${controlsBottom}px)`;
             }
         }
 
-        // 配置参数
+        // Configuration parameters
         let currentConfig = {
             gridSize: '100',
             useRealArea: true,
             colorMapping: 'density',
-            circleSize: 0.2,  // 100km默认值
-            circleSpacing: 0.4,  // 100km默认值
-            maxCircles: 16,  // 默认值
-            visualizationMode: 'scatter'  // 新增：可视化模式
+            circleSize: 0.2,  // Default value for 100km
+            circleSpacing: 0.4,  // Default value for 100km
+            maxCircles: 16,  // Default value
+            visualizationMode: 'scatter'  // New: visualization mode
         };
 
-        // 缩放相关变量
+        // Zoom-related variables
         let currentZoom = d3.zoomIdentity;
         let zoomLevel = 1;
-        const MIN_ZOOM = 0.5;
+        const MIN_ZOOM = 0.2;
         const MAX_ZOOM = 10;
         
-        // 当前显示的详细信息面板数据
+        // Currently displayed detail panel data
         let currentDetailCell = null;
         
-        // 添加窗口大小改变监听器
+        // Add window resize listener
         window.addEventListener('resize', () => {
             if (currentDetailCell) {
-                setTimeout(resizeDetailCharts, 100); // 延迟执行，确保DOM更新完成
+                setTimeout(resizeDetailCharts, 100); // Delay execution to ensure DOM update completion
             }
         });
 
-        // 用户自定义颜色设置
+        // User-defined color settings
         let customColorSettings = {
             population: {
                 thresholds: currentConfig.gridSize === '1000' ? 
@@ -893,7 +944,7 @@
             }
         };
 
-        // 动态设置端点值函数
+        // Dynamic endpoint value setting function
         function getDynamicEndpoint(gridData, colorMapping) {
             if (!gridData || gridData.length === 0) return 1000;
             
@@ -913,29 +964,29 @@
                 }));
             }
             
-            // 如果最大值小于等于300，设置一个合理的默认值
+            // If maximum value is less than or equal to 300, set a reasonable default
             if (maxValue <= 300) {
                 return colorMapping === 'population' ? 1000000 : 1000;
             }
             
-            // 返回一个比最大值稍大的值，确保>300的区间能够显示
+            // Return a value slightly larger than the maximum to ensure >300 intervals can be displayed
             return Math.ceil(maxValue * 1.2);
         }
 
-        // 抽象映射策略参数
+        // Abstract mapping strategy parameters
         const MAPPING_CONFIG = {
-            maxCircles: 16,  // 默认值，会从currentConfig获取
+            maxCircles: 16,  // Default value, will be obtained from currentConfig
             urbanAreaShare: 0.2,
             ruralAreaShare: 0.8
         };
 
-        // 响应式函数
+        // Responsive function
         function getResponsiveDimensions() {
             const container = document.querySelector('.chart-container');
             const width = container.clientWidth;
             const height = container.clientHeight;
             
-            // 根据gridSize调整区域大小
+            // Adjust area size based on gridSize
             const sizeMultiplier = currentConfig.gridSize === '100' ? 0.15 : 1;
             const baseAreaSize = Math.min(width, height) * sizeMultiplier;
             const areaSize = currentConfig.gridSize === '100' 
@@ -945,7 +996,7 @@
             return { width, height, areaSize };
         }
 
-        // 计算每个网格的圆形数量
+        // Calculate circle count for each grid
         function calculateCircleCount(population, minPop, maxPop) {
             if (maxPop === minPop) return 1;
             
@@ -958,7 +1009,7 @@
             return circleCount;
         }
 
-        // 在固定区域内生成圆形位置
+        // Generate circle positions in fixed area
         function generateCirclePositionsInFixedArea(circleCount, centerX, centerY, areaSize) {
             const positions = [];
             const gridSize = Math.ceil(Math.sqrt(circleCount));
@@ -996,42 +1047,42 @@
             return positions;
         }
 
-        // 计算密度或人口值
+        // Calculate density or population value
         function calculateValue(cell, isUrban) {
             if (currentConfig.colorMapping === 'population') {
                 return isUrban ? cell.urban_population : cell.rural_population;
             } else {
-                // density mapping - 无论是否使用真实面积，都应该用真实的密度值
+                // density mapping - regardless of whether real area is used, should use real density values
                 const area = isUrban ? cell.urban_area : cell.rural_area;
                 const population = isUrban ? cell.urban_population : cell.rural_population;
                 return area > 0 ? population / area : 0;
             }
         }
 
-        // 创建颜色比例尺
+        // Create color scale
         function createColorScale(gridData) {
-            // 使用用户自定义的颜色设置
+            // Use user-defined color settings
             const settings = customColorSettings[currentConfig.colorMapping];
             
-            // 获取动态端点值
+            // Get dynamic endpoint values
             const dynamicEndpoint = getDynamicEndpoint(gridData, currentConfig.colorMapping);
             
-            // 创建扩展的阈值数组，包含动态端点
+            // Create extended threshold array including dynamic endpoint
             const extendedThresholds = [...settings.thresholds, dynamicEndpoint];
             
-            // 创建自定义的颜色比例尺，支持区间内部的线性插值
+            // Create custom color scale supporting linear interpolation within intervals
             const colorScale = function(value) {
                 if (value <= 0) return settings.colors[0];
                 
-                // 找到值所在的区间
+                // Find the interval where the value is located
                 for (let i = 0; i < extendedThresholds.length; i++) {
                     if (value <= extendedThresholds[i]) {
                         if (i === 0) {
-                            // 第一个区间：0 到第一个阈值
+                            // First interval: 0 to first threshold
                             const ratio = value / extendedThresholds[i];
                             return d3.interpolateRgb(settings.colors[0], settings.colors[1])(ratio);
                         } else {
-                            // 其他区间：在两个阈值之间
+                            // Other intervals: between two thresholds
                             const prevThreshold = extendedThresholds[i - 1];
                             const currThreshold = extendedThresholds[i];
                             const ratio = (value - prevThreshold) / (currThreshold - prevThreshold);
@@ -1040,26 +1091,26 @@
                     }
                 }
                 
-                // 超出最大阈值的值
+                // Values exceeding maximum threshold
                 return settings.colors[settings.colors.length - 1];
             };
             
             return colorScale;
         }
 
-        // 创建图例
+        // Create legend
         function createLegend(svg, colorScale, maxValue) {
-            const legendWidth = 160; // 减少宽度，保持极简
-            const legendHeight = 280;
+            const legendWidth = 160; // Reduce width, keep minimal
+            const legendHeight = 200;
 
-            // 移除旧图例
+            // Remove old legend
             svg.selectAll(".legend").remove();
 
             const legend = svg.append("g")
                 .attr("class", "legend")
                 .attr("transform", `translate(20, 20)`);
 
-            // 添加编码规则说明
+            // Add encoding rule description
             legend.append("text")
                 .attr("x", 0)
                 .attr("y", 15)
@@ -1068,12 +1119,12 @@
                 .attr("fill", "#495057")
                 .text("Visualization Rules:");
 
-            // 加载并显示可视化模式图例
+            // Load and display visualization mode legend
             const figureContainer = legend.append("g")
                 .attr("class", "figure-container")
                 .attr("transform", "translate(0, 25)");
 
-            // 根据当前配置选择对应的图例
+            // Select corresponding legend based on current configuration
             const getFigurePath = () => {
                 const mode = currentConfig.visualizationMode;
                 const size = currentConfig.gridSize;
@@ -1085,17 +1136,17 @@
                 } else if (mode === 'rect') {
                     return size === '100' ? 'figures/rect_100.svg' : 'figures/rect_1000.svg';
                 }
-                return 'figures/scatter_100.svg'; // 默认
+                return 'figures/scatter_100.svg'; // Default
             };
 
-            // 创建图例容器
+            // Create legend container
             const legendFigure = figureContainer.append("foreignObject")
                 .attr("x", -20)
                 .attr("y", 0)
                 .attr("width", 400)
                 .attr("height", 150);
 
-            // 加载SVG图例
+            // Load SVG legend
             const figurePath = getFigurePath();
             fetch(figurePath)
                 .then(response => {
@@ -1105,18 +1156,18 @@
                     return response.text();
                 })
                 .then(svgContent => {
-                    // 创建临时div来解析SVG
+                    // Create temporary div to parse SVG
                     const tempDiv = document.createElement('div');
                     tempDiv.innerHTML = svgContent;
                     const svgElement = tempDiv.querySelector('svg');
                     
                     if (svgElement) {
-                        // 调整SVG大小和样式
+                        // Adjust SVG size and style
                         svgElement.style.width = '100%';
                         svgElement.style.height = 'auto';
                         svgElement.style.maxHeight = '120px';
                         
-                        // 将SVG内容插入到foreignObject中
+                        // Insert SVG content into foreignObject
                         legendFigure.node().appendChild(svgElement);
                     } else {
                         throw new Error('SVG element not found in response');
@@ -1124,7 +1175,7 @@
                 })
                 .catch(error => {
                     console.error('Error loading figure:', error);
-                    // 如果加载失败，显示备用文本
+                    // If loading fails, display fallback text
                     figureContainer.append("text")
                         .attr("x", 0)
                         .attr("y", 35)
@@ -1133,26 +1184,26 @@
                         .text("• Visualization mode: " + currentConfig.visualizationMode);
                 });
 
-            // 使用自定义颜色设置生成segments
+            // Generate segments using custom color settings
             const settings = customColorSettings[currentConfig.colorMapping];
             const thresholds = settings.thresholds;
             const colors = settings.colors;
             
-            // 获取动态端点值
+            // Get dynamic endpoint values
             const dynamicEndpoint = getDynamicEndpoint(window.gridData || [], currentConfig.colorMapping);
             
-            // 重新设计：把0当作第一个阈值，作为第一个区间的端点，并添加动态端点
-            const allThresholds = [0, ...thresholds, dynamicEndpoint]; // 0 + 原有阈值 + 动态端点
-            const allColors = [...colors]; // 保持原有颜色数组
+            // Redesign: treat 0 as the first threshold, as the endpoint of the first interval, and add dynamic endpoint
+            const allThresholds = [0, ...thresholds, dynamicEndpoint]; // 0 + original thresholds + dynamic endpoint
+            const allColors = [...colors]; // Keep original color array
             
-            // 使用全局变量存储segments
+            // Use global variable to store segments
             window.currentSegments = [];
             let title = currentConfig.colorMapping === 'population' ? 'Population' : 'Population/km²';
             
-            // 生成segments - 现在0是第一个区间的端点
+            // Generate segments - now 0 is the endpoint of the first interval
             for (let i = 0; i < allThresholds.length - 1; i++) {
                 if (i === allThresholds.length - 2) {
-                    // 最后一个区间：大于最后一个阈值（保留>300的区间）
+                    // Last interval: greater than the last threshold (preserve >300 intervals)
                     const lastThreshold = allThresholds[allThresholds.length - 1];
                     if (lastThreshold === 300) {
                     window.currentSegments.push({ 
@@ -1166,7 +1217,7 @@
                         });
                     }
                 } else {
-                    // 其他区间：在两个阈值之间
+                    // Other intervals: between two thresholds
                     window.currentSegments.push({ 
                         label: `${allThresholds[i]}-${allThresholds[i + 1]}`, 
                         color: allColors[i + 1] 
@@ -1182,17 +1233,17 @@
                 .attr("fill", "#495057")
                 .text(title + " Scale:");
 
-            // 创建连续颜色滑动条编辑器
+            // Create continuous color slider editor
             const colorEditor = legend.append("g")
                 .attr("class", "color-editor");
             
-            // 滑动条的基本设置（竖着的）
+            // Basic slider settings (vertical)
             const sliderWidth = 16;
-            const sliderHeight = 400;
+            const sliderHeight = 350;
             const sliderY = 220;
             const sliderX = 0;
             
-            // 创建滑动条背景
+            // Create slider background
             const sliderBackground = colorEditor.append("rect")
                 .attr("x", sliderX)
                 .attr("y", sliderY)
@@ -1203,7 +1254,7 @@
                 .attr("stroke-width", 1)
                 .attr("rx", 2);
             
-            // 创建渐变背景（竖着的）
+            // Create gradient background (vertical)
             const gradient = colorEditor.append("defs")
                 .append("linearGradient")
                 .attr("id", "colorGradient")
@@ -1212,7 +1263,7 @@
                 .attr("x2", "0%")
                 .attr("y2", "0%");
             
-            // 添加渐变停止点
+            // Add gradient stop points
             colors.forEach((color, i) => {
                 const offset = (i / (colors.length - 1)) * 100;
                 gradient.append("stop")
@@ -1220,7 +1271,7 @@
                     .attr("stop-color", color);
             });
             
-            // 创建渐变滑动条
+            // Create gradient slider
             const gradientSlider = colorEditor.append("rect")
                 .attr("x", sliderX + 1)
                 .attr("y", sliderY + 1)
@@ -1229,33 +1280,33 @@
                 .attr("fill", "url(#colorGradient)")
                 .attr("rx", 1);
             
-            // 移除额外的端点修改颜色按钮，只保留滑动条和阈值标记点
+            // Remove additional endpoint color modification buttons, keep only slider and threshold markers
             
-            // 创建阈值标记点
+            // Create threshold markers
             const thresholdMarkers = colorEditor.append("g")
                 .attr("class", "threshold-markers");
             
-            // 删除原来的起始点标记，因为0现在是一个真正的阈值了
+            // Delete the original starting point marker, because 0 is now a real threshold
             
-            // 为每个阈值创建标记点（包括0）
+            // Create markers for each threshold (including 0)
             allThresholds.forEach((threshold, i) => {
-                // 根据颜色在滑动条上的位置来定位标记点
-                // 现在0是第一个阈值，位置在底部
-                const colorPosition = i / (allThresholds.length - 1); // 0到1之间的位置
+                // Position markers based on color position on slider
+                // Now 0 is the first threshold, positioned at the bottom
+                const colorPosition = i / (allThresholds.length - 1); // Position between 0 and 1
                 const y = sliderY + sliderHeight - colorPosition * sliderHeight;
                 
-                // 创建标记点
+                // Create marker
                 const marker = thresholdMarkers.append("circle")
                     .attr("cx", sliderX + sliderWidth / 2)
                     .attr("cy", y)
                     .attr("r", 4)
-                    .attr("fill", allColors[i]) // 使用对应的颜色填充标记点
+                    .attr("fill", allColors[i]) // Fill marker with corresponding color
                     .attr("stroke", "#6c757d")
                     .attr("stroke-width", 1)
                     .style("cursor", "pointer")
                     .attr("data-threshold-index", i);
                 
-                // 添加删除按钮（除了第一个、最后一个和动态端点）
+                // Add delete button (except first, last and dynamic endpoint)
                 if (i > 0 && i < allThresholds.length - 2) {
                     const deleteBtn = thresholdMarkers.append("text")
                         .attr("x", sliderX + sliderWidth / 2 + 8)
@@ -1265,16 +1316,16 @@
                         .style("cursor", "pointer")
                         .text("×")
                         .on("click", function() {
-                            // 删除阈值（需要调整索引，因为allThresholds包含了0和动态端点）
-                            const thresholdIndex = i - 1; // 减去0的索引
+                            // Delete threshold (need to adjust index because allThresholds includes 0 and dynamic endpoint)
+                            const thresholdIndex = i - 1; // Subtract 0's index
                             if (thresholdIndex >= 0 && thresholdIndex < thresholds.length) {
-                                // 保存0的颜色，确保它不会被删除
+                                // Save 0's color to ensure it won't be deleted
                                 const zeroColor = colors[0];
                                 
                                 thresholds.splice(thresholdIndex, 1);
                                 colors.splice(thresholdIndex, 1);
                                 
-                                // 确保0的颜色保持不变
+                                // Ensure 0's color remains unchanged
                                 if (colors[0] !== zeroColor) {
                                     colors[0] = zeroColor;
                                 }
@@ -1285,7 +1336,7 @@
                         });
                 }
                 
-                // 添加阈值标签
+                // Add threshold label
                 const label = thresholdMarkers.append("text")
                     .attr("x", sliderX + sliderWidth + 15)
                     .attr("y", y)
@@ -1295,10 +1346,10 @@
                     .style("cursor", i === allThresholds.length - 1 ? "default" : "pointer")
                     .text(threshold)
                     .on("click", function() {
-                        // 动态端点不能被编辑数值，但可以编辑颜色
+                        // Dynamic endpoint cannot edit value but can edit color
                         if (i === allThresholds.length - 1) return;
                         
-                        // 编辑阈值
+                        // Edit threshold
                         const input = document.createElement("input");
                         input.type = "number";
                         input.value = threshold;
@@ -1312,17 +1363,17 @@
                         input.addEventListener("change", function() {
                             const newValue = parseInt(this.value);
                             if (newValue > 0) {
-                                // 需要调整索引，因为allThresholds包含了0和动态端点
-                                const thresholdIndex = i - 1; // 减去0的索引
+                                // Need to adjust index because allThresholds includes 0 and dynamic endpoint
+                                const thresholdIndex = i - 1; 
                                 if (thresholdIndex >= 0 && thresholdIndex < thresholds.length) {
-                                    // 保存0的颜色，确保它不会被改变
+                                    // Save 0's color to ensure it won't be changed
                                     const zeroColor = colors[0];
                                     
                                     thresholds[thresholdIndex] = newValue;
-                                // 重新排序阈值
+                                                                    // Reorder thresholds
                                 thresholds.sort((a, b) => a - b);
                                     
-                                    // 确保0的颜色保持不变
+                                    // Ensure 0's color remains unchanged
                                     if (colors[0] !== zeroColor) {
                                         colors[0] = zeroColor;
                                     }
@@ -1331,14 +1382,14 @@
                                 updateColorScale();
                                 }
                             }
-                            // 安全地移除输入框
+                            // Safely remove input box
                             if (document.body.contains(this)) {
                                 document.body.removeChild(this);
                             }
                         });
                         
                         input.addEventListener("blur", function() {
-                            // 延迟移除，避免与change事件冲突
+                            // Delay removal to avoid conflict with change event
                             setTimeout(() => {
                                 if (document.body.contains(this)) {
                                     document.body.removeChild(this);
@@ -1351,7 +1402,7 @@
                         input.select();
                     });
                 
-                // 添加颜色选择按钮（每个标记点都可以手动选择颜色，包括动态端点）
+                // Add color selection button (each marker can manually select color, including dynamic endpoint)
                 const colorBtn = thresholdMarkers.append("text")
                     .attr("x", sliderX + sliderWidth / 2 + 8)
                     .attr("y", y + 8)
@@ -1360,7 +1411,7 @@
                     .style("cursor", "pointer")
                     .text("🎨")
                     .on("click", function(event) {
-                        // 创建颜色选择器
+                        // Create color picker
                         const colorInput = document.createElement("input");
                         colorInput.type = "color";
                         colorInput.value = colors[i];
@@ -1370,26 +1421,26 @@
                         colorInput.style.zIndex = "10000";
                         
                         colorInput.addEventListener("change", function() {
-                            // 更新颜色
+                            // Update color
                             colors[i] = this.value;
                             
-                            // 更新标记点颜色
+                            // Update marker color
                             marker.attr("fill", colors[i]);
                             
-                            // 更新渐变背景
+                            // Update gradient background
                             updateGradientBackground();
                             
-                            // 更新颜色比例尺和地图
+                            // Update color scale and map
                             updateColorScale();
                             
-                            // 安全地移除输入框
+                            // Safely remove input box
                             if (document.body.contains(this)) {
                                 document.body.removeChild(this);
                             }
                         });
                         
                         colorInput.addEventListener("blur", function() {
-                            // 延迟移除，避免与change事件冲突
+                            // Delay removal to avoid conflict with change event
                             setTimeout(() => {
                                 if (document.body.contains(this)) {
                                     document.body.removeChild(this);
@@ -1402,75 +1453,75 @@
                         colorInput.click();
                     });
                 
-                // 添加拖拽功能 - 修改为调整颜色而不是位置（动态端点不能被拖拽）
-                if (i < allThresholds.length - 1) { // 动态端点不能拖拽
+                // Add drag functionality - modify to adjust color instead of position (dynamic endpoint cannot be dragged)
+                                  if (i < allThresholds.length - 1) { // Dynamic endpoint cannot be dragged
                 marker.call(d3.drag()
                     .on("drag", function(event) {
-                        // 计算拖拽位置对应的颜色
+                        // Calculate color corresponding to drag position
                         const dragY = Math.max(sliderY, Math.min(sliderY + sliderHeight, event.y));
                         const colorIndex = (sliderY + sliderHeight - dragY) / sliderHeight;
                         
-                        // 根据拖拽位置在滑动条上的颜色位置来生成新颜色
-                        // 这里我们根据滑动条上的实际颜色分布来插值
+                        // Generate new color based on drag position color location on slider
+                        // Here we interpolate based on actual color distribution on slider
                         if (i === 0) {
-                            // 第一个颜色：从滑动条底部到第一个阈值位置的颜色插值
+                            // First color: color interpolation from slider bottom to first threshold position
                             const newColor = d3.interpolateRgb(colors[0], colors[1])(colorIndex);
                             colors[i] = newColor;
                         } else if (i === colors.length - 1) {
-                            // 最后一个颜色：从倒数第二个颜色到滑动条顶部的颜色插值
+                            // Last color: color interpolation from second-to-last color to slider top
                             const newColor = d3.interpolateRgb(colors[colors.length - 2], colors[colors.length - 1])(colorIndex);
                             colors[i] = newColor;
                         } else {
-                            // 中间颜色：根据在滑动条上的位置，在相邻两个颜色之间插值
+                            // Middle colors: interpolate between adjacent colors based on position on slider
                             const prevColor = colors[i - 1];
                             const nextColor = colors[i + 1];
                             const newColor = d3.interpolateRgb(prevColor, nextColor)(colorIndex);
                             colors[i] = newColor;
                         }
                         
-                        // 更新标记点颜色
+                        // Update marker color
                         marker.attr("fill", colors[i]);
                         
-                        // 更新渐变背景
+                        // Update gradient background
                         updateGradientBackground();
                         
-                        // 更新颜色比例尺和地图
+                        // Update color scale and map
                         updateColorScale();
                     }));
                 }
             });
             
-            // 添加"添加阈值"按钮
+            // Add "Add Threshold" button
             const addButton = colorEditor.append("g")
                 .style("cursor", "pointer")
                 .on("click", function() {
-                    // 获取动态端点值
+                    // Get dynamic endpoint value
                     const dynamicEndpoint = getDynamicEndpoint(window.gridData || [], currentConfig.colorMapping);
                     
-                    // 计算新阈值位置（在中间位置，但不能超过动态端点）
+                    // Calculate new threshold position (at middle position, but cannot exceed dynamic endpoint)
                     const maxThreshold = Math.max(...thresholds);
                     const midPoint = Math.round(maxThreshold / 2);
                     let newThreshold = midPoint;
                     
-                    // 确保新阈值不超过动态端点
+                    // Ensure new threshold doesn't exceed dynamic endpoint
                     if (newThreshold >= dynamicEndpoint) {
                         newThreshold = Math.round(dynamicEndpoint * 0.8);
                     }
                     
-                    // 先排序阈值，找到正确的插入位置
+                    // First sort thresholds to find correct insertion position
                     const sortedThresholds = [...thresholds, newThreshold].sort((a, b) => a - b);
                     const insertIndex = sortedThresholds.indexOf(newThreshold);
                     
-                    // 为新阈值生成颜色：在两个相邻颜色之间插值
+                    // Generate color for new threshold: interpolate between two adjacent colors
                     let newColor;
                     if (insertIndex === 0) {
-                        // 如果是最小的阈值，使用第一个颜色
+                        // If it's the smallest threshold, use first color
                         newColor = colors[0];
                     } else if (insertIndex === sortedThresholds.length - 1) {
-                        // 如果是最大的阈值，使用最后一个颜色
+                        // If it's the largest threshold, use last color
                         newColor = colors[colors.length - 1];
                     } else {
-                        // 在中间位置，在两个相邻颜色之间插值
+                        // At middle position, interpolate between two adjacent colors
                         const prevThreshold = sortedThresholds[insertIndex - 1];
                         const nextThreshold = sortedThresholds[insertIndex + 1];
                         const prevThresholdIndex = thresholds.indexOf(prevThreshold);
@@ -1481,24 +1532,24 @@
                             const nextColor = colors[nextThresholdIndex];
                             newColor = d3.interpolateRgb(prevColor, nextColor)(0.5);
                         } else {
-                            // 如果找不到对应的颜色，使用默认颜色
+                            // If corresponding color cannot be found, use default color
                             newColor = colors[Math.floor(colors.length / 2)];
                         }
                     }
                     
-                    // 保存0的颜色，确保它不会被改变
+                    // Save 0's color to ensure it won't be changed
                     const zeroColor = colors[0];
                     
-                    // 在正确的位置插入新阈值和颜色
+                    // Insert new threshold and color at correct position
                     thresholds.splice(insertIndex, 0, newThreshold);
                     colors.splice(insertIndex, 0, newColor);
                     
-                    // 确保0的颜色保持不变
+                    // Ensure 0's color remains unchanged
                     if (colors[0] !== zeroColor) {
                         colors[0] = zeroColor;
                     }
                     
-                    // 重新创建图例和更新颜色比例尺
+                    // Recreate legend and update color scale
                     updateLegendFigure();
                     updateColorScale();
                 });
@@ -1527,14 +1578,14 @@
             //     .attr("fill", "#6c757d")
             //     .text("Add");
             
-            // 删除额外的颜色编辑按钮，只在滑动条两端添加颜色选择器
+            // Delete additional color edit buttons, only add color picker at both ends of slider
             
-            // 添加更新渐变背景的函数
+            // Add function to update gradient background
             function updateGradientBackground() {
-                // 清除旧的渐变定义
+                // Clear old gradient definitions
                 d3.select("#colorGradient").remove();
                 
-                // 创建新的渐变定义
+                // Create new gradient definitions
                 const newGradient = colorEditor.append("defs")
                     .append("linearGradient")
                     .attr("id", "colorGradient")
@@ -1543,7 +1594,7 @@
                     .attr("x2", "0%")
                     .attr("y2", "0%");
                 
-                // 添加渐变停止点
+                // Add gradient stop points
                 colors.forEach((color, i) => {
                     const offset = (i / (colors.length - 1)) * 100;
                     newGradient.append("stop")
@@ -1551,26 +1602,26 @@
                         .attr("stop-color", color);
                 });
                 
-                // 更新渐变滑动条
+                // Update gradient slider
                 gradientSlider.attr("fill", "url(#colorGradient)");
             }
                 }
         
-        // 更新颜色比例尺并重新渲染地图
+        // Update color scale and re-render map
         function updateColorScale() {
-            // 重新生成颜色比例尺
+            // Regenerate color scale
             const colorScale = createColorScale(window.gridData || []);
             
-            // 更新所有圆形的颜色（scatter模式）
+            // Update all circle colors (scatter mode)
             d3.selectAll(".cell-clickable circle").each(function() {
                 const circle = d3.select(this);
                 const cellGroup = d3.select(this.parentNode);
                 const cellId = cellGroup.attr("data-cell-id");
                 
-                // 找到对应的cell数据
+                // Find corresponding cell data
                 const cell = (window.gridData || []).find(d => `${d.longitude}-${d.latitude}` === cellId);
                 if (cell) {
-                    // 从cellGroup中获取urbanCircles信息
+                    // Get urbanCircles information from cellGroup
                     const cellData = cellGroup.datum();
                     const urbanCircles = cellData ? cellData.urbanCircles : 0;
                     const isUrban = circle.datum() ? circle.datum().spiralIndex < urbanCircles : false;
@@ -1580,29 +1631,29 @@
                 }
             });
             
-            // 更新所有矩形的颜色（rect模式）
+            // Update all rectangle colors (rect mode)
             d3.selectAll(".cell-clickable rect[width]").each(function() {
                 const rect = d3.select(this);
                 const cellGroup = d3.select(this.parentNode);
                 const cellId = cellGroup.attr("data-cell-id");
                 
-                // 找到对应的cell数据
+                // Find corresponding cell data
                 const cell = (window.gridData || []).find(d => `${d.longitude}-${d.latitude}` === cellId);
                 if (cell) {
-                    // 从cellGroup中获取urbanAreaRatio信息
+                    // Get urbanAreaRatio information from cellGroup
                     const cellData = cellGroup.datum();
                     const urbanAreaRatio = cellData ? cellData.urbanAreaRatio : 0;
                     
-                    // 判断是外矩形还是内矩形
-                    // 我们通过检查矩形是否是透明点击区域来判断
+                    // Determine if it's outer or inner rectangle
+                    // We determine by checking if the rectangle is a transparent click area
                     const isClickArea = rect.attr("fill") === "transparent";
-                    if (isClickArea) return; // 跳过透明点击区域
+                    if (isClickArea) return; // Skip transparent click area
                     
-                    // 根据矩形在cellGroup中的顺序来判断
-                    // 第一个矩形是外矩形（rural），第二个是内矩形（urban）
+                    // Determine based on rectangle order in cellGroup
+                    // First rectangle is outer (rural), second is inner (urban)
                     const rects = cellGroup.selectAll("rect[width]").nodes();
                     const rectIndex = rects.indexOf(rect);
-                    const isUrban = rectIndex === 1; // 第二个矩形是内矩形
+                    const isUrban = rectIndex === 1; // Second rectangle is inner
                     
                     const value = calculateValue(cell, isUrban);
                     const safeValue = isFinite(value) && value >= 0 ? value : 0;
@@ -1610,29 +1661,29 @@
                 }
             });
             
-            // 更新所有同心圆的颜色（concentric模式）
+            // Update all concentric circle colors (concentric mode)
             d3.selectAll(".cell-clickable circle[fill]").each(function() {
                 const circle = d3.select(this);
                 const cellGroup = d3.select(this.parentNode);
                 const cellId = cellGroup.attr("data-cell-id");
                 
-                // 找到对应的cell数据
+                // Find corresponding cell data
                 const cell = (window.gridData || []).find(d => `${d.longitude}-${d.latitude}` === cellId);
                 if (cell) {
-                    // 从cellGroup中获取urbanAreaRatio信息
+                    // Get urbanAreaRatio information from cellGroup
                     const cellData = cellGroup.datum();
                     const urbanAreaRatio = cellData ? cellData.urbanAreaRatio : 0;
                     
-                    // 判断是外圆还是内圆
-                    // 我们通过检查圆是否是透明点击区域来判断
+                    // Determine if it's outer or inner circle
+                    // We determine by checking if the circle is a transparent click area
                     const isClickArea = circle.attr("fill") === "transparent";
-                    if (isClickArea) return; // 跳过透明点击区域
+                    if (isClickArea) return; // Skip transparent click area
                     
-                    // 根据圆在cellGroup中的顺序来判断
-                    // 第一个圆是外圆（rural），第二个是内圆（urban）
+                    // Determine based on circle order in cellGroup
+                    // First circle is outer (rural), second is inner (urban)
                     const circles = cellGroup.selectAll("circle[fill]").nodes();
                     const circleIndex = circles.indexOf(circle);
-                    const isUrban = circleIndex === 1; // 第二个圆是内圆
+                    const isUrban = circleIndex === 1; // Second circle is inner
                     
                     const value = calculateValue(cell, isUrban);
                     const safeValue = isFinite(value) && value >= 0 ? value : 0;
@@ -1640,37 +1691,37 @@
                 }
             });
             
-            // 重新创建图例
+            // Recreate legend
             const svg = d3.select("#chart svg");
             const maxValue = Math.max(...(window.gridData || []).map(d => Math.max(calculateValue(d, true), calculateValue(d, false))));
             createLegend(svg, colorScale, maxValue);
             
-            // 强制重新渲染
+            // Force re-render
             console.log("Color scale updated:", customColorSettings[currentConfig.colorMapping]);
         }
         
-        // 创建同心圆放大视图
+        // Create concentric circle zoom view
         function createConcentricZoomView(svg, cell, colorScale, width, height) {
             const centerX = width / 2;
             const centerY = height / 2;
             
-            // 计算同心圆的大小
+            // Calculate concentric circle size
             const areaSize = Math.min(width, height) * 0.6;
             const radius = currentConfig.gridSize === '100' ? areaSize * 0.5 : areaSize * 0.5;
             
-            // 计算urban area占比（用于内圆大小）
+            // Calculate urban area ratio (for inner circle size)
             const totalArea = cell.urban_area + cell.rural_area;
             let urbanAreaRatio;
             if (currentConfig.useRealArea) {
-                // 使用真实面积比例
+                // Use real area ratio
                 urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
             } else {
-                // 使用固定面积模式：内圆占据20%的面积
+                // Use fixed area mode: inner circle occupies 20% of the area
                 urbanAreaRatio = 0.2;
             }
-            const innerRadius = radius * Math.sqrt(urbanAreaRatio); // 内圆半径
+            const innerRadius = radius * Math.sqrt(urbanAreaRatio); // Inner circle radius
             
-            // 绘制外圆（代表rural人口）
+            // Draw outer circle (representing rural population)
             const ruralValue = calculateValue(cell, false);
             const safeRuralValue = isFinite(ruralValue) && ruralValue >= 0 ? ruralValue : 0;
             
@@ -1681,7 +1732,7 @@
                 .attr("fill", colorScale(safeRuralValue))
                 .attr("opacity", 0.8);
             
-            // 绘制内圆（代表urban人口）
+            // Draw inner circle (representing urban population)
             if (urbanAreaRatio > 0) {
                 const urbanValue = calculateValue(cell, true);
                 const safeUrbanValue = isFinite(urbanValue) && urbanValue >= 0 ? urbanValue : 0;
@@ -1694,7 +1745,7 @@
                     .attr("opacity", 0.9);
             }
             
-            // 添加标题
+            // Add title
             svg.append("text")
                 .attr("x", width / 2)
                 .attr("y", 20)
@@ -1705,29 +1756,29 @@
                 .text("Zoomed Cell View");
         }
 
-        // 创建矩形放大视图
+        // Create rectangle zoom view
         function createRectZoomView(svg, cell, colorScale, width, height) {
             const centerX = width / 2;
             const centerY = height / 2;
             
-            // 计算矩形的大小
+            // Calculate rectangle size
             const areaSize = Math.min(width, height) * 0.6;
             const rectSize = currentConfig.gridSize === '100' ? 
                 areaSize * 1 : areaSize * 1;
             
-                            // 计算urban area占比（用于内矩形大小）
+            // Calculate urban area ratio (for inner rectangle size)
                 const totalArea = cell.urban_area + cell.rural_area;
                 let urbanAreaRatio;
                 if (currentConfig.useRealArea) {
-                    // 使用真实面积比例
+                    // Use real area ratio
                     urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
                 } else {
-                    // 使用固定面积模式：内矩形占据20%的面积
+                    // Use fixed area mode: inner rectangle occupies 20% of the area
                     urbanAreaRatio = 0.2;
                 }
-                const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // 内矩形大小
+                const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // Inner rectangle size
             
-            // 绘制外矩形（代表rural人口）
+            // Draw outer rectangle (representing rural population)
             const ruralValue = calculateValue(cell, false);
             const safeRuralValue = isFinite(ruralValue) && ruralValue >= 0 ? ruralValue : 0;
             
@@ -1739,7 +1790,7 @@
                 .attr("fill", colorScale(safeRuralValue))
                 .attr("opacity", 0.8);
             
-            // 绘制内矩形（代表urban人口）
+            // Draw inner rectangle (representing urban population)
             if (urbanAreaRatio > 0) {
                 const urbanValue = calculateValue(cell, true);
                 const safeUrbanValue = isFinite(urbanValue) && urbanValue >= 0 ? urbanValue : 0;
@@ -1753,7 +1804,7 @@
                     .attr("opacity", 0.9);
             }
             
-            // 添加标题
+            // Add title
             svg.append("text")
                 .attr("x", width / 2)
                 .attr("y", 20)
@@ -1764,9 +1815,9 @@
                 .text("Zoomed Cell View");
         }
         
-        // 创建放大视图
+        // Create zoomed view
         function createZoomView(container, cell, circleCount, urbanCircles, ruralCircles) {
-            // 清除现有内容
+            // Clear existing content
             container.innerHTML = '';
             
             const width = container.clientWidth || 350;
@@ -1777,27 +1828,27 @@
                 .attr("width", width)
                 .attr("height", height);
             
-            // 创建颜色比例尺
+            // Create color scale
             const colorScale = createColorScale([cell]);
             
-            // 根据可视化模式选择绘制方法
+            // Select drawing method based on visualization mode
             if (currentConfig.visualizationMode === 'concentric') {
-                // 同心圆模式
+                // Concentric circle mode
                 createConcentricZoomView(svg, cell, colorScale, width, height);
             } else if (currentConfig.visualizationMode === 'rect') {
-                // 矩形模式
+                // Rectangle mode
                 createRectZoomView(svg, cell, colorScale, width, height);
             } else {
-                // 散点图模式（原有逻辑）
+                // Scatter plot mode (original logic)
             
-            // 计算圆形位置 - 使用与主视图相同的参数但等比例放大
+            // Calculate circle positions - use same parameters as main view but scale proportionally
             const centerX = width / 2;
             const centerY = height / 2;
-            // 根据网格大小调整放大倍数
+            // Adjust zoom factor based on grid size
             const zoomFactor = currentConfig.gridSize === '1000' ? 1 : 2.5;
             const areaSize = Math.min(width, height) * 0.6;
             
-            // 使用与主视图相同的生成函数，但调整参数
+            // Use same generation function as main view, but adjust parameters
             const gridSize = Math.ceil(Math.sqrt(circleCount));
             const circleRadius = (areaSize / gridSize) * currentConfig.circleSize * zoomFactor;
             const spacing = (areaSize / gridSize) * currentConfig.circleSpacing * zoomFactor;
@@ -1819,7 +1870,7 @@
                 return distA - distB;
             });
             
-            // 绘制圆形
+            // Draw circles
             for (let idx = 0; idx < circleCount; idx++) {
                 const pos = allPositions[idx];
                 const isUrban = idx < urbanCircles;
@@ -1834,7 +1885,7 @@
                     .attr("opacity", 0.9);
             }
             
-            // 添加标题
+            // Add title
             svg.append("text")
                 .attr("x", width / 2)
                 .attr("y", 20)
@@ -1846,7 +1897,7 @@
             }
         }
         
-        // 显示详细信息面板
+        // Show detail panel
         function showDetailPanel(cell, circleCount, urbanCircles, ruralCircles) {
             const panel = document.getElementById('detailPanel');
             const title = document.getElementById('detailPanelTitle');
@@ -1854,21 +1905,21 @@
             const chartContainer = document.getElementById('detailPanelChartContainer');
             const zoomView = document.getElementById('zoomView');
             
-            // 保存当前显示的cell数据
+            // Save currently displayed cell data
             currentDetailCell = cell;
             
-            // 设置标题
+            // Set title
             title.textContent = `Cell Details`;
             
-            // 计算值
+            // Calculate values
             const urbanValue = calculateValue(cell, true);
             const ruralValue = calculateValue(cell, false);
             const valueUnit = currentConfig.colorMapping === 'population' ? '' : '/km²';
             
-            // 创建放大视图
+            // Create zoom view
             createZoomView(zoomView, cell, circleCount, urbanCircles, ruralCircles);
             
-            // 填充详细信息
+            // Fill detailed information
             grid.innerHTML = `
                 <div class="detail-panel-section">
                     <h3>Geographic Information</h3>
@@ -1990,31 +2041,33 @@
                 </div>
             `;
             
-            // 创建人口分布图表
+            // Create population distribution chart
             const colorScale = createColorScale([cell]);
             createDetailChart(document.getElementById('detailPanelChartContainer'), cell, urbanCircles, ruralCircles, colorScale);
             
-            // 创建人口密度图表
+            // Create population density chart
             createDensityChart(document.getElementById('detailPanelDensityChartContainer'), cell, colorScale);
             
-            // 创建面积分布图表
+            // Create area distribution chart
             createAreaChart(document.getElementById('detailPanelAreaChartContainer'), cell, colorScale);
             
-            // 显示面板
+            // Show panel
             panel.style.display = 'flex';
             setTimeout(() => {
                 panel.classList.add('show');
+                // Update zoom controls position after panel is fully shown
+                updateZoomControlsPosition();
             }, 10);
         }
         
-        // 创建详细信息图表
+        // Create detail chart
         function createDetailChart(container, cell, urbanCircles, ruralCircles, colorScale) {
-            // 清除现有内容
+            // Clear existing content
             container.innerHTML = '';
             
-            // 获取容器的实际可用宽度，减去padding
+            // Get container's actual available width, minus padding
             const containerRect = container.getBoundingClientRect();
-            const width = Math.max(containerRect.width - 30, 300); // 减去padding，最小300px
+            const width = Math.max(containerRect.width - 30, 300); // Min 300px, minus padding
             const height = 200;
             
             const svg = d3.select(container)
@@ -2024,13 +2077,13 @@
                 .style("max-width", "100%")
                 .style("overflow", "visible");
             
-            // 数据 - 使用实际人口数据，不受圆形设置影响，并四舍五入为整数，使用当前Cell的颜色分配
+            // Data - use actual population data, unaffected by circle settings, rounded to integers, use current Cell's color allocation
             const data = [
                 { name: 'Urban', value: Math.round(cell.urban_population), color: colorScale(calculateValue(cell, true)) },
                 { name: 'Rural', value: Math.round(cell.rural_population), color: colorScale(calculateValue(cell, false)) }
             ];
             
-            // 比例尺
+            // Scale
             const x = d3.scaleBand()
                 .domain(data.map(d => d.name))
                 .range([0, width])
@@ -2040,7 +2093,7 @@
                 .domain([0, Math.max(data[0].value, data[1].value)])
                 .range([height - 40, 40]);
             
-            // 绘制柱状图
+            // Draw bar chart
             svg.selectAll("rect")
                 .data(data)
                 .enter()
@@ -2052,7 +2105,7 @@
                 .attr("fill", d => d.color)
                 .attr("opacity", 0.8);
             
-            // 添加数值标签
+            // Add value labels
             svg.selectAll("text")
                 .data(data)
                 .enter()
@@ -2064,7 +2117,7 @@
                 .attr("fill", "#333")
                 .text(d => `${d.value.toLocaleString()}`);
             
-            // 添加x轴标签
+            // Add x-axis labels
             svg.selectAll(".x-label")
                 .data(data)
                 .enter()
@@ -2077,7 +2130,7 @@
                 .attr("fill", "#333")
                 .text(d => d.name);
             
-            // // 添加标题
+            // // Add title
             // svg.append("text")
             //     .attr("x", width / 2)
             //     .attr("y", 20)
@@ -2087,14 +2140,14 @@
             //     .text("Population Distribution");
         }
         
-        // 创建面积分布pie chart
+        // Create area distribution pie chart
         function createAreaChart(container, cell, colorScale) {
-            // 清除现有内容
+            // Clear existing content
             container.innerHTML = '';
             
-            // 获取容器的实际可用宽度，减去padding
+            // Get container's actual available width, minus padding
             const containerRect = container.getBoundingClientRect();
-            const width = Math.max(containerRect.width - 30, 300); // 减去padding，最小300px
+            const width = Math.max(containerRect.width - 30, 300); // Min 300px, minus padding
             const height = 200;
             
             const svg = d3.select(container)
@@ -2104,11 +2157,11 @@
                 .style("max-width", "100%")
                 .style("overflow", "visible");
             
-            // 数据 - 面积数据四舍五入为整数，使用当前Cell的颜色分配
+            // Data - area data rounded to integers, use current Cell's color allocation
             const data = [
                 { name: 'Urban Area', value: Math.round(cell.urban_area), color: colorScale(calculateValue(cell, true)) },
                 { name: 'Rural Area', value: Math.round(cell.rural_area), color: colorScale(calculateValue(cell, false)) }
-            ].filter(d => d.value > 0); // 只显示有面积的区域
+            ].filter(d => d.value > 0); // Only show areas with area data
             
             if (data.length === 0) {
                 svg.append("text")
@@ -2121,7 +2174,7 @@
                 return;
             }
             
-            // 创建pie chart
+            // Create pie chart
             const radius = Math.min(width, height) / 3;
             const centerX = width / 2;
             const centerY = height / 2;
@@ -2134,7 +2187,7 @@
                 .innerRadius(0)
                 .outerRadius(radius);
             
-            // 绘制pie slices
+            // Draw pie slices
             const pieGroup = svg.append("g")
                 .attr("transform", `translate(${centerX}, ${centerY})`);
             
@@ -2148,7 +2201,7 @@
                 .attr("stroke", "#fff")
                 .attr("stroke-width", 2);
             
-            // 添加标签
+            // Add labels
             pieGroup.selectAll("text")
                 .data(pie(data))
                 .enter()
@@ -2160,7 +2213,7 @@
                 .attr("font-weight", "bold")
                 .text(d => `${((d.data.value / (Math.round(cell.urban_area) + Math.round(cell.rural_area))) * 100).toFixed(1)}%`);
             
-            // 添加图例
+            // Add legend
             const legend = svg.append("g")
                 .attr("transform", `translate(${width - 100}, 20)`);
             
@@ -2181,14 +2234,14 @@
             });
         }
         
-        // 创建人口密度图表
+        // Create population density chart
         function createDensityChart(container, cell, colorScale) {
-            // 清除现有内容
+            // Clear existing content
             container.innerHTML = '';
             
-            // 获取容器的实际可用宽度，减去padding
+            // Get container's actual available width, minus padding
             const containerRect = container.getBoundingClientRect();
-            const width = Math.max(containerRect.width - 30, 300); // 减去padding，最小300px
+            const width = Math.max(containerRect.width - 30, 300); // Minus padding, minimum 300px
             const height = 200;
             
             const svg = d3.select(container)
@@ -2198,14 +2251,14 @@
                 .style("max-width", "100%")
                 .style("overflow", "visible");
             
-            // 计算密度数据
+            // Calculate density data
             const urbanDensity = cell.urban_area > 0 ? cell.urban_population / cell.urban_area : 0;
             const ruralDensity = cell.rural_area > 0 ? cell.rural_population / cell.rural_area : 0;
             
             const data = [
                 { name: 'Urban', value: Math.round(urbanDensity), color: colorScale(calculateValue(cell, true)) },
                 { name: 'Rural', value: Math.round(ruralDensity), color: colorScale(calculateValue(cell, false)) }
-            ].filter(d => d.value > 0); // 只显示有密度的区域
+            ].filter(d => d.value > 0); // Only show areas with density data
             
             if (data.length === 0) {
                 svg.append("text")
@@ -2218,7 +2271,7 @@
                 return;
             }
             
-            // 比例尺
+            // Scale
             const x = d3.scaleBand()
                 .domain(data.map(d => d.name))
                 .range([0, width])
@@ -2228,7 +2281,7 @@
                 .domain([0, Math.max(...data.map(d => d.value))])
                 .range([height - 40, 40]);
             
-            // 绘制柱状图
+            // Draw bar chart
             svg.selectAll("rect")
                 .data(data)
                 .enter()
@@ -2240,7 +2293,7 @@
                 .attr("fill", d => d.color)
                 .attr("opacity", 0.8);
             
-            // 添加数值标签
+            // Add value labels
             svg.selectAll("text")
                 .data(data)
                 .enter()
@@ -2252,7 +2305,7 @@
                 .attr("fill", "#333")
                 .text(d => `${d.value.toLocaleString()} /km²`);
             
-            // 添加x轴标签
+            // Add x-axis labels
             svg.selectAll(".x-label")
                 .data(data)
                 .enter()
@@ -2266,30 +2319,59 @@
                 .text(d => d.name);
         }
         
-        // 关闭详细信息面板
+        // Close detail panel
         function closeDetailPanel() {
             const panel = document.getElementById('detailPanel');
             
-            // 清除选中状态
+            // Clear selection state
             d3.selectAll(".cell-clickable").classed("selected", false);
             
-            // 清除当前显示的cell数据
+            // Clear currently displayed cell data
             currentDetailCell = null;
+            
+            // Move zoom controls back to original position
+            const zoomControls = document.querySelector('.zoom-controls');
+            if (zoomControls) {
+                zoomControls.classList.remove('with-details');
+            }
             
             panel.classList.remove('show');
             setTimeout(() => {
                 panel.style.display = 'none';
+                // Update zoom controls position after panel is fully hidden
+                updateZoomControlsPosition();
             }, 300);
         }
         
-        // 重新调整图表大小
+        // Function to update zoom controls position based on detail panel state
+        function updateZoomControlsPosition() {
+            const zoomControls = document.querySelector('.zoom-controls');
+            const detailPanel = document.getElementById('detailPanel');
+            
+            if (zoomControls && detailPanel) {
+                // Check if detail panel is visible and its width
+                const isVisible = detailPanel.classList.contains('show');
+                const panelWidth = detailPanel.offsetWidth;
+                const isFullscreen = panelWidth >= window.innerWidth * 0.9; // Consider fullscreen if width > 90% of window
+                
+                if (isVisible && !isFullscreen) {
+                    // Detail panel is visible but not fullscreen - move zoom controls to the left
+                    zoomControls.classList.add('with-details');
+                } else {
+                    // Detail panel is hidden or fullscreen - keep zoom controls in original position
+                    zoomControls.classList.remove('with-details');
+                }
+            }
+        }
+        
+        // Resize charts
         function resizeDetailCharts() {
             const chartContainer = document.getElementById('detailPanelChartContainer');
             const densityChartContainer = document.getElementById('detailPanelDensityChartContainer');
             const areaChartContainer = document.getElementById('detailPanelAreaChartContainer');
             
             if (chartContainer && chartContainer.innerHTML && currentDetailCell) {
-                // 重新创建图表以调整大小
+                // Recreate chart to adjust size
                 const urbanCircles = Math.round(currentDetailCell.urban_area / (currentConfig.circleSize * currentConfig.circleSize));
                 const ruralCircles = Math.round(currentDetailCell.rural_area / (currentConfig.circleSize * currentConfig.circleSize));
                 createDetailChart(chartContainer, currentDetailCell, urbanCircles, ruralCircles, colorScale);
@@ -2304,22 +2386,22 @@
             }
         }
         
-        // 初始化图表
+        // Initialize chart
         function initChart() {
             const { width, height, areaSize } = getResponsiveDimensions();
             
-            // 使用currentConfig中的maxCircles
+            // Use maxCircles from currentConfig
             MAPPING_CONFIG.maxCircles = currentConfig.maxCircles;
             
-            // 清除现有内容，但保留缩放控制按钮
+            // Clear existing content but keep zoom control buttons
             const zoomControls = document.querySelector('.zoom-controls');
             
-            // 保存缩放按钮的HTML内容
+            // Save zoom button HTML content
             const zoomControlsHTML = zoomControls ? zoomControls.innerHTML : '';
             
             d3.select("#chart").selectAll("*").remove();
             
-            // 重新创建缩放控制按钮
+            // Recreate zoom control buttons
             if (zoomControlsHTML) {
                 const newZoomControls = document.createElement('div');
                 newZoomControls.className = 'zoom-controls';
@@ -2334,39 +2416,39 @@
                 .attr("viewBox", `0 0 ${width} ${height}`)
                 .attr("preserveAspectRatio", "xMidYMid meet");
 
-            // 创建缩放行为
+            // Create zoom behavior
             const zoom = d3.zoom()
                 .scaleExtent([MIN_ZOOM, MAX_ZOOM])
                 .on("zoom", function(event) {
                     currentZoom = event.transform;
                     zoomLevel = event.transform.k;
                     
-                    // 应用缩放变换到地图组
+                    // Apply zoom transform to map group
                     svg.select(".map-group").attr("transform", event.transform);
                     
-                    // 延迟更新缩放信息，避免在初始化时出错
+                    // Delay updating zoom info to avoid errors during initialization
                     setTimeout(() => {
                         updateZoomInfo();
                     }, 0);
                 })
                 .on("end", function(event) {
-                    // 双击放大功能保留，但不重置到初始位置
+                    // Double-click zoom function preserved, but doesn't reset to initial position
                     if (event.sourceEvent && event.sourceEvent.type === "dblclick") {
-                        // 双击时放大，而不是重置
+                        // Zoom in on double-click, not reset
                         const currentTransform = d3.zoomTransform(svg.node());
                         const newScale = Math.min(MAX_ZOOM, currentTransform.k * 1.5);
                         
                         if (newScale > currentTransform.k) {
-                            // 获取双击位置相对于SVG的坐标
+                            // Get double-click position relative to SVG coordinates
                             const rect = svg.node().getBoundingClientRect();
                             const x = event.sourceEvent.clientX - rect.left;
                             const y = event.sourceEvent.clientY - rect.top;
                             
-                            // 使用D3.js的zoom.scaleTo方法，以双击位置为中心进行平滑放大
+                            // Use D3.js zoom.scaleTo method for smooth zoom centered on double-click position
                             const point = [x, y];
                             svg.call(zoom.scaleTo, newScale, point);
                             
-                            // 更新全局zoom状态
+                            // Update global zoom state
                             currentZoom = d3.zoomTransform(svg.node());
                             zoomLevel = newScale;
                             updateZoomInfo();
@@ -2374,14 +2456,14 @@
                     }
                 });
 
-            // 应用缩放行为到SVG
+            // Apply zoom behavior to SVG
             svg.call(zoom);
 
             const tooltip = d3.select(".chart-container")
                 .append("div")
                 .attr("class", "tooltip");
 
-            // 响应式投影
+            // Responsive projection
             const projection = d3.geoMercator()
                 .center([10, -15])
                 .scale(Math.min(width, height) / 1.5)
@@ -2389,14 +2471,14 @@
 
             const path = d3.geoPath().projection(projection);
 
-            // 创建地图组
+            // Create map group
             const mapGroup = svg.append("g")
                 .attr("class", "map-group");
 
-            // 加载数据
+            // Load data
             const dataFile = currentConfig.gridSize === '100' 
-                ? "aggregated_100km_africa.json" 
-                : "aggregated_1000km_africa.json";
+                ? "data/aggregated_100km_africa.json" 
+                : "data/aggregated_1000km_africa.json";
 
             Promise.all([
                 d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
@@ -2416,18 +2498,18 @@
                             latitude: correctedLat
                         };
                     })
-                    // 移除过滤条件，显示所有网格（包括人口为0的网格）
+                    // Remove filter conditions, show all grids (including grids with 0 population)
                     // .filter(d => d.total_population > 0);
 
-                // 保存到全局变量
+                // Save to global variable
                 window.gridData = gridData;
 
-                // 计算统计信息
+                // Calculate statistics
                 const populations = gridData.map(d => d.total_population);
                 const minPop = Math.min(...populations);
                 const maxPop = Math.max(...populations);
 
-                // 背景地图
+                // Background map
                 mapGroup.append("g")
                     .selectAll("path")
                     .data(geojson.features.filter(d => d.properties.continent === "Africa"))
@@ -2438,26 +2520,26 @@
                     .attr("stroke", "#999")
                     .attr("stroke-width", Math.max(0.3, width / 1000));
 
-                // 创建颜色比例尺
+                // create color scale
                 const colorScale = createColorScale(gridData);
                 
-                // 根据可视化模式选择绘制方法
+                // according to visualization mode, choose the corresponding drawing method
                 if (currentConfig.visualizationMode === 'concentric') {
-                    // 使用同心圆模式
+                    // Use concentric circle mode
                     createConcentricCircles(svg, gridData, colorScale, areaSize);
                     
-                    // 创建图例
+                    // create legend
                     const maxValue = Math.max(...gridData.map(d => Math.max(calculateValue(d, true), calculateValue(d, false))));
                     createLegend(svg, colorScale, maxValue);
                 } else if (currentConfig.visualizationMode === 'rect') {
-                    // 使用矩形模式
+                    // Use rectangle mode
                     createRectangles(svg, gridData, colorScale, areaSize);
                     
-                    // 创建图例
+                    // create legend
                     const maxValue = Math.max(...gridData.map(d => Math.max(calculateValue(d, true), calculateValue(d, false))));
                     createLegend(svg, colorScale, maxValue);
                 } else {
-                    // 使用散点图模式（原有逻辑）
+                    // Use scatter plot mode (original logic)
                     gridData.forEach(cell => {
                     const projectedPos = projection([cell.longitude, cell.latitude]);
                     if (!projectedPos) return;
@@ -2465,7 +2547,7 @@
                     const circleCount = calculateCircleCount(cell.total_population, minPop, maxPop);
                     const positions = generateCirclePositionsInFixedArea(circleCount, projectedPos[0], projectedPos[1], areaSize);
 
-                    // 计算城乡圆形数量
+                    // Calculate urban-rural circle count
                     let urbanCircles, ruralCircles;
                     
                     if (currentConfig.useRealArea) {
@@ -2476,7 +2558,7 @@
                             urbanCircles = Math.round(circleCount * urbanRatio);
                             ruralCircles = circleCount - urbanCircles;
                         } else {
-                            // 使用固定面积模式：内圆占据20%的数量
+                            // Use fixed area mode: inner circle occupies 20% of count
                             urbanCircles = Math.round(circleCount * MAPPING_CONFIG.urbanAreaShare);
                             ruralCircles = circleCount - urbanCircles;
                         }
@@ -2485,24 +2567,24 @@
                         ruralCircles = circleCount - urbanCircles;
                     }
 
-                    // 创建网格单元组
+                    // create grid cell group
                     const cellGroup = svg.select(".map-group").append("g")
                         .attr("class", "cell-clickable")
                         .attr("data-cell-id", `${cell.longitude}-${cell.latitude}`)
                         .datum({ urbanCircles: urbanCircles, ruralCircles: ruralCircles })
                         .on("click", function(event) {
-                            // 移除之前选中的cell的高亮
+                            // remove the highlight of the previously selected cell
                             d3.selectAll(".cell-clickable").classed("selected", false);
                             
-                            // 为当前cell添加选中状态
+                            // add selected state to the current cell
                             d3.select(this).classed("selected", true);
                             
-                            // 显示详细信息
+                            // show detailed information
                             showDetailPanel(cell, circleCount, urbanCircles, ruralCircles);
                         });
 
-                    // 添加透明点击区域
-                    const clickSize = areaSize * 1.5; // 更大的点击区域
+                    // add transparent click area
+                    const clickSize = areaSize * 1.5; // Larger click area
                     cellGroup.append("rect")
                         .attr("x", projectedPos[0] - clickSize/2)
                         .attr("y", projectedPos[1] - clickSize/2)
@@ -2511,7 +2593,7 @@
                         .attr("fill", "transparent")
                         .style("pointer-events", "all");
 
-                    // 绘制圆形
+                    // draw circles
                     positions.forEach((pos, index) => {
                         const isUrban = pos.spiralIndex < urbanCircles;
                         const value = calculateValue(cell, isUrban);
@@ -2554,36 +2636,36 @@
                 });
                 }
 
-                // 创建图例
+                // create legend
                 const maxValue = Math.max(...gridData.map(d => Math.max(calculateValue(d, true), calculateValue(d, false))));
                 
                 createLegend(svg, colorScale, maxValue);
                 
-                // 更新图例中的连续颜色滑动条
+                // Update continuous color slider in legend
                 updateLegendFigure();
                 
-                // 重新绑定zoom按钮事件监听器
+                // rebind zoom button event listener
                 const resetZoomBtn = document.getElementById('resetZoomBtn');
                 
-                // 先移除旧的事件监听器，避免重复绑定
+                // remove old event listener, avoid duplicate binding
                 if (resetZoomBtn) {
                     resetZoomBtn.removeEventListener('click', resetZoom);
                     resetZoomBtn.addEventListener('click', resetZoom);
                 }
                 
-                // 更新缩放信息
+                // update zoom info
                 updateZoomInfo();
             });
         }
         
-        // 创建同心圆可视化
+        // Create concentric circle visualization
         function createConcentricCircles(svg, gridData, colorScale, areaSize) {
-            // 清除现有内容
+            // clear existing content
             svg.select(".map-group").selectAll(".cell-clickable").remove();
             
             const tooltip = d3.select(".chart-container .tooltip");
             
-            // 响应式投影
+            // responsive projection
             const width = svg.attr("width");
             const height = svg.attr("height");
             const projection = d3.geoMercator()
@@ -2591,50 +2673,50 @@
                 .scale(Math.min(width, height) / 1.5)
                 .translate([width / 2, height / 2]);
 
-            // 为每个网格创建同心圆
+            // Create concentric circles for each grid
             gridData.forEach(cell => {
                 const projectedPos = projection([cell.longitude, cell.latitude]);
                 if (!projectedPos) return;
 
-                // 计算圆形大小（基于总人口）
+                // Calculate circle size (based on total population)
                 const populations = gridData.map(d => d.total_population);
                 const minPop = Math.min(...populations);
                 const maxPop = Math.max(...populations);
                 const circleCount = calculateCircleCount(cell.total_population, minPop, maxPop);
                 
-                // 计算同心圆的大小
+                // calculate the size of concentric circles
                 // const radius = currentConfig.gridSize === '100' ? areaSize * 0.2 : areaSize * 0.5;
                 const radius = currentConfig.gridSize === '100' ? (areaSize / currentConfig.gridSize) * currentConfig.circleSize * 100 : (areaSize / currentConfig.gridSize) * currentConfig.circleSize * 1000;
                 
-                // 计算urban area占比（用于内圆大小）
+                // calculate the ratio of urban area (for inner circle size)
                 const totalArea = cell.urban_area + cell.rural_area;
                 let urbanAreaRatio;
                 if (currentConfig.useRealArea) {
-                    // 使用真实面积比例
+                    // use real area ratio
                     urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
                 } else {
-                    // 使用固定面积模式：内圆占据20%的面积
+                    // use fixed area mode: inner circle occupies 20% of the area
                     urbanAreaRatio = 0.2;
                 }
-                const innerRadius = radius * Math.sqrt(urbanAreaRatio); // 内圆半径
+                const innerRadius = radius * Math.sqrt(urbanAreaRatio); // inner circle radius
                 
-                // 创建网格单元组
+                // create grid cell group
                 const cellGroup = svg.select(".map-group").append("g")
                     .attr("class", "cell-clickable")
                     .attr("data-cell-id", `${cell.longitude}-${cell.latitude}`)
                     .datum({ urbanAreaRatio: urbanAreaRatio, totalPopulation: cell.total_population })
                     .on("click", function(event) {
-                        // 移除之前选中的cell的高亮
+                        // remove the highlight of the previously selected cell
                         d3.selectAll(".cell-clickable").classed("selected", false);
                         
-                        // 为当前cell添加选中状态
+                        // add selected state to the current cell
                         d3.select(this).classed("selected", true);
                         
-                        // 显示详细信息
-                        showDetailPanel(cell, 1, 1, 0); // 简化参数
+                        // show detailed information
+                        showDetailPanel(cell, 1, 1, 0); // simplified parameters
                     });
 
-                // 添加透明点击区域
+                // add transparent click area
                 const clickSize = radius * 2;
                 cellGroup.append("rect")
                     .attr("x", projectedPos[0] - clickSize/2)
@@ -2644,8 +2726,8 @@
                     .attr("fill", "transparent")
                     .style("pointer-events", "all");
 
-                // 绘制外圆（代表rural人口）
-                const ruralValue = calculateValue(cell, false); // 使用rural值作为外圆颜色
+                // draw outer circle (representing rural population)
+                const ruralValue = calculateValue(cell, false); // use rural value as outer circle color
                 const safeRuralValue = isFinite(ruralValue) && ruralValue >= 0 ? ruralValue : 0;
                 
                 cellGroup.append("circle")
@@ -2667,8 +2749,8 @@
                             <strong>Lon:</strong> ${cell.longitude.toFixed(2)}°, 
                             <strong>Lat:</strong> ${cell.latitude.toFixed(2)}°<br>
                             <strong>Total Population:</strong> ${Math.round(cell.total_population).toLocaleString()}<br>
-                            <strong>Rural Population:</strong> ${Math.round(cell.rural_population).toLocaleString()} (外圆)<br>
-                            <strong>Urban Population:</strong> ${Math.round(cell.urban_population).toLocaleString()} (内圆, ${urbanAreaRatio.toFixed(1)}% area)<br>
+                            <strong>Rural Population:</strong> ${Math.round(cell.rural_population).toLocaleString()} (outer circle)<br>
+                            <strong>Urban Population:</strong> ${Math.round(cell.urban_population).toLocaleString()} (inner circle, ${urbanAreaRatio.toFixed(1)}% area)<br>
                             <strong>Rural Value:</strong> ${ruralValue.toFixed(1)}${valueUnit}<br>
                             <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
                             <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
@@ -2683,9 +2765,9 @@
                             .style("opacity", 0);
                     });
 
-                // 绘制内圆（代表urban人口）
+                // draw inner circle (representing urban population)
                 if (urbanAreaRatio > 0) {
-                    const urbanValue = calculateValue(cell, true); // 使用urban值作为内圆颜色
+                    const urbanValue = calculateValue(cell, true); // use urban value as inner circle color
                     const safeUrbanValue = isFinite(urbanValue) && urbanValue >= 0 ? urbanValue : 0;
                     
                     cellGroup.append("circle")
@@ -2707,8 +2789,8 @@
                                 <strong>Lon:</strong> ${cell.longitude.toFixed(2)}°, 
                                 <strong>Lat:</strong> ${cell.latitude.toFixed(2)}°<br>
                                 <strong>Total Population:</strong> ${cell.total_population.toLocaleString()}<br>
-                                <strong>Rural Population:</strong> ${cell.rural_population.toLocaleString()} (外圆)<br>
-                                <strong>Urban Population:</strong> ${cell.urban_population.toLocaleString()} (内圆, ${urbanAreaRatio.toFixed(1)}% area)<br>
+                                <strong>Rural Population:</strong> ${cell.rural_population.toLocaleString()} (outer circle)<br>
+                                <strong>Urban Population:</strong> ${cell.urban_population.toLocaleString()} (inner circle, ${urbanAreaRatio.toFixed(1)}% area)<br>
                                 <strong>Rural Value:</strong> ${ruralValue.toFixed(1)}${valueUnit}<br>
                                 <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
                                 <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
@@ -2725,33 +2807,33 @@
                 }
             });
             
-            // 重新绑定zoom按钮事件监听器
+            // rebind zoom button event listener
             const resetZoomBtn = document.getElementById('resetZoomBtn');
             
-            // 先移除旧的事件监听器，避免重复绑定
+            // remove old event listener, avoid duplicate binding
             if (resetZoomBtn) {
                 resetZoomBtn.removeEventListener('click', resetZoom);
                 resetZoomBtn.addEventListener('click', resetZoom);
             }
             
-            // 更新缩放信息
+            // update zoom info
             updateZoomInfo();
         }
 
-        // 事件监听器
+        // event listener
         document.getElementById('gridSize').addEventListener('change', function() {
             currentConfig.gridSize = this.value;
             
-            // 更新自定义颜色设置的阈值
+            // update custom color settings thresholds
             if (this.value === '100') {
                 customColorSettings.population.thresholds = [1000, 5000, 15000, 50000, 100000, 300000];
             } else {
                 customColorSettings.population.thresholds = [100000, 500000, 1500000, 5000000, 10000000, 30000000];
             }
             
-            // 根据网格大小自动调整圆形参数
+            // adjust circle parameters according to grid size
             if (this.value === '100') {
-                // 100km参数
+                // 100km parameters
                 currentConfig.circleSize = 0.2;
                 currentConfig.circleSpacing = 0.4;
                 currentConfig.maxCircles = 16;
@@ -2762,7 +2844,7 @@
                 document.getElementById('circleSpacingValue').textContent = '0.4';
                 document.getElementById('maxCirclesValue').textContent = '16';
             } else {
-                // 1000km参数
+                // 1000km parameters
                 currentConfig.circleSize = 0.5;
                 currentConfig.circleSpacing = 1.0;
                 currentConfig.maxCircles = 100;
@@ -2812,25 +2894,25 @@
             initChart();
         });
 
-        // 关闭按钮事件监听器
+        // close button event listener
         document.getElementById('closeDetailPanelBtn').addEventListener('click', closeDetailPanel);
         
-        // ESC键关闭面板
+        // ESC key close panel
         document.addEventListener('keydown', function(event) {
             if (event.key === 'Escape') {
                 closeDetailPanel();
             }
         });
 
-        // 更新图例中的可视化模式图例
+        // update legend of visualization mode
         function updateLegendFigure() {
             const figureContainer = d3.select('.figure-container');
             if (figureContainer.empty()) return;
             
-            // 清除现有内容
+            // clear existing content
             figureContainer.selectAll('*').remove();
             
-            // 根据当前配置选择对应的图例
+            // according to current configuration, choose the corresponding legend
             const getFigurePath = () => {
                 const mode = currentConfig.visualizationMode;
                 const size = currentConfig.gridSize;
@@ -2842,17 +2924,17 @@
                 } else if (mode === 'rect') {
                     return size === '100' ? 'figures/rect_100.svg' : 'figures/rect_1000.svg';
                 }
-                return 'figures/scatter_100.svg'; // 默认
+                return 'figures/scatter_100.svg'; // default
             };
 
-            // 创建图例容器
+            // create legend container
             const legendFigure = figureContainer.append("foreignObject")
                 .attr("x", -20)
                 .attr("y", 0)
                 .attr("width", 400)
                 .attr("height", 150);
 
-            // 加载SVG图例
+            // load SVG legend
             const figurePath = getFigurePath();
             fetch(figurePath)
                 .then(response => {
@@ -2862,18 +2944,18 @@
                     return response.text();
                 })
                 .then(svgContent => {
-                    // 创建临时div来解析SVG
+                    // create temporary div to parse SVG
                     const tempDiv = document.createElement('div');
                     tempDiv.innerHTML = svgContent;
                     const svgElement = tempDiv.querySelector('svg');
                     
                     if (svgElement) {
-                        // 调整SVG大小和样式
+                        // adjust SVG size and style
                         svgElement.style.width = '100%';
                         svgElement.style.height = 'auto';
                         svgElement.style.maxHeight = '120px';
                         
-                        // 将SVG内容插入到foreignObject中
+                        // insert SVG content into foreignObject
                         legendFigure.node().appendChild(svgElement);
                     } else {
                         throw new Error('SVG element not found in response');
@@ -2881,7 +2963,7 @@
                 })
                 .catch(error => {
                     console.error('Error loading figure:', error);
-                    // 如果加载失败，显示备用文本
+                    // if loading fails, display backup text
                     figureContainer.append("text")
                         .attr("x", 0)
                         .attr("y", 35)
@@ -2890,17 +2972,17 @@
                         .text("• Visualization mode: " + currentConfig.visualizationMode);
                 });
             
-            // 只保留竖着的滑动条，删除横着的滑动条
+            // only keep vertical slider, delete horizontal slider
         }
 
-        // 创建矩形可视化
+        // Create rectangle visualization
         function createRectangles(svg, gridData, colorScale, areaSize) {
-            // 清除现有内容
+            // clear existing content
             svg.select(".map-group").selectAll(".cell-clickable").remove();
             
             const tooltip = d3.select(".chart-container .tooltip");
             
-            // 响应式投影
+            // responsive projection
             const width = svg.attr("width");
             const height = svg.attr("height");
             const projection = d3.geoMercator()
@@ -2908,51 +2990,51 @@
                 .scale(Math.min(width, height) / 1.5)
                 .translate([width / 2, height / 2]);
 
-            // 为每个网格创建矩形
+            // create rectangles for each grid
             gridData.forEach(cell => {
                 const projectedPos = projection([cell.longitude, cell.latitude]);
                 if (!projectedPos) return;
 
-                // 计算矩形大小（基于总人口）
+                // calculate the size of rectangles (based on total population)
                 const populations = gridData.map(d => d.total_population);
                 const minPop = Math.min(...populations);
                 const maxPop = Math.max(...populations);
                 const circleCount = calculateCircleCount(cell.total_population, minPop, maxPop);
                 
-                // 计算矩形的大小
+                // calculate the size of rectangles
                 const rectSize = currentConfig.gridSize === '100' ? 
                     (areaSize / currentConfig.gridSize) * currentConfig.circleSize * 100 * 2 : 
                     (areaSize / currentConfig.gridSize) * currentConfig.circleSize * 1000 * 2;
                 
-                // 计算urban area占比（用于内矩形大小）
+                // calculate the ratio of urban area (for inner rectangle size)
                 const totalArea = cell.urban_area + cell.rural_area;
                 let urbanAreaRatio;
                 if (currentConfig.useRealArea) {
-                    // 使用真实面积比例
+                    // use real area ratio
                     urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
                 } else {
-                    // 使用固定面积模式：内矩形占据20%的面积
+                    // use fixed area mode: inner rectangle occupies 20% of the area
                     urbanAreaRatio = 0.2;
                 }
-                const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // 内矩形大小
+                const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // inner rectangle size
                 
-                // 创建网格单元组
+                // create grid cell group
                 const cellGroup = svg.select(".map-group").append("g")
                     .attr("class", "cell-clickable")
                     .attr("data-cell-id", `${cell.longitude}-${cell.latitude}`)
                     .datum({ urbanAreaRatio: urbanAreaRatio, totalPopulation: cell.total_population })
                     .on("click", function(event) {
-                        // 移除之前选中的cell的高亮
+                        // remove the highlight of the previously selected cell
                         d3.selectAll(".cell-clickable").classed("selected", false);
                         
-                        // 为当前cell添加选中状态
+                        // add selected state to the current cell
                         d3.select(this).classed("selected", true);
                         
-                        // 显示详细信息
-                        showDetailPanel(cell, 1, 1, 0); // 简化参数
+                        // show detailed information
+                        showDetailPanel(cell, 1, 1, 0); // simplified parameters
                     });
 
-                // 添加透明点击区域
+                // add transparent click area
                 const clickSize = rectSize * 2;
                 cellGroup.append("rect")
                     .attr("x", projectedPos[0] - clickSize/2)
@@ -2962,8 +3044,8 @@
                     .attr("fill", "transparent")
                     .style("pointer-events", "all");
 
-                // 绘制外矩形（代表rural人口）
-                const ruralValue = calculateValue(cell, false); // 使用rural值作为外矩形颜色
+                // draw outer rectangle (representing rural population)
+                const ruralValue = calculateValue(cell, false); // use rural value as outer rectangle color
                 const safeRuralValue = isFinite(ruralValue) && ruralValue >= 0 ? ruralValue : 0;
                 
                 cellGroup.append("rect")
@@ -2985,8 +3067,8 @@
                             <strong>Lon:</strong> ${cell.longitude.toFixed(2)}°, 
                             <strong>Lat:</strong> ${cell.latitude.toFixed(2)}°<br>
                             <strong>Total Population:</strong> ${Math.round(cell.total_population).toLocaleString()}<br>
-                            <strong>Rural Population:</strong> ${Math.round(cell.rural_population).toLocaleString()} (外矩形)<br>
-                            <strong>Urban Population:</strong> ${Math.round(cell.urban_population).toLocaleString()} (内矩形, ${urbanAreaRatio.toFixed(1)}% area)<br>
+                            <strong>Rural Population:</strong> ${Math.round(cell.rural_population).toLocaleString()} (outer rectangle)<br>
+                            <strong>Urban Population:</strong> ${Math.round(cell.urban_population).toLocaleString()} (inner rectangle, ${urbanAreaRatio.toFixed(1)}% area)<br>
                             <strong>Rural Value:</strong> ${ruralValue.toFixed(1)}${valueUnit}<br>
                             <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
                             <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
@@ -3001,9 +3083,9 @@
                             .style("opacity", 0);
                     });
 
-                // 绘制内矩形（代表urban人口）
+                // draw inner rectangle (representing urban population)
                 if (urbanAreaRatio > 0) {
-                    const urbanValue = calculateValue(cell, true); // 使用urban值作为内矩形颜色
+                    const urbanValue = calculateValue(cell, true); // use urban value as inner rectangle color
                     const safeUrbanValue = isFinite(urbanValue) && urbanValue >= 0 ? urbanValue : 0;
                     
                     cellGroup.append("rect")
@@ -3026,8 +3108,8 @@
                                 <strong>Lon:</strong> ${cell.longitude.toFixed(2)}°, 
                                 <strong>Lat:</strong> ${cell.latitude.toFixed(2)}°<br>
                                 <strong>Total Population:</strong> ${Math.round(cell.total_population).toLocaleString()}<br>
-                                <strong>Rural Population:</strong> ${Math.round(cell.rural_population).toLocaleString()} (外矩形)<br>
-                                <strong>Urban Population:</strong> ${Math.round(cell.urban_population).toLocaleString()} (内矩形, ${urbanAreaRatio.toFixed(1)}% area)<br>
+                                <strong>Rural Population:</strong> ${Math.round(cell.rural_population).toLocaleString()} (outer rectangle)<br>
+                                <strong>Urban Population:</strong> ${Math.round(cell.urban_population).toLocaleString()} (inner rectangle, ${urbanAreaRatio.toFixed(1)}% area)<br>
                                 <strong>Rural Value:</strong> ${ruralValue.toFixed(1)}${valueUnit}<br>
                                 <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
                                 <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
@@ -3044,54 +3126,54 @@
                 }
             });
             
-            // 重新绑定zoom按钮事件监听器
+            // rebind zoom button event listener
             const resetZoomBtn = document.getElementById('resetZoomBtn');
             
-            // 先移除旧的事件监听器，避免重复绑定
+            // remove old event listener, avoid duplicate binding
             if (resetZoomBtn) {
                 resetZoomBtn.removeEventListener('click', resetZoom);
                 resetZoomBtn.addEventListener('click', resetZoom);
             }
             
-            // 更新缩放信息
+            // update zoom info
             updateZoomInfo();
         }
 
-        // 缩放控制函数
+        // zoom control function
         function updateZoomInfo() {
-            // 由于删除了zoom-info和zoom按钮，这个函数现在主要用于更新全局状态
-            // 可以保留用于将来的扩展
+            // since the zoom-info and zoom button are deleted, this function is now mainly used for updating global state
+            // can be reserved for future extensions
         }
         
         function zoomIn() {
             if (zoomLevel < MAX_ZOOM) {
                 const svg = d3.select("#chart svg");
                 if (!svg.empty()) {
-                    // 获取SVG的尺寸和当前zoom状态
+                    // get the size of SVG and current zoom state
                     const width = parseInt(svg.attr("width"));
                     const height = parseInt(svg.attr("height"));
                     const currentTransform = d3.zoomTransform(svg.node());
                     
-                    // 计算新的缩放比例
+                    // calculate new zoom scale
                     const newScale = Math.min(MAX_ZOOM, currentTransform.k * 1.5);
                     
-                    // 以地图中心为缩放中心
+                    // use map center as zoom center
                     const centerX = width / 2;
                     const centerY = height / 2;
                     
-                    // 创建新的变换，保持中心点不变
+                    // create new transform, keep center point unchanged
                     const newTransform = d3.zoomIdentity
                         .translate(centerX, centerY)
                         .scale(newScale)
                         .translate(-centerX, -centerY);
                     
-                    // 应用变换
+                    // apply transform
                     svg.call(d3.zoom().transform, newTransform);
                     
-                    // 立即应用缩放变换到地图组
+                    // immediately apply zoom transform to map group
                     svg.select(".map-group").attr("transform", newTransform);
                     
-                    // 更新全局zoom状态
+                    // update global zoom state
                     currentZoom = newTransform;
                     zoomLevel = newScale;
                     updateZoomInfo();
@@ -3103,31 +3185,31 @@
             if (zoomLevel > MIN_ZOOM) {
                 const svg = d3.select("#chart svg");
                 if (!svg.empty()) {
-                    // 获取SVG的尺寸和当前zoom状态
+                    // get the size of SVG and current zoom state
                     const width = parseInt(svg.attr("width"));
                     const height = parseInt(svg.attr("height"));
                     const currentTransform = d3.zoomTransform(svg.node());
                     
-                    // 计算新的缩放比例
+                    // calculate new zoom scale
                     const newScale = Math.max(MIN_ZOOM, currentTransform.k * 0.75);
                     
-                    // 以地图中心为缩放中心
+                    // use map center as zoom center
                     const centerX = width / 2;
                     const centerY = height / 2;
                     
-                    // 创建新的变换，保持中心点不变
+                    // create new transform, keep center point unchanged
                     const newTransform = d3.zoomIdentity
                         .translate(centerX, centerY)
                         .scale(newScale)
                         .translate(-centerX, -centerY);
                     
-                    // 应用变换
+                    // apply transform
                     svg.call(d3.zoom().transform, newTransform);
                     
-                    // 立即应用缩放变换到地图组
+                    // immediately apply zoom transform to map group
                     svg.select(".map-group").attr("transform", newTransform);
                     
-                    // 更新全局zoom状态
+                    // update global zoom state
                     currentZoom = newScale;
                     zoomLevel = newScale;
                     updateZoomInfo();
@@ -3138,35 +3220,35 @@
         function resetZoom() {
             const svg = d3.select("#chart svg");
             if (!svg.empty()) {
-                // 使用现有的zoom行为重置
+                // use existing zoom behavior to reset
                 svg.call(d3.zoom().transform, d3.zoomIdentity);
                 
-                // 立即应用缩放变换到地图组
+                // immediately apply zoom transform to map group
                 svg.select(".map-group").attr("transform", d3.zoomIdentity);
                 
-                // 更新全局zoom状态
+                // update global zoom state
                 currentZoom = d3.zoomIdentity;
                 zoomLevel = 1;
                 updateZoomInfo();
             }
         }
         
-        // 缩放按钮事件监听器
+        // zoom button event listener
         const resetZoomBtn = document.getElementById('resetZoomBtn');
         
         if (resetZoomBtn) resetZoomBtn.addEventListener('click', resetZoom);
 
-        // 初始化
+        // initialize
         initChart();
-        updateDetailPanelPosition(); // 初始化时设置detail panel位置
-        updateZoomInfo(); // 初始化缩放信息
+        updateDetailPanelPosition(); // initialize detail panel position
+        updateZoomInfo(); // initialize zoom info
 
-        // 创建自定义下拉框
+        // create custom dropdown
         function createCustomSelects() {
             const selects = document.querySelectorAll('.control-group select');
             
             selects.forEach(select => {
-                // 创建自定义下拉框容器
+                // create custom dropdown container
                 const customSelect = document.createElement('div');
                 customSelect.className = 'custom-select';
                 customSelect.style.cssText = `
@@ -3176,7 +3258,7 @@
                     font-family: inherit;
                 `;
                 
-                // 创建显示区域
+                // create display area
                 const selectDisplay = document.createElement('div');
                 selectDisplay.className = 'select-display';
                 selectDisplay.style.cssText = `
@@ -3197,7 +3279,7 @@
                     max-width: 120px;
                 `;
                 
-                // 添加下拉箭头
+                // add dropdown arrow
                 const arrow = document.createElement('span');
                 arrow.innerHTML = '▼';
                 arrow.style.cssText = `
@@ -3213,7 +3295,7 @@
                 selectDisplay.appendChild(arrow);
                 selectDisplay.appendChild(document.createTextNode(select.options[select.selectedIndex].text));
                 
-                // 创建下拉选项列表
+                // create dropdown options list
                 const optionsList = document.createElement('div');
                 optionsList.className = 'select-options';
                 optionsList.style.cssText = `
@@ -3235,7 +3317,7 @@
                     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
                 `;
                 
-                // 添加选项
+                // add options
                 Array.from(select.options).forEach((option, index) => {
                     const optionDiv = document.createElement('div');
                     optionDiv.className = 'select-option';
@@ -3249,7 +3331,7 @@
                         color: #374151;
                     `;
                     
-                    // 悬停效果
+                    // hover effect
                     optionDiv.addEventListener('mouseenter', function() {
                         this.style.backgroundColor = '#f3f4f6';
                         this.style.color = '#1f2937';
@@ -3260,24 +3342,24 @@
                         this.style.color = '#374151';
                     });
                     
-                    // 点击选择
+                    // click to select
                     optionDiv.addEventListener('click', function() {
                         select.value = option.value;
                         selectDisplay.textContent = option.text;
                         selectDisplay.appendChild(arrow);
                         
-                        // 触发change事件
+                        // trigger change event
                         const event = new Event('change', { bubbles: true });
                         select.dispatchEvent(event);
                         
-                        // 隐藏选项列表
+                        // hide options list
                         toggleOptions();
                     });
                     
                     optionsList.appendChild(optionDiv);
                 });
                 
-                // 切换选项列表显示/隐藏
+                // toggle options list display/hide
                 let isOpen = false;
                 function toggleOptions() {
                     isOpen = !isOpen;
@@ -3298,10 +3380,10 @@
                     }
                 }
                 
-                // 点击显示区域切换选项
+                // click display area to toggle options
                 selectDisplay.addEventListener('click', toggleOptions);
                 
-                // 悬停效果
+                // hover effect
                 selectDisplay.addEventListener('mouseenter', function() {
                     if (!isOpen) {
                         this.style.borderColor = '#d1d5db';
@@ -3320,15 +3402,15 @@
                     }
                 });
                 
-                // 组装自定义下拉框
+                // assemble custom dropdown
                 customSelect.appendChild(selectDisplay);
                 customSelect.appendChild(optionsList);
                 
-                // 替换原始select
+                // replace original select
                 select.style.display = 'none';
                 select.parentNode.insertBefore(customSelect, select);
                 
-                // 点击外部关闭下拉框
+                // click outside to close dropdown
                 document.addEventListener('click', function(e) {
                     if (!customSelect.contains(e.target)) {
                         if (isOpen) {
@@ -3339,20 +3421,22 @@
             });
         }
 
-        // 监听窗口大小变化
+        // listen to window size change
         let resizeTimeout;
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
                 initChart();
-                updateDetailPanelPosition(); // 窗口大小改变时更新detail panel位置
-                updateZoomInfo(); // 更新缩放信息
+                updateDetailPanelPosition(); // update detail panel position when window size changes
+                updateZoomInfo(); // update zoom info
+                updateZoomControlsPosition(); // update zoom controls position when window size changes
             }, 250);
         });
         
-        // 页面加载完成后创建自定义下拉框
+        // create custom dropdown after page load
         window.addEventListener('load', function() {
             setTimeout(createCustomSelects, 100);
+            updateZoomControlsPosition(); // Initialize zoom controls position
         });
     </script>
 </body>

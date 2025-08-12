@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Population Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    
+    <!-- Leaflet JavaScript -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+    
+    <!-- D3.js for data loading -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        #map {
+            width: 100vw;
+            height: 100vh;
+        }
+        
+        .legend {
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin: 5px 0;
+        }
+        
+        .legend-color {
+            width: 20px;
+            height: 20px;
+            margin-right: 10px;
+            border-radius: 50%;
+        }
+        
+        .info-panel {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: white;
+            padding: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            z-index: 1000;
+            max-width: 300px;
+        }
+        
+        .info-panel h3 {
+            margin: 0 0 10px 0;
+            color: #333;
+        }
+        
+        .info-panel p {
+            margin: 5px 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    
+    <div class="info-panel">
+        <h3>Africa Population Map</h3>
+        <p><strong>Data Source:</strong> aggregated_100km_africa.json</p>
+        <p><strong>Total Grid Cells:</strong> <span id="total-cells">Loading...</span></p>
+        <p><strong>Total Population:</strong> <span id="total-population">Loading...</span></p>
+        <p><strong>Click on any point</strong> to see detailed information</p>
+    </div>
+    
+    <div class="legend">
+        <h4>Population Density</h4>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #fee5d9;"></div>
+            <span>Low (< 50k)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #fcae91;"></div>
+            <span>Medium (50k-200k)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #fb6a4a;"></div>
+            <span>High (200k-500k)</span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-color" style="background-color: #de2d26;"></div>
+            <span>Very High (> 500k)</span>
+        </div>
+    </div>
+
+    <script>
+        // Initialize the map centered on Africa
+        const map = L.map('map').setView([8, 20], 4);
+        
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '© OpenStreetMap contributors',
+            maxZoom: 19
+        }).addTo(map);
+        
+        // Function to get color based on total population
+        function getColor(totalPopulation) {
+            if (totalPopulation < 50000) return '#fee5d9';
+            if (totalPopulation < 200000) return '#fcae91';
+            if (totalPopulation < 500000) return '#fb6a4a';
+            return '#de2d26';
+        }
+        
+        // Function to get radius based on population
+        function getRadius(totalPopulation) {
+            const minRadius = 3;
+            const maxRadius = 15;
+            const maxPopulation = 1000000; // 1 million
+            return Math.max(minRadius, Math.min(maxRadius, 
+                (totalPopulation / maxPopulation) * maxRadius));
+        }
+        
+        // Load and process the data
+        d3.json("aggregated_100km_africa.json").then(function(data) {
+            let totalCells = 0;
+            let totalPopulation = 0;
+            const points = [];
+            
+            // Process each grid cell
+            Object.keys(data.grid_data).forEach(function(gridKey) {
+                const grid = data.grid_data[gridKey];
+                const location = grid.geographic_location;
+                const ruralPop = grid.rural_population || 0;
+                const urbanPop = grid.urban_population || 0;
+                const totalPop = ruralPop + urbanPop;
+                
+                if (totalPop > 0) {
+                    totalCells++;
+                    totalPopulation += totalPop;
+                    
+                    points.push({
+                        lat: location.latitude,
+                        lng: location.longitude,
+                        ruralPopulation: ruralPop,
+                        urbanPopulation: urbanPop,
+                        totalPopulation: totalPop,
+                        ruralArea: grid.rural_area || 0,
+                        urbanArea: grid.urban_area || 0
+                    });
+                }
+            });
+            
+            // Update info panel
+            document.getElementById('total-cells').textContent = totalCells.toLocaleString();
+            document.getElementById('total-population').textContent = totalPopulation.toLocaleString();
+            
+            // Add points to the map
+            points.forEach(function(point) {
+                const circle = L.circleMarker([point.lat, point.lng], {
+                    radius: getRadius(point.totalPopulation),
+                    fillColor: getColor(point.totalPopulation),
+                    color: '#fff',
+                    weight: 1,
+                    opacity: 1,
+                    fillOpacity: 0.8
+                }).addTo(map);
+                
+                // Add popup with detailed information
+                const popupContent = `
+                    <div style="min-width: 200px;">
+                        <h4>Population Data</h4>
+                        <p><strong>Location:</strong> ${point.lat.toFixed(4)}, ${point.lng.toFixed(4)}</p>
+                        <p><strong>Total Population:</strong> ${point.totalPopulation.toLocaleString()}</p>
+                        <p><strong>Rural Population:</strong> ${point.ruralPopulation.toLocaleString()}</p>
+                        <p><strong>Urban Population:</strong> ${point.urbanPopulation.toLocaleString()}</p>
+                        <p><strong>Rural Area:</strong> ${point.ruralArea.toLocaleString()} km²</p>
+                        <p><strong>Urban Area:</strong> ${point.urbanArea.toLocaleString()} km²</p>
+                    </div>
+                `;
+                
+                circle.bindPopup(popupContent);
+            });
+            
+            // Fit map to show all points
+            if (points.length > 0) {
+                const bounds = L.latLngBounds(points.map(p => [p.lat, p.lng]));
+                map.fitBounds(bounds, { padding: [20, 20] });
+            }
+        }).catch(function(error) {
+            console.error('Error loading data:', error);
+            document.getElementById('total-cells').textContent = 'Error loading data';
+            document.getElementById('total-population').textContent = 'Error loading data';
+        });
+    </script>
+</body>
+</html> 
