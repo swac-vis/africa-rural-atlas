@@ -2478,7 +2478,7 @@
             // Load data
             const dataFile = currentConfig.gridSize === '100' 
                 ? "data/aggregated_100km_africa.json" 
-                : "data/aggregated_1000km_africa_fixed.json";
+                : "data/aggregated_1000km_africa.json";
 
             Promise.all([
                 d3.json("https://raw.githubusercontent.com/holtzy/D3-graph-gallery/master/DATA/world.geojson"),
