@@ -106,11 +106,6 @@
         
         .country-row {
             cursor: pointer;
-            transition: opacity 0.2s;
-        }
-        
-        .country-row:hover {
-            opacity: 0.8;
         }
         
         .country-label {
@@ -134,6 +129,73 @@
             opacity: 0;
             transition: opacity 0.2s;
         }
+        
+        .heatmap-cell {
+            stroke: #fff;
+            stroke-width: 0.5;
+        }
+        
+        .legend-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background-color: #f8f9fa;
+            border-radius: 6px;
+            min-width: auto;
+        }
+        
+        .legend-section h4 {
+            margin: 0;
+            color: #333;
+            font-size: 12px;
+            text-align: center;
+            min-width: auto;
+        }
+        
+        .opacity-legend {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .opacity-bar {
+            width: 70px;
+            height: 14px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            position: relative;
+            cursor: pointer;
+        }
+        
+        .urban-bar {
+            background: linear-gradient(to right, rgba(46, 134, 171, 0), rgba(46, 134, 171, 1));
+        }
+        
+        .rural-bar {
+            background: linear-gradient(to right, rgba(162, 59, 114, 0), rgba(162, 59, 114, 1));
+        }
+        
+        .threshold-marker {
+            position: absolute;
+            top: -3px;
+            width: 2px;
+            height: 20px;
+            background-color: #333;
+            border-radius: 1px;
+            cursor: ew-resize;
+            z-index: 10;
+        }
+        
+        .opacity-labels {
+            display: flex;
+            justify-content: space-between;
+            width: 70px;
+            font-size: 8px;
+            color: #666;
+        }
     </style>
 </head>
 <body>
@@ -141,18 +203,16 @@
         <h1>Africa Rural-Urban Population Distribution</h1>
         <div class="subtitle">Population share by distance to nearest road (km)</div>
         
-        <div class="legend">
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #2E86AB;"></div>
-                <span>Urban Population</span>
-            </div>
-            <div class="legend-item">
-                <div class="legend-color" style="background-color: #A23B72;"></div>
-                <span>Rural Population</span>
-            </div>
-        </div>
-        
         <div class="controls">
+            <div class="control-group">
+                <label for="displayMode">Display Mode:</label>
+                <select id="displayMode">
+                    <option value="default">Default (Urban/Rural)</option>
+                    <option value="urban">Urban Only</option>
+                    <option value="rural">Rural Only</option>
+                    <option value="all">All (Urban + Rural)</option>
+                </select>
+            </div>
             <div class="control-group">
                 <label for="distanceSlider">Maximum Distance: <span id="distanceValue">50</span>km</label>
                 <input type="range" id="distanceSlider" min="1" max="100" value="50" step="1">
@@ -166,6 +226,34 @@
                     <option value="name">Country Name</option>
                 </select>
             </div>
+            <div class="control-group">
+                <div class="legend-section">
+                    <h4>Urban</h4>
+                    <div class="opacity-legend">
+                        <div class="opacity-bar urban-bar" id="urbanOpacityBar">
+                            <div class="threshold-marker" id="urbanThresholdMarker"></div>
+                        </div>
+                        <div class="opacity-labels">
+                            <span>0%</span>
+                            <span>50%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="control-group">
+                <div class="legend-section">
+                    <h4>Rural</h4>
+                    <div class="opacity-legend">
+                        <div class="opacity-bar rural-bar" id="ruralOpacityBar">
+                            <div class="threshold-marker" id="ruralThresholdMarker"></div>
+                        </div>
+                        <div class="opacity-labels">
+                            <span>0%</span>
+                            <span>50%</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
         
         <div id="chart"></div>
@@ -178,13 +266,15 @@
         let svg;
         let xScale;
         let yScale;
-        let colorScale;
         let maxDistance = 50;
+        let urbanOpacityThreshold = 0;
+        let ruralOpacityThreshold = 0;
+        let displayMode = 'default';
         
         // Set up dimensions
         const margin = {top: 20, right: 30, bottom: 40, left: 200};
         const width = 1200 - margin.left - margin.right;
-        const height = 1200 - margin.top - margin.bottom; // Increased height
+        const height = 1200 - margin.top - margin.bottom;
         
         // Create SVG
         svg = d3.select("#chart")
@@ -207,7 +297,7 @@
         });
         
         function initializeChart() {
-            // Process data for horizon chart
+            // Process data for heatmap
             const countries = Object.keys(data).filter(d => d !== "all_countries");
             
             // Create processed data
@@ -273,18 +363,15 @@
             }
             
             // Set up scales
-            xScale = d3.scaleLinear()
-                .domain([0, maxDistance])
-                .range([0, width]);
+            xScale = d3.scaleBand()
+                .domain(d3.range(1, maxDistance + 1))
+                .range([0, width])
+                .padding(0.01);
             
             yScale = d3.scaleBand()
                 .domain(processedData.map(d => d.country))
                 .range([0, height])
-                .padding(0.1);
-            
-            colorScale = d3.scaleOrdinal()
-                .domain(['urban', 'rural'])
-                .range(['#2E86AB', '#A23B72']);
+                .padding(0.01);
             
             // Clear previous chart
             svg.selectAll("*").remove();
@@ -292,7 +379,7 @@
             // Create axes
             const xAxis = d3.axisBottom(xScale)
                 .tickFormat(d => d)
-                .ticks(Math.min(maxDistance, 20)); // Limit ticks to prevent overlap
+                .ticks(Math.min(maxDistance, 20));
             
             const yAxis = d3.axisLeft(yScale);
             
@@ -329,75 +416,193 @@
                 .attr("text-anchor", "middle")
                 .text("Countries");
             
-            // Create horizon chart
+            // Create heatmap
             processedData.forEach((countryData, countryIndex) => {
                 const countryGroup = svg.append("g")
                     .attr("class", "country-row")
                     .attr("transform", `translate(0,${yScale(countryData.country)})`);
                 
-
-                
-                // Create rectangles for urban population (positive)
-                countryGroup.selectAll("rect.urban")
-                    .data(countryData.data)
-                    .enter()
-                    .append("rect")
-                    .attr("class", "urban")
-                    .attr("x", d => xScale(d.distance - 1))
-                    .attr("width", d => xScale(d.distance) - xScale(d.distance - 1))
-                    .attr("y", d => yScale.bandwidth() / 2 - d.urban * yScale.bandwidth() * 0.8)
-                    .attr("height", d => d.urban * yScale.bandwidth() * 0.8)
-                    .attr("fill", colorScale('urban'))
-                    .on("mouseover", function(event, d) {
-                        tooltip.style("opacity", 1);
-                    })
-                    .on("mousemove", function(event, d) {
-                        tooltip.html(`
-                            <strong>${countryData.country}</strong><br/>
-                            Distance: ${d.distance-1}-${d.distance}km<br/>
-                            Urban: ${(d.urban * 100).toFixed(1)}%<br/>
-                            Rural: ${(d.rural * 100).toFixed(1)}%<br/>
-                            Total: ${(d.total * 100).toFixed(1)}%
-                        `)
-                        .style("left", (event.pageX + 10) + "px")
-                        .style("top", (event.pageY - 10) + "px");
-                    })
-                    .on("mouseout", function() {
-                        tooltip.style("opacity", 0);
-                    });
-                
-
-                
-                // Create rectangles for rural population (negative)
-                countryGroup.selectAll("rect.rural")
-                    .data(countryData.data)
-                    .enter()
-                    .append("rect")
-                    .attr("class", "rural")
-                    .attr("x", d => xScale(d.distance - 1))
-                    .attr("width", d => xScale(d.distance) - xScale(d.distance - 1))
-                    .attr("y", d => yScale.bandwidth() / 2)
-                    .attr("height", d => d.rural * yScale.bandwidth() * 0.8)
-                    .attr("fill", colorScale('rural'))
-                    .on("mouseover", function(event, d) {
-                        tooltip.style("opacity", 1);
-                    })
-                    .on("mousemove", function(event, d) {
-                        tooltip.html(`
-                            <strong>${countryData.country}</strong><br/>
-                            Distance: ${d.distance-1}-${d.distance}km<br/>
-                            Urban: ${(d.urban * 100).toFixed(1)}%<br/>
-                            Rural: ${(d.rural * 100).toFixed(1)}%<br/>
-                            Total: ${(d.total * 100).toFixed(1)}%
-                        `)
-                        .style("left", (event.pageX + 10) + "px")
-                        .style("top", (event.pageY - 10) + "px");
-                    })
-                    .on("mouseout", function() {
-                        tooltip.style("opacity", 0);
-                    });
-                
-
+                if (displayMode === 'default') {
+                    // Create heatmap cells for urban population
+                    countryGroup.selectAll("rect.urban")
+                        .data(countryData.data)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "heatmap-cell urban")
+                        .attr("x", d => xScale(d.distance))
+                        .attr("y", 0)
+                        .attr("width", xScale.bandwidth())
+                        .attr("height", yScale.bandwidth() / 2)
+                        .attr("fill", "#2E86AB")
+                        .style("opacity", d => {
+                            const opacity = Math.max(0, d.urban * 2);
+                            return opacity >= urbanOpacityThreshold / 100 ? opacity : 0;
+                        })
+                        .on("mouseover", function(event, d) {
+                            tooltip.style("opacity", 1);
+                        })
+                        .on("mousemove", function(event, d) {
+                            tooltip.html(`
+                                <strong>${countryData.country}</strong><br/>
+                                Distance: ${d.distance-1}-${d.distance}km<br/>
+                                Urban: ${(d.urban * 100).toFixed(1)}%<br/>
+                                Rural: ${(d.rural * 100).toFixed(1)}%<br/>
+                                Total: ${(d.total * 100).toFixed(1)}%
+                            `)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
+                        })
+                        .on("mouseout", function() {
+                            tooltip.style("opacity", 0);
+                        });
+                    
+                    // Create heatmap cells for rural population
+                    countryGroup.selectAll("rect.rural")
+                        .data(countryData.data)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "heatmap-cell rural")
+                        .attr("x", d => xScale(d.distance))
+                        .attr("y", yScale.bandwidth() / 2)
+                        .attr("width", xScale.bandwidth())
+                        .attr("height", yScale.bandwidth() / 2)
+                        .attr("fill", "#A23B72")
+                        .style("opacity", d => {
+                            const opacity = Math.max(0, d.rural * 2);
+                            return opacity >= ruralOpacityThreshold / 100 ? opacity : 0;
+                        })
+                        .on("mouseover", function(event, d) {
+                            tooltip.style("opacity", 1);
+                        })
+                        .on("mousemove", function(event, d) {
+                            tooltip.html(`
+                                <strong>${countryData.country}</strong><br/>
+                                Distance: ${d.distance-1}-${d.distance}km<br/>
+                                Urban: ${(d.urban * 100).toFixed(1)}%<br/>
+                                Rural: ${(d.rural * 100).toFixed(1)}%<br/>
+                                Total: ${(d.total * 100).toFixed(1)}%
+                            `)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
+                        })
+                        .on("mouseout", function() {
+                            tooltip.style("opacity", 0);
+                        });
+                } else if (displayMode === 'urban') {
+                    // Create heatmap cells for urban population only (full height)
+                    countryGroup.selectAll("rect.urban")
+                        .data(countryData.data)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "heatmap-cell urban")
+                        .attr("x", d => xScale(d.distance))
+                        .attr("y", 0)
+                        .attr("width", xScale.bandwidth())
+                        .attr("height", yScale.bandwidth())
+                        .attr("fill", "#2E86AB")
+                        .style("opacity", d => {
+                            const opacity = Math.max(0, d.urban * 2);
+                            return opacity >= urbanOpacityThreshold / 100 ? opacity : 0;
+                        })
+                        .on("mouseover", function(event, d) {
+                            tooltip.style("opacity", 1);
+                        })
+                        .on("mousemove", function(event, d) {
+                            tooltip.html(`
+                                <strong>${countryData.country}</strong><br/>
+                                Distance: ${d.distance-1}-${d.distance}km<br/>
+                                Urban: ${(d.urban * 100).toFixed(1)}%<br/>
+                                Rural: ${(d.rural * 100).toFixed(1)}%<br/>
+                                Total: ${(d.total * 100).toFixed(1)}%
+                            `)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
+                        })
+                        .on("mouseout", function() {
+                            tooltip.style("opacity", 0);
+                        });
+                } else if (displayMode === 'rural') {
+                    // Create heatmap cells for rural population only (full height)
+                    countryGroup.selectAll("rect.rural")
+                        .data(countryData.data)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "heatmap-cell rural")
+                        .attr("x", d => xScale(d.distance))
+                        .attr("y", 0)
+                        .attr("width", xScale.bandwidth())
+                        .attr("height", yScale.bandwidth())
+                        .attr("fill", "#A23B72")
+                        .style("opacity", d => {
+                            const opacity = Math.max(0, d.rural * 2);
+                            return opacity >= ruralOpacityThreshold / 100 ? opacity : 0;
+                        })
+                        .on("mouseover", function(event, d) {
+                            tooltip.style("opacity", 1);
+                        })
+                        .on("mousemove", function(event, d) {
+                            tooltip.html(`
+                                <strong>${countryData.country}</strong><br/>
+                                Distance: ${d.distance-1}-${d.distance}km<br/>
+                                Urban: ${(d.urban * 100).toFixed(1)}%<br/>
+                                Rural: ${(d.rural * 100).toFixed(1)}%<br/>
+                                Total: ${(d.total * 100).toFixed(1)}%
+                            `)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
+                        })
+                        .on("mouseout", function() {
+                            tooltip.style("opacity", 0);
+                        });
+                } else if (displayMode === 'all') {
+                    // Create heatmap cells for combined population (full height)
+                    countryGroup.selectAll("rect.combined")
+                        .data(countryData.data)
+                        .enter()
+                        .append("rect")
+                        .attr("class", "heatmap-cell combined")
+                        .attr("x", d => xScale(d.distance))
+                        .attr("y", 0)
+                        .attr("width", xScale.bandwidth())
+                        .attr("height", yScale.bandwidth())
+                        .attr("fill", d => {
+                            // Use a blend color or gradient for combined view
+                            const urbanRatio = d.urban / (d.urban + d.rural);
+                            const ruralRatio = d.rural / (d.urban + d.rural);
+                            if (d.urban + d.rural === 0) return "#f0f0f0";
+                            
+                            // Blend urban and rural colors based on their proportions
+                            const urbanColor = d3.rgb("#2E86AB");
+                            const ruralColor = d3.rgb("#A23B72");
+                            const blendedColor = d3.rgb(
+                                urbanColor.r * urbanRatio + ruralColor.r * ruralRatio,
+                                urbanColor.g * urbanRatio + ruralColor.g * ruralRatio,
+                                urbanColor.b * urbanRatio + ruralColor.b * ruralRatio
+                            );
+                            return blendedColor.toString();
+                        })
+                        .style("opacity", d => {
+                            const totalOpacity = Math.max(0, (d.urban + d.rural) * 2);
+                            return totalOpacity >= Math.max(urbanOpacityThreshold, ruralOpacityThreshold) / 100 ? totalOpacity : 0;
+                        })
+                        .on("mouseover", function(event, d) {
+                            tooltip.style("opacity", 1);
+                        })
+                        .on("mousemove", function(event, d) {
+                            tooltip.html(`
+                                <strong>${countryData.country}</strong><br/>
+                                Distance: ${d.distance-1}-${d.distance}km<br/>
+                                Urban: ${(d.urban * 100).toFixed(1)}%<br/>
+                                Rural: ${(d.rural * 100).toFixed(1)}%<br/>
+                                Total: ${(d.total * 100).toFixed(1)}%
+                            `)
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
+                        })
+                        .on("mouseout", function() {
+                            tooltip.style("opacity", 0);
+                        });
+                }
             });
         }
         
@@ -405,6 +610,7 @@
             const slider = document.getElementById('distanceSlider');
             const valueDisplay = document.getElementById('distanceValue');
             const sortSelect = document.getElementById('sortSelect');
+            const displayModeSelect = document.getElementById('displayMode');
             
             slider.addEventListener('input', function() {
                 maxDistance = parseInt(this.value);
@@ -415,6 +621,108 @@
             sortSelect.addEventListener('change', function() {
                 initializeChart();
             });
+            
+            displayModeSelect.addEventListener('change', function() {
+                displayMode = this.value;
+                initializeChart();
+            });
+            
+            // Setup interactive opacity bars
+            setupOpacityBar('urbanOpacityBar', 'urbanThresholdMarker', 'urban');
+            setupOpacityBar('ruralOpacityBar', 'ruralThresholdMarker', 'rural');
+        }
+        
+        function setupOpacityBar(barId, markerId, type) {
+            const bar = document.getElementById(barId);
+            const marker = document.getElementById(markerId);
+            
+            // Set initial position
+            updateMarkerPosition(marker, 0, bar.offsetWidth);
+            
+            let isDragging = false;
+            
+            // Click to set threshold
+            bar.addEventListener('click', function(e) {
+                const rect = bar.getBoundingClientRect();
+                const clickX = e.clientX - rect.left;
+                const percentage = Math.min(100, Math.max(0, (clickX / rect.width) * 100));
+                
+                if (type === 'urban') {
+                    urbanOpacityThreshold = percentage;
+                } else {
+                    ruralOpacityThreshold = percentage;
+                }
+                
+                updateMarkerPosition(marker, percentage, bar.offsetWidth);
+                updateOpacityFilter();
+            });
+            
+            // Drag marker
+            marker.addEventListener('mousedown', function(e) {
+                isDragging = true;
+                e.stopPropagation();
+            });
+            
+            document.addEventListener('mousemove', function(e) {
+                if (isDragging) {
+                    const rect = bar.getBoundingClientRect();
+                    const mouseX = e.clientX - rect.left;
+                    const percentage = Math.min(100, Math.max(0, (mouseX / rect.width) * 100));
+                    
+                    if (type === 'urban') {
+                        urbanOpacityThreshold = percentage;
+                    } else {
+                        ruralOpacityThreshold = percentage;
+                    }
+                    
+                    updateMarkerPosition(marker, percentage, bar.offsetWidth);
+                    updateOpacityFilter();
+                }
+            });
+            
+            document.addEventListener('mouseup', function() {
+                isDragging = false;
+            });
+        }
+        
+        function updateMarkerPosition(marker, percentage, barWidth) {
+            const position = (percentage / 100) * barWidth;
+            marker.style.left = position + 'px';
+        }
+        
+        function updateOpacityFilter() {
+            if (displayMode === 'default') {
+                // Update opacity for existing cells without redrawing the entire chart
+                svg.selectAll("rect.urban")
+                    .style("opacity", function(d) {
+                        const opacity = Math.max(0, d.urban * 2);
+                        return opacity >= urbanOpacityThreshold / 100 ? opacity : 0;
+                    });
+                
+                svg.selectAll("rect.rural")
+                    .style("opacity", function(d) {
+                        const opacity = Math.max(0, d.rural * 2);
+                        return opacity >= ruralOpacityThreshold / 100 ? opacity : 0;
+                    });
+            } else if (displayMode === 'urban') {
+                svg.selectAll("rect.urban")
+                    .style("opacity", function(d) {
+                        const opacity = Math.max(0, d.urban * 2);
+                        return opacity >= urbanOpacityThreshold / 100 ? opacity : 0;
+                    });
+            } else if (displayMode === 'rural') {
+                svg.selectAll("rect.rural")
+                    .style("opacity", function(d) {
+                        const opacity = Math.max(0, d.rural * 2);
+                        return opacity >= ruralOpacityThreshold / 100 ? opacity : 0;
+                    });
+            } else if (displayMode === 'all') {
+                svg.selectAll("rect.combined")
+                    .style("opacity", function(d) {
+                        const totalOpacity = Math.max(0, (d.urban + d.rural) * 2);
+                        return totalOpacity >= Math.max(urbanOpacityThreshold, ruralOpacityThreshold) / 100 ? totalOpacity : 0;
+                    });
+            }
         }
     </script>
 </body>
