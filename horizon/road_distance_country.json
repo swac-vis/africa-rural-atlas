@@ -1,6 +1,8 @@
 {
   "Mauritania": {
     "population": 4441278,
+    "urban_population": 1738394,
+    "rural_population": 2702884,
     "distance_intervals": {
       "1": {
         "urban_population": 874029,
@@ -6838,6 +6840,8 @@
   },
   "Libya": {
     "population": 6918076,
+    "urban_population": 3511638,
+    "rural_population": 3406437,
     "distance_intervals": {
       "1": {
         "urban_population": 1583274,
@@ -11029,6 +11033,8 @@
   },
   "Kenya": {
     "population": 54910534,
+    "urban_population": 35793981,
+    "rural_population": 19116553,
     "distance_intervals": {
       "1": {
         "urban_population": 8238320,
@@ -12217,6 +12223,8 @@
   },
   "Algeria": {
     "population": 43994898,
+    "urban_population": 30982547,
+    "rural_population": 13012351,
     "distance_intervals": {
       "1": {
         "urban_population": 11368084,
@@ -16114,6 +16122,8 @@
   },
   "Gambia": {
     "population": 2372635,
+    "urban_population": 1469653,
+    "rural_population": 902981,
     "distance_intervals": {
       "1": {
         "urban_population": 541895,
@@ -16602,6 +16612,8 @@
   },
   "Congo": {
     "population": 4068880,
+    "urban_population": 1620052,
+    "rural_population": 2448828,
     "distance_intervals": {
       "1": {
         "urban_population": 934309,
@@ -18315,6 +18327,8 @@
   },
   "Guinea-Bissau": {
     "population": 1849803,
+    "urban_population": 583247,
+    "rural_population": 1266555,
     "distance_intervals": {
       "1": {
         "urban_population": 161063,
@@ -19160,6 +19174,8 @@
   },
   "Sao Tome and Principe": {
     "population": 205692,
+    "urban_population": 129600,
+    "rural_population": 76092,
     "distance_intervals": {
       "1": {
         "urban_population": 86130,
@@ -19256,6 +19272,8 @@
   },
   "Cameroon": {
     "population": 28197568,
+    "urban_population": 13723742,
+    "rural_population": 14473825,
     "distance_intervals": {
       "1": {
         "urban_population": 5642823,
@@ -22964,6 +22982,8 @@
   },
   "Mozambique": {
     "population": 30750567,
+    "urban_population": 9395881,
+    "rural_population": 21354685,
     "distance_intervals": {
       "1": {
         "urban_population": 4302209,
@@ -24579,6 +24599,8 @@
   },
   "Djibouti": {
     "population": 1114257,
+    "urban_population": 606020,
+    "rural_population": 508236,
     "distance_intervals": {
       "1": {
         "urban_population": 534597,
@@ -25207,6 +25229,8 @@
   },
   "Senegal": {
     "population": 16025725,
+    "urban_population": 7024142,
+    "rural_population": 9001583,
     "distance_intervals": {
       "1": {
         "urban_population": 3736102,
@@ -26836,6 +26860,8 @@
   },
   "Angola": {
     "population": 36146718,
+    "urban_population": 21450242,
+    "rural_population": 14696475,
     "distance_intervals": {
       "1": {
         "urban_population": 11868629,
@@ -29298,6 +29324,8 @@
   },
   "Cabo Verde": {
     "population": 501599,
+    "urban_population": 271346,
+    "rural_population": 230253,
     "distance_intervals": {
       "1": {
         "urban_population": 116323,
@@ -30003,6 +30031,8 @@
   },
   "Swaziland": {
     "population": 1095651,
+    "urban_population": 224178,
+    "rural_population": 871472,
     "distance_intervals": {
       "1": {
         "urban_population": 140517,
@@ -30246,6 +30276,8 @@
   },
   "Egypt": {
     "population": 94872586,
+    "urban_population": 91637991,
+    "rural_population": 3234594,
     "distance_intervals": {
       "1": {
         "urban_population": 33590138,
@@ -35298,6 +35330,8 @@
   },
   "NULL": {
     "population": 97143,
+    "urban_population": 0,
+    "rural_population": 97143,
     "distance_intervals": {
       "286": {
         "urban_population": 0,
@@ -36759,6 +36793,8 @@
   },
   "Tanzania": {
     "population": 56288124,
+    "urban_population": 21900162,
+    "rural_population": 34387961,
     "distance_intervals": {
       "1": {
         "urban_population": 7331139,
@@ -38444,6 +38480,8 @@
   },
   "Sierra Leone": {
     "population": 6696941,
+    "urban_population": 2792478,
+    "rural_population": 3904462,
     "distance_intervals": {
       "1": {
         "urban_population": 1411451,
@@ -39520,6 +39558,8 @@
   },
   "Democratic Republic of the Congo": {
     "population": 114192996,
+    "urban_population": 52656046,
+    "rural_population": 61536950,
     "distance_intervals": {
       "1": {
         "urban_population": 20520907,
@@ -41674,6 +41714,8 @@
   },
   "all_countries": {
     "population": 1318225576,
+    "urban_population": 699626693,
+    "rural_population": 618598882,
     "distance_intervals": {
       "1": {
         "urban_population": 250199956,
@@ -50590,6 +50632,8 @@
   },
   "Namibia": {
     "population": 2429714,
+    "urban_population": 1123121,
+    "rural_population": 1306593,
     "distance_intervals": {
       "1": {
         "urban_population": 391516,
@@ -53661,6 +53705,8 @@
   },
   "Equatorial Guinea": {
     "population": 1270782,
+    "urban_population": 266571,
+    "rural_population": 1004211,
     "distance_intervals": {
       "24": {
         "urban_population": 0,
@@ -54751,6 +54797,8 @@
   },
   "Lesotho": {
     "population": 1867569,
+    "urban_population": 405018,
+    "rural_population": 1462551,
     "distance_intervals": {
       "1": {
         "urban_population": 214522,
@@ -55400,6 +55448,8 @@
   },
   "Zambia": {
     "population": 18711461,
+    "urban_population": 6409538,
+    "rural_population": 12301923,
     "distance_intervals": {
       "1": {
         "urban_population": 2313896,
@@ -56700,6 +56750,8 @@
   },
   "Guinea": {
     "population": 12349253,
+    "urban_population": 4491002,
+    "rural_population": 7858251,
     "distance_intervals": {
       "1": {
         "urban_population": 1441054,
@@ -58252,6 +58304,8 @@
   },
   "Somalia": {
     "population": 11039516,
+    "urban_population": 1573016,
+    "rural_population": 9466499,
     "distance_intervals": {
       "1": {
         "urban_population": 582129,
@@ -59965,6 +60019,8 @@
   },
   "Liberia": {
     "population": 4470635,
+    "urban_population": 1521337,
+    "rural_population": 2949298,
     "distance_intervals": {
       "1": {
         "urban_population": 980104,
@@ -61097,6 +61153,8 @@
   },
   "Botswana": {
     "population": 2408110,
+    "urban_population": 615771,
+    "rural_population": 1792339,
     "distance_intervals": {
       "1": {
         "urban_population": 335075,
@@ -62544,6 +62602,8 @@
   },
   "Morocco": {
     "population": 35649299,
+    "urban_population": 23708177,
+    "rural_population": 11941121,
     "distance_intervals": {
       "1": {
         "urban_population": 11865916,
@@ -63893,6 +63953,8 @@
   },
   "Gabon": {
     "population": 2982413,
+    "urban_population": 885742,
+    "rural_population": 2096671,
     "distance_intervals": {
       "1": {
         "urban_population": 272710,
@@ -66999,6 +67061,8 @@
   },
   "Tunisia": {
     "population": 11647759,
+    "urban_population": 7356036,
+    "rural_population": 4291722,
     "distance_intervals": {
       "1": {
         "urban_population": 3996128,
@@ -68285,6 +68349,8 @@
   },
   "South Africa": {
     "population": 59824120,
+    "urban_population": 49319199,
+    "rural_population": 10504920,
     "distance_intervals": {
       "1": {
         "urban_population": 22850822,
@@ -68955,6 +69021,8 @@
   },
   "Mali": {
     "population": 23262635,
+    "urban_population": 8336446,
+    "rural_population": 14926188,
     "distance_intervals": {
       "1": {
         "urban_population": 4572424,
@@ -75764,6 +75832,8 @@
   },
   "Malawi": {
     "population": 18482148,
+    "urban_population": 9679571,
+    "rural_population": 8802577,
     "distance_intervals": {
       "1": {
         "urban_population": 2969387,
@@ -76308,6 +76378,8 @@
   },
   "Burkina Faso": {
     "population": 22812589,
+    "urban_population": 6062102,
+    "rural_population": 16750487,
     "distance_intervals": {
       "1": {
         "urban_population": 2413693,
@@ -77860,6 +77932,8 @@
   },
   "Togo": {
     "population": 8779973,
+    "urban_population": 4735147,
+    "rural_population": 4044826,
     "distance_intervals": {
       "1": {
         "urban_population": 2075410,
@@ -78551,6 +78625,8 @@
   },
   "Central African Republic": {
     "population": 5406981,
+    "urban_population": 1619514,
+    "rural_population": 3787467,
     "distance_intervals": {
       "1": {
         "urban_population": 242894,
@@ -83463,6 +83539,8 @@
   },
   "Sudan": {
     "population": 42552462,
+    "urban_population": 10792243,
+    "rural_population": 31760219,
     "distance_intervals": {
       "1": {
         "urban_population": 3688880,
@@ -88571,6 +88649,8 @@
   },
   "Western Sahara": {
     "population": 462774,
+    "urban_population": 372095,
+    "rural_population": 90678,
     "distance_intervals": {
       "1": {
         "urban_population": 0,
@@ -92111,6 +92191,8 @@
   },
   "South Sudan": {
     "population": 16853715,
+    "urban_population": 561360,
+    "rural_population": 16292355,
     "distance_intervals": {
       "1": {
         "urban_population": 15950,
@@ -97128,6 +97210,8 @@
   },
   "Nigeria": {
     "population": 216473984,
+    "urban_population": 141285332,
+    "rural_population": 75188651,
     "distance_intervals": {
       "1": {
         "urban_population": 28212556,
@@ -99107,6 +99191,8 @@
   },
   "Benin": {
     "population": 13069353,
+    "urban_population": 6295522,
+    "rural_population": 6773830,
     "distance_intervals": {
       "1": {
         "urban_population": 2992195,
@@ -99896,6 +99982,8 @@
   },
   "West Bank and Gaza Strip": {
     "population": 2152503,
+    "urban_population": 2142826,
+    "rural_population": 9677,
     "distance_intervals": {
       "1": {
         "urban_population": 2784,
@@ -100237,6 +100325,8 @@
   },
   "Zimbabwe": {
     "population": 14360606,
+    "urban_population": 4732175,
+    "rural_population": 9628430,
     "distance_intervals": {
       "1": {
         "urban_population": 2756130,
@@ -101131,6 +101221,8 @@
   },
   "Uganda": {
     "population": 42265892,
+    "urban_population": 22293393,
+    "rural_population": 19972499,
     "distance_intervals": {
       "1": {
         "urban_population": 4733606,
@@ -102172,6 +102264,8 @@
   },
   "Mauritius": {
     "population": 1242322,
+    "urban_population": 1094312,
+    "rural_population": 148010,
     "distance_intervals": {
       "1": {
         "urban_population": 641521,
@@ -102415,6 +102509,8 @@
   },
   "Niger": {
     "population": 23970440,
+    "urban_population": 5342735,
+    "rural_population": 18627704,
     "distance_intervals": {
       "1": {
         "urban_population": 1758998,
@@ -109280,6 +109376,8 @@
   },
   "Ethiopia": {
     "population": 103802616,
+    "urban_population": 43324165,
+    "rural_population": 60478451,
     "distance_intervals": {
       "1": {
         "urban_population": 21632813,
@@ -110489,6 +110587,8 @@
   },
   "Eritrea": {
     "population": 4198291,
+    "urban_population": 947349,
+    "rural_population": 3250941,
     "distance_intervals": {
       "1": {
         "urban_population": 357232,
@@ -112230,6 +112330,8 @@
   },
   "Chad": {
     "population": 16587448,
+    "urban_population": 1534221,
+    "rural_population": 15053227,
     "distance_intervals": {
       "1": {
         "urban_population": 676658,
@@ -121146,6 +121248,8 @@
   },
   "Burundi": {
     "population": 11358828,
+    "urban_population": 8375127,
+    "rural_population": 2983700,
     "distance_intervals": {
       "1": {
         "urban_population": 2618105,
@@ -121396,6 +121500,8 @@
   },
   "Madagascar": {
     "population": 27776480,
+    "urban_population": 7308785,
+    "rural_population": 20467695,
     "distance_intervals": {
       "1": {
         "urban_population": 2004230,
@@ -123739,6 +123845,8 @@
   },
   "Ghana": {
     "population": 32961206,
+    "urban_population": 17606383,
+    "rural_population": 15354822,
     "distance_intervals": {
       "1": {
         "urban_population": 7608654,

@@ -135,16 +135,20 @@
         
         <div class="legend">
             <div class="legend-item">
-                <div class="legend-color" style="background-color: #2E86AB;"></div>
-                <span>Urban Population</span>
-            </div>
-            <div class="legend-item">
                 <div class="legend-color" style="background-color: #A23B72;"></div>
                 <span>Rural Population</span>
             </div>
             <div class="legend-item">
-                <div class="legend-color" style="background-color: #cccccc;"></div>
-                <span>No Road Access</span>
+                <div class="legend-color" style="background-color: #2E86AB;"></div>
+                <span>Urban Population</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(162, 59, 114, 0.1);"></div>
+                <span>Rural No Access</span>
+            </div>
+            <div class="legend-item">
+                <div class="legend-color" style="background-color: rgba(46, 134, 171, 0.1);"></div>
+                <span>Urban No Access</span>
             </div>
         </div>
         
@@ -203,7 +207,7 @@
             .attr("class", "tooltip");
         
         // Load data
-        d3.json("region_population_analysis.json").then(function(loadedData) {
+        d3.json("road_distance_region.json").then(function(loadedData) {
             data = loadedData;
             initializeChart();
             setupSlider(); // Now only handles sorting functionality
@@ -256,8 +260,8 @@
             
             // Color scale for pie chart segments
             colorScale = d3.scaleOrdinal()
-                .domain(['urban', 'rural', 'no_access'])
-                .range(['#2E86AB', '#A23B72', '#cccccc']);
+                .domain(['urban', 'rural', 'rural_no_access', 'urban_no_access'])
+                .range(['#2E86AB', '#A23B72', 'rgba(162, 59, 114, 0.1)', 'rgba(46, 134, 171, 0.1)']);
             
             // Clear previous chart
             svg.selectAll("*").remove();
@@ -319,7 +323,8 @@
                         const pieData = [
                             {key: 'urban', value: distanceData.share_urban},
                             {key: 'rural', value: distanceData.share_rural},
-                            {key: 'no_access', value: distanceData.share_total_no_access}
+                            {key: 'rural_no_access', value: distanceData.share_rural_no_access},
+                            {key: 'urban_no_access', value: distanceData.share_urban_no_access}
                         ].filter(d => d.value > 0);
                         
                         // Calculate pie chart size based on total population
@@ -358,10 +363,28 @@
                             })
                             .on("mousemove", function(event, d) {
                                 const percentage = (d.data.value * 100).toFixed(1);
+                                let displayName = d.data.key;
+                                
+                                // Format the display name for better readability
+                                switch(d.data.key) {
+                                    case 'urban':
+                                        displayName = 'Urban Population';
+                                        break;
+                                    case 'rural':
+                                        displayName = 'Rural Population';
+                                        break;
+                                    case 'rural_no_access':
+                                        displayName = 'Rural No Access';
+                                        break;
+                                    case 'urban_no_access':
+                                        displayName = 'Urban No Access';
+                                        break;
+                                }
+                                
                                 tooltip.html(`
                                     <strong>${region}</strong><br/>
                                     Distance: ${distance}km<br/>
-                                    ${d.data.key.replace('_', ' ').toUpperCase()}: ${percentage}%
+                                    ${displayName}: ${percentage}%
                                 `)
                                 .style("left", (event.pageX + 10) + "px")
                                 .style("top", (event.pageY - 10) + "px");
