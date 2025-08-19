@@ -149,10 +149,17 @@
         </div>
         
         <div class="controls">
-            <div class="control-group">
-                <label for="distanceSlider">Maximum Distance: <span id="distanceValue">10</span>km</label>
-                <input type="range" id="distanceSlider" min="1" max="20" value="10" step="1">
-            </div>
+            <!-- <div class="control-group">
+                <label for="distanceSlider">Maximum Distance: <span id="distanceValue">100</span>km</label>
+                <select id="distanceSlider">
+                    <option value="2">≤2km</option>
+                    <option value="5">≤5km</option>
+                    <option value="10">≤10km</option>
+                    <option value="20">≤20km</option>
+                    <option value="50">≤50km</option>
+                    <option value="100" selected>≤100km</option>
+                </select>
+            </div> -->
             <div class="control-group">
                 <label for="sortSelect">Sort by:</label>
                 <select id="sortSelect">
@@ -174,7 +181,7 @@
         let xScale;
         let yScale;
         let colorScale;
-        let maxDistance = 10;
+        // let maxDistance = 100; // Commented out since we removed the distance filter
         
         // Set up dimensions
         const margin = {top: 40, right: 30, bottom: 60, left: 120};
@@ -199,7 +206,7 @@
         d3.json("region_population_analysis.json").then(function(loadedData) {
             data = loadedData;
             initializeChart();
-            setupSlider();
+            setupSlider(); // Now only handles sorting functionality
         });
         
         function initializeChart() {
@@ -233,11 +240,8 @@
                     regions.sort((a, b) => data[b].total_population - data[a].total_population);
             }
             
-            // Create distance intervals
-            const distances = [];
-            for (let i = 1; i <= maxDistance; i++) {
-                distances.push(i);
-            }
+            // Create distance intervals - fixed values as requested
+            const distances = [2, 5, 10, 20, 50, 100];
             
             // Set up scales
             xScale = d3.scaleBand()
@@ -253,7 +257,7 @@
             // Color scale for pie chart segments
             colorScale = d3.scaleOrdinal()
                 .domain(['urban', 'rural', 'no_access'])
-                .range(['#2E86AB', '#A23B72', '#ffffff']);
+                .range(['#2E86AB', '#A23B72', '#cccccc']);
             
             // Clear previous chart
             svg.selectAll("*").remove();
@@ -321,7 +325,7 @@
                         // Calculate pie chart size based on total population
                         const sizeScale = d3.scaleSqrt()
                             .domain([0, d3.max(regions, r => data[r].total_population)])
-                            .range([10, 50]);
+                            .range([10, 40]);
                         
                         const pieRadius = sizeScale(totalPopulation);
                         
@@ -371,15 +375,15 @@
         }
         
         function setupSlider() {
-            const slider = document.getElementById('distanceSlider');
-            const valueDisplay = document.getElementById('distanceValue');
+            // const distanceSelect = document.getElementById('distanceSlider');
+            // const valueDisplay = document.getElementById('distanceValue');
             const sortSelect = document.getElementById('sortSelect');
             
-            slider.addEventListener('input', function() {
-                maxDistance = parseInt(this.value);
-                valueDisplay.textContent = maxDistance;
-                initializeChart();
-            });
+            // distanceSelect.addEventListener('change', function() {
+            //     maxDistance = parseInt(this.value);
+            //     valueDisplay.textContent = maxDistance;
+            //     initializeChart();
+            // });
             
             sortSelect.addEventListener('change', function() {
                 initializeChart();
