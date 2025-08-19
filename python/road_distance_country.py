@@ -26,12 +26,21 @@ def process_country_data(csv_file, interval=1.0, rural_threshold=300):
     # Get total population
     total_population = df['pop_density'].sum()
     
+    # Calculate urban and rural population based on density threshold
+    urban_mask = df['pop_density'] >= rural_threshold
+    rural_mask = df['pop_density'] < rural_threshold
+    
+    urban_population = df[urban_mask]['pop_density'].sum()
+    rural_population = df[rural_mask]['pop_density'].sum()
+    
     # Create distance bins
     max_distance = df['distance'].max()
     distance_bins = np.arange(0, max_distance + interval, interval)
     
     country_data = {
         "population": int(total_population),
+        "urban_population": int(urban_population),
+        "rural_population": int(rural_population),
         "distance_intervals": {}
     }
     
@@ -73,7 +82,8 @@ def main():
     rural_threshold = 300  # population density threshold for rural classification
     
     # Find all country detailed result files
-    data_dir = Path("../data")
+    data_dir = Path("../data_original")
+    horizon_dir = Path("../horizon")
     country_files = list(data_dir.glob("result_*_detailed.csv"))
     
     print(f"Processing {len(country_files)} country detailed files...")
@@ -94,7 +104,7 @@ def main():
             continue
     
     # Save to JSON file
-    output_file = data_dir / "population_distance_analysis_fixed.json"
+    output_file = horizon_dir / "road_distance_country.json"
     with open(output_file, 'w', encoding='utf-8') as f:
         json.dump(all_countries_data, f, indent=2, ensure_ascii=False)
     
@@ -105,7 +115,15 @@ def main():
     if all_countries_data:
         sample_country = list(all_countries_data.keys())[0]
         print(f"\nSample data for {sample_country}:")
-        print(json.dumps(all_countries_data[sample_country], indent=2)[:500] + "...")
+        sample_data = all_countries_data[sample_country]
+        print(f"  Total Population: {sample_data['population']:,}")
+        print(f"  Urban Population: {sample_data['urban_population']:,}")
+        print(f"  Rural Population: {sample_data['rural_population']:,}")
+        print(f"  Distance intervals: {len(sample_data['distance_intervals'])} intervals")
+        print(f"  Sample interval data:")
+        if sample_data['distance_intervals']:
+            first_interval = list(sample_data['distance_intervals'].keys())[0]
+            print(f"    {first_interval}km: {sample_data['distance_intervals'][first_interval]}")
 
 if __name__ == "__main__":
     main() 
