@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Africa Healthsites Interactive Map</title>
+    
+    <!-- Leaflet CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html, body {
+            height: 100vh;
+            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #ffffff;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        body {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .header {
+            background: #ffffff;
+            color: #333;
+            padding: 3px 24px;
+            border-bottom: 1px solid #e1e5e9;
+            height: 5vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .header h1 {
+            font-size: 20px;
+            margin-bottom: 0px;
+            font-weight: 400;
+            color: #1a1a1a;
+        }
+        
+        .header p {
+            font-size: 12px;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        .controls {
+            background: #ffffff;
+            padding: 6px 24px;
+            border-bottom: 1px solid #e1e5e9;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            align-items: center;
+            height: 7vh;
+        }
+        
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .control-group label {
+            font-size: 11px;
+            color: #666;
+            font-weight: 500;
+            white-space: nowrap;
+        }
+        
+        .control-group select,
+        .control-group input {
+            padding: 4px 8px;
+            border: 1px solid #d1d5db;
+            border-radius: 4px;
+            font-size: 11px;
+            transition: all 0.2s ease;
+            min-width: 100px;
+            background: #ffffff;
+        }
+        
+        .control-group select:focus,
+        .control-group input:focus {
+            outline: none;
+            border-color: #000;
+            box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+        }
+        
+        .control-group button {
+            padding: 4px 10px;
+            background: #000;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 11px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-weight: 500;
+        }
+        
+        .control-group button:hover {
+            background: #333;
+        }
+        
+        .stats {
+            background: #fafafa;
+            padding: 5px 24px;
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 1px solid #e1e5e9;
+            height: 5vh;
+        }
+        
+        .stat-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .stat-number {
+            font-size: 18px;
+            font-weight: 600;
+            color: #000;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: 9px;
+            color: #666;
+            margin-top: 2px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .legend {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: #ffffff;
+            padding: 10px;
+            border: 1px solid #e1e5e9;
+            border-radius: 4px;
+            z-index: 1000;
+            min-width: 130px;
+        }
+        
+        .legend h3 {
+            margin: 0 0 6px 0;
+            font-size: 10px;
+            color: #333;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .legend-items {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+        
+        .legend-item {
+            display: flex;
+            align-items: center;
+            gap: 4px;
+        }
+        
+        .legend-color {
+            width: 6px;
+            height: 6px;
+            border-radius: 2px;
+        }
+        
+        .legend span {
+            font-size: 10px;
+            color: #666;
+        }
+        
+        #map {
+            height: calc(100vh - 22vh);
+            width: 100%;
+            flex: 1;
+        }
+        
+        .footer {
+            background: #fafafa;
+            padding: 5px 24px;
+            border-top: 1px solid #e1e5e9;
+            text-align: center;
+            height: 5vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 100;
+            position: relative;
+        }
+        
+        .footer p {
+            margin: 0;
+            font-size: 11px;
+            color: #666;
+            line-height: 1.3;
+        }
+        
+        .footer a {
+            color: #000;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .footer a:hover {
+            color: #666;
+            text-decoration: underline;
+        }
+        
+        .loading {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255,255,255,0.98);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            z-index: 9999;
+        }
+        
+        .loading.show {
+            display: flex;
+        }
+        
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 2px solid #e1e5e9;
+            border-top: 2px solid #000;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .loading div {
+            font-size: 14px;
+            color: #666;
+            font-weight: 400;
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                padding: 5px 16px;
+                height: 6vh;
+            }
+            
+            .header h1 {
+                font-size: 16px;
+            }
+            
+            .controls {
+                padding: 4px 16px;
+                flex-direction: column;
+                gap: 6px;
+                align-items: stretch;
+                height: 10vh;
+            }
+            
+            .control-group {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 3px;
+            }
+            
+            .control-group select,
+            .control-group input,
+            .control-group button {
+                min-width: auto;
+                width: 100%;
+            }
+            
+            .stats {
+                padding: 4px 16px;
+                flex-wrap: wrap;
+                gap: 8px;
+                height: 8vh;
+            }
+            
+            .legend {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin: 10px;
+                border: 1px solid #e1e5e9;
+            }
+            
+            #map {
+                height: calc(100vh - 24vh);
+            }
+            
+            .footer {
+                padding: 4px 16px;
+                height: 6vh;
+            }
+            
+            .footer p {
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Africa Healthsites Map</h1>
+        <!-- <p>Interactive Map of Health Facilities Across Africa</p> -->
+    </div>
+    
+    <div class="controls">
+        <div class="control-group">
+            <label for="countryFilter">Country Filter:</label>
+            <select id="countryFilter">
+                <option value="">All Countries</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label for="facilityTypeFilter">Facility Type:</label>
+            <select id="facilityTypeFilter">
+                <option value="">All Types</option>
+                <option value="hospital">Hospital</option>
+                <option value="clinic">Clinic</option>
+                <option value="pharmacy">Pharmacy</option>
+                <option value="doctors">Doctors</option>
+            </select>
+        </div>
+        
+        <div class="control-group">
+            <label for="searchInput">Search Facilities:</label>
+            <input type="text" id="searchInput" placeholder="Enter facility name...">
+        </div>
+        
+        <div class="control-group">
+            <button onclick="clearFilters()" style="padding: 8px 16px; background: #667eea; color: white; border: none; border-radius: 6px; cursor: pointer;">Clear Filters</button>
+        </div>
+    </div>
+    
+    <div class="stats">
+        <div class="stat-item">
+            <div class="stat-number" id="totalFacilities">0</div>
+            <div class="stat-label">Total Facilities</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="totalCountries">0</div>
+            <div class="stat-label">Countries</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="visibleFacilities">0</div>
+            <div class="stat-label">Visible Facilities</div>
+        </div>
+        <div class="stat-item">
+            <div class="stat-number" id="mapZoom">0</div>
+            <div class="stat-label">Map Zoom</div>
+        </div>
+    </div>
+    
+    <div id="map"></div>
+    
+            <div class="legend">
+            <h3>Legend</h3>
+            <div class="legend-items">
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #6b9bd4;"></div>
+                    <span>Hospital</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #7bc87b;"></div>
+                    <span>Clinic</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #d4a574;"></div>
+                    <span>Pharmacy</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #c47bc8;"></div>
+                    <span>Doctors</span>
+                </div>
+                <div class="legend-item">
+                    <div class="legend-color" style="background: #a0a0a0;"></div>
+                    <span>Other Types</span>
+                </div>
+            </div>
+        </div>
+    
+    <div class="loading" id="loading">
+        <div class="spinner"></div>
+        <div>Loading data...</div>
+    </div>
+    
+    <div class="footer">
+        <p>Data from <a href="https://healthsites.io/" target="_blank" rel="noopener noreferrer">healthsites.io</a> - Building an open data commons of health facility data with OpenStreetMap</p>
+    </div>
+    
+    <!-- Leaflet JS -->
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+    
+    <script>
+        // 全局变量
+        let map;
+        let allMarkers = [];
+        let currentMarkers = [];
+        let allData = [];
+        let countryFilter = '';
+        let facilityTypeFilter = '';
+        let searchFilter = '';
+        
+        // 设施类型颜色映射 - 适中色调
+        const facilityColors = {
+            'hospital': '#6b9bd4',      // 适中蓝色
+            'clinic': '#7bc87b',        // 适中绿色
+            'pharmacy': '#d4a574',      // 适中橙色
+            'doctors': '#c47bc8',       // 适中紫色
+            'other': '#a0a0a0'          // 适中灰色
+        };
+        
+        // 初始化地图
+        function initMap() {
+            // 创建地图，中心在非洲
+            map = L.map('map').setView([0, 20], 4);
+            
+            // 添加柔和的CartoDB底图
+            L.tileLayer('https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png', {
+                attribution: '© CartoDB, © OpenStreetMap contributors',
+                subdomains: 'abcd',
+                maxZoom: 19
+            }).addTo(map);
+            
+            // 监听地图缩放事件
+            map.on('zoomend', function() {
+                document.getElementById('mapZoom').textContent = map.getZoom();
+            });
+            
+            // 初始化缩放级别显示
+            document.getElementById('mapZoom').textContent = map.getZoom();
+        }
+        
+        // 加载数据
+        async function loadData() {
+            showLoading(true);
+            
+            try {
+                console.log('Starting to load data...');
+                
+                // Try multiple paths
+                const possiblePaths = [
+                    './data/Africa_all_healthsites.geojson',
+                    'data/Africa_all_healthsites.geojson',
+                    '../data/Africa_all_healthsites.geojson',
+                    'Africa_all_healthsites.geojson'
+                ];
+                
+                let dataLoaded = false;
+                
+                for (const path of possiblePaths) {
+                    try {
+                        console.log(`Trying to load: ${path}`);
+                        const response = await fetch(path);
+                        
+                        if (response.ok) {
+                            console.log(`Successfully loaded: ${path}`);
+                            allData = await response.json();
+                            console.log('Successfully loaded merged data:', allData.features.length, 'facilities');
+                            dataLoaded = true;
+                            break;
+                        } else {
+                            console.log(`Path ${path} returned status code:`, response.status);
+                        }
+                    } catch (error) {
+                        console.log(`Path ${path} failed to load:`, error.message);
+                    }
+                }
+                
+                if (!dataLoaded) {
+                    console.log('All paths failed, trying to load individual country files...');
+                    // If no merged file, try to load individual country files
+                    await loadIndividualCountryFiles();
+                }
+                
+                processData();
+                showLoading(false);
+                
+            } catch (error) {
+                console.error('Failed to load data completely:', error);
+                showLoading(false);
+                
+                // Show detailed error information
+                const errorMsg = `Failed to load data!\n\nError details: ${error.message}\n\nPlease ensure:\n1. Open the page using a local server (e.g., http://localhost:8000)\n2. Data files exist in the correct location\n3. Check browser console for error messages`;
+                alert(errorMsg);
+            }
+        }
+        
+        // 加载单个国家文件
+        async function loadIndividualCountryFiles() {
+            const countries = [
+                'Algeria', 'Angola', 'Benin', 'Botswana', 'Burkina Faso', 'Burundi',
+                'Cameroon', 'Central African Republic', 'Chad', 'Comoros',
+                'Democratic Republic of the Congo', 'Djibouti', 'Egypt', 'Equatorial Guinea',
+                'Eritrea', 'Eswatini', 'Ethiopia', 'Gabon', 'Ghana', 'Guinea',
+                'Guinea-Bissau', 'Ivory Coast', 'Kenya', 'Lesotho', 'Liberia',
+                'Libya', 'Madagascar', 'Malawi', 'Mali', 'Mauritania', 'Mauritius',
+                'Morocco', 'Mozambique', 'Namibia', 'Niger', 'Nigeria', 'Rwanda',
+                'Senegal', 'Seychelles', 'Sierra Leone', 'Somalia', 'South Africa',
+                'South Sudan', 'Sudan', 'Tanzania', 'Togo', 'Tunisia', 'Uganda',
+                'Zambia', 'Zimbabwe'
+            ];
+            
+            allData = { type: 'FeatureCollection', features: [] };
+            
+            for (const country of countries) {
+                try {
+                    const response = await fetch(`data/africa_geojson/${country}.geojson`);
+                    if (response.ok) {
+                        const countryData = await response.json();
+                        if (countryData.features) {
+                            // 为每个设施添加国家信息
+                            countryData.features.forEach(feature => {
+                                if (!feature.properties.country) {
+                                    feature.properties.country = country;
+                                }
+                            });
+                            allData.features.push(...countryData.features);
+                        }
+                    }
+                } catch (error) {
+                    console.warn(`加载 ${country} 数据失败:`, error);
+                }
+            }
+            
+            console.log('Successfully loaded individual country files:', allData.features.length, 'facilities');
+        }
+        
+        // Process data
+        function processData() {
+            if (!allData.features || allData.features.length === 0) {
+                alert('No data found');
+                return;
+            }
+            
+            console.log('Processing data:', allData.features.length, 'total features');
+            
+            // Update statistics
+            updateStats();
+            
+            // Create markers
+            createMarkers();
+            
+            // Update country filter
+            updateCountryFilter();
+            
+            // Apply current filters
+            applyFilters();
+        }
+        
+        // Create markers
+        function createMarkers() {
+            // Clear existing markers
+            allMarkers.forEach(marker => map.removeLayer(marker));
+            allMarkers = [];
+            
+            allData.features.forEach(feature => {
+                if (feature.geometry && feature.geometry.coordinates) {
+                    const geometry = feature.geometry;
+                    const properties = feature.properties;
+                    
+                    // Determine facility type and color
+                    let facilityType = 'other';
+                    let color = facilityColors.other;
+                    
+                    if (properties.attributes) {
+                        const amenity = properties.attributes.amenity;
+                        const healthcare = properties.attributes.healthcare;
+                        
+                        if (amenity === 'hospital' || healthcare === 'hospital') {
+                            facilityType = 'hospital';
+                            color = facilityColors.hospital;
+                        } else if (amenity === 'clinic' || healthcare === 'clinic') {
+                            facilityType = 'clinic';
+                            color = facilityColors.clinic;
+                        } else if (amenity === 'pharmacy' || healthcare === 'pharmacy') {
+                            facilityType = 'pharmacy';
+                            color = facilityColors.pharmacy;
+                        } else if (amenity === 'doctors' || healthcare === 'doctor') {
+                            facilityType = 'doctors';
+                            color = facilityColors.doctors;
+                        }
+                    }
+                    
+                    let marker;
+                    let coords;
+                    
+                    try {
+                        if (geometry.type === 'Point') {
+                            // Point type: use coordinates directly
+                            coords = geometry.coordinates;
+                            if (coords && coords.length >= 2 && 
+                                typeof coords[0] === 'number' && 
+                                typeof coords[1] === 'number' &&
+                                !isNaN(coords[0]) && !isNaN(coords[1])) {
+                                
+                                marker = L.circleMarker([coords[1], coords[0]], {
+                                    radius: 4,
+                                    fillColor: color,
+                                    color: '#ffffff',
+                                    weight: 0.8,
+                                    opacity: 0.9,
+                                    fillOpacity: 0.8
+                                });
+                            }
+                        } else if (geometry.type === 'Polygon') {
+                            // Polygon type: use the first point of the first polygon as center
+                            if (geometry.coordinates && geometry.coordinates[0] && geometry.coordinates[0][0]) {
+                                coords = geometry.coordinates[0][0];
+                                if (coords && coords.length >= 2 && 
+                                    typeof coords[0] === 'number' && 
+                                    typeof coords[1] === 'number' &&
+                                    !isNaN(coords[0]) && !isNaN(coords[1])) {
+                                    
+                                    marker = L.circleMarker([coords[1], coords[0]], {
+                                        radius: 5,
+                                        fillColor: color,
+                                        color: '#ffffff',
+                                        weight: 0.8,
+                                        opacity: 0.9,
+                                        fillOpacity: 0.8
+                                    });
+                                }
+                            }
+                        }
+                        
+                        // If marker was successfully created
+                        if (marker) {
+                            // Add popup information
+                            const popupContent = createPopupContent(feature);
+                            marker.bindPopup(popupContent);
+                            
+                            // Store marker information
+                            marker.featureData = {
+                                ...feature,
+                                facilityType: facilityType
+                            };
+                            
+                            allMarkers.push(marker);
+                        }
+                        
+                    } catch (error) {
+                        console.warn('Failed to create marker:', error, 'Feature:', feature);
+                        // Skip this problematic facility
+                    }
+                }
+            });
+            
+            console.log('Successfully created', allMarkers.length, 'markers out of', allData.features.length, 'features');
+            
+            // 检查每个国家的设施数量
+            const countryCounts = {};
+            allMarkers.forEach(marker => {
+                const country = marker.featureData.properties.country;
+                if (country) {
+                    countryCounts[country] = (countryCounts[country] || 0) + 1;
+                }
+            });
+            console.log('Facilities per country:', countryCounts);
+        }
+        
+        // Create popup content
+        function createPopupContent(feature) {
+            const properties = feature.properties;
+            const attributes = properties.attributes || {};
+            
+            let content = '<div style="min-width: 250px;">';
+            content += '<h3 style="margin: 0 0 10px 0; color: #333;">';
+            content += attributes.name || 'Unnamed Facility';
+            content += '</h3>';
+            
+            if (attributes.amenity) {
+                content += `<p><strong>Type:</strong> ${attributes.amenity}</p>`;
+            }
+            
+            if (properties.country) {
+                content += `<p><strong>Country:</strong> ${properties.country}</p>`;
+            }
+            
+            if (attributes.operator) {
+                content += `<p><strong>Operator:</strong> ${attributes.operator}</p>`;
+            }
+            
+            if (attributes.addr_street) {
+                content += `<p><strong>Address:</strong> ${attributes.addr_street}</p>`;
+            }
+            
+            if (attributes.opening_hours) {
+                content += `<p><strong>Opening Hours:</strong> ${attributes.opening_hours}</p>`;
+            }
+            
+            if (attributes.speciality) {
+                content += `<p><strong>Specialty:</strong> ${attributes.speciality}</p>`;
+            }
+            
+            if (attributes.wheelchair) {
+                content += `<p><strong>Wheelchair Access:</strong> ${attributes.wheelchair === 'yes' ? 'Yes' : 'No'}</p>`;
+            }
+            
+            content += '</div>';
+            return content;
+        }
+        
+        // Update statistics
+        function updateStats() {
+            document.getElementById('totalFacilities').textContent = allData.features.length;
+            document.getElementById('totalCountries').textContent = new Set(allData.features.map(f => f.properties.country).filter(Boolean)).size;
+            // 初始加载时，可见设施数量应该等于总设施数量
+            document.getElementById('visibleFacilities').textContent = allData.features.length;
+        }
+        
+        // Update country filter
+        function updateCountryFilter() {
+            const countries = [...new Set(allData.features.map(f => f.properties.country).filter(Boolean))].sort();
+            const select = document.getElementById('countryFilter');
+            
+            // Keep "All Countries" option
+            select.innerHTML = '<option value="">All Countries</option>';
+            
+            countries.forEach(country => {
+                const option = document.createElement('option');
+                option.value = country;
+                option.textContent = country;
+                select.appendChild(option);
+            });
+        }
+        
+        // Apply filters
+        function applyFilters() {
+            // Clear currently displayed markers
+            currentMarkers.forEach(marker => map.removeLayer(marker));
+            currentMarkers = [];
+            
+            // Apply filter conditions
+            const filteredMarkers = allMarkers.filter(marker => {
+                const data = marker.featureData;
+                const properties = data.properties;
+                const attributes = properties.attributes || {};
+                
+                // Country filter
+                if (countryFilter && properties.country !== countryFilter) {
+                    return false;
+                }
+                
+                // Facility type filter
+                if (facilityTypeFilter && data.facilityType !== facilityTypeFilter) {
+                    return false;
+                }
+                
+                // Search filter
+                if (searchFilter) {
+                    const searchLower = searchFilter.toLowerCase();
+                    const name = (attributes.name || '').toLowerCase();
+                    const country = (properties.country || '').toLowerCase();
+                    
+                    if (!name.includes(searchLower) && !country.includes(searchLower)) {
+                        return false;
+                    }
+                }
+                
+                return true;
+            });
+            
+            // Display filtered markers
+            filteredMarkers.forEach(marker => {
+                map.addLayer(marker);
+                currentMarkers.push(marker);
+            });
+            
+            // Update statistics - show filtered facilities count
+            document.getElementById('visibleFacilities').textContent = currentMarkers.length;
+            
+            // If few markers after filtering, automatically adjust view
+            if (currentMarkers.length > 0 && currentMarkers.length < 100) {
+                const group = new L.featureGroup(currentMarkers);
+                map.fitBounds(group.getBounds().pad(0.1));
+            }
+        }
+        
+        // Clear filters
+        function clearFilters() {
+            document.getElementById('countryFilter').value = '';
+            document.getElementById('facilityTypeFilter').value = '';
+            document.getElementById('searchInput').value = '';
+            
+            countryFilter = '';
+            facilityTypeFilter = '';
+            searchFilter = '';
+            
+            applyFilters();
+        }
+        
+        // Show/hide loading indicator
+        function showLoading(show) {
+            document.getElementById('loading').classList.toggle('show', show);
+        }
+        
+        // Event listeners
+        document.getElementById('countryFilter').addEventListener('change', function(e) {
+            countryFilter = e.target.value;
+            applyFilters();
+        });
+        
+        document.getElementById('facilityTypeFilter').addEventListener('change', function(e) {
+            facilityTypeFilter = e.target.value;
+            applyFilters();
+        });
+        
+        document.getElementById('searchInput').addEventListener('input', function(e) {
+            searchFilter = e.target.value;
+            applyFilters();
+        });
+        
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            initMap();
+            loadData();
+        });
+    </script>
+</body>
+</html>

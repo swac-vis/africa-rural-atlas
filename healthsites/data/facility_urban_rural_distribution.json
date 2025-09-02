@@ -1,0 +1,27 @@
+{
+  "total_facilities": 43150,
+  "urban_facilities": {
+    "count": 30106,
+    "percentage": 69.8
+  },
+  "rural_facilities": {
+    "count": 13044,
+    "percentage": 30.2
+  },
+  "summary": {
+    "urban_rural_ratio": 2.31,
+    "urban_dominance": true,
+    "classification_method": "GHSL population density data",
+    "data_source": "Real GHSL population raster data"
+  },
+  "note": "基于真实GHSL人口密度数据的分析结果。城市区域：人口密度 > 0，农村区域：人口密度 ≤ 0",
+  "metadata": {
+    "analysis_date": "2025-09-02 16:23:30",
+    "data_source": "GHSL population density raster",
+    "facility_source": "Africa_all_healthsites.geojson",
+    "total_processed": 43150,
+    "successfully_classified": 43150,
+    "classification_rate": 100.0,
+    "grids_with_facilities": 43150
+  }
+}

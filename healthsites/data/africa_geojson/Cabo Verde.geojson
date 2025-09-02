@@ -1,0 +1,5840 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.115582270834835,
+              15.247324723189308
+            ],
+            [
+              -23.11553214705384,
+              15.247395466452076
+            ],
+            [
+              -23.115483029101256,
+              15.247363028486802
+            ],
+            [
+              -23.11553306906319,
+              15.247292369043038
+            ],
+            [
+              -23.115582270834835,
+              15.247324723189308
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Posto Sanitário de Pedro Vaz",
+          "changeset_id": 82529906.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-03-23T15:38:21Z",
+          "changeset_user": "BrandonK",
+          "uuid": "89736012726746f6be1fc7b0115077dc"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.115532635921223,
+            15.247343898415359
+          ]
+        },
+        "osm_id": 543310653,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.38885857409832,
+          16.642574816709924
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 147784216.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-02-22T18:16:04Z",
+          "changeset_user": "user_20033850",
+          "uuid": "75f8a3532f00475ca5a85f633758ecb5"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.38885857409832,
+            16.642574816709924
+          ]
+        },
+        "osm_id": 3284129017,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.759514522246235,
+          15.137382568204544
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "centre",
+          "name": "Posto de Saúde de Ribeira da Barca",
+          "changeset_id": 139219092.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-07-30T17:17:13Z",
+          "changeset_user": "wtavares",
+          "uuid": "ae3c75dca2fc401688591d4657ae5170"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.759514522246235,
+            15.137382568204544
+          ]
+        },
+        "osm_id": 4721884199,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.2107892076786,
+              15.142730641524423
+            ],
+            [
+              -23.210570272367704,
+              15.142710692594846
+            ],
+            [
+              -23.210543366458523,
+              15.142820998440612
+            ],
+            [
+              -23.209933331545557,
+              15.142734748656977
+            ],
+            [
+              -23.210020754795636,
+              15.14208305568522
+            ],
+            [
+              -23.210781412508652,
+              15.142190763141002
+            ],
+            [
+              -23.2107892076786,
+              15.142730641524423
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital do Maio",
+          "changeset_id": 54936255.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2017-12-26T18:09:27Z",
+          "changeset_user": "Bratananio",
+          "uuid": "fbb44d5959924a8d96b64983683e5d10"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.210365158028413,
+            15.142455873369304
+          ]
+        },
+        "osm_id": 549195188,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.98739217480812,
+          16.886402452189714
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Higiene",
+          "changeset_id": 147783971.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-02-22T18:08:01Z",
+          "changeset_user": "user_20033850",
+          "uuid": "a947e12993c948c18159b8727e4b93d6"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.98739217480812,
+            16.886402452189714
+          ]
+        },
+        "osm_id": 7313780786,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.488522312047508,
+              14.920839787754204
+            ],
+            [
+              -23.488395577671525,
+              14.921277993652126
+            ],
+            [
+              -23.48841292821109,
+              14.921282687517902
+            ],
+            [
+              -23.48834101148188,
+              14.921543364706594
+            ],
+            [
+              -23.487998610737236,
+              14.921430125194718
+            ],
+            [
+              -23.487990731748255,
+              14.921426185700227
+            ],
+            [
+              -23.487984026225718,
+              14.921420318368007
+            ],
+            [
+              -23.487979164721878,
+              14.921413277569343
+            ],
+            [
+              -23.487976147236736,
+              14.921405063304235
+            ],
+            [
+              -23.487975476684483,
+              14.921396429943968
+            ],
+            [
+              -23.48797690160802,
+              14.921387964221765
+            ],
+            [
+              -23.488035658749254,
+              14.921180595937244
+            ],
+            [
+              -23.48804764487079,
+              14.921138351145231
+            ],
+            [
+              -23.488160381468475,
+              14.920743479686735
+            ],
+            [
+              -23.488522312047508,
+              14.920839787754204
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro de Saúde Achada Grande Trás",
+          "changeset_id": 149273168.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2024-03-28T14:48:11Z",
+          "changeset_user": "Bratananio",
+          "uuid": "0be20dc84ec34948a200ebb99da64d3d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.48824642438267,
+            14.921139969567195
+          ]
+        },
+        "osm_id": 819344290,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.889604149620112,
+          16.126680075768434
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "changeset_id": 116142247.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2022-01-14T10:36:26Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "34ed45045b5b4fbcbb82f59f66e36fc5"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.889604149620112,
+            16.126680075768434
+          ]
+        },
+        "osm_id": 4719224328,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.06595625616768,
+          17.020111996537167
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Clinica Dentar",
+          "changeset_id": 145476890.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2023-12-24T18:13:52Z",
+          "changeset_user": "user_20033850",
+          "uuid": "0e26d5d84bd048ce88d13e775c90aa12"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.06595625616768,
+            17.020111996537167
+          ]
+        },
+        "osm_id": 3133582540,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.064391354845185,
+          17.01908144154197
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "changeset_id": 145476890.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-12-24T18:13:52Z",
+          "changeset_user": "user_20033850",
+          "uuid": "0ed65aa188764e6db611704b49960cc4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.064391354845185,
+            17.01908144154197
+          ]
+        },
+        "osm_id": 2665778157,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.13832736836747,
+              17.08694208400604
+            ],
+            [
+              -25.138228378090986,
+              17.08699639873859
+            ],
+            [
+              -25.13817423099647,
+              17.086906125641406
+            ],
+            [
+              -25.138273221272954,
+              17.086851978546918
+            ],
+            [
+              -25.13832736836747,
+              17.08694208400604
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 82528456.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-23T14:56:01Z",
+          "changeset_user": "BrandonK",
+          "uuid": "175f44c0014d4b9d93e72f92db9f35e0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.138250791596104,
+            17.086924158804425
+          ]
+        },
+        "osm_id": 783912577,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.31099457374185,
+              16.957603450706472
+            ],
+            [
+              -25.31095735809177,
+              16.95766447096159
+            ],
+            [
+              -25.310897343665033,
+              16.957641169270772
+            ],
+            [
+              -25.31093288293451,
+              16.95758333413886
+            ],
+            [
+              -25.31099457374185,
+              16.957603450706472
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Posto Sanário",
+          "changeset_id": 82529379.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-03-23T15:22:56Z",
+          "changeset_user": "BrandonK",
+          "uuid": "68afb82a30704deabff2eca7cef69e64"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.31094579339451,
+            16.95762321905147
+          ]
+        },
+        "osm_id": 413404864,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.985927353409522,
+          16.88350725901455
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Jovem",
+          "dispensing": "yes",
+          "changeset_id": 82979659.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-04-02T12:08:06Z",
+          "changeset_user": "geolytics",
+          "uuid": "bb0a9753013c468db010e022f8c72994"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.985927353409522,
+            16.88350725901455
+          ]
+        },
+        "osm_id": 1972672033,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.060583120957318,
+              16.824722541306784
+            ],
+            [
+              -25.060508773476187,
+              16.824795380045344
+            ],
+            [
+              -25.060466612503205,
+              16.824755817462375
+            ],
+            [
+              -25.06044146679369,
+              16.82478054407673
+            ],
+            [
+              -25.060409364104544,
+              16.824750453044345
+            ],
+            [
+              -25.060392767936264,
+              16.82476679775553
+            ],
+            [
+              -25.060223704949237,
+              16.824608547423622
+            ],
+            [
+              -25.060278438776976,
+              16.82455507088136
+            ],
+            [
+              -25.06017450317762,
+              16.82445784080457
+            ],
+            [
+              -25.06026553064609,
+              16.824368657354796
+            ],
+            [
+              -25.060387068242107,
+              16.824482399780862
+            ],
+            [
+              -25.060357480123884,
+              16.824511233527772
+            ],
+            [
+              -25.060583120957318,
+              16.824722541306784
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 147783783.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2024-02-22T18:01:43Z",
+          "changeset_user": "user_20033850",
+          "uuid": "ae1db214f38d4ce8b021ccb8d586980e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.0603649507149,
+            16.824601374639904
+          ]
+        },
+        "osm_id": 432838772,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.906726869061032,
+          16.599533743913923
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmacia Santa Maria",
+          "opening_hours": "Mo-Fr 08:00-22:00; Sa 08:00-20:00",
+          "dispensing": "yes",
+          "wheelchair": "yes",
+          "changeset_id": 156221633.0,
+          "changeset_version": 8.0,
+          "changeset_timestamp": "2024-09-05T09:35:18Z",
+          "changeset_user": "Bohuslav Kovalsky",
+          "uuid": "448fc7e5bc254ee5a9ea1098fe8b7c37"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.906726869061032,
+            16.599533743913923
+          ]
+        },
+        "osm_id": 9084608536,
+        "osm_type": "node",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.59931707422308,
+              15.196059075542365
+            ],
+            [
+              -23.598638978256332,
+              15.196345736630889
+            ],
+            [
+              -23.5984595217094,
+              15.195950697534329
+            ],
+            [
+              -23.59913761767612,
+              15.195663952626745
+            ],
+            [
+              -23.59931707422308,
+              15.196059075542365
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro de Saúde de São Miguel",
+          "changeset_id": 77442661.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2019-11-22T19:13:59Z",
+          "changeset_user": "Bratananio",
+          "uuid": "ce9413eb7c71464fb3707c0693315bcd"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.59888830731894,
+            15.196004859780665
+          ]
+        },
+        "osm_id": 747921296,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.75350025526214,
+          15.277731418055737
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Centro de Saúde",
+          "contact_number": "661130",
+          "changeset_id": 104728881.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-05-15T11:29:11Z",
+          "changeset_user": "MapMakerGal",
+          "uuid": "5371cad79ba14554bb37ba2c6e395fd6"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.75350025526214,
+            15.277731418055737
+          ]
+        },
+        "osm_id": 1960647754,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.036365539575172,
+          17.102440725888044
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Unidade Sanitária de Base",
+          "changeset_id": 69540733.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2019-04-24T20:28:46Z",
+          "changeset_user": "TheAnimappor",
+          "uuid": "2289b95b989f4f8fa7aab73958dc8595"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.036365539575172,
+            17.102440725888044
+          ]
+        },
+        "osm_id": 4596256400,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.19238854836084,
+              17.07733977573045
+            ],
+            [
+              -25.192344124274,
+              17.0773959344817
+            ],
+            [
+              -25.192273381011233,
+              17.077338518444975
+            ],
+            [
+              -25.192318978564487,
+              17.07728696974047
+            ],
+            [
+              -25.19238854836084,
+              17.07733977573045
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 82529411.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-03-23T15:23:47Z",
+          "changeset_user": "BrandonK",
+          "uuid": "580616894ce84a8288cb0d60fdcf0680"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.19233133752712,
+            17.077340683570025
+          ]
+        },
+        "osm_id": 643175871,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.298751773878536,
+          16.61476357816116
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Enfermaria Regional de São Nicolau",
+          "changeset_id": 126229220.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2022-09-15T15:18:33Z",
+          "changeset_user": "Kadubei",
+          "uuid": "50c5e26b46584542a7e34048ac841365"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.298751773878536,
+            16.61476357816116
+          ]
+        },
+        "osm_id": 4841694321,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.07227084674247,
+          17.01966473818382
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Porto Novo",
+          "changeset_id": 55966589.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2018-02-01T13:51:21Z",
+          "changeset_user": "km2bp",
+          "uuid": "8271358f465d48c18ec2bb565c418676"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.07227084674247,
+            17.01966473818382
+          ]
+        },
+        "osm_id": 5378019863,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.06586925201273,
+          17.020873240983377
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmacia São José",
+          "changeset_id": 145476890.0,
+          "changeset_version": 8.0,
+          "changeset_timestamp": "2023-12-24T18:13:52Z",
+          "changeset_user": "user_20033850",
+          "uuid": "cc458a0f97254c39b140c8aa0470a312"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.06586925201273,
+            17.020873240983377
+          ]
+        },
+        "osm_id": 3133571260,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.90343420603739,
+          16.597628034408388
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "dentist",
+          "healthcare": "dentist",
+          "changeset_id": 116142373.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2022-01-14T10:40:18Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "37299b6c53fd4586a3770071c6efbb69"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.90343420603739,
+            16.597628034408388
+          ]
+        },
+        "osm_id": 1975836423,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.607571656287377,
+              14.916023294733606
+            ],
+            [
+              -23.607517425373857,
+              14.916096552567353
+            ],
+            [
+              -23.607415166155135,
+              14.916033017741285
+            ],
+            [
+              -23.607477276057637,
+              14.915958837898216
+            ],
+            [
+              -23.607571656287377,
+              14.916023294733606
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "changeset_id": 14335800.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2012-12-19T20:09:41Z",
+          "changeset_user": "Ben Allard",
+          "uuid": "aac76a5306fd41c6bb550dee563e1456"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.607494703746067,
+            14.91602793177265
+          ]
+        },
+        "osm_id": 197237323,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.0477914,
+              17.126356
+            ],
+            [
+              -25.0477295,
+              17.1263583
+            ],
+            [
+              -25.0477253,
+              17.1262578
+            ],
+            [
+              -25.0477872,
+              17.1262555
+            ],
+            [
+              -25.0477914,
+              17.126356
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 82528253.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-03-23T14:49:36Z",
+          "changeset_user": "BrandonK",
+          "uuid": "4df1fd4b19734e25b2456b21cabbe0ed"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.04775835,
+            17.1263069
+          ]
+        },
+        "osm_id": 608318941,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.069370624425403,
+          17.110804021236504
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Delegação Municipal;Posto Sanitário",
+          "changeset_id": 85038993.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-05-11T17:49:11Z",
+          "changeset_user": "Bratananio",
+          "uuid": "ac6028cb617646ce86d7d1b3a94bf6f4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.069370624425403,
+            17.110804021236504
+          ]
+        },
+        "osm_id": 4171948865,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.036659241462388,
+              17.102247187743785
+            ],
+            [
+              -25.036488921189886,
+              17.102426644290716
+            ],
+            [
+              -25.036311979213906,
+              17.1024292426807
+            ],
+            [
+              -25.036263615632606,
+              17.102359924341442
+            ],
+            [
+              -25.03625540136747,
+              17.102231932679985
+            ],
+            [
+              -25.036659241462388,
+              17.102247187743785
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Unidade Sanitária de Base",
+          "wheelchair": "no",
+          "changeset_id": 145535561.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-12-26T13:57:30Z",
+          "changeset_user": "ofr1tz",
+          "uuid": "53c3311f4d174baba2d0560adb3f3b04"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.036423526241208,
+            17.10232216923267
+          ]
+        },
+        "osm_id": 783918973,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.527071774389924,
+              14.907905253872002
+            ],
+            [
+              -23.526925007265362,
+              14.907990916922415
+            ],
+            [
+              -23.526829705026273,
+              14.907838533922728
+            ],
+            [
+              -23.526976472150835,
+              14.907752870872287
+            ],
+            [
+              -23.527071774389924,
+              14.907905253872002
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "MontiClinic - Clínica Médica",
+          "operator": "Dra. Antonieta Martins",
+          "wheelchair": "yes",
+          "addr_housenumber": "47",
+          "addr_street": "Avenida Sao Vicente",
+          "addr_city": "Praia",
+          "changeset_id": 104728881.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-15T11:29:11Z",
+          "changeset_user": "MapMakerGal",
+          "uuid": "6cbc6d25b1894c86ad1bb874bf5fc7dd"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.526950739708102,
+            14.907871893897354
+          ]
+        },
+        "osm_id": 781885879,
+        "osm_type": "way",
+        "completeness": 28.125
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.51665072181234,
+          14.954136143739703
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia de Achada São Filipe",
+          "dispensing": "yes",
+          "changeset_id": 79222497.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-01-05T20:27:01Z",
+          "changeset_user": "Bratananio",
+          "uuid": "c6b60ef8fc884968b22e6eef296afc1e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.51665072181234,
+            14.954136143739703
+          ]
+        },
+        "osm_id": 7110728985,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.013870020200045,
+          17.14870078477881
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Centro de Saúde",
+          "operator": "Ministério da Saúde",
+          "changeset_id": 66402064.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2019-01-17T17:12:09Z",
+          "changeset_user": "Bratananio",
+          "uuid": "7e344d37ee474b0a93d41efb0080d123"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.013870020200045,
+            17.14870078477881
+          ]
+        },
+        "osm_id": 2477970478,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.06485805921389,
+              17.1800555567132
+            ],
+            [
+              -25.06484934203459,
+              17.18024716701973
+            ],
+            [
+              -25.064691426978783,
+              17.180240545316224
+            ],
+            [
+              -25.06468145251401,
+              17.180462246655168
+            ],
+            [
+              -25.06460174061482,
+              17.18045897771293
+            ],
+            [
+              -25.064606518299655,
+              17.180352192266497
+            ],
+            [
+              -25.064442735911626,
+              17.180345319105896
+            ],
+            [
+              -25.06444885470094,
+              17.180211376293187
+            ],
+            [
+              -25.064426977933664,
+              17.180210454283838
+            ],
+            [
+              -25.064431336523313,
+              17.18011515204475
+            ],
+            [
+              -25.064452039824147,
+              17.180116074054098
+            ],
+            [
+              -25.064457739518303,
+              17.17999059696359
+            ],
+            [
+              -25.064613978193478,
+              17.179996967210002
+            ],
+            [
+              -25.06462051607795,
+              17.179852463199296
+            ],
+            [
+              -25.064695366473273,
+              17.179855480684438
+            ],
+            [
+              -25.064686649293975,
+              17.180048432095504
+            ],
+            [
+              -25.06485805921389,
+              17.1800555567132
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital Regional Dr. João Morais",
+          "changeset_id": 117089478.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2022-02-06T18:03:05Z",
+          "changeset_user": "uliwanne",
+          "uuid": "81e21859b9e04f989b37f6666f0a8b5a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.064625208365168,
+            17.180163049189456
+          ]
+        },
+        "osm_id": 599176551,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.211265718874017,
+          15.136533062317909
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia",
+          "changeset_id": 54935754.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2017-12-26T17:45:13Z",
+          "changeset_user": "Bratananio",
+          "uuid": "467b6b1650a54d30800cfcc5d09a4e85"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.211265718874017,
+            15.136533062317909
+          ]
+        },
+        "osm_id": 5305126409,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.115530470673207,
+          15.247326148112847
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Posto Sanitário de Pedro Vaz",
+          "changeset_id": 146875069.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-01-30T18:39:47Z",
+          "changeset_user": "Bratananio",
+          "uuid": "f84301692287436db5bf94570a119791"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.115530470673207,
+            15.247326148112847
+          ]
+        },
+        "osm_id": 5306870234,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.98570615498477,
+          16.879745460870282
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Avenida De Holanda",
+          "changeset_id": 147783909.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-02-22T18:05:45Z",
+          "changeset_user": "user_20033850",
+          "uuid": "1ebef81e2ab94ad5bde58a2ec7b6a8c0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.98570615498477,
+            16.879745460870282
+          ]
+        },
+        "osm_id": 4764803810,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.310807405844002,
+          16.957006659200516
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Posto Sanitário",
+          "changeset_id": 82205837.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-14T23:06:53Z",
+          "changeset_user": "!GabeTheWise!",
+          "uuid": "5497c2220048466a85e3b9d0cefdd8e2"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.310807405844002,
+            16.957006659200516
+          ]
+        },
+        "osm_id": 7295530085,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.163807934919788,
+          17.15744151722717
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "changeset_id": 145612945.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-12-28T10:58:05Z",
+          "changeset_user": "TravellingSailesman",
+          "uuid": "00ee1a99e7cd4dcdb628bf58f22f6391"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.163807934919788,
+            17.15744151722717
+          ]
+        },
+        "osm_id": 11462451571,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.11748010135136,
+          15.247684725930611
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Posto De Saude",
+          "changeset_id": 146875736.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2024-01-30T18:59:37Z",
+          "changeset_user": "Bratananio",
+          "uuid": "7fbafad0d0524689966e851b815e5643"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.11748010135136,
+            15.247684725930611
+          ]
+        },
+        "osm_id": 11570319546,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.3108663306233,
+              16.956915128817883
+            ],
+            [
+              -25.310829450249344,
+              16.957080587586518
+            ],
+            [
+              -25.310744373932124,
+              16.957058878457303
+            ],
+            [
+              -25.31078125430608,
+              16.95688797145158
+            ],
+            [
+              -25.3108663306233,
+              16.956915128817883
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Posto Sanitário",
+          "changeset_id": 82530033.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-03-23T15:41:47Z",
+          "changeset_user": "BrandonK",
+          "uuid": "56d8e3a2399347018a915aeb6b0cc1ac"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.31080517681846,
+            16.956985394371358
+          ]
+        },
+        "osm_id": 617833222,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.517092867204752,
+          14.911156929389136
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Achada Santo Antonio",
+          "changeset_id": 124388802.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2022-08-02T11:59:42Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "0e13d54f4fa84328ba8c4666027c1d39"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.517092867204752,
+            14.911156929389136
+          ]
+        },
+        "osm_id": 2440480044,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.211582470994927,
+              15.229090898663685
+            ],
+            [
+              -23.2115475184587,
+              15.2292208181629
+            ],
+            [
+              -23.211447103258678,
+              15.229195840091421
+            ],
+            [
+              -23.21148205579493,
+              15.22906575295417
+            ],
+            [
+              -23.211582470994927,
+              15.229090898663685
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Posto Sanitário",
+          "changeset_id": 82987210.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-04-02T14:45:13Z",
+          "changeset_user": "Ambassador_Spock",
+          "uuid": "74c02bde93d14e058abfc40f73738863"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.211514778240115,
+            15.229143320387461
+          ]
+        },
+        "osm_id": 543259080,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.04776165894893,
+          17.12630677025109
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "posto sanitario",
+          "operator": "ministerio de saude",
+          "emergency": "yes",
+          "addr_city": "Cha de Joao Vaz",
+          "changeset_id": 163301729.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2025-03-06T20:48:53Z",
+          "changeset_user": "chrisber",
+          "uuid": "6099ca76fefa49f7a8f43db4d9de953e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.04776165894893,
+            17.12630677025109
+          ]
+        },
+        "osm_id": 2444646397,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.941273553542914,
+          16.75571952925921
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Clinica Sanida",
+          "changeset_id": 111102658.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-09-12T16:04:57Z",
+          "changeset_user": "Bratananio",
+          "uuid": "b9e33ce5d2a640ab9b3c196603a72390"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.941273553542914,
+            16.75571952925921
+          ]
+        },
+        "osm_id": 9084228737,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.522052858407676,
+              14.916872046248955
+            ],
+            [
+              -23.52194112763837,
+              14.917205562176235
+            ],
+            [
+              -23.521781536201956,
+              14.917152085633973
+            ],
+            [
+              -23.52184331082836,
+              14.916955194728445
+            ],
+            [
+              -23.52181975768042,
+              14.916950752319764
+            ],
+            [
+              -23.521837611134174,
+              14.916896521406215
+            ],
+            [
+              -23.52186091282502,
+              14.916818988801879
+            ],
+            [
+              -23.522052858407676,
+              14.916872046248955
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Centro de Saúde de Tira Chapeu",
+          "opening_hours": "Mo-Fr 08:00-17:00",
+          "emergency": "no",
+          "changeset_id": 104728881.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-15T11:29:11Z",
+          "changeset_user": "MapMakerGal",
+          "uuid": "041db9b631a543b990387aba6ec964a9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.52191235687142,
+            14.917006393195472
+          ]
+        },
+        "osm_id": 236735654,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.13830037863923,
+          17.086856756231725
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 29842809.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2015-03-30T07:17:48Z",
+          "changeset_user": "Bratananio",
+          "uuid": "f5466536454e45e09422b11accad0d5b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.13830037863923,
+            17.086856756231725
+          ]
+        },
+        "osm_id": 2505173744,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.759828424520094,
+              15.137623380282719
+            ],
+            [
+              -23.759743851117065,
+              15.137623380282719
+            ],
+            [
+              -23.759740582174828,
+              15.137356165209553
+            ],
+            [
+              -23.759821970454624,
+              15.137356165209553
+            ],
+            [
+              -23.759828424520094,
+              15.137623380282719
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 82529618.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-03-23T15:29:58Z",
+          "changeset_user": "BrandonK",
+          "uuid": "b01d39a48e384877a979eeea1226e920"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.759783722616916,
+            15.137490627474492
+          ]
+        },
+        "osm_id": 479000251,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.51869163141606,
+              14.910902790084918
+            ],
+            [
+              -23.518506056079815,
+              14.911207975179451
+            ],
+            [
+              -23.518157536545857,
+              14.911011251911987
+            ],
+            [
+              -23.518292736644042,
+              14.910836656868867
+            ],
+            [
+              -23.51838552431218,
+              14.910713861987375
+            ],
+            [
+              -23.51869163141606,
+              14.910902790084918
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Centro de Saúde Achada Santo Antonio",
+          "changeset_id": 104728881.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-05-15T11:29:11Z",
+          "changeset_user": "MapMakerGal",
+          "uuid": "5fa46634d7d043b5af67f83d0efb94b9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.51843251149168,
+            14.910961081181417
+          ]
+        },
+        "osm_id": 943219723,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.339784626493213,
+              15.042754820870073
+            ],
+            [
+              -24.33949494791952,
+              15.043226219104554
+            ],
+            [
+              -24.338934366235264,
+              15.042873927714169
+            ],
+            [
+              -24.339240138063047,
+              15.04240512786967
+            ],
+            [
+              -24.339784626493213,
+              15.042754820870073
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro de saude dos Mosteiros",
+          "changeset_id": 82529579.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-23T15:28:49Z",
+          "changeset_user": "BrandonK",
+          "uuid": "10249beddff743ce859db585d0d23d80"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.339362419110977,
+            15.042815582458287
+          ]
+        },
+        "osm_id": 783919016,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.517140560233827,
+          14.906701528757253
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Santa Isabel",
+          "changeset_id": 124388909.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2022-08-02T12:01:59Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "569203a5ea904a859f48b241770580ae"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.517140560233827,
+            14.906701528757253
+          ]
+        },
+        "osm_id": 2440480106,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -22.934350772073856,
+              16.67370151705896
+            ],
+            [
+              -22.93434565911292,
+              16.673721298350443
+            ],
+            [
+              -22.934216410165988,
+              16.674224547816976
+            ],
+            [
+              -22.934189755713902,
+              16.674216249732837
+            ],
+            [
+              -22.934045251703196,
+              16.67364477157446
+            ],
+            [
+              -22.934066709375315,
+              16.673624990282974
+            ],
+            [
+              -22.93416963914629,
+              16.673657679705343
+            ],
+            [
+              -22.9341881631523,
+              16.673598252011857
+            ],
+            [
+              -22.934250021597705,
+              16.67361593782755
+            ],
+            [
+              -22.93423367688652,
+              16.67367528170203
+            ],
+            [
+              -22.934350772073856,
+              16.67370151705896
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Centro Médico",
+          "addr_housenumber": "CL",
+          "addr_city": "Murdeira",
+          "changeset_id": 19865404.0,
+          "changeset_version": 7.0,
+          "changeset_timestamp": "2014-01-07T15:50:56Z",
+          "changeset_user": "waldyrious",
+          "uuid": "521e41c3a27149d89b422fbaf049496d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.934198638541936,
+            16.67385448170186
+          ]
+        },
+        "osm_id": 170595424,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.517136453101273,
+          14.906627432733188
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Euroclinina",
+          "changeset_id": 124388909.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2022-08-02T12:01:59Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "19451bef37894bb58e4c659056b197ce"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.517136453101273,
+            14.906627432733188
+          ]
+        },
+        "osm_id": 2447283088,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.986769483221366,
+              16.892508836289693
+            ],
+            [
+              -24.98670318236728,
+              16.892821732735143
+            ],
+            [
+              -24.986442421359556,
+              16.892749899824963
+            ],
+            [
+              -24.986526408029334,
+              16.892549069424916
+            ],
+            [
+              -24.986608131585285,
+              16.89244756457748
+            ],
+            [
+              -24.986769483221366,
+              16.892508836289693
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "MEDICENTRO  CLINICA",
+          "changeset_id": 82529957.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-03-23T15:39:43Z",
+          "changeset_user": "BrandonK",
+          "uuid": "cc718cdf20734923ad54050db78b4d02"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.98662036819281,
+            16.89263977013176
+          ]
+        },
+        "osm_id": 482699649,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.508212408430495,
+          14.924714741591316
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Avenida",
+          "addr_street": "Rua Caixa Economica",
+          "addr_city": "Praia",
+          "changeset_id": 17719070.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2013-09-07T14:42:47Z",
+          "changeset_user": "khandim",
+          "uuid": "333f21a1acfd4f34ad01715678628e7d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.508212408430495,
+            14.924714741591316
+          ]
+        },
+        "osm_id": 2449485196,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.75361961356333,
+              15.277750361156905
+            ],
+            [
+              -23.753189873387612,
+              15.277847675052755
+            ],
+            [
+              -23.7530833393983,
+              15.277410139707087
+            ],
+            [
+              -23.75322256281001,
+              15.277378623751162
+            ],
+            [
+              -23.75323781787378,
+              15.27744157184398
+            ],
+            [
+              -23.753528502275827,
+              15.277375690085051
+            ],
+            [
+              -23.75361961356333,
+              15.277750361156905
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 76608530.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-11-04T18:30:37Z",
+          "changeset_user": "Bratananio",
+          "uuid": "1efed342d1524f69bc25c172eb8fdfa7"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.753348921770225,
+            15.27760210750918
+          ]
+        },
+        "osm_id": 741983721,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.35768174996832,
+              16.561595238493823
+            ],
+            [
+              -24.357677978111894,
+              16.561904949816096
+            ],
+            [
+              -24.35719526430813,
+              16.561899585398066
+            ],
+            [
+              -24.357198952345527,
+              16.561589874075793
+            ],
+            [
+              -24.35768174996832,
+              16.561595238493823
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro de Saúde",
+          "changeset_id": 145193806.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-12-16T18:42:33Z",
+          "changeset_user": "TravellingSailesman",
+          "uuid": "1f7905abc9de4fe281cf256ac9cd16b5"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.357438486358397,
+            16.561747407466722
+          ]
+        },
+        "osm_id": 783908081,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.51343994998271,
+              14.923832965377471
+            ],
+            [
+              -23.513362501197378,
+              14.924223142970192
+            ],
+            [
+              -23.513255883389007,
+              14.92423722456752
+            ],
+            [
+              -23.512923205652072,
+              14.924172516275036
+            ],
+            [
+              -23.512887666382596,
+              14.924154327545125
+            ],
+            [
+              -23.51294416041,
+              14.923820895436904
+            ],
+            [
+              -23.513044575610024,
+              14.923770352560751
+            ],
+            [
+              -23.51343994998271,
+              14.923832965377471
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Centro de Saúde Achadadinha",
+          "changeset_id": 104728881.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-05-15T11:29:11Z",
+          "changeset_user": "MapMakerGal",
+          "uuid": "c019c44b68284130a2c92037fd6de77e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.513162455719534,
+            14.924003227524
+          ]
+        },
+        "osm_id": 751664764,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.90017792047351,
+          16.597915449868196
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Santa Maria clínica",
+          "speciality": "osteopathy;covid19",
+          "opening_hours": "Mo-Fr 09:00-15:00",
+          "changeset_id": 145725249.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2023-12-31T09:54:11Z",
+          "changeset_user": "tbo47",
+          "uuid": "7abc130f9f9242abb650a7de24cf3693"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.90017792047351,
+            16.597915449868196
+          ]
+        },
+        "osm_id": 6225423668,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.065109181032966,
+          17.182230660586725
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "dentist",
+          "healthcare": "dentist",
+          "name": "Dra. Susana Mandl",
+          "changeset_id": 67001607.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2019-02-07T17:23:40Z",
+          "changeset_user": "Bratananio",
+          "uuid": "1bd75887beaf497da3cb33c9e5dcd205"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.065109181032966,
+            17.182230660586725
+          ]
+        },
+        "osm_id": 5749746443,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.667820776298612,
+          15.095441787838126
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Boa Esperança",
+          "dispensing": "yes",
+          "changeset_id": 71371043.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2019-06-18T15:40:26Z",
+          "changeset_user": "Bratananio",
+          "uuid": "2f198d865b664b48a1dcb94c80470fc4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.667820776298612,
+            15.095441787838126
+          ]
+        },
+        "osm_id": 6555724308,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.985966580716394,
+          16.885518580500076
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "dentist",
+          "healthcare": "dentist",
+          "contact_number": "2310309",
+          "changeset_id": 147783942.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-02-22T18:06:49Z",
+          "changeset_user": "user_20033850",
+          "uuid": "99df8bed71b34a7fb44c2f24946b5f5c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.985966580716394,
+            16.885518580500076
+          ]
+        },
+        "osm_id": 1972673308,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.357653502954633,
+          16.56804729228068
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Duarte Lopes",
+          "dispensing": "yes",
+          "changeset_id": 69405123.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-04-20T15:29:35Z",
+          "changeset_user": "Bratananio",
+          "uuid": "9a59195cd2a748988431d8f09f11506d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.357653502954633,
+            16.56804729228068
+          ]
+        },
+        "osm_id": 6418050988,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.298382551043744,
+          16.615447960555286
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 140412620.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2023-08-26T13:42:15Z",
+          "changeset_user": "98Ujm",
+          "uuid": "d7133e628cdd44a686b13d67d92488e3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.298382551043744,
+            16.615447960555286
+          ]
+        },
+        "osm_id": 2572776875,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.082236402251567,
+              16.553889587268344
+            ],
+            [
+              -24.082080750309643,
+              16.554044065743852
+            ],
+            [
+              -24.081814960160017,
+              16.55379805688571
+            ],
+            [
+              -24.081970779740004,
+              16.55364349459117
+            ],
+            [
+              -24.082236402251567,
+              16.553889587268344
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 82528362.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-23T14:52:43Z",
+          "changeset_user": "BrandonK",
+          "uuid": "8a10faa427ca4dcb883f1d3d27d9782d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.082025703295585,
+            16.553843786798804
+          ]
+        },
+        "osm_id": 783912243,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.38894842810035,
+              16.642660982674528
+            ],
+            [
+              -24.388922947114708,
+              16.642685960746007
+            ],
+            [
+              -24.38878615445492,
+              16.642660982674528
+            ],
+            [
+              -24.388787411740395,
+              16.642472641310235
+            ],
+            [
+              -24.38880627102253,
+              16.64245143509521
+            ],
+            [
+              -24.388852539128038,
+              16.64244892052426
+            ],
+            [
+              -24.38885513751802,
+              16.64237566269051
+            ],
+            [
+              -24.388868632382128,
+              16.64235646813225
+            ],
+            [
+              -24.388910122802855,
+              16.6423589827032
+            ],
+            [
+              -24.38894842810035,
+              16.642660982674528
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 82529071.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-23T15:13:54Z",
+          "changeset_user": "BrandonK",
+          "uuid": "4285293545334e609b95fe3fdc2d94ee"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.388866374488902,
+            16.642543230281635
+          ]
+        },
+        "osm_id": 783916271,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.203125011954825,
+              17.12334267783183
+            ],
+            [
+              -25.203125011954825,
+              17.123426664501636
+            ],
+            [
+              -25.203055525977504,
+              17.123483996719358
+            ],
+            [
+              -25.202964330870998,
+              17.123530683920023
+            ],
+            [
+              -25.202909010310037,
+              17.123530683920023
+            ],
+            [
+              -25.20287975746797,
+              17.123505789667604
+            ],
+            [
+              -25.20287975746797,
+              17.123455917343705
+            ],
+            [
+              -25.20290968086229,
+              17.123387521013825
+            ],
+            [
+              -25.20298453125764,
+              17.123381318405478
+            ],
+            [
+              -25.203056615624917,
+              17.123345779136002
+            ],
+            [
+              -25.203125011954825,
+              17.12334267783183
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 82529471.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-23T15:25:29Z",
+          "changeset_user": "BrandonK",
+          "uuid": "1b5eb84f220d4ddd9b2d476577a5e8d7"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.202999976487718,
+            17.123436667851603
+          ]
+        },
+        "osm_id": 783918448,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.065888614209058,
+          17.02065179110153
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "changeset_id": 145476890.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-12-24T18:13:52Z",
+          "changeset_user": "user_20033850",
+          "uuid": "faaa4d8c41814c2e88431ecdf8888233"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.065888614209058,
+            17.02065179110153
+          ]
+        },
+        "osm_id": 2665765491,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.068001608180083,
+              17.02142736860216
+            ],
+            [
+              -25.067952154951342,
+              17.02165426672107
+            ],
+            [
+              -25.067359051482782,
+              17.02154463142756
+            ],
+            [
+              -25.067430213840737,
+              17.021170295631833
+            ],
+            [
+              -25.067477655412688,
+              17.021045572912612
+            ],
+            [
+              -25.06799171753434,
+              17.021126793554373
+            ],
+            [
+              -25.06799364537207,
+              17.02132712104023
+            ],
+            [
+              -25.068001608180083,
+              17.02142736860216
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro de Saúde",
+          "changeset_id": 62834466.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2018-09-22T19:22:49Z",
+          "changeset_user": "Bratananio",
+          "uuid": "66f78ec2f4874cb7b81ae2467ab81d59"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.067698846937592,
+            17.021349551268884
+          ]
+        },
+        "osm_id": 627428836,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.932765502726653,
+          16.75387517528489
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "X-eco",
+          "opening_hours": "Mo-Fr 08:30-12:00, 15:00-17:30; Sa-Su 10:00-16:00",
+          "addr_street": "Rua do Liceu",
+          "changeset_id": 124387933.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2022-08-02T11:39:56Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "87f7cff790554651af98cdaa0a3594a3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.932765502726653,
+            16.75387517528489
+          ]
+        },
+        "osm_id": 4862005623,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.5282655250399,
+          14.910850151732973
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Universal",
+          "addr_street": "Avenida Santiago",
+          "changeset_id": 17605188.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2013-08-31T15:27:33Z",
+          "changeset_user": "khandim",
+          "uuid": "b7e04eb20d1044ecb1454af475666231"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.5282655250399,
+            14.910850151732973
+          ]
+        },
+        "osm_id": 2437944652,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.310943108856378,
+          16.95760822839128
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Posto Sanitário",
+          "changeset_id": 61773344.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2018-08-18T15:29:23Z",
+          "changeset_user": "Bratananio",
+          "uuid": "295f4db777d1444fa0fa03d55fd2abbb"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.310943108856378,
+            16.95760822839128
+          ]
+        },
+        "osm_id": 4173228597,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.986750456301166,
+              17.12063356290713
+            ],
+            [
+              -24.986712905374958,
+              17.12072995479363
+            ],
+            [
+              -24.9866816408761,
+              17.120721740528523
+            ],
+            [
+              -24.986617267859742,
+              17.12070497672218
+            ],
+            [
+              -24.986604108271763,
+              17.12070154014188
+            ],
+            [
+              -24.98663771970348,
+              17.120610847949536
+            ],
+            [
+              -24.986750456301166,
+              17.12063356290713
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro Saúde",
+          "changeset_id": 111551744.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-09-22T16:29:18Z",
+          "changeset_user": "Bratananio",
+          "uuid": "72dfced57ea8495eb6cf9dc506587a51"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.986676941892423,
+            17.1206689898183
+          ]
+        },
+        "osm_id": 605007012,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.245576836957724,
+              17.106933174531946
+            ],
+            [
+              -25.245566108121665,
+              17.106997296091237
+            ],
+            [
+              -25.245550014867575,
+              17.106993356596746
+            ],
+            [
+              -25.245539202212484,
+              17.107038283597745
+            ],
+            [
+              -25.245551355972083,
+              17.107047168415107
+            ],
+            [
+              -25.24554733265856,
+              17.107088239740676
+            ],
+            [
+              -25.245401152267192,
+              17.1070766727143
+            ],
+            [
+              -25.245401152267192,
+              17.107061250012435
+            ],
+            [
+              -25.245320602177713,
+              17.10705747815601
+            ],
+            [
+              -25.245320602177713,
+              17.107034344103255
+            ],
+            [
+              -25.245258911370343,
+              17.107025459285893
+            ],
+            [
+              -25.24527240623445,
+              17.106940885882864
+            ],
+            [
+              -25.245319344892238,
+              17.106940885882864
+            ],
+            [
+              -25.245389082326625,
+              17.106958739336648
+            ],
+            [
+              -25.245460160865548,
+              17.106967791792073
+            ],
+            [
+              -25.245515146150353,
+              17.106974162038483
+            ],
+            [
+              -25.245528557195428,
+              17.106921523686538
+            ],
+            [
+              -25.245576836957724,
+              17.106933174531946
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 82529652.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-03-23T15:31:09Z",
+          "changeset_user": "BrandonK",
+          "uuid": "3c8ab21ed69a4819837447c5234ca0ed"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.2454234454021,
+            17.107008497768625
+          ]
+        },
+        "osm_id": 547305285,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.512417860709718,
+          14.909698729694043
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Praia Clínica",
+          "changeset_id": 124388802.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2022-08-02T11:59:42Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "a61a5416dc504a9e99f1ae87884ef2ff"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.512417860709718,
+            14.909698729694043
+          ]
+        },
+        "osm_id": 9491688754,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.944637881838702,
+          16.755476873162337
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Ivete Santos",
+          "dispensing": "yes",
+          "changeset_id": 67933157.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-03-08T17:57:06Z",
+          "changeset_user": "Bratananio",
+          "uuid": "7ed74f9f147e4f54a91e3716c4a66e70"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.944637881838702,
+            16.755476873162337
+          ]
+        },
+        "osm_id": 6325884853,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -22.935509067273415,
+              16.749855298341913
+            ],
+            [
+              -22.93550537923602,
+              16.750250421257505
+            ],
+            [
+              -22.935019983223242,
+              16.750246397943982
+            ],
+            [
+              -22.935023671260637,
+              16.749851023571296
+            ],
+            [
+              -22.935509067273415,
+              16.749855298341913
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 136648609.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-05-28T09:14:42Z",
+          "changeset_user": "Bratananio",
+          "uuid": "6d49685fd328401aa6c08f244beb86a9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.935264499517796,
+            16.750050784899518
+          ]
+        },
+        "osm_id": 1176869417,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.916899817304653,
+          16.175564089447647
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "optometrist",
+          "name": "Opticalia",
+          "changeset_id": 48208488.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2017-04-27T20:40:22Z",
+          "changeset_user": "morray",
+          "uuid": "98972ef938c74da386d7e0052733b838"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.916899817304653,
+            16.175564089447647
+          ]
+        },
+        "osm_id": 4821333868,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.065916358308556,
+              17.019510343527372
+            ],
+            [
+              -25.06570974439535,
+              17.019521826734717
+            ],
+            [
+              -25.065718377755616,
+              17.019429374342707
+            ],
+            [
+              -25.065748636426065,
+              17.01939492472067
+            ],
+            [
+              -25.06589062586582,
+              17.019377825638202
+            ],
+            [
+              -25.065916358308556,
+              17.019510343527372
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Clinica Reabil",
+          "changeset_id": 82528983.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-23T15:11:09Z",
+          "changeset_user": "BrandonK",
+          "uuid": "1d7d0690281a4a5090ba4af6011017eb"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.065812535991196,
+            17.019454831673272
+          ]
+        },
+        "osm_id": 783915738,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.505824823311514,
+          14.92105226899966
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Ortoclinic",
+          "changeset_id": 90082633.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-08-28T12:44:01Z",
+          "changeset_user": "Flipaser",
+          "uuid": "4b77bbf4aec1492a874c49ecd0e1a98b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.505824823311514,
+            14.92105226899966
+          ]
+        },
+        "osm_id": 7853491192,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.986404032243,
+          16.890488462348742
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Mindelo",
+          "changeset_id": 116142547.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2022-01-14T10:45:42Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "c5adaeb1661345798b56b2aa2f2e61e4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.986404032243,
+            16.890488462348742
+          ]
+        },
+        "osm_id": 5406078121,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.192292156474338,
+          17.077332064379533
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 40142107.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2016-06-19T18:54:36Z",
+          "changeset_user": "Bratananio",
+          "uuid": "bfd061f151f148949e48735706f148bd"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.192292156474338,
+            17.077332064379533
+          ]
+        },
+        "osm_id": 4253271350,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.49857693226835,
+              14.886327049980167
+            ],
+            [
+              -24.498415832089364,
+              14.886470548162492
+            ],
+            [
+              -24.496603413166156,
+              14.887184853950941
+            ],
+            [
+              -24.49649746591004,
+              14.88690364109948
+            ],
+            [
+              -24.496470727638894,
+              14.886823342467068
+            ],
+            [
+              -24.49636603766828,
+              14.886507344717415
+            ],
+            [
+              -24.496319182829524,
+              14.886365858191851
+            ],
+            [
+              -24.49811693342218,
+              14.885599249327612
+            ],
+            [
+              -24.498348441587837,
+              14.885805444145689
+            ],
+            [
+              -24.498573747145144,
+              14.88616779381988
+            ],
+            [
+              -24.49857693226835,
+              14.886327049980167
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "wheelchair": "yes",
+          "changeset_id": 121966813.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2022-06-05T09:09:47Z",
+          "changeset_user": "Bratananio",
+          "uuid": "b4fadbca4b4f43baa5df1f7f6798f2b6"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.497448893301005,
+            14.88637668271809
+          ]
+        },
+        "osm_id": 194262688,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.741568783732703,
+              15.268169594372466
+            ],
+            [
+              -23.741072575064834,
+              15.268384338731778
+            ],
+            [
+              -23.74076671941802,
+              15.267903049851554
+            ],
+            [
+              -23.741257982763045,
+              15.267665841991743
+            ],
+            [
+              -23.741568783732703,
+              15.268169594372466
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Centro Saúde Do Tarrafal",
+          "changeset_id": 104728881.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-05-15T11:29:11Z",
+          "changeset_user": "MapMakerGal",
+          "uuid": "0d7a314403cf499bb22ed5b9892bd19f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.74116775206521,
+            15.268029382256348
+          ]
+        },
+        "osm_id": 783904837,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.506432176015466,
+          14.919559871139597
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "name": "Gynicalogista",
+          "changeset_id": 124388802.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2022-08-02T11:59:42Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "85b80d03ddf74f498cf6bd6594f8221a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.506432176015466,
+            14.919559871139597
+          ]
+        },
+        "osm_id": 1960648207,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.165762678558877,
+          17.01776363872503
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Centro de Saude",
+          "changeset_id": 64892978.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2018-11-26T10:52:17Z",
+          "changeset_user": "Bratananio",
+          "uuid": "b6f3736732db4c29ae534131d1c9954c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.165762678558877,
+            17.01776363872503
+          ]
+        },
+        "osm_id": 4820225962,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.248940243244164,
+          17.09219628001034
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 111159846.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-09-13T18:27:24Z",
+          "changeset_user": "Bratananio",
+          "uuid": "5dea9b5fd0e7471082d92a767584f19d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.248940243244164,
+            17.09219628001034
+          ]
+        },
+        "osm_id": 2504188510,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.21259534017443,
+          15.139467566618947
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Posto Sanitário \"Entermaria Regional\"",
+          "addr_street": "Avenida Amílcar Cabral",
+          "changeset_id": 54973278.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2017-12-28T05:04:22Z",
+          "changeset_user": "Bratananio",
+          "uuid": "464b9bc109ae4a19a114790e68465b11"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.21259534017443,
+            15.139467566618947
+          ]
+        },
+        "osm_id": 5305126414,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.944088112809567,
+          16.754902880433008
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro de Saúde",
+          "changeset_id": 67932858.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-03-08T17:48:21Z",
+          "changeset_user": "Bratananio",
+          "uuid": "1a261fb02a1b4ba09ac5cfb15f0a24a1"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.944088112809567,
+            16.754902880433008
+          ]
+        },
+        "osm_id": 6325872869,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.986631014180944,
+          16.89252526481991
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "MEDICENTRO  CLINICA",
+          "changeset_id": 116142547.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2022-01-14T10:45:42Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "9b6ffc6d034f42be84eada24cc41176f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.986631014180944,
+            16.89252526481991
+          ]
+        },
+        "osm_id": 5649940421,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.20299224260856,
+          17.12343311856708
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 40902571.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2016-07-20T18:28:43Z",
+          "changeset_user": "Bratananio",
+          "uuid": "aad070bcff0b49768c1d7384a4a09a84"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.20299224260856,
+            17.12343311856708
+          ]
+        },
+        "osm_id": 4313356978,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.13211987406521,
+              16.613381067051733
+            ],
+            [
+              -24.132028762777708,
+              16.613508723437064
+            ],
+            [
+              -24.131907728095882,
+              16.61359103372621
+            ],
+            [
+              -24.131851653163665,
+              16.613616263254784
+            ],
+            [
+              -24.131770516340936,
+              16.61348315863239
+            ],
+            [
+              -24.132051477735303,
+              16.61329037485939
+            ],
+            [
+              -24.13211987406521,
+              16.613381067051733
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 82987210.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-04-02T14:45:13Z",
+          "changeset_user": "Ambassador_Spock",
+          "uuid": "5cb24a98990f4e50bf431e138dfe521a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.131948351214092,
+            16.613456690590336
+          ]
+        },
+        "osm_id": 783908244,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.161232008436514,
+              17.12422537605505
+            ],
+            [
+              -25.1612140711637,
+              17.124251862869073
+            ],
+            [
+              -25.16118967982547,
+              17.124244067699124
+            ],
+            [
+              -25.16116185190694,
+              17.124300226450373
+            ],
+            [
+              -25.16107870342745,
+              17.12422135274153
+            ],
+            [
+              -25.161109800288244,
+              17.12419738049843
+            ],
+            [
+              -25.16113100650327,
+              17.124202074364234
+            ],
+            [
+              -25.16114567483382,
+              17.124178688854357
+            ],
+            [
+              -25.161232008436514,
+              17.12422537605505
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 45407381.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2017-01-23T18:28:46Z",
+          "changeset_user": "Bratananio",
+          "uuid": "1fcdb52586e74843abe4653143053cf8"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.161154074587373,
+            17.124232786184873
+          ]
+        },
+        "osm_id": 468044721,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.63375705707756,
+          15.0804837787108
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "changeset_id": 15263654.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2013-03-05T20:59:11Z",
+          "changeset_user": "parukhin",
+          "uuid": "7a80c49640b34271aeb41a1221bde302"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.63375705707756,
+            15.0804837787108
+          ]
+        },
+        "osm_id": 1960674353,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.497698257358678,
+          14.892923691596764
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Clinica Cardiomed",
+          "changeset_id": 145476761.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-12-24T18:07:11Z",
+          "changeset_user": "user_20033850",
+          "uuid": "81f4a173d10941c4943fa5791730bed9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.497698257358678,
+            14.892923691596764
+          ]
+        },
+        "osm_id": 9437186417,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.064282306284895,
+          17.181605622067053
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmacia Sao Lucas",
+          "changeset_id": 159611769.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2024-11-26T11:34:30Z",
+          "changeset_user": "DeeezNuuuts",
+          "uuid": "e4ef2be8b7624db69090c83efff06edf"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.064282306284895,
+            17.181605622067053
+          ]
+        },
+        "osm_id": 5932630286,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.98502722082773,
+          16.885230494487985
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "name": "Dra. Samila Inocêncio",
+          "changeset_id": 147783942.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-02-22T18:06:49Z",
+          "changeset_user": "user_20033850",
+          "uuid": "f1d69da655384ba79c992ea08d6a4ef1"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.98502722082773,
+            16.885230494487985
+          ]
+        },
+        "osm_id": 1972671692,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.55476667212261,
+          15.02229685833737
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital de São Domingos",
+          "changeset_id": 83836445.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-04-20T17:58:19Z",
+          "changeset_user": "Bratananio",
+          "uuid": "9b18463639e44ea3baacda46acd1bafe"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.55476667212261,
+            15.02229685833737
+          ]
+        },
+        "osm_id": 7426734305,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.30984851612095,
+          16.95538367128904
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "name": "San Baobab Massage Chinese Medizine",
+          "changeset_id": 61773344.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2018-08-18T15:29:22Z",
+          "changeset_user": "Bratananio",
+          "uuid": "27aefde60aff42478e359da02eb5b0f4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.30984851612095,
+            16.95538367128904
+          ]
+        },
+        "osm_id": 4147373708,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.182835022761736,
+          17.053636675565116
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Posto Sanitário",
+          "changeset_id": 126836581.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2022-09-30T18:58:40Z",
+          "changeset_user": "Bratananio",
+          "uuid": "c711d8cec0944ec49321a98016a27226"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.182835022761736,
+            17.053636675565116
+          ]
+        },
+        "osm_id": 10054158005,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.245311465903256,
+          17.106989417102255
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "yes",
+          "name": "Centro de Saúde Ribeira da Cruz",
+          "changeset_id": 91322848.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-09-23T00:18:56Z",
+          "changeset_user": "luisforte",
+          "uuid": "3e19e7b2ff5c435d9a2233bcf44653e6"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.245311465903256,
+            17.106989417102255
+          ]
+        },
+        "osm_id": 5288173876,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.498286415504367,
+          14.897350258481708
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "changeset_id": 100491895.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-03-05T12:30:15Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "42943f82b4ec4804a0833683653098a8"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.498286415504367,
+            14.897350258481708
+          ]
+        },
+        "osm_id": 1960658124,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.56839195864535,
+              14.925640438977808
+            ],
+            [
+              -23.56821057426069,
+              14.925740351263642
+            ],
+            [
+              -23.568117954230615,
+              14.92558327439815
+            ],
+            [
+              -23.56802717821924,
+              14.925429047379765
+            ],
+            [
+              -23.568208478784896,
+              14.925329218912964
+            ],
+            [
+              -23.56839195864535,
+              14.925640438977808
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 82527833.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-23T14:37:48Z",
+          "changeset_user": "BrandonK",
+          "uuid": "041678c530f84ad299b9b35fec1a97cb"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.568209538940227,
+            14.925534787776071
+          ]
+        },
+        "osm_id": 783905608,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.49910943457695,
+              14.897923748296847
+            ],
+            [
+              -24.498758149014947,
+              14.898076634210724
+            ],
+            [
+              -24.49850694337684,
+              14.897656868499809
+            ],
+            [
+              -24.498868035765554,
+              14.897475316477056
+            ],
+            [
+              -24.49910943457695,
+              14.897923748296847
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 85486380.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-05-20T08:42:16Z",
+          "changeset_user": "Ambassador_Spock",
+          "uuid": "57fd70ace7bf47c88db9d3c50909e25b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.49881075355454,
+            14.897780441023018
+          ]
+        },
+        "osm_id": 783907671,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -22.944150222712068,
+              16.75478754544534
+            ],
+            [
+              -22.944126501926092,
+              16.755078816580607
+            ],
+            [
+              -22.944035223000526,
+              16.755072027239038
+            ],
+            [
+              -22.94405894378653,
+              16.75478067228474
+            ],
+            [
+              -22.944150222712068,
+              16.75478754544534
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro de Saúde",
+          "source": "Bing",
+          "changeset_id": 82530010.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-03-23T15:41:06Z",
+          "changeset_user": "BrandonK",
+          "uuid": "e33a4a3fdfe645b8a5234d247de63e2c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.944092720827843,
+            16.75492976342045
+          ]
+        },
+        "osm_id": 533928878,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.988152581064043,
+          16.88677678798544
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Do Leão",
+          "contact_number": "2326604",
+          "changeset_id": 147783971.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-02-22T18:08:01Z",
+          "changeset_user": "user_20033850",
+          "uuid": "34b12272caaf4bafa2a7c41c569cf215"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.988152581064043,
+            16.88677678798544
+          ]
+        },
+        "osm_id": 1972671630,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.06610243655902,
+              17.020106464481074
+            ],
+            [
+              -25.06608433164817,
+              17.02021718942197
+            ],
+            [
+              -25.06592298001206,
+              17.02019573174985
+            ],
+            [
+              -25.06592725478268,
+              17.02014099792214
+            ],
+            [
+              -25.065977630020768,
+              17.020083581885388
+            ],
+            [
+              -25.06610243655902,
+              17.020106464481074
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Clinica Dentar",
+          "changeset_id": 82529010.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-23T15:12:00Z",
+          "changeset_user": "BrandonK",
+          "uuid": "14966fed7e9e45299f44578683ae49c9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.066014970730183,
+            17.020151969415142
+          ]
+        },
+        "osm_id": 783915968,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.668917045414673,
+          15.098322145044676
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia H. Camacho",
+          "dispensing": "yes",
+          "changeset_id": 71371324.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-06-18T15:49:01Z",
+          "changeset_user": "Bratananio",
+          "uuid": "bca54633c42940c9b6121dda5e8ac762"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.668917045414673,
+            15.098322145044676
+          ]
+        },
+        "osm_id": 6555732854,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.56190227011328,
+          15.027918852252952
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Joseana",
+          "dispensing": "yes",
+          "changeset_id": 83836445.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-04-20T17:58:19Z",
+          "changeset_user": "Bratananio",
+          "uuid": "97c61cc5ca314c55b51baf1922ef09ab"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.56190227011328,
+            15.027918852252952
+          ]
+        },
+        "osm_id": 7426722675,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.909610243752724,
+          16.605533174929406
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "changeset_id": 111110912.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-09-12T19:55:38Z",
+          "changeset_user": "Bratananio",
+          "uuid": "448d3abf9e1346e1b9fbe2b6fb85b7ca"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.909610243752724,
+            16.605533174929406
+          ]
+        },
+        "osm_id": 9084697080,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.537401380403878,
+              15.140158067802389
+            ],
+            [
+              -23.537321417047593,
+              15.140445483262226
+            ],
+            [
+              -23.536875080703595,
+              15.140328052798765
+            ],
+            [
+              -23.53696292304886,
+              15.140048851604035
+            ],
+            [
+              -23.537401380403878,
+              15.140158067802389
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Centro de Saude Pedra Badejo",
+          "emergency": "yes",
+          "changeset_id": 104728881.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-15T11:29:11Z",
+          "changeset_user": "MapMakerGal",
+          "uuid": "b05d3d03351742dcaf9ec5e8acbf69a5"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.53714079824262,
+            15.140245817328822
+          ]
+        },
+        "osm_id": 783921710,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.081956111409454,
+          16.55376126033076
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 55472097.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2018-01-15T18:46:44Z",
+          "changeset_user": "Bratananio",
+          "uuid": "372a44eb79a9446c90ecb946fcd7fc1f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.081956111409454,
+            16.55376126033076
+          ]
+        },
+        "osm_id": 2448091300,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -25.013967250276863,
+              17.148788543305017
+            ],
+            [
+              -25.013794247795346,
+              17.148800780883647
+            ],
+            [
+              -25.013774801779988,
+              17.148648230245897
+            ],
+            [
+              -25.01385266966048,
+              17.14862836513538
+            ],
+            [
+              -25.01384722142342,
+              17.14858922164757
+            ],
+            [
+              -25.013855938602717,
+              17.148569356537052
+            ],
+            [
+              -25.013878737379343,
+              17.1485668419661
+            ],
+            [
+              -25.013897512842448,
+              17.14857262547929
+            ],
+            [
+              -25.013906900574,
+              17.148627024030873
+            ],
+            [
+              -25.013949145366013,
+              17.14862836513538
+            ],
+            [
+              -25.013967250276863,
+              17.148788543305017
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro de Saúde",
+          "changeset_id": 82528386.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-23T14:53:35Z",
+          "changeset_user": "BrandonK",
+          "uuid": "bc35b343997b4d26b39163c38a23b540"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.01387207604102,
+            17.148702361179566
+          ]
+        },
+        "osm_id": 783912313,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.06579968221638,
+          17.019493663540032
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Clinica Reabil",
+          "changeset_id": 145476890.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2023-12-24T18:13:52Z",
+          "changeset_user": "user_20033850",
+          "uuid": "e7edf91e5c0e420da2e47080b0cd3a53"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.06579968221638,
+            17.019493663540032
+          ]
+        },
+        "osm_id": 3133571271,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.752514878725066,
+          15.277990586501858
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Farmácia Tarrafal",
+          "contact_number": "2661396",
+          "changeset_id": 76354772.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2019-10-29T16:10:32Z",
+          "changeset_user": "Bratananio",
+          "uuid": "d446f39398204c72816eb5cf6b6a08c0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.752514878725066,
+            15.277990586501858
+          ]
+        },
+        "osm_id": 1960647959,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.6763497818728,
+          15.12807052523587
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Hospital Santiago Norte",
+          "changeset_id": 93347780.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-10-31T18:07:02Z",
+          "changeset_user": "Bratananio",
+          "uuid": "351e0ad615ee4fd9a4316d1cde4d579b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.6763497818728,
+            15.12807052523587
+          ]
+        },
+        "osm_id": 1960676145,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.50859353356779,
+              14.924291455481068
+            ],
+            [
+              -23.508325647942343,
+              14.92438047129275
+            ],
+            [
+              -23.508220203600445,
+              14.92410864617284
+            ],
+            [
+              -23.508437881625838,
+              14.924029353368809
+            ],
+            [
+              -23.508452969051575,
+              14.92408274609204
+            ],
+            [
+              -23.508293880529322,
+              14.924132953692038
+            ],
+            [
+              -23.508339058987445,
+              14.924273685846316
+            ],
+            [
+              -23.508365881077594,
+              14.92426555540024
+            ],
+            [
+              -23.508394379548378,
+              14.924263962838637
+            ],
+            [
+              -23.508417765058226,
+              14.924268824342477
+            ],
+            [
+              -23.50855832957444,
+              14.924213839057671
+            ],
+            [
+              -23.50859353356779,
+              14.924291455481068
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "PMI",
+          "emergency": "no",
+          "addr_city": "Praia",
+          "changeset_id": 136091337.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-05-14T15:59:27Z",
+          "changeset_user": "khandim",
+          "uuid": "c24b52b9cffe49298fe83571e84e7d20"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.508384430012224,
+            14.9242270872651
+          ]
+        },
+        "osm_id": 236839620,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.522387631620433,
+          14.90471912483767
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "dentist",
+          "healthcare": "dentist",
+          "name": "Consultorio Buco-dentario",
+          "changeset_id": 89696368.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-08-20T14:04:22Z",
+          "changeset_user": "Flipaser",
+          "uuid": "9389a5c5b788477abc048c00a3879681"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.522387631620433,
+            14.90471912483767
+          ]
+        },
+        "osm_id": 7829780862,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.1612827189507,
+          17.124175587550184
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Posto Sanitário da Garça",
+          "changeset_id": 40616400.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2016-07-09T17:45:57Z",
+          "changeset_user": "Bratananio",
+          "uuid": "d1be431f4e684de6983aa7e78a117dc0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.1612827189507,
+            17.124175587550184
+          ]
+        },
+        "osm_id": 2477944574,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -24.98632767310511,
+              16.88433757034292
+            ],
+            [
+              -24.98611703587835,
+              16.885236278001173
+            ],
+            [
+              -24.98556986523917,
+              16.885092695999816
+            ],
+            [
+              -24.98505152834693,
+              16.884940732095288
+            ],
+            [
+              -24.984964272734885,
+              16.885254382912052
+            ],
+            [
+              -24.984926554170613,
+              16.885250024322403
+            ],
+            [
+              -24.984203866478992,
+              16.885067298833206
+            ],
+            [
+              -24.98441643154348,
+              16.884379731315875
+            ],
+            [
+              -24.98459437934784,
+              16.884247381064768
+            ],
+            [
+              -24.98465942291648,
+              16.884165238413686
+            ],
+            [
+              -24.985674806666907,
+              16.88374488596952
+            ],
+            [
+              -24.985692660120662,
+              16.883794087741137
+            ],
+            [
+              -24.985658210498627,
+              16.883993074122486
+            ],
+            [
+              -24.985973370057962,
+              16.884274538431043
+            ],
+            [
+              -24.98632767310511,
+              16.88433757034292
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital Baptista de Sousa",
+          "changeset_id": 147783942.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2024-02-22T18:06:49Z",
+          "changeset_user": "user_20033850",
+          "uuid": "509959145b5d49b08e35b61356ed9d23"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.985288928419898,
+            16.884595852273474
+          ]
+        },
+        "osm_id": 485198875,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.499709578844175,
+          14.896383154493549
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "name": "Montz",
+          "changeset_id": 100491895.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-03-05T12:30:15Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "4ca44d4e410540e9afc9c64c9197584f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.499709578844175,
+            14.896383154493549
+          ]
+        },
+        "osm_id": 1960719950,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.359042468129502,
+          16.565970927226545
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Duarte Lopes",
+          "changeset_id": 147784188.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-02-22T18:15:03Z",
+          "changeset_user": "user_20033850",
+          "uuid": "e6928cae52364b1d9f3d56f08c3c4931"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.359042468129502,
+            16.565970927226545
+          ]
+        },
+        "osm_id": 6237120822,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.300305024355623,
+          16.614771540969173
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Gabi",
+          "changeset_id": 140412620.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2023-08-26T13:42:15Z",
+          "changeset_user": "98Ujm",
+          "uuid": "47e5ffdd669944689fcb2fa80e997ba0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.300305024355623,
+            16.614771540969173
+          ]
+        },
+        "osm_id": 4841652923,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.94255640382363,
+          16.75484186017789
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Aliança",
+          "dispensing": "yes",
+          "changeset_id": 67933157.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-03-08T17:57:06Z",
+          "changeset_user": "Bratananio",
+          "uuid": "55282f1c70c749a3b0b350a36a1b2bea"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.94255640382363,
+            16.75484186017789
+          ]
+        },
+        "osm_id": 6325884852,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -22.916451720761017,
+          16.596745420004225
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Clinitur",
+          "opening_hours": "24/7",
+          "changeset_id": 124311668.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2022-07-31T17:09:32Z",
+          "changeset_user": "rayleigh1",
+          "uuid": "efabb947d5a348f4932b511be5a8022e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.916451720761017,
+            16.596745420004225
+          ]
+        },
+        "osm_id": 4840567922,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.505819961807674,
+              14.92013302567861
+            ],
+            [
+              -23.505727425596632,
+              14.920312482225569
+            ],
+            [
+              -23.505605804181585,
+              14.920548516618936
+            ],
+            [
+              -23.505584681785592,
+              14.920589587944477
+            ],
+            [
+              -23.50554151498423,
+              14.920673155519125
+            ],
+            [
+              -23.505223840853972,
+              14.92052026960522
+            ],
+            [
+              -23.505285112566156,
+              14.920401330399187
+            ],
+            [
+              -23.50545895323799,
+              14.9204850656119
+            ],
+            [
+              -23.50549264848874,
+              14.920419770586193
+            ],
+            [
+              -23.505320316559505,
+              14.920336789744766
+            ],
+            [
+              -23.505511423951845,
+              14.919966225805467
+            ],
+            [
+              -23.505591554946193,
+              14.920004866379088
+            ],
+            [
+              -23.50556934290279,
+              14.92004794936139
+            ],
+            [
+              -23.50576346778027,
+              14.920141491400813
+            ],
+            [
+              -23.50577813611082,
+              14.92011299293003
+            ],
+            [
+              -23.505819961807674,
+              14.92013302567861
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital Agostinho Neto",
+          "emergency": "yes",
+          "addr_street": "Rua Borjona de Freitas",
+          "addr_city": "Praia",
+          "changeset_id": 122679971.0,
+          "changeset_version": 10.0,
+          "changeset_timestamp": "2022-06-21T18:17:16Z",
+          "changeset_user": "Rainero",
+          "uuid": "992aa64c045349a5a9f3ea8db192d275"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.505526783453025,
+            14.920327382104455
+          ]
+        },
+        "osm_id": 194252475,
+        "osm_type": "way",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.69734965889569,
+          14.871453698074902
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Farmacia Nova Sintra",
+          "changeset_id": 45690635.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2017-01-31T17:13:16Z",
+          "changeset_user": "hdus",
+          "uuid": "976581eb55a44adfb12e81f95e2474ca"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.69734965889569,
+            14.871453698074902
+          ]
+        },
+        "osm_id": 4648930645,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -25.064660749213175,
+          17.180184973298196
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital Regional Dr. João Morais",
+          "changeset_id": 142681904.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2023-10-16T19:53:52Z",
+          "changeset_user": "William GIS",
+          "uuid": "b06e860cccf54288963cece84ded0aa9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -25.064660749213175,
+            17.180184973298196
+          ]
+        },
+        "osm_id": 2229625198,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.50649302863249,
+          14.919486026572656
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "dentist",
+          "healthcare": "dentist",
+          "name": "Enrique Aguirre Leon",
+          "changeset_id": 124388802.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2022-08-02T11:59:42Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "4cdf3938f8444bfbab9fe958544c94e2"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.50649302863249,
+            14.919486026572656
+          ]
+        },
+        "osm_id": 1960719171,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -22.90525022917896,
+              16.601415648814424
+            ],
+            [
+              -22.905192729323176,
+              16.601581945773404
+            ],
+            [
+              -22.905031042410968,
+              16.601530564706934
+            ],
+            [
+              -22.90510455170181,
+              16.60131816728054
+            ],
+            [
+              -22.90515576513019,
+              16.60133442817269
+            ],
+            [
+              -22.905108239739207,
+              16.60147172374667
+            ],
+            [
+              -22.90517093637493,
+              16.601491672676218
+            ],
+            [
+              -22.905202452330855,
+              16.601400561388715
+            ],
+            [
+              -22.90525022917896,
+              16.601415648814424
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Centro de Saúde de Santa Maria",
+          "operator": "INSP",
+          "source": "Bing",
+          "speciality": "general",
+          "operator_type": "public",
+          "changeset_id": 156347471.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2024-09-08T11:38:15Z",
+          "changeset_user": "Bohuslav Kovalsky",
+          "uuid": "87394b10d98b435e914132e3390f2969"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.90513520915189,
+            16.601469688170443
+          ]
+        },
+        "osm_id": 297748997,
+        "osm_type": "way",
+        "completeness": 25.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.212667256903643,
+              15.139338233852982
+            ],
+            [
+              -23.212660048466915,
+              15.139474188322481
+            ],
+            [
+              -23.21248520196673,
+              15.139465554962186
+            ],
+            [
+              -23.212492326584425,
+              15.139331444511413
+            ],
+            [
+              -23.21253566102382,
+              15.139333539987206
+            ],
+            [
+              -23.21253314645287,
+              15.139380897740153
+            ],
+            [
+              -23.21260606901049,
+              15.139384418139485
+            ],
+            [
+              -23.212608667400474,
+              15.139335384005904
+            ],
+            [
+              -23.212667256903643,
+              15.139338233852982
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Posto Sanitário \"Entermaria Regional\"",
+          "changeset_id": 82529687.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-03-23T15:32:02Z",
+          "changeset_user": "BrandonK",
+          "uuid": "ce391473f68c4828b59a5c4d22159062"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.212577423797956,
+            15.139409975833628
+          ]
+        },
+        "osm_id": 536818255,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -22.91177956411306,
+              16.174062471494125
+            ],
+            [
+              -22.911469601333692,
+              16.174608636304896
+            ],
+            [
+              -22.910628812626356,
+              16.174168586388276
+            ],
+            [
+              -22.910938775405725,
+              16.173622337758474
+            ],
+            [
+              -22.91177956411306,
+              16.174062471494125
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro de Saúde da Boavista",
+          "changeset_id": 89597588.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-08-18T22:01:35Z",
+          "changeset_user": "ËdzëronK",
+          "uuid": "71a933ab0280498688942821884bfae1"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.91120418120664,
+            16.174115501662055
+          ]
+        },
+        "osm_id": 531362579,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -23.555931505206644,
+              14.96026784118726
+            ],
+            [
+              -23.555931505206644,
+              14.960849042353317
+            ],
+            [
+              -23.55585204476455,
+              14.960853149485871
+            ],
+            [
+              -23.555849949288756,
+              14.960886425641462
+            ],
+            [
+              -23.55577040502766,
+              14.960886425641462
+            ],
+            [
+              -23.555768225732834,
+              14.960855244961664
+            ],
+            [
+              -23.55567803645468,
+              14.960855244961664
+            ],
+            [
+              -23.55567803645468,
+              14.960269852844021
+            ],
+            [
+              -23.555931505206644,
+              14.96026784118726
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Hospital de Trindade, Psicatria",
+          "emergency": "no",
+          "changeset_id": 29229898.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2015-03-03T19:31:13Z",
+          "changeset_user": "Bratananio",
+          "uuid": "be5c6b66c5e9417c9c7f4c68de131309"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.55580472799569,
+            14.960566616629867
+          ]
+        },
+        "osm_id": 239654104,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.498173762725713,
+          14.897421420839663
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "changeset_id": 140358888.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-08-25T08:26:32Z",
+          "changeset_user": "IMAN SELEMAN",
+          "uuid": "6acae72d44734d1bbacb862c4c2b36ae"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.498173762725713,
+            14.897421420839663
+          ]
+        },
+        "osm_id": 11143085103,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -24.339387659558895,
+          15.042806621031673
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Centro de saude dos Mosteiros",
+          "changeset_id": 56777421.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2018-03-01T06:53:58Z",
+          "changeset_user": "Bratananio",
+          "uuid": "0c7485452acc45f9805e6e5e76426a8f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -24.339387659558895,
+            15.042806621031673
+          ]
+        },
+        "osm_id": 4693911434,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              -22.936303420237152,
+              16.748057463930223
+            ],
+            [
+              -22.936270730814783,
+              16.749537624211627
+            ],
+            [
+              -22.934290757647148,
+              16.74951524453016
+            ],
+            [
+              -22.934337444847813,
+              16.74802167320368
+            ],
+            [
+              -22.936303420237152,
+              16.748057463930223
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital Ramiro Figueira",
+          "emergency": "yes",
+          "changeset_id": 124387933.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2022-08-02T11:39:56Z",
+          "changeset_user": "Cuenqui",
+          "uuid": "1de29439ac7f4f67abb34d473f0c2f3e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -22.935299060339712,
+            16.748783835541015
+          ]
+        },
+        "osm_id": 236852997,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.509527445219362,
+          14.917985498266518
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Moderna",
+          "addr_street": "Avenida Amilcar Cabral",
+          "addr_city": "Praia",
+          "changeset_id": 134534695.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2023-04-05T11:32:01Z",
+          "changeset_user": "98Ujm",
+          "uuid": "95c06b4033f14ac091f192fdf6b0c634"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.509527445219362,
+            14.917985498266518
+          ]
+        },
+        "osm_id": 2443081390,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -23.208729522611776,
+          15.13942565710309
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmácia Porto Inglês",
+          "dispensing": "yes",
+          "changeset_id": 81340348.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-02-22T07:57:07Z",
+          "changeset_user": "Bratananio",
+          "uuid": "ddba52e6568e42329466b3aec9ed6358"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            -23.208729522611776,
+            15.13942565710309
+          ]
+        },
+        "osm_id": 7234673358,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    }
+  ]
+}
