@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Maps - Border and Road Visualization</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #fff;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            /* border: 1px solid #e0e0e06e; */
+            background: #ffffff;
+        }
+        
+        .poster-title {
+            text-align: left;
+            margin-bottom: 30px;
+            color: #2c3e50;
+            align-self: flex-start;
+            margin-left: 20px;
+        }
+        
+        .poster-title h1 {
+            font-size: 1.7rem;
+            margin: 0;
+            font-weight: 700;
+            line-height: 1.1;
+            text-transform: uppercase;
+            letter-spacing: -0.02em;
+        }
+        
+        .poster-description {
+            text-align: left;
+            width: 100%;
+            color: #5a6c7d;
+            margin-bottom: 40px;
+            align-self: flex-start;
+            margin-left: 20px;
+            margin-right: 20px;
+        }
+        
+        .poster-description p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin: 0;
+            font-weight: 400;
+        }
+        
+        .logo-container {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            justify-content: flex-end;
+            margin-top: 20px;
+            align-self: flex-end;
+            margin-right: 20px;
+        }
+        
+        .logo {
+            height: 35px;
+            width: auto;
+        }
+        
+        .back-button {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background: #2c3e50;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+        
+        .back-button:hover {
+            background: #34495e;
+        }
+        
+        .controls {
+            position: fixed;
+            top: 40px;
+            right: 40px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            padding: 12px;
+            border-radius: 6px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .toggle-button {
+            background: #e8f4fd;
+            color: #3498db;
+            border: 1px solid #b3d9f2;
+            padding: 8px 16px;
+            border-radius: 3px;
+            font-size: 0.9rem;
+            cursor: pointer;
+            margin: 0 8px;
+            transition: all 0.2s ease;
+        }
+        
+        .toggle-button:hover {
+            background: #d1ecf1;
+            border-color: #85c1e9;
+        }
+        
+        .toggle-button.active {
+            background: #d4edda;
+            color: #155724;
+            border-color: #c3e6cb;
+        }
+        
+        .map-container {
+            background: transparent;
+            padding: 0;
+            text-align: center;
+            margin: 0 0 40px 0;
+            width: 100%;
+            max-width: 700px;
+        }
+        
+        .map-display {
+            width: 100%;
+            height: 500px;
+            margin: 0;
+            background: transparent;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .map-display img {
+            max-width: 100%;
+            max-height: 100%;
+            object-fit: contain;
+            background: transparent;
+        }
+        
+        .map-info {
+            margin-top: 20px;
+            padding: 15px;
+            background: transparent;
+            text-align: center;
+        }
+        
+        .map-info h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .map-info p {
+            color: #5a6c7d;
+            line-height: 1.6;
+            margin: 0;
+        }
+        
+
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 30px 15px;
+            }
+            
+            .map-display {
+                height: 400px;
+            }
+            
+
+        }
+    </style>
+</head>
+<body>
+    <!-- <a href="../index.html" class="back-button">← Back to Atlas</a> -->
+    
+    <div class="controls">
+        <button class="toggle-button active" onclick="showMap('border')">Border View</button>
+        <button class="toggle-button" onclick="showMap('road')">Road View</button>
+    </div>
+    
+    <div class="container">
+        <div class="map-container">
+            <div class="map-display" id="mapDisplay">
+                <img id="borderMap" src="rural1_border.png" alt="Border Map" style="display: block; max-width: 100%; max-height: 100%; object-fit: contain;">
+                <img id="roadMap" src="rural1_road.png" alt="Road Map" style="display: none; max-width: 100%; max-height: 100%; object-fit: contain;">
+            </div>
+        </div>
+        
+        <div class="poster-title">
+            <h1>Africa<br>Population<br>Distribution</h1>
+        </div>
+        
+        <div class="poster-description">
+            <p>Urban areas are densely packed with people, while rural populations are spread out across vast areas. This visualization shows the distribution patterns and connectivity between urban and rural regions across Africa.</p>
+        </div>
+        
+        <div class="logo-container">
+            <img src="../logo/oecd_en.svg" alt="OECD" class="logo">
+            <img src="../logo/Africapolis_black.svg" alt="Africapolis" class="logo">
+        </div>
+    </div>
+    
+    <script>
+        function showMap(type) {
+            const borderMap = document.getElementById('borderMap');
+            const roadMap = document.getElementById('roadMap');
+            const buttons = document.querySelectorAll('.toggle-button');
+            
+            // Update button states
+            buttons.forEach(btn => btn.classList.remove('active'));
+            
+            // Find and activate the correct button
+            if (type === 'border') {
+                const borderButton = document.querySelector('button[onclick="showMap(\'border\')"]');
+                borderButton.classList.add('active');
+                
+                borderMap.style.display = 'block';
+                roadMap.style.display = 'none';
+            } else {
+                const roadButton = document.querySelector('button[onclick="showMap(\'road\')"]');
+                roadButton.classList.add('active');
+                
+                borderMap.style.display = 'none';
+                roadMap.style.display = 'block';
+            }
+        }
+        
+        // Initialize with border view
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial button state
+            const borderButton = document.querySelector('button[onclick="showMap(\'border\')"]');
+            const roadButton = document.querySelector('button[onclick="showMap(\'road\')"]');
+            
+            borderButton.classList.add('active');
+            roadButton.classList.remove('active');
+            
+            // Show border map initially
+            showMap('border');
+        });
+    </script>
+</body>
+</html>

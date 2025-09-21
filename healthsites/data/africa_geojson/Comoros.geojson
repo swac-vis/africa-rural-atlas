@@ -1,0 +1,2939 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25066366836654,
+          -11.705079718885372
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "addr_street": "Place de l'Europe",
+          "changeset_id": 131251667.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2023-01-14T04:18:51Z",
+          "changeset_user": "Kadubei",
+          "uuid": "0d9bce616a6147319298eadc3412239d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25066366836654,
+            -11.705079718885372
+          ]
+        },
+        "osm_id": 4994963121,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.27168715790634,
+              -11.661443782421145
+            ],
+            [
+              43.2716978867424,
+              -11.661265164064531
+            ],
+            [
+              43.27200625696017,
+              -11.661288717212443
+            ],
+            [
+              43.271998294152155,
+              -11.661451661410126
+            ],
+            [
+              43.27193115510772,
+              -11.66146213878909
+            ],
+            [
+              43.27192855671774,
+              -11.661428024443182
+            ],
+            [
+              43.27188027695547,
+              -11.661433221223149
+            ],
+            [
+              43.27186912902425,
+              -11.66147236471096
+            ],
+            [
+              43.27174876489468,
+              -11.66146213878909
+            ],
+            [
+              43.27174348429568,
+              -11.661430622833166
+            ],
+            [
+              43.27168715790634,
+              -11.661443782421145
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "hôpital",
+          "source": "#opendri-comoros;survey",
+          "emergency": "no",
+          "addr_city": "Ntsudjini",
+          "changeset_id": 43528494.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2016-11-10T09:00:49Z",
+          "changeset_user": "Ahamada Mfoungoulié",
+          "uuid": "83bdddc3a75f4976a78e5fcaa2e41cc5"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.27184425351008,
+            -11.661365475116552
+          ]
+        },
+        "osm_id": 404358862,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.25297707364243,
+              -11.694631341303449
+            ],
+            [
+              43.25302652687114,
+              -11.69452581314249
+            ],
+            [
+              43.25325049132394,
+              -11.693965063820201
+            ],
+            [
+              43.25329659179141,
+              -11.694003955850917
+            ],
+            [
+              43.253399940657545,
+              -11.694012337754089
+            ],
+            [
+              43.25358073830898,
+              -11.694166229496375
+            ],
+            [
+              43.25370395228563,
+              -11.69420704936482
+            ],
+            [
+              43.25396379128401,
+              -11.693760880658886
+            ],
+            [
+              43.2544793621482,
+              -11.693667422438494
+            ],
+            [
+              43.25479762301171,
+              -11.69362274689459
+            ],
+            [
+              43.25495402932492,
+              -11.693598858470551
+            ],
+            [
+              43.255025191682876,
+              -11.693617214838497
+            ],
+            [
+              43.255133234414785,
+              -11.693631715530984
+            ],
+            [
+              43.255771767798535,
+              -11.69380907660215
+            ],
+            [
+              43.255403047877934,
+              -11.694880954379954
+            ],
+            [
+              43.25501513339907,
+              -11.695944031159456
+            ],
+            [
+              43.25410075158186,
+              -11.695660303737043
+            ],
+            [
+              43.25408273049004,
+              -11.695607581566065
+            ],
+            [
+              43.253671262863264,
+              -11.69549492878744
+            ],
+            [
+              43.25361384682651,
+              -11.695457126404108
+            ],
+            [
+              43.253523657548385,
+              -11.695435417274894
+            ],
+            [
+              43.25329357430627,
+              -11.695360147784385
+            ],
+            [
+              43.25344646022015,
+              -11.694758662412653
+            ],
+            [
+              43.25327295482444,
+              -11.69480015283338
+            ],
+            [
+              43.253087463307224,
+              -11.694748017395625
+            ],
+            [
+              43.25310724459871,
+              -11.694675346295128
+            ],
+            [
+              43.25297707364243,
+              -11.694631341303449
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hôpital El Maarouf",
+          "operator": "Ministère de la Santé",
+          "emergency": "yes",
+          "changeset_id": 131242891.0,
+          "changeset_version": 14.0,
+          "changeset_timestamp": "2023-01-13T19:38:16Z",
+          "changeset_user": "Kadubei",
+          "uuid": "06d85f74d50d4f41a2e03ef6a31d4968"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.254441588005086,
+            -11.694663047680026
+          ]
+        },
+        "osm_id": 144754191,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25869202286418,
+          -11.691244633326193
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Clinique Ascobef",
+          "source": "Kaart Ground Survey 2017",
+          "addr_street": "Rue de la COI",
+          "changeset_id": 104903397.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "900431c3768c4146a7ed1576571f8867"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25869202286418,
+            -11.691244633326193
+          ]
+        },
+        "osm_id": 4195378700,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.257112956125326,
+          -11.690329329499662
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Al-Camar صيدلية القمر",
+          "source": "Kaart Ground Survey 2017",
+          "changeset_id": 85285038.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-05-16T00:22:58Z",
+          "changeset_user": "بشير إبراهيمي",
+          "uuid": "ecae233eff3f4e74a948665d93cb7ce0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.257112956125326,
+            -11.690329329499662
+          ]
+        },
+        "osm_id": 4993468642,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.37075831975116,
+              -11.62815547306269
+            ],
+            [
+              43.37076108577921,
+              -11.62802144643095
+            ],
+            [
+              43.37090315903802,
+              -11.628031923809914
+            ],
+            [
+              43.37090056064804,
+              -11.628173829430636
+            ],
+            [
+              43.37075831975116,
+              -11.62815547306269
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "source": "#opendri-comoros",
+          "changeset_id": 41360229.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2016-08-10T06:34:51Z",
+          "changeset_user": "Mmadi",
+          "uuid": "0d00bd7e941e4c63a43068582e743288"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.37083145453973,
+            -11.628095762406142
+          ]
+        },
+        "osm_id": 406157830,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.254454048800625,
+          -11.69893653823047
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Cabinet Medical",
+          "source": "Kaart Ground Survey 2017",
+          "changeset_id": 104903397.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "9fa6182a6d8e4f328442b363dc6153dc"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.254454048800625,
+            -11.69893653823047
+          ]
+        },
+        "osm_id": 4993593028,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25600084521227,
+          -11.692995529080122
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "SOS Pharma",
+          "source": "Kaart Ground Survey 2017",
+          "changeset_id": 104903397.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "976f5a47329e4480849a74ad3871eb4a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25600084521227,
+            -11.692995529080122
+          ]
+        },
+        "osm_id": 4993501758,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.253405388894606,
+              -11.707040078399586
+            ],
+            [
+              43.25354922235306,
+              -11.707009149176884
+            ],
+            [
+              43.25356489651199,
+              -11.707089280171232
+            ],
+            [
+              43.253427265661884,
+              -11.707124148888425
+            ],
+            [
+              43.253405388894606,
+              -11.707040078399586
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Dépôt Pharmaceutique Moroni",
+          "source": "#opendri-comoros",
+          "changeset_id": 131251295.0,
+          "changeset_version": 7.0,
+          "changeset_timestamp": "2023-01-14T03:38:38Z",
+          "changeset_user": "Kadubei",
+          "uuid": "070deba6605140f098acf2a21c863d28"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25348590661219,
+            -11.707065590332961
+          ]
+        },
+        "osm_id": 432355756,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.26439104646994,
+          -11.677325142002076
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Itsandra",
+          "changeset_id": 131251202.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2023-01-14T03:27:08Z",
+          "changeset_user": "Kadubei",
+          "uuid": "afc0497d1ea241eca0a834d91fc29c5d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.26439104646994,
+            -11.677325142002076
+          ]
+        },
+        "osm_id": 4195377991,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.257194092948055,
+              -11.699548417162134
+            ],
+            [
+              43.25722225614271,
+              -11.699431573431895
+            ],
+            [
+              43.25742861859885,
+              -11.69947935028
+            ],
+            [
+              43.25740053922323,
+              -11.699596277829272
+            ],
+            [
+              43.257194092948055,
+              -11.699548417162134
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "source": "#opendri-comoros;survey",
+          "changeset_id": 104903397.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "e19201eb1e584a7e9fd7d8cd47ae3cdd"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25731138458645,
+            -11.699513911403555
+          ]
+        },
+        "osm_id": 438412961,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.74667972010366,
+          -12.287411352217873
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "changeset_id": 64015991.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2018-10-30T15:42:05Z",
+          "changeset_user": "ballenato",
+          "uuid": "8385828825354341a01569292237a597"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.74667972010366,
+            -12.287411352217873
+          ]
+        },
+        "osm_id": 6025065409,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.26081893079447,
+              -11.69220042174507
+            ],
+            [
+              43.260840137009495,
+              -11.692133534157762
+            ],
+            [
+              43.26087542482185,
+              -11.692144430631885
+            ],
+            [
+              43.260927224983476,
+              -11.69198081588192
+            ],
+            [
+              43.261160828624924,
+              -11.692052648792128
+            ],
+            [
+              43.26108597822957,
+              -11.69228943755678
+            ],
+            [
+              43.260956058730386,
+              -11.692249539697684
+            ],
+            [
+              43.26097667821219,
+              -11.692184663767108
+            ],
+            [
+              43.260903755654596,
+              -11.692162200266608
+            ],
+            [
+              43.260885147829555,
+              -11.69222087358881
+            ],
+            [
+              43.26081893079447,
+              -11.69220042174507
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "source": "#opendri-comoros;survey",
+          "changeset_id": 104903397.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "f5e9ecc818c74c30ba44ccbf0e7fac85"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.26100680938577,
+            -11.692130158579689
+          ]
+        },
+        "osm_id": 438773629,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.262743164306016,
+          -11.691361979970623
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Generique",
+          "changeset_id": 104903397.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "c9805aa482ab4f3a984e24e68251bcd0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.262743164306016,
+            -11.691361979970623
+          ]
+        },
+        "osm_id": 4195354390,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25299668729585,
+          -11.6955936676068
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharm Assine",
+          "source": "Kaart Ground Survey 2017",
+          "addr_street": "Rue Ahmed Djoumoi",
+          "changeset_id": 104903397.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "954a23592fa948baaaa07a2bc2366d8b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25299668729585,
+            -11.6955936676068
+          ]
+        },
+        "osm_id": 4980294711,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.67510036247765,
+          -12.25807762477666
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 131211048.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-01-13T02:44:08Z",
+          "changeset_user": "Kadubei",
+          "uuid": "ecf7e61e993643c182c8eded8045b984"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.67510036247765,
+            -12.25807762477666
+          ]
+        },
+        "osm_id": 8011100646,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.2520478558566,
+          -11.698233631830334
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "name": "Cabinet médical Docteur Abbas Cheick",
+          "changeset_id": 131251633.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-01-14T04:15:06Z",
+          "changeset_user": "Kadubei",
+          "uuid": "1955174ce66849f381ddca8a32a0e143"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.2520478558566,
+            -11.698233631830334
+          ]
+        },
+        "osm_id": 8887427617,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.74625936765949,
+          -12.288495383755304
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "changeset_id": 91873455.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-10-02T15:48:42Z",
+          "changeset_user": "Abn_976",
+          "uuid": "0a67f72b743744528a1f904e3b5ef6ac"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.74625936765949,
+            -12.288495383755304
+          ]
+        },
+        "osm_id": 6025179485,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.24575472295393,
+              -11.712949320136914
+            ],
+            [
+              43.24576184757163,
+              -11.712763158067446
+            ],
+            [
+              43.24586519643776,
+              -11.712766846104842
+            ],
+            [
+              43.24585807182007,
+              -11.712953175812373
+            ],
+            [
+              43.24575472295393,
+              -11.712949320136914
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie des Écoles",
+          "addr_street": "Boulevard de la République Poulaire de China",
+          "changeset_id": 131242891.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2023-01-13T19:38:16Z",
+          "changeset_user": "Kadubei",
+          "uuid": "f50def6392ca4cb99e09b05cc46f8c47"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.24580996740019,
+            -11.712858126274622
+          ]
+        },
+        "osm_id": 476553507,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25837418109586,
+          -11.688269225337677
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Oasis صيدلية الواحة",
+          "source": "Kaart Ground Survey 2017",
+          "addr_street": "Rue de l'Union Africaine شارع الاتحاد الأفريقي",
+          "addr_city": "Moroni موروني",
+          "changeset_id": 85285038.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-05-16T00:22:58Z",
+          "changeset_user": "بشير إبراهيمي",
+          "uuid": "de8286d9cd804ef6b675061511e95593"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25837418109586,
+            -11.688269225337677
+          ]
+        },
+        "osm_id": 4993170470,
+        "osm_type": "node",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.40069464666152,
+          -12.162894157261775
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Polyclinique du Croissant Rouge Iranien",
+          "changeset_id": 54925902.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2017-12-26T10:19:48Z",
+          "changeset_user": "Tiamate",
+          "uuid": "afda2d460e4f460aac0567d06b78af65"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.40069464666152,
+            -12.162894157261775
+          ]
+        },
+        "osm_id": 2716272375,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.2551377606425,
+              -11.688762416520404
+            ],
+            [
+              43.25515351862046,
+              -11.688686057382483
+            ],
+            [
+              43.2552687697891,
+              -11.68870885615911
+            ],
+            [
+              43.2552529279921,
+              -11.688785382935095
+            ],
+            [
+              43.2551377606425,
+              -11.688762416520404
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "source": "#opendri-comoros;survey",
+          "addr_street": "Route de l'Alliance Française",
+          "changeset_id": 104903397.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "0eaa78bbb2ea4de2905b1d2f0fb9a9ef"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25520326703333,
+            -11.688735680053496
+          ]
+        },
+        "osm_id": 445882944,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.800394727495956,
+          -12.346728907510368
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 131275786.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-01-14T18:56:50Z",
+          "changeset_user": "Kadubei",
+          "uuid": "eecb6cad82aa4cf79a2e50cfe347e042"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.800394727495956,
+            -12.346728907510368
+          ]
+        },
+        "osm_id": 8011100644,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.36365398625938,
+          -11.619860909320238
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "changeset_id": 62625957.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2018-09-16T03:52:16Z",
+          "changeset_user": "mcheckimport",
+          "uuid": "ee6d9cffbc5c46d6b8b387f7924c6662"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.36365398625938,
+            -11.619860909320238
+          ]
+        },
+        "osm_id": 5907601369,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.286129679988505,
+          -11.393687238304494
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "CMC Mitsamiouli",
+          "changeset_id": 37166925.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2016-02-12T12:27:55Z",
+          "changeset_user": "Artadji",
+          "uuid": "58fe22135bb442a791ef165f481c2710"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.286129679988505,
+            -11.393687238304494
+          ]
+        },
+        "osm_id": 4002475742,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.399874896531145,
+          -12.163539228530027
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Pharmacie Anjouanaise",
+          "operator": "Rachid Mohamed",
+          "dispensing": "no",
+          "changeset_id": 88739618.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2020-07-30T14:54:48Z",
+          "changeset_user": "b-jazz-bot",
+          "uuid": "5f06c2533b5f48c880ff48f2e6540ad8"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.399874896531145,
+            -12.163539228530027
+          ]
+        },
+        "osm_id": 1552597635,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.32685189927153,
+          -11.38429213067539
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 59040107.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2018-05-17T07:31:44Z",
+          "changeset_user": "Andry Herizaka Rakotoarisoa",
+          "uuid": "1a6fb94592054476a0e43f768a6d737f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.32685189927153,
+            -11.38429213067539
+          ]
+        },
+        "osm_id": 5623871662,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25564008809968,
+          -11.70097493326324
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Mangali",
+          "changeset_id": 131251633.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2023-01-14T04:15:06Z",
+          "changeset_user": "Kadubei",
+          "uuid": "3c7d6af6f43a45d882fe601bf4c327cc"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25564008809968,
+            -11.70097493326324
+          ]
+        },
+        "osm_id": 4786740360,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.254902396801384,
+          -11.690578858757135
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "name": "Centre de Traitement Traditionnel",
+          "opening_hours": "Mo-Sa 08:30-15:30",
+          "addr_street": "Rue de la Corniche",
+          "addr_postcode": "06859",
+          "changeset_id": 104903397.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "ffc08e28d53b44dfa38e1c784a9778ce"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.254902396801384,
+            -11.690578858757135
+          ]
+        },
+        "osm_id": 5413722324,
+        "osm_type": "node",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.24497487068268,
+          -11.715914753660684
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "PNAC",
+          "source": "Kaart Ground Survey 2017",
+          "addr_street": "Avenue du Président Ali Soilihi",
+          "changeset_id": 121121926.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2022-05-18T01:15:07Z",
+          "changeset_user": "openstreet-comoros",
+          "uuid": "7e6c0cb00f434bd1923b9b5215e1340d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.24497487068268,
+            -11.715914753660684
+          ]
+        },
+        "osm_id": 4197753697,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.279678045296805,
+          -11.804165632879773
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Centre de santé de Mitsoudjé",
+          "changeset_id": 34086159.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2015-09-17T15:24:52Z",
+          "changeset_user": "Antoy Assoumani",
+          "uuid": "ec496651090f49449d52a49e99f9c63e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.279678045296805,
+            -11.804165632879773
+          ]
+        },
+        "osm_id": 3747965355,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.282458154941395,
+          -11.646257450251369
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 123641016.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2022-07-15T08:32:41Z",
+          "changeset_user": "Taphi",
+          "uuid": "1b330c4218264aff9af7b38d35ea9813"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.282458154941395,
+            -11.646257450251369
+          ]
+        },
+        "osm_id": 9889186814,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.254449187296785,
+          -11.698960342835477
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "dentist",
+          "healthcare": "dentist",
+          "source": "Kaart Ground Survey 2017",
+          "changeset_id": 104903397.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "2ab95560067b43fb9266e01292f09a6a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.254449187296785,
+            -11.698960342835477
+          ]
+        },
+        "osm_id": 4993593029,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.63463882038329,
+              -12.304097542141506
+            ],
+            [
+              43.634677796233035,
+              -12.304096620132157
+            ],
+            [
+              43.63467905351851,
+              -12.304151270140835
+            ],
+            [
+              43.634640161487795,
+              -12.304152108331152
+            ],
+            [
+              43.63463882038329,
+              -12.304097542141506
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hôpital de Miringoni",
+          "changeset_id": 131211048.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2023-01-13T02:44:08Z",
+          "changeset_user": "Kadubei",
+          "uuid": "72677d50088040a8a7f41599f50cae1b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.634658962532015,
+            -12.30412437505182
+          ]
+        },
+        "osm_id": 390174517,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25206009343523,
+          -11.705612137374942
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Traleni",
+          "source": "Kaart Ground Survey 2017",
+          "changeset_id": 104903397.0,
+          "changeset_version": 7.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "bad2279a02cd44a389ae83a537c3411e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25206009343523,
+            -11.705612137374942
+          ]
+        },
+        "osm_id": 4195403789,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.28544965618403,
+              -11.39378186999133
+            ],
+            [
+              43.28679838822367,
+              -11.393011237813568
+            ],
+            [
+              43.286946161176644,
+              -11.39327241791645
+            ],
+            [
+              43.286998548071466,
+              -11.393433350457371
+            ],
+            [
+              43.286771566133524,
+              -11.393755131720212
+            ],
+            [
+              43.28650829055485,
+              -11.394043804465497
+            ],
+            [
+              43.285919378037875,
+              -11.394237845523975
+            ],
+            [
+              43.28584695839447,
+              -11.394221836088917
+            ],
+            [
+              43.28574419626156,
+              -11.393999883292878
+            ],
+            [
+              43.28562743635035,
+              -11.394038775323594
+            ],
+            [
+              43.28555736363981,
+              -11.39398387385782
+            ],
+            [
+              43.28544965618403,
+              -11.39378186999133
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "CMC Mitsamiouli",
+          "changeset_id": 82523962.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-23T13:05:23Z",
+          "changeset_user": "Ambassador_Spock",
+          "uuid": "7ee0e251dd8641508445669a2a724a4f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.28628491356951,
+            -11.393673703593963
+          ]
+        },
+        "osm_id": 783882642,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.255527351501996,
+          -11.694965779240079
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie de la Corniche",
+          "source": "Kaart Ground Survey 2017",
+          "changeset_id": 131251633.0,
+          "changeset_version": 8.0,
+          "changeset_timestamp": "2023-01-14T04:15:06Z",
+          "changeset_user": "Kadubei",
+          "uuid": "cdba8970ba3e4da9b9d70140c4462a02"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.255527351501996,
+            -11.694965779240079
+          ]
+        },
+        "osm_id": 2656235862,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.38431236009694,
+              -11.50644034833752
+            ],
+            [
+              43.38465165953741,
+              -11.506411430771578
+            ],
+            [
+              43.384978889037285,
+              -11.506353679458698
+            ],
+            [
+              43.38531542244971,
+              -11.506253767172893
+            ],
+            [
+              43.38552337746745,
+              -11.506186711947493
+            ],
+            [
+              43.385562269498166,
+              -11.50633523927172
+            ],
+            [
+              43.385567633916196,
+              -11.50644034833752
+            ],
+            [
+              43.38556092839366,
+              -11.506513941447395
+            ],
+            [
+              43.38546562615457,
+              -11.506648051898168
+            ],
+            [
+              43.38533025841832,
+              -11.506775456826404
+            ],
+            [
+              43.38523638110277,
+              -11.506880649711235
+            ],
+            [
+              43.38519472304401,
+              -11.507081647749345
+            ],
+            [
+              43.38515993814585,
+              -11.507107966925304
+            ],
+            [
+              43.385031192113104,
+              -11.507101345221798
+            ],
+            [
+              43.38503253321761,
+              -11.507101345221798
+            ],
+            [
+              43.38490378718487,
+              -11.507080306644838
+            ],
+            [
+              43.38476565342057,
+              -11.50703437381543
+            ],
+            [
+              43.38454168896777,
+              -11.506879308606727
+            ],
+            [
+              43.38440213027994,
+              -11.50680705660136
+            ],
+            [
+              43.38435527544118,
+              -11.506720220084503
+            ],
+            [
+              43.38431236009694,
+              -11.50644034833752
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "emergency": "yes",
+          "changeset_id": 62604675.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2018-09-15T08:29:31Z",
+          "changeset_user": "mcheckimport",
+          "uuid": "c236c139e8b94cfd801d6eda5fbbf2ef"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.384964989182954,
+            -11.50664456880436
+          ]
+        },
+        "osm_id": 412481010,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.43533174742865,
+          -11.79708032630819
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Dispensaire Caritas",
+          "operator": "Commune",
+          "speciality": "general",
+          "operator_type": "private",
+          "changeset_id": 109576268.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-08-12T13:47:28Z",
+          "changeset_user": "EndhumYssf Youssouf",
+          "uuid": "d804b575918a4564ab72cbcf26c19d66"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.43533174742865,
+            -11.79708032630819
+          ]
+        },
+        "osm_id": 4779915808,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.39159313265054,
+              -11.475351031276631
+            ],
+            [
+              43.391680388262586,
+              -11.475264362397837
+            ],
+            [
+              43.39172062139781,
+              -11.47526302129333
+            ],
+            [
+              43.39178767662321,
+              -11.475285317155766
+            ],
+            [
+              43.39188758890904,
+              -11.475327478128719
+            ],
+            [
+              43.39201164107601,
+              -11.475372153672652
+            ],
+            [
+              43.392093448450964,
+              -11.475428647700028
+            ],
+            [
+              43.39202907543461,
+              -11.475512718188867
+            ],
+            [
+              43.3920102999715,
+              -11.47550358191441
+            ],
+            [
+              43.391920445969475,
+              -11.475636351260675
+            ],
+            [
+              43.391842661908015,
+              -11.475574576634273
+            ],
+            [
+              43.39167368274005,
+              -11.475441723468975
+            ],
+            [
+              43.39160922590463,
+              -11.475383972156123
+            ],
+            [
+              43.39159313265054,
+              -11.475351031276631
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 62606034.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2018-09-15T09:09:24Z",
+          "changeset_user": "mcheckimport",
+          "uuid": "c9e5aff4017640909250176eb553c556"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.39184122829983,
+            -11.475426786529896
+          ]
+        },
+        "osm_id": 625719626,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.32792813563901,
+              -11.48995817393714
+            ],
+            [
+              43.328061659356564,
+              -11.48994685836783
+            ],
+            [
+              43.3280907445606,
+              -11.490276267162557
+            ],
+            [
+              43.32795705320498,
+              -11.490287582731838
+            ],
+            [
+              43.32792813563901,
+              -11.48995817393714
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "PS Ivembeni",
+          "changeset_id": 84195212.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-04-27T11:20:27Z",
+          "changeset_user": "Ambassador_Spock",
+          "uuid": "513aec5304fa4c0b92ea546255775b3f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.32800940167652,
+            -11.490117254697157
+          ]
+        },
+        "osm_id": 783883234,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.74791982267817,
+          -12.287746963620918
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 92543191.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-10-15T20:41:23Z",
+          "changeset_user": "Abn_976",
+          "uuid": "4351a71d41fd4d8eb3196ec42098a273"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.74791982267817,
+            -12.287746963620918
+          ]
+        },
+        "osm_id": 8011100645,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.26052941985887,
+              -11.686163607441443
+            ],
+            [
+              43.26056847952765,
+              -11.68606905957364
+            ],
+            [
+              43.26075388722583,
+              -11.686142317407388
+            ],
+            [
+              43.26071482755705,
+              -11.686236949094223
+            ],
+            [
+              43.26052941985887,
+              -11.686163607441443
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "source": "#opendri-comoros;survey",
+          "changeset_id": 104903397.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "75ed37989a554556aa1c1c8e8bbbb5df"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.260641664789844,
+            -11.686152989297304
+          ]
+        },
+        "osm_id": 438540783,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.279330363953164,
+              -11.804209805509515
+            ],
+            [
+              43.27979706832187,
+              -11.8038159398794
+            ],
+            [
+              43.27997945853494,
+              -11.80407854490582
+            ],
+            [
+              43.279469838821996,
+              -11.804414575404024
+            ],
+            [
+              43.279330363953164,
+              -11.804209805509515
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Centre de santé de Mitsoudjé",
+          "changeset_id": 82523833.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-03-23T13:01:59Z",
+          "changeset_user": "Ambassador_Spock",
+          "uuid": "0756aae2d4bc4835ad3c35c175ccfe93"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.27965457142695,
+            -11.804122072752868
+          ]
+        },
+        "osm_id": 370308263,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25690852150694,
+          -11.703943216634087
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Santé Militaire الصحة العسكرية",
+          "operator": "Gendermérie Nationale الدرك الوطني",
+          "changeset_id": 104903397.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "da1f6ead1d1b48b0bfff222acdeead32"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25690852150694,
+            -11.703943216634087
+          ]
+        },
+        "osm_id": 4002529047,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.26052807875436,
+          -11.69199506511734
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "name": "Cabinet médical",
+          "source": "Kaart Ground Survey 2017",
+          "changeset_id": 104903397.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "6568b20fe20a4e9fa50afdf7dc5c5eef"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.26052807875436,
+            -11.69199506511734
+          ]
+        },
+        "osm_id": 4195378697,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.254276184815296,
+              -11.695845543797162
+            ],
+            [
+              43.254309880066046,
+              -11.695773710886982
+            ],
+            [
+              43.25444214649812,
+              -11.695833306218532
+            ],
+            [
+              43.2543844790043,
+              -11.695956268738087
+            ],
+            [
+              43.25429747484935,
+              -11.695917125250276
+            ],
+            [
+              43.254321530911454,
+              -11.695865911821897
+            ],
+            [
+              43.254276184815296,
+              -11.695845543797162
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Oco Pharma",
+          "source": "#opendri-comoros;survey",
+          "changeset_id": 131251633.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2023-01-14T04:15:06Z",
+          "changeset_user": "Kadubei",
+          "uuid": "01d1cc082d0d475f8f6aba8f8661f5ef"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.254357195724886,
+            -11.6958622892015
+          ]
+        },
+        "osm_id": 404912075,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25326163925516,
+          -11.695563744212478
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "L'Avicenne",
+          "source": "Kaart Ground Survey 2017",
+          "addr_street": "Rue Ahmed Djoumoi",
+          "changeset_id": 104903397.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "3713cc1748564e749d657bd10571c1f9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25326163925516,
+            -11.695563744212478
+          ]
+        },
+        "osm_id": 2656239968,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.71671818811478,
+          -12.361061039927733
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 131211048.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-01-13T02:44:08Z",
+          "changeset_user": "Kadubei",
+          "uuid": "3998b0d27a7b414ca78a4d06ce653fbb"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.71671818811478,
+            -12.361061039927733
+          ]
+        },
+        "osm_id": 8011100648,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.27459039770855,
+          -11.726648954140813
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Centre de Santé du Karthala",
+          "changeset_id": 47565403.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2017-04-08T11:36:13Z",
+          "changeset_user": "vherbreteau",
+          "uuid": "460acf97396347c5bd5f7a7b009e6d6d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.27459039770855,
+            -11.726648954140813
+          ]
+        },
+        "osm_id": 4782809479,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25473903350854,
+          -11.696575523744542
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "La Pharmacie des Comores",
+          "changeset_id": 131251633.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2023-01-14T04:15:06Z",
+          "changeset_user": "Kadubei",
+          "uuid": "4b34d9e1f92243ada45057f9be6c1c37"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25473903350854,
+            -11.696575523744542
+          ]
+        },
+        "osm_id": 2656240210,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25204978369433,
+          -11.710224866329412
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Espérance",
+          "changeset_id": 131251667.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-01-14T04:18:51Z",
+          "changeset_user": "Kadubei",
+          "uuid": "f62f932840064760b5a16182d5685f26"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25204978369433,
+            -11.710224866329412
+          ]
+        },
+        "osm_id": 8916155917,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25915244080551,
+          -11.687212518804586
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "name": "Cabinet Medical",
+          "source": "Kaart Ground Survey 2017",
+          "addr_street": "Rue de l'Union Africaine",
+          "changeset_id": 104903397.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "1b243c79451345fb83ea6457a1ead99b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25915244080551,
+            -11.687212518804586
+          ]
+        },
+        "osm_id": 4195376590,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25317522183346,
+          -11.690630072185513
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "clinic",
+          "name": "Centre d'imagerie médicale",
+          "changeset_id": 131251538.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2023-01-14T04:07:23Z",
+          "changeset_user": "Kadubei",
+          "uuid": "4afd888f65d84489a2e493596ea19686"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25317522183346,
+            -11.690630072185513
+          ]
+        },
+        "osm_id": 4781565909,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.24581121698134,
+          -11.71430685317489
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Pharmacie de l'archipel",
+          "changeset_id": 105851241.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-06-04T16:55:30Z",
+          "changeset_user": "PDlhm",
+          "uuid": "517b0204717f46939ebda2ec27f58452"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.24581121698134,
+            -11.71430685317489
+          ]
+        },
+        "osm_id": 8804809819,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.40061258782944,
+              -12.162904969916866
+            ],
+            [
+              44.40063882318637,
+              -12.162886445910857
+            ],
+            [
+              44.40061527003846,
+              -12.16285434322171
+            ],
+            [
+              44.40065248568857,
+              -12.162828107864783
+            ],
+            [
+              44.40066187342012,
+              -12.162840848357604
+            ],
+            [
+              44.400722726037145,
+              -12.162798016832397
+            ],
+            [
+              44.400711997201086,
+              -12.162783264682787
+            ],
+            [
+              44.40081542988625,
+              -12.162710425944226
+            ],
+            [
+              44.400888017167745,
+              -12.162809080944584
+            ],
+            [
+              44.40066002940142,
+              -12.162969426752284
+            ],
+            [
+              44.40061258782944,
+              -12.162904969916866
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 82517911.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-03-23T10:34:30Z",
+          "changeset_user": "Ambassador_Spock",
+          "uuid": "08466ee670a44e21aa43dd9f16bc7673"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.400745760110496,
+            -12.162839470887452
+          ]
+        },
+        "osm_id": 549124680,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.25602615855985,
+              -11.694703174213657
+            ],
+            [
+              43.256070498827654,
+              -11.694584905559879
+            ],
+            [
+              43.2562354546821,
+              -11.694644165615301
+            ],
+            [
+              43.256191282052384,
+              -11.69476243426908
+            ],
+            [
+              43.25602615855985,
+              -11.694703174213657
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "source": "#opendri-comoros;survey",
+          "changeset_id": 104903397.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "d6eb1909ab6a4b77b06398fb9c2500a4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25613083905745,
+            -11.694673676523928
+          ]
+        },
+        "osm_id": 438785892,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.434668571249546,
+          -11.802301413794964
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Maternité",
+          "operator": "Commune",
+          "speciality": "general",
+          "operator_type": "public",
+          "changeset_id": 109576268.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-08-12T13:47:28Z",
+          "changeset_user": "EndhumYssf Youssouf",
+          "uuid": "fcab0e54116a4373ba6340fc47cb9467"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.434668571249546,
+            -11.802301413794964
+          ]
+        },
+        "osm_id": 4779867363,
+        "osm_type": "node",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.26245641939846,
+              -11.691447810659128
+            ],
+            [
+              43.262479050537024,
+              -11.691388131508518
+            ],
+            [
+              43.26254828505722,
+              -11.69141327721806
+            ],
+            [
+              43.26255549349395,
+              -11.691394250297861
+            ],
+            [
+              43.262615927015844,
+              -11.69141621088417
+            ],
+            [
+              43.262586171259585,
+              -11.691494916954952
+            ],
+            [
+              43.26245641939846,
+              -11.691447810659128
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "source": "#opendri-comoros;survey",
+          "changeset_id": 104903397.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "433e973d5ddc4083b536068ea7981512"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.26253899382584,
+            -11.691438060720063
+          ]
+        },
+        "osm_id": 438773722,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.63495884144646,
+          -12.30401707587103
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Clinique de Miringoni",
+          "changeset_id": 131211048.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2023-01-13T02:44:08Z",
+          "changeset_user": "Kadubei",
+          "uuid": "256e8bce241d43d5b328952c87a06f35"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.63495884144646,
+            -12.30401707587103
+          ]
+        },
+        "osm_id": 8011100647,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.25614736087974,
+              -11.699983521755883
+            ],
+            [
+              43.25617133312281,
+              -11.699866845663706
+            ],
+            [
+              43.256272418875085,
+              -11.699886710774223
+            ],
+            [
+              43.256248446632014,
+              -11.70000347068543
+            ],
+            [
+              43.25614736087974,
+              -11.699983521755883
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "source": "#opendri-comoros;survey",
+          "changeset_id": 104903397.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "8c94b0233b964cdd8367d402c02b4070"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25620989536467,
+            -11.699935139956885
+          ]
+        },
+        "osm_id": 437876502,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.252737435030696,
+          -11.707044017894077
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Ibn Sina",
+          "changeset_id": 107858337.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-07-12T19:00:03Z",
+          "changeset_user": "PDlhm",
+          "uuid": "0b67cb6b5263450cad027bb0defbd90f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.252737435030696,
+            -11.707044017894077
+          ]
+        },
+        "osm_id": 4777553415,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.249989092799126,
+          -11.709901911600127
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Tea Pharma",
+          "source": "Kaart Ground Survey 2017",
+          "changeset_id": 77044325.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2019-11-14T01:03:48Z",
+          "changeset_user": "SerV",
+          "uuid": "ad63f9ae49534bc7950813bfd07972b3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.249989092799126,
+            -11.709901911600127
+          ]
+        },
+        "osm_id": 4777566890,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.50974312312991,
+              -12.200077872301108
+            ],
+            [
+              44.5106067944329,
+              -12.198885043660482
+            ],
+            [
+              44.511762826518606,
+              -12.200038561175205
+            ],
+            [
+              44.512336735428875,
+              -12.200772564436107
+            ],
+            [
+              44.511824433506916,
+              -12.20118688190999
+            ],
+            [
+              44.51095279939591,
+              -12.201205154458904
+            ],
+            [
+              44.51019633263451,
+              -12.201021674598422
+            ],
+            [
+              44.50987186916265,
+              -12.200510462323876
+            ],
+            [
+              44.50974312312991,
+              -12.200077872301108
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Anjouan Island Humbo Hospital",
+          "changeset_id": 117833861.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2022-02-25T04:27:02Z",
+          "changeset_user": "Max Berckmueller",
+          "uuid": "e02395b6454a49578b3bd17337324f3b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.51092428441991,
+            -12.200281826509443
+          ]
+        },
+        "osm_id": 686666702,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.26876774103101,
+              -11.736176244382989
+            ],
+            [
+              43.268860277242055,
+              -11.736163000975978
+            ],
+            [
+              43.268854829004994,
+              -11.736115810861094
+            ],
+            [
+              43.26891928584038,
+              -11.736097454493148
+            ],
+            [
+              43.268970247811694,
+              -11.73614204621802
+            ],
+            [
+              43.269017186469455,
+              -11.736391575475523
+            ],
+            [
+              43.26881065637525,
+              -11.736440106694886
+            ],
+            [
+              43.26876774103101,
+              -11.736176244382989
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "name": "Hopital Kaz",
+          "addr_street": "Nkouhouni",
+          "addr_city": "Mkazi",
+          "changeset_id": 64454251.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2018-11-13T18:58:19Z",
+          "changeset_user": "Aladine MH",
+          "uuid": "d47a122c74804f83ac4598a61c7ad8c7"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.2688917889482,
+            -11.736276647707802
+          ]
+        },
+        "osm_id": 404863922,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25847794905715,
+          -11.690930060500108
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie des Iles",
+          "source": "Kaart Ground Survey 2017",
+          "addr_street": "Rue de la COI",
+          "changeset_id": 131251538.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2023-01-14T04:07:23Z",
+          "changeset_user": "Kadubei",
+          "uuid": "365695a60b8e4e9fa14610e1fac4074e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25847794905715,
+            -11.690930060500108
+          ]
+        },
+        "osm_id": 4195377992,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.25442311957792,
+          -11.696083422209227
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Biomedical Comores",
+          "source": "Kaart Ground Survey 2017",
+          "addr_street": "Rue Ahmed Djoumoi",
+          "changeset_id": 104903397.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-05-18T16:29:28Z",
+          "changeset_user": "user_12507004",
+          "uuid": "8b4f2bea7772450fa672ace4046bd117"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25442311957792,
+            -11.696083422209227
+          ]
+        },
+        "osm_id": 4993574080,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    }
+  ]
+}

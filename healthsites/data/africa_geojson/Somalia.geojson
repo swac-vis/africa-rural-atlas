@@ -1,0 +1,4993 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.052059693900105,
+          9.547872383106125
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "changeset_id": 108198739.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-07-18T16:15:30Z",
+          "changeset_user": "Dhulmar",
+          "uuid": "dbb6293e80e04c7d8e80951466a605f6"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.052059693900105,
+            9.547872383106125
+          ]
+        },
+        "osm_id": 8930880128,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.09743185778768,
+          9.541038868905872
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Saacid  Pharmacy",
+          "changeset_id": 114130257.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-11-23T09:00:04Z",
+          "changeset_user": "Mbabani Allan",
+          "uuid": "2cf24f88f1f541a1adba2030d5a1a4c1"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.09743185778768,
+            9.541038868905872
+          ]
+        },
+        "osm_id": 9277228841,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.012269,
+              10.4394197
+            ],
+            [
+              45.01304,
+              10.440236
+            ],
+            [
+              45.0138151,
+              10.4395416
+            ],
+            [
+              45.0141708,
+              10.4390038
+            ],
+            [
+              45.0141513,
+              10.4388977
+            ],
+            [
+              45.014077,
+              10.4387271
+            ],
+            [
+              45.0139567,
+              10.438567
+            ],
+            [
+              45.0132471,
+              10.43781
+            ],
+            [
+              45.012856,
+              10.4382712
+            ],
+            [
+              45.0129781,
+              10.4384156
+            ],
+            [
+              45.0125198,
+              10.4389029
+            ],
+            [
+              45.0124684,
+              10.4390752
+            ],
+            [
+              45.0125498,
+              10.4391622
+            ],
+            [
+              45.012269,
+              10.4394197
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 164783856.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-04-10T19:01:33Z",
+          "changeset_user": "5155",
+          "uuid": "33131603dd514b84b56cf90679f94a36"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.01324253690326,
+            10.43906765923899
+          ]
+        },
+        "osm_id": 1376543408,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.62489551802733,
+          6.132998361337599
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Adado General Hospital",
+          "changeset_id": 95040139.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-11-30T11:14:51Z",
+          "changeset_user": "Haaneed",
+          "uuid": "de1cf9833c8c4b3a8326f40bee6db26f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            46.62489551802733,
+            6.132998361337599
+          ]
+        },
+        "osm_id": 8178752253,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.30992947239747,
+              2.069462599291995
+            ],
+            [
+              45.310919291343225,
+              2.069819081633966
+            ],
+            [
+              45.31102917809383,
+              2.069467963710025
+            ],
+            [
+              45.310042125176125,
+              2.06909807032298
+            ],
+            [
+              45.30992947239747,
+              2.069462599291995
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "kaamil hospital oodweyne",
+          "speciality": "general;gynaecology",
+          "changeset_id": 140886081.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-09-06T09:19:06Z",
+          "changeset_user": "Apaaz Haaji",
+          "uuid": "fb4f44439d10471882e6dce8643eb172"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.31047704800157,
+            2.069460795546538
+          ]
+        },
+        "osm_id": 1205438985,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.066580670595954,
+              9.551135793287727
+            ],
+            [
+              44.066705896229365,
+              9.551200669218275
+            ],
+            [
+              44.06672022928379,
+              9.551173763309095
+            ],
+            [
+              44.06689155538467,
+              9.55126252766371
+            ],
+            [
+              44.06687562976862,
+              9.551292367239
+            ],
+            [
+              44.066902535677826,
+              9.551306281198265
+            ],
+            [
+              44.06705089536399,
+              9.551383143250376
+            ],
+            [
+              44.06706656952292,
+              9.551391357515485
+            ],
+            [
+              44.06710914959103,
+              9.551311477978231
+            ],
+            [
+              44.067049554259484,
+              9.551280548755528
+            ],
+            [
+              44.06708928448052,
+              9.551206033636305
+            ],
+            [
+              44.06697394949285,
+              9.551146270666692
+            ],
+            [
+              44.06696196337131,
+              9.55116865034816
+            ],
+            [
+              44.06676834140802,
+              9.551068235148136
+            ],
+            [
+              44.06678015989149,
+              9.551046023104732
+            ],
+            [
+              44.066661388323524,
+              9.550984499935424
+            ],
+            [
+              44.066580670595954,
+              9.551135793287727
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Adna Adan hospital",
+          "operator": "ADna Adan",
+          "changeset_id": 108186524.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-07-18T10:11:02Z",
+          "changeset_user": "Dhulmar",
+          "uuid": "5e1311449aa34dde84fc07e096750140"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.06685327237566,
+            9.551184736815712
+          ]
+        },
+        "osm_id": 305183550,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.3339504,
+              2.0521701
+            ],
+            [
+              45.33549067285833,
+              2.05274204356536
+            ],
+            [
+              45.3355691,
+              2.0522188
+            ],
+            [
+              45.3350609,
+              2.0521575
+            ],
+            [
+              45.3351476,
+              2.0516518
+            ],
+            [
+              45.3356427,
+              2.051727
+            ],
+            [
+              45.3357422,
+              2.0509638
+            ],
+            [
+              45.3344077,
+              2.0507709
+            ],
+            [
+              45.3339504,
+              2.0521701
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Jazeera Specialist Hospital",
+          "changeset_id": 164341520.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-03-31T17:31:29Z",
+          "changeset_user": "5155",
+          "uuid": "36958b2155ac47dcabbdb811aee6b733"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.33486602500875,
+            2.051664494702993
+          ]
+        },
+        "osm_id": 1373465865,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.2682191,
+              8.929105
+            ],
+            [
+              46.2683747,
+              8.9294998
+            ],
+            [
+              46.2689862,
+              8.9292826
+            ],
+            [
+              46.2690264,
+              8.9292163
+            ],
+            [
+              46.2688253,
+              8.9287765
+            ],
+            [
+              46.2682191,
+              8.929105
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Wadamagoo MCH",
+          "changeset_id": 166282025.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-05-15T01:42:09Z",
+          "changeset_user": "Balli Abokor",
+          "uuid": "a71633fc47ef4d7a9a32cb842f19b404"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            46.26862732048731,
+            8.929156077108825
+          ]
+        },
+        "osm_id": 1386890945,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.309441729451805,
+          2.037468036688381
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "ex dugsi sare banadir",
+          "changeset_id": 79113365.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-01-02T12:51:49Z",
+          "changeset_user": "wvdp",
+          "uuid": "be6892129f2943ceba656b99b97a2b5d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.309441729451805,
+            2.037468036688381
+          ]
+        },
+        "osm_id": 4243444489,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.028837882614965,
+              1.110467599538111
+            ],
+            [
+              44.02887266751313,
+              1.110541947019243
+            ],
+            [
+              44.02900937635391,
+              1.110472125765824
+            ],
+            [
+              44.02897459145572,
+              1.110395682808871
+            ],
+            [
+              44.028837882614965,
+              1.110467599538111
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Barawe General Hospital",
+          "changeset_id": 128310487.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2022-10-31T17:47:52Z",
+          "changeset_user": "juri_cremer",
+          "uuid": "44d45b6702ae434495919f2362bf9668"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.02892386846062,
+            1.110469170467317
+          ]
+        },
+        "osm_id": 188859423,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.08570703860249,
+          9.510234285095777
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Qardho General Hospital",
+          "changeset_id": 80268371.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-01-29T16:24:46Z",
+          "changeset_user": "magma18",
+          "uuid": "a84ee17305224d85a4aaacfa336c4f20"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            49.08570703860249,
+            9.510234285095777
+          ]
+        },
+        "osm_id": 7169827512,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.305007,
+              2.0298727
+            ],
+            [
+              45.3053382,
+              2.0305378
+            ],
+            [
+              45.305751,
+              2.0303284
+            ],
+            [
+              45.3054106,
+              2.0296356
+            ],
+            [
+              45.305007,
+              2.0298727
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Samakaal Hospital",
+          "changeset_id": 164350065.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-03-31T21:36:06Z",
+          "changeset_user": "5155",
+          "uuid": "1f8868a2a60c45f393644effc3855606"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.30537774795388,
+            2.030092428121749
+          ]
+        },
+        "osm_id": 1373515691,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.755451933588944,
+          5.762454957699305
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Balanbale General Hospital",
+          "changeset_id": 127995400.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2022-10-24T12:41:01Z",
+          "changeset_user": "Lababulscio",
+          "uuid": "2485012010584f1c8c9488d6a2ec90cc"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.755451933588944,
+            5.762454957699305
+          ]
+        },
+        "osm_id": 10126035479,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.33119352255835,
+          2.031031573241449
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "addr_street": "Via Tanzania",
+          "changeset_id": 159413435.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-11-21T14:53:38Z",
+          "changeset_user": "adster546",
+          "uuid": "0e4c55b6a2ad44b6a85c1f3632a5c33c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.33119352255835,
+            2.031031573241449
+          ]
+        },
+        "osm_id": 4746076221,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.25289836757162,
+              3.809281584344575
+            ],
+            [
+              43.253996899801535,
+              3.809328774459431
+            ],
+            [
+              43.253996899801535,
+              3.809307316787311
+            ],
+            [
+              43.25439914733485,
+              3.809302036188313
+            ],
+            [
+              43.254377773481764,
+              3.808525871954458
+            ],
+            [
+              43.25432672769142,
+              3.808525871954458
+            ],
+            [
+              43.254313316646346,
+              3.808082720733665
+            ],
+            [
+              43.25291865177732,
+              3.80807366827824
+            ],
+            [
+              43.25289836757162,
+              3.809281584344575
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 83454107.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-04-13T06:36:36Z",
+          "changeset_user": "_aahu_",
+          "uuid": "ccd07ba294c54a63961134eb5839a96a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.25363798999478,
+            3.808700551188463
+          ]
+        },
+        "osm_id": 791235104,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.17895573234583,
+              9.937348829632754
+            ],
+            [
+              43.1789758,
+              9.9376347
+            ],
+            [
+              43.180098772481614,
+              9.937805559536685
+            ],
+            [
+              43.18062255761092,
+              9.936734352311106
+            ],
+            [
+              43.17928849390182,
+              9.936351969888335
+            ],
+            [
+              43.17895573234583,
+              9.937348829632754
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Borama Regional Hospital",
+          "changeset_id": 164699814.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-04-08T22:33:49Z",
+          "changeset_user": "5155",
+          "uuid": "c5939ae198034db3868f778ac998d1e1"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.17971699104839,
+            9.937107664539287
+          ]
+        },
+        "osm_id": 1375979832,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.059832316531924,
+              9.564682457558689
+            ],
+            [
+              44.059928624599394,
+              9.564701652116952
+            ],
+            [
+              44.05993248027485,
+              9.564682876653848
+            ],
+            [
+              44.06020422157573,
+              9.564735934100923
+            ],
+            [
+              44.06022173975336,
+              9.564719589389739
+            ],
+            [
+              44.060228864371055,
+              9.564683295749006
+            ],
+            [
+              44.06028099980881,
+              9.564452290497542
+            ],
+            [
+              44.05988646362644,
+              9.564382636882158
+            ],
+            [
+              44.05984639812925,
+              9.564578689597397
+            ],
+            [
+              44.05985327128985,
+              9.564579946882873
+            ],
+            [
+              44.059832316531924,
+              9.564682457558689
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Kaah medical centre",
+          "addr_street": "Goljano Road",
+          "changeset_id": 113843174.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-11-16T09:46:12Z",
+          "changeset_user": "Kirkepladsen",
+          "uuid": "68028de1807d4fc9881ce5f3965e71ab"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.060052390310766,
+            9.564560316607421
+          ]
+        },
+        "osm_id": 791244577,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              48.47495471854151,
+              8.40940214476322
+            ],
+            [
+              48.47550993580771,
+              8.409656954619692
+            ],
+            [
+              48.4755394401069,
+              8.409593252155588
+            ],
+            [
+              48.47563323360339,
+              8.409643627393649
+            ],
+            [
+              48.47587102819642,
+              8.40917868322461
+            ],
+            [
+              48.47527105156726,
+              8.408884981337422
+            ],
+            [
+              48.475206678550904,
+              8.408988330203556
+            ],
+            [
+              48.47495471854151,
+              8.40940214476322
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Garowe General Hospital",
+          "changeset_id": 92541194.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-10-15T19:42:33Z",
+          "changeset_user": "aemaps",
+          "uuid": "19e083542ea644ab81ec64e28f4b2647"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            48.475419362885226,
+            8.409287333688782
+          ]
+        },
+        "osm_id": 791242762,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.38603941632684,
+              2.053657934125113
+            ],
+            [
+              45.38770548722064,
+              2.054161937962931
+            ],
+            [
+              45.387871281265404,
+              2.053356939982166
+            ],
+            [
+              45.38628349734725,
+              2.05287506436872
+            ],
+            [
+              45.38603941632684,
+              2.053657934125113
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Keysane Hospital",
+          "changeset_id": 164392366.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-04-01T20:14:57Z",
+          "changeset_user": "5155",
+          "uuid": "adb79fc242684ab0a34add5f338b4eed"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.38697385064006,
+            2.053516060869828
+          ]
+        },
+        "osm_id": 1373864082,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.6434479,
+              3.1109711
+            ],
+            [
+              43.643491,
+              3.1110478
+            ],
+            [
+              43.64370133409449,
+              3.11092982657911
+            ],
+            [
+              43.64356554726308,
+              3.110688176310617
+            ],
+            [
+              43.643488517572905,
+              3.110731343111979
+            ],
+            [
+              43.64358122142201,
+              3.110896298966424
+            ],
+            [
+              43.6434479,
+              3.1109711
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Baidoa Regional Hospital",
+          "changeset_id": 163771457.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-03-18T12:01:12Z",
+          "changeset_user": "sab27",
+          "uuid": "81da7e9dd94b45ffa19b1e5b7643b22d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.64357407097597,
+            3.1108807605209
+          ]
+        },
+        "osm_id": 1368707932,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.546578018278154,
+              -0.363679001621904
+            ],
+            [
+              42.54658304742006,
+              -0.363619238652291
+            ],
+            [
+              42.546851771235794,
+              -0.363578418783817
+            ],
+            [
+              42.54700172348356,
+              -0.364149142570909
+            ],
+            [
+              42.547210684329684,
+              -0.364238828934873
+            ],
+            [
+              42.547288552210176,
+              -0.36471542394932
+            ],
+            [
+              42.54664859390286,
+              -0.364721710376699
+            ],
+            [
+              42.54671581676632,
+              -0.364465978510879
+            ],
+            [
+              42.546578018278154,
+              -0.363679001621904
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Kismayo General Hospital",
+          "changeset_id": 117415362.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2022-02-15T01:24:19Z",
+          "changeset_user": "NorkeysAQ",
+          "uuid": "828900c2e6b1423bbd56cddfca0ffcf9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.54689250717029,
+            -0.364244943963899
+          ]
+        },
+        "osm_id": 1031517214,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.533038384336834,
+          2.974253088508249
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "changeset_id": 144451079.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-11-25T19:13:24Z",
+          "changeset_user": "Abdimajid",
+          "uuid": "cc2d07cdf4e84cd8b75af1048e5da525"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.533038384336834,
+            2.974253088508249
+          ]
+        },
+        "osm_id": 11375811669,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.11621187157408,
+              2.14287105582855
+            ],
+            [
+              45.11632133922953,
+              2.143030228169806
+            ],
+            [
+              45.11640138640482,
+              2.142946241499999
+            ],
+            [
+              45.11626224681214,
+              2.142812550144384
+            ],
+            [
+              45.11621187157408,
+              2.14287105582855
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Sajid Hospital",
+          "source": "UNPOS",
+          "changeset_id": 83457007.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-04-13T07:22:16Z",
+          "changeset_user": "_aahu_",
+          "uuid": "45139cbadd2e4aebb38a69d6d9066c8b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.11630357257702,
+            2.142919853651795
+          ]
+        },
+        "osm_id": 791246027,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.326588421135796,
+              2.021334465640962
+            ],
+            [
+              45.32678715606005,
+              2.021395150619952
+            ],
+            [
+              45.32686519157858,
+              2.021418871405928
+            ],
+            [
+              45.327433233156654,
+              2.021591790068385
+            ],
+            [
+              45.32752308715868,
+              2.021616432863738
+            ],
+            [
+              45.327564745217444,
+              2.021483244422285
+            ],
+            [
+              45.32772693504384,
+              2.021015450406196
+            ],
+            [
+              45.32721874025444,
+              2.020845297771757
+            ],
+            [
+              45.326906262904146,
+              2.020896175924037
+            ],
+            [
+              45.32670107391445,
+              2.020927021327708
+            ],
+            [
+              45.326588421135796,
+              2.021334465640962
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Yardimeni Hospital",
+          "changeset_id": 116373421.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2022-01-20T08:17:56Z",
+          "changeset_user": "MNaibei",
+          "uuid": "9d2fe73504c2459cb70c7ad9e83a9cd1"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.32717217165529,
+            2.021195811018784
+          ]
+        },
+        "osm_id": 848044664,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.219848834184575,
+          3.329542518018172
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Al-Nasri Pharmacy",
+          "changeset_id": 27023799.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2014-11-25T15:13:23Z",
+          "changeset_user": "Sgilbert",
+          "uuid": "0ccae15421914295865a190a722bb0be"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.219848834184575,
+            3.329542518018172
+          ]
+        },
+        "osm_id": 3204725433,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.215785287526046,
+          3.332305528580292
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Garbahaarey Hospital",
+          "addr_city": "Garbahaarey",
+          "changeset_id": 164444009.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2025-04-03T01:33:12Z",
+          "changeset_user": "5155",
+          "uuid": "6a3625ab65b542fd9cf5a3c39498b78b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.215785287526046,
+            3.332305528580292
+          ]
+        },
+        "osm_id": 1400887801,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.06365834450452,
+          9.405588487088323
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Bisha Cas الهلال الأحمر",
+          "changeset_id": 90061475.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-08-28T06:35:46Z",
+          "changeset_user": "Muuse SLNTV",
+          "uuid": "ab3099096e4f4bc396b24ecea25860f0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.06365834450452,
+            9.405588487088323
+          ]
+        },
+        "osm_id": 3455527618,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.310751653279766,
+              2.03262505685376
+            ],
+            [
+              45.31077185366641,
+              2.032667385464777
+            ],
+            [
+              45.31104577426211,
+              2.032685741832722
+            ],
+            [
+              45.31106966268615,
+              2.0323301815001
+            ],
+            [
+              45.31077277567576,
+              2.03231014875152
+            ],
+            [
+              45.310751653279766,
+              2.03262505685376
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hannano Hospital (Red Crescent)",
+          "changeset_id": 164426367.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2025-04-02T15:12:27Z",
+          "changeset_user": "5155",
+          "uuid": "36acc4db8c9d41e396ad83008a42c6bc"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.310909948803264,
+            2.032497286678598
+          ]
+        },
+        "osm_id": 296937067,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          47.362749760526015,
+          8.473571229431599
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Manhal Hospital",
+          "changeset_id": 86396756.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-06-09T09:06:10Z",
+          "changeset_user": "Ammiir Cali",
+          "uuid": "0780d1158d594b41ad6f90ff115186b6"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            47.362749760526015,
+            8.473571229431599
+          ]
+        },
+        "osm_id": 7605011185,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.07476199482653,
+              9.52854287619769
+            ],
+            [
+              44.07476735924456,
+              9.528723170934967
+            ],
+            [
+              44.07477674697611,
+              9.52903958777975
+            ],
+            [
+              44.074779261547064,
+              9.529120724602478
+            ],
+            [
+              44.07538242329943,
+              9.529103290243881
+            ],
+            [
+              44.07536524039793,
+              9.528525358020062
+            ],
+            [
+              44.07476199482653,
+              9.52854287619769
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "International Hospital المستشفى الدولي",
+          "addr_street": "Airport Road",
+          "addr_city": "هرجيسا",
+          "changeset_id": 121786337.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2022-05-31T21:54:07Z",
+          "changeset_user": "David Zhu",
+          "uuid": "82f0303720c843a38ae012199bb8e127"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.0750722166336,
+            9.528823061374583
+          ]
+        },
+        "osm_id": 430366600,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.0141872,
+              10.440435
+            ],
+            [
+              45.0146755,
+              10.440929
+            ],
+            [
+              45.0153427,
+              10.4402911
+            ],
+            [
+              45.0148544,
+              10.4397972
+            ],
+            [
+              45.0141872,
+              10.440435
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Berber Mental Health Hospital",
+          "speciality": "psychiatry",
+          "changeset_id": 164783856.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-04-10T19:01:33Z",
+          "changeset_user": "5155",
+          "uuid": "c694fa8937384d6baa2c219fd9908c2f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.01476494731265,
+            10.440363083668002
+          ]
+        },
+        "osm_id": 1376543410,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              49.06095729018787,
+              10.566680057173016
+            ],
+            [
+              49.06111595961494,
+              10.566721547593716
+            ],
+            [
+              49.061160299882744,
+              10.56655801666281
+            ],
+            [
+              49.061001462817586,
+              10.566516526242083
+            ],
+            [
+              49.06095729018787,
+              10.566680057173016
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "مستشفي امامة - عرمو - بنتدلاد - صومال",
+          "opening_hours": "Sa-Th",
+          "addr_housenumber": "005",
+          "addr_street": "Taqwa -Street",
+          "changeset_id": 101534810.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-03-23T01:11:54Z",
+          "changeset_user": "user_11422772",
+          "uuid": "2e8456c4d3d74a55945b7d7d7c9e26c4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            49.061058760073216,
+            10.566619024343362
+          ]
+        },
+        "osm_id": 791238881,
+        "osm_type": "way",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.642977053841264,
+              3.110667221552688
+            ],
+            [
+              43.64306405799621,
+              3.110824633694278
+            ],
+            [
+              43.643050898408234,
+              3.110831925950038
+            ],
+            [
+              43.64314226115283,
+              3.110997217080637
+            ],
+            [
+              43.64315324144599,
+              3.110991265929385
+            ],
+            [
+              43.643245023285715,
+              3.11115722761221
+            ],
+            [
+              43.6434647,
+              3.1110362
+            ],
+            [
+              43.6434197,
+              3.1109547
+            ],
+            [
+              43.643273940851685,
+              3.111034935644909
+            ],
+            [
+              43.64320043156084,
+              3.110902166298644
+            ],
+            [
+              43.64324326308605,
+              3.1108785293317
+            ],
+            [
+              43.643184925039975,
+              3.11077291735171
+            ],
+            [
+              43.64314108768639,
+              3.110797141051876
+            ],
+            [
+              43.643086689134776,
+              3.110698653689582
+            ],
+            [
+              43.6433421695435,
+              3.11055775389724
+            ],
+            [
+              43.6433834,
+              3.1106322
+            ],
+            [
+              43.6434253,
+              3.1106091
+            ],
+            [
+              43.64347032884302,
+              3.110690690881569
+            ],
+            [
+              43.64359597357159,
+              3.110621456361372
+            ],
+            [
+              43.64341006295922,
+              3.110285258225076
+            ],
+            [
+              43.6432625,
+              3.1103666
+            ],
+            [
+              43.6432791,
+              3.1103966
+            ],
+            [
+              43.6432175,
+              3.1104306
+            ],
+            [
+              43.6432616,
+              3.1105104
+            ],
+            [
+              43.642977053841264,
+              3.110667221552688
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Baidoa Regional Hospital",
+          "changeset_id": 163771457.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2025-03-18T12:01:12Z",
+          "changeset_user": "sab27",
+          "uuid": "a3ec6e3d33cc417090520d59ed86afb5"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.64329109523904,
+            3.110686133396856
+          ]
+        },
+        "osm_id": 652715637,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.061681029095865,
+              9.559922542384498
+            ],
+            [
+              44.06179141876066,
+              9.55995447743561
+            ],
+            [
+              44.06183617812363,
+              9.559967217928431
+            ],
+            [
+              44.06196534325153,
+              9.55954812276974
+            ],
+            [
+              44.06181689974633,
+              9.559497579893616
+            ],
+            [
+              44.06175202381576,
+              9.559712743348086
+            ],
+            [
+              44.06171262887085,
+              9.559835035315388
+            ],
+            [
+              44.061681029095865,
+              9.559922542384498
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Gargaar Multi specialty Hospital",
+          "changeset_id": 99216526.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-02-13T14:59:33Z",
+          "changeset_user": "Abdullah2020",
+          "uuid": "7a66e78166bf426f8fe10f23845fa8f7"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.0618255342543,
+            9.559734878552524
+          ]
+        },
+        "osm_id": 449347606,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.295616450719336,
+              2.029743777637862
+            ],
+            [
+              45.2964594187215,
+              2.031885437717733
+            ],
+            [
+              45.2977948235351,
+              2.031376656195079
+            ],
+            [
+              45.299559717067325,
+              2.030704259922516
+            ],
+            [
+              45.298633097671484,
+              2.028144342874299
+            ],
+            [
+              45.29689234402042,
+              2.029015557890148
+            ],
+            [
+              45.296833335422065,
+              2.029040955056757
+            ],
+            [
+              45.2966469218955,
+              2.029179088821053
+            ],
+            [
+              45.295616450719336,
+              2.029743777637862
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "مستشفى المدينة",
+          "emergency": "yes",
+          "addr_city": "مقديشو",
+          "changeset_id": 164426108.0,
+          "changeset_version": 8.0,
+          "changeset_timestamp": "2025-04-02T15:06:58Z",
+          "changeset_user": "5155",
+          "uuid": "75c6951f38cf4b79a23525c9958e7394"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.29760473039739,
+            2.030087014501881
+          ]
+        },
+        "osm_id": 220105433,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.87963997120741,
+          5.313609993908869
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Kulmiye Hospital",
+          "source": "UNDP - 2006",
+          "changeset_id": 141772912.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2023-09-26T12:34:29Z",
+          "changeset_user": "UNGSC-Mariateresa",
+          "uuid": "cb428ee978dd47f582241b290a87cf71"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.87963997120741,
+            5.313609993908869
+          ]
+        },
+        "osm_id": 1404230797,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.347739986156085,
+          2.0463090166987
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "operator": "Saalim Carab",
+          "addr_street": "W. Nasiib Buunde",
+          "changeset_id": 161931148.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2025-01-30T10:19:24Z",
+          "changeset_user": "CirillaOSM",
+          "uuid": "9ceedb70a8a941e4955d4987aff3a337"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.347739986156085,
+            2.0463090166987
+          ]
+        },
+        "osm_id": 4887872522,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.09523253021399,
+          9.540567554490423
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Bukhan  Pharmacy",
+          "changeset_id": 114130155.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-11-23T08:57:31Z",
+          "changeset_user": "Mbabani Allan",
+          "uuid": "e918d9b3d1754ad58077fa7d386578fb"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.09523253021399,
+            9.540567554490423
+          ]
+        },
+        "osm_id": 9277213643,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.32175365556628,
+          2.052329989205333
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "changeset_id": 139942385.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-08-16T04:07:27Z",
+          "changeset_user": "Adensed",
+          "uuid": "51a1537e6cb847c0bd952e67344e77a1"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.32175365556628,
+            2.052329989205333
+          ]
+        },
+        "osm_id": 11118174805,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.330299987230035,
+          1.610999988343167
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Kurtunwaarey Maternal & Child Health Centre",
+          "changeset_id": 100481841.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-03-05T10:08:48Z",
+          "changeset_user": "UNGSC-DTLM-Ale_Zena",
+          "uuid": "0ad2cf87650c428dbc70613f5cf92f0b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.330299987230035,
+            1.610999988343167
+          ]
+        },
+        "osm_id": 8488601144,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.310306,
+              2.0371822
+            ],
+            [
+              45.3114405,
+              2.0372787
+            ],
+            [
+              45.3114834,
+              2.0367426
+            ],
+            [
+              45.3103596,
+              2.0366407
+            ],
+            [
+              45.310306,
+              2.0371822
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hodan Hospital",
+          "changeset_id": 164351468.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-03-31T22:42:47Z",
+          "changeset_user": "5155",
+          "uuid": "7c4673b7d1d341bfbf54439469358eb1"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.310896240325555,
+            2.036961356564934
+          ]
+        },
+        "osm_id": 1373530321,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.343290117580295,
+          2.058424973916999
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 161931148.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2025-01-30T10:19:24Z",
+          "changeset_user": "CirillaOSM",
+          "uuid": "5da4ba4eaebc4f40af2c3675964f406c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.343290117580295,
+            2.058424973916999
+          ]
+        },
+        "osm_id": 4873326621,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.30392568279234,
+              2.04570811806019
+            ],
+            [
+              45.304062140176,
+              2.046754179576254
+            ],
+            [
+              45.30512404348906,
+              2.047098591977658
+            ],
+            [
+              45.3061109287687,
+              2.047405956367015
+            ],
+            [
+              45.306586769411865,
+              2.047556662986096
+            ],
+            [
+              45.30657428037614,
+              2.047761684337701
+            ],
+            [
+              45.30884694960261,
+              2.048080029020241
+            ],
+            [
+              45.309117,
+              2.0481226
+            ],
+            [
+              45.30927258264575,
+              2.048147084245613
+            ],
+            [
+              45.30931692291355,
+              2.047024663591657
+            ],
+            [
+              45.30937299784577,
+              2.046312872374159
+            ],
+            [
+              45.30942437891224,
+              2.045972148010151
+            ],
+            [
+              45.309118439446394,
+              2.045941889339701
+            ],
+            [
+              45.30917686131153,
+              2.045181147807682
+            ],
+            [
+              45.30843338650001,
+              2.045142339595998
+            ],
+            [
+              45.30667218100521,
+              2.045058688202317
+            ],
+            [
+              45.30665315408501,
+              2.045619018429448
+            ],
+            [
+              45.30392568279234,
+              2.04570811806019
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Isbitaalka Xoogga",
+          "changeset_id": 164351468.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2025-03-31T22:42:47Z",
+          "changeset_user": "5155",
+          "uuid": "e99166e4e42c46dfbc04130003e9a79c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.30710777417068,
+            2.046511533837611
+          ]
+        },
+        "osm_id": 1373519816,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.356612531022364,
+              8.483544520741646
+            ],
+            [
+              47.35668553739902,
+              8.483806958130003
+            ],
+            [
+              47.356739768312536,
+              8.484034275344072
+            ],
+            [
+              47.356857198776,
+              8.48447616927939
+            ],
+            [
+              47.357367069946065,
+              8.484386399096394
+            ],
+            [
+              47.358573225812734,
+              8.484206942549434
+            ],
+            [
+              47.35832579203105,
+              8.483049988454411
+            ],
+            [
+              47.35773495167635,
+              8.483219721993663
+            ],
+            [
+              47.3576688184603,
+              8.482977736449044
+            ],
+            [
+              47.357373943106666,
+              8.483067590451071
+            ],
+            [
+              47.35744192034139,
+              8.483311336195356
+            ],
+            [
+              47.357185098828154,
+              8.483383672019755
+            ],
+            [
+              47.356612531022364,
+              8.483544520741646
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Las Anod Hospital",
+          "changeset_id": 17778524.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2013-09-11T08:04:30Z",
+          "changeset_user": "bdiscoe",
+          "uuid": "a87a4593953e49919e5dd52343e99178"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            47.35761941823732,
+            8.483782395415433
+          ]
+        },
+        "osm_id": 237489641,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.06191773404149,
+          9.577176438610081
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "dentist",
+          "changeset_id": 44993824.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2017-01-08T05:23:58Z",
+          "changeset_user": "Abdirahim Hashi",
+          "uuid": "0739b4e9eb214a5fbc08345275015945"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.06191773404149,
+            9.577176438610081
+          ]
+        },
+        "osm_id": 4595635191,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.56330779409828,
+              -0.324658057226003
+            ],
+            [
+              42.5635463430626,
+              -0.32412832094542
+            ],
+            [
+              42.563948674414945,
+              -0.324309537692045
+            ],
+            [
+              42.563710041631595,
+              -0.3248392739726
+            ],
+            [
+              42.56330779409828,
+              -0.324658057226003
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "SHaadhle Hospital Kismaayo",
+          "changeset_id": 99397514.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-02-16T17:33:43Z",
+          "changeset_user": "UNGSC-mbranco2",
+          "uuid": "427aa60a200f48c98c466852e21f6c05"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.5636282187322,
+            -0.324483790707421
+          ]
+        },
+        "osm_id": 791245524,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.89829999105936,
+          2.047099933082166
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Bariire Maternal & Child Health Centre",
+          "changeset_id": 100642782.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-03-08T13:57:46Z",
+          "changeset_user": "UNGSC-DTLM-Ale_Zena",
+          "uuid": "ea0c765927424092976e09f564ebb4b3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.89829999105936,
+            2.047099933082166
+          ]
+        },
+        "osm_id": 8497141641,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.54674238739938,
+              -0.362940136857162
+            ],
+            [
+              42.546780357420744,
+              -0.362776103012067
+            ],
+            [
+              42.54682436241242,
+              -0.362729164354278
+            ],
+            [
+              42.54681539377603,
+              -0.362547109417363
+            ],
+            [
+              42.54707833407858,
+              -0.362521125517532
+            ],
+            [
+              42.54713432519176,
+              -0.36331111989162
+            ],
+            [
+              42.54710431797841,
+              -0.363352107398157
+            ],
+            [
+              42.546938356295584,
+              -0.363427125431542
+            ],
+            [
+              42.54677432245046,
+              -0.363438105724697
+            ],
+            [
+              42.54674238739938,
+              -0.362940136857162
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Medical Quarters",
+          "changeset_id": 132049257.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2023-02-03T16:31:51Z",
+          "changeset_user": "oli92",
+          "uuid": "9232d0cdc8eb40d3a7791fa2d3bf7878"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.54693785964202,
+            -0.362997150347252
+          ]
+        },
+        "osm_id": 127235810,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.49663695232073,
+              2.774024676756767
+            ],
+            [
+              45.496843063319744,
+              2.774287197964156
+            ],
+            [
+              45.496867454658,
+              2.774268087224925
+            ],
+            [
+              45.496887571225614,
+              2.774293568210567
+            ],
+            [
+              45.496965774382204,
+              2.774232380317414
+            ],
+            [
+              45.49694423289105,
+              2.774204971494044
+            ],
+            [
+              45.496957057202906,
+              2.774194997029269
+            ],
+            [
+              45.49675237112743,
+              2.773934236021518
+            ],
+            [
+              45.49663695232073,
+              2.774024676756767
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Jowhar Regional Hospital",
+          "source": "UNSOA II: E045N02_02, SPOT5 image based data capture using different Ancillary Sources coming from UNSOA field mission",
+          "changeset_id": 140948207.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2023-09-07T16:12:18Z",
+          "changeset_user": "Keren Wang'ombe",
+          "uuid": "07b458167e7543448f73bac55ebde759"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.49680496233116,
+            2.774119291396255
+          ]
+        },
+        "osm_id": 674458719,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.3570225,
+              2.046931
+            ],
+            [
+              45.3586279,
+              2.0471463
+            ],
+            [
+              45.3585929,
+              2.047347
+            ],
+            [
+              45.3594638,
+              2.04748
+            ],
+            [
+              45.3594451,
+              2.0479023
+            ],
+            [
+              45.3598654,
+              2.0479723
+            ],
+            [
+              45.3599332,
+              2.0474776
+            ],
+            [
+              45.3597113,
+              2.0474473
+            ],
+            [
+              45.3597627,
+              2.0469176
+            ],
+            [
+              45.3596857,
+              2.0468849
+            ],
+            [
+              45.3597424,
+              2.0461941
+            ],
+            [
+              45.360383,
+              2.0462702
+            ],
+            [
+              45.3603777,
+              2.0461411
+            ],
+            [
+              45.359431,
+              2.0459907
+            ],
+            [
+              45.3594895,
+              2.0455932
+            ],
+            [
+              45.3596674,
+              2.045627
+            ],
+            [
+              45.3597265,
+              2.0451551
+            ],
+            [
+              45.358566,
+              2.0449738
+            ],
+            [
+              45.3585282,
+              2.045196
+            ],
+            [
+              45.358424,
+              2.0456054
+            ],
+            [
+              45.3583801,
+              2.0459156
+            ],
+            [
+              45.3571812,
+              2.0457428
+            ],
+            [
+              45.3571517,
+              2.0459042
+            ],
+            [
+              45.3580527,
+              2.0460164
+            ],
+            [
+              45.3579248,
+              2.0469108
+            ],
+            [
+              45.3570424,
+              2.0468016
+            ],
+            [
+              45.3570225,
+              2.046931
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Lazaretto Forlanini Hospital",
+          "changeset_id": 164339477.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-03-31T16:35:28Z",
+          "changeset_user": "5155",
+          "uuid": "abc693ab8be14acba7a26f3b303017ef"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.35890847397789,
+            2.046374319345383
+          ]
+        },
+        "osm_id": 1373453766,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.06207833130631,
+          9.559658847710665
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "p/p GARGAAR HOSPITAL",
+          "changeset_id": 106039031.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-06-08T13:37:21Z",
+          "changeset_user": "GBAB",
+          "uuid": "9a17f68d8ed545d3846a0485ddf2a30f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.06207833130631,
+            9.559658847710665
+          ]
+        },
+        "osm_id": 4997437522,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          49.18054726718242,
+          11.284345144773766
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "BanderQasim Hospital",
+          "changeset_id": 102702184.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-04-10T14:47:50Z",
+          "changeset_user": "Gadiid",
+          "uuid": "4979d23fef8248b39d9e6a775a9f485e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            49.18054726718242,
+            11.284345144773766
+          ]
+        },
+        "osm_id": 8615023864,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.304562036881265,
+          2.032344179278397
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Dr. Kuule Pediatric clinic",
+          "addr_street": "W. Afgooye",
+          "changeset_id": 79113365.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-01-02T12:51:49Z",
+          "changeset_user": "wvdp",
+          "uuid": "4470ec10dca24fc284a6d04653dc6953"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.304562036881265,
+            2.032344179278397
+          ]
+        },
+        "osm_id": 4217845990,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.06625888933311,
+              9.550541432533691
+            ],
+            [
+              44.06636399839891,
+              9.551164627034638
+            ],
+            [
+              44.066684941471436,
+              9.551605766598641
+            ],
+            [
+              44.06677596893991,
+              9.551607778255402
+            ],
+            [
+              44.06684696365977,
+              9.551576262299477
+            ],
+            [
+              44.06721593503747,
+              9.551617333625018
+            ],
+            [
+              44.06742866774002,
+              9.551071923185532
+            ],
+            [
+              44.06628135283364,
+              9.550454931292933
+            ],
+            [
+              44.06625888933311,
+              9.550541432533691
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Adna Adan Maternity Hospital",
+          "operator": "Adna AAdan Isamaciil",
+          "operator_type": "private",
+          "changeset_id": 108186524.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-07-18T10:11:02Z",
+          "changeset_user": "Dhulmar",
+          "uuid": "44b3196440284b26a9335bd91208aae2"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.06680437689859,
+            9.551110425136509
+          ]
+        },
+        "osm_id": 965340306,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              46.38355638578071,
+              5.532318574320215
+            ],
+            [
+              46.38375595889528,
+              5.532636583726628
+            ],
+            [
+              46.38399224474574,
+              5.532489481325939
+            ],
+            [
+              46.383946060459266,
+              5.532415888216065
+            ],
+            [
+              46.383795353840185,
+              5.532509597893551
+            ],
+            [
+              46.383803232829194,
+              5.532522170748308
+            ],
+            [
+              46.383774818177415,
+              5.532539856564
+            ],
+            [
+              46.38366367414133,
+              5.532362746949957
+            ],
+            [
+              46.38384346596442,
+              5.53225093236162
+            ],
+            [
+              46.383793342183424,
+              5.532171136643399
+            ],
+            [
+              46.38355638578071,
+              5.532318574320215
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Dhuusamarreeb Hospital مستشفى دوسمريب",
+          "changeset_id": 141258127.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2023-09-14T13:29:58Z",
+          "changeset_user": "DouceLuvango",
+          "uuid": "7e2cbb2002d944fbbf17213e941a1a26"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            46.38375444822747,
+            5.532412441492645
+          ]
+        },
+        "osm_id": 277858955,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.05842893448357,
+          9.539912760214492
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Daryeel Phermecy",
+          "operator": "Cabdiqadir",
+          "opening_hours": "Mo-Su 10:00-21:00",
+          "dispensing": "yes",
+          "addr_housenumber": "60",
+          "addr_street": "Xaashi Kabadoon Street",
+          "addr_city": "Hargeysia",
+          "changeset_id": 108170294.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-07-17T18:38:30Z",
+          "changeset_user": "Dhulmar",
+          "uuid": "69435b9aca02424e9380215de8c1185b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.05842893448357,
+            9.539912760214492
+          ]
+        },
+        "osm_id": 8929222551,
+        "osm_type": "node",
+        "completeness": 31.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.76693807460279,
+          5.764091943389104
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Balanbale MCH",
+          "changeset_id": 139442816.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-08-04T13:44:17Z",
+          "changeset_user": "Lababulscio",
+          "uuid": "448ac9a574dc4e83b8df8a8af774c41e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.76693807460279,
+            5.764091943389104
+          ]
+        },
+        "osm_id": 10297949310,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.94028676362419,
+              10.682983657571299
+            ],
+            [
+              43.940646598727426,
+              10.683446422445513
+            ],
+            [
+              43.941746136785724,
+              10.682553665938485
+            ],
+            [
+              43.941293430195316,
+              10.682059888022536
+            ],
+            [
+              43.94053679579585,
+              10.682659194099443
+            ],
+            [
+              43.94057292179852,
+              10.682706635671423
+            ],
+            [
+              43.94028676362419,
+              10.682983657571299
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Lughaya Regional Hospital",
+          "changeset_id": 164775411.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-04-10T15:39:10Z",
+          "changeset_user": "5155",
+          "uuid": "57f454796e3d49978dd07b1c8a6a014b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.94099743097632,
+            10.68274209371157
+          ]
+        },
+        "osm_id": 1376502290,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.532198996103034,
+              1.785659488282874
+            ],
+            [
+              44.53243637160091,
+              1.786348480723746
+            ],
+            [
+              44.53302327246112,
+              1.786146225400159
+            ],
+            [
+              44.532785729325184,
+              1.785457316778349
+            ],
+            [
+              44.532198996103034,
+              1.785659488282874
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Qoryooley General Hospital",
+          "changeset_id": 85262770.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-05-15T12:58:43Z",
+          "changeset_user": "Ambassador_Spock",
+          "uuid": "543b6f9e22af414783ff18296c4106d6"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.53261109664334,
+            1.785902895552333
+          ]
+        },
+        "osm_id": 804267095,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              49.8188626376392,
+              7.981982247493647
+            ],
+            [
+              49.81896783052403,
+              7.982291958815892
+            ],
+            [
+              49.81942196203798,
+              7.982140665463618
+            ],
+            [
+              49.81931676915315,
+              7.981830954141344
+            ],
+            [
+              49.8188626376392,
+              7.981982247493647
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "EYL Hospital",
+          "changeset_id": 141656600.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2023-09-23T18:25:40Z",
+          "changeset_user": "Qwajo OSM",
+          "uuid": "875f661e46c14ee69b0d46dfa01633fa"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            49.81914229983859,
+            7.982061456478624
+          ]
+        },
+        "osm_id": 752162110,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.05539577518218,
+          9.551040993962829
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Birjeex Militery Hospital",
+          "operator": "Govermantal",
+          "operator_type": "county_government",
+          "addr_housenumber": "1",
+          "addr_street": "Birjeex Street",
+          "addr_city": "Hargaysia",
+          "changeset_id": 108170294.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-07-17T18:38:30Z",
+          "changeset_user": "Dhulmar",
+          "uuid": "b46263ad0ca04e87a6574515db57deaa"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.05539577518218,
+            9.551040993962829
+          ]
+        },
+        "osm_id": 8929222545,
+        "osm_type": "node",
+        "completeness": 28.125
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.08980901976557,
+          9.539865067185445
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Kulaan  Pharmacy",
+          "changeset_id": 114130112.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-11-23T08:56:26Z",
+          "changeset_user": "Mbabani Allan",
+          "uuid": "98e711d107134856bc3c258de921467c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.08980901976557,
+            9.539865067185445
+          ]
+        },
+        "osm_id": 9277226733,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.30228584725546,
+              2.042105659895242
+            ],
+            [
+              45.30271424632667,
+              2.04288936784198
+            ],
+            [
+              45.30298213195209,
+              2.043356742762938
+            ],
+            [
+              45.30313644278951,
+              2.043632926472498
+            ],
+            [
+              45.30359074194152,
+              2.04356796672289
+            ],
+            [
+              45.30374572333122,
+              2.043982368015804
+            ],
+            [
+              45.30428459588623,
+              2.043756224268179
+            ],
+            [
+              45.30529805179893,
+              2.043333692529217
+            ],
+            [
+              45.305325376803296,
+              2.043257249572264
+            ],
+            [
+              45.305293525571216,
+              2.0433328543389
+            ],
+            [
+              45.305407351816314,
+              2.042867155798575
+            ],
+            [
+              45.305428977126496,
+              2.042787276261322
+            ],
+            [
+              45.30453932192367,
+              2.041177699394922
+            ],
+            [
+              45.3043756233547,
+              2.041267469577889
+            ],
+            [
+              45.30435735080579,
+              2.041229080461363
+            ],
+            [
+              45.30434419121778,
+              2.0412323494036
+            ],
+            [
+              45.3042190494034,
+              2.040981059946461
+            ],
+            [
+              45.30420094449255,
+              2.040998997219248
+            ],
+            [
+              45.30340977665202,
+              2.041443741001643
+            ],
+            [
+              45.303224871868,
+              2.041553041019029
+            ],
+            [
+              45.30228584725546,
+              2.042105659895242
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Isbitaalka Tababarada & Cilmibaarista ee Muqdisho Somaliya Turkiga",
+          "emergency": "yes",
+          "changeset_id": 164350526.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2025-03-31T21:55:15Z",
+          "changeset_user": "5155",
+          "uuid": "8828b662aa954672babf3a3b087ed6a3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.30394121829242,
+            2.042526250050245
+          ]
+        },
+        "osm_id": 550425480,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.120874640490456,
+          2.145001567977175
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "SRCS Clinic Afgoye",
+          "operator": "SRCS Somalia",
+          "speciality": "clinical_pathology",
+          "operator_type": "public",
+          "opening_hours": "Sa-Th 08:00-14:00",
+          "addr_city": "Afgooye",
+          "changeset_id": 163893818.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-03-21T08:22:32Z",
+          "changeset_user": "Practice Version",
+          "uuid": "289fc5ef22c9480b8bc56e64cb66ac14"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.120874640490456,
+            2.145001567977175
+          ]
+        },
+        "osm_id": 12686512208,
+        "osm_type": "node",
+        "completeness": 28.125
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.055244649467966,
+              9.56016167808204
+            ],
+            [
+              44.05532218207233,
+              9.560176765507748
+            ],
+            [
+              44.05536643852108,
+              9.560303751340854
+            ],
+            [
+              44.05548537772711,
+              9.560326969212639
+            ],
+            [
+              44.05555871937989,
+              9.559961099139116
+            ],
+            [
+              44.05529527616312,
+              9.559909634253614
+            ],
+            [
+              44.055244649467966,
+              9.56016167808204
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Disabled people hospital",
+          "addr_street": "Road Number 1 / طريق رقم 1",
+          "changeset_id": 83457870.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-04-13T07:35:40Z",
+          "changeset_user": "_aahu_",
+          "uuid": "32c899fdf90047938d93a945e40a77c5"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.05540553238562,
+            9.560100626200782
+          ]
+        },
+        "osm_id": 791249655,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.060802857100384,
+              9.56562173362832
+            ],
+            [
+              44.06080503639521,
+              9.565985340587986
+            ],
+            [
+              44.06113075715254,
+              9.565983496569288
+            ],
+            [
+              44.06112866167675,
+              9.565619889609621
+            ],
+            [
+              44.060802857100384,
+              9.56562173362832
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 83456722.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-04-13T07:17:52Z",
+          "changeset_user": "_aahu_",
+          "uuid": "c9675f9a078e4481b703813428c6419b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.06096682799996,
+            9.565802607302897
+          ]
+        },
+        "osm_id": 791245129,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.07478387159381,
+              9.528850575863203
+            ],
+            [
+              44.07479082857344,
+              9.528924923344334
+            ],
+            [
+              44.074817399206495,
+              9.528922492592415
+            ],
+            [
+              44.07482259598646,
+              9.528977645515312
+            ],
+            [
+              44.07506399479786,
+              9.528955684929002
+            ],
+            [
+              44.07504505169669,
+              9.528753932519606
+            ],
+            [
+              44.07480449107561,
+              9.528775976924948
+            ],
+            [
+              44.07481128041718,
+              9.528848061292251
+            ],
+            [
+              44.07478387159381,
+              9.528850575863203
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "المستشف الدولى",
+          "source": "GPS trace",
+          "changeset_id": 95579602.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2020-12-09T23:46:13Z",
+          "changeset_user": "MustafaQasim",
+          "uuid": "a8d2bf57b99245deb005b28f0c6c6f97"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.07492879044511,
+            9.528866700605263
+          ]
+        },
+        "osm_id": 357089660,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.532627898088435,
+          1.786273797966459
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "changeset_id": 52834698.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2017-10-11T17:50:31Z",
+          "changeset_user": "Hon Abdullahi Ugaas",
+          "uuid": "bea6a1d3c46e4bcd9e96820d590c23a4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.532627898088435,
+            1.786273797966459
+          ]
+        },
+        "osm_id": 5161423621,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.06407668529192,
+              9.408139267862083
+            ],
+            [
+              45.06417869305352,
+              9.408473873436776
+            ],
+            [
+              45.0642398809467,
+              9.40846674881908
+            ],
+            [
+              45.064260081333344,
+              9.408571271151658
+            ],
+            [
+              45.064666352180154,
+              9.40853028364512
+            ],
+            [
+              45.06460734358183,
+              9.407961320057723
+            ],
+            [
+              45.06418757787088,
+              9.408015550971243
+            ],
+            [
+              45.06419294228894,
+              9.40806181907675
+            ],
+            [
+              45.06414608745018,
+              9.408073721379253
+            ],
+            [
+              45.06415807357172,
+              9.408134657815339
+            ],
+            [
+              45.06407668529192,
+              9.408139267862083
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Odweyne General Hospital",
+          "changeset_id": 90429768.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2020-09-04T18:58:23Z",
+          "changeset_user": "Muuse SLNTV",
+          "uuid": "96c3337ad1fb45d69cef9a33b8cb8d01"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.06439637486626,
+            9.4082684477578
+          ]
+        },
+        "osm_id": 368147204,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.055270046634575,
+          9.562088761440663
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "source": "300TDI",
+          "wheelchair": "no",
+          "addr_city": "هرجيسا",
+          "changeset_id": 106039031.0,
+          "changeset_version": 8.0,
+          "changeset_timestamp": "2021-06-08T13:37:21Z",
+          "changeset_user": "GBAB",
+          "uuid": "7b947ff99c3a4fb182293c8c703a26c8"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.055270046634575,
+            9.562088761440663
+          ]
+        },
+        "osm_id": 1104353861,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.3087703,
+              2.0141069
+            ],
+            [
+              45.3102095,
+              2.0150698
+            ],
+            [
+              45.3108234,
+              2.0137331
+            ],
+            [
+              45.3107909,
+              2.0136965
+            ],
+            [
+              45.3107217,
+              2.0137189
+            ],
+            [
+              45.3104819,
+              2.013597
+            ],
+            [
+              45.310429,
+              2.0135157
+            ],
+            [
+              45.3095326,
+              2.0130566
+            ],
+            [
+              45.3087703,
+              2.0141069
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Kalkaal Hospital",
+          "changeset_id": 164140654.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-03-26T22:08:18Z",
+          "changeset_user": "Rodo05",
+          "uuid": "eced595ba2824568aa45ac458e0f6295"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.30983497103538,
+            2.014017470617859
+          ]
+        },
+        "osm_id": 1371916774,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.22105542312741,
+          6.241416686325408
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Kadawe polyclinic center",
+          "operator": "Kadawe",
+          "opening_hours": "Sa-Th 00:00-24:00",
+          "addr_housenumber": "2580",
+          "addr_street": "Kadawe street",
+          "addr_postcode": "252",
+          "changeset_id": 69844313.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2019-05-03T13:32:44Z",
+          "changeset_user": "KADAWE",
+          "uuid": "7bf6329e0201481faca4cca954938a1a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            46.22105542312741,
+            6.241416686325408
+          ]
+        },
+        "osm_id": 6445482385,
+        "osm_type": "node",
+        "completeness": 25.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.56864991626691,
+          -0.074511724038842
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "opening_hours": "24/7",
+          "addr_housenumber": "001",
+          "addr_street": "Kismaayo - Jilib Highway",
+          "addr_postcode": "JH 09010",
+          "changeset_id": 140361828.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-08-25T09:26:17Z",
+          "changeset_user": "Sugoow",
+          "uuid": "942a92d7204d47fcb0de59c6b4dcbfb2"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.56864991626691,
+            -0.074511724038842
+          ]
+        },
+        "osm_id": 11143201905,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          46.95450396968005,
+          5.294063563346299
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Isbitaalka xiindheer",
+          "addr_street": "Wadada xiindheere",
+          "changeset_id": 73649859.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-08-23T06:29:12Z",
+          "changeset_user": "Ahmedasir",
+          "uuid": "c030e5149f3542a3b4d9b1709096e1ea"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            46.95450396968005,
+            5.294063563346299
+          ]
+        },
+        "osm_id": 6737970385,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.544366275018746,
+          9.513019088606171
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "addr_street": "wadada October",
+          "changeset_id": 65823157.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2018-12-27T19:44:52Z",
+          "changeset_user": "Eng Ahmed shabeel",
+          "uuid": "252e27b762684f52a31afcb91d2fceab"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.544366275018746,
+            9.513019088606171
+          ]
+        },
+        "osm_id": 6166824486,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.337429155605264,
+              2.029309930329589
+            ],
+            [
+              45.338362564342646,
+              2.029706729625843
+            ],
+            [
+              45.33864017297577,
+              2.029056629215688
+            ],
+            [
+              45.33765303623903,
+              2.028670642574554
+            ],
+            [
+              45.337429155605264,
+              2.029309930329589
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Martino Hospital",
+          "changeset_id": 164140609.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-03-26T22:06:30Z",
+          "changeset_user": "Rodo05",
+          "uuid": "ac547e46818d495d95408203b843e1d7"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.338025667163635,
+            2.029185019879216
+          ]
+        },
+        "osm_id": 1371916683,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              47.02154888532726,
+              7.023166369010568
+            ],
+            [
+              47.02324672363409,
+              7.023464764763531
+            ],
+            [
+              47.023399693367,
+              7.022234636653792
+            ],
+            [
+              47.02175273321242,
+              7.021782097701447
+            ],
+            [
+              47.02154888532726,
+              7.023166369010568
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Galdogob general hospital",
+          "changeset_id": 120917025.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2022-05-13T06:30:53Z",
+          "changeset_user": "Reims Moderne",
+          "uuid": "ec1d13af9d2f41d6a9d3fb0fa5deac6d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            47.02246962455449,
+            7.0226600077921
+          ]
+        },
+        "osm_id": 276883215,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.1899374,
+              9.9300354
+            ],
+            [
+              43.1900004,
+              9.9301688
+            ],
+            [
+              43.1904639,
+              9.9301918
+            ],
+            [
+              43.19052,
+              9.9295225
+            ],
+            [
+              43.1899678,
+              9.9294961
+            ],
+            [
+              43.1899374,
+              9.9300354
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Adal Hospital",
+          "changeset_id": 164728561.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-04-09T14:46:18Z",
+          "changeset_user": "5155",
+          "uuid": "058a2c218c404d22a5fdcfca614eac60"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.19022400953993,
+            9.92983847421565
+          ]
+        },
+        "osm_id": 1376135308,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.09138682921895,
+          9.53961444828056
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Muhuran Pharmacy",
+          "changeset_id": 114130125.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-11-23T08:56:45Z",
+          "changeset_user": "Mbabani Allan",
+          "uuid": "c970e5fa3f4e42fc9af4ef387c593001"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.09138682921895,
+            9.53961444828056
+          ]
+        },
+        "osm_id": 9277218363,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              44.06625486601959,
+              9.550517460290592
+            ],
+            [
+              44.06634865951611,
+              9.551158089150164
+            ],
+            [
+              44.06645737280027,
+              9.55137098949075
+            ],
+            [
+              44.06647078384535,
+              9.55136562507272
+            ],
+            [
+              44.06662635196824,
+              9.551640719134895
+            ],
+            [
+              44.067149382726285,
+              9.551632840145913
+            ],
+            [
+              44.067233872310254,
+              9.551568048034369
+            ],
+            [
+              44.06742866774002,
+              9.551071923185532
+            ],
+            [
+              44.06711443019003,
+              9.550914678682005
+            ],
+            [
+              44.06708635081441,
+              9.550922641490018
+            ],
+            [
+              44.06689205829886,
+              9.550816023681648
+            ],
+            [
+              44.066862386361606,
+              9.55087184715677
+            ],
+            [
+              44.06657136668343,
+              9.550713680643895
+            ],
+            [
+              44.06661235418994,
+              9.550646038685272
+            ],
+            [
+              44.06627473113011,
+              9.5504704378138
+            ],
+            [
+              44.06625486601959,
+              9.550517460290592
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Dhakhtarka Adna مستشفى أدنا آدن",
+          "opening_hours": "24/7",
+          "addr_city": "هرجيسا",
+          "changeset_id": 142997091.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2023-10-23T04:10:08Z",
+          "changeset_user": "b-jazz-bot",
+          "uuid": "65617ff718dd4d179a0bc9cc9a36ad22"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.06679759252044,
+            9.55115094546866
+          ]
+        },
+        "osm_id": 791242083,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.34347845894462,
+          2.059286968839359
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 145166644.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-12-15T21:08:33Z",
+          "changeset_user": "Saafi Specialist Hospital",
+          "uuid": "cc09d5e6ed0b47b0b9de919c44ec8819"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.34347845894462,
+            2.059286968839359
+          ]
+        },
+        "osm_id": 11421375245,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.29699418414398,
+              2.034314094162255
+            ],
+            [
+              45.29800227563865,
+              2.036158448136547
+            ],
+            [
+              45.29874575045014,
+              2.035711776516422
+            ],
+            [
+              45.298602419905876,
+              2.035474987751769
+            ],
+            [
+              45.29905747342917,
+              2.035223865932693
+            ],
+            [
+              45.299177837558744,
+              2.035465935296344
+            ],
+            [
+              45.300689597615104,
+              2.0346546508882
+            ],
+            [
+              45.30048943776734,
+              2.034284589863091
+            ],
+            [
+              45.29968452360558,
+              2.032815996608036
+            ],
+            [
+              45.29699418414398,
+              2.034314094162255
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Benadir Hospital",
+          "emergency": "yes",
+          "changeset_id": 164426108.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2025-04-02T15:06:58Z",
+          "changeset_user": "5155",
+          "uuid": "d2eccf2069434ba1b7466598ac2d6387"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.29883808243194,
+            2.034456207707983
+          ]
+        },
+        "osm_id": 1065724009,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.3676448,
+              2.0903371
+            ],
+            [
+              45.3681065,
+              2.0913254
+            ],
+            [
+              45.3693282,
+              2.0907515
+            ],
+            [
+              45.3692493,
+              2.0905878
+            ],
+            [
+              45.3692526,
+              2.0905731
+            ],
+            [
+              45.3705598,
+              2.0899819
+            ],
+            [
+              45.370167,
+              2.0891277
+            ],
+            [
+              45.3676448,
+              2.0903371
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "SOS Hospital",
+          "emergency": "yes",
+          "changeset_id": 164373960.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-04-01T12:56:27Z",
+          "changeset_user": "5155",
+          "uuid": "03b5c6c090fd4715a8fcb38afff3108a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.36906780470489,
+            2.090217139108153
+          ]
+        },
+        "osm_id": 1373683895,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.54386228164992,
+          3.800340356772296
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Luuq Hospital",
+          "changeset_id": 164444653.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2025-04-03T02:36:59Z",
+          "changeset_user": "5155",
+          "uuid": "7994ebd6d8b044d5a0ffbdc33efe6cfe"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.54386228164992,
+            3.800340356772296
+          ]
+        },
+        "osm_id": 4617758189,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          42.55113458848135,
+          -0.359439434996744
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 132049257.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-02-03T16:31:51Z",
+          "changeset_user": "oli92",
+          "uuid": "dbb3e95b787c4863b5179a0377c344aa"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.55113458848135,
+            -0.359439434996744
+          ]
+        },
+        "osm_id": 4543414240,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.08376642194875,
+          9.54055908876822
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Nairobi  Pharmacy",
+          "changeset_id": 114130057.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-11-23T08:55:00Z",
+          "changeset_user": "Mbabani Allan",
+          "uuid": "d9d4e7fadbf640e8b4500cd76d5c61cb"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.08376642194875,
+            9.54055908876822
+          ]
+        },
+        "osm_id": 9277214018,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.538969335203404,
+          9.52659006039633
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "changeset_id": 65823157.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2018-12-27T19:44:43Z",
+          "changeset_user": "Eng Ahmed shabeel",
+          "uuid": "437916a038724d4285565aa4d0fe7f2b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.538969335203404,
+            9.52659006039633
+          ]
+        },
+        "osm_id": 6166824485,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.333387569533045,
+          2.028690675323134
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Wabari",
+          "addr_street": "Via Londra",
+          "changeset_id": 146133975.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-01-11T09:07:06Z",
+          "changeset_user": "Mohamed Yusuf Ali",
+          "uuid": "20ccfbe189ca43d6b5ee0c1351571924"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.333387569533045,
+            2.028690675323134
+          ]
+        },
+        "osm_id": 8812218797,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.9842063681418,
+          1.982674697452808
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Afgoi District Hospital",
+          "changeset_id": 100642782.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-03-08T13:57:46Z",
+          "changeset_user": "UNGSC-DTLM-Ale_Zena",
+          "uuid": "7a48df33d581448e8ed31febd5e7f89f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.9842063681418,
+            1.982674697452808
+          ]
+        },
+        "osm_id": 8497141643,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.34335843009117,
+              2.059546891656765
+            ],
+            [
+              45.343438728723584,
+              2.059563571644077
+            ],
+            [
+              45.34346965794629,
+              2.059378163945894
+            ],
+            [
+              45.343478375125585,
+              2.05937355389915
+            ],
+            [
+              45.34349564184612,
+              2.059287136477423
+            ],
+            [
+              45.34341651668015,
+              2.059268193376255
+            ],
+            [
+              45.343411822814375,
+              2.059290321600628
+            ],
+            [
+              45.34338718001905,
+              2.05940926080666
+            ],
+            [
+              45.34335843009117,
+              2.059546891656765
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Saafi Specialist Hospital",
+          "addr_street": "Via Alto Juba, Suuq Bacaad",
+          "addr_city": "Mogadishu, Banadir",
+          "changeset_id": 145166965.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2023-12-15T21:21:12Z",
+          "changeset_user": "Saafi Specialist Hospital",
+          "uuid": "adacfbe05234423390574fdd08067c63"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.34342623394077,
+            2.059415865077841
+          ]
+        },
+        "osm_id": 1029298542,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              45.3501318,
+              2.039008
+            ],
+            [
+              45.35139,
+              2.0393122
+            ],
+            [
+              45.3514483,
+              2.0393582
+            ],
+            [
+              45.3515563,
+              2.0393812
+            ],
+            [
+              45.3516572,
+              2.0393582
+            ],
+            [
+              45.3517563,
+              2.039268
+            ],
+            [
+              45.3519226,
+              2.0389868
+            ],
+            [
+              45.35194895883467,
+              2.037874558992286
+            ],
+            [
+              45.35088319984615,
+              2.037846647254725
+            ],
+            [
+              45.3508927,
+              2.037206
+            ],
+            [
+              45.3501972,
+              2.0371794
+            ],
+            [
+              45.3501318,
+              2.039008
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "United Arab Emirates Hospital",
+          "changeset_id": 164337784.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-03-31T15:56:46Z",
+          "changeset_user": "5155",
+          "uuid": "4496b698d6ae4568b8cb9edf750d9c31"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.35098246658248,
+            2.038368070618489
+          ]
+        },
+        "osm_id": 1373443360,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.06847816583638,
+          9.521988898468265
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "MSF Somalia",
+          "operator": "Médecins sans frontières",
+          "operator_type": "ngo",
+          "changeset_id": 110024829.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-08-21T11:35:41Z",
+          "changeset_user": "Seandebasti",
+          "uuid": "9742a90710d945d5af5e760b9bbe580b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.06847816583638,
+            9.521988898468265
+          ]
+        },
+        "osm_id": 6503396585,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.532924977186894,
+          2.974388791520624
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "changeset_id": 144451112.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-11-25T19:14:56Z",
+          "changeset_user": "Abdimajid",
+          "uuid": "a185274f4c5c4ab99db66a8a174acf1c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.532924977186894,
+            2.974388791520624
+          ]
+        },
+        "osm_id": 11375814969,
+        "osm_type": "node",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.05110683914734,
+          9.542410651179239
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Hargeisa Care Clinic",
+          "changeset_id": 63199712.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2018-10-04T15:21:09Z",
+          "changeset_user": "Atlasphere",
+          "uuid": "fa201f12cca243e38842a634278b056a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.05110683914734,
+            9.542410651179239
+          ]
+        },
+        "osm_id": 5954605612,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          45.535706679393115,
+          9.527978019742847
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Mansha Allah pharmacy",
+          "changeset_id": 65823360.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2018-12-27T19:53:14Z",
+          "changeset_user": "Eng Ahmed shabeel",
+          "uuid": "d9fa6f62b2b74d2b9102aab56ac62164"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            45.535706679393115,
+            9.527978019742847
+          ]
+        },
+        "osm_id": 6166837385,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          50.22921999753265,
+          10.281420925763626
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Iskushuban Hospital",
+          "addr_street": "Dhalmado",
+          "changeset_id": 126491624.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2022-09-22T07:20:49Z",
+          "changeset_user": "JamalJama",
+          "uuid": "c1377e07677244679e8dcc94377db629"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            50.22921999753265,
+            10.281420925763626
+          ]
+        },
+        "osm_id": 7769496885,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.2085732,
+              9.9365087
+            ],
+            [
+              43.2085803,
+              9.9377951
+            ],
+            [
+              43.209458,
+              9.9379973
+            ],
+            [
+              43.2094704,
+              9.936676
+            ],
+            [
+              43.2085732,
+              9.9365087
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Al-Hayatt Hospital Borama, Teaching Hospital of Amoud University",
+          "changeset_id": 164733824.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-04-09T16:41:13Z",
+          "changeset_user": "5155",
+          "uuid": "ad6ec95d1294431799dc9dd51f4efdae"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.2090226886762,
+            9.937242357063788
+          ]
+        },
+        "osm_id": 1376167062,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          44.764940558807496,
+          1.713938644131304
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "Marka Regional Hospital",
+          "source": "UN UNSOS mission",
+          "changeset_id": 70874617.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-06-03T07:13:26Z",
+          "changeset_user": "UNGSC-DTLM-Ale_Zena",
+          "uuid": "c5a93ea40b874434827369091bc500df"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            44.764940558807496,
+            1.713938644131304
+          ]
+        },
+        "osm_id": 6517696674,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    }
+  ]
+}

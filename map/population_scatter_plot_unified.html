@@ -42,6 +42,48 @@
             backdrop-filter: blur(10px);
             position: relative;
             z-index: 9998;
+            transition: all 0.3s ease;
+        }
+        
+        .controls.collapsed {
+            padding: 8px 24px;
+            margin-bottom: 5px;
+        }
+        
+        .controls.collapsed .control-group {
+            display: none;
+        }
+        
+        .controls.collapsed .collapse-btn {
+            transform: rotate(180deg);
+        }
+        
+        .collapse-btn {
+            position: absolute;
+            right: 8px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 16px;
+            height: 16px;
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            opacity: 0.4;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 10px;
+            color: #64748b;
+        }
+        
+        .collapse-btn:hover {
+            opacity: 0.7;
+        }
+        
+        .collapse-btn::before {
+            content: "▼";
+            font-size: 8px;
         }
         
         /* Zoom control styles */
@@ -423,11 +465,26 @@
             text-align: center;
         }
         
+        /* Adjust chart container when controls are collapsed */
+        .controls.collapsed + .chart-container {
+            margin-top: -10px; /* Compensate for reduced controls height */
+        }
+        
+        /* Ensure smooth transition for chart container */
         .chart-container {
             flex: 1;
             width: 100%;
             position: relative;
             min-height: 300px;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        /* Force chart container to take remaining space */
+        .container:has(.controls.collapsed) .chart-container {
+            flex: 1;
+            min-height: calc(100vh - 120px); /* Adjust based on collapsed controls height */
         }
         
         .legend {
@@ -844,6 +901,7 @@
                 <input type="range" id="maxCircles" min="1" max="256" step="1" value="16">
                 <span id="maxCirclesValue">16</span>
             </div>
+            <button class="collapse-btn" id="collapseBtn" title="Collapse/Expand Controls"></button>
         </div>
         <div class="chart-container" id="chart">
             <!-- Zoom Control Buttons -->
@@ -900,6 +958,36 @@
                 // Use controls bottom position as detail panel top position
                 detailPanel.style.top = controlsBottom + 'px';
                 detailPanel.style.height = `calc(100vh - ${controlsBottom}px)`;
+            }
+        }
+
+        // Collapse/Expand controls functionality
+        function setupCollapseControls() {
+            const collapseBtn = document.getElementById('collapseBtn');
+            const controls = document.querySelector('.controls');
+            const chartContainer = document.querySelector('.chart-container');
+            
+            if (collapseBtn && controls && chartContainer) {
+                collapseBtn.addEventListener('click', () => {
+                    controls.classList.toggle('collapsed');
+                    
+                    // Immediately update detail panel position
+                    updateDetailPanelPosition();
+                    
+                    // Adjust chart container height based on controls state
+                    if (controls.classList.contains('collapsed')) {
+                        // When collapsed, increase chart container height
+                        chartContainer.style.height = 'calc(100vh - 80px)'; // Adjust based on collapsed controls height
+                    } else {
+                        // When expanded, restore normal height
+                        chartContainer.style.height = 'calc(100vh - 140px)'; // Adjust based on expanded controls height
+                    }
+                    
+                    // Force chart recalculation
+                    setTimeout(() => {
+                        window.dispatchEvent(new Event('resize'));
+                    }, 100);
+                });
             }
         }
 
@@ -3437,6 +3525,7 @@
         window.addEventListener('load', function() {
             setTimeout(createCustomSelects, 100);
             updateZoomControlsPosition(); // Initialize zoom controls position
+            setupCollapseControls(); // Initialize collapse controls functionality
         });
     </script>
 </body>

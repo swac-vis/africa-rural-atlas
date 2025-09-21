@@ -1,0 +1,3735 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.37751954000305,
+          -26.49673882980241
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Clicks",
+          "changeset_id": 159618164.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2024-11-26T14:05:53Z",
+          "changeset_user": "Sibusiso Ginindza",
+          "uuid": "fd911537a8434524a4ca872059d6f380"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.37751954000305,
+            -26.49673882980241
+          ]
+        },
+        "osm_id": 12376336955,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.330416764567218,
+              -26.359727318518793
+            ],
+            [
+              31.331393088648866,
+              -26.35928517312641
+            ],
+            [
+              31.331382359812807,
+              -26.359751374580924
+            ],
+            [
+              31.331205334017795,
+              -26.35978984751648
+            ],
+            [
+              31.33126962321512,
+              -26.361001032525053
+            ],
+            [
+              31.330453980217328,
+              -26.36108250462391
+            ],
+            [
+              31.330416764567218,
+              -26.359727318518793
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Sigombeni Clinic",
+          "changeset_id": 73804955.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-08-27T15:43:09Z",
+          "changeset_user": "mDav",
+          "uuid": "f9039c0c827c4faeb8cecdf5ed5b2b26"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.330873394917145,
+            -26.360249925577
+          ]
+        },
+        "osm_id": 718954911,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.41997538831947,
+              -26.48541303459629
+            ],
+            [
+              31.421240385146405,
+              -26.485223603584586
+            ],
+            [
+              31.42152386111175,
+              -26.486260528826165
+            ],
+            [
+              31.420272862063086,
+              -26.48646865148197
+            ],
+            [
+              31.41997538831947,
+              -26.48541303459629
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 90099705.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-08-28T20:52:45Z",
+          "changeset_user": "BugFinder",
+          "uuid": "686002c2da7043ca8aaf6c5be3306fa5"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.42075095535039,
+            -26.485841186821865
+          ]
+        },
+        "osm_id": 258779633,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.205940473298625,
+              -27.12054001290491
+            ],
+            [
+              31.20797903596946,
+              -27.1203667589663
+            ],
+            [
+              31.208332919921446,
+              -27.120949552693958
+            ],
+            [
+              31.20904789626215,
+              -27.120587203019767
+            ],
+            [
+              31.209432541798776,
+              -27.12118734728699
+            ],
+            [
+              31.208676158856406,
+              -27.121559755244988
+            ],
+            [
+              31.208704573508157,
+              -27.121620440223978
+            ],
+            [
+              31.20896642416332,
+              -27.122064681092155
+            ],
+            [
+              31.209253169070877,
+              -27.12325214531475
+            ],
+            [
+              31.208046258832923,
+              -27.123894702012052
+            ],
+            [
+              31.205940473298625,
+              -27.12054001290491
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Nhlangano Health Center",
+          "changeset_id": 84834342.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-05-07T13:00:19Z",
+          "changeset_user": "Ambassador_Spock",
+          "uuid": "10901d5d314943e4a1acb4bcad204b9f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.20788548715917,
+            -27.121859876363704
+          ]
+        },
+        "osm_id": 784171533,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.436777080868836,
+          -26.251584925783476
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "St. Florence Clinic",
+          "changeset_id": 73804955.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-08-27T15:43:09Z",
+          "changeset_user": "mDav",
+          "uuid": "bb3646f4a2d443d3850b2a599f9b3b37"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.436777080868836,
+            -26.251584925783476
+          ]
+        },
+        "osm_id": 6750526901,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.1438801,
+              -26.332678
+            ],
+            [
+              31.1449101,
+              -26.3314039
+            ],
+            [
+              31.145645,
+              -26.3316924
+            ],
+            [
+              31.1460688,
+              -26.3327597
+            ],
+            [
+              31.1438801,
+              -26.332678
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Nurses' home",
+          "changeset_id": 162203506.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-02-06T11:06:35Z",
+          "changeset_user": "Thandolwethu Malaza",
+          "uuid": "5a95e7f76dd3468fbf3bb37af5a9f465"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.14506319059412,
+            -26.33221899792081
+          ]
+        },
+        "osm_id": 1357187618,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.133659718015053,
+              -26.32798371009619
+            ],
+            [
+              31.134348123722702,
+              -26.32752211868842
+            ],
+            [
+              31.134379388221532,
+              -26.327515832261042
+            ],
+            [
+              31.134448874198853,
+              -26.32751566462298
+            ],
+            [
+              31.134513582491337,
+              -26.32752060994585
+            ],
+            [
+              31.13456907069036,
+              -26.327610715404973
+            ],
+            [
+              31.134600083732096,
+              -26.327616247461066
+            ],
+            [
+              31.134632940792528,
+              -26.327616666556224
+            ],
+            [
+              31.134781384297725,
+              -26.32777240231721
+            ],
+            [
+              31.134923289918476,
+              -26.327912128643106
+            ],
+            [
+              31.13542117496698,
+              -26.32843541085822
+            ],
+            [
+              31.135484542154956,
+              -26.328418227956718
+            ],
+            [
+              31.135738346183047,
+              -26.328978558183877
+            ],
+            [
+              31.13577908223249,
+              -26.32906816072878
+            ],
+            [
+              31.135485967078495,
+              -26.329131360278723
+            ],
+            [
+              31.135317742281813,
+              -26.329165055529472
+            ],
+            [
+              31.13497676646071,
+              -26.329215514586593
+            ],
+            [
+              31.134895964914108,
+              -26.32913555123031
+            ],
+            [
+              31.134684657135125,
+              -26.328952071369827
+            ],
+            [
+              31.134601927750793,
+              -26.328882166297376
+            ],
+            [
+              31.13433043790701,
+              -26.328643030599835
+            ],
+            [
+              31.134193393790127,
+              -26.3285259354125
+            ],
+            [
+              31.134067497604462,
+              -26.328419066147035
+            ],
+            [
+              31.13402424698407,
+              -26.328384532705968
+            ],
+            [
+              31.13399792780811,
+              -26.328361817748345
+            ],
+            [
+              31.133922742136633,
+              -26.32830792211095
+            ],
+            [
+              31.133707662501223,
+              -26.328154617101916
+            ],
+            [
+              31.133659718015053,
+              -26.32798371009619
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Mbabane Clinic",
+          "changeset_id": 113940162.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-11-18T11:25:53Z",
+          "changeset_user": "Plekhanov",
+          "uuid": "6f8723e705da476893d2e695002d4574"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.134728334435717,
+            -26.32838797264202
+          ]
+        },
+        "osm_id": 784172577,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.36563039708463,
+              -26.500456455316964
+            ],
+            [
+              31.365683454531734,
+              -26.500332235511934
+            ],
+            [
+              31.365992495301725,
+              -26.500445642661873
+            ],
+            [
+              31.36593407343662,
+              -26.500571035933348
+            ],
+            [
+              31.365849248576495,
+              -26.50053641867325
+            ],
+            [
+              31.365760735678975,
+              -26.500720569085956
+            ],
+            [
+              31.365669289115374,
+              -26.50069282498646
+            ],
+            [
+              31.365760568040912,
+              -26.50050523799345
+            ],
+            [
+              31.36563039708463,
+              -26.500456455316964
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 159184421.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-15T19:28:41Z",
+          "changeset_user": "optimistic9",
+          "uuid": "a0786ba805054c77bfa22f1ece62a4b3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.365795110486726,
+            -26.500500513188616
+          ]
+        },
+        "osm_id": 476203239,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.131044731863,
+              -26.31881063908213
+            ],
+            [
+              31.1313585503178,
+              -26.31837067298457
+            ],
+            [
+              31.13170723748982,
+              -26.318536550848364
+            ],
+            [
+              31.13220344615769,
+              -26.31872162327045
+            ],
+            [
+              31.1321463,
+              -26.3188402
+            ],
+            [
+              31.131980738990364,
+              -26.31918321467819
+            ],
+            [
+              31.131803461738258,
+              -26.319112639053486
+            ],
+            [
+              31.131286549769555,
+              -26.318906863330568
+            ],
+            [
+              31.131055293060996,
+              -26.318814830033716
+            ],
+            [
+              31.131044731863,
+              -26.31881063908213
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Baylor Childrens Clinic Eswatini",
+          "changeset_id": 162238357.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2025-02-07T10:01:52Z",
+          "changeset_user": "Isanda Dlamini",
+          "uuid": "26afb7dcdd62431fa733f1ee64347dd2"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.13164068180418,
+            -26.318778438489772
+          ]
+        },
+        "osm_id": 784173087,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.36636138286039,
+              -26.50035503428856
+            ],
+            [
+              31.36644604008245,
+              -26.50016241815365
+            ],
+            [
+              31.36666707086914,
+              -26.50023860965348
+            ],
+            [
+              31.36654477890184,
+              -26.500474476408783
+            ],
+            [
+              31.366433551046725,
+              -26.500439356234494
+            ],
+            [
+              31.36636138286039,
+              -26.50035503428856
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 159184421.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-15T19:28:41Z",
+          "changeset_user": "optimistic9",
+          "uuid": "17307d383b9c4133a4b1388572b53032"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.366505539406397,
+            -26.50031522962563
+          ]
+        },
+        "osm_id": 476203223,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.385706144832625,
+              -26.495184824954038
+            ],
+            [
+              31.386778525524647,
+              -26.494816440309563
+            ],
+            [
+              31.38705529596743,
+              -26.49546176303491
+            ],
+            [
+              31.386538970731948,
+              -26.495639040287017
+            ],
+            [
+              31.385982999094438,
+              -26.495830147679385
+            ],
+            [
+              31.385706144832625,
+              -26.495184824954038
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Women and Childrens Hospital",
+          "changeset_id": 113892126.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-11-17T10:56:02Z",
+          "changeset_user": "Plekhanov",
+          "uuid": "680f34bcf0fb44faa59e2426e5d80c72"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.386380726038322,
+            -26.49532326883813
+          ]
+        },
+        "osm_id": 259004406,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.376577078810215,
+          -26.495936262573565
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacy",
+          "dispensing": "yes",
+          "changeset_id": 85397566.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-05-18T18:08:18Z",
+          "changeset_user": "wandilemawelela",
+          "uuid": "034bcea257fc4e75a30c4a2e081b91c3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.376577078810215,
+            -26.495936262573565
+          ]
+        },
+        "osm_id": 7533632441,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.572665668584307,
+              -27.20538834234975
+            ],
+            [
+              31.57385355190206,
+              -27.205918581544523
+            ],
+            [
+              31.57404943697921,
+              -27.206282020866126
+            ],
+            [
+              31.573781299896694,
+              -27.206584942846803
+            ],
+            [
+              31.57314259887488,
+              -27.206759118794764
+            ],
+            [
+              31.572665668584307,
+              -27.20538834234975
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "clinic",
+          "name": "Hluti Clinic",
+          "changeset_id": 137441923.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-06-17T10:11:43Z",
+          "changeset_user": "Greg_Rose",
+          "uuid": "a59f0d4ee83b437193fd05024bf4cab8"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.5733539025647,
+            -27.206126033924786
+          ]
+        },
+        "osm_id": 1182661405,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.111630986827663,
+          -26.330016070158678
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Red cross Mahwalala",
+          "changeset_id": 90309145.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-09-02T14:08:02Z",
+          "changeset_user": "Welcome Dlamini",
+          "uuid": "08669e2f1a624f5a81e03ef9f52c0c8b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.111630986827663,
+            -26.330016070158678
+          ]
+        },
+        "osm_id": 7868736486,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.365246841195415,
+              -26.500473219123307
+            ],
+            [
+              31.365276094037483,
+              -26.500391160291258
+            ],
+            [
+              31.365283889207433,
+              -26.500380766731325
+            ],
+            [
+              31.365689321863954,
+              -26.50052367818043
+            ],
+            [
+              31.36564162883488,
+              -26.500630547445894
+            ],
+            [
+              31.365430823970087,
+              -26.500551925194117
+            ],
+            [
+              31.36540458861313,
+              -26.500534155559393
+            ],
+            [
+              31.365246841195415,
+              -26.500473219123307
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 159184421.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-15T19:28:41Z",
+          "changeset_user": "optimistic9",
+          "uuid": "0ea9907934494929821c70a9a22a7fc6"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.36547075446645,
+            -26.50050453115825
+          ]
+        },
+        "osm_id": 476203240,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.2078486,
+              -27.1212427
+            ],
+            [
+              31.2082169,
+              -27.1210616
+            ],
+            [
+              31.2083225,
+              -27.1212316
+            ],
+            [
+              31.2082949,
+              -27.1212452
+            ],
+            [
+              31.2082021,
+              -27.1212908
+            ],
+            [
+              31.2082442,
+              -27.1213585
+            ],
+            [
+              31.2082501,
+              -27.1213681
+            ],
+            [
+              31.208173,
+              -27.1214061
+            ],
+            [
+              31.2081247,
+              -27.1213282
+            ],
+            [
+              31.2080708,
+              -27.1213547
+            ],
+            [
+              31.2081483,
+              -27.1214795
+            ],
+            [
+              31.2083926,
+              -27.1213593
+            ],
+            [
+              31.2084552,
+              -27.1214602
+            ],
+            [
+              31.2082164,
+              -27.1215776
+            ],
+            [
+              31.2082525,
+              -27.1216356
+            ],
+            [
+              31.2083954,
+              -27.1215653
+            ],
+            [
+              31.2084436,
+              -27.1216431
+            ],
+            [
+              31.2081479,
+              -27.1217885
+            ],
+            [
+              31.2081002,
+              -27.1217117
+            ],
+            [
+              31.2082201,
+              -27.1216527
+            ],
+            [
+              31.2081848,
+              -27.1215958
+            ],
+            [
+              31.2080083,
+              -27.1216827
+            ],
+            [
+              31.207944,
+              -27.121579
+            ],
+            [
+              31.2080408,
+              -27.1215314
+            ],
+            [
+              31.2081156,
+              -27.1214946
+            ],
+            [
+              31.2080379,
+              -27.1213694
+            ],
+            [
+              31.207916,
+              -27.1214294
+            ],
+            [
+              31.2078734,
+              -27.1213607
+            ],
+            [
+              31.2079105,
+              -27.1213424
+            ],
+            [
+              31.2078486,
+              -27.1212427
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "name": "Nhlangano Health Center",
+          "changeset_id": 159184241.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-15T19:22:25Z",
+          "changeset_user": "optimistic9",
+          "uuid": "62d2c9e7da7544c49b008002b698f489"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.20815359579367,
+            -27.121412609703693
+          ]
+        },
+        "osm_id": 392672595,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.36662993903809,
+          -26.50549037490589
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "National Psychiatric Referral Hospital",
+          "changeset_id": 143247602.0,
+          "changeset_version": 7.0,
+          "changeset_timestamp": "2023-10-28T08:14:03Z",
+          "changeset_user": "pedrito1414",
+          "uuid": "5140055792324944af1c2a19d494e02a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.36662993903809,
+            -26.50549037490589
+          ]
+        },
+        "osm_id": 11291933229,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.183422322784935,
+          -26.430826979826207
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Ezulwini Private Hospital",
+          "changeset_id": 143215694.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2023-10-27T14:52:34Z",
+          "changeset_user": "Ibrahim38224",
+          "uuid": "0e4aebd8bfd44c8893f5382c3fcd9679"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.183422322784935,
+            -26.430826979826207
+          ]
+        },
+        "osm_id": 11291888633,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.365771129238908,
+              -26.501075123590198
+            ],
+            [
+              31.365833239141438,
+              -26.50093791183525
+            ],
+            [
+              31.366093078139812,
+              -26.501029526036945
+            ],
+            [
+              31.3660373,
+              -26.5011366
+            ],
+            [
+              31.366020323220283,
+              -26.50116916854381
+            ],
+            [
+              31.365771129238908,
+              -26.501075123590198
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 162087523.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2025-02-03T13:40:01Z",
+          "changeset_user": "Thandolwethu Malaza",
+          "uuid": "d194c94d85a04db181ae3bececa464d9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.365930442860282,
+            -26.501052868795483
+          ]
+        },
+        "osm_id": 476203232,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.31019232185696,
+              -26.50227172408725
+            ],
+            [
+              31.310268261899694,
+              -26.50210492421411
+            ],
+            [
+              31.31020707400654,
+              -26.50208254453264
+            ],
+            [
+              31.310262981300696,
+              -26.50195974965115
+            ],
+            [
+              31.310328024869335,
+              -26.501983470437125
+            ],
+            [
+              31.310496668761175,
+              -26.50161315795492
+            ],
+            [
+              31.310669419785597,
+              -26.50167610604774
+            ],
+            [
+              31.310369096194876,
+              -26.50233618092267
+            ],
+            [
+              31.31019232185696,
+              -26.50227172408725
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Matsapha health care centre",
+          "changeset_id": 88775460.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-07-31T10:06:32Z",
+          "changeset_user": "BugFinder",
+          "uuid": "87fc9948229341c5bfc456d7ef5eda24"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.310420996056045,
+            -26.50197962017591
+          ]
+        },
+        "osm_id": 126053570,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.14196224456552,
+          -26.32802335649822
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "changeset_id": 78832233.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2019-12-24T21:47:40Z",
+          "changeset_user": "wvdp",
+          "uuid": "5c4e711f17404817a38c00832f6cabfa"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.14196224456552,
+            -26.32802335649822
+          ]
+        },
+        "osm_id": 4551221989,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.406988299904356,
+              -26.488719108665038
+            ],
+            [
+              31.407548965407642,
+              -26.487092181259044
+            ],
+            [
+              31.40801734615698,
+              -26.486915658378223
+            ],
+            [
+              31.410728640376504,
+              -26.487721159273207
+            ],
+            [
+              31.410931985347503,
+              -26.488106978276278
+            ],
+            [
+              31.410241819440188,
+              -26.489855275640195
+            ],
+            [
+              31.409785843907542,
+              -26.489949069136713
+            ],
+            [
+              31.407222322640962,
+              -26.489143819698825
+            ],
+            [
+              31.406988299904356,
+              -26.488719108665038
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "name": "National TB Hospital",
+          "changeset_id": 159273524.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2024-11-18T09:10:32Z",
+          "changeset_user": "Archi_Ma",
+          "uuid": "ca602a5238d44013bd9052c9258bc9fa"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.4089457378503,
+            -26.488429085967695
+          ]
+        },
+        "osm_id": 258778176,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.36652625489583,
+              -26.500182283264166
+            ],
+            [
+              31.366565649840737,
+              -26.500098967146613
+            ],
+            [
+              31.3666056,
+              -26.5001098
+            ],
+            [
+              31.366664388660126,
+              -26.500125873055794
+            ],
+            [
+              31.366647,
+              -26.5001636
+            ],
+            [
+              31.3666362,
+              -26.5001872
+            ],
+            [
+              31.366625077534252,
+              -26.500211452287203
+            ],
+            [
+              31.36652625489583,
+              -26.500182283264166
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 162087523.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2025-02-03T13:40:01Z",
+          "changeset_user": "Thandolwethu Malaza",
+          "uuid": "e8ec1238cebf470a9a9ba22c980349da"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.36659549464045,
+            -26.500154755958757
+          ]
+        },
+        "osm_id": 476203222,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.37983956698244,
+          -26.49732204262523
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Bilharzia & Intestinal worm Control Program",
+          "changeset_id": 88775567.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-07-31T10:08:41Z",
+          "changeset_user": "BugFinder",
+          "uuid": "00fa47c7e158487ab0b32bc4f44e94d2"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.37983956698244,
+            -26.49732204262523
+          ]
+        },
+        "osm_id": 5232600228,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.0605401,
+              -26.6703908
+            ],
+            [
+              31.0611409,
+              -26.669643
+            ],
+            [
+              31.0625356,
+              -26.6693938
+            ],
+            [
+              31.0628146,
+              -26.6686651
+            ],
+            [
+              31.0630506,
+              -26.6677064
+            ],
+            [
+              31.0636192,
+              -26.666901
+            ],
+            [
+              31.0641986,
+              -26.6664696
+            ],
+            [
+              31.0650462,
+              -26.6695663
+            ],
+            [
+              31.0648694,
+              -26.6702643
+            ],
+            [
+              31.0648386,
+              -26.670479
+            ],
+            [
+              31.0646045,
+              -26.6706662
+            ],
+            [
+              31.0636124,
+              -26.6719602
+            ],
+            [
+              31.063255,
+              -26.6718831
+            ],
+            [
+              31.0625956,
+              -26.6716739
+            ],
+            [
+              31.0622259,
+              -26.6715418
+            ],
+            [
+              31.061166,
+              -26.6711728
+            ],
+            [
+              31.0609455,
+              -26.6709979
+            ],
+            [
+              31.060819,
+              -26.6708798
+            ],
+            [
+              31.0605401,
+              -26.6703908
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 158661951.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2024-11-02T14:47:16Z",
+          "changeset_user": "Sibusiso Ginindza",
+          "uuid": "f0251206c3084d4fb3379c82c6a73e85"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.06320171877479,
+            -26.669707944330742
+          ]
+        },
+        "osm_id": 1330177926,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.904095423977566,
+              -27.02049906486289
+            ],
+            [
+              31.904559529956288,
+              -27.019569847077094
+            ],
+            [
+              31.905291856836556,
+              -27.019664646401992
+            ],
+            [
+              31.90518599339947,
+              -27.02028934964551
+            ],
+            [
+              31.905091780807822,
+              -27.02084423163558
+            ],
+            [
+              31.904095423977566,
+              -27.02049906486289
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "clinic",
+          "name": "Lubuli Clinic",
+          "changeset_id": 137278157.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-06-13T09:56:40Z",
+          "changeset_user": "Greg_Rose",
+          "uuid": "85c4e245a0404297a09c0abcd796e9d4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.9047610929968,
+            -27.020179670785698
+          ]
+        },
+        "osm_id": 1181734012,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.186282982519003,
+              -26.443443923397155
+            ],
+            [
+              31.186674417397228,
+              -26.443116777716313
+            ],
+            [
+              31.187192670470438,
+              -26.442686031712213
+            ],
+            [
+              31.188364963448294,
+              -26.443840052141155
+            ],
+            [
+              31.188429168826588,
+              -26.443907358823623
+            ],
+            [
+              31.187446139222402,
+              -26.444086480094455
+            ],
+            [
+              31.18684029526102,
+              -26.444018419040674
+            ],
+            [
+              31.186282982519003,
+              -26.443443923397155
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Medisun Clinic",
+          "source": "Bing",
+          "emergency": "yes",
+          "changeset_id": 113841027.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-11-16T08:52:59Z",
+          "changeset_user": "Plekhanov",
+          "uuid": "9ef2a3840a984605821e5346e3e66e6d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.187281543316455,
+            -26.443517044890143
+          ]
+        },
+        "osm_id": 784170811,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.376286226770105,
+              -26.4981177366935
+            ],
+            [
+              31.376547742149114,
+              -26.49802092571184
+            ],
+            [
+              31.376612785717725,
+              -26.49815620962906
+            ],
+            [
+              31.376335596179786,
+              -26.49825654101005
+            ],
+            [
+              31.376286226770105,
+              -26.4981177366935
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "NERCHA Information Centre",
+          "changeset_id": 159208842.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2024-11-16T13:45:48Z",
+          "changeset_user": "Sibusiso Ginindza",
+          "uuid": "e05ed38a61174b34bf4f61878547a12c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.376446165722726,
+            -26.498138368611066
+          ]
+        },
+        "osm_id": 1173413637,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.36624395239693,
+              -26.50123622376921
+            ],
+            [
+              31.366258033994256,
+              -26.501003123041954
+            ],
+            [
+              31.366455427814003,
+              -26.50101225931641
+            ],
+            [
+              31.366450733948227,
+              -26.501095156338778
+            ],
+            [
+              31.366357862461058,
+              -26.50109088156816
+            ],
+            [
+              31.366354174423662,
+              -26.50115542222261
+            ],
+            [
+              31.366444363701817,
+              -26.501159613174195
+            ],
+            [
+              31.366441430035707,
+              -26.501242761653685
+            ],
+            [
+              31.36624395239693,
+              -26.50123622376921
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 159184421.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-15T19:28:41Z",
+          "changeset_user": "optimistic9",
+          "uuid": "b6fe9fbd2b404db9a913e5434913a628"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.36634143711097,
+            -26.50112316174111
+          ]
+        },
+        "osm_id": 476203197,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.37496289189707,
+          -26.238647039140005
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Kuphileni Clinic",
+          "changeset_id": 73804955.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-08-27T15:43:09Z",
+          "changeset_user": "mDav",
+          "uuid": "f9d7c7e5baf347b08fa89de52501d196"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.37496289189707,
+            -26.238647039140005
+          ]
+        },
+        "osm_id": 6750526902,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.318446484826097,
+          -26.502299803462876
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Matsapha Pharmacy",
+          "changeset_id": 88774387.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-07-31T09:42:36Z",
+          "changeset_user": "BugFinder",
+          "uuid": "47756d43d01640efa2af419ac10307c6"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.318446484826097,
+            -26.502299803462876
+          ]
+        },
+        "osm_id": 1398391733,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.140569088439037,
+          -26.326388382465183
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Green Cross Pharmacy",
+          "changeset_id": 79446244.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-01-11T09:16:00Z",
+          "changeset_user": "shavankrats",
+          "uuid": "03bf1c7caec24d2cb47551cb26e9d206"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.140569088439037,
+            -26.326388382465183
+          ]
+        },
+        "osm_id": 2435816490,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.365012147906555,
+              -26.500475649875227
+            ],
+            [
+              31.36511071908788,
+              -26.50025721747852
+            ],
+            [
+              31.365281626093577,
+              -26.500324440341984
+            ],
+            [
+              31.365256228926967,
+              -26.500376659598743
+            ],
+            [
+              31.365276094037483,
+              -26.500391160291258
+            ],
+            [
+              31.36524273406286,
+              -26.50046743561012
+            ],
+            [
+              31.365231334674547,
+              -26.500462741744343
+            ],
+            [
+              31.365201830375383,
+              -26.500535664301964
+            ],
+            [
+              31.365012147906555,
+              -26.500475649875227
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 159184421.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-15T19:28:41Z",
+          "changeset_user": "optimistic9",
+          "uuid": "82e4047e77814c3e929fd6a8e04aad92"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.36515302303575,
+            -26.500400318350653
+          ]
+        },
+        "osm_id": 476203241,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.70263478864055,
+          -26.40866723949219
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "changeset_id": 137984768.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-07-01T09:11:28Z",
+          "changeset_user": "Greg_Rose",
+          "uuid": "bad363eaefe54246a952271851c88621"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.70263478864055,
+            -26.40866723949219
+          ]
+        },
+        "osm_id": 4781608634,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.14365505373044,
+          -26.322002300172556
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Children's Clinic",
+          "changeset_id": 129330129.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2022-11-24T14:57:29Z",
+          "changeset_user": "Steve Peedell",
+          "uuid": "e14bde1b01d846e0a389e04d2aeae905"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.14365505373044,
+            -26.322002300172556
+          ]
+        },
+        "osm_id": 10214900917,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.378635171315437,
+          -26.49372394304993
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "changeset_id": 88774431.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-07-31T09:43:27Z",
+          "changeset_user": "BugFinder",
+          "uuid": "860ec911e01244d388b19ced6286ae27"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.378635171315437,
+            -26.49372394304993
+          ]
+        },
+        "osm_id": 4552559302,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.139616568962424,
+          -26.324447804242453
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "FLAS Mbabane",
+          "changeset_id": 162203506.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2025-02-06T11:06:35Z",
+          "changeset_user": "Thandolwethu Malaza",
+          "uuid": "6dc0751682df4108ab689b408a13aa79"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.139616568962424,
+            -26.324447804242453
+          ]
+        },
+        "osm_id": 7868737286,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.363010968523895,
+          -26.502024541762665
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "National Psychiatric hospital",
+          "changeset_id": 159620524.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2024-11-26T14:54:59Z",
+          "changeset_user": "Sibusiso Ginindza",
+          "uuid": "340ae314634d4f5ea1f5462d86fbba94"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.363010968523895,
+            -26.502024541762665
+          ]
+        },
+        "osm_id": 12376459430,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.30844628760687,
+          -26.49303805191326
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "CN Pharmacy",
+          "dispensing": "yes",
+          "changeset_id": 67386129.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2019-02-20T10:37:11Z",
+          "changeset_user": "Cebelengwane",
+          "uuid": "a57bc0adedef46c6bf35b6ed30314487"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.30844628760687,
+            -26.49303805191326
+          ]
+        },
+        "osm_id": 6290840465,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.144224436413026,
+          -26.32320870749632
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "name": "Jikanilambu Medical Centre",
+          "changeset_id": 79446244.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-01-11T09:16:00Z",
+          "changeset_user": "shavankrats",
+          "uuid": "d0752714dbaf40afa9de2c1b1e4ac8c9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.144224436413026,
+            -26.32320870749632
+          ]
+        },
+        "osm_id": 4547997390,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.363626535492955,
+              -26.50091687325829
+            ],
+            [
+              31.363996680337095,
+              -26.500758539107352
+            ],
+            [
+              31.364615180972265,
+              -26.50101703700122
+            ],
+            [
+              31.3651799,
+              -26.4998762
+            ],
+            [
+              31.365192275005768,
+              -26.499851281907837
+            ],
+            [
+              31.364943751576675,
+              -26.499523717131808
+            ],
+            [
+              31.36481978322874,
+              -26.499547437917812
+            ],
+            [
+              31.364969567838443,
+              -26.49914343018483
+            ],
+            [
+              31.36547549951399,
+              -26.49886665974205
+            ],
+            [
+              31.366038595769197,
+              -26.498635822128648
+            ],
+            [
+              31.366677883524233,
+              -26.499704933878434
+            ],
+            [
+              31.36747768472506,
+              -26.501042182710734
+            ],
+            [
+              31.364168593171172,
+              -26.502660979670623
+            ],
+            [
+              31.363626535492955,
+              -26.50091687325829
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Raleigh Fitkin Memorial Hospital",
+          "operator": "Eswatini Nazarene Health Institution",
+          "emergency": "yes",
+          "changeset_id": 162087523.0,
+          "changeset_version": 8.0,
+          "changeset_timestamp": "2025-02-03T13:40:01Z",
+          "changeset_user": "Thandolwethu Malaza",
+          "uuid": "c2aa7cfc7b9346afbaba508cc0e5a5d4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.365538902470202,
+            -26.50073663890343
+          ]
+        },
+        "osm_id": 258822222,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.376885532847012,
+          -26.498103822734237
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Kalamvelase",
+          "changeset_id": 85399235.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-05-18T18:56:08Z",
+          "changeset_user": "wandilemawelela",
+          "uuid": "7c597b186c914151b86aae0f50e936b3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.376885532847012,
+            -26.498103822734237
+          ]
+        },
+        "osm_id": 7533760882,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.960715766647894,
+              -26.468364746455563
+            ],
+            [
+              31.96104073303391,
+              -26.46832065764488
+            ],
+            [
+              31.961076691398546,
+              -26.468532468338054
+            ],
+            [
+              31.960751557374437,
+              -26.468576473329733
+            ],
+            [
+              31.960715766647894,
+              -26.468364746455563
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Good Shepherd Hospital",
+          "changeset_id": 88774767.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-07-31T09:51:06Z",
+          "changeset_user": "BugFinder",
+          "uuid": "e754bd42c211458abda9e6412e0c7b4f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.96089620181445,
+            -26.46844859278038
+          ]
+        },
+        "osm_id": 429714741,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.36599911700523,
+              -26.500596852195116
+            ],
+            [
+              31.366071285191566,
+              -26.50042745393199
+            ],
+            [
+              31.366205730918466,
+              -26.500473219123307
+            ],
+            [
+              31.36612568374315,
+              -26.500641443920017
+            ],
+            [
+              31.36599911700523,
+              -26.500596852195116
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 159184421.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-15T19:28:41Z",
+          "changeset_user": "optimistic9",
+          "uuid": "e25bd9702478429589e67ed3fea1b59d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.366100894265816,
+            -26.500533988303093
+          ]
+        },
+        "osm_id": 476203229,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.66766758407644,
+              -27.160654963303017
+            ],
+            [
+              31.668080644264847,
+              -27.16060727027397
+            ],
+            [
+              31.66834081853935,
+              -27.161642938230102
+            ],
+            [
+              31.66775073255593,
+              -27.161707478884523
+            ],
+            [
+              31.66766758407644,
+              -27.160654963303017
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "clinic",
+          "name": "Mphelandzaba Clinic",
+          "changeset_id": 137337516.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-06-14T17:02:59Z",
+          "changeset_user": "Greg_Rose",
+          "uuid": "f7209dd5d5464154a255713ef0630731"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.667965096392034,
+            -27.161183775394846
+          ]
+        },
+        "osm_id": 1182069662,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.247155380850216,
+              -25.95794900416152
+            ],
+            [
+              31.24723475747328,
+              -25.95741993843319
+            ],
+            [
+              31.247206761916686,
+              -25.956664142224042
+            ],
+            [
+              31.247416896229225,
+              -25.956437411743195
+            ],
+            [
+              31.249359569927748,
+              -25.95806249513049
+            ],
+            [
+              31.24865272403315,
+              -25.958708069312905
+            ],
+            [
+              31.248395231967635,
+              -25.958970255244168
+            ],
+            [
+              31.24825366162304,
+              -25.95911157413167
+            ],
+            [
+              31.24770464696519,
+              -25.959659080046976
+            ],
+            [
+              31.24732813187464,
+              -25.95932623467195
+            ],
+            [
+              31.247188070272585,
+              -25.958482260841407
+            ],
+            [
+              31.247155380850216,
+              -25.95794900416152
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Piggs Peak Public Hospital",
+          "changeset_id": 157643320.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2024-10-08T19:33:05Z",
+          "changeset_user": "FvGordon",
+          "uuid": "40b86001009a4ea0a454a83410bd8428"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.247963024104298,
+            -25.958072088167224
+          ]
+        },
+        "osm_id": 784172517,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.226328363120786,
+          -26.49115371626081
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Phumelea Clinic",
+          "changeset_id": 44376179.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2016-12-13T16:31:52Z",
+          "changeset_user": "pierred",
+          "uuid": "47df274159204ced996f9575efe43250"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.226328363120786,
+            -26.49115371626081
+          ]
+        },
+        "osm_id": 4552529199,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.96089689957546,
+          -26.468457282666606
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Good Shepherd Hospital",
+          "operator": "Good Shepherd Mission",
+          "emergency": "yes",
+          "addr_postcode": "L300",
+          "addr_city": "Siteki",
+          "changeset_id": 88774794.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-07-31T09:51:35Z",
+          "changeset_user": "BugFinder",
+          "uuid": "2082ac6e45e34658a7cb4d90b42a9d0f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.96089689957546,
+            -26.468457282666606
+          ]
+        },
+        "osm_id": 2330304109,
+        "osm_type": "node",
+        "completeness": 25.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.249965246251065,
+          -25.95817933886073
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Swaziland Red Cross",
+          "changeset_id": 103488988.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2021-04-23T14:32:51Z",
+          "changeset_user": "vraskavec",
+          "uuid": "e01bf8e3536d441fab7788911c98458a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.249965246251065,
+            -25.95817933886073
+          ]
+        },
+        "osm_id": 59649330,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.365116418782037,
+              -26.500183205273515
+            ],
+            [
+              31.36516729693429,
+              -26.50008262243543
+            ],
+            [
+              31.3654983,
+              -26.5002056
+            ],
+            [
+              31.3656371864262,
+              -26.50025721747852
+            ],
+            [
+              31.365571556124365,
+              -26.500381856378738
+            ],
+            [
+              31.36546711761082,
+              -26.500311783668195
+            ],
+            [
+              31.365341389063218,
+              -26.500268197771703
+            ],
+            [
+              31.365116418782037,
+              -26.500183205273515
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 162087523.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2025-02-03T13:40:01Z",
+          "changeset_user": "Thandolwethu Malaza",
+          "uuid": "2916e4752cfc44fb985692553a68eb0d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.365380748613386,
+            -26.500223762120946
+          ]
+        },
+        "osm_id": 476203242,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.14153057655207,
+          -26.328548566551063
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Clicks",
+          "changeset_id": 78832233.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2019-12-24T21:47:40Z",
+          "changeset_user": "wvdp",
+          "uuid": "f28a01402b424e32b899aaacfa08dfdc"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.14153057655207,
+            -26.328548566551063
+          ]
+        },
+        "osm_id": 4551030689,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.36560499991802,
+              -26.50075837146929
+            ],
+            [
+              31.365627631056583,
+              -26.50071151663053
+            ],
+            [
+              31.365773895266955,
+              -26.500763149154096
+            ],
+            [
+              31.365752437594836,
+              -26.50080983635476
+            ],
+            [
+              31.36560499991802,
+              -26.50075837146929
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 159184421.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-15T19:28:41Z",
+          "changeset_user": "optimistic9",
+          "uuid": "fa167d8a9d8d47858e4a3e7c6879ae45"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.365689599098303,
+            -26.50076069765316
+          ]
+        },
+        "osm_id": 476203234,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.362443848955166,
+              -26.501740562883157
+            ],
+            [
+              31.36259757305936,
+              -26.501492961463413
+            ],
+            [
+              31.362823046254732,
+              -26.501318617877388
+            ],
+            [
+              31.363150946306888,
+              -26.50111686546802
+            ],
+            [
+              31.3635802,
+              -26.501024
+            ],
+            [
+              31.3637631,
+              -26.501657
+            ],
+            [
+              31.3639623,
+              -26.5022428
+            ],
+            [
+              31.3641087,
+              -26.5026503
+            ],
+            [
+              31.3640233,
+              -26.5027048
+            ],
+            [
+              31.3634663,
+              -26.502934
+            ],
+            [
+              31.3629663,
+              -26.5030468
+            ],
+            [
+              31.3627061,
+              -26.5025338
+            ],
+            [
+              31.3625273,
+              -26.5022693
+            ],
+            [
+              31.3624439,
+              -26.5018499
+            ],
+            [
+              31.362443848955166,
+              -26.501740562883157
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "National Psychiatric hospital",
+          "changeset_id": 159620524.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2024-11-26T14:54:59Z",
+          "changeset_user": "Sibusiso Ginindza",
+          "uuid": "f10c2a1b8c0a44f8a0597a1850124b1f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.36324391299828,
+            -26.502069513996524
+          ]
+        },
+        "osm_id": 1338012957,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.32440492833507,
+          -26.973511708233787
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hlatikhulu General Hospital",
+          "changeset_id": 88774707.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-07-31T09:49:49Z",
+          "changeset_user": "BugFinder",
+          "uuid": "48a7d4928e6447daa7201272a8a5503e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.32440492833507,
+            -26.973511708233787
+          ]
+        },
+        "osm_id": 6471968133,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.365429147589452,
+          -26.500863312897025
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Raleigh Fitkin Memorial Hospital",
+          "changeset_id": 159618164.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2024-11-26T14:05:53Z",
+          "changeset_user": "Sibusiso Ginindza",
+          "uuid": "5913dfafa4c342e3bc7220c4d09ec8de"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.365429147589452,
+            -26.500863312897025
+          ]
+        },
+        "osm_id": 12376336969,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.36575503598482,
+              -26.500877143037258
+            ],
+            [
+              31.365795939672324,
+              -26.500792821091324
+            ],
+            [
+              31.365996267158152,
+              -26.50086104978314
+            ],
+            [
+              31.366004816699387,
+              -26.500847554919034
+            ],
+            [
+              31.366232553008615,
+              -26.500934726712046
+            ],
+            [
+              31.366190392035662,
+              -26.50102977749404
+            ],
+            [
+              31.36575503598482,
+              -26.500877143037258
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 158932913.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-11-09T13:00:45Z",
+          "changeset_user": "Gcinekile Dlamini",
+          "uuid": "4cbbe2661ed2456d9df228f3ae1f6117"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.366000511958223,
+            -26.50090949559468
+          ]
+        },
+        "osm_id": 476203233,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.3765782,
+              -26.4985212
+            ],
+            [
+              31.3766542,
+              -26.4984959
+            ],
+            [
+              31.3767531,
+              -26.4987336
+            ],
+            [
+              31.3766771,
+              -26.4987589
+            ],
+            [
+              31.3765782,
+              -26.4985212
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 158932130.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-09T12:43:36Z",
+          "changeset_user": "Mvangeli N Dlamini",
+          "uuid": "de9df120b6e7432f98594bb455f67440"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.37666565,
+            -26.4986274
+          ]
+        },
+        "osm_id": 1173413642,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.368376560021375,
+          -26.501401514899783
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Mkhiwa Clinic",
+          "changeset_id": 159618164.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2024-11-26T14:05:53Z",
+          "changeset_user": "Sibusiso Ginindza",
+          "uuid": "8b3b4d8dcaa340559247a30704554d6b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.368376560021375,
+            -26.501401514899783
+          ]
+        },
+        "osm_id": 12376336975,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.142208588699788,
+              -26.33248923450907
+            ],
+            [
+              31.142403132672456,
+              -26.331849862934973
+            ],
+            [
+              31.14263799359938,
+              -26.33156655460772
+            ],
+            [
+              31.14291426112797,
+              -26.33126245916057
+            ],
+            [
+              31.1431073801771,
+              -26.33107378252015
+            ],
+            [
+              31.14325892498647,
+              -26.33095836371345
+            ],
+            [
+              31.143474842812225,
+              -26.3308333057181
+            ],
+            [
+              31.143579448963806,
+              -26.330766082854637
+            ],
+            [
+              31.14365052750273,
+              -26.33072752610005
+            ],
+            [
+              31.14409694766576,
+              -26.330488725678634
+            ],
+            [
+              31.144646,
+              -26.3303782
+            ],
+            [
+              31.1452231,
+              -26.330843
+            ],
+            [
+              31.14501954374805,
+              -26.331116111131166
+            ],
+            [
+              31.144642777200403,
+              -26.331582983137935
+            ],
+            [
+              31.143780447001916,
+              -26.33261546597086
+            ],
+            [
+              31.142500949482468,
+              -26.3326047371348
+            ],
+            [
+              31.142432553152588,
+              -26.33250733941992
+            ],
+            [
+              31.142303890938877,
+              -26.33254933275481
+            ],
+            [
+              31.142208588699788,
+              -26.33248923450907
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Mbabane Government Hospital",
+          "operator": "Ministry of Health",
+          "speciality": "general",
+          "changeset_id": 84071601.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-04-24T16:40:04Z",
+          "changeset_user": "Phumie",
+          "uuid": "e82b7aa85bfe443d8d053d55883e2f53"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.14368740373556,
+            -26.33157331543896
+          ]
+        },
+        "osm_id": 393402376,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.3764591,
+              -26.4986634
+            ],
+            [
+              31.3765558,
+              -26.4986301
+            ],
+            [
+              31.3765976,
+              -26.4987107
+            ],
+            [
+              31.3764954,
+              -26.4987452
+            ],
+            [
+              31.3764591,
+              -26.4986634
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 158932130.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-09T12:43:36Z",
+          "changeset_user": "Mvangeli N Dlamini",
+          "uuid": "291aee3123ac4cd0a74788b035c4f5fe"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.37652720501853,
+            -26.498687685083343
+          ]
+        },
+        "osm_id": 1173413644,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.36513016510324,
+              -26.500631637093306
+            ],
+            [
+              31.36516637492494,
+              -26.500549326804133
+            ],
+            [
+              31.36534977096639,
+              -26.50060917359278
+            ],
+            [
+              31.365343819815138,
+              -26.50062250081885
+            ],
+            [
+              31.365366283315637,
+              -26.500631637093306
+            ],
+            [
+              31.36533317479811,
+              -26.50070070397544
+            ],
+            [
+              31.36513016510324,
+              -26.500631637093306
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "hospital",
+          "changeset_id": 159184421.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2024-11-15T19:28:41Z",
+          "changeset_user": "optimistic9",
+          "uuid": "b9738b8bcb884faca1da11ffd7d7617b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.365249215160052,
+            -26.500624798519212
+          ]
+        },
+        "osm_id": 476203238,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.187268359056105,
+          -26.439662511599465
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Clicks",
+          "changeset_id": 88774340.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-07-31T09:41:40Z",
+          "changeset_user": "BugFinder",
+          "uuid": "04381aae99af40db9d266f619fae7ca5"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.187268359056105,
+            -26.439662511599465
+          ]
+        },
+        "osm_id": 2277198010,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.131565080412003,
+          -26.318764957709845
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Baylor Childrens Clinic Eswatini",
+          "opening_hours": "Mo-Fr 07:30-16:30",
+          "changeset_id": 79446244.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-01-11T09:16:00Z",
+          "changeset_user": "shavankrats",
+          "uuid": "b136c0d95ba34ddd93138389e8a9e6cf"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.131565080412003,
+            -26.318764957709845
+          ]
+        },
+        "osm_id": 6977101285,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.3765656,
+              -26.4987498
+            ],
+            [
+              31.3766231,
+              -26.4987277
+            ],
+            [
+              31.3766439,
+              -26.4987716
+            ],
+            [
+              31.3765862,
+              -26.4987936
+            ],
+            [
+              31.3765656,
+              -26.4987498
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 136385706.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-05-21T20:00:07Z",
+          "changeset_user": "Qwajo OSM",
+          "uuid": "414facbcee9e45e08553f3c82aab854c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.376604720244654,
+            -26.49876067694338
+          ]
+        },
+        "osm_id": 1173413645,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.1408396562735,
+          -26.325630323142178
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Likhemisi Chinese Medicine",
+          "changeset_id": 79446244.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-01-11T09:16:00Z",
+          "changeset_user": "shavankrats",
+          "uuid": "7b01e9ee34ee4af69be1c2270e1aaf4a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.1408396562735,
+            -26.325630323142178
+          ]
+        },
+        "osm_id": 4551238590,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.748910689328312,
+              -27.254044619719764
+            ],
+            [
+              31.74962155853646,
+              -27.252657666201628
+            ],
+            [
+              31.749736725886066,
+              -27.25243277973948
+            ],
+            [
+              31.751314032425256,
+              -27.253050442184332
+            ],
+            [
+              31.750517416347634,
+              -27.254664629097505
+            ],
+            [
+              31.748910689328312,
+              -27.254044619719764
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "clinic",
+          "name": "Matsanjeni Health Centre",
+          "changeset_id": 136638807.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-05-27T21:28:33Z",
+          "changeset_user": "Greg_Rose",
+          "uuid": "918a99fc9bbc488ea73b0fa6590b7c15"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.75011801871137,
+            -27.253550046733544
+          ]
+        },
+        "osm_id": 1176690025,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.302472756672216,
+              -26.50678370256557
+            ],
+            [
+              31.303184044975524,
+              -26.50733707581307
+            ],
+            [
+              31.30324975909639,
+              -26.50737973970024
+            ],
+            [
+              31.30332754315785,
+              -26.507417625902576
+            ],
+            [
+              31.303365848455343,
+              -26.507431707499904
+            ],
+            [
+              31.30352854119593,
+              -26.507499265639495
+            ],
+            [
+              31.303397783506426,
+              -26.508199741287683
+            ],
+            [
+              31.30249488489659,
+              -26.50804014985127
+            ],
+            [
+              31.302472756672216,
+              -26.50678370256557
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Matsapha Clinic",
+          "operator": "MSF OCA",
+          "changeset_id": 113838040.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2021-11-16T07:31:48Z",
+          "changeset_user": "Plekhanov",
+          "uuid": "8bb742cb91e84ba0ad8dedbc3d574692"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.30292850402775,
+            -26.507614192091815
+          ]
+        },
+        "osm_id": 784171841,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.20459216035414,
+          -26.450945475280378
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "name": "Lobamba clinic",
+          "changeset_id": 142295905.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-10-08T09:09:53Z",
+          "changeset_user": "pedrito1414",
+          "uuid": "eb02d49cacf54983972901c6b8177776"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.20459216035414,
+            -26.450945475280378
+          ]
+        },
+        "osm_id": 11247665290,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.377434798961957,
+          -26.490858505631053
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "name": "Health Care",
+          "changeset_id": 44376179.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2016-12-13T16:32:45Z",
+          "changeset_user": "pierred",
+          "uuid": "c38ceb72ac814611b3b0f0f64555dd43"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.377434798961957,
+            -26.490858505631053
+          ]
+        },
+        "osm_id": 4552529002,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              31.32272687131973,
+              -26.97387565046958
+            ],
+            [
+              31.323235233747198,
+              -26.973458231691524
+            ],
+            [
+              31.323293739431335,
+              -26.973356643025085
+            ],
+            [
+              31.323259960361554,
+              -26.973115076575624
+            ],
+            [
+              31.323672769092838,
+              -26.97256036222359
+            ],
+            [
+              31.323832947262503,
+              -26.972348970625546
+            ],
+            [
+              31.323863792666174,
+              -26.972178650353072
+            ],
+            [
+              31.324079459034834,
+              -26.972035822723
+            ],
+            [
+              31.324504672982812,
+              -26.97207437947759
+            ],
+            [
+              31.3250962677088,
+              -26.972156773585795
+            ],
+            [
+              31.325222582989625,
+              -26.972239000055907
+            ],
+            [
+              31.325419725352276,
+              -26.97225283019614
+            ],
+            [
+              31.325404386469472,
+              -26.97313150510584
+            ],
+            [
+              31.325200957679442,
+              -26.97313150510584
+            ],
+            [
+              31.32517639870315,
+              -26.97359007902847
+            ],
+            [
+              31.324877416216935,
+              -26.973623019907933
+            ],
+            [
+              31.324701899164495,
+              -26.973735505048523
+            ],
+            [
+              31.324572482579498,
+              -26.973878332678595
+            ],
+            [
+              31.32407635773066,
+              -26.973914039586106
+            ],
+            [
+              31.322729972623904,
+              -26.974128281031227
+            ],
+            [
+              31.32272687131973,
+              -26.97387565046958
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hlatikhulu General Hospital",
+          "changeset_id": 82565546.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-03-24T10:32:49Z",
+          "changeset_user": "Ambassador_Spock",
+          "uuid": "7feb28f8712645af8e893aca3ae82271"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.32423993275792,
+            -26.97308117874648
+          ]
+        },
+        "osm_id": 784172762,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          31.376391922569127,
+          -26.49539135504824
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacy",
+          "dispensing": "yes",
+          "changeset_id": 85397602.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-05-18T18:09:19Z",
+          "changeset_user": "wandilemawelela",
+          "uuid": "a1a74dc4f3f843a4ab45f4aa7028bf14"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            31.376391922569127,
+            -26.49539135504824
+          ]
+        },
+        "osm_id": 7533629905,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    }
+  ]
+}

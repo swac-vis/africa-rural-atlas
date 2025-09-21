@@ -1,0 +1,1462 @@
+{
+  "metadata": {
+    "total_countries": 60,
+    "analysis_date": "2025-09-09 17:21:03",
+    "data_source": "GHSL Population Data",
+    "coordinate_system": "ESRI:54009 (World Mollweide)",
+    "classification_rule": "Positive values = Urban, Negative values = Rural",
+    "calculation_method": "All calculations use absolute values"
+  },
+  "countries": {
+    "Nigeria": {
+      "country": "Nigeria",
+      "area_km2": 915140.372494316,
+      "overlap_ratio": 99.99999999999997,
+      "total_cells": 915157,
+      "urban_cells": 70452,
+      "rural_cells": 541820,
+      "urban": 190963773.2935513,
+      "rural": 43380133.91768065,
+      "total": 234343907.21123195,
+      "urban_population_mean": 2710.551486026675,
+      "rural_population_mean": 80.06373688250831,
+      "urban_share": 0.8148868710353163,
+      "rural_share": 0.1851131289646837,
+      "urban_density_stats": {
+        "min": 0.008299370296299458,
+        "max": 164956.09407401085,
+        "std": 4691.2852473665835
+      },
+      "rural_density_stats": {
+        "min": 0.0018145361682400107,
+        "max": 4977.186322629452,
+        "std": 206.76058167240618
+      }
+    },
+    "Sao Tome and Principe": {
+      "country": "Sao Tome and Principe",
+      "area_km2": 1003.1855328323096,
+      "overlap_ratio": 99.99999999999999,
+      "total_cells": 998,
+      "urban_cells": 79,
+      "rural_cells": 278,
+      "urban": 186416.41712672077,
+      "rural": 34750.86989834253,
+      "total": 221167.2870250633,
+      "urban_population_mean": 2359.7014826167187,
+      "rural_population_mean": 125.00312913072851,
+      "urban_share": 0.8428751811998108,
+      "rural_share": 0.1571248188001893,
+      "urban_density_stats": {
+        "min": 4.653780460357666,
+        "max": 20178.80841445923,
+        "std": 3885.0923943798184
+      },
+      "rural_density_stats": {
+        "min": 0.0398222953081131,
+        "max": 3350.0326448380947,
+        "std": 279.12418775636405
+      }
+    },
+    "Mauritania": {
+      "country": "Mauritania",
+      "area_km2": 1044121.2267724469,
+      "overlap_ratio": 99.99999999999991,
+      "total_cells": 1044115,
+      "urban_cells": 839,
+      "rural_cells": 56403,
+      "urban": 3129591.364253734,
+      "rural": 1938960.8228873163,
+      "total": 5068552.18714105,
+      "urban_population_mean": 3730.1446534609463,
+      "rural_population_mean": 34.37690943544344,
+      "urban_share": 0.6174527258875874,
+      "rural_share": 0.38254727411241274,
+      "urban_density_stats": {
+        "min": 5.869485855102539,
+        "max": 57259.25677871704,
+        "std": 5913.499486591584
+      },
+      "rural_density_stats": {
+        "min": 9.337772644357756e-05,
+        "max": 4123.799313344061,
+        "std": 127.36744682391672
+      }
+    },
+    "Cabo Verde": {
+      "country": "Cabo Verde",
+      "area_km2": 4033.7844151317454,
+      "overlap_ratio": 99.95568353960637,
+      "total_cells": 4031,
+      "urban_cells": 183,
+      "rural_cells": 2153,
+      "urban": 442974.64753961377,
+      "rural": 117696.02986613527,
+      "total": 560670.677405749,
+      "urban_population_mean": 2420.626489287507,
+      "rural_population_mean": 54.66606124762437,
+      "urban_share": 0.7900799264004307,
+      "rural_share": 0.20992007359956943,
+      "urban_density_stats": {
+        "min": 0.07776457071304321,
+        "max": 23511.948513150215,
+        "std": 3578.9408886527667
+      },
+      "rural_density_stats": {
+        "min": 0.00590792391449213,
+        "max": 2745.149631023407,
+        "std": 156.8293193725266
+      }
+    },
+    "Djibouti": {
+      "country": "Djibouti",
+      "area_km2": 21816.684608878368,
+      "overlap_ratio": 99.99999999999997,
+      "total_cells": 21820,
+      "urban_cells": 150,
+      "rural_cells": 6683,
+      "urban": 984738.1514835712,
+      "rural": 116325.16370489448,
+      "total": 1101063.3151884656,
+      "urban_population_mean": 6564.921009890474,
+      "rural_population_mean": 17.406129538365178,
+      "urban_share": 0.8943519758580064,
+      "rural_share": 0.10564802414199356,
+      "urban_density_stats": {
+        "min": 30.269933611154556,
+        "max": 45374.59491926432,
+        "std": 9425.671841830934
+      },
+      "rural_density_stats": {
+        "min": 0.0157125573605299,
+        "max": 2496.51429104805,
+        "std": 98.27208981964216
+      }
+    },
+    "Rwanda": {
+      "country": "Rwanda",
+      "area_km2": 25400.73775072957,
+      "overlap_ratio": 100.00000000000007,
+      "total_cells": 25392,
+      "urban_cells": 14915,
+      "rural_cells": 6304,
+      "urban": 13860507.779813804,
+      "rural": 857421.4737084848,
+      "total": 14717929.253522288,
+      "urban_population_mean": 929.2998846673687,
+      "rural_population_mean": 136.01228961111752,
+      "urban_share": 0.9417430632435411,
+      "rural_share": 0.05825693675645893,
+      "urban_density_stats": {
+        "min": 0.8506819009780884,
+        "max": 29882.63431930542,
+        "std": 1234.6838724437762
+      },
+      "rural_density_stats": {
+        "min": 0.013642914593219757,
+        "max": 2483.2737320177257,
+        "std": 130.24166380426504
+      }
+    },
+    "South Sudan": {
+      "country": "South Sudan",
+      "area_km2": 635043.8810541513,
+      "overlap_ratio": 100.0,
+      "total_cells": 635063,
+      "urban_cells": 2870,
+      "rural_cells": 64568,
+      "urban": 8102057.503764017,
+      "rural": 3416763.859578135,
+      "total": 11518821.363342151,
+      "urban_population_mean": 2823.0165518341523,
+      "rural_population_mean": 52.91729431882875,
+      "urban_share": 0.7033755666658962,
+      "rural_share": 0.2966244333341038,
+      "urban_density_stats": {
+        "min": 17.140540599822998,
+        "max": 142477.79388189316,
+        "std": 7921.734663443958
+      },
+      "rural_density_stats": {
+        "min": 0.00554570322856307,
+        "max": 4891.210710287094,
+        "std": 150.60808674701894
+      }
+    },
+    "Chad": {
+      "country": "Chad",
+      "area_km2": 1277100.8914732612,
+      "overlap_ratio": 99.99999999999997,
+      "total_cells": 1277109,
+      "urban_cells": 3398,
+      "rural_cells": 123054,
+      "urban": 10037209.928003944,
+      "rural": 9392581.253278999,
+      "total": 19429791.181282945,
+      "urban_population_mean": 2953.858130666258,
+      "rural_population_mean": 76.32893894777088,
+      "urban_share": 0.5165886670811451,
+      "rural_share": 0.4834113329188548,
+      "urban_density_stats": {
+        "min": 0.17424950003623962,
+        "max": 61365.79705488682,
+        "std": 5101.039944926233
+      },
+      "rural_density_stats": {
+        "min": 0.004935719538480043,
+        "max": 4626.856759011745,
+        "std": 180.3482375216141
+      }
+    },
+    "Libya": {
+      "country": "Libya",
+      "area_km2": 1621153.7706058163,
+      "overlap_ratio": 99.99999999999997,
+      "total_cells": 1621053,
+      "urban_cells": 3214,
+      "rural_cells": 46715,
+      "urban": 5213835.745002863,
+      "rural": 1791916.6930597194,
+      "total": 7005752.438062582,
+      "urban_population_mean": 1622.2264296835292,
+      "rural_population_mean": 38.35848641891725,
+      "urban_share": 0.7442220933580023,
+      "rural_share": 0.2557779066419978,
+      "urban_density_stats": {
+        "min": 0.1649629883468151,
+        "max": 10394.275444030762,
+        "std": 1567.8941198015584
+      },
+      "rural_density_stats": {
+        "min": 0.0024744446855038404,
+        "max": 2903.488942725584,
+        "std": 96.96824260614255
+      }
+    },
+    "Comoros": {
+      "country": "Comoros",
+      "area_km2": 1665.708411259583,
+      "overlap_ratio": 100.0,
+      "total_cells": 1654,
+      "urban_cells": 262,
+      "rural_cells": 454,
+      "urban": 709188.9477329259,
+      "rural": 74962.20160555607,
+      "total": 784151.149338482,
+      "urban_population_mean": 2706.82804478216,
+      "rural_population_mean": 165.1149815100354,
+      "urban_share": 0.9044033772458346,
+      "rural_share": 0.09559662275416539,
+      "urban_density_stats": {
+        "min": 3.707371473312378,
+        "max": 100117.21137556434,
+        "std": 7147.667470561691
+      },
+      "rural_density_stats": {
+        "min": 0.01624058373272419,
+        "max": 3741.857400678098,
+        "std": 418.73027165304177
+      }
+    },
+    "Tanzania": {
+      "country": "Tanzania",
+      "area_km2": 947843.7954588789,
+      "overlap_ratio": 99.9999999999999,
+      "total_cells": 947831,
+      "urban_cells": 29110,
+      "rural_cells": 422753,
+      "urban": 41271681.23930242,
+      "rural": 29955801.401970975,
+      "total": 71227482.6412734,
+      "urban_population_mean": 1417.7836220990182,
+      "rural_population_mean": 70.85887362590206,
+      "urban_share": 0.579434787091397,
+      "rural_share": 0.4205652129086031,
+      "urban_density_stats": {
+        "min": 0.21164369583129883,
+        "max": 83050.76763916016,
+        "std": 3267.140649256472
+      },
+      "rural_density_stats": {
+        "min": 0.0011518830433487892,
+        "max": 4423.20508582145,
+        "std": 143.50573052419924
+      }
+    },
+    "Democratic Republic of the Congo": {
+      "country": "Democratic Republic of the Congo",
+      "area_km2": 2343156.5754015334,
+      "overlap_ratio": 99.99999999999967,
+      "total_cells": 2343108,
+      "urban_cells": 21776,
+      "rural_cells": 398725,
+      "urban": 81219727.54500161,
+      "rural": 27714522.078466453,
+      "total": 108934249.62346807,
+      "urban_population_mean": 3729.781757209846,
+      "rural_population_mean": 69.50786150471241,
+      "urban_share": 0.7455848626647553,
+      "rural_share": 0.2544151373352447,
+      "urban_density_stats": {
+        "min": 0.05362476035952568,
+        "max": 167542.9208984375,
+        "std": 8537.390166461728
+      },
+      "rural_density_stats": {
+        "min": 0.00011163285671500489,
+        "max": 4924.596560575068,
+        "std": 201.99747567184406
+      }
+    },
+    "Zambia": {
+      "country": "Zambia",
+      "area_km2": 755983.6859753213,
+      "overlap_ratio": 99.99999999999984,
+      "total_cells": 755992,
+      "urban_cells": 4223,
+      "rural_cells": 266523,
+      "urban": 11789858.059100136,
+      "rural": 9941689.965466557,
+      "total": 21731548.024566695,
+      "urban_population_mean": 2791.8205207435794,
+      "rural_population_mean": 37.30143351780731,
+      "urban_share": 0.5425226976822888,
+      "rural_share": 0.45747730231771117,
+      "urban_density_stats": {
+        "min": 0.3765498697757721,
+        "max": 36144.52403259277,
+        "std": 4018.3944889520935
+      },
+      "rural_density_stats": {
+        "min": 0.0030761894304305315,
+        "max": 3376.9565535783768,
+        "std": 88.40627560304846
+      }
+    },
+    "Egypt": {
+      "country": "Egypt",
+      "area_km2": 986523.7591316974,
+      "overlap_ratio": 100.00000000000004,
+      "total_cells": 985789,
+      "urban_cells": 29227,
+      "rural_cells": 73001,
+      "urban": 111416595.45241144,
+      "rural": 3145450.971414362,
+      "total": 114562046.4238258,
+      "urban_population_mean": 3812.111932542219,
+      "rural_population_mean": 43.08777922787855,
+      "urban_share": 0.9725436907806477,
+      "rural_share": 0.027456309219352364,
+      "urban_density_stats": {
+        "min": 0.021123021841049194,
+        "max": 268821.6750946045,
+        "std": 9215.86348876021
+      },
+      "rural_density_stats": {
+        "min": 4.357277248345781e-06,
+        "max": 4475.802225545049,
+        "std": 108.15185295033004
+      }
+    },
+    "South Africa": {
+      "country": "South Africa",
+      "area_km2": 1225037.3896347054,
+      "overlap_ratio": 99.99999999999979,
+      "total_cells": 1225044,
+      "urban_cells": 21798,
+      "rural_cells": 395839,
+      "urban": 48757101.78747286,
+      "rural": 12770377.550189497,
+      "total": 61527479.337662354,
+      "urban_population_mean": 2236.7695103896162,
+      "rural_population_mean": 32.2615445931035,
+      "urban_share": 0.7924443242651669,
+      "rural_share": 0.2075556757348332,
+      "urban_density_stats": {
+        "min": 0.011731707258149981,
+        "max": 70677.14263296127,
+        "std": 3264.221039004181
+      },
+      "rural_density_stats": {
+        "min": 1.5562649423372932e-05,
+        "max": 4403.310453703976,
+        "std": 99.28800947374295
+      }
+    },
+    "Niger": {
+      "country": "Niger",
+      "area_km2": 1190192.760689254,
+      "overlap_ratio": 100.00000000000007,
+      "total_cells": 1190181,
+      "urban_cells": 6400,
+      "rural_cells": 164318,
+      "urban": 15646942.16466333,
+      "rural": 13686238.06408749,
+      "total": 29333180.228750817,
+      "urban_population_mean": 2444.8347132286453,
+      "rural_population_mean": 83.291167517177,
+      "urban_share": 0.5334212670648999,
+      "rural_share": 0.4665787329351002,
+      "urban_density_stats": {
+        "min": 31.44248903915286,
+        "max": 45395.93542608619,
+        "std": 4361.59696288368
+      },
+      "rural_density_stats": {
+        "min": 0.011094730347394943,
+        "max": 4873.241405025125,
+        "std": 229.2213130313282
+      }
+    },
+    "Somalia": {
+      "country": "Somalia",
+      "area_km2": 637945.2338506079,
+      "overlap_ratio": 99.99999999999997,
+      "total_cells": 637960,
+      "urban_cells": 2192,
+      "rural_cells": 104970,
+      "urban": 15907970.571259212,
+      "rural": 3210279.713523846,
+      "total": 19118250.284783058,
+      "urban_population_mean": 7257.28584455256,
+      "rural_population_mean": 30.58283046131129,
+      "urban_share": 0.8320829748693567,
+      "rural_share": 0.16791702513064335,
+      "urban_density_stats": {
+        "min": 3.689503312110901,
+        "max": 126334.65249633789,
+        "std": 13773.997500732004
+      },
+      "rural_density_stats": {
+        "min": 0.013291756622493267,
+        "max": 4841.878631472588,
+        "std": 152.5473195970791
+      }
+    },
+    "Gabon": {
+      "country": "Gabon",
+      "area_km2": 266577.34842695476,
+      "overlap_ratio": 100.00000000000013,
+      "total_cells": 266591,
+      "urban_cells": 606,
+      "rural_cells": 8475,
+      "urban": 2033124.4259625848,
+      "rural": 414605.36910156003,
+      "total": 2447729.795064145,
+      "urban_population_mean": 3354.990801918457,
+      "rural_population_mean": 48.92098750460885,
+      "urban_share": 0.8306163654429451,
+      "rural_share": 0.16938363455705494,
+      "urban_density_stats": {
+        "min": 6.318077513948083,
+        "max": 19543.862243890762,
+        "std": 3698.9551167243626
+      },
+      "rural_density_stats": {
+        "min": 0.0004202246491331607,
+        "max": 4155.161171913147,
+        "std": 148.069089060154
+      }
+    },
+    "Morocco": {
+      "country": "Morocco",
+      "area_km2": 407413.12521699903,
+      "overlap_ratio": 99.99999999999993,
+      "total_cells": 407414,
+      "urban_cells": 8458,
+      "rural_cells": 64593,
+      "urban": 30304619.85898093,
+      "rural": 8171238.976331856,
+      "total": 38475858.83531278,
+      "urban_population_mean": 3582.9534002105615,
+      "rural_population_mean": 126.50347524239245,
+      "urban_share": 0.7876268594469329,
+      "rural_share": 0.21237314055306725,
+      "urban_density_stats": {
+        "min": 0.11585991829633713,
+        "max": 121376.04591560364,
+        "std": 7183.153966884473
+      },
+      "rural_density_stats": {
+        "min": 0.0002663421328179538,
+        "max": 4863.264465361834,
+        "std": 278.62941326765645
+      }
+    },
+    "Central African Republic": {
+      "country": "Central African Republic",
+      "area_km2": 624289.4431239176,
+      "overlap_ratio": 100.00000000000017,
+      "total_cells": 624286,
+      "urban_cells": 1031,
+      "rural_cells": 46621,
+      "urban": 3582866.208787654,
+      "rural": 2534286.434788991,
+      "total": 6117152.643576645,
+      "urban_population_mean": 3475.136962936619,
+      "rural_population_mean": 54.35933237787673,
+      "urban_share": 0.5857081582801216,
+      "rural_share": 0.4142918417198784,
+      "urban_density_stats": {
+        "min": 36.71572229266167,
+        "max": 47832.19911193848,
+        "std": 5542.123423717943
+      },
+      "rural_density_stats": {
+        "min": 0.0016660928959026933,
+        "max": 4467.872906802222,
+        "std": 194.89441090758692
+      }
+    },
+    "Burkina Faso": {
+      "country": "Burkina Faso",
+      "area_km2": 275079.66343545244,
+      "overlap_ratio": 100.00000000000003,
+      "total_cells": 275095,
+      "urban_cells": 5901,
+      "rural_cells": 194414,
+      "urban": 12421768.60099938,
+      "rural": 11982243.117218804,
+      "total": 24404011.718218185,
+      "urban_population_mean": 2105.0277242839147,
+      "rural_population_mean": 61.63261450933988,
+      "urban_share": 0.5090051891642975,
+      "rural_share": 0.49099481083570246,
+      "urban_density_stats": {
+        "min": 1.9191753584891558,
+        "max": 22096.689067840576,
+        "std": 3010.3899249508772
+      },
+      "rural_density_stats": {
+        "min": 0.004694526549428701,
+        "max": 4667.812033593655,
+        "std": 146.12051908034337
+      }
+    },
+    "Ghana": {
+      "country": "Ghana",
+      "area_km2": 240311.944287062,
+      "overlap_ratio": 99.99999999999993,
+      "total_cells": 240273,
+      "urban_cells": 8444,
+      "rural_cells": 139588,
+      "urban": 27172502.00421615,
+      "rural": 8129006.2352235615,
+      "total": 35301508.23943971,
+      "urban_population_mean": 3217.96565658647,
+      "rural_population_mean": 58.23570962563803,
+      "urban_share": 0.7697263759925805,
+      "rural_share": 0.2302736240074195,
+      "urban_density_stats": {
+        "min": 0.03481518104672432,
+        "max": 37381.48717498779,
+        "std": 4530.768140560197
+      },
+      "rural_density_stats": {
+        "min": 0.0036468547768890858,
+        "max": 4417.862196356058,
+        "std": 194.79847520958046
+      }
+    },
+    "Réunion": {
+      "country": "Réunion",
+      "area_km2": 2511.8831334268766,
+      "overlap_ratio": 100.00000000000003,
+      "total_cells": 2513,
+      "urban_cells": 481,
+      "rural_cells": 1074,
+      "urban": 862371.9630148564,
+      "rural": 103374.43395619094,
+      "total": 965746.3969710474,
+      "urban_population_mean": 1792.8731039809904,
+      "rural_population_mean": 96.2518007040884,
+      "urban_share": 0.8929590270484954,
+      "rural_share": 0.10704097295150464,
+      "urban_density_stats": {
+        "min": 0.025179697200655937,
+        "max": 8804.33103132248,
+        "std": 1459.4419380697277
+      },
+      "rural_density_stats": {
+        "min": 0.004000891465693712,
+        "max": 2650.1143053770065,
+        "std": 212.7994573266253
+      }
+    },
+    "Benin": {
+      "country": "Benin",
+      "area_km2": 116363.65699195587,
+      "overlap_ratio": 99.99999999999997,
+      "total_cells": 116370,
+      "urban_cells": 4463,
+      "rural_cells": 77226,
+      "urban": 10451825.787256524,
+      "rural": 3987508.166799297,
+      "total": 14439333.954055822,
+      "urban_population_mean": 2341.883438775829,
+      "rural_population_mean": 51.634270411510336,
+      "urban_share": 0.7238440374405734,
+      "rural_share": 0.27615596255942665,
+      "urban_density_stats": {
+        "min": 0.006490541622042656,
+        "max": 31208.91645050049,
+        "std": 3116.3693511975725
+      },
+      "rural_density_stats": {
+        "min": 0.00714156636968255,
+        "max": 4951.547937884927,
+        "std": 161.91778270886437
+      }
+    },
+    "Senegal": {
+      "country": "Senegal",
+      "area_km2": 198306.13022659614,
+      "overlap_ratio": 99.99999999999991,
+      "total_cells": 198358,
+      "urban_cells": 3460,
+      "rural_cells": 82370,
+      "urban": 12798985.123350408,
+      "rural": 5599807.956070368,
+      "total": 18398793.079420775,
+      "urban_population_mean": 3699.1286483671697,
+      "rural_population_mean": 67.98358572381169,
+      "urban_share": 0.6956426472161478,
+      "rural_share": 0.30435735278385223,
+      "urban_density_stats": {
+        "min": 1.1355026960372925,
+        "max": 49248.06137084961,
+        "std": 5750.699315137898
+      },
+      "rural_density_stats": {
+        "min": 0.011079351417720318,
+        "max": 4813.040969420224,
+        "std": 193.4715032059853
+      }
+    },
+    "Namibia": {
+      "country": "Namibia",
+      "area_km2": 828074.8506524418,
+      "overlap_ratio": 99.99999999999997,
+      "total_cells": 827938,
+      "urban_cells": 508,
+      "rural_cells": 96191,
+      "urban": 1146530.2943193354,
+      "rural": 1531276.2745726593,
+      "total": 2677806.5688919947,
+      "urban_population_mean": 2256.949398266408,
+      "rural_population_mean": 15.9191221067736,
+      "urban_share": 0.4281602366797312,
+      "rural_share": 0.5718397633202688,
+      "urban_density_stats": {
+        "min": 1.4961820189200807,
+        "max": 19887.569458007812,
+        "std": 2994.463849922823
+      },
+      "rural_density_stats": {
+        "min": 1.5345050996984355e-05,
+        "max": 2801.80613213405,
+        "std": 47.95485736887595
+      }
+    },
+    "Botswana": {
+      "country": "Botswana",
+      "area_km2": 580943.329454624,
+      "overlap_ratio": 99.99999999999977,
+      "total_cells": 580950,
+      "urban_cells": 1338,
+      "rural_cells": 77556,
+      "urban": 1943829.846742056,
+      "rural": 818204.9242135524,
+      "total": 2762034.770955608,
+      "urban_population_mean": 1452.7876283572916,
+      "rural_population_mean": 10.54985976860014,
+      "urban_share": 0.7037673338447982,
+      "rural_share": 0.29623266615520194,
+      "urban_density_stats": {
+        "min": 73.62472531478852,
+        "max": 11850.914882421494,
+        "std": 1352.012436549597
+      },
+      "rural_density_stats": {
+        "min": 1.8095561244990677e-05,
+        "max": 2058.082159668207,
+        "std": 58.2416694180911
+      }
+    },
+    "Swaziland": {
+      "country": "Swaziland",
+      "area_km2": 17345.05488783051,
+      "overlap_ratio": 100.00000000000004,
+      "total_cells": 17329,
+      "urban_cells": 263,
+      "rural_cells": 12302,
+      "urban": 290071.3453458173,
+      "rural": 946533.383597414,
+      "total": 1236604.7289432313,
+      "urban_population_mean": 1102.932872037328,
+      "rural_population_mean": 76.9414228253466,
+      "urban_share": 0.234570787703282,
+      "rural_share": 0.765429212296718,
+      "urban_density_stats": {
+        "min": 300.13904900848866,
+        "max": 4526.080998310819,
+        "std": 1000.3992293404666
+      },
+      "rural_density_stats": {
+        "min": 0.005471987184137106,
+        "max": 1707.069069716148,
+        "std": 93.80895045455976
+      }
+    },
+    "Mayotte": {
+      "country": "Mayotte",
+      "area_km2": 371.7231966268447,
+      "overlap_ratio": 100.0,
+      "total_cells": 368,
+      "urban_cells": 103,
+      "rural_cells": 144,
+      "urban": 274007.62640278414,
+      "rural": 18161.68129748758,
+      "total": 292169.3077002717,
+      "urban_population_mean": 2660.2682175027585,
+      "rural_population_mean": 126.12278678810819,
+      "urban_share": 0.9378385038440823,
+      "rural_share": 0.06216149615591771,
+      "urban_density_stats": {
+        "min": 48.19967653974891,
+        "max": 15958.405707865953,
+        "std": 3015.883482984227
+      },
+      "rural_density_stats": {
+        "min": 0.041648268699645996,
+        "max": 2936.0317260101438,
+        "std": 401.1201590522604
+      }
+    },
+    "Uganda": {
+      "country": "Uganda",
+      "area_km2": 242862.8076379863,
+      "overlap_ratio": 100.0,
+      "total_cells": 242899,
+      "urban_cells": 50459,
+      "rural_cells": 105890,
+      "urban": 39259248.824518695,
+      "rural": 12101568.358341835,
+      "total": 51360817.18286053,
+      "urban_population_mean": 778.042545918839,
+      "rural_population_mean": 114.28433618228195,
+      "urban_share": 0.7643813120173599,
+      "rural_share": 0.2356186879826401,
+      "urban_density_stats": {
+        "min": 0.01827407069504261,
+        "max": 25523.11883544922,
+        "std": 1205.3717763692953
+      },
+      "rural_density_stats": {
+        "min": 0.0051650917157530785,
+        "max": 4043.2221544589847,
+        "std": 132.79852488902364
+      }
+    },
+    "Cameroon": {
+      "country": "Cameroon",
+      "area_km2": 469410.4198119269,
+      "overlap_ratio": 100.00000000000013,
+      "total_cells": 469440,
+      "urban_cells": 6518,
+      "rural_cells": 98736,
+      "urban": 22649874.85830627,
+      "rural": 7454852.953203315,
+      "total": 30104727.811509587,
+      "urban_population_mean": 3474.9731295345614,
+      "rural_population_mean": 75.50288601121491,
+      "urban_share": 0.7523693620523887,
+      "rural_share": 0.24763063794761128,
+      "urban_density_stats": {
+        "min": 0.7809286117553711,
+        "max": 61950.52110290527,
+        "std": 6788.918923338049
+      },
+      "rural_density_stats": {
+        "min": 0.0034262272529304028,
+        "max": 4152.710398748517,
+        "std": 167.7711988495575
+      }
+    },
+    "Madagascar": {
+      "country": "Madagascar",
+      "area_km2": 594793.8590415918,
+      "overlap_ratio": 100.00000000000004,
+      "total_cells": 594780,
+      "urban_cells": 7503,
+      "rural_cells": 268140,
+      "urban": 14472325.720897567,
+      "rural": 17125188.527097456,
+      "total": 31597514.247995023,
+      "urban_population_mean": 1928.8718807007285,
+      "rural_population_mean": 63.86659404451949,
+      "urban_share": 0.45802102049264487,
+      "rural_share": 0.5419789795073552,
+      "urban_density_stats": {
+        "min": 0.014025953598320484,
+        "max": 124970.50909233093,
+        "std": 4881.465561123901
+      },
+      "rural_density_stats": {
+        "min": 0.002305357251316309,
+        "max": 4848.832434654236,
+        "std": 166.12178259245283
+      }
+    },
+    "Zimbabwe": {
+      "country": "Zimbabwe",
+      "area_km2": 392711.28264445113,
+      "overlap_ratio": 100.00000000000007,
+      "total_cells": 392705,
+      "urban_cells": 2864,
+      "rural_cells": 232408,
+      "urban": 5687605.988356793,
+      "rural": 11696624.422784215,
+      "total": 17384230.41114101,
+      "urban_population_mean": 1985.895945655305,
+      "rural_population_mean": 50.327976759768234,
+      "urban_share": 0.3271704213441502,
+      "rural_share": 0.6728295786558498,
+      "urban_density_stats": {
+        "min": 0.7955341413617134,
+        "max": 17651.62167470157,
+        "std": 2019.2786212849885
+      },
+      "rural_density_stats": {
+        "min": 0.005180750973522663,
+        "max": 3330.4093871563673,
+        "std": 72.70860584575462
+      }
+    },
+    "Angola": {
+      "country": "Angola",
+      "area_km2": 1254853.0003605501,
+      "overlap_ratio": 99.99999999999991,
+      "total_cells": 1254993,
+      "urban_cells": 5348,
+      "rural_cells": 243588,
+      "urban": 29382700.688549593,
+      "rural": 9432463.446814662,
+      "total": 38815164.13536426,
+      "urban_population_mean": 5494.147473550784,
+      "rural_population_mean": 38.72302185171134,
+      "urban_share": 0.7569902470611788,
+      "rural_share": 0.2430097529388212,
+      "urban_density_stats": {
+        "min": 0.3791058361530304,
+        "max": 64133.33499145508,
+        "std": 8047.260821003329
+      },
+      "rural_density_stats": {
+        "min": 0.0038358194287866354,
+        "max": 4328.632181465626,
+        "std": 109.26645632833957
+      }
+    },
+    "Burundi": {
+      "country": "Burundi",
+      "area_km2": 27104.015854993795,
+      "overlap_ratio": 100.00000000000003,
+      "total_cells": 27100,
+      "urban_cells": 13707,
+      "rural_cells": 10052,
+      "urban": 12335504.12919146,
+      "rural": 1582620.7039020937,
+      "total": 13918124.833093554,
+      "urban_population_mean": 899.941936907526,
+      "rural_population_mean": 157.443364892767,
+      "urban_share": 0.8862906661004327,
+      "rural_share": 0.11370933389956725,
+      "urban_density_stats": {
+        "min": 6.489026020746678,
+        "max": 86411.11748504639,
+        "std": 1889.2659615745233
+      },
+      "rural_density_stats": {
+        "min": 0.013453220017254353,
+        "max": 1589.841942973435,
+        "std": 113.62803096903772
+      }
+    },
+    "Liberia": {
+      "country": "Liberia",
+      "area_km2": 96624.89383376419,
+      "overlap_ratio": 100.0,
+      "total_cells": 96620,
+      "urban_cells": 906,
+      "rural_cells": 26613,
+      "urban": 3326451.7629523654,
+      "rural": 2226105.87917397,
+      "total": 5552557.642126335,
+      "urban_population_mean": 3671.5803123094543,
+      "rural_population_mean": 83.64731068177093,
+      "urban_share": 0.5990845980085154,
+      "rural_share": 0.4009154019914847,
+      "urban_density_stats": {
+        "min": 6.839475434273481,
+        "max": 18661.183440566063,
+        "std": 4163.377092136883
+      },
+      "rural_density_stats": {
+        "min": 0.004897162783890963,
+        "max": 4456.856804959476,
+        "std": 236.78458151660934
+      }
+    },
+    "Kenya": {
+      "country": "Kenya",
+      "area_km2": 585559.8372660846,
+      "overlap_ratio": 99.99999999999996,
+      "total_cells": 585538,
+      "urban_cells": 41028,
+      "rural_cells": 162654,
+      "urban": 44475535.26578479,
+      "rural": 12778769.034741962,
+      "total": 57254304.30052675,
+      "urban_population_mean": 1084.0288404451787,
+      "rural_population_mean": 78.56412405930357,
+      "urban_share": 0.7768068411474106,
+      "rural_share": 0.22319315885258945,
+      "urban_density_stats": {
+        "min": 0.051079947501420975,
+        "max": 154331.68423461914,
+        "std": 3202.3520262544707
+      },
+      "rural_density_stats": {
+        "min": 0.0011653217661660165,
+        "max": 4889.50435757637,
+        "std": 144.57189049196978
+      }
+    },
+    "Ethiopia": {
+      "country": "Ethiopia",
+      "area_km2": 1136091.3659909824,
+      "overlap_ratio": 99.99999999999983,
+      "total_cells": 1136109,
+      "urban_cells": 68667,
+      "rural_cells": 482634,
+      "urban": 91126599.44614962,
+      "rural": 41592419.46820599,
+      "total": 132719018.9143556,
+      "urban_population_mean": 1327.0799575654917,
+      "rural_population_mean": 86.1779722692682,
+      "urban_share": 0.6866129676934559,
+      "rural_share": 0.313387032306544,
+      "urban_density_stats": {
+        "min": 5.568501710891724,
+        "max": 100980.15319824219,
+        "std": 3321.337715512658
+      },
+      "rural_density_stats": {
+        "min": 0.007708846591413021,
+        "max": 4700.018764108419,
+        "std": 156.97979654195146
+      }
+    },
+    "Lesotho": {
+      "country": "Lesotho",
+      "area_km2": 30539.747769298974,
+      "overlap_ratio": 100.0,
+      "total_cells": 30528,
+      "urban_cells": 841,
+      "rural_cells": 20191,
+      "urban": 914215.4544459848,
+      "rural": 1445709.7650661063,
+      "total": 2359925.219512091,
+      "urban_population_mean": 1087.0576152746548,
+      "rural_population_mean": 71.60169209380943,
+      "urban_share": 0.38739170499436276,
+      "rural_share": 0.6126082950056373,
+      "urban_density_stats": {
+        "min": 14.335898280143738,
+        "max": 5731.333677172661,
+        "std": 1051.6746546723264
+      },
+      "rural_density_stats": {
+        "min": 0.0003937810834031552,
+        "max": 2049.2692628353834,
+        "std": 120.39634517302248
+      }
+    },
+    "Guinea-Bissau": {
+      "country": "Guinea-Bissau",
+      "area_km2": 34279.01325915366,
+      "overlap_ratio": 99.99999999999996,
+      "total_cells": 34287,
+      "urban_cells": 326,
+      "rural_cells": 12411,
+      "urban": 1212173.1785775768,
+      "rural": 985933.9763962904,
+      "total": 2198107.1549738673,
+      "urban_population_mean": 3718.3226336735484,
+      "rural_population_mean": 79.44033328469023,
+      "urban_share": 0.5514622778214777,
+      "rural_share": 0.4485377221785222,
+      "urban_density_stats": {
+        "min": 1.203903317451477,
+        "max": 18616.689613342285,
+        "std": 4534.5716661203305
+      },
+      "rural_density_stats": {
+        "min": 0.0038282580208033323,
+        "max": 3716.8210516683757,
+        "std": 167.41854715027674
+      }
+    },
+    "Sierra Leone": {
+      "country": "Sierra Leone",
+      "area_km2": 72814.76711877278,
+      "overlap_ratio": 99.99999999999996,
+      "total_cells": 72830,
+      "urban_cells": 1429,
+      "rural_cells": 33839,
+      "urban": 5358196.152902467,
+      "rural": 3686370.720516793,
+      "total": 9044566.87341926,
+      "urban_population_mean": 3749.612423304736,
+      "rural_population_mean": 108.93852420333913,
+      "urban_share": 0.5924215308363157,
+      "rural_share": 0.40757846916368434,
+      "urban_density_stats": {
+        "min": 8.704067908460274,
+        "max": 45201.84055328369,
+        "std": 6204.426164068023
+      },
+      "rural_density_stats": {
+        "min": 0.004687379114329815,
+        "max": 4946.353824496269,
+        "std": 248.7732473581331
+      }
+    },
+    "Mauritius": {
+      "country": "Mauritius",
+      "area_km2": 1988.3557706886274,
+      "overlap_ratio": 99.9345689483625,
+      "total_cells": 1980,
+      "urban_cells": 612,
+      "rural_cells": 987,
+      "urban": 1154878.2958342019,
+      "rural": 97942.92555386253,
+      "total": 1252821.2213880643,
+      "urban_population_mean": 1887.0560389447742,
+      "rural_population_mean": 99.23295395528119,
+      "urban_share": 0.9218221052758457,
+      "rural_share": 0.07817789472415432,
+      "urban_density_stats": {
+        "min": 0.46386662125587463,
+        "max": 12338.866144180298,
+        "std": 2004.5685874861992
+      },
+      "rural_density_stats": {
+        "min": 0.014029326848685741,
+        "max": 1975.2991451015696,
+        "std": 180.15217291404474
+      }
+    },
+    "Algeria": {
+      "country": "Algeria",
+      "area_km2": 2325145.1899330136,
+      "overlap_ratio": 100.0,
+      "total_cells": 2325134,
+      "urban_cells": 14503,
+      "rural_cells": 215365,
+      "urban": 37649267.96038778,
+      "rural": 9052724.181479348,
+      "total": 46701992.14186713,
+      "urban_population_mean": 2595.964142617926,
+      "rural_population_mean": 42.03433325507556,
+      "urban_share": 0.8061597853474902,
+      "rural_share": 0.19384021465250975,
+      "urban_density_stats": {
+        "min": 0.0559670589864254,
+        "max": 51977.13579750061,
+        "std": 3711.2562748993832
+      },
+      "rural_density_stats": {
+        "min": 0.0013845984358340502,
+        "max": 4640.244100172073,
+        "std": 139.15195145697706
+      }
+    },
+    "Equatorial Guinea": {
+      "country": "Equatorial Guinea",
+      "area_km2": 27065.629549384612,
+      "overlap_ratio": 99.99999999999996,
+      "total_cells": 27019,
+      "urban_cells": 237,
+      "rural_cells": 3184,
+      "urban": 1513459.296259461,
+      "rural": 164759.1361779042,
+      "total": 1678218.4324373652,
+      "urban_population_mean": 6385.904203626417,
+      "rural_population_mean": 51.74595985486941,
+      "urban_share": 0.9018249752276789,
+      "rural_share": 0.0981750247723211,
+      "urban_density_stats": {
+        "min": 10.142136866226792,
+        "max": 36086.164405822754,
+        "std": 8184.621027587759
+      },
+      "rural_density_stats": {
+        "min": 0.0036793253384530544,
+        "max": 2015.260643929243,
+        "std": 118.69049158211881
+      }
+    },
+    "Mozambique": {
+      "country": "Mozambique",
+      "area_km2": 790933.8680323109,
+      "overlap_ratio": 100.00000000000013,
+      "total_cells": 790965,
+      "urban_cells": 9422,
+      "rural_cells": 319621,
+      "urban": 18456700.177202806,
+      "rural": 17067598.372477017,
+      "total": 35524298.54967982,
+      "urban_population_mean": 1958.8940964978567,
+      "rural_population_mean": 53.399489934882304,
+      "urban_share": 0.5195514318570311,
+      "rural_share": 0.4804485681429689,
+      "urban_density_stats": {
+        "min": 0.5181636661291122,
+        "max": 32468.36166381836,
+        "std": 3186.0978286256127
+      },
+      "rural_density_stats": {
+        "min": 0.0021673012524843216,
+        "max": 4510.869304034859,
+        "std": 119.84098008104094
+      }
+    },
+    "Malawi": {
+      "country": "Malawi",
+      "area_km2": 118800.47270857978,
+      "overlap_ratio": 100.00000000000007,
+      "total_cells": 118784,
+      "urban_cells": 18000,
+      "rural_cells": 55637,
+      "urban": 15394333.184945637,
+      "rural": 6632450.284026701,
+      "total": 22026783.46897234,
+      "urban_population_mean": 855.2407324969798,
+      "rural_population_mean": 119.20934421386309,
+      "urban_share": 0.6988915656537237,
+      "rural_share": 0.30110843434627627,
+      "urban_density_stats": {
+        "min": 0.06652127951383591,
+        "max": 45887.863029271364,
+        "std": 1362.2781760539624
+      },
+      "rural_density_stats": {
+        "min": 0.0003187450929544866,
+        "max": 3366.916650015861,
+        "std": 149.56448938465098
+      }
+    },
+    "Gambia": {
+      "country": "Gambia",
+      "area_km2": 10807.515766548155,
+      "overlap_ratio": 99.99999999999997,
+      "total_cells": 10756,
+      "urban_cells": 645,
+      "rural_cells": 6092,
+      "urban": 2229811.7277345927,
+      "rural": 644487.2093057083,
+      "total": 2874298.937040301,
+      "urban_population_mean": 3457.0724461001437,
+      "rural_population_mean": 105.79238498123905,
+      "urban_share": 0.7757758592885456,
+      "rural_share": 0.2242241407114544,
+      "urban_density_stats": {
+        "min": 0.13604475557804108,
+        "max": 20608.96196746826,
+        "std": 4398.023066229454
+      },
+      "rural_density_stats": {
+        "min": 0.01043776422739029,
+        "max": 3557.2608324326575,
+        "std": 267.33379161726987
+      }
+    },
+    "Guinea": {
+      "country": "Guinea",
+      "area_km2": 246490.85417960136,
+      "overlap_ratio": 100.00000000000036,
+      "total_cells": 246496,
+      "urban_cells": 2376,
+      "rural_cells": 109025,
+      "urban": 8245685.320816057,
+      "rural": 6591098.14668976,
+      "total": 14836783.467505816,
+      "urban_population_mean": 3470.4062798047376,
+      "rural_population_mean": 60.45492452822526,
+      "urban_share": 0.5557596320573804,
+      "rural_share": 0.4442403679426196,
+      "urban_density_stats": {
+        "min": 0.26361918449401855,
+        "max": 50005.44775390625,
+        "std": 4988.14730153075
+      },
+      "rural_density_stats": {
+        "min": 0.001453776960261166,
+        "max": 4380.981140758842,
+        "std": 180.44206797572912
+      }
+    },
+    "Côte d'’Ivoire": {
+      "country": "Côte d'’Ivoire",
+      "area_km2": 323898.4269257664,
+      "overlap_ratio": 99.99999999999994,
+      "total_cells": 323908,
+      "urban_cells": 5254,
+      "rural_cells": 165391,
+      "urban": 20276518.368102647,
+      "rural": 10070358.725607544,
+      "total": 30346877.09371019,
+      "urban_population_mean": 3859.2535911881705,
+      "rural_population_mean": 60.888190564223834,
+      "urban_share": 0.6681583184157435,
+      "rural_share": 0.3318416815842565,
+      "urban_density_stats": {
+        "min": 0.03199164569377899,
+        "max": 60765.234966278076,
+        "std": 5648.473615959905
+      },
+      "rural_density_stats": {
+        "min": 0.004634966608136892,
+        "max": 4840.533645249903,
+        "std": 230.88070448873944
+      }
+    },
+    "Togo": {
+      "country": "Togo",
+      "area_km2": 57420.07309442069,
+      "overlap_ratio": 100.00000000000007,
+      "total_cells": 57444,
+      "urban_cells": 2776,
+      "rural_cells": 43281,
+      "urban": 6848307.124631124,
+      "rural": 2646892.2620870788,
+      "total": 9495199.386718202,
+      "urban_population_mean": 2466.9694252993963,
+      "rural_population_mean": 61.155986739841474,
+      "urban_share": 0.7212388961742575,
+      "rural_share": 0.27876110382574243,
+      "urban_density_stats": {
+        "min": 0.09249702841043472,
+        "max": 48675.31609466672,
+        "std": 3333.131193279058
+      },
+      "rural_density_stats": {
+        "min": 0.006149393506348133,
+        "max": 3599.283994805068,
+        "std": 163.77825590279093
+      }
+    },
+    "Mali": {
+      "country": "Mali",
+      "area_km2": 1258161.9316634194,
+      "overlap_ratio": 99.99999999999989,
+      "total_cells": 1258108,
+      "urban_cells": 3624,
+      "rural_cells": 180926,
+      "urban": 12026840.29418656,
+      "rural": 12729088.005329907,
+      "total": 24755928.29951647,
+      "urban_population_mean": 3318.664540338455,
+      "rural_population_mean": 70.35521707952371,
+      "urban_share": 0.48581657486952196,
+      "rural_share": 0.514183425130478,
+      "urban_density_stats": {
+        "min": 1.18809131719172,
+        "max": 56695.10186004639,
+        "std": 4936.9795431086895
+      },
+      "rural_density_stats": {
+        "min": 0.0033397208899259567,
+        "max": 4907.068177226931,
+        "std": 216.78874294787454
+      }
+    },
+    "West Bank and Gaza Strip": {
+      "country": "West Bank and Gaza Strip",
+      "area_km2": 365.1563386402504,
+      "overlap_ratio": 100.0,
+      "total_cells": 366,
+      "urban_cells": 283,
+      "rural_cells": 79,
+      "urban": 1999326.3856929773,
+      "rural": 7561.8444834165275,
+      "total": 2006888.2301763939,
+      "urban_population_mean": 7064.757546618294,
+      "rural_population_mean": 95.71955042299402,
+      "urban_share": 0.9962320549945366,
+      "rural_share": 0.003767945005463451,
+      "urban_density_stats": {
+        "min": 96.52176222205162,
+        "max": 33385.222774505615,
+        "std": 7840.071352494063
+      },
+      "rural_density_stats": {
+        "min": 0.17198574542999268,
+        "max": 293.32549628801644,
+        "std": 89.31528414501214
+      }
+    },
+    "Eritrea": {
+      "country": "Eritrea",
+      "area_km2": 120711.99372041509,
+      "overlap_ratio": 100.00000000000007,
+      "total_cells": 120699,
+      "urban_cells": 846,
+      "rural_cells": 26554,
+      "urban": 2340219.0614476707,
+      "rural": 1375309.5931380065,
+      "total": 3715528.654585677,
+      "urban_population_mean": 2766.216384689918,
+      "rural_population_mean": 51.79293489259646,
+      "urban_share": 0.6298482070806775,
+      "rural_share": 0.3701517929193225,
+      "urban_density_stats": {
+        "min": 1.2329570055007935,
+        "max": 55775.57576918602,
+        "std": 5594.01871352888
+      },
+      "rural_density_stats": {
+        "min": 0.008762327022850513,
+        "max": 4222.765738070011,
+        "std": 162.19461871631455
+      }
+    },
+    "Western Sahara": {
+      "country": "Western Sahara",
+      "area_km2": 269656.19139037275,
+      "overlap_ratio": 100.00000000000003,
+      "total_cells": 269728,
+      "urban_cells": 115,
+      "rural_cells": 2124,
+      "urban": 502711.6653446263,
+      "rural": 52025.00150673341,
+      "total": 554736.6668513597,
+      "urban_population_mean": 4371.405785605446,
+      "rural_population_mean": 24.493880182077877,
+      "urban_share": 0.9062167608245133,
+      "rural_share": 0.09378323917548681,
+      "urban_density_stats": {
+        "min": 1.0917767211794853,
+        "max": 42205.14749145508,
+        "std": 6707.032349366654
+      },
+      "rural_density_stats": {
+        "min": 5.9609297750284895e-05,
+        "max": 3998.9130477905273,
+        "std": 167.93178014564586
+      }
+    },
+    "Sudan": {
+      "country": "Sudan",
+      "area_km2": 1855538.786762711,
+      "overlap_ratio": 100.00000000000007,
+      "total_cells": 1855901,
+      "urban_cells": 11006,
+      "rural_cells": 282093,
+      "urban": 37883043.30350138,
+      "rural": 12663913.471643865,
+      "total": 50546956.77514525,
+      "urban_population_mean": 3442.0355536526786,
+      "rural_population_mean": 44.89268954438382,
+      "urban_share": 0.7494623953727139,
+      "rural_share": 0.2505376046272862,
+      "urban_density_stats": {
+        "min": 0.009200444445014,
+        "max": 204624.4619140625,
+        "std": 6186.986853898855
+      },
+      "rural_density_stats": {
+        "min": 0.005137082654982805,
+        "max": 4928.314177513123,
+        "std": 170.13009510057591
+      }
+    },
+    "Tunisia": {
+      "country": "Tunisia",
+      "area_km2": 155504.7755405084,
+      "overlap_ratio": 99.99999471443472,
+      "total_cells": 155503,
+      "urban_cells": 3522,
+      "rural_cells": 71911,
+      "urban": 9032453.570144242,
+      "rural": 3505347.1558714504,
+      "total": 12537800.726015693,
+      "urban_population_mean": 2564.5807978830894,
+      "rural_population_mean": 48.745632182440104,
+      "urban_share": 0.7204177006420334,
+      "rural_share": 0.27958229935796663,
+      "urban_density_stats": {
+        "min": 0.06992140412330627,
+        "max": 36727.262268066406,
+        "std": 3180.355736199227
+      },
+      "rural_density_stats": {
+        "min": 0.0024885740131139755,
+        "max": 3702.762906730175,
+        "std": 112.46161811815428
+      }
+    },
+    "Seychelles": {
+      "country": "Seychelles",
+      "area_km2": 299.84737569112804,
+      "overlap_ratio": 100.0,
+      "total_cells": 299,
+      "urban_cells": 66,
+      "rural_cells": 97,
+      "urban": 69672.2780297203,
+      "rural": 16132.192845642567,
+      "total": 85804.47087536287,
+      "urban_population_mean": 1055.6405762078832,
+      "rural_population_mean": 166.31126644992338,
+      "urban_share": 0.8119889012651132,
+      "rural_share": 0.1880110987348868,
+      "urban_density_stats": {
+        "min": 0.7575361728668213,
+        "max": 5619.158543035388,
+        "std": 1115.3941493422644
+      },
+      "rural_density_stats": {
+        "min": 0.014906620606780052,
+        "max": 1002.3338838666677,
+        "std": 203.60003593356558
+      }
+    },
+    "Congo": {
+      "country": "Congo",
+      "area_km2": 343869.2499694301,
+      "overlap_ratio": 99.99999999999991,
+      "total_cells": 343860,
+      "urban_cells": 853,
+      "rural_cells": 22813,
+      "urban": 5719615.369190308,
+      "rural": 738028.7595985396,
+      "total": 6457644.1287888475,
+      "urban_population_mean": 6705.293516049599,
+      "rural_population_mean": 32.35123655803882,
+      "urban_share": 0.88571238289389,
+      "rural_share": 0.11428761710611007,
+      "urban_density_stats": {
+        "min": 0.006670063361525536,
+        "max": 93841.12739506364,
+        "std": 13967.721041119683
+      },
+      "rural_density_stats": {
+        "min": 4.186232035863213e-05,
+        "max": 4022.6975446492434,
+        "std": 156.17404823957384
+      }
+    }
+  }
+}

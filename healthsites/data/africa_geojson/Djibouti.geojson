@@ -1,0 +1,2392 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14596179542684,
+          11.595461357826053
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Pôle Medical المركز الطبي",
+          "operator": "Dr Guillard, Dr Dell'Aquila",
+          "speciality": "general",
+          "addr_city": "جيبوتي",
+          "changeset_id": 79469513.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-01-12T08:36:49Z",
+          "changeset_user": "shavankrats",
+          "uuid": "fd8a4954019143ac8f7a404b73ad2845"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14596179542684,
+            11.595461357826053
+          ]
+        },
+        "osm_id": 3644582972,
+        "osm_type": "node",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.15247771931587,
+          11.568550335678111
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "changeset_id": 55724302.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2018-01-24T21:10:22Z",
+          "changeset_user": "Minotaure",
+          "uuid": "12967dd31dc348828ce7f356252aa4b4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.15247771931587,
+            11.568550335678111
+          ]
+        },
+        "osm_id": 5359716344,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.914538622272545,
+              11.298675516991466
+            ],
+            [
+              42.91455312296503,
+              11.298956897480991
+            ],
+            [
+              42.91476225144922,
+              11.298946420102027
+            ],
+            [
+              42.91474775075673,
+              11.298665291069597
+            ],
+            [
+              42.914538622272545,
+              11.298675516991466
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 37442253.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2016-02-25T17:49:29Z",
+          "changeset_user": "MarTintamarre",
+          "uuid": "3086177204f34204b2150b25fa98a8d9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.91465042139424,
+            11.298811033629578
+          ]
+        },
+        "osm_id": 400002960,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14587604855737,
+          11.591471069001273
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "الصيدلية الوطنية",
+          "opening_hours": "Sa-Th 08:00-23:00",
+          "changeset_id": 93720257.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-11-07T20:47:01Z",
+          "changeset_user": "MustafaQasim",
+          "uuid": "3d6259ad75ed401bbb0548353145b87b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14587604855737,
+            11.591471069001273
+          ]
+        },
+        "osm_id": 5814678354,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.1522366557806,
+          11.590934459560088
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Ministere de la santè وزارة الصحة",
+          "addr_city": "جيبوتي",
+          "changeset_id": 79469513.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-01-12T08:36:49Z",
+          "changeset_user": "shavankrats",
+          "uuid": "842d50bbcc27433db931588cef4152d3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.1522366557806,
+            11.590934459560088
+          ]
+        },
+        "osm_id": 4620272290,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.914129417759625,
+              11.298640732093304
+            ],
+            [
+              42.91420552544042,
+              11.298672248049229
+            ],
+            [
+              42.91424274109053,
+              11.298585998265565
+            ],
+            [
+              42.91430988013494,
+              11.298613742365092
+            ],
+            [
+              42.9142722453897,
+              11.298701081796139
+            ],
+            [
+              42.91433293036869,
+              11.29872614368665
+            ],
+            [
+              42.914396381375695,
+              11.29857887364787
+            ],
+            [
+              42.914192449671475,
+              11.298494467882932
+            ],
+            [
+              42.914129417759625,
+              11.298640732093304
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "changeset_id": 37442253.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2016-02-25T17:49:29Z",
+          "changeset_user": "MarTintamarre",
+          "uuid": "ab9f82df5c604d1bb751bf6330a180a0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.91426425026048,
+            11.298602090921237
+          ]
+        },
+        "osm_id": 400002964,
+        "osm_type": "way",
+        "completeness": 6.25
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14778393735773,
+          11.596358053827544
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "name": "Nicolas Gorgalis طبيب عام",
+          "operator": "Nicolas Gorgalis",
+          "changeset_id": 78394317.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2019-12-13T22:09:24Z",
+          "changeset_user": "marco443",
+          "uuid": "e245935e70ac44a691715d1213554578"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14778393735773,
+            11.596358053827544
+          ]
+        },
+        "osm_id": 4631673591,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.88555894642141,
+              11.786781147608593
+            ],
+            [
+              42.886005450403474,
+              11.787367294097521
+            ],
+            [
+              42.88625984116479,
+              11.787526047343619
+            ],
+            [
+              42.886703243842646,
+              11.787321445087144
+            ],
+            [
+              42.88699786773921,
+              11.787141150349896
+            ],
+            [
+              42.88728586993224,
+              11.786898661891087
+            ],
+            [
+              42.88701798430682,
+              11.786544694120067
+            ],
+            [
+              42.88640526718484,
+              11.78659372825362
+            ],
+            [
+              42.88607074542918,
+              11.78662884842791
+            ],
+            [
+              42.8857939749864,
+              11.78669196415882
+            ],
+            [
+              42.88555894642141,
+              11.786781147608593
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hôpital de Tadjourah مستشفى تجرة",
+          "addr_city": "تجرة",
+          "changeset_id": 120139754.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2022-04-24T21:38:33Z",
+          "changeset_user": "Peter Maris",
+          "uuid": "75756971f82c4ff8a4b4520d472871f8"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.88643169865811,
+            11.786965801496809
+          ]
+        },
+        "osm_id": 551157489,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.108591666860946,
+          11.550216598866683
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "changeset_id": 79788292.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-01-20T09:33:51Z",
+          "changeset_user": "bvivi",
+          "uuid": "4d991f46c1df43398e2cf9936a0a45cc"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.108591666860946,
+            11.550216598866683
+          ]
+        },
+        "osm_id": 5314085236,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.11141611677331,
+              11.551201472489595
+            ],
+            [
+              43.111604541956666,
+              11.551393250434188
+            ],
+            [
+              43.11173613783649,
+              11.55126919826722
+            ],
+            [
+              43.111547880291226,
+              11.551077336503596
+            ],
+            [
+              43.11141611677331,
+              11.551201472489595
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "CSC_Balbala 2",
+          "operator": "Public",
+          "changeset_id": 79993771.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-01-23T19:17:11Z",
+          "changeset_user": "willisturm",
+          "uuid": "4290c71a52e44ff19af17a383277cd8c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.11157615153776,
+            11.55123530074141
+          ]
+        },
+        "osm_id": 555239716,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.095417662005076,
+          11.558534631938016
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital Al Rahma مستشفى الرحمة",
+          "changeset_id": 73316297.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2019-08-13T16:16:51Z",
+          "changeset_user": "WalkerB",
+          "uuid": "8c43c224be63492f8407f4addb90930a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.095417662005076,
+            11.558534631938016
+          ]
+        },
+        "osm_id": 5313339837,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.123544395389274,
+              11.556069849490825
+            ],
+            [
+              43.124240260990746,
+              11.557189587935767
+            ],
+            [
+              43.124861192377836,
+              11.556848528295632
+            ],
+            [
+              43.12416113582478,
+              11.555717390462377
+            ],
+            [
+              43.123544395389274,
+              11.556069849490825
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Croissant rouge de Djibout / الهلال الأحمر لجيبوتي، بلبالا 2",
+          "operator": "Croissant Rouge الهلال الأحمر",
+          "emergency": "yes",
+          "addr_city": "جيبوتي",
+          "changeset_id": 73042302.0,
+          "changeset_version": 7.0,
+          "changeset_timestamp": "2019-08-05T22:42:44Z",
+          "changeset_user": "WalkerB",
+          "uuid": "1c8f44ee82ed4c4e97f253d4f55b0f84"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.12420201285576,
+            11.55645575333849
+          ]
+        },
+        "osm_id": 335328161,
+        "osm_type": "way",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14821082768634,
+          11.542736923750766
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 79469513.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2020-01-12T08:36:49Z",
+          "changeset_user": "shavankrats",
+          "uuid": "b6cd2f58ab5048f995bf7f400cf3520c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14821082768634,
+            11.542736923750766
+          ]
+        },
+        "osm_id": 2195660097,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.1004896354344,
+          11.557661237627343
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie populaire",
+          "addr_city": "Balbala",
+          "changeset_id": 143391569.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2023-10-30T23:13:26Z",
+          "changeset_user": "Kadubei",
+          "uuid": "afa52d5f690b4d658108608d138855e0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.1004896354344,
+            11.557661237627343
+          ]
+        },
+        "osm_id": 5313246188,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.149506250821815,
+              11.556385260507255
+            ],
+            [
+              43.15000044783292,
+              11.556612661540356
+            ],
+            [
+              43.15025827517454,
+              11.556107484236065
+            ],
+            [
+              43.14977698629431,
+              11.555880083202965
+            ],
+            [
+              43.149506250821815,
+              11.556385260507255
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hôpital militaire",
+          "operator": "France",
+          "emergency": "yes",
+          "changeset_id": 55383222.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2018-01-12T15:27:39Z",
+          "changeset_user": "Minotaure",
+          "uuid": "2d187d3fed984f86a6f9cb5d03c96348"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.149884632203204,
+            11.556247086553167
+          ]
+        },
+        "osm_id": 550937696,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14763524239544,
+          11.56696464723575
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "physiotherapist",
+          "name": "Kiné Pro",
+          "changeset_id": 55385436.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2018-01-12T16:51:17Z",
+          "changeset_user": "Minotaure",
+          "uuid": "a2622040a2c344a4b6586596df043d63"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14763524239544,
+            11.56696464723575
+          ]
+        },
+        "osm_id": 5322627429,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.694505198245594,
+              11.14994367431936
+            ],
+            [
+              42.69520424897027,
+              11.150805333965593
+            ],
+            [
+              42.695415640568314,
+              11.150815643706494
+            ],
+            [
+              42.69611812787326,
+              11.15148577686523
+            ],
+            [
+              42.69648709925099,
+              11.151296681129622
+            ],
+            [
+              42.696635542756184,
+              11.151164330878515
+            ],
+            [
+              42.69711943002639,
+              11.150885548778973
+            ],
+            [
+              42.69695648582868,
+              11.15052898261797
+            ],
+            [
+              42.696937291270416,
+              11.150486989283081
+            ],
+            [
+              42.69621627995943,
+              11.149090061300171
+            ],
+            [
+              42.694505198245594,
+              11.14994367431936
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hôpital Régional d'Ali Sabieh",
+          "speciality": "ophthalmology;paediatrics;maternity;orthopaedics",
+          "emergency": "yes",
+          "addr_city": "Ali Sabieh علي صبيح",
+          "changeset_id": 85191605.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-05-14T09:31:03Z",
+          "changeset_user": "Jéjé33",
+          "uuid": "df040c6d09064dfbba92c1afff93230a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.69591453105753,
+            11.150296166714114
+          ]
+        },
+        "osm_id": 739480373,
+        "osm_type": "way",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.10565154668478,
+              11.556583660155354
+            ],
+            [
+              43.10604599904812,
+              11.556752723142381
+            ],
+            [
+              43.10608061630822,
+              11.55663579559311
+            ],
+            [
+              43.106109198598034,
+              11.556416189729958
+            ],
+            [
+              43.106092183334596,
+              11.556031292736236
+            ],
+            [
+              43.10572472069947,
+              11.55594395330516
+            ],
+            [
+              43.105703933579605,
+              11.556203373208376
+            ],
+            [
+              43.10565154668478,
+              11.556583660155354
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centre de Santé Communautaire Wahledaba",
+          "operator": "Ministère de la Santé",
+          "speciality": "general",
+          "changeset_id": 158681382.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-11-03T00:11:50Z",
+          "changeset_user": "SeverinGeo",
+          "uuid": "0c6422984ab04edc9de11aa41670bf64"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.10589560324706,
+            11.556340426028285
+          ]
+        },
+        "osm_id": 557960596,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.13558089216548,
+              11.574453877721282
+            ],
+            [
+              43.13584249136352,
+              11.57481756849998
+            ],
+            [
+              43.13591641974952,
+              11.574832320649591
+            ],
+            [
+              43.13595589851346,
+              11.574840199638572
+            ],
+            [
+              43.1365949348114,
+              11.574393360380384
+            ],
+            [
+              43.13628715132688,
+              11.573957249958255
+            ],
+            [
+              43.13615907584639,
+              11.574049199436075
+            ],
+            [
+              43.13558089216548,
+              11.574453877721282
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Dar Al Hanan دار الحنان",
+          "addr_city": "جيبوتي",
+          "changeset_id": 117211370.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2022-02-09T17:01:31Z",
+          "changeset_user": "Luqma",
+          "uuid": "2de9a67d71c54f53a2a6a967aa7f12b0"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.13609017930529,
+            11.574419402988081
+          ]
+        },
+        "osm_id": 353240926,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.111360041841095,
+          11.549575383273918
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Al-Ouma الأمة",
+          "operator_type": "private",
+          "wheelchair": "yes",
+          "addr_city": "جيبوتي",
+          "changeset_id": 93205123.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-10-29T00:18:26Z",
+          "changeset_user": "MustafaQasim",
+          "uuid": "171744d8167b427788ec6a6f75d9608a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.111360041841095,
+            11.549575383273918
+          ]
+        },
+        "osm_id": 5349267468,
+        "osm_type": "node",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.25481312953258,
+              11.973960444861461
+            ],
+            [
+              43.25550497182053,
+              11.973997828149635
+            ],
+            [
+              43.25556599207562,
+              11.973312859022286
+            ],
+            [
+              43.254861325475844,
+              11.973261561774876
+            ],
+            [
+              43.25481312953258,
+              11.973960444861461
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centre médical المركز الطبي",
+          "changeset_id": 67267498.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2019-02-17T01:47:10Z",
+          "changeset_user": "سامبا",
+          "uuid": "50b99f5e24e440f1b7b294de60adf3d8"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.255185348885576,
+            11.973631959892309
+          ]
+        },
+        "osm_id": 643189842,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.098248063068695,
+          11.553982252686438
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Maison de santé مركز صحي",
+          "addr_city": "بلبالا",
+          "changeset_id": 78723163.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2019-12-21T22:58:24Z",
+          "changeset_user": "بشير إبراهيمي",
+          "uuid": "b6e905c9893148c6a5dbcb91d386caf3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.098248063068695,
+            11.553982252686438
+          ]
+        },
+        "osm_id": 5313346185,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.15241845926042,
+          11.568618061455766
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "dentist",
+          "healthcare": "dentist",
+          "name": "Clinique Dentaire de Djibouti",
+          "operator": "Ramsiss Fathi",
+          "changeset_id": 142137901.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2023-10-04T10:22:20Z",
+          "changeset_user": "b-jazz-bot",
+          "uuid": "90ef916ba5504f35b6ab38a3a9a02f99"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.15241845926042,
+            11.568618061455766
+          ]
+        },
+        "osm_id": 5335540127,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.10359404091278,
+              11.56704779571524
+            ],
+            [
+              43.10439887125548,
+              11.56705416596165
+            ],
+            [
+              43.104400463817086,
+              11.566858867617697
+            ],
+            [
+              43.104401888740625,
+              11.56668745769781
+            ],
+            [
+              43.10434874747452,
+              11.566687038602652
+            ],
+            [
+              43.10374206532282,
+              11.566682260917844
+            ],
+            [
+              43.10374173004669,
+              11.56671679435891
+            ],
+            [
+              43.1035967231218,
+              11.566715620892467
+            ],
+            [
+              43.10359404091278,
+              11.56704779571524
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centre de Santé Communantaire de Hayabley",
+          "emergency": "yes",
+          "addr_city": "جيبوتي",
+          "changeset_id": 80848686.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2020-02-11T11:58:51Z",
+          "changeset_user": "Henk Nugter",
+          "uuid": "da0a2b60223f4eb5914248bc49dcab09"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.10400362247899,
+            11.566870543017558
+          ]
+        },
+        "osm_id": 335328162,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.15383357597321,
+              11.608863266629214
+            ],
+            [
+              43.153844053352174,
+              11.609032497254276
+            ],
+            [
+              43.15391194676789,
+              11.609028473940754
+            ],
+            [
+              43.15396802170011,
+              11.609025037360453
+            ],
+            [
+              43.15402786848878,
+              11.609021516961121
+            ],
+            [
+              43.15408872110581,
+              11.60901799656179
+            ],
+            [
+              43.154078327545875,
+              11.608848765936727
+            ],
+            [
+              43.15404186626708,
+              11.60885086141252
+            ],
+            [
+              43.15393927177223,
+              11.608856980201836
+            ],
+            [
+              43.15383357597321,
+              11.608863266629214
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hôpital Général Peltier مستشفى بلتيير العام",
+          "speciality": "surgery;neurology;orthopaedics",
+          "addr_city": "جيبوتي",
+          "changeset_id": 113067999.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-10-28T07:13:49Z",
+          "changeset_user": "GoatIsland",
+          "uuid": "3d15e813550748f6a4f8b3753d9aab8a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.153961163854504,
+            11.60894058883235
+          ]
+        },
+        "osm_id": 228050145,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14642632050072,
+          11.595198333704445
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "dentist",
+          "healthcare": "dentist",
+          "name": "Clinique dentaire Fathi",
+          "operator": "Nasibe Fathi",
+          "changeset_id": 155633597.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-08-23T04:57:50Z",
+          "changeset_user": "thetornado76",
+          "uuid": "7efbe13bc2df4074bdafd8035a91dfd5"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14642632050072,
+            11.595198333704445
+          ]
+        },
+        "osm_id": 5345274811,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.86223102024212,
+              11.501819657580882
+            ],
+            [
+              42.862719266101976,
+              11.502032557921495
+            ],
+            [
+              42.862898974106,
+              11.501732988702088
+            ],
+            [
+              42.86241349427419,
+              11.501522686751457
+            ],
+            [
+              42.86223102024212,
+              11.501819657580882
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centre de Santé communantaire de Ouéa",
+          "operator": "Ministere de la Santé",
+          "speciality": "general",
+          "operator_type": "government",
+          "changeset_id": 144303549.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2023-11-21T21:31:58Z",
+          "changeset_user": "Gurusraouta",
+          "uuid": "877839f28e8b4fe4adf2f6091bb54d1a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.8625657324221,
+            11.501777213504282
+          ]
+        },
+        "osm_id": 550175737,
+        "osm_type": "way",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.13084645797696,
+              11.570847563880903
+            ],
+            [
+              43.13178816479848,
+              11.572170144382625
+            ],
+            [
+              43.13297822741106,
+              11.571355171937086
+            ],
+            [
+              43.132957021196034,
+              11.571326673466302
+            ],
+            [
+              43.13294352633193,
+              11.571306640717694
+            ],
+            [
+              43.132925756697205,
+              11.57128107591302
+            ],
+            [
+              43.13276314777562,
+              11.571051998499286
+            ],
+            [
+              43.132731128905505,
+              11.571006484765064
+            ],
+            [
+              43.13271972951719,
+              11.57099064296807
+            ],
+            [
+              43.13269089577028,
+              11.570950828927977
+            ],
+            [
+              43.132634317923845,
+              11.570873044866545
+            ],
+            [
+              43.13257849444872,
+              11.570793332967355
+            ],
+            [
+              43.13247263101164,
+              11.570639441225097
+            ],
+            [
+              43.132435331542524,
+              11.57058529413058
+            ],
+            [
+              43.132393757302765,
+              11.570528464827078
+            ],
+            [
+              43.13234514226437,
+              11.570461996334899
+            ],
+            [
+              43.132286720399236,
+              11.570384966644752
+            ],
+            [
+              43.13202914451472,
+              11.570027562293433
+            ],
+            [
+              43.13084645797696,
+              11.570847563880903
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hôpital militaire soudanais",
+          "addr_street": "Boulevard Hassan Gouled",
+          "addr_city": "Djibouti",
+          "changeset_id": 148470587.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2024-03-10T16:35:49Z",
+          "changeset_user": "Peter Maris",
+          "uuid": "8590f8af986b4b9a9124cf2047245380"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.13191189333315,
+            11.5710993852348
+          ]
+        },
+        "osm_id": 998316092,
+        "osm_type": "way",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.13275878918597,
+          11.590538582273211
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie BSH صيدلية بي إس أيتش",
+          "addr_city": "جيبوتي",
+          "changeset_id": 100510942.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-03-05T19:14:52Z",
+          "changeset_user": "user_11422772",
+          "uuid": "fdfcc54603bc47f6997240c619c96706"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.13275878918597,
+            11.590538582273211
+          ]
+        },
+        "osm_id": 5351742926,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.111567829220775,
+              11.550849851651463
+            ],
+            [
+              43.11239135120758,
+              11.550872818066154
+            ],
+            [
+              43.11292309914489,
+              11.550876673741612
+            ],
+            [
+              43.112943634807664,
+              11.549894985241934
+            ],
+            [
+              43.112961236804324,
+              11.549072720540607
+            ],
+            [
+              43.11236503203159,
+              11.549067356122578
+            ],
+            [
+              43.11229948554879,
+              11.549061237333262
+            ],
+            [
+              43.112247853025224,
+              11.54905964477166
+            ],
+            [
+              43.111590795635465,
+              11.549056962562645
+            ],
+            [
+              43.11158132408488,
+              11.549656771553742
+            ],
+            [
+              43.111580485894564,
+              11.549703458754408
+            ],
+            [
+              43.11158015061844,
+              11.549729191197144
+            ],
+            [
+              43.11157973152328,
+              11.549760623334066
+            ],
+            [
+              43.11157948006618,
+              11.549772777093665
+            ],
+            [
+              43.11157738459039,
+              11.54996614759986
+            ],
+            [
+              43.111577133133295,
+              11.54997888809271
+            ],
+            [
+              43.11157487001944,
+              11.550083075149132
+            ],
+            [
+              43.11157595966685,
+              11.55034702128009
+            ],
+            [
+              43.11157629494298,
+              11.550444921909133
+            ],
+            [
+              43.11157587584782,
+              11.550518263561912
+            ],
+            [
+              43.111573696552995,
+              11.550590683205343
+            ],
+            [
+              43.11157243926752,
+              11.550629072321868
+            ],
+            [
+              43.111567829220775,
+              11.550849851651463
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hopital cheikho",
+          "operator": "Ministère de la Santé",
+          "speciality": "CHIRURGIE_VISCERALE;GYNECOLOGIE-OBSTRIQUE;OPHTALMOLOGIE;O.R.L;ANATOMIE-PATHOLOGIE;IMAGERIE_MEDICAL;LABORATOIRE;PHARMACIE;KINESITHERRAPIE;CENTRE_D’APPAREILLAGE;ORTHOPEDIQUE",
+          "emergency": "yes",
+          "addr_city": "جيبوتي",
+          "changeset_id": 113063645.0,
+          "changeset_version": 8.0,
+          "changeset_timestamp": "2021-10-28T04:48:04Z",
+          "changeset_user": "GoatIsland",
+          "uuid": "3c9b8d26dd234483bcfe682729c8b18a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.112261136583854,
+            11.549963170614655
+          ]
+        },
+        "osm_id": 550510225,
+        "osm_type": "way",
+        "completeness": 25.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.7071034501725,
+              11.154307544568582
+            ],
+            [
+              42.70712113598819,
+              11.155201055446895
+            ],
+            [
+              42.70730696278153,
+              11.15520273182753
+            ],
+            [
+              42.70745264025868,
+              11.155035848135327
+            ],
+            [
+              42.70765573377258,
+              11.15502478402314
+            ],
+            [
+              42.70769236268944,
+              11.154598564246783
+            ],
+            [
+              42.70762237379796,
+              11.154593199828753
+            ],
+            [
+              42.70766252311415,
+              11.154408797958922
+            ],
+            [
+              42.70745155061127,
+              11.154291618952556
+            ],
+            [
+              42.7071034501725,
+              11.154307544568582
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centre Médico-Hospitalier d'Ali Sabieh مستشفى علي صبيح",
+          "addr_city": "Ali Sabieh علي صبيح",
+          "changeset_id": 86004101.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-05-31T10:28:47Z",
+          "changeset_user": "Jéjé33",
+          "uuid": "d0a058a179de456c92399316484a820b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.70736904240104,
+            11.154718486423505
+          ]
+        },
+        "osm_id": 739165042,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14806221654308,
+          11.55938908314755
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie de l'Aviation صيدلية الطيران",
+          "addr_city": "جيبوتي",
+          "changeset_id": 78723163.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2019-12-21T22:58:24Z",
+          "changeset_user": "بشير إبراهيمي",
+          "uuid": "a8961926b92042979ae00dfe42272404"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14806221654308,
+            11.55938908314755
+          ]
+        },
+        "osm_id": 5335418845,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14257424925927,
+          11.589463267915079
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Affi أفى",
+          "addr_city": "جيبوتي",
+          "changeset_id": 79454868.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-01-11T15:57:39Z",
+          "changeset_user": "juf Carla",
+          "uuid": "6ab64bd333e14df5b26338990f9d85c4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14257424925927,
+            11.589463267915079
+          ]
+        },
+        "osm_id": 5337784455,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.151528468781464,
+              11.58693302280409
+            ],
+            [
+              43.15236095940466,
+              11.587162184036856
+            ],
+            [
+              43.15250613396762,
+              11.586654995075833
+            ],
+            [
+              43.15164665361621,
+              11.586423486910178
+            ],
+            [
+              43.151528468781464,
+              11.58693302280409
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Dr Chakib Saad Omar / د. شكيب سعد عمر",
+          "addr_city": "جيبوتي",
+          "changeset_id": 78803860.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2019-12-24T06:40:10Z",
+          "changeset_user": "Daniel Specht",
+          "uuid": "57ea66549ed44b3a9a9fa22fa60cd6ad"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.15201153623612,
+            11.586792307675067
+          ]
+        },
+        "osm_id": 554269783,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.0807656761626,
+          11.553842358722477
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centre de santé communautaire Tora-Dora",
+          "operator": "Ministère de la Santé",
+          "speciality": "general",
+          "changeset_id": 143391569.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2023-10-30T23:13:26Z",
+          "changeset_user": "Kadubei",
+          "uuid": "616b1e9cd31441259655f2f85cf03492"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.0807656761626,
+            11.553842358722477
+          ]
+        },
+        "osm_id": 5380475275,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14617888671904,
+          11.594373386794132
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie de l'Indépendance صيدلية الاستقلال",
+          "addr_city": "جيبوتي",
+          "changeset_id": 79469513.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-01-12T08:36:49Z",
+          "changeset_user": "shavankrats",
+          "uuid": "0fae537910aa40dda2af664cb8f540b3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14617888671904,
+            11.594373386794132
+          ]
+        },
+        "osm_id": 3739299269,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.12659674924893,
+              11.556736797526355
+            ],
+            [
+              43.127061441960876,
+              11.55674098847794
+            ],
+            [
+              43.12706756075019,
+              11.556126343518201
+            ],
+            [
+              43.12703705062265,
+              11.555851584732181
+            ],
+            [
+              43.12664905232475,
+              11.55575125335119
+            ],
+            [
+              43.12659674924893,
+              11.556736797526355
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Service de santé des armées خدمة صحة الجيش",
+          "operator": "Service de santé des armées خدمة صحة الجيش",
+          "changeset_id": 100510942.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-03-05T19:14:52Z",
+          "changeset_user": "user_11422772",
+          "uuid": "55bb6e8d55db40c1823ab8ad670af05c"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.126837436347664,
+            11.556282342960092
+          ]
+        },
+        "osm_id": 652953006,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.1451421291155,
+          11.593016021394192
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "La Pharmacie Moderne صيدلية حديثة",
+          "addr_city": "جيبوتي",
+          "changeset_id": 79469513.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-01-12T08:36:49Z",
+          "changeset_user": "shavankrats",
+          "uuid": "07b53b2d2cb94c9b8d71da22106327c3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.1451421291155,
+            11.593016021394192
+          ]
+        },
+        "osm_id": 3739299265,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.09451426048102,
+              11.55914902544066
+            ],
+            [
+              43.09635995555985,
+              11.559121197522103
+            ],
+            [
+              43.09636297304499,
+              11.558662539780471
+            ],
+            [
+              43.096368169824956,
+              11.558252832353332
+            ],
+            [
+              43.09620556090337,
+              11.5581373297276
+            ],
+            [
+              43.096246883686035,
+              11.55772276079665
+            ],
+            [
+              43.09456765320425,
+              11.557798365563258
+            ],
+            [
+              43.09451426048102,
+              11.55914902544066
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "مجمع الرحمة التنموي",
+          "changeset_id": 79258882.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-01-06T17:44:05Z",
+          "changeset_user": "E Taylor",
+          "uuid": "93dc14b51969470785669c09763a604e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.09543546977133,
+            11.558462499326676
+          ]
+        },
+        "osm_id": 711138844,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.14142626380061,
+              11.590628687732334
+            ],
+            [
+              43.141512094489116,
+              11.59074628583383
+            ],
+            [
+              43.14162709420066,
+              11.59066565192532
+            ],
+            [
+              43.14155668621399,
+              11.59056926003882
+            ],
+            [
+              43.14153983858861,
+              11.59058099470326
+            ],
+            [
+              43.14152449970581,
+              11.590559872307267
+            ],
+            [
+              43.14142626380061,
+              11.590628687732334
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "laboratory",
+          "name": "Laboratoire d'analyses médicales Abdan",
+          "changeset_id": 79262363.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-01-06T19:22:54Z",
+          "changeset_user": "juf Carla",
+          "uuid": "67f505bfa63144ddb5936a6903ca0b8e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14152630164335,
+            11.590649419919462
+          ]
+        },
+        "osm_id": 554564940,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14146431764104,
+          11.590674872018809
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "healthcare": "laboratory",
+          "name": "Laboratoire d'analyses médicales Abdan",
+          "changeset_id": 65055295.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2018-11-30T19:16:13Z",
+          "changeset_user": "Minotaure",
+          "uuid": "3a36de7f43ba479eb8f0ddfe5bae52ac"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14146431764104,
+            11.590674872018809
+          ]
+        },
+        "osm_id": 5351742589,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.126749467524775,
+          11.55627352973795
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Service de santé des armées خدمة صحة الجيش",
+          "operator": "وزارة الدفاع",
+          "speciality": "general",
+          "changeset_id": 65218665.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2018-12-05T21:29:04Z",
+          "changeset_user": "Minotaure",
+          "uuid": "b8498ef3ef9c43c09c0d7a2ce0b029ed"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.126749467524775,
+            11.55627352973795
+          ]
+        },
+        "osm_id": 5380513468,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              43.11336189177604,
+              11.555896930828368
+            ],
+            [
+              43.11342542660208,
+              11.55589751756159
+            ],
+            [
+              43.113426348611426,
+              11.555799030199296
+            ],
+            [
+              43.11336264614732,
+              11.555798443466074
+            ],
+            [
+              43.11336189177604,
+              11.555896930828368
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Tulyani الطلياني",
+          "addr_city": "بلبالا",
+          "changeset_id": 93720506.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2020-11-07T20:57:32Z",
+          "changeset_user": "MustafaQasim",
+          "uuid": "d6ae75c4249443d69390152dcf6a438f"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.11339407855148,
+            11.555847958889737
+          ]
+        },
+        "osm_id": 549878593,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14815542330638,
+          11.595477618718206
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie de la Corne d'Afrique صيدلية القرن الأفريقي",
+          "addr_city": "جيبوتي",
+          "changeset_id": 79198780.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-01-04T20:37:13Z",
+          "changeset_user": "juf Carla",
+          "uuid": "91184fac3b694e73b0d958c928e45eab"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14815542330638,
+            11.595477618718206
+          ]
+        },
+        "osm_id": 5337784450,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.14612507490065,
+          11.594081026011423
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Laboratoire Affi",
+          "operator": "Affi",
+          "speciality": "laboratory",
+          "changeset_id": 55416643.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2018-01-13T21:00:40Z",
+          "changeset_user": "Minotaure",
+          "uuid": "0f1386d345c1482ca0ee57bd832bdac3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.14612507490065,
+            11.594081026011423
+          ]
+        },
+        "osm_id": 5337784444,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              42.889702791712324,
+              11.129071897226993
+            ],
+            [
+              42.889817791423866,
+              11.129678830835786
+            ],
+            [
+              42.890109649292384,
+              11.129619319323268
+            ],
+            [
+              42.89002046584261,
+              11.129027473140184
+            ],
+            [
+              42.889702791712324,
+              11.129071897226993
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hôpital مستشفى",
+          "addr_city": "علي عدي",
+          "changeset_id": 85680091.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2020-05-24T12:05:33Z",
+          "changeset_user": "Jéjé33",
+          "uuid": "9e82b0d1df08401e9203d83a9954ebaf"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            42.889911241453234,
+            11.129345814555123
+          ]
+        },
+        "osm_id": 400017075,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.148968887009374,
+          11.59272508553505
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "عسل سهيل للعسل اليمني والإثيوبي ولجميع أنواع الأعشاب الطبية",
+          "opening_hours": "Sa-Th 08:00-22:00; Fr 17:00-22:00",
+          "addr_street": "شارع ١",
+          "addr_city": "جيبوتي",
+          "changeset_id": 158551512.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2024-10-30T17:17:22Z",
+          "changeset_user": "SeverinGeo",
+          "uuid": "f5d571dd412e471a95b30cb8f4337da4"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.148968887009374,
+            11.59272508553505
+          ]
+        },
+        "osm_id": 4347535789,
+        "osm_type": "node",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.1457123499884,
+          11.592333483018791
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Centrale",
+          "changeset_id": 161652180.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2025-01-22T20:33:46Z",
+          "changeset_user": "Nathan Hadley",
+          "uuid": "02d73cbc26844f8f82619fb5bca17b11"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.1457123499884,
+            11.592333483018791
+          ]
+        },
+        "osm_id": 9371609717,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.11520632956936,
+          11.5623886310172
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Place Cheick Moussa صيدلية ساحة الشيخ موسى",
+          "changeset_id": 158620324.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2024-11-01T13:55:51Z",
+          "changeset_user": "SeverinGeo",
+          "uuid": "20a5036247944a959d145c9970d277d9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.11520632956936,
+            11.5623886310172
+          ]
+        },
+        "osm_id": 5317174086,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          43.1520900562941,
+          11.587718658588528
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Océan Indien الصيدلة من المحيط الهندي",
+          "addr_street": "شارع الجنرال ديغول",
+          "addr_city": "جيبوتي",
+          "changeset_id": 60361970.0,
+          "changeset_version": 3.0,
+          "changeset_timestamp": "2018-07-03T01:32:10Z",
+          "changeset_user": "سامبا",
+          "uuid": "b3b85af84f50495494c8859324222d06"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            43.1520900562941,
+            11.587718658588528
+          ]
+        },
+        "osm_id": 5335540126,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    }
+  ]
+}

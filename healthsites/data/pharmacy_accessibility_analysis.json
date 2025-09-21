@@ -1,0 +1,68 @@
+{
+  "distance_analysis": {
+    "1": {
+      "urban": 418426925,
+      "rural": 16520689,
+      "total": 434947615
+    },
+    "2": {
+      "urban": 532249666,
+      "rural": 27603715,
+      "total": 559853381
+    },
+    "5": {
+      "urban": 709675036,
+      "rural": 82360713,
+      "total": 792035749
+    },
+    "10": {
+      "urban": 826113060,
+      "rural": 162752860,
+      "total": 988865920
+    },
+    "20": {
+      "urban": 945280816,
+      "rural": 264230948,
+      "total": 1209511765
+    },
+    "50": {
+      "urban": 1059034702,
+      "rural": 370605185,
+      "total": 1429639888
+    },
+    "100": {
+      "urban": 1098543074,
+      "rural": 403030776,
+      "total": 1501573850
+    }
+  },
+  "urban_rural_gap": {
+    "accessibility_gap": {
+      "avg_distance_gap": 11.065169950220703,
+      "urban_avg_distance": 10.893359383933333,
+      "rural_avg_distance": 21.958529334154036
+    },
+    "coverage_gap": {
+      "1km": {
+        "urban_coverage": 37.52734750421518,
+        "rural_coverage": 4.0099502470289785,
+        "gap": 33.517397257186204
+      },
+      "5km": {
+        "urban_coverage": 63.64844147434846,
+        "rural_coverage": 19.990834254087254,
+        "gap": 43.657607220261205
+      }
+    },
+    "population_totals": {
+      "urban": 1114992008,
+      "rural": 411992379,
+      "total": 1526984388
+    }
+  },
+  "metadata": {
+    "total_grids_analyzed": 7199573,
+    "pharmacy_count": 43627,
+    "analysis_date": "2025-09-02T14:33:15.571318"
+  }
+}

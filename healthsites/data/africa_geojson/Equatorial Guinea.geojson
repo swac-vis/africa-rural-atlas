@@ -1,0 +1,1371 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.78331758804822,
+          3.730504518825398
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmacia",
+          "dispensing": "yes",
+          "changeset_id": 112882698.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-10-23T17:35:49Z",
+          "changeset_user": "Sl24",
+          "uuid": "20572f095e5e4578a3789290e09f9820"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.78331758804822,
+            3.730504518825398
+          ]
+        },
+        "osm_id": 9196170047,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.801278522256496,
+              1.841452453290941
+            ],
+            [
+              9.801310792583735,
+              1.841833159333078
+            ],
+            [
+              9.801544060949027,
+              1.84181714989802
+            ],
+            [
+              9.802258869651666,
+              1.842240771284395
+            ],
+            [
+              9.802755078319564,
+              1.841368047525975
+            ],
+            [
+              9.802779888752951,
+              1.841328987857196
+            ],
+            [
+              9.802806040290847,
+              1.84128766507456
+            ],
+            [
+              9.803125223163704,
+              1.840721970429371
+            ],
+            [
+              9.803084990028452,
+              1.840697830548237
+            ],
+            [
+              9.803489919770783,
+              1.839998193090338
+            ],
+            [
+              9.803532918934053,
+              1.840027697389502
+            ],
+            [
+              9.80371262693808,
+              1.839646991347365
+            ],
+            [
+              9.803798457626584,
+              1.839424451818104
+            ],
+            [
+              9.803896358255656,
+              1.839192524557291
+            ],
+            [
+              9.803527554516023,
+              1.839195961137591
+            ],
+            [
+              9.802270939592233,
+              1.839283719663825
+            ],
+            [
+              9.801963826659971,
+              1.839784370740375
+            ],
+            [
+              9.801348259690911,
+              1.84101818688751
+            ],
+            [
+              9.801278522256496,
+              1.841452453290941
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Centro Médico La Paz",
+          "changeset_id": 135895908.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2023-05-09T13:20:36Z",
+          "changeset_user": "Frans S",
+          "uuid": "8b5b942c08934869a946d4e0ed7a26d9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            9.802439458674453,
+            1.84055039154784
+          ]
+        },
+        "osm_id": 499521969,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.781125385092224,
+          3.75536775820899
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "La Grande Pharmacie",
+          "dispensing": "yes",
+          "addr_housenumber": "85",
+          "addr_street": "Calle de Kenia",
+          "addr_city": "Malabo",
+          "changeset_id": 133764423.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-03-16T20:28:32Z",
+          "changeset_user": "Ambolano",
+          "uuid": "00af0ea0f6af422d94ac86842688b25b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.781125385092224,
+            3.75536775820899
+          ]
+        },
+        "osm_id": 10740005964,
+        "osm_type": "node",
+        "completeness": 25.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.780115952493048,
+          3.753806964019049
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Pharmacie Moderne",
+          "addr_housenumber": "42",
+          "addr_street": "Avenida de la Libertad",
+          "changeset_id": 133683467.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-03-14T20:13:29Z",
+          "changeset_user": "Ambolano",
+          "uuid": "a5225f14ca73426b9e51bc0808bc5e49"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.780115952493048,
+            3.753806964019049
+          ]
+        },
+        "osm_id": 10735799438,
+        "osm_type": "node",
+        "completeness": 18.75
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.783695947157469,
+          3.734001616467452
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmatural",
+          "operator": "Faramtural",
+          "dispensing": "yes",
+          "addr_street": "calle Semu",
+          "addr_city": "Malabo",
+          "changeset_id": 112882948.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-10-23T17:45:06Z",
+          "changeset_user": "Sl24",
+          "uuid": "228d791a3d4748c7b667cc20437b37f3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.783695947157469,
+            3.734001616467452
+          ]
+        },
+        "osm_id": 9196189937,
+        "osm_type": "node",
+        "completeness": 25.0
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.779936244488994,
+          3.75322224245366
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "Farmacia Amanda",
+          "changeset_id": 134793832.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2023-04-11T23:41:11Z",
+          "changeset_user": "Ambolano",
+          "uuid": "394cf7f2cb944db99a5869c0ff311666"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.779936244488994,
+            3.75322224245366
+          ]
+        },
+        "osm_id": 10803293424,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          10.61452404430645,
+          2.146761097091371
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Hospital Micomeseng",
+          "changeset_id": 105130408.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2021-05-22T12:11:52Z",
+          "changeset_user": "zaizone",
+          "uuid": "a815c7c8afa34a2d8149cfb544fbf242"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            10.61452404430645,
+            2.146761097091371
+          ]
+        },
+        "osm_id": 8755383301,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.875866539576634,
+              3.76317223207289
+            ],
+            [
+              8.875878190422043,
+              3.763259320046842
+            ],
+            [
+              8.87590065392257,
+              3.763379684176414
+            ],
+            [
+              8.875913059139265,
+              3.763478339176771
+            ],
+            [
+              8.877270256901113,
+              3.763849070754134
+            ],
+            [
+              8.87762162628215,
+              3.763737926718051
+            ],
+            [
+              8.877621374825054,
+              3.763663579236919
+            ],
+            [
+              8.877616932416373,
+              3.763553273391153
+            ],
+            [
+              8.877966290140648,
+              3.763577329453256
+            ],
+            [
+              8.878018593216439,
+              3.76357607216778
+            ],
+            [
+              8.878119176054525,
+              3.763565930064942
+            ],
+            [
+              8.878232499385433,
+              3.763543298926379
+            ],
+            [
+              8.878329058909998,
+              3.763507172923681
+            ],
+            [
+              8.87842695953907,
+              3.76343818986058
+            ],
+            [
+              8.87848462703289,
+              3.763396783258884
+            ],
+            [
+              8.878595268154783,
+              3.763437519308326
+            ],
+            [
+              8.878689899841618,
+              3.76312034809223
+            ],
+            [
+              8.878725355292033,
+              3.762995960649135
+            ],
+            [
+              8.8787305,
+              3.7629483
+            ],
+            [
+              8.878738766337108,
+              3.762870148282502
+            ],
+            [
+              8.878731390262317,
+              3.762720279853767
+            ],
+            [
+              8.878709932590198,
+              3.76259773642937
+            ],
+            [
+              8.878640865708036,
+              3.762451220761903
+            ],
+            [
+              8.878555621752781,
+              3.762345524962882
+            ],
+            [
+              8.878449758315696,
+              3.762272686224293
+            ],
+            [
+              8.878316318417177,
+              3.762208397026967
+            ],
+            [
+              8.8782702,
+              3.7621968
+            ],
+            [
+              8.877700080895863,
+              3.762053164180173
+            ],
+            [
+              8.87775707783743,
+              3.761270964976035
+            ],
+            [
+              8.8775189,
+              3.7612206
+            ],
+            [
+              8.877466058159257,
+              3.761209357987696
+            ],
+            [
+              8.87717034461528,
+              3.761114391024734
+            ],
+            [
+              8.87717772069007,
+              3.761017328586007
+            ],
+            [
+              8.877228682661382,
+              3.760588426600606
+            ],
+            [
+              8.876799529218886,
+              3.760544924523145
+            ],
+            [
+              8.876583695212162,
+              3.761051442931915
+            ],
+            [
+              8.876779496470306,
+              3.761169963042789
+            ],
+            [
+              8.876762732663963,
+              3.761225283603721
+            ],
+            [
+              8.876388480687268,
+              3.762467397835024
+            ],
+            [
+              8.876214137101243,
+              3.762421884100775
+            ],
+            [
+              8.8761157,
+              3.7625866
+            ],
+            [
+              8.876018335843128,
+              3.762749029781645
+            ],
+            [
+              8.875866539576634,
+              3.76317223207289
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "La Paz Medical Center",
+          "source": "website",
+          "opening_hours": "24/7",
+          "emergency": "yes",
+          "changeset_id": 162866917.0,
+          "changeset_version": 9.0,
+          "changeset_timestamp": "2025-02-23T19:52:37Z",
+          "changeset_user": "Etzharai",
+          "uuid": "4855e426f4bd4e50b83238bdbb75b4bf"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.877270834976313,
+            3.762553696760943
+          ]
+        },
+        "osm_id": 272208994,
+        "osm_type": "way",
+        "completeness": 21.875
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.562594165752017,
+              3.463039329663047
+            ],
+            [
+              8.56339472132413,
+              3.463179977998323
+            ],
+            [
+              8.563444426009937,
+              3.462673962503715
+            ],
+            [
+              8.56347929472716,
+              3.462679243102713
+            ],
+            [
+              8.563494046876741,
+              3.46258285121624
+            ],
+            [
+              8.563634862850051,
+              3.462586874529762
+            ],
+            [
+              8.563716670225034,
+              3.462574888408199
+            ],
+            [
+              8.563795795390973,
+              3.46253733748199
+            ],
+            [
+              8.563862850616374,
+              3.462473132103696
+            ],
+            [
+              8.56381322974957,
+              3.462375399112688
+            ],
+            [
+              8.563484659145189,
+              3.462181274235178
+            ],
+            [
+              8.563059529016215,
+              3.461984550967713
+            ],
+            [
+              8.562993898714382,
+              3.46209829339378
+            ],
+            [
+              8.562594165752017,
+              3.463039329663047
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital Provincial de Luba",
+          "addr_city": "Luba",
+          "changeset_id": 126107669.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2022-09-12T22:09:50Z",
+          "changeset_user": "Kadubei",
+          "uuid": "76c2d0a064f14ac1997c2fea8143d3f3"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.563182101333265,
+            3.462609181250592
+          ]
+        },
+        "osm_id": 783931912,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.782128279806926,
+          3.752515061282907
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "name": "Clínica Cristiana",
+          "addr_city": "Malabo",
+          "changeset_id": 119914418.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2022-04-19T16:00:41Z",
+          "changeset_user": "Peter Maris",
+          "uuid": "4577028b1d1d4c5b83a8d92cd6e11b5e"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.782128279806926,
+            3.752515061282907
+          ]
+        },
+        "osm_id": 5749901123,
+        "osm_type": "node",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.769374232750067,
+              1.858749432498826
+            ],
+            [
+              9.769822832207893,
+              1.858775332579654
+            ],
+            [
+              9.769819898541783,
+              1.859166683638819
+            ],
+            [
+              9.770216865476101,
+              1.859169784942992
+            ],
+            [
+              9.770219882961243,
+              1.858790084729236
+            ],
+            [
+              9.770695639785373,
+              1.858793772766631
+            ],
+            [
+              9.770723467703903,
+              1.855253256866121
+            ],
+            [
+              9.77057862841707,
+              1.855252167218708
+            ],
+            [
+              9.770411996181963,
+              1.855250826114201
+            ],
+            [
+              9.770413756381629,
+              1.855020826691117
+            ],
+            [
+              9.77031904087579,
+              1.855015378454056
+            ],
+            [
+              9.769935987900737,
+              1.855020156138863
+            ],
+            [
+              9.769784443091368,
+              1.855015881368246
+            ],
+            [
+              9.769782766710733,
+              1.855228530251765
+            ],
+            [
+              9.769441120337376,
+              1.855219561615371
+            ],
+            [
+              9.769374232750067,
+              1.858749432498826
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital General de Bata",
+          "changeset_id": 140563344.0,
+          "changeset_version": 7.0,
+          "changeset_timestamp": "2023-08-30T00:20:34Z",
+          "changeset_user": "Gurusraouta",
+          "uuid": "4edc203b75b349a988419851bd60970b"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            9.770058654292246,
+            1.857025068316769
+          ]
+        },
+        "osm_id": 609630820,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.729159429435128,
+              3.722003927902932
+            ],
+            [
+              8.729743145172137,
+              3.721883647592392
+            ],
+            [
+              8.729890079934762,
+              3.721853388921943
+            ],
+            [
+              8.731200171400786,
+              3.72157603174594
+            ],
+            [
+              8.732192672555556,
+              3.721465139166952
+            ],
+            [
+              8.732359472428726,
+              3.72122742839295
+            ],
+            [
+              8.732327621196646,
+              3.720435087085946
+            ],
+            [
+              8.732077589024982,
+              3.719634866789988
+            ],
+            [
+              8.729354057226828,
+              3.720153790415452
+            ],
+            [
+              8.7292411,
+              3.721228
+            ],
+            [
+              8.729159429435128,
+              3.722003927902932
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital de Sampaka",
+          "changeset_id": 162701062.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2025-02-19T13:25:12Z",
+          "changeset_user": "Etzharai",
+          "uuid": "dd1ce5e28cb44796bcbf9738596a3ff1"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.730768305321964,
+            3.720807039368976
+          ]
+        },
+        "osm_id": 678133924,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.805092623476583,
+          1.831752998757565
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "doctors",
+          "healthcare": "doctor",
+          "name": "Hermana Madang Curandería",
+          "changeset_id": 104954806.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2021-05-19T11:01:55Z",
+          "changeset_user": "rochirochi",
+          "uuid": "0bd3a683aea1407c8b1f21d7f8ce4254"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            9.805092623476583,
+            1.831752998757565
+          ]
+        },
+        "osm_id": 6260202692,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          9.749555893248527,
+          1.816684180870311
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "clinic",
+          "healthcare": "clinic",
+          "changeset_id": 109161555.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2021-08-04T19:14:59Z",
+          "changeset_user": "CarlosMG",
+          "uuid": "9650743b39bf4d20a25938b804d4ab9a"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            9.749555893248527,
+            1.816684180870311
+          ]
+        },
+        "osm_id": 4790712822,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              8.787342075037941,
+              3.755129293063703
+            ],
+            [
+              8.787471240165843,
+              3.755809652144279
+            ],
+            [
+              8.787951942312844,
+              3.756199662098965
+            ],
+            [
+              8.788321584242823,
+              3.756777259046657
+            ],
+            [
+              8.788265928405735,
+              3.757815022478553
+            ],
+            [
+              8.788650071028172,
+              3.758073268915325
+            ],
+            [
+              8.78865677655071,
+              3.758077795143038
+            ],
+            [
+              8.788818631101009,
+              3.758449867824908
+            ],
+            [
+              8.78899,
+              3.7597851
+            ],
+            [
+              8.789037817868973,
+              3.760158267329757
+            ],
+            [
+              8.789343673515788,
+              3.76024149962825
+            ],
+            [
+              8.789338644373885,
+              3.760360522653315
+            ],
+            [
+              8.78958725162201,
+              3.760422548736813
+            ],
+            [
+              8.789620360139537,
+              3.760280559297058
+            ],
+            [
+              8.789754135314183,
+              3.760088865171468
+            ],
+            [
+              8.790159567970704,
+              3.759340780313238
+            ],
+            [
+              8.790319829959373,
+              3.759184122542905
+            ],
+            [
+              8.7902449,
+              3.7589451
+            ],
+            [
+              8.790092596564335,
+              3.758459674651618
+            ],
+            [
+              8.79000584386651,
+              3.757818375239822
+            ],
+            [
+              8.789754889685469,
+              3.756827131370528
+            ],
+            [
+              8.789469737339516,
+              3.756211899677595
+            ],
+            [
+              8.789399077895752,
+              3.755979469502591
+            ],
+            [
+              8.789275947738133,
+              3.755559955248742
+            ],
+            [
+              8.788038695010698,
+              3.755212441543193
+            ],
+            [
+              8.788174398023074,
+              3.755364153990627
+            ],
+            [
+              8.78843432084048,
+              3.755641594985661
+            ],
+            [
+              8.788342119905593,
+              3.75567964882606
+            ],
+            [
+              8.788256121579025,
+              3.755711751515236
+            ],
+            [
+              8.78775572195957,
+              3.755104734087411
+            ],
+            [
+              8.787342075037941,
+              3.755129293063703
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital Regional de Malabo",
+          "source": "Bing",
+          "changeset_id": 162568234.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2025-02-16T12:15:22Z",
+          "changeset_user": "Etzharai",
+          "uuid": "da7bb78cead14ce390a04c4d68c78924"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.789058333459677,
+            3.757550391059431
+          ]
+        },
+        "osm_id": 265308137,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              11.334566072009181,
+              2.147477665993677
+            ],
+            [
+              11.334785929329428,
+              2.148568570691708
+            ],
+            [
+              11.335684469349616,
+              2.148477459404205
+            ],
+            [
+              11.335660329468482,
+              2.148295153010196
+            ],
+            [
+              11.33610565998407,
+              2.148209322321691
+            ],
+            [
+              11.336119993038523,
+              2.148009246292929
+            ],
+            [
+              11.33596727476268,
+              2.147368617433386
+            ],
+            [
+              11.335899046070864,
+              2.147206930521179
+            ],
+            [
+              11.334566072009181,
+              2.147477665993677
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hospital Provincial de Ebebiyín",
+          "addr_city": "Ebebiyín",
+          "changeset_id": 138192069.0,
+          "changeset_version": 6.0,
+          "changeset_timestamp": "2023-07-06T14:54:17Z",
+          "changeset_user": "Gurusraouta",
+          "uuid": "7e311d808db141e98c34e77f7f72b978"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            11.335346537808556,
+            2.147888554191411
+          ]
+        },
+        "osm_id": 496384099,
+        "osm_type": "way",
+        "completeness": 15.625
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.789557771772849,
+              1.827104730533677
+            ],
+            [
+              9.789752818659707,
+              1.827158123256879
+            ],
+            [
+              9.789773857236668,
+              1.82708142884286
+            ],
+            [
+              9.789578726530777,
+              1.827028036119628
+            ],
+            [
+              9.789557771772849,
+              1.827104730533677
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 138712110.0,
+          "changeset_version": 4.0,
+          "changeset_timestamp": "2023-07-19T11:26:35Z",
+          "changeset_user": "user_12507004",
+          "uuid": "fc82ddfc8b9144759e68613a105cd6e9"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            9.789665798773127,
+            1.827093078371797
+          ]
+        },
+        "osm_id": 654429739,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.306413976377371,
+              0.90212475114339
+            ],
+            [
+              9.306833322993128,
+              0.902374531857959
+            ],
+            [
+              9.306837094849556,
+              0.902431193523398
+            ],
+            [
+              9.30691362162554,
+              0.902489447750469
+            ],
+            [
+              9.307012025168802,
+              0.902398252643934
+            ],
+            [
+              9.307064998796847,
+              0.90239464842557
+            ],
+            [
+              9.307179830870325,
+              0.902407472737423
+            ],
+            [
+              9.307187123126084,
+              0.902365479402533
+            ],
+            [
+              9.307455260208599,
+              0.902048140548374
+            ],
+            [
+              9.307509994036337,
+              0.90194428876805
+            ],
+            [
+              9.307511754236003,
+              0.901869522191731
+            ],
+            [
+              9.30752089051046,
+              0.901760054536311
+            ],
+            [
+              9.307480741194269,
+              0.901705320708572
+            ],
+            [
+              9.307123336842949,
+              0.901440955482485
+            ],
+            [
+              9.306937342411516,
+              0.901293350167606
+            ],
+            [
+              9.306413976377371,
+              0.90212475114339
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "changeset_id": 79306193.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2020-01-07T18:26:24Z",
+          "changeset_user": "Reboot01",
+          "uuid": "b0b82fb01cfb4bc59898e675e711aace"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            9.307001513204154,
+            0.901923988501478
+          ]
+        },
+        "osm_id": 761531507,
+        "osm_type": "way",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              9.790507692859507,
+              1.826339546592976
+            ],
+            [
+              9.790745822728667,
+              1.826340468602325
+            ],
+            [
+              9.790747163833174,
+              1.826000247152507
+            ],
+            [
+              9.79050886632595,
+              1.825999325143158
+            ],
+            [
+              9.790507776678538,
+              1.826318340377924
+            ],
+            [
+              9.790507692859507,
+              1.826339546592976
+            ]
+          ]
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "hospital",
+          "healthcare": "hospital",
+          "name": "Hôpital de la Paix",
+          "changeset_id": 135811283.0,
+          "changeset_version": 5.0,
+          "changeset_timestamp": "2023-05-07T13:21:26Z",
+          "changeset_user": "Frans S",
+          "uuid": "d45a3387dee64a4c95dd3ed551af920d"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            9.790627389221228,
+            1.826169875818797
+          ]
+        },
+        "osm_id": 783930771,
+        "osm_type": "way",
+        "completeness": 12.5
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.877991016755004,
+          3.763938086565844
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "name": "Super Pharm",
+          "changeset_id": 72365664.0,
+          "changeset_version": 2.0,
+          "changeset_timestamp": "2019-07-17T21:23:50Z",
+          "changeset_user": "ma-rt-in",
+          "uuid": "0b7b4b100d064997be169c6972476c36"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.877991016755004,
+            3.763938086565844
+          ]
+        },
+        "osm_id": 6308279186,
+        "osm_type": "node",
+        "completeness": 9.375
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.798825952937932,
+          3.743821267492308
+        ]
+      },
+      "properties": {
+        "attributes": {
+          "amenity": "pharmacy",
+          "healthcare": "pharmacy",
+          "name": "TM FARMA",
+          "changeset_id": 161228898.0,
+          "changeset_version": 1.0,
+          "changeset_timestamp": "2025-01-11T07:33:12Z",
+          "changeset_user": "CHERUB MAPS",
+          "uuid": "8b1a26cd9d7b4b85b3896cb004c575f2"
+        },
+        "centroid": {
+          "type": "Point",
+          "coordinates": [
+            8.798825952937932,
+            3.743821267492308
+          ]
+        },
+        "osm_id": 12491930116,
+        "osm_type": "node",
+        "completeness": 12.5
+      }
+    }
+  ]
+}

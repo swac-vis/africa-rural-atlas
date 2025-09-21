@@ -22,3 +22,32 @@ temp/
 
 # Data files (exclude large data files)
 data_original/
+
+# txt
+*.txt
+
+# Large TIF files
+*.tif
+*.tiff
+
+# Specific large files
+map_real/ghslpop_africa.tif
+map_real/GHS_POP_E2025_GLOBE_R2023A_54009_1000_V1_0.tif
+map_real/output_three_band_int.tif
+map_real/ghslpop.tif
+map_real/ghslpop_africa.tif.aux.xml
+map_real/ghslpop.tif.aux.xml
+map_real/pop_class_ghsl.tif
+map_real/pop_class_ghsl.tif.aux.xml
+map_real/output_three_band_int.tif.aux.xml
+map_real/GHS_SMOD_E2025_GLOBE_R2023A_54009_1000_V2_0.tif
+map_real/roadmap.tif
+map_real/roadmap1.ai
+
+# Large analysis files
+healthsites/data/pharmacy_accessibility_analysis_detailed.json
+
+# Large healthsites data files
+healthsites/data/Africa_all_healthsites.geojson
+healthsites/data/Africa_healthsites_point.dbf
+healthsites/data/Africa_healthsites_polygon.dbf
