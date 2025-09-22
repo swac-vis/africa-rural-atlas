@@ -129,6 +129,7 @@
     </style>
 </head>
 <body>
+    <button id="export-svg" style="position: fixed; top: 12px; right: 12px; z-index: 9999; padding: 6px 10px; font-size: 12px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 6px; cursor: pointer;">Export SVG</button>
     <div class="container">
         <h1>Africa Regional Population Distribution</h1>
         <div class="subtitle">Population shares by distance to nearest road (km)</div>
@@ -179,6 +180,50 @@
     </div>
 
     <script>
+        // Export all SVGs on the page as separate files
+        function exportAllSVGs() {
+            const svgs = Array.from(document.querySelectorAll('svg'));
+            if (!svgs.length) return;
+
+            svgs.forEach((svg, idx) => {
+                const cloned = svg.cloneNode(true);
+                cloned.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                cloned.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+
+                const inlineStyles = (node) => {
+                    const walker = document.createTreeWalker(node, NodeFilter.SHOW_ELEMENT, null);
+                    while (walker.nextNode()) {
+                        const el = walker.currentNode;
+                        const computed = window.getComputedStyle(el);
+                        const props = ['fill','stroke','stroke-width','font','font-family','font-size','font-weight','opacity','text-anchor','dominant-baseline'];
+                        const styleStr = props.map(p => {
+                            const v = computed.getPropertyValue(p);
+                            return v && v !== 'normal' && v !== 'none' ? `${p}:${v}` : '';
+                        }).filter(Boolean).join(';');
+                        if (styleStr) el.setAttribute('style', (el.getAttribute('style') ? el.getAttribute('style') + ';' : '') + styleStr);
+                    }
+                };
+                inlineStyles(cloned);
+
+                const serializer = new XMLSerializer();
+                const source = serializer.serializeToString(cloned);
+                const blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                const base = (document.title || 'chart').replace(/\s+/g, '_').toLowerCase();
+                const idPart = svg.id ? svg.id : `svg_${idx+1}`;
+                a.href = url;
+                a.download = `${base}__${idPart}.svg`;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+        }
+        document.addEventListener('DOMContentLoaded', function() {
+            const btn = document.getElementById('export-svg');
+            if (btn) btn.addEventListener('click', exportAllSVGs);
+        });
         // Global variables
         let data;
         let svg;

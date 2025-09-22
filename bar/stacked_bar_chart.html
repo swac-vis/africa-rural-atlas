@@ -79,55 +79,308 @@
         .tick text {
             font-size: 12px;
         }
+        
+        .chart-section {
+            margin-bottom: 28px;
+        }
+
+        .year-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #374151;
+            margin: 0 0 8px 2px;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        
+        .change-indicator {
+            font-size: 8px;
+            font-weight: 600;
+            text-anchor: middle;
+        }
+        
+        .change-arrow {
+            stroke: #dc2626;
+            stroke-width: 1.5;
+            fill: none;
+            marker-end: url(#arrowhead);
+        }
+        
+        .change-positive {
+            fill: #dc2626;
+        }
+        
+        .change-negative {
+            fill: #059669;
+        }
     </style>
 </head>
 <body>
     <div class="container">
         <h1>Population Share by Distance to Road</h1>
-        <div class="chart-container" id="chart" style="position: relative;">
-            <div class="legend" id="legend"></div>
+        <div style="margin: 10px 0 20px 2px; display: flex; align-items: center; gap: 10px;">
+            <label style="font-size: 13px; color: #374151; cursor: pointer;">
+                <input type="checkbox" id="toggle-annotations" checked style="margin-right: 6px; cursor: pointer;" />
+                Show numeric annotations
+            </label>
+            <button id="export-pdf" style="padding: 6px 10px; font-size: 12px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 6px; cursor: pointer;">Export to PDF</button>
+            <button id="export-svg" style="padding: 6px 10px; font-size: 12px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 6px; cursor: pointer;">Export SVG</button>
+        </div>
+        <div class="chart-section">
+            <div class="year-title">2015</div>
+            <div class="chart-container" id="chart-2015" style="position: relative;">
+                <div class="legend" id="legend-2015"></div>
+            </div>
+        </div>
+        <div class="chart-section">
+            <div class="year-title">2025</div>
+            <div class="chart-container" id="chart-2025" style="position: relative;">
+                <div class="legend" id="legend-2025"></div>
+            </div>
+        </div>
+        <div class="chart-section">
+            <div class="year-title">Change 2015→2025</div>
+            <div class="chart-container" id="chart-change" style="position: relative;">
+                <div class="legend" id="legend-change"></div>
+            </div>
         </div>
     </div>
 
     <script>
-        // Load the data
-        d3.json('bar_chart_data.json').then(function(data) {
-            const margin = {top: 40, right: 100, bottom: 80, left: 80};
-            const width = 1000 - margin.left - margin.right;
-            const height = 500 - margin.top - margin.bottom;
+        // External libraries for exporting SVG to PDF
+        // jsPDF and svg2pdf will be loaded dynamically when needed
+        // Global variables
+        let tooltip;
+        let data2015 = null;
+        let data2025 = null;
+        
+        const margin = {top: 40, right: 100, bottom: 80, left: 80};
+        const width = 1000 - margin.left - margin.right;
+        const height = 500 - margin.top - margin.bottom;
+        
+        // Define distance ranges
+        const distanceRanges = ['0-10km', '10-20km', '20-30km', '30-40km', '40-50km', 
+                               '50-60km', '60-70km', '70-80km', '80-90km', '90-100km'];
+        
+        const regions = ['Africa', 'South Asia', 'Latin America'];
+        
+        // Color scales for each region and population type
+        const regionPopulationColors = {
+            'Africa': {
+                'rural': '#CAB899',
+                'urban': '#EFD9AD'
+            },
+            'South Asia': {
+                'rural': '#3498DC',
+                'urban': '#92D0F9'
+            },
+            'Latin America': {
+                'rural': '#E16D65',
+                'urban': '#F0DDDC'
+            }
+        };
 
-            // Create SVG
-            const svg = d3.select('#chart')
-                .append('svg')
-                .attr('width', width + margin.left + margin.right)
-                .attr('height', height + margin.top + margin.bottom)
-                .append('g')
-                .attr('transform', `translate(${margin.left},${margin.top})`);
+        // Function to load data for a specific year
+        async function loadData(year) {
+            const filename = year === '2015' ? 'bar_chart_data_2015.json' : 'result_chart_data_2025.json';
+            console.log(`Loading data for year ${year} from file: ${filename}`);
+            try {
+                const data = await d3.json(filename);
+                console.log(`Successfully loaded data for ${year}:`, data);
+                return data;
+            } catch (error) {
+                console.error('Error loading data:', error);
+                return null;
+            }
+        }
 
-            // Define distance ranges
-            const distanceRanges = ['0-10km', '10-20km', '20-30km', '30-40km', '40-50km', 
-                                   '50-60km', '60-70km', '70-80km', '80-90km', '90-100km'];
-            
-            const regions = ['Africa', 'South Asia', 'Latin America'];
-            
-            // Color scales for each region and population type
-            const regionPopulationColors = {
-                'Africa': {
-                    'rural': '#CAB899',
-                    'urban': '#EFD9AD'
-                },
-                'South Asia': {
-                    'rural': '#3498DC',
-                    'urban': '#92D0F9'
-                },
-                'Latin America': {
-                    'rural': '#E16D65',
-                    'urban': '#F0DDDC'
+        // Toggle annotations visibility based on checkbox state
+        function toggleAnnotationsVisibility() {
+            const checkbox = document.getElementById('toggle-annotations');
+            const show = checkbox ? checkbox.checked : true;
+            d3.selectAll('.value-label').style('display', show ? null : 'none');
+        }
+
+        // Lazy-load jsPDF and svg2pdf
+        function loadPdfLibs() {
+            return new Promise((resolve, reject) => {
+                if (window.jspdf && window.svg2pdf) {
+                    resolve();
+                    return;
                 }
-            };
 
-            // Prepare data for stacked bars
-            const chartData = distanceRanges.map(range => {
+                const jsPdfScript = document.createElement('script');
+                jsPdfScript.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js';
+                jsPdfScript.onload = () => {
+                    const svg2pdfScript = document.createElement('script');
+                    svg2pdfScript.src = 'https://cdn.jsdelivr.net/npm/svg2pdf.js@2.2.2/dist/svg2pdf.umd.min.js';
+                    svg2pdfScript.onload = () => resolve();
+                    svg2pdfScript.onerror = (e) => {
+                        console.error('Failed to load svg2pdf.js', e);
+                        reject(e);
+                    };
+                    document.body.appendChild(svg2pdfScript);
+                };
+                jsPdfScript.onerror = (e) => {
+                    console.error('Failed to load jsPDF', e);
+                    reject(e);
+                };
+                document.body.appendChild(jsPdfScript);
+            });
+        }
+
+        // Lazy-load html2canvas for raster fallback
+        function loadHtml2Canvas() {
+            return new Promise((resolve, reject) => {
+                if (window.html2canvas) {
+                    resolve();
+                    return;
+                }
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+                script.onload = () => resolve();
+                script.onerror = (e) => {
+                    console.error('Failed to load html2canvas', e);
+                    reject(e);
+                };
+                document.body.appendChild(script);
+            });
+        }
+
+        // Export all charts to a multi-page PDF
+        async function exportChartsToPDF() {
+            try {
+                await loadPdfLibs();
+
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
+
+                const charts = [
+                    { id: '#chart-2015', title: '2015' },
+                    { id: '#chart-2025', title: '2025' },
+                    { id: '#chart-change', title: 'Change 2015→2025' }
+                ];
+
+                for (let i = 0; i < charts.length; i++) {
+                    if (i > 0) pdf.addPage('a4', 'landscape');
+                    const container = document.querySelector(charts[i].id);
+                    const svg = container ? container.querySelector('svg') : null;
+                    if (!container || !svg) continue;
+
+                    const pageWidth = pdf.internal.pageSize.getWidth();
+                    const pageHeight = pdf.internal.pageSize.getHeight();
+                    const margin = 36; // 0.5 inch
+                    const targetWidth = pageWidth - margin * 2;
+                    const targetHeight = pageHeight - margin * 2;
+
+                    pdf.setFont('helvetica', 'bold');
+                    pdf.setFontSize(12);
+                    pdf.text(charts[i].title, margin, margin - 12);
+
+                    if (typeof window.svg2pdf === 'function') {
+                        const viewWidth = (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width) ? svg.viewBox.baseVal.width : (svg.width && svg.width.baseVal ? svg.width.baseVal.value : svg.clientWidth);
+                        const viewHeight = (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.height) ? svg.viewBox.baseVal.height : (svg.height && svg.height.baseVal ? svg.height.baseVal.value : svg.clientHeight);
+
+                        const scale = Math.min(targetWidth / viewWidth, targetHeight / viewHeight);
+                        const offsetX = (pageWidth - viewWidth * scale) / 2;
+                        const offsetY = (pageHeight - viewHeight * scale) / 2;
+
+                        const opts = {
+                            width: viewWidth * scale,
+                            height: viewHeight * scale,
+                            x: offsetX,
+                            y: offsetY
+                        };
+
+                        window.svg2pdf(svg, pdf, opts);
+                    } else {
+                        // Fallback: rasterize the container to an image using html2canvas
+                        await loadHtml2Canvas();
+                        const canvas = await window.html2canvas(container, { backgroundColor: '#ffffff', scale: 2 });
+                        const imgData = canvas.toDataURL('imagePNG');
+
+                        const imgWidth = canvas.width;
+                        const imgHeight = canvas.height;
+                        const scale = Math.min(targetWidth / imgWidth, targetHeight / imgHeight);
+                        const drawWidth = imgWidth * scale;
+                        const drawHeight = imgHeight * scale;
+                        const offsetX = (pageWidth - drawWidth) / 2;
+                        const offsetY = (pageHeight - drawHeight) / 2;
+
+                        pdf.addImage(imgData, 'PNG', offsetX, offsetY, drawWidth, drawHeight);
+                    }
+                }
+
+                pdf.save('population_share_by_distance.pdf');
+            } catch (err) {
+                console.error('Export to PDF failed:', err);
+                alert('Failed to export PDF. Please check your network connection and try again.');
+            }
+        }
+
+        // Export each chart's SVG as a separate file
+        function exportChartsToSVG() {
+            const charts = [
+                { id: '#chart-2015', filename: 'chart_2015.svg' },
+                { id: '#chart-2025', filename: 'chart_2025.svg' },
+                { id: '#chart-change', filename: 'chart_change.svg' }
+            ];
+
+            charts.forEach(({ id, filename }) => {
+                const container = document.querySelector(id);
+                const svg = container ? container.querySelector('svg') : null;
+                if (!svg) return;
+
+                // Clone to avoid mutating live DOM
+                const cloned = svg.cloneNode(true);
+
+                // Ensure xmlns attributes are present for standalone SVG
+                cloned.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+                cloned.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+
+                // Inline computed styles for text and shapes to preserve appearances
+                const inlineStyles = (node) => {
+                    const walker = document.createTreeWalker(node, NodeFilter.SHOW_ELEMENT, null);
+                    while (walker.nextNode()) {
+                        const el = walker.currentNode;
+                        const computed = window.getComputedStyle(el);
+                        // Only set commonly needed properties to keep size small
+                        const styleProps = [
+                            'fill','stroke','stroke-width','font','font-family','font-size','font-weight','opacity','text-anchor','dominant-baseline'
+                        ];
+                        const styleStr = styleProps
+                            .map(p => {
+                                const v = computed.getPropertyValue(p);
+                                return v && v !== 'normal' && v !== 'none' ? `${p}:${v}` : '';
+                            })
+                            .filter(Boolean)
+                            .join(';');
+                        if (styleStr) el.setAttribute('style', (el.getAttribute('style') ? el.getAttribute('style') + ';' : '') + styleStr);
+                    }
+                };
+                inlineStyles(cloned);
+
+                const serializer = new XMLSerializer();
+                const source = serializer.serializeToString(cloned);
+                const blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        // Function to prepare data for stacked bars
+        function prepareChartData(data) {
+            return distanceRanges.map(range => {
                 const rangeData = {
                     range: range,
                     regions: {}
@@ -145,8 +398,52 @@
                 
                 return rangeData;
             });
+        }
 
-            // Scales
+        // Function to calculate change between 2015 and 2025
+        function calculateChange(range, region, regionData2025) {
+            if (!data2015 || !data2015[region] || !data2015[region].share || !data2015[region].share[range]) {
+                return null;
+            }
+            
+            const regionData2015 = data2015[region].share[range];
+            const totalChange = (regionData2025.total - regionData2015.total) * 100;
+            
+            return {
+                totalChange: totalChange,
+                ruralChange: (regionData2025.rural - regionData2015.rural) * 100,
+                urbanChange: (regionData2025.urban - regionData2015.urban) * 100
+            };
+        }
+
+        // Render one chart into a specific container
+        async function renderChart(year, chartSelector, legendSelector) {
+            console.log(`Rendering chart for year: ${year}`);
+
+            const chartRoot = d3.select(chartSelector);
+            chartRoot.select('svg').remove();
+
+            // Show loading state in this container
+            const loadingNode = chartRoot.append('div')
+                .attr('class', 'loading')
+                .text('Loading data...');
+
+            const data = await loadData(year);
+            if (!data) {
+                loadingNode.text('Error loading data');
+                return;
+            }
+
+            // Store data globally for change calculations
+            if (year === '2015') {
+                data2015 = data;
+            } else {
+                data2025 = data;
+            }
+
+            const chartData = prepareChartData(data);
+
+            // Create local scales
             const x0 = d3.scaleBand()
                 .domain(distanceRanges)
                 .range([0, width])
@@ -159,34 +456,56 @@
 
             const y = d3.scaleLinear()
                 .domain([0, d3.max(chartData, d => 
-                    d3.max(regions, region => 
-                        d.regions[region] ? d.regions[region].total : 0
-                    )
+                    d3.max(regions, region => d.regions[region] ? d.regions[region].total : 0)
                 )])
                 .range([height, 0]);
 
-            // Add axes
+            // Remove loading and create SVG
+            loadingNode.remove();
+
+            const svg = chartRoot
+                .append('svg')
+                .attr('width', width + margin.left + margin.right)
+                .attr('height', height + margin.top + margin.bottom);
+
+            // Add arrow marker definition
+            svg.append('defs')
+                .append('marker')
+                .attr('id', 'arrowhead')
+                .attr('markerWidth', 10)
+                .attr('markerHeight', 7)
+                .attr('refX', 9)
+                .attr('refY', 3.5)
+                .attr('orient', 'auto')
+                .append('polygon')
+                .attr('points', '0 0, 10 3.5, 0 7')
+                .attr('fill', '#dc2626');
+
+            const g = svg.append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            // Axes
             const xAxis = d3.axisBottom(x0);
             const yAxis = d3.axisLeft(y).tickFormat(d3.format('.1%'));
 
-            svg.append('g')
+            g.append('g')
                 .attr('class', 'x-axis')
                 .attr('transform', `translate(0,${height})`)
                 .call(xAxis);
 
-            svg.append('g')
+            g.append('g')
                 .attr('class', 'y-axis')
                 .call(yAxis);
 
-            // Add axis labels
-            svg.append('text')
+            // Axis labels
+            g.append('text')
                 .attr('class', 'axis-label')
                 .attr('text-anchor', 'middle')
                 .attr('x', width / 2)
                 .attr('y', height + 50)
                 .text('Distance to Road');
 
-            svg.append('text')
+            g.append('text')
                 .attr('class', 'axis-label')
                 .attr('text-anchor', 'middle')
                 .attr('transform', 'rotate(-90)')
@@ -194,99 +513,370 @@
                 .attr('y', -50)
                 .text('Share of Population');
 
-            // Create tooltip
-            const tooltip = d3.select('body')
-                .append('div')
-                .attr('class', 'tooltip');
-
-            // Draw bars
-            chartData.forEach((d, i) => {
-                const rangeGroup = svg.append('g')
+            // Bars
+            chartData.forEach(d => {
+                const rangeGroup = g.append('g')
+                    .attr('class', 'bar-group')
                     .attr('transform', `translate(${x0(d.range)},0)`);
 
-                regions.forEach((region, j) => {
-                    if (d.regions[region]) {
-                        const regionData = d.regions[region];
-                        
-                        // Rural bar (bottom) - positioned at the bottom
-                        rangeGroup.append('rect')
-                            .attr('x', x1(region))
-                            .attr('y', y(regionData.rural)) // Start from rural height (bottom)
-                            .attr('width', x1.bandwidth())
-                            .attr('height', y(0) - y(regionData.rural)) // Height is rural portion
-                            .attr('fill', regionPopulationColors[region].rural)
-                            .on('mouseover', function(event) {
-                                tooltip.transition()
-                                    .duration(200)
-                                    .style('opacity', .9);
-                                tooltip.html(`
-                                    <strong>${region}</strong><br/>
-                                    Distance: ${d.range}<br/>
-                                    Rural: ${(regionData.rural * 100).toFixed(1)}%<br/>
-                                    Urban: ${(regionData.urban * 100).toFixed(1)}%<br/>
-                                    Total: ${(regionData.total * 100).toFixed(1)}%
-                                `)
-                                    .style('left', (event.pageX + 10) + 'px')
-                                    .style('top', (event.pageY - 28) + 'px');
-                            })
-                            .on('mouseout', function() {
-                                tooltip.transition()
-                                    .duration(500)
-                                    .style('opacity', 0);
-                            });
+                regions.forEach(region => {
+                    if (!d.regions[region]) return;
+                    const regionData = d.regions[region];
+                    const ruralHeight = y(0) - y(regionData.rural);
+                    const urbanHeight = y(regionData.rural) - y(regionData.total);
 
-                        // Urban bar (top) - positioned directly above rural
-                        rangeGroup.append('rect')
-                            .attr('x', x1(region))
-                            .attr('y', y(regionData.total)) // Start from total height (top of rural)
-                            .attr('width', x1.bandwidth())
-                            .attr('height', y(regionData.rural) - y(regionData.total)) // Height from rural to total
-                            .attr('fill', regionPopulationColors[region].urban)
-                            .on('mouseover', function(event) {
-                                tooltip.transition()
-                                    .duration(200)
-                                    .style('opacity', .9);
-                                tooltip.html(`
-                                    <strong>${region}</strong><br/>
-                                    Distance: ${d.range}<br/>
-                                    Rural: ${(regionData.rural * 100).toFixed(1)}%<br/>
-                                    Urban: ${(regionData.urban * 100).toFixed(1)}%<br/>
-                                    Total: ${(regionData.total * 100).toFixed(1)}%
-                                `)
-                                    .style('left', (event.pageX + 10) + 'px')
-                                    .style('top', (event.pageY - 28) + 'px');
-                            })
-                            .on('mouseout', function() {
-                                tooltip.transition()
-                                    .duration(500)
-                                    .style('opacity', 0);
-                            });
+                    rangeGroup.append('rect')
+                        .attr('class', 'rural-bar')
+                        .attr('x', x1(region))
+                        .attr('y', y(regionData.rural))
+                        .attr('width', x1.bandwidth())
+                        .attr('height', y(0) - y(regionData.rural))
+                        .attr('fill', regionPopulationColors[region].rural)
+                        .on('mouseover', function(event) {
+                            tooltip.transition().duration(200).style('opacity', .9);
+                            tooltip.html(`
+                                <strong>${region}</strong><br/>
+                                Distance: ${d.range}<br/>
+                                Rural: ${(regionData.rural * 100).toFixed(1)}%<br/>
+                                Urban: ${(regionData.urban * 100).toFixed(1)}%<br/>
+                                Total: ${(regionData.total * 100).toFixed(1)}%
+                            `)
+                                .style('left', (event.pageX + 10) + 'px')
+                                .style('top', (event.pageY - 28) + 'px');
+                        })
+                        .on('mouseout', function() {
+                            tooltip.transition().duration(500).style('opacity', 0);
+                        });
+
+                    // Rural label (inside bar if enough height)
+                    if (ruralHeight > 14) {
+                        rangeGroup.append('text')
+                            .attr('class', 'value-label')
+                            .attr('x', x1(region) + x1.bandwidth() / 2)
+                            .attr('y', y(regionData.rural) + ruralHeight / 2 + 4)
+                            .attr('text-anchor', 'middle')
+                            .attr('font-size', '7px')
+                            .attr('fill', '#111827')
+                            .text(`${(regionData.rural * 100).toFixed(1)}%`);
                     }
+
+                    rangeGroup.append('rect')
+                        .attr('class', 'urban-bar')
+                        .attr('x', x1(region))
+                        .attr('y', y(regionData.total))
+                        .attr('width', x1.bandwidth())
+                        .attr('height', y(regionData.rural) - y(regionData.total))
+                        .attr('fill', regionPopulationColors[region].urban)
+                        .on('mouseover', function(event) {
+                            tooltip.transition().duration(200).style('opacity', .9);
+                            tooltip.html(`
+                                <strong>${region}</strong><br/>
+                                Distance: ${d.range}<br/>
+                                Rural: ${(regionData.rural * 100).toFixed(1)}%<br/>
+                                Urban: ${(regionData.urban * 100).toFixed(1)}%<br/>
+                                Total: ${(regionData.total * 100).toFixed(1)}%
+                            `)
+                                .style('left', (event.pageX + 10) + 'px')
+                                .style('top', (event.pageY - 28) + 'px');
+                        })
+                        .on('mouseout', function() {
+                            tooltip.transition().duration(500).style('opacity', 0);
+                        });
+
+                    // Urban label (inside bar if enough height)
+                    if (urbanHeight > 14) {
+                        rangeGroup.append('text')
+                            .attr('class', 'value-label')
+                            .attr('x', x1(region) + x1.bandwidth() / 2)
+                            .attr('y', y(regionData.total) + urbanHeight / 2 + 4)
+                            .attr('text-anchor', 'middle')
+                            .attr('font-size', '7px')
+                            .attr('fill', '#111827')
+                            .text(`${(regionData.urban * 100).toFixed(1)}%`);
+                    }
+
+                    // Total label above the stacked bar
+                    rangeGroup.append('text')
+                        .attr('class', 'value-label')
+                        .attr('x', x1(region) + x1.bandwidth() / 2)
+                        .attr('y', y(regionData.total) - 6)
+                        .attr('text-anchor', 'middle')
+                        .attr('font-size', '7px')
+                        .attr('fill', '#374151')
+                        .text(`${(regionData.total * 100).toFixed(1)}%`);
+
                 });
             });
 
-            // Create legend
-            const legend = d3.select('#legend');
-            
-            // Combined legend showing all region-population combinations
+            // Legend for this chart
+            const legend = d3.select(legendSelector);
+            legend.selectAll('*').remove();
             legend.append('h4').text('Legend').style('margin', '0 0 8px 0', 'font-size', '14px');
-            
             regions.forEach(region => {
-                // Rural legend item
                 const ruralItem = legend.append('div').attr('class', 'legend-item');
                 ruralItem.append('div')
                     .attr('class', 'legend-color')
                     .style('background-color', regionPopulationColors[region].rural);
                 ruralItem.append('span').text(`${region} Rural`);
-                
-                // Urban legend item
+
                 const urbanItem = legend.append('div').attr('class', 'legend-item');
                 urbanItem.append('div')
                     .attr('class', 'legend-color')
                     .style('background-color', regionPopulationColors[region].urban);
                 urbanItem.append('span').text(`${region} Urban`);
             });
-        });
+
+            // Apply current annotation visibility
+            toggleAnnotationsVisibility();
+        }
+
+        // Render change chart
+        async function renderChangeChart() {
+            if (!data2015 || !data2025) {
+                console.error('Both 2015 and 2025 data must be loaded first');
+                return;
+            }
+
+            const chartRoot = d3.select('#chart-change');
+            chartRoot.select('svg').remove();
+
+            const chartData = prepareChartData(data2025);
+            const changeData = prepareChangeData();
+
+            // Create local scales
+            const x0 = d3.scaleBand()
+                .domain(distanceRanges)
+                .range([0, width])
+                .padding(0.1);
+
+            const x1 = d3.scaleBand()
+                .domain(regions)
+                .range([0, x0.bandwidth()])
+                .padding(0.05);
+
+            // Scale for changes (can be positive or negative)
+            const maxAbsChange = d3.max(changeData, d => 
+                d3.max(regions, region => 
+                    d.regions[region] ? Math.max(Math.abs(d.regions[region].ruralChange), Math.abs(d.regions[region].urbanChange)) : 0
+                )
+            );
+
+            const y = d3.scaleLinear()
+                .domain([-maxAbsChange, maxAbsChange])
+                .range([height, 0]);
+
+            const svg = chartRoot
+                .append('svg')
+                .attr('width', width + margin.left + margin.right)
+                .attr('height', height + margin.top + margin.bottom);
+
+            const g = svg.append('g')
+                .attr('transform', `translate(${margin.left},${margin.top})`);
+
+            // Add zero line
+            g.append('line')
+                .attr('x1', 0)
+                .attr('x2', width)
+                .attr('y1', y(0))
+                .attr('y2', y(0))
+                .attr('stroke', '#666')
+                .attr('stroke-width', 1)
+                .attr('stroke-dasharray', '3,3');
+
+            // Axes
+            const xAxis = d3.axisBottom(x0);
+            const yAxis = d3.axisLeft(y).tickFormat(d => `${d.toFixed(1)} pp`);
+
+            g.append('g')
+                .attr('class', 'x-axis')
+                .attr('transform', `translate(0,${height})`)
+                .call(xAxis);
+
+            g.append('g')
+                .attr('class', 'y-axis')
+                .call(yAxis);
+
+            // Axis labels
+            g.append('text')
+                .attr('class', 'axis-label')
+                .attr('text-anchor', 'middle')
+                .attr('x', width / 2)
+                .attr('y', height + 50)
+                .text('Distance to Road');
+
+            g.append('text')
+                .attr('class', 'axis-label')
+                .attr('text-anchor', 'middle')
+                .attr('transform', 'rotate(-90)')
+                .attr('x', -height / 2)
+                .attr('y', -50)
+                .text('Change in Population Share (pp)');
+
+            // Bars for changes - separate rural and urban
+            changeData.forEach(d => {
+                const rangeGroup = g.append('g')
+                    .attr('class', 'bar-group')
+                    .attr('transform', `translate(${x0(d.range)},0)`);
+
+                regions.forEach(region => {
+                    if (!d.regions[region]) return;
+                    const regionChange = d.regions[region];
+                    
+                    // Rural change bar
+                    const ruralBarHeight = Math.abs(y(0) - y(regionChange.ruralChange));
+                    const ruralBarY = regionChange.ruralChange >= 0 ? y(regionChange.ruralChange) : y(0);
+
+                    rangeGroup.append('rect')
+                        .attr('x', x1(region))
+                        .attr('y', ruralBarY)
+                        .attr('width', x1.bandwidth() / 2)
+                        .attr('height', ruralBarHeight)
+                        .attr('fill', regionPopulationColors[region].rural)
+                        .attr('opacity', 0.8)
+                        .on('mouseover', function(event) {
+                            tooltip.transition().duration(200).style('opacity', .9);
+                            tooltip.html(`
+                                <strong>${region} - Rural</strong><br/>
+                                Distance: ${d.range}<br/>
+                                Change: ${regionChange.ruralChange >= 0 ? '+' : ''}${regionChange.ruralChange.toFixed(1)} pp
+                            `)
+                                .style('left', (event.pageX + 10) + 'px')
+                                .style('top', (event.pageY - 28) + 'px');
+                        })
+                        .on('mouseout', function() {
+                            tooltip.transition().duration(500).style('opacity', 0);
+                        });
+
+                    // Rural change label
+                    if (ruralBarHeight > 8) {
+                        rangeGroup.append('text')
+                            .attr('class', 'value-label')
+                            .attr('x', x1(region) + x1.bandwidth() / 4)
+                            .attr('y', ruralBarY + ruralBarHeight / 2 + 3)
+                            .attr('text-anchor', 'middle')
+                            .attr('font-size', '6px')
+                            .attr('fill', '#111827')
+                            .text(`${regionChange.ruralChange >= 0 ? '+' : ''}${regionChange.ruralChange.toFixed(1)} pp`);
+                    }
+
+                    // Urban change bar
+                    const urbanBarHeight = Math.abs(y(0) - y(regionChange.urbanChange));
+                    const urbanBarY = regionChange.urbanChange >= 0 ? y(regionChange.urbanChange) : y(0);
+
+                    rangeGroup.append('rect')
+                        .attr('x', x1(region) + x1.bandwidth() / 2)
+                        .attr('y', urbanBarY)
+                        .attr('width', x1.bandwidth() / 2)
+                        .attr('height', urbanBarHeight)
+                        .attr('fill', regionPopulationColors[region].urban)
+                        .attr('opacity', 0.8)
+                        .on('mouseover', function(event) {
+                            tooltip.transition().duration(200).style('opacity', .9);
+                            tooltip.html(`
+                                <strong>${region} - Urban</strong><br/>
+                                Distance: ${d.range}<br/>
+                                Change: ${regionChange.urbanChange >= 0 ? '+' : ''}${regionChange.urbanChange.toFixed(1)} pp
+                            `)
+                                .style('left', (event.pageX + 10) + 'px')
+                                .style('top', (event.pageY - 28) + 'px');
+                        })
+                        .on('mouseout', function() {
+                            tooltip.transition().duration(500).style('opacity', 0);
+                        });
+
+                    // Urban change label
+                    if (urbanBarHeight > 8) {
+                        rangeGroup.append('text')
+                            .attr('class', 'value-label')
+                            .attr('x', x1(region) + 3 * x1.bandwidth() / 4)
+                            .attr('y', urbanBarY + urbanBarHeight / 2 + 3)
+                            .attr('text-anchor', 'middle')
+                            .attr('font-size', '6px')
+                            .attr('fill', '#111827')
+                            .text(`${regionChange.urbanChange >= 0 ? '+' : ''}${regionChange.urbanChange.toFixed(1)} pp`);
+                    }
+                });
+            });
+
+            // Legend for change chart - using region-specific colors
+            const legend = d3.select('#legend-change');
+            legend.selectAll('*').remove();
+            legend.append('h4').text('Legend').style('margin', '0 0 8px 0', 'font-size', '14px');
+            
+            regions.forEach(region => {
+                const ruralItem = legend.append('div').attr('class', 'legend-item');
+                ruralItem.append('div')
+                    .attr('class', 'legend-color')
+                    .style('background-color', regionPopulationColors[region].rural);
+                ruralItem.append('span').text(`${region} Rural`);
+
+                const urbanItem = legend.append('div').attr('class', 'legend-item');
+                urbanItem.append('div')
+                    .attr('class', 'legend-color')
+                    .style('background-color', regionPopulationColors[region].urban);
+                urbanItem.append('span').text(`${region} Urban`);
+            });
+
+            // Apply current annotation visibility
+            toggleAnnotationsVisibility();
+        }
+
+        // Prepare change data
+        function prepareChangeData() {
+            return distanceRanges.map(range => {
+                const rangeData = {
+                    range: range,
+                    regions: {}
+                };
+                
+                regions.forEach(region => {
+                    if (data2015[region] && data2015[region].share && data2015[region].share[range] &&
+                        data2025[region] && data2025[region].share && data2025[region].share[range]) {
+                        
+                        const data2015Range = data2015[region].share[range];
+                        const data2025Range = data2025[region].share[range];
+                        
+                        rangeData.regions[region] = {
+                            totalChange: (data2025Range.total - data2015Range.total) * 100,
+                            ruralChange: (data2025Range.rural - data2015Range.rural) * 100,
+                            urbanChange: (data2025Range.urban - data2015Range.urban) * 100
+                        };
+                    }
+                });
+                
+                return rangeData;
+            });
+        }
+
+        // Initialize all charts
+        async function initCharts() {
+            tooltip = d3.select('body')
+                .append('div')
+                .attr('class', 'tooltip');
+
+            // Load 2015 first, then 2025, then change chart
+            await renderChart('2015', '#chart-2015', '#legend-2015');
+            await renderChart('2025', '#chart-2025', '#legend-2025');
+            await renderChangeChart();
+
+            // Wire up the checkbox listener
+            const checkbox = document.getElementById('toggle-annotations');
+            if (checkbox) {
+                checkbox.addEventListener('change', toggleAnnotationsVisibility);
+            }
+
+            const exportBtn = document.getElementById('export-pdf');
+            if (exportBtn) {
+                exportBtn.addEventListener('click', exportChartsToPDF);
+            }
+
+            const exportSvgBtn = document.getElementById('export-svg');
+            if (exportSvgBtn) {
+                exportSvgBtn.addEventListener('click', exportChartsToSVG);
+            }
+        }
+
+        initCharts();
     </script>
 </body>
 </html> 
