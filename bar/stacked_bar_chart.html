@@ -186,7 +186,7 @@
 
         // Function to load data for a specific year
         async function loadData(year) {
-            const filename = year === '2015' ? 'bar_chart_data_2015.json' : 'result_chart_data_2025.json';
+            const filename = year === '2015' ? 'bar_chart_data_2015.json' : 'bar_chart_data_2025.json';
             console.log(`Loading data for year ${year} from file: ${filename}`);
             try {
                 const data = await d3.json(filename);
