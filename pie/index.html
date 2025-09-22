@@ -129,7 +129,10 @@
     </style>
 </head>
 <body>
-    <button id="export-svg" style="position: fixed; top: 12px; right: 12px; z-index: 9999; padding: 6px 10px; font-size: 12px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 6px; cursor: pointer;">Export SVG</button>
+    <div style="position: fixed; top: 12px; right: 12px; z-index: 9999; display: flex; gap: 8px;">
+        <button id="export-pdf" style="padding: 6px 10px; font-size: 12px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 6px; cursor: pointer;">Export PDF</button>
+        <button id="export-svg" style="padding: 6px 10px; font-size: 12px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 6px; cursor: pointer;">Export SVG</button>
+    </div>
     <div class="container">
         <h1>Africa Regional Population Distribution</h1>
         <div class="subtitle">Population shares by distance to nearest road (km)</div>
@@ -180,6 +183,86 @@
     </div>
 
     <script>
+        // Lazy-load jsPDF and svg2pdf
+        function loadPdfLibs() {
+            return new Promise((resolve, reject) => {
+                if (window.jspdf && window.svg2pdf) { resolve(); return; }
+                const jsPdfScript = document.createElement('script');
+                jsPdfScript.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js';
+                jsPdfScript.onload = () => {
+                    const svg2pdfScript = document.createElement('script');
+                    svg2pdfScript.src = 'https://cdn.jsdelivr.net/npm/svg2pdf.js@2.2.2/dist/svg2pdf.umd.min.js';
+                    svg2pdfScript.onload = () => resolve();
+                    svg2pdfScript.onerror = (e) => reject(e);
+                    document.body.appendChild(svg2pdfScript);
+                };
+                jsPdfScript.onerror = (e) => reject(e);
+                document.body.appendChild(jsPdfScript);
+            });
+        }
+
+        // Lazy-load html2canvas for raster fallback
+        function loadHtml2Canvas() {
+            return new Promise((resolve, reject) => {
+                if (window.html2canvas) { resolve(); return; }
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+                script.onload = () => resolve();
+                script.onerror = (e) => reject(e);
+                document.body.appendChild(script);
+            });
+        }
+
+        // Export all SVGs to multi-page PDF
+        async function exportAllSVGsToPDF() {
+            try {
+                await loadPdfLibs();
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
+                const svgs = Array.from(document.querySelectorAll('svg'));
+                if (!svgs.length) return;
+                for (let i = 0; i < svgs.length; i++) {
+                    if (i > 0) pdf.addPage('a4', 'landscape');
+                    const svg = svgs[i];
+                    const pageWidth = pdf.internal.pageSize.getWidth();
+                    const pageHeight = pdf.internal.pageSize.getHeight();
+                    const margin = 36;
+                    const targetWidth = pageWidth - margin * 2;
+                    const targetHeight = pageHeight - margin * 2;
+                    const titleNode = svg.closest('.chart-container')?.querySelector('.chart-title');
+                    const titleText = titleNode ? titleNode.textContent.trim() : (document.title || 'Chart');
+                    pdf.setFont('helvetica', 'bold');
+                    pdf.setFontSize(12);
+                    pdf.text(titleText, margin, margin - 12);
+                    if (typeof window.svg2pdf === 'function') {
+                        const viewWidth = (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.width) ? svg.viewBox.baseVal.width : (svg.width && svg.width.baseVal ? svg.width.baseVal.value : svg.clientWidth || 800);
+                        const viewHeight = (svg.viewBox && svg.viewBox.baseVal && svg.viewBox.baseVal.height) ? svg.viewBox.baseVal.height : (svg.height && svg.height.baseVal ? svg.height.baseVal.value : svg.clientHeight || 600);
+                        const scale = Math.min(targetWidth / viewWidth, targetHeight / viewHeight);
+                        const offsetX = (pageWidth - viewWidth * scale) / 2;
+                        const offsetY = (pageHeight - viewHeight * scale) / 2;
+                        window.svg2pdf(svg, pdf, { width: viewWidth * scale, height: viewHeight * scale, x: offsetX, y: offsetY });
+                    } else {
+                        await loadHtml2Canvas();
+                        const container = svg.closest('.chart-container') || svg.parentElement;
+                        const canvas = await window.html2canvas(container, { backgroundColor: '#ffffff', scale: 2 });
+                        const imgData = canvas.toDataURL('imagePNG');
+                        const imgWidth = canvas.width;
+                        const imgHeight = canvas.height;
+                        const scale = Math.min(targetWidth / imgWidth, targetHeight / imgHeight);
+                        const drawWidth = imgWidth * scale;
+                        const drawHeight = imgHeight * scale;
+                        const offsetX = (pageWidth - drawWidth) / 2;
+                        const offsetY = (pageHeight - drawHeight) / 2;
+                        pdf.addImage(imgData, 'PNG', offsetX, offsetY, drawWidth, drawHeight);
+                    }
+                }
+                const base = (document.title || 'chart').replace(/\s+/g, '_').toLowerCase();
+                pdf.save(`${base}.pdf`);
+            } catch (e) {
+                console.error('Export PDF failed', e);
+                alert('Failed to export PDF. Please try again.');
+            }
+        }
         // Export all SVGs on the page as separate files
         function exportAllSVGs() {
             const svgs = Array.from(document.querySelectorAll('svg'));
@@ -221,8 +304,10 @@
             });
         }
         document.addEventListener('DOMContentLoaded', function() {
-            const btn = document.getElementById('export-svg');
-            if (btn) btn.addEventListener('click', exportAllSVGs);
+            const btnSvg = document.getElementById('export-svg');
+            if (btnSvg) btnSvg.addEventListener('click', exportAllSVGs);
+            const btnPdf = document.getElementById('export-pdf');
+            if (btnPdf) btnPdf.addEventListener('click', exportAllSVGsToPDF);
         });
         // Global variables
         let data;

@@ -212,7 +212,10 @@
     </style>
 </head>
 <body>
-    <button id="export-svg" style="position: fixed; top: 12px; right: 12px; z-index: 9999; padding: 6px 10px; font-size: 12px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 6px; cursor: pointer;">Export SVG</button>
+    <div style="position: fixed; top: 12px; right: 12px; z-index: 9999; display: flex; gap: 8px;">
+        <button id="export-pdf" style="padding: 6px 10px; font-size: 12px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 6px; cursor: pointer;">Export PDF</button>
+        <button id="export-svg" style="padding: 6px 10px; font-size: 12px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 6px; cursor: pointer;">Export SVG</button>
+    </div>
     <div class="container">
         <div class="header">
             <h1>🏥 Africa Pharmacy Accessibility Analysis</h1>
@@ -283,6 +286,128 @@
     </div>
 
     <script>
+        // Remove emojis and unsupported unicode for PDF text rendering
+        function sanitizeForPdf(text) {
+            if (!text) return '';
+            // Strip common emoji ranges and any non-ASCII characters
+            return text
+                .replace(/[\u{1F300}-\u{1FAFF}]/gu, '')
+                .replace(/[\u{1F100}-\u{1F1FF}]/gu, '')
+                .replace(/[\u{2600}-\u{27BF}]/gu, '')
+                .replace(/[^\x20-\x7E]/g, '')
+                .trim();
+        }
+        // Lazy-load jsPDF and svg2pdf
+        function loadPdfLibs() {
+            return new Promise((resolve, reject) => {
+                if (window.jspdf && window.svg2pdf) { resolve(); return; }
+                const jsPdfScript = document.createElement('script');
+                jsPdfScript.src = 'https://cdn.jsdelivr.net/npm/jspdf@2.5.1/dist/jspdf.umd.min.js';
+                jsPdfScript.onload = () => {
+                    const svg2pdfScript = document.createElement('script');
+                    svg2pdfScript.src = 'https://cdn.jsdelivr.net/npm/svg2pdf.js@2.2.2/dist/svg2pdf.umd.min.js';
+                    svg2pdfScript.onload = () => resolve();
+                    svg2pdfScript.onerror = (e) => reject(e);
+                    document.body.appendChild(svg2pdfScript);
+                };
+                jsPdfScript.onerror = (e) => reject(e);
+                document.body.appendChild(jsPdfScript);
+            });
+        }
+
+        // Lazy-load html2canvas for raster fallback
+        function loadHtml2Canvas() {
+            return new Promise((resolve, reject) => {
+                if (window.html2canvas) { resolve(); return; }
+                const script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js';
+                script.onload = () => resolve();
+                script.onerror = (e) => reject(e);
+                document.body.appendChild(script);
+            });
+        }
+
+        // Export all SVGs to a multi-page PDF (with safe scaling to avoid truncation)
+        async function exportAllSVGsToPDF() {
+            try {
+                await loadPdfLibs();
+                const { jsPDF } = window.jspdf;
+                const pdf = new jsPDF({ orientation: 'landscape', unit: 'pt', format: 'a4' });
+                const svgs = Array.from(document.querySelectorAll('svg'));
+                if (!svgs.length) return;
+
+                for (let i = 0; i < svgs.length; i++) {
+                    if (i > 0) pdf.addPage('a4', 'landscape');
+                    const svg = svgs[i];
+
+                    const pageWidth = pdf.internal.pageSize.getWidth();
+                    const pageHeight = pdf.internal.pageSize.getHeight();
+                    const margin = 50; // larger margin for safety
+                    const targetWidth = pageWidth - margin * 2;
+                    const targetHeight = pageHeight - margin * 2;
+
+                    const titleNode = svg.closest('.chart-section')?.querySelector('h2');
+                    const titleText = titleNode ? sanitizeForPdf(titleNode.textContent) : sanitizeForPdf(document.title || 'Chart');
+                    pdf.setFont('helvetica', 'bold');
+                    pdf.setFontSize(14);
+                    pdf.text(titleText, margin, margin - 15);
+
+                    const safeFactor = 0.95; // leave some breathing room
+
+                    if (typeof window.svg2pdf === 'function') {
+                        // Robust SVG dimension detection
+                        let svgWidth, svgHeight;
+                        if (svg.viewBox && svg.viewBox.baseVal) {
+                            svgWidth = svg.viewBox.baseVal.width;
+                            svgHeight = svg.viewBox.baseVal.height;
+                        } else if (svg.width && svg.width.baseVal) {
+                            svgWidth = svg.width.baseVal.value;
+                            svgHeight = svg.height.baseVal.value;
+                        } else {
+                            const rect = svg.getBoundingClientRect();
+                            svgWidth = rect.width || 800;
+                            svgHeight = rect.height || 600;
+                        }
+                        if (svgWidth <= 0 || svgHeight <= 0) { svgWidth = 800; svgHeight = 600; }
+
+                        const scale = safeFactor * Math.min(targetWidth / svgWidth, targetHeight / svgHeight);
+                        const drawWidth = svgWidth * scale;
+                        const drawHeight = svgHeight * scale;
+                        const offsetX = (pageWidth - drawWidth) / 2;
+                        const offsetY = (pageHeight - drawHeight) / 2;
+
+                        window.svg2pdf(svg, pdf, { width: drawWidth, height: drawHeight, x: offsetX, y: offsetY });
+                    } else {
+                        // Fallback: rasterize full container dimensions
+                        await loadHtml2Canvas();
+                        const container = svg.closest('.chart-container') || svg.parentElement;
+                        const canvas = await window.html2canvas(container, {
+                            backgroundColor: '#ffffff',
+                            scale: 2,
+                            useCORS: true,
+                            allowTaint: true,
+                            width: container.scrollWidth,
+                            height: container.scrollHeight
+                        });
+                        const imgData = canvas.toDataURL('imagePNG');
+                        const imgWidth = canvas.width;
+                        const imgHeight = canvas.height;
+                        const scale = safeFactor * Math.min(targetWidth / imgWidth, targetHeight / imgHeight);
+                        const drawWidth = imgWidth * scale;
+                        const drawHeight = imgHeight * scale;
+                        const offsetX = (pageWidth - drawWidth) / 2;
+                        const offsetY = (pageHeight - drawHeight) / 2;
+                        pdf.addImage(imgData, 'PNG', offsetX, offsetY, drawWidth, drawHeight);
+                    }
+                }
+
+                const base = (document.title || 'chart').replace(/\s+/g, '_').toLowerCase();
+                pdf.save(`${base}.pdf`);
+            } catch (e) {
+                console.error('Export PDF failed', e);
+                alert('Failed to export PDF. Please try again.');
+            }
+        }
         // Export all SVGs on the page as separate files
         function exportAllSVGs() {
             const svgs = Array.from(document.querySelectorAll('svg'));
@@ -324,8 +449,10 @@
             });
         }
         document.addEventListener('DOMContentLoaded', function() {
-            const btn = document.getElementById('export-svg');
-            if (btn) btn.addEventListener('click', exportAllSVGs);
+            const btnSvg = document.getElementById('export-svg');
+            if (btnSvg) btnSvg.addEventListener('click', exportAllSVGs);
+            const btnPdf = document.getElementById('export-pdf');
+            if (btnPdf) btnPdf.addEventListener('click', exportAllSVGsToPDF);
         });
         // Global variables
         let data = null;
