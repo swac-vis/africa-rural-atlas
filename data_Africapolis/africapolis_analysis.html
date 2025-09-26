@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 30px;
+        }
+        .chart {
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .chart img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .back-link {
+            display: inline-block;
+            background: #007bff;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            margin-bottom: 20px;
+        }
+        .back-link:hover {
+            background: #0056b3;
+        }
+        .download-buttons {
+            margin-top: 10px;
+        }
+        .download-btn {
+            display: inline-block;
+            background: #f8f9fa;
+            color: #6c757d;
+            padding: 6px 12px;
+            text-decoration: none;
+            border-radius: 3px;
+            margin: 0 3px;
+            font-size: 13px;
+            border: 1px solid #dee2e6;
+        }
+        .download-btn:hover {
+            background: #e9ecef;
+            color: #495057;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- <a href="../index.html" class="back-link">← Back to Rural Atlas</a> -->
+        
+
+        
+        <div class="chart">
+            <h3>Population Distribution by Distance from Roads</h3>
+            <img src="africapolis_scatter.svg" alt="Scatter Plot">
+            <div class="download-buttons">
+                <a href="africapolis_scatter.svg" class="download-btn" download>Download SVG</a>
+                <a href="africapolis_scatter.pdf" class="download-btn pdf" download>Download PDF</a>
+            </div>
+        </div>
+        
+        <div class="chart">
+            <h3>Population by Distance Bins</h3>
+            <img src="africapolis_distance_bins.svg" alt="Distance Bins">
+            <div class="download-buttons">
+                <a href="africapolis_distance_bins.svg" class="download-btn" download>Download SVG</a>
+                <a href="africapolis_distance_bins.pdf" class="download-btn pdf" download>Download PDF</a>
+            </div>
+        </div>
+        
+        <div class="chart">
+            <h3>Population Statistics Summary</h3>
+            <img src="africapolis_summary.svg" alt="Statistics Summary">
+            <div class="download-buttons">
+                <a href="africapolis_summary.svg" class="download-btn" download>Download SVG</a>
+                <a href="africapolis_summary.pdf" class="download-btn pdf" download>Download PDF</a>
+            </div>
+        </div>
+        
+        <div class="chart">
+            <h3>Population Density Heatmap</h3>
+            <img src="africapolis_heatmap.svg" alt="Heatmap">
+            <div class="download-buttons">
+                <a href="africapolis_heatmap.svg" class="download-btn" download>Download SVG</a>
+                <a href="africapolis_heatmap.pdf" class="download-btn pdf" download>Download PDF</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
