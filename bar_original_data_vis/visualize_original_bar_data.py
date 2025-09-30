@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Africapolis Data Visualization Script
+Data Visualization Script
 Creates multiple visualizations for rural, urban, and total population data
 """
 
@@ -62,13 +62,13 @@ def create_scatter_plot(rural, urban, total):
     ax.set_xlabel('Distance from Roads (km)')
     ax.set_ylabel('Population (log scale)')
     ax.set_yscale('log')
-    ax.set_title('Population Distribution by Distance from Roads\n(Africapolis Data)')
+    ax.set_title('Population Distribution by Distance from Roads')
     ax.legend()
     ax.grid(True, alpha=0.3)
     
     plt.tight_layout()
-    plt.savefig('africapolis_scatter.svg', format='svg', bbox_inches='tight')
-    plt.savefig('africapolis_scatter.pdf', format='pdf', bbox_inches='tight')
+    plt.savefig('scatter.svg', format='svg', bbox_inches='tight')
+    plt.savefig('scatter.pdf', format='pdf', bbox_inches='tight')
     plt.show()
 
 
@@ -119,8 +119,8 @@ def create_distance_bins_analysis(rural, urban, total):
     ax.grid(True, alpha=0.3)
     
     plt.tight_layout()
-    plt.savefig('africapolis_distance_bins.svg', format='svg', bbox_inches='tight')
-    plt.savefig('africapolis_distance_bins.pdf', format='pdf', bbox_inches='tight')
+    plt.savefig('distance_bins.svg', format='svg', bbox_inches='tight')
+    plt.savefig('distance_bins.pdf', format='pdf', bbox_inches='tight')
     plt.show()
 
 def create_summary_statistics(rural, urban, total):
@@ -184,8 +184,8 @@ def create_summary_statistics(rural, urban, total):
                 f'{avg_pop/1e3:.1f}K', ha='center', va='bottom')
     
     plt.tight_layout()
-    plt.savefig('africapolis_summary.svg', format='svg', bbox_inches='tight')
-    plt.savefig('africapolis_summary.pdf', format='pdf', bbox_inches='tight')
+    plt.savefig('summary.svg', format='svg', bbox_inches='tight')
+    plt.savefig('summary.pdf', format='pdf', bbox_inches='tight')
     plt.show()
 
 def create_heatmap(rural, urban, total):
@@ -214,13 +214,13 @@ def create_heatmap(rural, urban, total):
     cbar.set_label('Number of Data Points')
     
     plt.tight_layout()
-    plt.savefig('africapolis_heatmap.svg', format='svg', bbox_inches='tight')
-    plt.savefig('africapolis_heatmap.pdf', format='pdf', bbox_inches='tight')
+    plt.savefig('heatmap.svg', format='svg', bbox_inches='tight')
+    plt.savefig('heatmap.pdf', format='pdf', bbox_inches='tight')
     plt.show()
 
 def main():
     """Main function to create all visualizations"""
-    print("🌍 Africapolis Data Visualization")
+    print("🌍 Data Visualization")
     print("=" * 50)
     
     # Load data
@@ -243,10 +243,10 @@ def main():
     
     print("\n✅ All visualizations created successfully!")
     print("Generated files:")
-    print("- africapolis_scatter.svg & .pdf")
-    print("- africapolis_distance_bins.svg & .pdf")
-    print("- africapolis_summary.svg & .pdf")
-    print("- africapolis_heatmap.svg & .pdf")
+    print("- scatter.svg & .pdf")
+    print("- distance_bins.svg & .pdf")
+    print("- summary.svg & .pdf")
+    print("- heatmap.svg & .pdf")
 
 if __name__ == "__main__":
     main()

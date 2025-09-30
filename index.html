@@ -30,6 +30,15 @@
             margin-bottom: 15px;
             font-weight: 300;
             color: #2c3e50;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+        }
+        
+        .header h1 img {
+            height: 4rem;
+            vertical-align: middle;
         }
         
         .header p {
@@ -42,7 +51,8 @@
         
         .visualizations {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fill, 350px);
+            justify-content: center;
             gap: 30px;
             margin-top: 40px;
         }
@@ -118,6 +128,21 @@
             font-size: 0.9rem;
         }
         
+        .section {
+            margin-top: 18px;
+        }
+        .section h2 {
+            margin: 0 0 10px 0;
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #2c3e50;
+        }
+        .section p {
+            margin: 0 0 18px 0;
+            color: #5a6c7d;
+            line-height: 1.6;
+        }
+        
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
@@ -137,79 +162,89 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1>🌍 Rural Atlas</h1>
+            <h1><img src="Africapolis_ruralAtlas.svg" alt="Rural Atlas Logo"> Rural Atlas</h1>
             <p>Population Analysis Visualizations - Exploring rural and urban population distribution across different regions and distances to roads.</p>
         </div>
         
-        <div class="visualizations">
-            <a href="map/population_scatter_plot_unified.html" class="viz-card">
-                <div class="preview map-preview">🗺️</div>
-                <div class="viz-type">Scatter Plot Map</div>
-                <h3>Africa Population Distribution</h3>
-                <p>Interactive scatter plot visualization of population distribution across Africa. Explore population density patterns with zoom controls and detailed cell information.</p>
-            </a>
-            <a href="bar/stacked_bar_chart.html" class="viz-card">
-                <div class="preview bar-preview">📊</div>
-                <div class="viz-type">Stacked Bar Chart</div>
-                <h3>Population Share by Distance to Road</h3>
-                <p>Compare population distribution across Africa, South Asia, and Latin America. Each bar shows rural (bottom) and urban (top) populations at different distances from roads.</p>
-            </a>
-            
-            <a href="pie/index.html" class="viz-card">
-                <div class="preview pie-preview">🥧</div>
-                <div class="viz-type">Pie Chart</div>
-                <h3>Regional Population Analysis</h3>
-                <p>Explore population composition by region using interactive pie charts. Analyze the distribution of rural and urban populations across different areas.</p>
-            </a>
-            
-            <a href="horizon/index.html" class="viz-card">
-                <div class="preview horizon-preview">📈</div>
-                <div class="viz-type">Horizon Chart</div>
-                <h3>Population Distance Analysis</h3>
-                <p>Visualize population distribution by distance to roads for each country using horizon charts. See how population patterns vary across different countries at various distances from roads.</p>
-            </a>
-            
-            <a href="map_real/" class="viz-card">
-                <div class="preview map-preview">🗺️</div>
-                <div class="viz-type">Rural Maps</div>
-                <h3>Rural Border & Road Maps</h3>
-                <p>Overview of rural/urban area and roads for fine-grained Africa map.</p>
-            </a>
-            
-            <a href="healthsites/africa_healthsites_map.html" class="viz-card">
-                <div class="preview map-preview">🗺️</div>
-                <div class="viz-type">Health Facilities Map</div>
-                <h3>Africa Health Facilities Map</h3>
-                <p>Interactive map showing the distribution of health facilities across Africa. Explore facility locations, types, and density patterns with controls.</p>
-            </a>
+        <div class="section">
+            <h2>Population distribution</h2>
+            <p>We first look at how rural and urban areas are distributed. The binary map shows urban (yellow), rural (blue), and uninhabited (white). The scatter and dashboard provide detail.</p>
+            <div class="visualizations">
+                <a href="population/pure_divide/bluerural.html" class="viz-card">
+                    <div class="preview map-preview">🗺️</div>
+                    <div class="viz-type">Binary Map</div>
+                    <h3>Rural-Urban Map</h3>
+                    <p>Visualization representing the rural-urban divide using blue-yellow color. To give an overview of population distribution patterns across Africa.</p>
+                </a>
+                <a href="map/population_scatter_plot_unified.html" class="viz-card">
+                    <div class="preview map-preview">🗺️</div>
+                    <div class="viz-type">Scatter Plot Map</div>
+                    <h3>Africa Population Distribution</h3>
+                    <p>Interactive scatter plot visualization of population distribution across Africa. Explore population density patterns with zoom controls and detailed cell information.</p>
+                </a>
+                <a href="population/africa_population_dashboard.html" class="viz-card">
+                    <div class="preview map-preview">📊</div>
+                    <div class="viz-type">Interactive Dashboard</div>
+                    <h3>Africa Population Dashboard</h3>
+                    <p>Comprehensive interactive dashboard analyzing African population distribution. Features multiple chart types including box plots, violin plots, density analysis, and interactive maps with region filtering.</p>
+                </a>
+            </div>
+        </div>
 
-            <a href="healthsites/pharmacy_accessibility_visualization.html" class="viz-card">
-                <div class="preview health-preview">🏥</div>
-                <div class="viz-type">Health Accessibility</div>
-                <h3>Health Facility Accessibility</h3>
-                <p>Analyze urban vs rural accessibility to health facilities across Africa. Explore population coverage by distance with interactive visualizations.</p>
-            </a>
+        <div class="section">
+            <h2>Population and road distribution</h2>
+            <p>Next, we relate people to roads: an overview map highlights density, road networks, and capitals; bar, pie and horizon charts summarize how populations concentrate near roads across regions and countries.</p>
+            <div class="visualizations">
+                <a href="map_real/" class="viz-card">
+                    <div class="preview map-preview">🗺️</div>
+                    <div class="viz-type">Rural Maps</div>
+                    <h3>Rural Border & Road Maps</h3>
+                    <p>Overview of rural/urban area and roads for fine-grained Africa map.</p>
+                </a>
+                <a href="bar/stacked_bar_chart.html" class="viz-card">
+                    <div class="preview bar-preview">📊</div>
+                    <div class="viz-type">Stacked Bar Chart</div>
+                    <h3>Population Share by Distance to Road</h3>
+                    <p>Compare population distribution across Africa, South Asia, and Latin America. Each bar shows rural (bottom) and urban (top) populations at different distances from roads.</p>
+                </a>
+                <a href="pie/index.html" class="viz-card">
+                    <div class="preview pie-preview">🥧</div>
+                    <div class="viz-type">Pie Chart</div>
+                    <h3>Regional Population Analysis</h3>
+                    <p>Explore population composition by region using interactive pie charts. Analyze the distribution of rural and urban populations across different areas.</p>
+                </a>
+                <a href="horizon/index.html" class="viz-card">
+                    <div class="preview horizon-preview">📈</div>
+                    <div class="viz-type">Horizon Chart</div>
+                    <h3>Population Distance Analysis</h3>
+                    <p>Visualize population distribution by distance to roads for each country using horizon charts. See how population patterns vary across different countries at various distances from roads.</p>
+                </a>
+                <a href="bar_original_data_vis/bar_data_analysis.html" class="viz-card">
+                    <div class="preview bar-preview">📊</div>
+                    <div class="viz-type">Charts</div>
+                    <h3>Population & Road</h3>
+                    <p>Analysis of population distribution by distance from roads across Africa. Includes scatter plots, distance bins analysis, statistical summaries, and density heatmaps.</p>
+                </a>
+            </div>
+        </div>
 
-            <a href="population/africa_population_dashboard.html" class="viz-card">
-                <div class="preview map-preview">📊</div>
-                <div class="viz-type">Interactive Dashboard</div>
-                <h3>Africa Population Dashboard</h3>
-                <p>Comprehensive interactive dashboard analyzing African population distribution. Features multiple chart types including box plots, violin plots, density analysis, and interactive maps with region filtering.</p>
-            </a>
-
-            <a href="population/pure_divide/bluerural.svg" class="viz-card">
-                <div class="preview map-preview">🗺️</div>
-                <div class="viz-type">Binary Map</div>
-                <h3>Rural-Urban Map</h3>
-                <p>Visualization representing the rural-urban divide using blue-yellow color. To give an overview of population distribution patterns across Africa.</p>
-            </a>
-
-            <a href="data_Africapolis/africapolis_analysis.html" class="viz-card">
-                <div class="preview bar-preview">📊</div>
-                <div class="viz-type">Charts</div>
-                <h3>Population & Road (Africapolis Data)</h3>
-                <p>Analysis of population distribution by distance from roads across Africa. Includes scatter plots, distance bins analysis, statistical summaries, and density heatmaps.</p>
-            </a>
+        <div class="section">
+            <h2>Population and other facilities distribution</h2>
+            <p>Finally, we explore health infrastructure: an overview of facilities and an accessibility analysis comparing urban and rural populations.</p>
+            <div class="visualizations">
+                <a href="healthsites/africa_healthsites_map.html" class="viz-card">
+                    <div class="preview map-preview">🗺️</div>
+                    <div class="viz-type">Health Facilities Map</div>
+                    <h3>Africa Health Facilities Map</h3>
+                    <p>Interactive map showing the distribution of health facilities across Africa. Explore facility locations, types, and density patterns with controls.</p>
+                </a>
+                <a href="healthsites/pharmacy_accessibility_visualization.html" class="viz-card">
+                    <div class="preview bar-preview">🏥</div>
+                    <div class="viz-type">Health Accessibility</div>
+                    <h3>Health Facility Accessibility</h3>
+                    <p>Analyze urban vs rural accessibility to health facilities across Africa. Explore population coverage by distance with interactive visualizations.</p>
+                </a>
+            </div>
         </div>
         
         <div class="footer">
