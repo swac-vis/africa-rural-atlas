@@ -634,18 +634,37 @@
             const legend = d3.select(legendSelector);
             legend.selectAll('*').remove();
             legend.append('h4').text('Legend').style('margin', '0 0 8px 0', 'font-size', '14px');
+            
+            // Calculate percentages for each region
             regions.forEach(region => {
+                // Sum up all rural and urban populations across all distance ranges
+                let totalRural = 0;
+                let totalUrban = 0;
+                
+                if (data[region] && data[region].share) {
+                    distanceRanges.forEach(range => {
+                        if (data[region].share[range]) {
+                            totalRural += data[region].share[range].rural || 0;
+                            totalUrban += data[region].share[range].urban || 0;
+                        }
+                    });
+                }
+                
+                const totalPopulation = totalRural + totalUrban;
+                const ruralPercentage = totalPopulation > 0 ? (totalRural / totalPopulation * 100).toFixed(1) : 0;
+                const urbanPercentage = totalPopulation > 0 ? (totalUrban / totalPopulation * 100).toFixed(1) : 0;
+                
                 const ruralItem = legend.append('div').attr('class', 'legend-item');
                 ruralItem.append('div')
                     .attr('class', 'legend-color')
                     .style('background-color', regionPopulationColors[region].rural);
-                ruralItem.append('span').text(`${region} Rural`);
+                ruralItem.append('span').text(`${region} Rural (${ruralPercentage}%)`);
 
                 const urbanItem = legend.append('div').attr('class', 'legend-item');
                 urbanItem.append('div')
                     .attr('class', 'legend-color')
                     .style('background-color', regionPopulationColors[region].urban);
-                urbanItem.append('span').text(`${region} Urban`);
+                urbanItem.append('span').text(`${region} Urban (${urbanPercentage}%)`);
             });
 
             // Apply current annotation visibility
@@ -825,18 +844,58 @@
             legend.selectAll('*').remove();
             legend.append('h4').text('Legend').style('margin', '0 0 8px 0', 'font-size', '14px');
             
+            // Calculate percentage changes for each region (2015 -> 2025)
             regions.forEach(region => {
+                // Calculate totals for 2015
+                let totalRural2015 = 0;
+                let totalUrban2015 = 0;
+                
+                if (data2015[region] && data2015[region].share) {
+                    distanceRanges.forEach(range => {
+                        if (data2015[region].share[range]) {
+                            totalRural2015 += data2015[region].share[range].rural || 0;
+                            totalUrban2015 += data2015[region].share[range].urban || 0;
+                        }
+                    });
+                }
+                
+                // Calculate totals for 2025
+                let totalRural2025 = 0;
+                let totalUrban2025 = 0;
+                
+                if (data2025[region] && data2025[region].share) {
+                    distanceRanges.forEach(range => {
+                        if (data2025[region].share[range]) {
+                            totalRural2025 += data2025[region].share[range].rural || 0;
+                            totalUrban2025 += data2025[region].share[range].urban || 0;
+                        }
+                    });
+                }
+                
+                // Calculate percentages for both years
+                const totalPopulation2015 = totalRural2015 + totalUrban2015;
+                const totalPopulation2025 = totalRural2025 + totalUrban2025;
+                
+                const ruralPercentage2015 = totalPopulation2015 > 0 ? (totalRural2015 / totalPopulation2015 * 100) : 0;
+                const urbanPercentage2015 = totalPopulation2015 > 0 ? (totalUrban2015 / totalPopulation2015 * 100) : 0;
+                const ruralPercentage2025 = totalPopulation2025 > 0 ? (totalRural2025 / totalPopulation2025 * 100) : 0;
+                const urbanPercentage2025 = totalPopulation2025 > 0 ? (totalUrban2025 / totalPopulation2025 * 100) : 0;
+                
+                // Calculate changes
+                const ruralChange = ruralPercentage2025 - ruralPercentage2015;
+                const urbanChange = urbanPercentage2025 - urbanPercentage2015;
+                
                 const ruralItem = legend.append('div').attr('class', 'legend-item');
                 ruralItem.append('div')
                     .attr('class', 'legend-color')
                     .style('background-color', regionPopulationColors[region].rural);
-                ruralItem.append('span').text(`${region} Rural`);
+                ruralItem.append('span').text(`${region} Rural (${ruralChange >= 0 ? '+' : ''}${ruralChange.toFixed(1)}%)`);
 
                 const urbanItem = legend.append('div').attr('class', 'legend-item');
                 urbanItem.append('div')
                     .attr('class', 'legend-color')
                     .style('background-color', regionPopulationColors[region].urban);
-                urbanItem.append('span').text(`${region} Urban`);
+                urbanItem.append('span').text(`${region} Urban (${urbanChange >= 0 ? '+' : ''}${urbanChange.toFixed(1)}%)`);
             });
 
             // Apply current annotation visibility
