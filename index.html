@@ -130,6 +130,7 @@
         
         .section {
             margin-top: 18px;
+            clear: both;
         }
         .section h2 {
             margin: 0 0 10px 0;
@@ -142,7 +143,27 @@
             color: #5a6c7d;
             line-height: 1.6;
         }
-        
+
+        .scrolly-link {
+            display: inline-block;
+            padding: 8px 16px;
+            margin: 15px 0;
+            float: right;
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            text-decoration: none;
+            color: #5c687d;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s ease;
+        }
+
+        .scrolly-link:hover {
+            border-color: #5c687d;
+            color: #485566;
+        }
+
         @media (max-width: 768px) {
             .header h1 {
                 font-size: 2rem;
@@ -162,9 +183,12 @@
 <body>
     <div class="container">
         <div class="header">
-            <h1><img src="Africapolis_ruralAtlas.svg" alt="Rural Atlas Logo"> Rural Atlas</h1>
+            <h1><img src="Africapolis_ruralAtlas.svg" alt="Rural Atlas Logo"> Africa Rural Atlas</h1>
             <p>Population Analysis Visualizations - Exploring rural and urban population distribution across different regions and distances to roads.</p>
         </div>
+
+        <!-- Scrollytelling Link -->
+        <a href="index_scrolly.html" class="scrolly-link">Interactive Exploration →</a>
         
         <div class="section">
             <h2>Population distribution</h2>

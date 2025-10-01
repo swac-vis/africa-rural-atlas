@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rural Atlas - Scrollytelling</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fafafa;
+            color: #1a1a1a;
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: #5c687db1;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 300;
+            margin-bottom: 20px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .hero h1 img {
+            height: 5rem;
+            filter: brightness(0) invert(1);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            line-height: 1.6;
+            opacity: 0.95;
+        }
+
+        .scroll-hint {
+            position: absolute;
+            bottom: 40px;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-20px); }
+            60% { transform: translateY(-10px); }
+        }
+
+        /* Main scrolly container */
+        #scrolly {
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            padding: 0;
+        }
+
+        /* Sticky figure (visualization) */
+        figure {
+            position: sticky;
+            top: 0;
+            left: 0;
+            width: 70%;
+            height: 100vh;
+            margin: 0;
+            padding: 10px;
+            background: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+
+        .viz-container {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .viz-item {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            transition: opacity 0.5s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            pointer-events: none;
+        }
+
+        .viz-item.is-active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .viz-item iframe {
+            width: 100%;
+            height: 95vh;
+            border: none;
+        }
+
+        .viz-item object,
+        .viz-item img {
+            max-width: 100%;
+            max-height: 95vh;
+            width: auto;
+            height: auto;
+        }
+
+        /* Scrolling article (text steps) */
+        article {
+            position: relative;
+            width: 30%;
+            padding: 0;
+            flex-shrink: 0;
+        }
+
+        .step {
+            margin: 0 0 80vh 0;
+            padding: 30px;
+            background: white;
+            border-left: 3px solid transparent;
+            opacity: 0.35;
+            transition: all 0.3s ease;
+        }
+
+        .step:first-child {
+            margin-top: 80vh;
+        }
+
+        .step:last-child {
+            margin-bottom: 80vh;
+        }
+
+        .step.is-active {
+            opacity: 1;
+            border-left-color: #5c687d;
+        }
+
+        .step h2 {
+            font-size: 1.8rem;
+            margin-bottom: 20px;
+            color: #1a1a1a;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .step h3 {
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+            color: #5c687d;
+            font-weight: 500;
+            letter-spacing: -0.01em;
+        }
+
+        .step p {
+            font-size: 1rem;
+            line-height: 1.7;
+            color: #4a4a4a;
+            margin-bottom: 15px;
+        }
+
+        .step a {
+            display: inline-block;
+            margin-top: 10px;
+            color: #5c687d;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: all 0.2s ease;
+        }
+
+        .step a:hover {
+            border-bottom-color: #5c687d;
+        }
+
+        /* Gallery Section */
+        .gallery {
+            padding: 80px 40px;
+            background: #f5f5f5;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .gallery h2 {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 50px;
+            color: #1a1a1a;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .gallery-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+            text-decoration: none;
+            color: inherit;
+            transition: all 0.3s ease;
+        }
+
+        .gallery-card:hover {
+            border-color: #5c687d;
+            box-shadow: 0 4px 20px rgba(92, 104, 125, 0.2);
+            transform: translateY(-2px);
+        }
+
+        .gallery-card .preview {
+            height: 180px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .bar-preview { background: #f0f0f0; }
+        .pie-preview { background: #e8e8e8; }
+        .horizon-preview { background: #f5f5f5; }
+        .map-preview { background: #ececec; }
+        .health-preview { background: #f2f2f2; }
+
+        .gallery-card .content {
+            padding: 20px;
+        }
+
+        .gallery-card h3 {
+            margin-bottom: 10px;
+            color: #1a1a1a;
+            font-weight: 600;
+        }
+
+        .gallery-card p {
+            color: #4a4a4a;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .viz-type {
+            display: inline-block;
+            background: linear-gradient(135deg, #5c687d, #485566);
+            color: white;
+            padding: 4px 10px;
+            border-radius: 2px;
+            font-size: 0.7rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 1024px) {
+            .hero h1 {
+                font-size: 2.5rem;
+                flex-direction: column;
+            }
+
+            #scrolly {
+                flex-direction: column;
+            }
+
+            figure {
+                position: relative;
+                width: 100%;
+                height: 60vh;
+            }
+
+            article {
+                width: 100%;
+                margin-left: 0;
+            }
+
+            .step {
+                margin: 30px 20px;
+                padding: 25px 20px;
+            }
+
+            .step:first-child {
+                margin-top: 30px;
+            }
+
+            .step:last-child {
+                margin-bottom: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <section class="hero">
+        <h1>
+            <img src="Africapolis_ruralAtlas.svg" alt="Rural Atlas Logo">
+            Africa Rural Atlas
+        </h1>
+        <p>An interactive journey through Africa's rural and urban population distribution, exploring how people relate to roads and essential facilities.</p>
+        <div class="scroll-hint">↓ Scroll to explore ↓</div>
+    </section>
+
+    <!-- Main scrollytelling section -->
+    <section id="scrolly">
+        <figure>
+            <div class="viz-container">
+                <!-- Part 1 visualizations -->
+                <div class="viz-item" data-step="0">
+                    <img src="population/pure_divide/bluerural.svg" alt="Rural-Urban Map">
+                </div>
+                <div class="viz-item" data-step="1">
+                    <iframe src="map/population_scatter_plot_unified.html"></iframe>
+                </div>
+                <div class="viz-item" data-step="2">
+                    <iframe src="population/africa_population_dashboard.html"></iframe>
+                </div>
+                <!-- Part 2 visualizations -->
+                <div class="viz-item" data-step="3">
+                    <iframe src="map_real/index.html"></iframe>
+                </div>
+                <div class="viz-item" data-step="4">
+                    <iframe src="bar/stacked_bar_chart.html"></iframe>
+                </div>
+                <div class="viz-item" data-step="5">
+                    <iframe src="pie/index.html"></iframe>
+                </div>
+                <div class="viz-item" data-step="6">
+                    <iframe src="horizon/index.html"></iframe>
+                </div>
+                <!-- Part 3 visualizations -->
+                <div class="viz-item" data-step="7">
+                    <iframe src="healthsites/africa_healthsites_map.html"></iframe>
+                </div>
+                <div class="viz-item" data-step="8">
+                    <iframe src="healthsites/pharmacy_accessibility_visualization.html"></iframe>
+                </div>
+            </div>
+        </figure>
+
+        <article>
+            <!-- Part 1: Population Distribution -->
+            <div class="step" data-step="0">
+                <h2>Part 1 – Population Distribution</h2>
+                <h3>Rural-Urban Divide</h3>
+                <p>We begin by examining how rural and urban areas are distributed across Africa. This binary map uses a simple color scheme: <strong>yellow represents urban areas</strong>, <strong>blue represents rural areas</strong>, and <strong>white shows uninhabited regions</strong>.</p>
+                <p>Notice how yellow urban areas are always surrounded by blue rural zones—rural and urban never exist in isolation, but together as interconnected systems.</p>
+                <a href="population/pure_divide/bluerural.html" target="_blank">View full map →</a>
+            </div>
+
+            <div class="step" data-step="1">
+                <h3>Population Density Patterns</h3>
+                <p>Each circle represents an area of 10,000 km². The <strong>outer ring size</strong> indicates the proportion of rural area, while <strong>color intensity</strong> reflects population density.</p>
+                <p>Coastal areas (especially Nigeria and Ghana) appear much darker, showing high population density. Areas near the Sahara Desert are lighter, indicating sparse population. Rural populations dominate inland regions, while urban concentrations cluster along coasts and major cities.</p>
+                <a href="map/population_scatter_plot_unified.html" target="_blank">Explore interactive map →</a>
+            </div>
+
+            <div class="step" data-step="2">
+                <h3>Country & Regional Analysis</h3>
+                <p>The dashboard breaks down population distribution by country and region, using pie charts to show the urban-rural split. Color intensity on maps corresponds to total population size.</p>
+                <p>Key insights: West and East Africa have both large populations and high rural ratios. North Africa has very few rural populations. The box plots reveal not just average urbanization levels, but also variance between countries within each region.</p>
+                <a href="population/africa_population_dashboard.html" target="_blank">Open dashboard →</a>
+            </div>
+
+            <!-- Part 2: Population and Roads -->
+            <div class="step" data-step="3">
+                <h2>Part 2 – Population and Road Distribution</h2>
+                <h3>Infrastructure Overview</h3>
+                <p>This overview map depicts population density, road networks, and capital cities. The color scheme represents population density from <strong>yellow (urban densities)</strong> through <strong>shades of blue (varying densities)</strong> to <strong>black (uninhabited)</strong>. Yellow lines show roads, white circles indicate capitals.</p>
+                <a href="map_real/index.html" target="_blank">View full map →</a>
+            </div>
+
+            <div class="step" data-step="4">
+                <h3>Distance to Roads: Continental Comparison</h3>
+                <p>Compare Africa, South Asia, and Latin America. Population share decreases as distance from roads increases across all regions.</p>
+                <p>Urban populations in South Asia and Latin America show higher concentration near roads (0-10km) with over 80% and 90% respectively. Africa shows lower road proximity, with substantial populations living further from roads—especially in rural areas.</p>
+                <a href="bar/stacked_bar_chart.html" target="_blank">View chart →</a>
+            </div>
+
+            <div class="step" data-step="5">
+                <h3>Regional Road Access</h3>
+                <p>Pie charts display population distribution across African regions based on road proximity. Each chart shows the proportion of rural vs urban population at different distance intervals.</p>
+                <p>North Africa maintains relatively high road access. West, East, and Central Africa have significant "no access" populations—more than half of people lack a major road within 5 kilometers.</p>
+                <a href="pie/index.html" target="_blank">Explore by region →</a>
+            </div>
+
+            <div class="step" data-step="6">
+                <h3>Country-Level Patterns</h3>
+                <p>Horizon charts show population share by distance to roads for each African country. Color intensity indicates population share, with blue for urban and purple for rural.</p>
+                <p>Most countries show high concentration within the first few kilometers of roads. Urban populations (blue) are typically closer to roads than rural populations (purple).</p>
+                <a href="horizon/index.html" target="_blank">Compare countries →</a>
+            </div>
+
+            <!-- Part 3: Health Facilities -->
+            <div class="step" data-step="7">
+                <h2>Part 3 – Population and Facilities</h2>
+                <h3>Health Infrastructure Overview</h3>
+                <p>This interactive map shows the distribution of health facilities across Africa. Explore facility locations, types, and density patterns to understand healthcare accessibility across the continent.</p>
+                <a href="healthsites/africa_healthsites_map.html" target="_blank">Explore map →</a>
+            </div>
+
+            <div class="step" data-step="8">
+                <h3>Pharmacy Accessibility</h3>
+                <p>The cumulative chart shows what percentage of the population lives within specified distances of the nearest pharmacy (1, 2, 5, 10, 20, 50, and 100 km). Each bar divides into urban (blue) and rural (purple) segments.</p>
+                <p>This reveals stark urban-rural disparities in healthcare access—a critical factor for public health planning and resource allocation.</p>
+                <a href="healthsites/pharmacy_accessibility_visualization.html" target="_blank">View analysis →</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- Gallery: All Visualizations -->
+    <section class="gallery">
+        <h2>Explore All Visualizations</h2>
+        <div class="gallery-grid">
+            <a href="population/pure_divide/bluerural.html" class="gallery-card">
+                <div class="preview map-preview">🗺️</div>
+                <div class="content">
+                    <div class="viz-type">Binary Map</div>
+                    <h3>Rural-Urban Map</h3>
+                    <p>Overview of population distribution patterns using blue-yellow color coding.</p>
+                </div>
+            </a>
+
+            <a href="map/population_scatter_plot_unified.html" class="gallery-card">
+                <div class="preview map-preview">🗺️</div>
+                <div class="content">
+                    <div class="viz-type">Scatter Plot</div>
+                    <h3>Population Distribution</h3>
+                    <p>Interactive scatter plot with zoom controls and detailed cell information.</p>
+                </div>
+            </a>
+
+            <a href="population/africa_population_dashboard.html" class="gallery-card">
+                <div class="preview map-preview">📊</div>
+                <div class="content">
+                    <div class="viz-type">Dashboard</div>
+                    <h3>Population Dashboard</h3>
+                    <p>Comprehensive analysis with box plots, violin plots, and interactive maps.</p>
+                </div>
+            </a>
+
+            <a href="map_real/index.html" class="gallery-card">
+                <div class="preview map-preview">🗺️</div>
+                <div class="content">
+                    <div class="viz-type">Rural Maps</div>
+                    <h3>Rural Border & Road Maps</h3>
+                    <p>Fine-grained overview of rural/urban areas and road networks.</p>
+                </div>
+            </a>
+
+            <a href="bar/stacked_bar_chart.html" class="gallery-card">
+                <div class="preview bar-preview">📊</div>
+                <div class="content">
+                    <div class="viz-type">Stacked Bar</div>
+                    <h3>Population Share by Distance</h3>
+                    <p>Compare Africa, South Asia, and Latin America road proximity.</p>
+                </div>
+            </a>
+
+            <a href="pie/index.html" class="gallery-card">
+                <div class="preview pie-preview">🥧</div>
+                <div class="content">
+                    <div class="viz-type">Pie Chart</div>
+                    <h3>Regional Population Analysis</h3>
+                    <p>Interactive pie charts showing rural and urban distribution by region.</p>
+                </div>
+            </a>
+
+            <a href="horizon/index.html" class="gallery-card">
+                <div class="preview horizon-preview">📈</div>
+                <div class="content">
+                    <div class="viz-type">Horizon Chart</div>
+                    <h3>Population Distance Analysis</h3>
+                    <p>Country-level patterns of population distance to roads.</p>
+                </div>
+            </a>
+
+            <a href="bar_original_data_vis/bar_data_analysis.html" class="gallery-card">
+                <div class="preview bar-preview">📊</div>
+                <div class="content">
+                    <div class="viz-type">Charts</div>
+                    <h3>Population & Road</h3>
+                    <p>Detailed analysis with scatter plots and density heatmaps.</p>
+                </div>
+            </a>
+
+            <a href="healthsites/africa_healthsites_map.html" class="gallery-card">
+                <div class="preview map-preview">🗺️</div>
+                <div class="content">
+                    <div class="viz-type">Health Map</div>
+                    <h3>Health Facilities Map</h3>
+                    <p>Distribution of health facilities across Africa.</p>
+                </div>
+            </a>
+
+            <a href="healthsites/pharmacy_accessibility_visualization.html" class="gallery-card">
+                <div class="preview health-preview">🏥</div>
+                <div class="content">
+                    <div class="viz-type">Health Access</div>
+                    <h3>Health Facility Accessibility</h3>
+                    <p>Urban vs rural accessibility analysis with distance metrics.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <!-- Load Scrollama -->
+    <script src="https://unpkg.com/intersection-observer@0.12.0/intersection-observer.js"></script>
+    <script src="https://unpkg.com/scrollama"></script>
+    
+    <script>
+        // Using Scrollama
+        const scroller = scrollama();
+
+        // Setup the instance
+        scroller
+            .setup({
+                step: '.step',
+                offset: 0.5,
+                debug: false
+            })
+            .onStepEnter(response => {
+                // response = { element, direction, index }
+                const stepIndex = response.element.dataset.step;
+                
+                // Update step highlighting
+                document.querySelectorAll('.step').forEach(s => s.classList.remove('is-active'));
+                response.element.classList.add('is-active');
+                
+                // Update visualization
+                document.querySelectorAll('.viz-item').forEach(v => v.classList.remove('is-active'));
+                const activeViz = document.querySelector(`.viz-item[data-step="${stepIndex}"]`);
+                if (activeViz) {
+                    activeViz.classList.add('is-active');
+                }
+            });
+
+        // Handle window resize
+        window.addEventListener('resize', scroller.resize);
+
+        // Initialize first step on page load
+        window.addEventListener('load', () => {
+            const firstStep = document.querySelector('.step[data-step="0"]');
+            const firstViz = document.querySelector('.viz-item[data-step="0"]');
+            if (firstStep) firstStep.classList.add('is-active');
+            if (firstViz) firstViz.classList.add('is-active');
+        });
+    </script>
+</body>
+</html>

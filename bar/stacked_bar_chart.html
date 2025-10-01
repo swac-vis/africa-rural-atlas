@@ -347,14 +347,15 @@
         // Export each chart's SVG as a separate file
         function exportChartsToSVG() {
             const charts = [
-                { id: '#chart-2015', filename: 'chart_2015.svg' },
-                { id: '#chart-2025', filename: 'chart_2025.svg' },
-                { id: '#chart-change', filename: 'chart_change.svg' }
+                { id: '#chart-2015', legendId: '#legend-2015', filename: 'bar_2015.svg' },
+                { id: '#chart-2025', legendId: '#legend-2025', filename: 'bar_2025.svg' },
+                { id: '#chart-change', legendId: '#legend-change', filename: 'bar_change.svg' }
             ];
 
-            charts.forEach(({ id, filename }) => {
+            charts.forEach(({ id, legendId, filename }) => {
                 const container = document.querySelector(id);
                 const svg = container ? container.querySelector('svg') : null;
+                const legendDiv = document.querySelector(legendId);
                 if (!svg) return;
 
                 // Clone to avoid mutating live DOM
@@ -363,6 +364,74 @@
                 // Ensure xmlns attributes are present for standalone SVG
                 cloned.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
                 cloned.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+
+                // Add legend to SVG if it exists
+                if (legendDiv) {
+                    const legendGroup = document.createElementNS('http://www.w3.org/2000/svg', 'g');
+                    legendGroup.setAttribute('class', 'legend-group');
+                    
+                    // Position legend on the right side
+                    const svgWidth = cloned.viewBox.baseVal.width || parseFloat(cloned.getAttribute('width')) || 1000;
+                    const legendX = svgWidth - 180;
+                    const legendY = 50;
+                    
+                    // Add background rectangle
+                    const bgRect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                    bgRect.setAttribute('x', legendX);
+                    bgRect.setAttribute('y', legendY);
+                    bgRect.setAttribute('width', '160');
+                    bgRect.setAttribute('height', (legendDiv.children.length - 1) * 18 + 40);
+                    bgRect.setAttribute('fill', 'rgba(255, 255, 255, 0.95)');
+                    bgRect.setAttribute('stroke', '#ccc');
+                    bgRect.setAttribute('stroke-width', '1');
+                    bgRect.setAttribute('rx', '8');
+                    legendGroup.appendChild(bgRect);
+                    
+                    let currentY = legendY + 15;
+                    
+                    // Add legend items
+                    Array.from(legendDiv.children).forEach(child => {
+                        if (child.tagName === 'H4') {
+                            const title = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                            title.setAttribute('x', legendX + 10);
+                            title.setAttribute('y', currentY);
+                            title.setAttribute('font-size', '14px');
+                            title.setAttribute('font-weight', '600');
+                            title.setAttribute('fill', '#333');
+                            title.textContent = child.textContent;
+                            legendGroup.appendChild(title);
+                            currentY += 20;
+                        } else if (child.classList.contains('legend-item')) {
+                            const colorBox = child.querySelector('.legend-color');
+                            const label = child.querySelector('span');
+                            
+                            if (colorBox && label) {
+                                // Color box
+                                const rect = document.createElementNS('http://www.w3.org/2000/svg', 'rect');
+                                rect.setAttribute('x', legendX + 10);
+                                rect.setAttribute('y', currentY - 10);
+                                rect.setAttribute('width', '12');
+                                rect.setAttribute('height', '12');
+                                rect.setAttribute('fill', colorBox.style.backgroundColor);
+                                rect.setAttribute('rx', '2');
+                                legendGroup.appendChild(rect);
+                                
+                                // Label text
+                                const text = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+                                text.setAttribute('x', legendX + 28);
+                                text.setAttribute('y', currentY);
+                                text.setAttribute('font-size', '12px');
+                                text.setAttribute('fill', '#333');
+                                text.textContent = label.textContent;
+                                legendGroup.appendChild(text);
+                                
+                                currentY += 18;
+                            }
+                        }
+                    });
+                    
+                    cloned.appendChild(legendGroup);
+                }
 
                 // Inline computed styles for text and shapes to preserve appearances
                 const inlineStyles = (node) => {
