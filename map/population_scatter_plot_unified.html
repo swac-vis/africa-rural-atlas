@@ -637,14 +637,14 @@
             max-width: 400px;
             background: #ffffff;
             border-left: 1px solid #D7D394;
-            z-index: 9996;
+            z-index: 10002; /* Higher than data source footer */
             transform: translateX(100%);
             transition: transform 0.3s ease;
             overflow-y: auto;
             overflow-x: hidden;
             display: flex;
             flex-direction: column;
-            height: 100vh; /* Full height */
+            height: 100vh; /* Full height, can overlap with data source footer */
         }
         
         .detail-panel.show {
@@ -697,6 +697,7 @@
         .detail-panel-content {
             flex: 1;
             padding: 16px;
+            padding-bottom: 120px; /* Add space at bottom for scrolling */
             overflow-y: auto;
             overflow-x: hidden;
             min-height: 0;
