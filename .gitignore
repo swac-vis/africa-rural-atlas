@@ -51,3 +51,6 @@ healthsites/data/pharmacy_accessibility_analysis_detailed.json
 healthsites/data/Africa_all_healthsites.geojson
 healthsites/data/Africa_healthsites_point.dbf
 healthsites/data/Africa_healthsites_polygon.dbf
+
+
+food/

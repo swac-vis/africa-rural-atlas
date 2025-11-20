@@ -6,84 +6,260 @@
     <title>Africa Population Distribution</title>
     <script src="https://d3js.org/d3.v7.min.js"></script>
     <style>
+        /* ===== 字体系统 ===== */
+        * {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+        }
+        
         body {
-            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #f5f5f5;
+            background-color: #F7F7F7;
             overflow: hidden;
+            color: #19160f;
         }
-        .container {
+        
+        /* ===== 整体布局：左右分栏 ===== */
+        .app-container {
             width: 100vw;
             height: 100vh;
-            background-color: white;
             display: flex;
             flex-direction: column;
-        }
-        h1 {
-            text-align: center;
-            color: #333;
-            margin: 10px 0;
-            font-size: clamp(16px, 3vw, 24px);
-            padding: 0 10px;
-        }
-        .controls {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 24px;
-            margin-bottom: 15px;
-            padding: 20px 24px;
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
-            border-radius: 12px;
-            border: 1px solid #e2e8f0;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            flex-wrap: wrap;
-            backdrop-filter: blur(10px);
-            position: relative;
-            z-index: 9998;
-            transition: all 0.3s ease;
+            background-color: #F7F7F7;
         }
         
-        .controls.collapsed {
-            padding: 8px 24px;
-            margin-bottom: 5px;
+        /* Main content area (header + main-content) should take available space */
+        .app-container > .main-content {
+            flex: 1;
+            min-height: 0;
         }
         
-        .controls.collapsed .control-group {
+        /* ===== 标题栏（已移除，标题移到sidebar） ===== */
+        .header {
             display: none;
         }
         
-        .controls.collapsed .collapse-btn {
-            transform: rotate(180deg);
+        /* Sidebar标题样式 */
+        .sidebar-title {
+            margin: -20px -20px 0 -20px;
+            padding: 16px 20px 8px 20px;
+            font-size: 18px;
+            font-weight: 600;
+            background: #E4E2BD;
+            color: #501E1D;
+            letter-spacing: -0.3px;
         }
         
-        .collapse-btn {
-            position: absolute;
-            right: 8px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 16px;
-            height: 16px;
-            background: transparent;
-            border: none;
+        /* Sidebar副标题样式 */
+        .sidebar-subtitle {
+            margin: 0 -20px 20px -20px;
+            padding: 0 20px 12px 20px;
+            font-size: 12px;
+            font-weight: 400;
+            background: #E4E2BD;
+            color: #823624;
+            letter-spacing: 0.3px;
+            border-bottom: 1px solid #D7D394;
+            line-height: 1.4;
+        }
+        
+        /* Sidebar底部区域 */
+        .sidebar-footer {
+            margin-top: auto;
+            padding-top: 20px;
+            border-top: 1px solid #D7D394;
+        }
+        
+        .export-svg-btn {
+            width: 100%;
+            padding: 10px 16px;
+            font-size: 13px;
+            font-weight: 500;
+            border: 1.5px solid #D7D394;
+            background: #ffffff;
+            color: #501E1D;
+            border-radius: 6px;
             cursor: pointer;
-            opacity: 0.4;
             transition: all 0.2s ease;
+        }
+        
+        .export-svg-btn:hover {
+            background: #E4E2BD;
+            border-color: #BC8D42;
+            color: #501E1D;
+        }
+        
+        .export-svg-btn:active {
+            background: #D7D394;
+        }
+        
+        /* ===== 主内容区域：左右分栏 ===== */
+        .main-content {
+            flex: 1;
+            display: flex;
+            overflow: hidden;
+            min-height: 0;
+        }
+        
+        /* ===== 左侧控件面板 ===== */
+        .sidebar {
+            width: 280px;
+            background: #ffffff;
+            border-right: 1px solid #D7D394;
+            display: flex;
+            flex-direction: column;
+            flex-shrink: 0;
+            transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-y: auto;
+            overflow-x: hidden;
+            position: relative;
+            z-index: 100;
+        }
+        
+        .sidebar.collapsed {
+            width: 0;
+            background: transparent;
+            border-right: none;
+        }
+        
+        .sidebar-toggle {
+            position: fixed;
+            top: 0;
+            bottom: 0;
+            left: 280px;
+            width: 12px;
+            background: #ffffff;
+            border-top: none;
+            border-bottom: none;
+            border-right: 1px solid #D7D394;
+            border-left: none;
+            cursor: pointer;
             display: flex;
             align-items: center;
             justify-content: center;
+            color: #501E1D;
             font-size: 10px;
-            color: #64748b;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 100;
+            writing-mode: vertical-rl;
+            text-orientation: mixed;
         }
         
-        .collapse-btn:hover {
-            opacity: 0.7;
+        .sidebar-toggle:hover {
+            background: #E4E2BD;
+            color: #823624;
+            border-right-color: #BC8D42;
+            transform: translateX(1px);
         }
         
-        .collapse-btn::before {
-            content: "▼";
-            font-size: 8px;
+        .sidebar-toggle:active {
+            transform: translateX(0.5px);
+        }
+        
+        .sidebar.collapsed .sidebar-toggle {
+            left: 0;
+            transform: none;
+        }
+        
+        .sidebar.collapsed .sidebar-toggle:hover {
+            transform: translateX(1px);
+        }
+        
+        .sidebar.collapsed .sidebar-toggle:active {
+            transform: translateX(0.5px);
+        }
+        
+        .sidebar-content {
+            padding: 20px;
+            flex: 1;
+            overflow-y: auto;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .sidebar.collapsed .sidebar-content {
+            display: none !important;
+        }
+        
+        .sidebar.collapsed .sidebar-title,
+        .sidebar.collapsed .sidebar-subtitle,
+        .sidebar.collapsed .sidebar-footer,
+        .sidebar.collapsed .controls,
+        .sidebar.collapsed .control-group,
+        .sidebar.collapsed .control-section {
+            display: none !important;
+        }
+        
+        .sidebar.collapsed {
+            overflow: hidden;
+        }
+        
+        /* ===== 右侧地图区域 ===== */
+        .map-area {
+            flex: 1;
+            position: relative;
+            background: #F7F7F7;
+            overflow: hidden;
+        }
+        
+        .container {
+            width: 100%;
+            height: 100%;
+            background-color: transparent;
+            display: flex;
+            flex-direction: column;
+        }
+        /* ===== 控件面板样式 ===== */
+        .controls {
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+            position: relative;
+            flex: 1;
+            width: 100%;
+            box-sizing: border-box;
+        }
+        
+        .control-section {
+            margin-bottom: 24px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #D7D394;
+        }
+        
+        .control-section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+        
+        .control-section-title {
+            font-size: 11px;
+            font-weight: 600;
+            color: #823624;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 12px;
+            padding: 0 4px;
+        }
+        
+        .control-group {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+            margin-bottom: 16px;
+        }
+        
+        .control-group:last-child {
+            margin-bottom: 0;
+        }
+        
+        .control-group label {
+            font-weight: 500;
+            font-size: 13px;
+            color: #19160f;
+            margin-bottom: 4px;
         }
         
         /* Zoom control styles */
@@ -105,8 +281,8 @@
         .zoom-btn {
             width: 40px;
             height: 40px;
-            background: white;
-            border: 1px solid #ccc;
+            background: #ffffff;
+            border: 1px solid #D7D394;
             border-radius: 4px;
             cursor: pointer;
             display: flex;
@@ -114,14 +290,13 @@
             justify-content: center;
             font-size: 18px;
             font-weight: bold;
-            color: #333;
+            color: #501E1D;
             transition: all 0.2s;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
         
         .zoom-btn:hover {
-            background: #f0f0f0;
-            border-color: #999;
+            background: #E4E2BD;
+            border-color: #BC8D42;
         }
         
         .zoom-btn:active {
@@ -135,7 +310,7 @@
         
         /* SVG legend styles in legend */
         .figure-container {
-            
+            /* Container for legend figures */
         }
         
         .figure-container foreignObject {
@@ -148,138 +323,87 @@
             height: auto;
         }
         
-        /* Data Source Footer Styles */
+        /* ===== 数据来源区域（在页面底部） ===== */
         .data-source-footer {
-            background: #f8fafc;
-            border-top: 1px solid #e2e8f0;
-            padding: 5px 10px;
-            font-size: 8px;
-            color: #64748b;
-            margin-top: auto;
+            padding: 8px 16px;
+            background: #F7F7F7;
+            border-top: 1px solid #D7D394;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 10001;
+        }
+        
+        .data-source {
+            font-size: 10px;
+            color: #823624;
+            line-height: 1.4;
         }
         
         .data-source a {
-            color: #2E86AB;
+            color: #501E1D;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.2s ease;
+            font-size: 10px;
         }
         
         .data-source a:hover {
-            color: #1e5a7a;
+            color: #823624;
             text-decoration: underline;
         }
         
         .data-note {
             font-style: italic;
-            color: #94a3b8;
-            margin-top: 3px;
+            color: rgba(25, 22, 15, 0.6);
+            margin-top: 4px;
+            font-size: 9px;
+            line-height: 1.3;
         }
         
-        @media (max-width: 768px) {
-            .data-source-footer {
-                padding: 12px 15px;
-            }
-        }
-        .controls {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 18px;
-            margin-bottom: 15px;
-            padding: 10px 18px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-        }
+        /* ===== 输入控件样式 ===== */
         
-        .control-group {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        
-        .control-group label {
-            font-weight: 500;
-            font-size: 12px;
-            color: #495057;
-            white-space: nowrap;
-            letter-spacing: 0.3px;
-        }
-        
-        /* Base styles */
-        .control-group input {
-            padding: 4px 8px;
-            border: 1px solid #dee2e6;
-            border-radius: 4px;
-            font-size: 12px;
-            background-color: white;
-            transition: all 0.2s ease;
-            min-width: 80px;
-            position: relative;
-        }
-        
-        .control-group input:hover {
-            border-color: #adb5bd;
-        }
-        
-        .control-group input:focus {
-            outline: none;
-            border-color: #2E86AB;
-            box-shadow: 0 0 0 2px rgba(46, 134, 171, 0.1);
-        }
-        
-        /* Select-specific styles - using higher priority */
         .control-group select {
-            padding: 6px 10px;
-            border: 2px solid #e9ecef;
-            border-radius: 4px;
+            padding: 8px 32px 8px 12px;
+            border: 1.5px solid #D7D394;
+            border-radius: 6px;
             font-size: 13px;
-            background-color: white;
-            transition: all 0.3s ease;
-            min-width: 80px;
+            background-color: #ffffff;
+            transition: all 0.2s ease;
+            width: 100%;
             position: relative;
-            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%23823624' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m6 8 4 4 4-4'/%3e%3c/svg%3e");
             background-repeat: no-repeat;
-            background-position: right 8px center;
-            background-size: 16px;
-            padding-right: 28px;
+            background-position: right 10px center;
+            background-size: 14px;
             appearance: none;
             -webkit-appearance: none;
             -moz-appearance: none;
             cursor: pointer;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            text-indent: 2px;
+            color: #501E1D;
             font-weight: 500;
-            color: #374151;
+            text-indent: 2px;
             letter-spacing: 0.025em;
         }
         
         .control-group select:hover {
-            border-color: #d1d5db;
-            background-color: #fafbfc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transform: translateY(-1px);
+            border-color: #BC8D42;
+            background-color: #F7F7F7;
         }
         
         .control-group select:active {
-            background-color: #f8f9fa;
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #E4E2BD;
         }
         
         .control-group select:focus {
             outline: none;
-            border-color: #2E86AB;
-            box-shadow: 0 0 0 3px rgba(46, 134, 171, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1);
-            background-color: white;
+            border-color: #A5682F;
+            background-color: #ffffff;
         }
         
         /* Try to customize dropdown option styles (partially supported by browsers) */
         .control-group select option {
             background-color: white !important;
-            color: #374151 !important;
+            color: #19160f !important;
             font-size: 13px !important;
             padding: 12px 16px !important;
             border: none !important;
@@ -288,19 +412,19 @@
         }
         
         .control-group select option:hover {
-            background-color: #f3f4f6 !important;
-            color: #1f2937 !important;
+            background-color: #E4E2BD !important;
+            color: #501E1D !important;
         }
         
         .control-group select option:checked {
-            background: linear-gradient(135deg, #2E86AB 0%, #1e5a7a 100%) !important;
-            color: white !important;
+            background: #D7D394 !important;
+            color: #501E1D !important;
             font-weight: 600 !important;
         }
         
         .control-group select option:selected {
-            background: linear-gradient(135deg, #2E86AB 0%, #1e5a7a 100%) !important;
-            color: white !important;
+            background: #D7D394 !important;
+            color: #501E1D !important;
             font-weight: 600 !important;
         }
         
@@ -312,12 +436,12 @@
         /* Firefox-specific styles */
         .control-group select:-moz-focusring {
             color: transparent;
-            text-shadow: 0 0 0 #374151;
+            text-shadow: 0 0 0 #823624;
         }
         
         /* Add focus indicator for dropdown */
         .control-group select:focus-visible {
-            outline: 2px solid #2E86AB;
+            outline: 2px solid #823624;
             outline-offset: 2px;
         }
         
@@ -325,7 +449,7 @@
         .control-group label {
             font-weight: 600;
             font-size: 13px;
-            color: #374151;
+            color: #19160f;
             white-space: nowrap;
             letter-spacing: 0.025em;
             margin-bottom: 4px;
@@ -338,7 +462,8 @@
             flex-direction: column;
             align-items: flex-start;
             gap: 6px;
-            min-width: 100px;
+            width: 100%;
+            box-sizing: border-box;
             position: relative;
             z-index: 9999;
         }
@@ -359,7 +484,7 @@
             bottom: 0;
             border-radius: 6px;
             padding: 2px;
-            background: linear-gradient(135deg, #2E86AB, #1e5a7a);
+            background: #823624;
             -webkit-mask: 
                 linear-gradient(#fff 0 0) content-box, 
                 linear-gradient(#fff 0 0);
@@ -371,13 +496,6 @@
         
         .control-group select:focus::before {
             opacity: 1;
-        }
-        
-        /* Add inner shadow effect for dropdown */
-        .control-group select {
-            box-shadow: 
-                inset 0 1px 2px rgba(255, 255, 255, 0.8),
-                0 2px 4px rgba(0, 0, 0, 0.05);
         }
         
         /* Subtle animation when dropdown is hovered */
@@ -421,48 +539,47 @@
         
         /* Range input styles */
         .control-group input[type="range"] {
-            width: 70px;
-            height: 4px;
-            border-radius: 2px;
-            background: linear-gradient(to right, #dee2e6 0%, #dee2e6 100%);
+            width: 100%;
+            height: 6px;
+            border-radius: 3px;
+            background: #D7D394;
             outline: none;
             -webkit-appearance: none;
             cursor: pointer;
+            margin: 8px 0;
         }
         
         .control-group input[type="range"]::-webkit-slider-thumb {
             -webkit-appearance: none;
             appearance: none;
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #2E86AB 0%, #1e5a7a 100%);
+            background: #823624;
             cursor: pointer;
             transition: all 0.2s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border: 2px solid white;
         }
         
         .control-group input[type="range"]::-webkit-slider-thumb:hover {
-            background: linear-gradient(135deg, #1e5a7a 0%, #0d3d5a 100%);
-            transform: scale(1.1);
-            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+            background: #501E1D;
+            transform: scale(1.15);
         }
         
         .control-group input[type="range"]::-moz-range-thumb {
-            width: 16px;
-            height: 16px;
+            width: 18px;
+            height: 18px;
             border-radius: 50%;
-            background: linear-gradient(135deg, #2E86AB 0%, #1e5a7a 100%);
+            background: #823624;
             cursor: pointer;
-            border: none;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            border: 2px solid white;
         }
         
-        .control-group span {
-            font-size: 11px;
-            color: #6c757d;
-            min-width: 35px;
-            text-align: center;
+        .control-group label span {
+            font-size: 12px;
+            color: #19160f;
+            font-weight: 600;
+            margin-left: 4px;
         }
         
         /* Adjust chart container when controls are collapsed */
@@ -470,39 +587,34 @@
             margin-top: -10px; /* Compensate for reduced controls height */
         }
         
-        /* Ensure smooth transition for chart container */
+        /* ===== 图表容器 ===== */
         .chart-container {
-            flex: 1;
             width: 100%;
+            height: 100%;
             position: relative;
-            min-height: 300px;
-            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
-        }
-        
-        /* Force chart container to take remaining space */
-        .container:has(.controls.collapsed) .chart-container {
-            flex: 1;
-            min-height: calc(100vh - 120px); /* Adjust based on collapsed controls height */
+            background: #F7F7F7;
         }
         
         .legend {
             position: absolute;
-            top: 20px;
+            bottom: 20px;
             left: 20px;
-            width: 80px;
-            background-color: rgba(255, 255, 255, 0.95);
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            padding: 10px;
+            width: 200px;
+            background-color: rgba(255, 255, 255, 0.98);
+            border: 1px solid #D7D394;
+            border-radius: 8px;
+            padding: 12px;
             z-index: 1000;
+            max-height: calc(100vh - 100px);
+            overflow: visible;
         }
         
         .tooltip {
-            position: absolute;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
+            position: fixed;
+            background: rgba(255, 255, 255, 0.95);
+            color: #501E1D;
             padding: 8px;
             border-radius: 4px;
             font-size: clamp(10px, 2vw, 12px);
@@ -510,23 +622,29 @@
             opacity: 0;
             transition: opacity 0.3s;
             max-width: 200px;
-            z-index: 1000;
+            z-index: 10000;
+            border: 1px solid #D7D394;
+            box-shadow: 0 2px 8px rgba(130, 54, 36, 0.2);
         }
         
         /* Detail panel styles */
         .detail-panel {
             position: fixed;
             right: 0;
+            top: 0; /* Start from top since no header */
             width: 400px;
             min-width: 400px;
-            background: white;
-            border-left: 0.5px solid #ddd;
+            max-width: 400px;
+            background: #ffffff;
+            border-left: 1px solid #D7D394;
             z-index: 9996;
             transform: translateX(100%);
             transition: transform 0.3s ease;
             overflow-y: auto;
+            overflow-x: hidden;
             display: flex;
             flex-direction: column;
+            height: 100vh; /* Full height */
         }
         
         .detail-panel.show {
@@ -534,19 +652,20 @@
         }
         
         .detail-panel-header {
-            padding: 15px 20px;
-            border-bottom: 2px solid #f0f0f0;
-            background: #f8f9fa;
+            padding: 12px 16px;
+            border-bottom: 1px solid #D7D394;
+            background: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
+            flex-shrink: 0;
         }
         
         .detail-panel-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #333;
+            font-size: 16px;
+            font-weight: 600;
+            color: #501E1D;
             margin: 0;
         }
         
@@ -559,7 +678,7 @@
             border: none;
             font-size: 24px;
             cursor: pointer;
-            color: #666;
+            color: #823624;
             padding: 5px;
             border-radius: 50%;
             width: 35px;
@@ -571,26 +690,29 @@
         }
         
         .detail-panel-close:hover {
-            background: #f0f0f0;
-            color: #333;
+            background: #E4E2BD;
+            color: #501E1D;
         }
         
         .detail-panel-content {
             flex: 1;
-            padding: 20px;
+            padding: 16px;
             overflow-y: auto;
+            overflow-x: hidden;
+            min-height: 0;
         }
         
         .detail-panel-section {
-            margin-bottom: 25px;
+            margin-bottom: 20px;
         }
         
         .detail-panel-section h3 {
-            margin: 0 0 15px 0;
-            color: #333;
-            font-size: 16px;
-            border-bottom: 1px solid #e9ecef;
-            padding-bottom: 8px;
+            margin: 0 0 12px 0;
+            color: #501E1D;
+            font-size: 14px;
+            font-weight: 600;
+            border-bottom: 1px solid #D7D394;
+            padding-bottom: 6px;
         }
         
         .detail-panel-item {
@@ -602,12 +724,12 @@
         
         .detail-panel-label {
             font-weight: 600;
-            color: #555;
+            color: #501E1D;
             font-size: 14px;
         }
         
         .detail-panel-value {
-            color: #333;
+            color: #501E1D;
             text-align: right;
             font-size: 14px;
         }
@@ -615,14 +737,21 @@
         .detail-panel-chart {
             margin-top: 20px;
             padding: 15px;
-            background: #f8f9fa;
+            background: rgba(255, 255, 255, 0.5);
             border-radius: 8px;
             overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
         }
         
         .detail-panel-chart > div {
             width: 100%;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         #detailPanelChartContainer,
@@ -631,13 +760,19 @@
             width: 100%;
             max-width: 100%;
             overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         
         #detailPanelChartContainer svg,
         #detailPanelDensityChartContainer svg,
         #detailPanelAreaChartContainer svg {
             max-width: 100%;
+            max-height: 100%;
             height: auto;
+            display: block;
+            margin: 0 auto;
         }
         
         .detail-panel-chart h3 {
@@ -649,21 +784,26 @@
         /* Zoom view container */
         .zoom-view {
             width: 100%;
-            height: 200px;
+            height: 240px;
             background: #fff;
-            border-radius: 8px;
-            border: 0.5px solid #ddd;
-            margin-bottom: 20px;
+            border-radius: 6px;
+            border: 1px solid #D7D394;
+            margin-bottom: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
             position: relative;
             overflow: hidden;
+            flex-shrink: 0;
         }
         
         .zoom-view svg {
-            max-width: 100%;
-            max-height: 100%;
+            width: 100%;
+            height: 100%;
+            display: block;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
         /* Click effects */
@@ -722,10 +862,11 @@
         /* Custom dropdown styles */
         .custom-select {
             position: relative;
-            display: inline-block;
+            display: block;
             font-family: inherit;
-            z-index: 9999;
-            min-width: 80px;
+            z-index: 10000;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .select-display {
@@ -741,40 +882,33 @@
             color: #374151;
             letter-spacing: 0.025em;
             transition: all 0.3s ease;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-            min-width: 80px;
-            max-width: 120px;
+            width: 100%;
+            box-sizing: border-box;
         }
         
         .select-display:hover {
-            border-color: #d1d5db;
-            background-color: #fafbfc;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transform: translateY(-1px);
+            border-color: #BC8D42;
+            background-color: #F7F7F7;
         }
         
         .select-display:active {
-            transform: translateY(0);
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            background-color: #f1f5f9;
         }
         
         .select-options {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
+            position: fixed;
             background: white;
             border: 2px solid #e9ecef;
             border-top: none;
             border-radius: 0 0 4px 4px;
             max-height: 200px;
             overflow-y: auto;
-            z-index: 9999;
+            z-index: 10001 !important;
             opacity: 0;
             visibility: hidden;
             transform: translateY(-10px);
             transition: all 0.3s ease;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            min-width: 200px;
         }
         
         .select-option {
@@ -825,12 +959,23 @@
          */
         
         /* Ensure dropdown is above all elements */
-        .custom-select,
-        .select-display,
-        .select-options,
+        .custom-select {
+            position: relative;
+            z-index: 10000 !important;
+        }
+        
+        .select-display {
+            position: relative;
+            z-index: 10000 !important;
+        }
+        
+        .select-options {
+            z-index: 10001 !important;
+        }
+        
         .select-option {
             position: relative;
-            z-index: 9999 !important;
+            z-index: 10001 !important;
         }
         
         /* Ensure control panel is at correct layer */
@@ -851,71 +996,195 @@
         .detail-panel {
             z-index: 9995 !important;
         }
+        
+        /* ===== 响应式设计 ===== */
+        @media (max-width: 1200px) {
+            .sidebar {
+                width: 260px;
+            }
+            
+            .sidebar.collapsed {
+                width: 60px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .header {
+                height: 45px;
+                padding: 0 12px;
+            }
+            
+            .header h1 {
+                font-size: 16px;
+            }
+            
+            .main-content {
+                height: calc(100vh - 45px);
+            }
+            
+            .sidebar {
+                position: fixed;
+                left: 0;
+                top: 45px;
+                height: calc(100vh - 45px);
+                z-index: 1000;
+                transform: translateX(-100%);
+                transition: transform 0.3s ease;
+            }
+            
+            .sidebar.open {
+                transform: translateX(0);
+            }
+            
+            .sidebar.collapsed {
+                width: 280px;
+            }
+            
+            .map-area {
+                width: 100%;
+            }
+            
+            .sidebar-toggle {
+                display: block;
+            }
+            
+            .header-actions {
+                gap: 8px;
+            }
+            
+            #export-svg {
+                padding: 4px 8px;
+                font-size: 11px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .header h1 {
+                font-size: 14px;
+            }
+            
+            .sidebar {
+                width: 100%;
+                max-width: 320px;
+            }
+            
+            .control-section {
+                margin-bottom: 20px;
+                padding-bottom: 16px;
+            }
+            
+            .sidebar-content {
+                padding: 16px;
+            }
+        }
+        
+        /* ===== 滚动条样式优化 ===== */
+        .sidebar::-webkit-scrollbar {
+            width: 6px;
+        }
+        
+        .sidebar::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        
+        .sidebar::-webkit-scrollbar-thumb:hover {
+            background: #94a3b8;
+        }
     </style>
 </head>
 <body>
-    <button id="export-svg" style="position: fixed; top: 12px; right: 12px; z-index: 9999; padding: 6px 10px; font-size: 12px; border: 1px solid #d1d5db; background: #f9fafb; color: #374151; border-radius: 6px; cursor: pointer;">Export SVG</button>
-    <div class="container">
-        <h1>Africa Population Distribution</h1>
+    <div class="app-container">
+        <!-- 主内容区域：左右分栏 -->
+        <div class="main-content">
+            <!-- 左侧控件面板 -->
+            <div class="sidebar" id="sidebar">
+                <button class="sidebar-toggle" id="sidebarToggle" title="Toggle Sidebar">◀</button>
+                <div class="sidebar-content">
+                    <!-- 标题 -->
+                    <h1 class="sidebar-title">Africa Population Distribution</h1>
+                    <p class="sidebar-subtitle">Visualizing rural and urban population patterns to reflect spatial distribution and support evidence-based policy decisions</p>
+                    
         <div class="controls">
             <div class="control-group">
-                <label>Grid Size:</label>
+                            <label>Grid Size</label>
                 <select id="gridSize">
                     <option value="100">100km</option>
                     <option value="1000">1000km</option>
                 </select>
             </div>
+                        
             <div class="control-group">
-                <label>Color Mapping:</label>
+                            <label>Color Mapping</label>
                 <select id="colorMapping">
                     <option value="density">Density</option>
                     <option value="population">Population</option>
                 </select>
             </div>
+                        
             <div class="control-group">
-                <label>Visualization Mode:</label>
+                            <label>Visualization Mode</label>
                 <select id="visualizationMode">
                     <option value="scatter">Scatter Plot</option>
                     <option value="concentric">Concentric Circles</option>
                     <option value="rect">Rectangle</option>
                 </select>
             </div>
+                        
             <div class="control-group">
-                <label>Area Data:</label>
+                            <label>Area Data</label>
                 <select id="areaData">
                     <option value="true">Use Real Area</option>
                     <option value="false">Use Fixed Area</option>
                 </select>
             </div>
+                        
             <div class="control-group">
-                <label>Circle Size:</label>
+                            <label>Circle Size: <span id="circleSizeValue">0.2</span></label>
                 <input type="range" id="circleSize" min="0.1" max="0.6" step="0.1" value="0.2">
-                <span id="circleSizeValue">0.2</span>
             </div>
+                        
             <div class="control-group">
-                <label>Circle Spacing:</label>
+                            <label>Circle Spacing: <span id="circleSpacingValue">0.4</span></label>
                 <input type="range" id="circleSpacing" min="0.3" max="1.2" step="0.1" value="0.4">
-                <span id="circleSpacingValue">0.4</span>
             </div>
+                        
             <div class="control-group">
-                <label>Max Circles per Cell:</label>
-                <input type="range" id="maxCircles" min="1" max="256" step="1" value="16">
-                <span id="maxCirclesValue">16</span>
+                            <label>Max Circles per Cell: <span id="maxCirclesValue">256</span></label>
+                            <input type="range" id="maxCircles" min="16" max="1024" step="1" value="256">
             </div>
-            <button class="collapse-btn" id="collapseBtn" title="Collapse/Expand Controls"></button>
         </div>
+                    
+                    <!-- Export SVG 按钮 -->
+                    <div class="sidebar-footer">
+                        <button id="export-svg" class="export-svg-btn">Export SVG</button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 右侧地图区域 -->
+            <div class="map-area">
+                <div class="container">
         <div class="chart-container" id="chart">
             <!-- Zoom Control Buttons -->
             <div class="zoom-controls">
                 <button class="zoom-btn" id="resetZoomBtn" title="Reset Zoom">⌂</button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
         
-        <!-- Data Source and Notes -->
+        <!-- Data Source Footer -->
         <div class="data-source-footer">
             <div class="data-source">
+                <strong>Data Source:</strong>
                 <a href="https://hub.worldpop.org/doi/10.5258/SOTON/WP00004" target="_blank" rel="noopener noreferrer">
-                    Data from WorldPop | Africa Continental Population Dataset, 2020
+                    WorldPop Africa Continental Population Dataset, 2020
                 </a>
             </div>
             <div class="data-note">
@@ -941,45 +1210,52 @@
     </div>
 
     <script>
-        // Export all SVGs on the page as separate files
+        // Export map SVG only (excluding legend)
         function exportAllSVGs() {
-            const svgs = Array.from(document.querySelectorAll('svg'));
-            if (!svgs.length) return;
+            // Only get the map SVG from #chart container, exclude legend
+            const chartContainer = document.querySelector('#chart');
+            if (!chartContainer) return;
+            
+            const mapSvg = chartContainer.querySelector('svg');
+            if (!mapSvg) return;
 
-            svgs.forEach((svg, idx) => {
-                const cloned = svg.cloneNode(true);
-                cloned.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
-                cloned.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
+            // Clone the SVG
+            const cloned = mapSvg.cloneNode(true);
+            
+            // Remove legend elements from the clone
+            const legendElements = cloned.querySelectorAll('.legend, g.legend');
+            legendElements.forEach(el => el.remove());
+            
+            cloned.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+            cloned.setAttribute('xmlns:xlink', 'http://www.w3.org/1999/xlink');
 
-                const inlineStyles = (node) => {
-                    const walker = document.createTreeWalker(node, NodeFilter.SHOW_ELEMENT, null);
-                    while (walker.nextNode()) {
-                        const el = walker.currentNode;
-                        const computed = window.getComputedStyle(el);
-                        const props = ['fill','stroke','stroke-width','font','font-family','font-size','font-weight','opacity','text-anchor','dominant-baseline'];
-                        const styleStr = props.map(p => {
-                            const v = computed.getPropertyValue(p);
-                            return v && v !== 'normal' && v !== 'none' ? `${p}:${v}` : '';
-                        }).filter(Boolean).join(';');
-                        if (styleStr) el.setAttribute('style', (el.getAttribute('style') ? el.getAttribute('style') + ';' : '') + styleStr);
-                    }
-                };
-                inlineStyles(cloned);
+            const inlineStyles = (node) => {
+                const walker = document.createTreeWalker(node, NodeFilter.SHOW_ELEMENT, null);
+                while (walker.nextNode()) {
+                    const el = walker.currentNode;
+                    const computed = window.getComputedStyle(el);
+                    const props = ['fill','stroke','stroke-width','font','font-family','font-size','font-weight','opacity','text-anchor','dominant-baseline'];
+                    const styleStr = props.map(p => {
+                        const v = computed.getPropertyValue(p);
+                        return v && v !== 'normal' && v !== 'none' ? `${p}:${v}` : '';
+                    }).filter(Boolean).join(';');
+                    if (styleStr) el.setAttribute('style', (el.getAttribute('style') ? el.getAttribute('style') + ';' : '') + styleStr);
+                }
+            };
+            inlineStyles(cloned);
 
-                const serializer = new XMLSerializer();
-                const source = serializer.serializeToString(cloned);
-                const blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
-                const url = URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                const base = (document.title || 'chart').replace(/\s+/g, '_').toLowerCase();
-                const idPart = svg.id ? svg.id : `svg_${idx+1}`;
-                a.href = url;
-                a.download = `${base}__${idPart}.svg`;
-                document.body.appendChild(a);
-                a.click();
-                document.body.removeChild(a);
-                URL.revokeObjectURL(url);
-            });
+            const serializer = new XMLSerializer();
+            const source = serializer.serializeToString(cloned);
+            const blob = new Blob([source], { type: 'image/svg+xml;charset=utf-8' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            const base = (document.title || 'chart').replace(/\s+/g, '_').toLowerCase();
+            a.href = url;
+            a.download = `${base}_map.svg`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
         }
         document.addEventListener('DOMContentLoaded', function() {
             const btn = document.getElementById('export-svg');
@@ -988,21 +1264,11 @@
         // Dynamically set detail panel position
         function updateDetailPanelPosition() {
             const detailPanel = document.getElementById('detailPanel');
-            const header = document.querySelector('h1');
-            const controls = document.querySelector('.controls');
             
-            if (detailPanel && header && controls) {
-                // Get actual height of header (including margin)
-                const headerRect = header.getBoundingClientRect();
-                const headerBottom = headerRect.bottom;
-                
-                // Get actual height of controls (including border)
-                const controlsRect = controls.getBoundingClientRect();
-                const controlsBottom = controlsRect.bottom;
-                
-                // Use controls bottom position as detail panel top position
-                detailPanel.style.top = controlsBottom + 'px';
-                detailPanel.style.height = `calc(100vh - ${controlsBottom}px)`;
+            if (detailPanel) {
+                // No header anymore, panel starts from top
+                detailPanel.style.top = '0px';
+                detailPanel.style.height = '100vh';
             }
         }
 
@@ -1043,9 +1309,13 @@
             colorMapping: 'density',
             circleSize: 0.2,  // Default value for 100km
             circleSpacing: 0.4,  // Default value for 100km
-            maxCircles: 16,  // Default value
+            maxCircles: 256,  // Default value
             visualizationMode: 'scatter'  // New: visualization mode
         };
+        
+        // Track if user has manually adjusted circle parameters
+        let userAdjustedCircleSize = false;
+        let userAdjustedCircleSpacing = false;
 
         // Zoom-related variables
         let currentZoom = d3.zoomIdentity;
@@ -1108,10 +1378,48 @@
 
         // Abstract mapping strategy parameters
         const MAPPING_CONFIG = {
-            maxCircles: 16,  // Default value, will be obtained from currentConfig
+            maxCircles: 256,  // Default value, will be obtained from currentConfig
             urbanAreaShare: 0.2,
             ruralAreaShare: 0.8
         };
+
+        // Calculate adaptive circle size and spacing based on screen size
+        function calculateAdaptiveCircleParams() {
+            const container = document.querySelector('.chart-container');
+            if (!container) return { circleSize: 0.2, circleSpacing: 0.4 };
+            
+            const width = container.clientWidth;
+            const height = container.clientHeight;
+            
+            // Base size: use the smaller dimension as reference
+            const baseSize = Math.min(width, height);
+            
+            // Calculate adaptive parameters
+            // For larger screens, use larger values; for smaller screens, use smaller values
+            // Normalize to a reference size (e.g., 1000px)
+            const referenceSize = 1000;
+            const scaleFactor = baseSize / referenceSize;
+            
+            // Clamp scale factor between 0.5 and 2.0 to avoid extreme values
+            const clampedScale = Math.max(0.5, Math.min(2.0, scaleFactor));
+            
+            // Base values for different grid sizes - increased for better spacing
+            // Adjusted based on user feedback: target circleSize ~0.4, circleSpacing ~0.8 at medium screens
+            const baseCircleSize = currentConfig.gridSize === '100' ? 0.32 : 0.6;
+            const baseCircleSpacing = currentConfig.gridSize === '100' ? 0.64 : 1.2;
+            
+            // Apply scaling with additional multiplier to increase overall size
+            // Use a power curve to make the scaling more responsive
+            const powerScale = Math.pow(clampedScale, 0.9); // Slightly flatter curve
+            const adaptiveCircleSize = baseCircleSize * powerScale;
+            const adaptiveCircleSpacing = baseCircleSpacing * powerScale;
+            
+            // Clamp to reasonable ranges - increased max values
+            const circleSize = Math.max(0.15, Math.min(0.7, adaptiveCircleSize));
+            const circleSpacing = Math.max(0.4, Math.min(1.5, adaptiveCircleSpacing));
+            
+            return { circleSize, circleSpacing };
+        }
 
         // Responsive function
         function getResponsiveDimensions() {
@@ -1233,15 +1541,45 @@
 
         // Create legend
         function createLegend(svg, colorScale, maxValue) {
-            const legendWidth = 160; // Reduce width, keep minimal
+            const legendWidth = 200; // Restore larger width
             const legendHeight = 200;
+            
+            // Get SVG dimensions
+            const svgNode = svg.node();
+            const svgWidth = svgNode ? svgNode.clientWidth || svgNode.getBoundingClientRect().width : 1000;
+            const svgHeight = svgNode ? svgNode.clientHeight || svgNode.getBoundingClientRect().height : 800;
 
             // Remove old legend
             svg.selectAll(".legend").remove();
 
+            // Calculate total legend height for horizontal layout
+            // figure section: ~25 (title) + ~150 (figure) = ~175px
+            // color scale section: title at y=160, horizontal slider at y=180, height=20, so ends at y=200
+            // labels are below slider, add ~40px for labels
+            // Total: ~240px from top of legend to bottom
+            const colorScaleTitleY = 200;
+            const baseSliderY = 220;
+            const baseSliderHeight = 20; // Horizontal slider height
+            const baseSliderWidth = 400; // Horizontal slider width
+            const labelsBelowSlider = 40; // Space for threshold labels below
+            const margin = 20;
+            
+            // Calculate total height
+            const totalLegendHeight = baseSliderY + baseSliderHeight + labelsBelowSlider;
+            
+            // Position legend in bottom-left corner - moved right
+            const legendX = margin + 40;
+            const legendY = svgHeight - totalLegendHeight - margin;
+            const safeLegendY = Math.max(margin, legendY);
+            
+            // Use calculated values
+            const sliderY = baseSliderY;
+            const sliderHeight = baseSliderHeight;
+            const sliderWidth = baseSliderWidth;
+
             const legend = svg.append("g")
                 .attr("class", "legend")
-                .attr("transform", `translate(20, 20)`);
+                .attr("transform", `translate(${legendX}, ${safeLegendY})`);
 
             // Add encoding rule description
             legend.append("text")
@@ -1272,11 +1610,11 @@
                 return 'figures/scatter_100.svg'; // Default
             };
 
-            // Create legend container
+            // Create legend container - restore original width
             const legendFigure = figureContainer.append("foreignObject")
                 .attr("x", -20)
                 .attr("y", 0)
-                .attr("width", 400)
+                .attr("width", 400) // Restore original width
                 .attr("height", 150);
 
             // Load SVG legend
@@ -1360,7 +1698,7 @@
 
             legend.append("text")
                 .attr("x", 0)
-                .attr("y", 200)
+                .attr("y", colorScaleTitleY)
                 .attr("font-size", "9px")
                 .attr("font-weight", "500")
                 .attr("fill", "#495057")
@@ -1370,11 +1708,9 @@
             const colorEditor = legend.append("g")
                 .attr("class", "color-editor");
             
-            // Basic slider settings (vertical)
-            const sliderWidth = 16;
-            const sliderHeight = 350;
-            const sliderY = 220;
+            // Basic slider settings (horizontal) - use calculated values from above
             const sliderX = 0;
+            // sliderHeight, sliderY, and sliderWidth are already calculated above
             
             // Create slider background
             const sliderBackground = colorEditor.append("rect")
@@ -1387,13 +1723,13 @@
                 .attr("stroke-width", 1)
                 .attr("rx", 2);
             
-            // Create gradient background (vertical)
+            // Create gradient background (horizontal)
             const gradient = colorEditor.append("defs")
                 .append("linearGradient")
                 .attr("id", "colorGradient")
                 .attr("x1", "0%")
-                .attr("y1", "100%")
-                .attr("x2", "0%")
+                .attr("y1", "0%")
+                .attr("x2", "100%")
                 .attr("y2", "0%");
             
             // Add gradient stop points
@@ -1421,59 +1757,79 @@
             
             // Delete the original starting point marker, because 0 is now a real threshold
             
-            // Create markers for each threshold (including 0)
+            // Create markers for each threshold (including 0) - horizontal layout
             allThresholds.forEach((threshold, i) => {
-                // Position markers based on color position on slider
-                // Now 0 is the first threshold, positioned at the bottom
+                // Position markers based on color position on slider (horizontal)
                 const colorPosition = i / (allThresholds.length - 1); // Position between 0 and 1
-                const y = sliderY + sliderHeight - colorPosition * sliderHeight;
+                const x = sliderX + colorPosition * sliderWidth;
+                const y = sliderY + sliderHeight / 2;
                 
-                // Create marker
+                // Create marker - clickable to change color
                 const marker = thresholdMarkers.append("circle")
-                    .attr("cx", sliderX + sliderWidth / 2)
+                    .attr("cx", x)
                     .attr("cy", y)
-                    .attr("r", 4)
+                    .attr("r", 5)
                     .attr("fill", allColors[i]) // Fill marker with corresponding color
-                    .attr("stroke", "#6c757d")
-                    .attr("stroke-width", 1)
+                    .attr("stroke", "#ffffff")
+                    .attr("stroke-width", 0.5)
                     .style("cursor", "pointer")
-                    .attr("data-threshold-index", i);
-                
-                // Add delete button (except first, last and dynamic endpoint)
-                if (i > 0 && i < allThresholds.length - 2) {
-                    const deleteBtn = thresholdMarkers.append("text")
-                        .attr("x", sliderX + sliderWidth / 2 + 8)
-                        .attr("y", y - 8)
-                        .attr("font-size", "10px")
-                        .attr("fill", "#adb5bd")
-                        .style("cursor", "pointer")
-                        .text("×")
-                        .on("click", function() {
-                            // Delete threshold (need to adjust index because allThresholds includes 0 and dynamic endpoint)
-                            const thresholdIndex = i - 1; // Subtract 0's index
-                            if (thresholdIndex >= 0 && thresholdIndex < thresholds.length) {
-                                // Save 0's color to ensure it won't be deleted
-                                const zeroColor = colors[0];
-                                
-                                thresholds.splice(thresholdIndex, 1);
-                                colors.splice(thresholdIndex, 1);
-                                
-                                // Ensure 0's color remains unchanged
-                                if (colors[0] !== zeroColor) {
-                                    colors[0] = zeroColor;
-                                }
-                                
-                            updateLegendFigure();
+                    .style("pointer-events", "all")
+                    .attr("data-threshold-index", i)
+                    .on("mouseover", function() {
+                        d3.select(this).attr("r", 6).attr("stroke-width", 1);
+                    })
+                    .on("mouseout", function() {
+                        d3.select(this).attr("r", 5).attr("stroke-width", 0.5);
+                    })
+                    .on("click", function(event) {
+                        event.stopPropagation(); // Prevent triggering label click
+                        // Create color picker
+                        const colorInput = document.createElement("input");
+                        colorInput.type = "color";
+                        colorInput.value = colors[i];
+                        colorInput.style.position = "absolute";
+                        colorInput.style.left = (event.pageX - 10) + "px";
+                        colorInput.style.top = (event.pageY - 10) + "px";
+                        colorInput.style.zIndex = "10000";
+                        
+                        colorInput.addEventListener("change", function() {
+                            // Update color
+                            colors[i] = this.value;
+                            
+                            // Update marker color
+                            marker.attr("fill", colors[i]);
+                            
+                            // Update gradient background
+                            updateGradientBackground();
+                            
+                            // Update color scale and map
                             updateColorScale();
+                            
+                            // Safely remove input box
+                            if (document.body.contains(this)) {
+                                document.body.removeChild(this);
                             }
                         });
-                }
+                        
+                        colorInput.addEventListener("blur", function() {
+                            // Delay removal to avoid conflict with change event
+                            setTimeout(() => {
+                                if (document.body.contains(this)) {
+                                    document.body.removeChild(this);
+                                }
+                            }, 100);
+                        });
+                        
+                        document.body.appendChild(colorInput);
+                        colorInput.focus();
+                        colorInput.click();
+                    });
                 
-                // Add threshold label
+                // Add threshold label - position below marker for horizontal layout
                 const label = thresholdMarkers.append("text")
-                    .attr("x", sliderX + sliderWidth + 15)
-                    .attr("y", y)
-                    .attr("text-anchor", "start")
+                    .attr("x", x)
+                    .attr("y", sliderY + sliderHeight + 18)
+                    .attr("text-anchor", "middle")
                     .attr("font-size", "9px")
                     .attr("fill", "#495057")
                     .style("cursor", i === allThresholds.length - 1 ? "default" : "pointer")
@@ -1534,184 +1890,9 @@
                         input.focus();
                         input.select();
                     });
-                
-                // Add color selection button (each marker can manually select color, including dynamic endpoint)
-                const colorBtn = thresholdMarkers.append("text")
-                    .attr("x", sliderX + sliderWidth / 2 + 8)
-                    .attr("y", y + 8)
-                    .attr("font-size", "10px")
-                    .attr("fill", "#6f42c1")
-                    .style("cursor", "pointer")
-                    .text("🎨")
-                    .on("click", function(event) {
-                        // Create color picker
-                        const colorInput = document.createElement("input");
-                        colorInput.type = "color";
-                        colorInput.value = colors[i];
-                        colorInput.style.position = "absolute";
-                        colorInput.style.left = (event.pageX - 10) + "px";
-                        colorInput.style.top = (event.pageY - 10) + "px";
-                        colorInput.style.zIndex = "10000";
-                        
-                        colorInput.addEventListener("change", function() {
-                            // Update color
-                            colors[i] = this.value;
-                            
-                            // Update marker color
-                            marker.attr("fill", colors[i]);
-                            
-                            // Update gradient background
-                            updateGradientBackground();
-                            
-                            // Update color scale and map
-                            updateColorScale();
-                            
-                            // Safely remove input box
-                            if (document.body.contains(this)) {
-                                document.body.removeChild(this);
-                            }
-                        });
-                        
-                        colorInput.addEventListener("blur", function() {
-                            // Delay removal to avoid conflict with change event
-                            setTimeout(() => {
-                                if (document.body.contains(this)) {
-                                    document.body.removeChild(this);
-                                }
-                            }, 100);
-                        });
-                        
-                        document.body.appendChild(colorInput);
-                        colorInput.focus();
-                        colorInput.click();
-                    });
-                
-                // Add drag functionality - modify to adjust color instead of position (dynamic endpoint cannot be dragged)
-                                  if (i < allThresholds.length - 1) { // Dynamic endpoint cannot be dragged
-                marker.call(d3.drag()
-                    .on("drag", function(event) {
-                        // Calculate color corresponding to drag position
-                        const dragY = Math.max(sliderY, Math.min(sliderY + sliderHeight, event.y));
-                        const colorIndex = (sliderY + sliderHeight - dragY) / sliderHeight;
-                        
-                        // Generate new color based on drag position color location on slider
-                        // Here we interpolate based on actual color distribution on slider
-                        if (i === 0) {
-                            // First color: color interpolation from slider bottom to first threshold position
-                            const newColor = d3.interpolateRgb(colors[0], colors[1])(colorIndex);
-                            colors[i] = newColor;
-                        } else if (i === colors.length - 1) {
-                            // Last color: color interpolation from second-to-last color to slider top
-                            const newColor = d3.interpolateRgb(colors[colors.length - 2], colors[colors.length - 1])(colorIndex);
-                            colors[i] = newColor;
-                        } else {
-                            // Middle colors: interpolate between adjacent colors based on position on slider
-                            const prevColor = colors[i - 1];
-                            const nextColor = colors[i + 1];
-                            const newColor = d3.interpolateRgb(prevColor, nextColor)(colorIndex);
-                            colors[i] = newColor;
-                        }
-                        
-                        // Update marker color
-                        marker.attr("fill", colors[i]);
-                        
-                        // Update gradient background
-                        updateGradientBackground();
-                        
-                        // Update color scale and map
-                        updateColorScale();
-                    }));
-                }
             });
             
-            // Add "Add Threshold" button
-            const addButton = colorEditor.append("g")
-                .style("cursor", "pointer")
-                .on("click", function() {
-                    // Get dynamic endpoint value
-                    const dynamicEndpoint = getDynamicEndpoint(window.gridData || [], currentConfig.colorMapping);
-                    
-                    // Calculate new threshold position (at middle position, but cannot exceed dynamic endpoint)
-                    const maxThreshold = Math.max(...thresholds);
-                    const midPoint = Math.round(maxThreshold / 2);
-                    let newThreshold = midPoint;
-                    
-                    // Ensure new threshold doesn't exceed dynamic endpoint
-                    if (newThreshold >= dynamicEndpoint) {
-                        newThreshold = Math.round(dynamicEndpoint * 0.8);
-                    }
-                    
-                    // First sort thresholds to find correct insertion position
-                    const sortedThresholds = [...thresholds, newThreshold].sort((a, b) => a - b);
-                    const insertIndex = sortedThresholds.indexOf(newThreshold);
-                    
-                    // Generate color for new threshold: interpolate between two adjacent colors
-                    let newColor;
-                    if (insertIndex === 0) {
-                        // If it's the smallest threshold, use first color
-                        newColor = colors[0];
-                    } else if (insertIndex === sortedThresholds.length - 1) {
-                        // If it's the largest threshold, use last color
-                        newColor = colors[colors.length - 1];
-                    } else {
-                        // At middle position, interpolate between two adjacent colors
-                        const prevThreshold = sortedThresholds[insertIndex - 1];
-                        const nextThreshold = sortedThresholds[insertIndex + 1];
-                        const prevThresholdIndex = thresholds.indexOf(prevThreshold);
-                        const nextThresholdIndex = thresholds.indexOf(nextThreshold);
-                        
-                        if (prevThresholdIndex >= 0 && nextThresholdIndex >= 0) {
-                            const prevColor = colors[prevThresholdIndex];
-                            const nextColor = colors[nextThresholdIndex];
-                            newColor = d3.interpolateRgb(prevColor, nextColor)(0.5);
-                        } else {
-                            // If corresponding color cannot be found, use default color
-                            newColor = colors[Math.floor(colors.length / 2)];
-                        }
-                    }
-                    
-                    // Save 0's color to ensure it won't be changed
-                    const zeroColor = colors[0];
-                    
-                    // Insert new threshold and color at correct position
-                    thresholds.splice(insertIndex, 0, newThreshold);
-                    colors.splice(insertIndex, 0, newColor);
-                    
-                    // Ensure 0's color remains unchanged
-                    if (colors[0] !== zeroColor) {
-                        colors[0] = zeroColor;
-                    }
-                    
-                    // Recreate legend and update color scale
-                    updateLegendFigure();
-                    updateColorScale();
-                });
-            
-            addButton.append("circle")
-                .attr("cx", sliderX + sliderWidth / 2)
-                .attr("cy", sliderY + sliderHeight + 25)
-                .attr("r", 6)
-                .attr("fill", "#222")
-                .attr("stroke", "#495057")
-                .attr("stroke-width", 1);
-            
-            addButton.append("text")
-                .attr("x", sliderX + sliderWidth / 2)
-                .attr("y", sliderY + sliderHeight + 28)
-                .attr("text-anchor", "middle")
-                .attr("font-size", "10px")
-                .attr("fill", "white")
-                .text("+");
-            
-            // addButton.append("text")
-            //     .attr("x", sliderX + sliderWidth / 2)
-            //     .attr("y", sliderY + sliderHeight + 38)
-            //     .attr("text-anchor", "middle")
-            //     .attr("font-size", "8px")
-            //     .attr("fill", "#6c757d")
-            //     .text("Add");
-            
-            // Delete additional color edit buttons, only add color picker at both ends of slider
+            // Add threshold button removed - users can click on color markers to modify colors
             
             // Add function to update gradient background
             function updateGradientBackground() {
@@ -1834,13 +2015,22 @@
         }
         
         // Create concentric circle zoom view
-        function createConcentricZoomView(svg, cell, colorScale, width, height) {
+        function createConcentricZoomView(contentGroup, cell, colorScale, width, height) {
+            // Center horizontally
             const centerX = width / 2;
-            const centerY = height / 2;
+            // Account for title at top (title is at y=20, roughly 25px height)
+            const titleHeight = 25;
+            // Center vertically in the space below the title
+            const centerY = titleHeight + (height - titleHeight) / 2;
             
-            // Calculate concentric circle size
-            const areaSize = Math.min(width, height) * 0.6;
-            const radius = currentConfig.gridSize === '100' ? areaSize * 0.5 : areaSize * 0.5;
+            // Calculate concentric circle size - use maximum available space
+            const availableWidth = width - 20; // Leave 10px padding on each side
+            const availableHeight = height - titleHeight - 20; // Leave space for title and padding
+            const maxRadius = Math.min(availableWidth, availableHeight) / 2;
+            // Use 90% of available space for the outer circle (increased from 85%)
+            const radius = maxRadius * 0.90;
+            
+            console.log('Concentric zoom view - centerX:', centerX, 'centerY:', centerY, 'radius:', radius);
             
             // Calculate urban area ratio (for inner circle size)
             const totalArea = cell.urban_area + cell.rural_area;
@@ -1858,7 +2048,7 @@
             const ruralValue = calculateValue(cell, false);
             const safeRuralValue = isFinite(ruralValue) && ruralValue >= 0 ? ruralValue : 0;
             
-            svg.append("circle")
+            contentGroup.append("circle")
                 .attr("cx", centerX)
                 .attr("cy", centerY)
                 .attr("r", radius)
@@ -1870,52 +2060,50 @@
                 const urbanValue = calculateValue(cell, true);
                 const safeUrbanValue = isFinite(urbanValue) && urbanValue >= 0 ? urbanValue : 0;
                 
-                svg.append("circle")
+                contentGroup.append("circle")
                     .attr("cx", centerX)
                     .attr("cy", centerY)
                     .attr("r", innerRadius)
                     .attr("fill", colorScale(safeUrbanValue))
                     .attr("opacity", 0.9);
             }
-            
-            // Add title
-            svg.append("text")
-                .attr("x", width / 2)
-                .attr("y", 20)
-                .attr("text-anchor", "middle")
-                .attr("font-size", "14px")
-                .attr("font-weight", "bold")
-                .attr("fill", "#333")
-                .text("Zoomed Cell View");
         }
 
         // Create rectangle zoom view
-        function createRectZoomView(svg, cell, colorScale, width, height) {
+        function createRectZoomView(contentGroup, cell, colorScale, width, height) {
+            // Center horizontally
             const centerX = width / 2;
-            const centerY = height / 2;
+            // Account for title at top (title is at y=20, roughly 25px height)
+            const titleHeight = 25;
+            // Center vertically in the space below the title
+            const centerY = titleHeight + (height - titleHeight) / 2;
             
-            // Calculate rectangle size
-            const areaSize = Math.min(width, height) * 0.6;
-            const rectSize = currentConfig.gridSize === '100' ? 
-                areaSize * 1 : areaSize * 1;
+            // Calculate rectangle size - use maximum available space
+            const availableWidth = width - 20; // Leave 10px padding on each side
+            const availableHeight = height - titleHeight - 20; // Leave space for title and padding
+            const maxSize = Math.min(availableWidth, availableHeight);
+            // Use 90% of available space for the rectangle (increased from 85%)
+            const rectSize = maxSize * 0.90;
+            
+            console.log('Rect zoom view - centerX:', centerX, 'centerY:', centerY, 'rectSize:', rectSize);
             
             // Calculate urban area ratio (for inner rectangle size)
-                const totalArea = cell.urban_area + cell.rural_area;
-                let urbanAreaRatio;
-                if (currentConfig.useRealArea) {
-                    // Use real area ratio
-                    urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
-                } else {
-                    // Use fixed area mode: inner rectangle occupies 20% of the area
-                    urbanAreaRatio = 0.2;
-                }
-                const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // Inner rectangle size
+            const totalArea = cell.urban_area + cell.rural_area;
+            let urbanAreaRatio;
+            if (currentConfig.useRealArea) {
+                // Use real area ratio
+                urbanAreaRatio = totalArea > 0 ? cell.urban_area / totalArea : 0;
+            } else {
+                // Use fixed area mode: inner rectangle occupies 20% of the area
+                urbanAreaRatio = 0.2;
+            }
+            const innerRectSize = rectSize * Math.sqrt(urbanAreaRatio); // Inner rectangle size
             
             // Draw outer rectangle (representing rural population)
             const ruralValue = calculateValue(cell, false);
             const safeRuralValue = isFinite(ruralValue) && ruralValue >= 0 ? ruralValue : 0;
             
-            svg.append("rect")
+            contentGroup.append("rect")
                 .attr("x", centerX - rectSize/2)
                 .attr("y", centerY - rectSize/2)
                 .attr("width", rectSize)
@@ -1928,7 +2116,7 @@
                 const urbanValue = calculateValue(cell, true);
                 const safeUrbanValue = isFinite(urbanValue) && urbanValue >= 0 ? urbanValue : 0;
                 
-                svg.append("rect")
+                contentGroup.append("rect")
                     .attr("x", centerX - innerRectSize/2)
                     .attr("y", centerY - innerRectSize/2)
                     .attr("width", innerRectSize)
@@ -1936,16 +2124,6 @@
                     .attr("fill", colorScale(safeUrbanValue))
                     .attr("opacity", 0.9);
             }
-            
-            // Add title
-            svg.append("text")
-                .attr("x", width / 2)
-                .attr("y", 20)
-                .attr("text-anchor", "middle")
-                .attr("font-size", "14px")
-                .attr("font-weight", "bold")
-                .attr("fill", "#333")
-                .text("Zoomed Cell View");
         }
         
         // Create zoomed view
@@ -1953,13 +2131,39 @@
             // Clear existing content
             container.innerHTML = '';
             
-            const width = container.clientWidth || 350;
-            const height = 180;
+            // Use fixed viewBox dimensions for consistent scaling
+            // The actual display size will be controlled by CSS
+            // Increased height for better visibility on smaller screens
+            const viewBoxWidth = 350;
+            const viewBoxHeight = 240;
+            
+            // Debug: Log to confirm function is being called
+            console.log('createZoomView called with mode:', currentConfig.visualizationMode);
             
             const svg = d3.select(container)
                 .append("svg")
-                .attr("width", width)
-                .attr("height", height);
+                .attr("viewBox", `0 0 ${viewBoxWidth} ${viewBoxHeight}`)
+                .attr("preserveAspectRatio", "xMidYMid meet")
+                .attr("width", "100%")
+                .attr("height", "100%")
+                .style("display", "block")
+                .style("margin", "0")
+                .style("padding", "0")
+                .style("overflow", "hidden");
+            
+            // Add clipPath to ensure nothing goes outside viewBox
+            const defs = svg.append("defs");
+            const clipPath = defs.append("clipPath")
+                .attr("id", "zoomViewClip");
+            clipPath.append("rect")
+                .attr("x", 0)
+                .attr("y", 0)
+                .attr("width", viewBoxWidth)
+                .attr("height", viewBoxHeight);
+            
+            // Create a group with clipPath applied
+            const contentGroup = svg.append("g")
+                .attr("clip-path", "url(#zoomViewClip)");
             
             // Create color scale
             const colorScale = createColorScale([cell]);
@@ -1967,67 +2171,102 @@
             // Select drawing method based on visualization mode
             if (currentConfig.visualizationMode === 'concentric') {
                 // Concentric circle mode
-                createConcentricZoomView(svg, cell, colorScale, width, height);
+                console.log('Creating concentric zoom view');
+                createConcentricZoomView(contentGroup, cell, colorScale, viewBoxWidth, viewBoxHeight);
             } else if (currentConfig.visualizationMode === 'rect') {
                 // Rectangle mode
-                createRectZoomView(svg, cell, colorScale, width, height);
+                console.log('Creating rect zoom view');
+                createRectZoomView(contentGroup, cell, colorScale, viewBoxWidth, viewBoxHeight);
             } else {
-                // Scatter plot mode (original logic)
-            
-            // Calculate circle positions - use same parameters as main view but scale proportionally
-            const centerX = width / 2;
-            const centerY = height / 2;
-            // Adjust zoom factor based on grid size
-            const zoomFactor = currentConfig.gridSize === '1000' ? 1 : 2.5;
-            const areaSize = Math.min(width, height) * 0.6;
-            
-            // Use same generation function as main view, but adjust parameters
-            const gridSize = Math.ceil(Math.sqrt(circleCount));
-            const circleRadius = (areaSize / gridSize) * currentConfig.circleSize * zoomFactor;
-            const spacing = (areaSize / gridSize) * currentConfig.circleSpacing * zoomFactor;
-            
-            const allPositions = [];
-            for (let i = 0; i < gridSize; i++) {
-                for (let j = 0; j < gridSize; j++) {
-                    const x = centerX - areaSize/2 + (j + 0.5) * spacing;
-                    const y = centerY - areaSize/2 + (i + 0.5) * spacing;
-                    allPositions.push({ x, y, i, j });
-                }
-            }
-            
-            const centerI = Math.floor(gridSize / 2);
-            const centerJ = Math.floor(gridSize / 2);
-            allPositions.sort((a, b) => {
-                const distA = Math.sqrt((a.i - centerI) ** 2 + (a.j - centerJ) ** 2);
-                const distB = Math.sqrt((b.i - centerI) ** 2 + (b.j - centerJ) ** 2);
-                return distA - distB;
-            });
-            
-            // Draw circles
-            for (let idx = 0; idx < circleCount; idx++) {
-                const pos = allPositions[idx];
-                const isUrban = idx < urbanCircles;
-                const value = calculateValue(cell, isUrban);
-                const safeValue = isFinite(value) && value >= 0 ? value : 0;
+                // Scatter plot mode - adjust based on circle size and spacing settings
+                console.log('Creating scatter zoom view');
+                // Use the same calculation as other modes for consistency
+                // Center horizontally
+                const centerX = viewBoxWidth / 2;
+                // Account for title at top (title is at y=20, roughly 25px height)
+                const titleHeight = 25;
+                // Center vertically in the space below the title (same as other modes)
+                const centerY = titleHeight + (viewBoxHeight - titleHeight) / 2;
                 
-                svg.append("circle")
-                    .attr("cx", pos.x)
-                    .attr("cy", pos.y)
-                    .attr("r", circleRadius)
-                    .attr("fill", colorScale(safeValue))
-                    .attr("opacity", 0.9);
+                // Calculate available space - use same calculation as other modes
+                const availableWidth = viewBoxWidth - 20; // Leave 10px padding on each side
+                const availableHeight = viewBoxHeight - titleHeight - 20; // Leave space for title and padding
+                const contentSize = Math.min(availableWidth, availableHeight);
+                
+                // Calculate the grid size needed for all circles
+                const gridSize = Math.ceil(Math.sqrt(circleCount));
+                
+                // Calculate optimal areaSize based on circle size and spacing
+                // The generateCirclePositionsInFixedArea function uses:
+                //   spacing = (areaSize / gridSize) * circleSpacing
+                //   circleRadius = (areaSize / gridSize) * circleSize
+                // 
+                // To ensure circles are well-centered and visible, we want to use
+                // most of the available space while accounting for the actual spacing needed
+                // Adjust size based on gridSize: 100km uses more space, 1000km uses less
+                const zoomAreaSize = currentConfig.gridSize === '1000' 
+                    ? contentSize * 0.60  // Smaller for 1000km
+                    : contentSize * 0.98;  // Larger for 100km
+                
+                console.log('Scatter zoom view - centerX:', centerX, 'centerY:', centerY, 'zoomAreaSize:', zoomAreaSize, 'contentSize:', contentSize, 'gridSize:', gridSize, 'circleSize:', currentConfig.circleSize, 'circleSpacing:', currentConfig.circleSpacing);
+                
+                // Generate positions with same relative layout as main map
+                let positions = generateCirclePositionsInFixedArea(circleCount, centerX, centerY, zoomAreaSize);
+                
+                // Calculate the bounding box of all positions and adjust to ensure perfect centering
+                if (positions.length > 0) {
+                    const xs = positions.map(p => p.x);
+                    const ys = positions.map(p => p.y);
+                    const minX = Math.min(...xs);
+                    const maxX = Math.max(...xs);
+                    const minY = Math.min(...ys);
+                    const maxY = Math.max(...ys);
+                    const actualCenterX = (minX + maxX) / 2;
+                    const actualCenterY = (minY + maxY) / 2;
+                    const offsetX = centerX - actualCenterX;
+                    const offsetY = centerY - actualCenterY;
+                    
+                    console.log('Position bounds - minX:', minX, 'maxX:', maxX, 'minY:', minY, 'maxY:', maxY);
+                    console.log('Actual center:', actualCenterX, actualCenterY, 'Target center:', centerX, centerY);
+                    console.log('Offset:', offsetX, offsetY);
+                    
+                    // Adjust all positions to ensure perfect centering
+                    if (Math.abs(offsetX) > 0.1 || Math.abs(offsetY) > 0.1) {
+                        positions = positions.map(pos => ({
+                            ...pos,
+                            x: pos.x + offsetX,
+                            y: pos.y + offsetY
+                        }));
+                        console.log('Adjusted positions to center. New first position:', positions[0]);
+                    }
+                }
+                
+                console.log('Generated', positions.length, 'positions. First position:', positions[0], 'Last position:', positions[positions.length - 1]);
+                
+                // Draw circles using the adjusted positions
+                positions.forEach((pos, idx) => {
+                    const isUrban = pos.spiralIndex < urbanCircles;
+                    const value = calculateValue(cell, isUrban);
+                    const safeValue = isFinite(value) && value >= 0 ? value : 0;
+                    
+                    contentGroup.append("circle")
+                        .attr("cx", pos.x)
+                        .attr("cy", pos.y)
+                        .attr("r", pos.radius)
+                        .attr("fill", colorScale(safeValue))
+                        .attr("opacity", 0.9);
+                });
             }
             
-            // Add title
+            // Add title (outside clipPath so it's always visible)
             svg.append("text")
-                .attr("x", width / 2)
+                .attr("x", viewBoxWidth / 2)
                 .attr("y", 20)
                 .attr("text-anchor", "middle")
                 .attr("font-size", "14px")
                 .attr("font-weight", "bold")
                 .attr("fill", "#333")
                 .text("Zoomed Cell View");
-            }
         }
         
         // Show detail panel
@@ -2207,7 +2446,14 @@
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
+                .attr("viewBox", `0 0 ${width} ${height}`)
+                .attr("preserveAspectRatio", "xMidYMid meet")
                 .style("max-width", "100%")
+                .style("max-height", "100%")
+                .style("width", "auto")
+                .style("height", "auto")
+                .style("display", "block")
+                .style("margin", "0 auto")
                 .style("overflow", "visible");
             
             // Data - use actual population data, unaffected by circle settings, rounded to integers, use current Cell's color allocation
@@ -2287,7 +2533,14 @@
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
+                .attr("viewBox", `0 0 ${width} ${height}`)
+                .attr("preserveAspectRatio", "xMidYMid meet")
                 .style("max-width", "100%")
+                .style("max-height", "100%")
+                .style("width", "auto")
+                .style("height", "auto")
+                .style("display", "block")
+                .style("margin", "0 auto")
                 .style("overflow", "visible");
             
             // Data - area data rounded to integers, use current Cell's color allocation
@@ -2381,7 +2634,14 @@
                 .append("svg")
                 .attr("width", width)
                 .attr("height", height)
+                .attr("viewBox", `0 0 ${width} ${height}`)
+                .attr("preserveAspectRatio", "xMidYMid meet")
                 .style("max-width", "100%")
+                .style("max-height", "100%")
+                .style("width", "auto")
+                .style("height", "auto")
+                .style("display", "block")
+                .style("margin", "0 auto")
                 .style("overflow", "visible");
             
             // Calculate density data
@@ -2519,8 +2779,46 @@
             }
         }
         
+        // Update adaptive circle parameters and sync with UI
+        function updateAdaptiveCircleParams(forceUpdate = false) {
+            const adaptiveParams = calculateAdaptiveCircleParams();
+            
+            // Only update if user hasn't manually adjusted, or if forced
+            if (!userAdjustedCircleSize || forceUpdate) {
+                currentConfig.circleSize = adaptiveParams.circleSize;
+                
+                // Update UI sliders if they exist
+                const circleSizeInput = document.getElementById('circleSize');
+                const circleSizeValue = document.getElementById('circleSizeValue');
+                
+                if (circleSizeInput) {
+                    circleSizeInput.value = adaptiveParams.circleSize;
+                }
+                if (circleSizeValue) {
+                    circleSizeValue.textContent = adaptiveParams.circleSize.toFixed(2);
+                }
+            }
+            
+            if (!userAdjustedCircleSpacing || forceUpdate) {
+                currentConfig.circleSpacing = adaptiveParams.circleSpacing;
+                
+                // Update UI sliders if they exist
+                const circleSpacingInput = document.getElementById('circleSpacing');
+                const circleSpacingValue = document.getElementById('circleSpacingValue');
+                
+                if (circleSpacingInput) {
+                    circleSpacingInput.value = adaptiveParams.circleSpacing;
+                }
+                if (circleSpacingValue) {
+                    circleSpacingValue.textContent = adaptiveParams.circleSpacing.toFixed(2);
+                }
+            }
+        }
+        
         // Initialize chart
         function initChart() {
+            // Update adaptive parameters before initializing
+            updateAdaptiveCircleParams();
             const { width, height, areaSize } = getResponsiveDimensions();
             
             // Use maxCircles from currentConfig
@@ -2592,7 +2890,7 @@
             // Apply zoom behavior to SVG
             svg.call(zoom);
 
-            const tooltip = d3.select(".chart-container")
+            const tooltip = d3.select("body")
                 .append("div")
                 .attr("class", "tooltip");
 
@@ -2756,9 +3054,12 @@
                                     <strong>Rural:</strong> ${Math.round(cell.rural_population).toLocaleString()} (${ruralValue.toFixed(1)}${valueUnit})<br>
                                     <strong>Urban Area:</strong> ${cell.urban_area.toFixed(1)} km²<br>
                                     <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²
-                                `)
-                                .style("left", (event.pageX + 10) + "px")
-                                .style("top", (event.pageY - 28) + "px");
+                                `);
+                            })
+                            .on("mousemove", function(event) {
+                                tooltip
+                                    .style("left", (event.pageX + 10) + "px")
+                                    .style("top", (event.pageY - 10) + "px");
                             })
                             .on("mouseout", () => {
                                 tooltip.transition()
@@ -2888,9 +3189,12 @@
                             <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
                             <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
                             <strong>Urban Area:</strong> ${cell.urban_area.toFixed(1)} km²
-                        `)
-                        .style("left", (event.pageX + 10) + "px")
-                        .style("top", (event.pageY - 28) + "px");
+                        `);
+                    })
+                    .on("mousemove", function(event) {
+                        tooltip
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
                     })
                     .on("mouseout", () => {
                         tooltip.transition()
@@ -2928,9 +3232,12 @@
                                 <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
                                 <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
                                 <strong>Urban Area:</strong> ${cell.urban_area.toFixed(1)} km²
-                            `)
-                            .style("left", (event.pageX + 10) + "px")
-                            .style("top", (event.pageY - 28) + "px");
+                            `);
+                        })
+                        .on("mousemove", function(event) {
+                            tooltip
+                                .style("left", (event.pageX + 10) + "px")
+                                .style("top", (event.pageY - 10) + "px");
                         })
                         .on("mouseout", () => {
                             tooltip.transition()
@@ -2964,30 +3271,17 @@
                 customColorSettings.population.thresholds = [100000, 500000, 1500000, 5000000, 10000000, 30000000];
             }
             
-            // adjust circle parameters according to grid size
-            if (this.value === '100') {
-                // 100km parameters
-                currentConfig.circleSize = 0.2;
-                currentConfig.circleSpacing = 0.4;
-                currentConfig.maxCircles = 16;
-                document.getElementById('circleSize').value = 0.2;
-                document.getElementById('circleSpacing').value = 0.4;
-                document.getElementById('maxCircles').value = 16;
-                document.getElementById('circleSizeValue').textContent = '0.2';
-                document.getElementById('circleSpacingValue').textContent = '0.4';
-                document.getElementById('maxCirclesValue').textContent = '16';
-            } else {
-                // 1000km parameters
-                currentConfig.circleSize = 0.5;
-                currentConfig.circleSpacing = 1.0;
-                currentConfig.maxCircles = 100;
-                document.getElementById('circleSize').value = 0.5;
-                document.getElementById('circleSpacing').value = 1.0;
-                document.getElementById('maxCircles').value = 100;
-                document.getElementById('circleSizeValue').textContent = '0.5';
-                document.getElementById('circleSpacingValue').textContent = '1.0';
-                document.getElementById('maxCirclesValue').textContent = '100';
-            }
+            // Keep maxCircles at default 256 regardless of grid size
+            currentConfig.maxCircles = 256;
+            document.getElementById('maxCircles').value = 256;
+            document.getElementById('maxCirclesValue').textContent = '256';
+            
+            // Reset user adjustment flags when grid size changes
+            userAdjustedCircleSize = false;
+            userAdjustedCircleSpacing = false;
+            
+            // Update adaptive parameters (force update since grid size changed)
+            updateAdaptiveCircleParams(true);
             
             updateLegendFigure();
             initChart();
@@ -3006,12 +3300,14 @@
         document.getElementById('circleSize').addEventListener('input', function() {
             currentConfig.circleSize = parseFloat(this.value);
             document.getElementById('circleSizeValue').textContent = this.value;
+            userAdjustedCircleSize = true; // Mark as user-adjusted
             initChart();
         });
 
         document.getElementById('circleSpacing').addEventListener('input', function() {
             currentConfig.circleSpacing = parseFloat(this.value);
             document.getElementById('circleSpacingValue').textContent = this.value;
+            userAdjustedCircleSpacing = true; // Mark as user-adjusted
             initChart();
         });
 
@@ -3060,11 +3356,11 @@
                 return 'figures/scatter_100.svg'; // default
             };
 
-            // create legend container
+            // create legend container - restore original width
             const legendFigure = figureContainer.append("foreignObject")
                 .attr("x", -20)
                 .attr("y", 0)
-                .attr("width", 400)
+                .attr("width", 400) // Restore original width
                 .attr("height", 150);
 
             // load SVG legend
@@ -3206,9 +3502,12 @@
                             <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
                             <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
                             <strong>Urban Area:</strong> ${cell.urban_area.toFixed(1)} km²
-                        `)
-                        .style("left", (event.pageX + 10) + "px")
-                        .style("top", (event.pageY - 28) + "px");
+                        `);
+                    })
+                    .on("mousemove", function(event) {
+                        tooltip
+                            .style("left", (event.pageX + 10) + "px")
+                            .style("top", (event.pageY - 10) + "px");
                     })
                     .on("mouseout", () => {
                         tooltip.transition()
@@ -3247,9 +3546,12 @@
                                 <strong>Urban Value:</strong> ${urbanValue.toFixed(1)}${valueUnit}<br>
                                 <strong>Rural Area:</strong> ${cell.rural_area.toFixed(1)} km²<br>
                                 <strong>Urban Area:</strong> ${cell.urban_area.toFixed(1)} km²
-                            `)
-                            .style("left", (event.pageX + 10) + "px")
-                            .style("top", (event.pageY - 28) + "px");
+                            `);
+                        })
+                        .on("mousemove", function(event) {
+                            tooltip
+                                .style("left", (event.pageX + 10) + "px")
+                                .style("top", (event.pageY - 10) + "px");
                         })
                         .on("mouseout", () => {
                             tooltip.transition()
@@ -3386,9 +3688,10 @@
                 customSelect.className = 'custom-select';
                 customSelect.style.cssText = `
                     position: relative;
-                    display: inline-block;
-                    min-width: ${Math.max(select.offsetWidth, 80)}px;
+                    display: block;
+                    width: 100%;
                     font-family: inherit;
+                    box-sizing: border-box;
                 `;
                 
                 // create display area
@@ -3407,9 +3710,8 @@
                     color: #374151;
                     letter-spacing: 0.025em;
                     transition: all 0.3s ease;
-                    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-                    min-width: 80px;
-                    max-width: 120px;
+                    width: 100%;
+                    box-sizing: border-box;
                 `;
                 
                 // add dropdown arrow
@@ -3431,23 +3733,20 @@
                 // create dropdown options list
                 const optionsList = document.createElement('div');
                 optionsList.className = 'select-options';
+                // Initial styles - position will be calculated when opened
                 optionsList.style.cssText = `
-                    position: absolute;
-                    top: 100%;
-                    left: 0;
-                    right: 0;
+                    position: fixed;
                     background: white;
                     border: 2px solid #e9ecef;
                     border-top: none;
                     border-radius: 0 0 4px 4px;
                     max-height: 200px;
                     overflow-y: auto;
-                    z-index: 9999;
+                    z-index: 10001;
                     opacity: 0;
                     visibility: hidden;
                     transform: translateY(-10px);
                     transition: all 0.3s ease;
-                    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
                 `;
                 
                 // add options
@@ -3497,19 +3796,27 @@
                 function toggleOptions() {
                     isOpen = !isOpen;
                     if (isOpen) {
+                        // Calculate position for fixed positioning
+                        const rect = selectDisplay.getBoundingClientRect();
+                        optionsList.style.position = 'fixed';
+                        optionsList.style.top = (rect.bottom + window.scrollY) + 'px';
+                        optionsList.style.left = rect.left + 'px';
+                        optionsList.style.width = rect.width + 'px';
+                        optionsList.style.zIndex = '10001';
+                        
                         optionsList.style.opacity = '1';
                         optionsList.style.visibility = 'visible';
                         optionsList.style.transform = 'translateY(0)';
                         arrow.style.transform = 'translateY(-50%) rotate(180deg)';
-                        selectDisplay.style.borderColor = '#2E86AB';
-                        selectDisplay.style.boxShadow = '0 0 0 3px rgba(46, 134, 171, 0.15), 0 4px 8px rgba(0, 0, 0, 0.1)';
+                        selectDisplay.style.borderColor = '#A5682F';
+                        selectDisplay.style.boxShadow = '0 0 0 3px rgba(165, 104, 47, 0.15)';
                     } else {
                         optionsList.style.opacity = '0';
                         optionsList.style.visibility = 'hidden';
                         optionsList.style.transform = 'translateY(-10px)';
                         arrow.style.transform = 'translateY(-50%) rotate(0deg)';
-                        selectDisplay.style.borderColor = '#e9ecef';
-                        selectDisplay.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+                        selectDisplay.style.borderColor = '#D7D394';
+                        selectDisplay.style.boxShadow = 'none';
                     }
                 }
                 
@@ -3519,38 +3826,57 @@
                 // hover effect
                 selectDisplay.addEventListener('mouseenter', function() {
                     if (!isOpen) {
-                        this.style.borderColor = '#d1d5db';
-                        this.style.backgroundColor = '#fafbfc';
-                        this.style.boxShadow = '0 4px 8px rgba(0, 0, 0, 0.1)';
+                        this.style.borderColor = '#BC8D42';
+                        this.style.backgroundColor = '#F7F7F7';
+                        this.style.boxShadow = '0 4px 8px rgba(130, 54, 36, 0.1)';
                         this.style.transform = 'translateY(-1px)';
                     }
                 });
                 
                 selectDisplay.addEventListener('mouseleave', function() {
                     if (!isOpen) {
-                        this.style.borderColor = '#e9ecef';
+                        this.style.borderColor = '#D7D394';
                         this.style.backgroundColor = 'white';
-                        this.style.boxShadow = '0 2px 4px rgba(0, 0, 0, 0.05)';
+                        this.style.boxShadow = 'none';
                         this.style.transform = 'translateY(0)';
                     }
                 });
                 
                 // assemble custom dropdown
                 customSelect.appendChild(selectDisplay);
-                customSelect.appendChild(optionsList);
+                // Add optionsList to body to avoid overflow clipping
+                document.body.appendChild(optionsList);
                 
                 // replace original select
                 select.style.display = 'none';
                 select.parentNode.insertBefore(customSelect, select);
                 
+                // Store reference to customSelect for cleanup
+                optionsList.dataset.customSelectId = customSelect.getAttribute('data-id') || 
+                    (customSelect.setAttribute('data-id', 'select-' + Date.now() + '-' + Math.random()), 
+                     customSelect.getAttribute('data-id'));
+                
                 // click outside to close dropdown
                 document.addEventListener('click', function(e) {
-                    if (!customSelect.contains(e.target)) {
+                    if (!customSelect.contains(e.target) && !optionsList.contains(e.target)) {
                         if (isOpen) {
                             toggleOptions();
                         }
                     }
                 });
+                
+                // Update position on scroll/resize
+                let updatePosition = function() {
+                    if (isOpen) {
+                        const rect = selectDisplay.getBoundingClientRect();
+                        optionsList.style.top = (rect.bottom + window.scrollY) + 'px';
+                        optionsList.style.left = rect.left + 'px';
+                        optionsList.style.width = rect.width + 'px';
+                    }
+                };
+                
+                window.addEventListener('scroll', updatePosition, true);
+                window.addEventListener('resize', updatePosition);
             });
         }
 
@@ -3559,6 +3885,8 @@
         window.addEventListener('resize', () => {
             clearTimeout(resizeTimeout);
             resizeTimeout = setTimeout(() => {
+                // Update adaptive parameters on resize
+                updateAdaptiveCircleParams();
                 initChart();
                 updateDetailPanelPosition(); // update detail panel position when window size changes
                 updateZoomInfo(); // update zoom info
@@ -3566,11 +3894,32 @@
             }, 250);
         });
         
+        // Sidebar toggle functionality
+        function setupSidebarToggle() {
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const sidebar = document.getElementById('sidebar');
+            
+            if (sidebarToggle && sidebar) {
+                sidebarToggle.addEventListener('click', () => {
+                    sidebar.classList.toggle('collapsed');
+                    const isCollapsed = sidebar.classList.contains('collapsed');
+                    sidebarToggle.textContent = isCollapsed ? '▶' : '◀';
+                    sidebarToggle.title = isCollapsed ? 'Expand Sidebar' : 'Collapse Sidebar';
+                    
+                    // Trigger resize to update map
+                    setTimeout(() => {
+                        window.dispatchEvent(new Event('resize'));
+                    }, 300);
+                });
+            }
+        }
+        
         // create custom dropdown after page load
         window.addEventListener('load', function() {
             setTimeout(createCustomSelects, 100);
             updateZoomControlsPosition(); // Initialize zoom controls position
-            setupCollapseControls(); // Initialize collapse controls functionality
+            setupCollapseControls(); // Initialize collapse controls functionality (legacy)
+            setupSidebarToggle(); // Initialize sidebar toggle
         });
     </script>
 </body>
