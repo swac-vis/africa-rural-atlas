@@ -56,11 +56,11 @@
         /* Sidebar标题样式 */
         .sidebar-title {
             margin: -20px -20px 0 -20px;
-            padding: 20px 12px 12px 12px;
+            padding: 20px 12px 6px 12px;
             font-size: 20px;
             font-weight: 700;
             background: #E4E2BD;
-            color: #501E1D;
+            color: #000000;
             letter-spacing: -0.5px;
             line-height: 1.3;
             border-bottom: none;
@@ -559,8 +559,9 @@
             border-color: #ef4444;
         }
         
+        /* Remove green border for valid state to prevent flash on page load */
         .control-group select:valid {
-            border-color: #10b981;
+            border-color: rgb(215, 211, 148);
         }
         
         /* Responsive design optimization */
@@ -1400,8 +1401,8 @@
         let customColorSettings = {
             population: {
                 thresholds: currentConfig.gridSize === '1000' ? 
-                    [100000, 500000, 1500000, 5000000, 10000000, 30000000] :
-                    [1000, 5000, 15000, 50000, 100000, 300000],
+                    [400000, 1000000, 5000000, 10000000, 20000000, 40000000] :
+                    [2000, 10000, 30000, 80000, 200000, 600000],
                 colors: ["#F7F7F7", "#E4E2BD", "#D7D394", "#BC8D42", "#A5682F", "#823624", "#501E1D"]
             },
             density: {
@@ -1616,11 +1617,11 @@
             svg.selectAll(".legend").remove();
 
             // Calculate total legend height for horizontal layout
-            // figure section: ~25 (title) + ~150 (figure) = ~175px
-            // color scale section: title at y=160, horizontal slider at y=180, height=20, so ends at y=200
+            // figure section: title at y=15, figure at y=25, so spacing is 10px
+            // color scale section: title at y=210, horizontal slider at y=220, so spacing is 10px (unified)
             // labels are below slider, add ~40px for labels
-            // Total: ~240px from top of legend to bottom
-            const colorScaleTitleY = 200;
+            // Total: ~280px from top of legend to bottom
+            const colorScaleTitleY = 210;
             const baseSliderY = 220;
             const baseSliderHeight = 20; // Horizontal slider height
             const baseSliderWidth = 400; // Horizontal slider width
@@ -1649,7 +1650,7 @@
                 .attr("x", 0)
                 .attr("y", 15)
                 .attr("font-size", "10px")
-                .attr("font-weight", "500")
+                .attr("font-weight", "700")
                 .attr("fill", "#495057")
                 .text("Visualization Rules:");
 
@@ -1762,8 +1763,8 @@
             legend.append("text")
                 .attr("x", 0)
                 .attr("y", colorScaleTitleY)
-                .attr("font-size", "9px")
-                .attr("font-weight", "500")
+                .attr("font-size", "10px")
+                .attr("font-weight", "700")
                 .attr("fill", "#495057")
                 .text(title + " Scale:");
 
@@ -2711,33 +2712,25 @@
             const urbanDensity = cell.urban_area > 0 ? cell.urban_population / cell.urban_area : 0;
             const ruralDensity = cell.rural_area > 0 ? cell.rural_population / cell.rural_area : 0;
             
+            // Always show both Urban and Rural, even if value is 0
             const data = [
                 { name: 'Urban', value: Math.round(urbanDensity), color: colorScale(calculateValue(cell, true)) },
                 { name: 'Rural', value: Math.round(ruralDensity), color: colorScale(calculateValue(cell, false)) }
-            ].filter(d => d.value > 0); // Only show areas with density data
+            ];
             
-            if (data.length === 0) {
-                svg.append("text")
-                    .attr("x", width / 2)
-                    .attr("y", height / 2)
-                    .attr("text-anchor", "middle")
-                    .attr("font-size", "14px")
-                    .attr("fill", "#666")
-                    .text("No density data available");
-                return;
-            }
-            
-            // Scale
+            // Scale - always use both Urban and Rural in domain
             const x = d3.scaleBand()
-                .domain(data.map(d => d.name))
+                .domain(['Urban', 'Rural'])
                 .range([0, width])
                 .padding(0.1);
             
+            // Y scale - ensure domain includes 0 and max value, with minimum range for visibility
+            const maxValue = Math.max(...data.map(d => d.value), 1); // At least 1 to avoid division by zero
             const y = d3.scaleLinear()
-                .domain([0, Math.max(...data.map(d => d.value))])
+                .domain([0, maxValue])
                 .range([height - 40, 40]);
             
-            // Draw bar chart
+            // Draw bar chart - always show both Urban and Rural bars
             svg.selectAll("rect")
                 .data(data)
                 .enter()
@@ -2745,23 +2738,34 @@
                 .attr("x", d => x(d.name))
                 .attr("y", d => y(d.value))
                 .attr("width", x.bandwidth())
-                .attr("height", d => height - 40 - y(d.value))
+                .attr("height", d => {
+                    const barHeight = height - 40 - y(d.value);
+                    // Ensure minimum height of 1px for visibility, even when value is 0
+                    return Math.max(barHeight, 1);
+                })
                 .attr("fill", d => d.color)
-                .attr("opacity", 0.8);
+                .attr("opacity", d => d.value === 0 ? 0.3 : 0.8); // Lower opacity for zero values
             
-            // Add value labels
-            svg.selectAll("text")
+            // Add value labels - always show, even if value is 0
+            svg.selectAll(".value-label")
                 .data(data)
                 .enter()
                 .append("text")
+                .attr("class", "value-label")
                 .attr("x", d => x(d.name) + x.bandwidth() / 2)
-                .attr("y", d => y(d.value) - 5)
+                .attr("y", d => {
+                    // If value is 0, place label at a fixed position above the bar area
+                    if (d.value === 0) {
+                        return height - 40 - 5;
+                    }
+                    return y(d.value) - 5;
+                })
                 .attr("text-anchor", "middle")
                 .attr("font-size", "12px")
                 .attr("fill", "#333")
                 .text(d => `${d.value.toLocaleString()} /km²`);
             
-            // Add x-axis labels
+            // Add x-axis labels - always show both Urban and Rural
             svg.selectAll(".x-label")
                 .data(data)
                 .enter()
@@ -3329,9 +3333,9 @@
             
             // update custom color settings thresholds
             if (this.value === '100') {
-                customColorSettings.population.thresholds = [1000, 5000, 15000, 50000, 100000, 300000];
+                customColorSettings.population.thresholds = [2000, 10000, 30000, 80000, 200000, 600000];
             } else {
-                customColorSettings.population.thresholds = [100000, 500000, 1500000, 5000000, 10000000, 30000000];
+                customColorSettings.population.thresholds = [400000, 1000000, 5000000, 10000000, 20000000, 40000000];
             }
             
             // Keep maxCircles at default 256 regardless of grid size
@@ -3890,7 +3894,7 @@
                 selectDisplay.addEventListener('mouseenter', function() {
                     if (!isOpen) {
                         this.style.borderColor = '#cccccc';
-                        this.style.backgroundColor = '#F7F7F7';
+                        this.style.backgroundColor = 'white';
                         this.style.boxShadow = '0 4px 8px rgba(130, 54, 36, 0.1)';
                         this.style.transform = 'translateY(-1px)';
                     }
